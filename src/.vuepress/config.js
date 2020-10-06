@@ -34,7 +34,6 @@ module.exports = {
           children: [
             '',
             '00-overview',
-            'meta/outline',
             {
               title: 'System Architecture (A Deep Dive)',
               collapsable: false,
