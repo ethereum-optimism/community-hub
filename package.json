@@ -10,6 +10,7 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "vuepress": "^1.5.3"
+    "vuepress": "^1.5.3",
+    "vuepress-plugin-fulltext-search": "^2.0.6"
   }
 }
