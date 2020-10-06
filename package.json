@@ -1,0 +1,15 @@
+{
+  "name": "optimism-docs",
+  "version": "0.0.1",
+  "description": "Optimism's Documentation",
+  "main": "index.js",
+  "repository": "/optimism-docs",
+  "scripts": {
+    "dev": "vuepress dev src",
+    "build": "vuepress build src"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "vuepress": "^1.5.3"
+  }
+}
