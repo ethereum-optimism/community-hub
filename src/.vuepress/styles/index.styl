@@ -1,42 +1,50 @@
 @import url(https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap);
 
-body {
-  color: $textColor;
-}
-
 h1 {
   font-family: "Roboto";
   font-size: 48px;
-  font-weight: 700;
-  font-style: italic;
   text-decoration: $accentColor underline;
+  font-style: italic;
+}
+
+h2 {
+  border-bottom: none;
 }
 
 .navbar .home-link span,
 .sidebar .sidebar-group .sidebar-heading {
   color: $textColor;
   font-family: "Roboto";
-  font-style: italic;
   text-decoration: $accentColor underline;
+  font-style: italic;
 }
 
 .sidebar .sidebar-heading {
   opacity: 1 !important;
 }
 
+.home .hero {
+  text-align: center;
+}
+
 .home .hero .action-button {
-  background-color: $backgroundColor !important;
+  color: black !important;
+  background-color: white !important;
   text-decoration: $accentColor underline;
   text-decoration-thickness: 2px;
-  border: none;
+  border: 1px solid black !important;
   font-family: "Roboto";
-  font-style: italic;
+  margin: 15px auto;
+  cursor: pointer;
+  width: 250px;
+  display: block !important;
 }
 
 .home .hero .action-button:hover {
   background-color: $accentColor !important;
   text-decoration: $backgroundColor underline;
   text-decoration-thickness: 3px;
+  color: white !important;
 }
 
 .tag-info-block {

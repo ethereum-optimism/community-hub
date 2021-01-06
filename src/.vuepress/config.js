@@ -1,7 +1,7 @@
 const { description } = require('../../package')
 
 module.exports = {
-  title: 'Optimistic Ethereum | Docs',
+  title: 'The Optimism Community Hub',
   description: description,
 
   head: [
@@ -18,16 +18,24 @@ module.exports = {
     lastUpdated: false,
     nav: [
       {
-        text: 'Contract Docs',
-        link: '/contracts/',
+        text: 'docs',
+        link: '/docs/',
       },
       {
-        text: 'Optimism',
+        text: 'tutorial',
+        link: '/tutorial/',
+      },
+      {
+        text: 'FAQs',
+        link: '/faqs/',
+      },
+      {
+        text: 'optimism',
         link: 'https://optimism.io'
       }
     ],
     sidebar: {
-      '/contracts/': [
+      '/docs/': [
         {
           title: 'Contract Docs',
           collapsable: false,
@@ -38,33 +46,40 @@ module.exports = {
               title: 'System Architecture (A Deep Dive)',
               collapsable: false,
               children: [
-                '/contracts/01-deep-dive/00-rollup-contracts',
-                '/contracts/01-deep-dive/01-execution-contracts',
-                '/contracts/01-deep-dive/02-verification-contracts',
-                '/contracts/01-deep-dive/03-bridge-contracts',
+                '/docs/01-deep-dive/00-rollup-contracts',
+                '/docs/01-deep-dive/01-execution-contracts',
+                '/docs/01-deep-dive/02-verification-contracts',
+                '/docs/01-deep-dive/03-bridge-contracts',
               ]
             },
             {
               title: 'Contract APIs',
               collapsable: false,
               children: [
-                '/contracts/02-contract-apis/00-rollup-contracts',
-                '/contracts/02-contract-apis/01-execution-contracts',
-                '/contracts/02-contract-apis/02-verification-contracts',
-                '/contracts/02-contract-apis/03-bridge-contracts',
+                '/docs/02-contract-apis/00-rollup-contracts',
+                '/docs/02-contract-apis/01-execution-contracts',
+                '/docs/02-contract-apis/02-verification-contracts',
+                '/docs/02-contract-apis/03-bridge-contracts',
               ]
             },
             {
               title: 'Contract Usage Examples',
               collapsable: false,
               children: [
-                '/contracts/03-examples/00-submitting-transactions',
-                '/contracts/03-examples/01-using-bridge-contracts',
+                '/docs/03-examples/00-submitting-transactions',
+                '/docs/03-examples/01-using-bridge-contracts',
               ]
             }
           ]
         }
       ],
+      '/compare/': [
+        {
+          children: [''],
+          collapsable: true,
+          sidebarDepth: 1,
+        }
+      ]
     }
   },
 

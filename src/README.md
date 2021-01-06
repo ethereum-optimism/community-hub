@@ -1,6 +1,8 @@
 ---
 home: true
 tagline: 
-actionText: DIVE IN →
-actionLink: /contracts/
+layout: Home
 ---
+
+## It's a protocol that sits on top of Ethereum and makes the network faster, cheaper, and smarter. 
+
