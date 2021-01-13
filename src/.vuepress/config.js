@@ -37,46 +37,22 @@ module.exports = {
     sidebar: {
       '/docs/': [
         {
-          title: 'Contract Docs',
+          children: [''],
           collapsable: false,
-          children: [
-            '',
-            '00-overview',
-            {
-              title: 'System Architecture (A Deep Dive)',
-              collapsable: false,
-              children: [
-                '/docs/01-deep-dive/00-rollup-contracts',
-                '/docs/01-deep-dive/01-execution-contracts',
-                '/docs/01-deep-dive/02-verification-contracts',
-                '/docs/01-deep-dive/03-bridge-contracts',
-              ]
-            },
-            {
-              title: 'Contract APIs',
-              collapsable: false,
-              children: [
-                '/docs/02-contract-apis/00-rollup-contracts',
-                '/docs/02-contract-apis/01-execution-contracts',
-                '/docs/02-contract-apis/02-verification-contracts',
-                '/docs/02-contract-apis/03-bridge-contracts',
-              ]
-            },
-            {
-              title: 'Contract Usage Examples',
-              collapsable: false,
-              children: [
-                '/docs/03-examples/00-submitting-transactions',
-                '/docs/03-examples/01-using-bridge-contracts',
-              ]
-            }
-          ]
+          sidebarDepth: 1,
         }
       ],
       '/compare/': [
         {
           children: [''],
-          collapsable: true,
+          collapsable: false,
+          sidebarDepth: 1,
+        }
+      ],
+      '/faqs/': [
+        {
+          children: [''],
+          collapsable: false,
           sidebarDepth: 1,
         }
       ]
