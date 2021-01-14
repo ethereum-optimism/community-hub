@@ -1,7 +1,7 @@
 const { description } = require('../../package')
 
 module.exports = {
-  title: 'The Optimism Community Hub',
+  title: 'Optimism Community Hub',
   description: description,
 
   head: [

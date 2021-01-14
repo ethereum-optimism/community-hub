@@ -14,12 +14,20 @@
         v-if="data.heroText !== null"
         id="main-title"
       >
-        {{ data.heroText || $title || 'Hello' }}
+        The Optimism Community Hub
       </h1>
 
       <a class="action-button" href="/tutorial">try the tutorial</a>
       <a class="action-button" href="/docs">read the docs</a>
       <a class="action-button" href="/faqs">check out the FAQs</a>
+      <a class="action-button" href="https://discord.com/invite/jrnFEvq">join the discord</a>
+
+      <h3>
+        This is a work in progress. We'll be updating this site regularly in the coming weeks. Stay tuned!
+      </h3>
+      <h3>
+        Got ideas for the site? Have questions about Optimistic Ethereum? <a href="https://discord.com/invite/jrnFEvq">Come hang on discord</a>.
+      </h3>
     </header>
 
   </main>
