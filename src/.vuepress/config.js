@@ -37,7 +37,16 @@ module.exports = {
     sidebar: {
       '/docs/': [
         {
-          children: [''],
+          children: [
+          {
+            title: 'Protocol', 
+            path: '/docs/protocol.md'
+          }, 
+          {
+            title: 'Integration',
+            path: '/docs/integration.md'
+          }
+        ],
           collapsable: false,
           sidebarDepth: 1,
         }
