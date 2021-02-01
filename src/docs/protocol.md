@@ -28,8 +28,10 @@ We've designed our protocol with the following principles in mind:
 
 ### Key Concepts
 
-_// John: Putting this here for now, we may or may not need this section, but I like how 
-0x uses it_.
+_// John: Putting this here for now, we may or may not need this section, but I like how 0x uses it_.
+
+- Batches
+- Queue
 
 
 
@@ -45,8 +47,6 @@ The smart contracts in the Optimistic Ethereum (OE) protocol can be separated in
 - **Accounts:** Redeployable contracts layer-2 contracts which can represent a user and provide a form of 'account abstraction'. 
 
 ![Arch Diagram](../assets/OE-Arch-WIP.png)
-
-
 
   - Contracts Reference Sheet (aka glossary)
   - Deployed contracts (with addresses ie. [aave example][aave])
