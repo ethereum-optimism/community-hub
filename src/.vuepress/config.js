@@ -43,7 +43,7 @@ module.exports = {
             path: '/docs/protocol.md'
           }, 
           {
-            title: 'Integration',
+            title: 'Integration (coming soon)',
             path: '/docs/integration.md'
           }
         ],
