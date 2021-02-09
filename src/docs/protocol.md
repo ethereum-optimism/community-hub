@@ -30,6 +30,10 @@ These are some great documentation sites for inspiration:
 **remove all content above this line before publishing**
 -->
 
+::: tip Heads Up
+_Our documentation is a rapidly improving work in progress. If you have questions or feel like something is missing feel free to ask in our [Discord server](https://discord.gg/5TaAXGn2D8) where we (and our awesome community) are actively responding, or [open an issue](https://github.com/ethereum-optimism/community-hub/issues) in the GitHub repo for this site._
+:::
+
 ## Introduction
 
 <!-- - Welcome!  Give context -- "how to read these docs" -->
@@ -102,7 +106,6 @@ _// John: Putting this here for now, we may or may not need this section, but I 
  -->
 
 
-
 ### System Overview
 
 The smart contracts in the Optimistic Ethereum (OE) protocol can be separated into a few key components. We will discuss each component in more detail below. 
@@ -123,7 +126,11 @@ The smart contracts in the Optimistic Ethereum (OE) protocol can be separated in
 
 ## Chain
 
-### Chain Contracts
+The Chain is composed of a set of contracts running on the Ethereum mainnet. These contracts store ordered
+lists of: 
+1. An _ordered_ list of all transactions applied to the L2 state.
+2. The proposed state root which would results from the application of each transaction.
+3. Transactions sent from L1 to L2, which are pending inclusion in the ordered list.
 
 <!--
 **Planned section outline**
@@ -134,7 +141,10 @@ The smart contracts in the Optimistic Ethereum (OE) protocol can be separated in
 - Ring buffer?? (lean deprioritize)
 -->
 
-The chain is composed of the following [concrete contracts][stackex]:
+### Chain Contracts
+
+The chain is composed of the following concrete contracts:
+<!-- [concrete contracts][stackex]: -->
 
 - **OVM_CanonicalTransactionChain (CTC):** The Canonical Transaction Chain (CTC) contract is an append-only log of transactions which must be applied to the OVM state. It defines the ordering of transactions by writing them to the `CTC:batches` instance of the Chain Storage Container.The CTC also allows any account to `enqueue()` an L2 transaction, which the Sequencer must  eventually append to the rollup state.
 
@@ -146,16 +156,20 @@ The chain is composed of the following [concrete contracts][stackex]:
 
 ## Fraud Proving
 
-<!-- 
-**Planned section outline**
-- Fraud proving flow -->
+In the previous section, we mentioned that the Chain includes a list of the _proposed_ state roots
+resulting from each transaction. Here we explain a bit more about how these proposals happen, and how 
+we come to trust them.
 
+In brief: if a proposed state root is not the correct result of executing a transaction, then a Verifier (which is anyone running an OE 'full node') can initiate a fraud proof. If the transaction is successfully proven to be 
+fraudulent, they Verifier will receive a reward taken from funds which a Sequencer must put up as a bond.
 
 ### Fraud Proving Contracts
 
-- **OVM_BondManager:** The Bond Manager contract handles deposits in the form of an ERC20 token from bonded Proposers. It also handles the accounting of gas costs spent by a Verifier during the course of a fraud proof. In the event of a successful fraud proof, the fraudulent Proposer's bond is slashed, and the Verifier's gas costs are refunded.
+The fraud proving system is composed of the following concrete contracts:
 
 - **OVM_FraudVerifier:** The Fraud Verifier contract coordinates the entire fraud proof verification process. If the fraud proof is successful it prunes any state batches from State Commitment Chain which were published after the fraudulent state root.
+
+- **OVM_BondManager:** The Bond Manager contract handles deposits in the form of an ERC20 token from bonded Proposers. It also handles the accounting of gas costs spent by a Verifier during the course of a fraud proof. In the event of a successful fraud proof, the fraudulent Proposer's bond is slashed, and the Verifier's gas costs are refunded.
 
 - **OVM_StateTransitioner:** The State Transitioner coordinates the execution of a state transition during the evaluation of a fraud proof. It feeds verified input to the Execution Manager's run(), and controls a State Manager (which is  uniquely created for each fraud proof). Once a fraud proof has been initialized, this contract is provided with the pre-state root and verifies that the OVM storage slots committed to the State Mangager are contained in that state This contract controls the State Manager and Execution Manager, and uses them to calculate the post-state root by applying the transaction. The Fraud Verifier can then check for fraud by comparing the calculated post-state root with the proposed post-state root.
 
@@ -171,6 +185,10 @@ The chain is composed of the following [concrete contracts][stackex]:
 - State Management L1/L2 differences
 - Explicit list of opcodes that are replaced -->
 
+The Execution contracts implement the Optimistic Virtual Machine, or OVM. Importantly, these contracts 
+must execute in the same deterministic manner, whether a transaction is run on Layer 2, or Layer 1 (during a fraud proof).
+
+
 ### Execution Contracts
 
 - **OVM_ExecutionManager:** he Execution Manager (EM) is the core of our OVM implementation, and provides a sandboxed environment allowing us to execute OVM transactions deterministically on either Layer 1 or Layer 2. The EM's run() function is the first function called during the execution of any transaction on L2. For each context-dependent EVM operation the EM has a function which implements a corresponding OVM operation, which will read state from the State Manager contract.The EM relies on the Safety Checker to verify that code deployed to Layer 2 does not contain any context-dependent operations.
@@ -185,18 +203,18 @@ The chain is composed of the following [concrete contracts][stackex]:
 
 The Bridge contracts implement the functionality required to pass messages between layer 1 and layer 2.
 
-### Key concepts
+<!-- 
+**Planned section outline**
+- Low-level tools (ovmL1TXORIGIN, state committment access) 
 
-- **Relaying** refers to executing a message sent from the other domain, ie. "this message was relayed 
+### Key concepts
+- **Relaying** refers to executing a message sent from the other domain, ie. "this message was relayed  
+-->
 
 
 ### List of Bridge Contracts
 
-<!-- 
-**Planned section outline**
-- Low-level tools (ovmL1TXORIGIN, state committment access) 
--->
-
+The Bridge is composed of the following concrete contracts:
 
 - **OVM_L1CrossDomainMessenger:** The L1 Cross Domain Messenger (L1xDM)contract sends messages from L1 to L2, and relays messages from L2 onto L1. In the event that a message sent from L1 to L2 is rejected for exceeding the L2 epoch gas limit, it can be resubmitted via this contract's replay function. 
 
@@ -213,7 +231,12 @@ Proving fraud against a crossDomain message with a false account for **l1TxOrigi
 
 ## Predeploys
 
+"Predeploys" are a set of essential contracts which are deployed and available in the genesis state of the system. These contracts are similar to Ethereum's precompiles, however they are written in Solidity, and can be found in the OVM at addresses prefixed with 0x42.
+
 ### Predeploy Contracts
+
+The following concrete contracts are predeployed:
+
 
 - **OVM_DeployerWhitelist:** he Deployer Whitelist is a temporary predeploy used to provide additional safety during the initial phases of our mainnet roll out. It is owned by the Optimism team, and defines accounts which are allowed to deploy contracts on Layer2. The Execution Manager will only allow an ovmCREATE or ovmCREATE2 operation to proceed if the deployer's address whitelisted.
 
@@ -230,6 +253,8 @@ Proving fraud against a crossDomain message with a false account for **l1TxOrigi
 
 ## OVM Accounts
 
+OVM Account contracts are redeployable contracts layer-2 contracts which can represent a user and provide a form of 'account abstraction'.
+
 <!-- 
 **Planned section outline**
 - **TODO:** figure out how much of this needs to go into "integration" section
@@ -241,6 +266,8 @@ Proving fraud against a crossDomain message with a false account for **l1TxOrigi
 
 ### OVM Accounts Contracts 
 
+- **OVM_ProxyEOA:** The Proxy EOA contract uses a delegate call to execute the logic in an implementation contract. In combination with the logic implemented in the ECDSA Contract Account, this enables a form of upgradable  'account abstraction' on layer 2.
+
 - **OVM_ECDSAContractAccount:** The ECDSA Contract Account contract can be used as the implementation for a ProxyEOA deployed by the ovmCREATEEOA operation. It enables backwards compatibility with Ethereum's Layer 1, by  providing eth_sign and EIP155 formatted transaction encodings.
 
-- **OVM_ProxyEOA:** The Proxy EOA contract uses a delegate call to execute the logic in an implementation contract. In combination with the logic implemented in the ECDSA Contract Account, this enables a form of upgradable  'account abstraction' on layer 2. 
+
