@@ -36,7 +36,8 @@ module.exports = {
     ],
     sidebar: {
       '/docs/': [
-        {
+        { title: 'Docs',
+          path: '/docs/',
           children: [
           {
             title: 'Protocol', 

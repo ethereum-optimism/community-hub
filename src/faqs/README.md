@@ -42,7 +42,8 @@ This period must be long enough that an invalid result can be detected and rever
 
 Currently, community consensus is that this period should be on the order of approximately one week to maximize the safety of user assets.
 Since a result can potentially be reverted during the fraud proof window, applications on Ethereum will typically choose to wait until the window has expired to make decisions about results from the Optimistic Ethereum chain.
-As a result, we seem a delay of about a week when moving assets back onto Ethereum.
+
+As a result, we see a delay of about a week when moving assets back onto Ethereum.
 
 ## How do I pay for transactions on Optimistic Ethereum?
 Transactions that you send directly to the rollup smart contracts are paid for by burning a small amount of gas on Ethereum.
