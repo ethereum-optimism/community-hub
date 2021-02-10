@@ -1,5 +1,5 @@
 ---
-title: Integrating with Optimistic Ethereum
+title: Integration with Optimistic Ethereum
 lang: en-US
 tags:
     - contracts

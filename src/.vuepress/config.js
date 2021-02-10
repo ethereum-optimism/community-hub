@@ -5,9 +5,9 @@ module.exports = {
   description: description,
 
   head: [
-    ['meta', { name: 'theme-color', content: '#3eaf7c' }],
-    ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
-    ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }]
+    [ 'meta', { name: 'theme-color', content: '#3eaf7c' } ],
+    [ 'meta', { name: 'apple-mobile-web-app-capable', content: 'yes' } ],
+    [ 'meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' } ]
   ],
 
   themeConfig: {
@@ -36,32 +36,33 @@ module.exports = {
     ],
     sidebar: {
       '/docs/': [
-        { title: 'Docs',
+        {
+          title: 'Docs',
           path: '/docs/',
           children: [
-          {
-            title: 'Protocol', 
-            path: '/docs/protocol.md'
-          }, 
-          {
-            title: 'Integrating',
-            path: '/docs/integration.md'
-          }
-        ],
+            {
+              title: 'Protocol',
+              path: '/docs/protocol.md'
+            },
+            {
+              title: 'Integration',
+              path: '/docs/integration.md'
+            }
+          ],
           collapsable: false,
           sidebarDepth: 1,
         }
       ],
       '/compare/': [
         {
-          children: [''],
+          children: [ '' ],
           collapsable: false,
           sidebarDepth: 1,
         }
       ],
       '/faqs/': [
         {
-          children: [''],
+          children: [ '' ],
           collapsable: false,
           sidebarDepth: 1,
         }
