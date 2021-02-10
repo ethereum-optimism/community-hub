@@ -10,12 +10,18 @@ tags:
 
 Welcome to our documentation site, and thanks for your interest in learning more about Optimistic Ethereum (OE)!
 
-## OE Protocol and Integration
+::: tip Heads Up
+_Our documentation is a rapidly improving work in progress. If you have questions or feel like something is missing feel free to ask in our [Discord server](https://discord.gg/5TaAXGn2D8) where we (and our awesome community) are actively responding, or [open an issue](https://github.com/ethereum-optimism/community-hub/issues) in the GitHub repo for this site._
+:::
 
-Optimism is _currently working_ to expand our protocol and integration docs. However, despite each being under active development, you can still explore each section with the links below.
+## OE Protocol and Integration (Start here)
+
+These docs are a work in progress, and continuing to improve, so your feedback is very welcome!
 
 - [Protocol Docs](./protocol.md): Gives an understanding of how the system functions under the hood.
 - [Integration Docs](./integration.md): Outlines the minor modifications necessary to adapt a smart contract application (dApp) to run on Optimistic Ethereum.
+- [EVM Comparison](./evm-comparison.md): Highlights the main differences between the L2 OVM and L1 EVM that developers should consider.
+
 
 ## Resources (comprehensive)
 

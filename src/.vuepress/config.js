@@ -47,6 +47,10 @@ module.exports = {
             {
               title: 'Integration',
               path: '/docs/integration.md'
+            },
+            {
+              title: 'EVM Comparison',
+              path: '/docs/evm-comparison.md'
             }
           ],
           collapsable: false,

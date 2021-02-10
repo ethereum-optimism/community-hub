@@ -11,11 +11,15 @@ tags:
 This page serves as a reference point for dApp developers who want to build or port their systems to the OVM.  In particular, it highlights the main differences between the L2 OVM and L1 EVM that developers should consider.
 
 ## Missing, Replaced, and Custom Opcodes
-The OVM's execution sandbox requires that some EVM opcodes are banned from smart contracts.  Whenever a contract deployment is attempted on the OVM, a ["safety check"](https://github.com/ethereum-optimism/contracts-v2/blob/525477144ecc6fc019e0ada225b85f322c6b5fbc/contracts/optimistic-ethereum/OVM/execution/OVM_SafetyChecker.sol#L20)) of the contract code is performed, and if any of the banned opcodes are present, deployment is blocked.  For a precise specification of what counts as a "safe" contract, see here. [todo]
+The OVM's execution sandbox requires that some EVM opcodes are banned from smart contracts.  Whenever a contract deployment is attempted on the OVM, a ["safety check"](https://github.com/ethereum-optimism/contracts-v2/blob/master/contracts/optimistic-ethereum/OVM/execution/OVM_SafetyChecker.sol#L30)) of the contract code is performed, and if any of the banned opcodes are present, deployment is blocked. 
+ 
+ <!-- For a precise specification of what counts as a "safe" contract, see here. [todo] -->
 
 Of these banned opcodes, there are two main categories:
 1. Opcodes which are re-implemented as OVM contract functions, so that they "still work" on the OVM, and are just invoked differently.
 2. Opcodes which have no L2-equivalent, and thus cannot be used in the OVM.
+
+
 
 ### Missing Opcodes
 
@@ -26,9 +30,9 @@ Of these banned opcodes, there are two main categories:
 | `BLOCKHASH`    | `blockhash`        | No equivalent in the OVM. |
 | `GASPRICE`     | `tx.gasprice`      | No equivalent in the OVM. |
 | `SELFDESTRUCT` | `selfdestruct`     | Not yet implemented. |
-| `BALANCE`      | `balance`          | Unused. See [Native wETH]() section below. |
-| `CALLVALUE`    | `msg.value`        | Unused. See [Native wETH]() section below. |
-| `ORIGIN`       | `tx.origin`        | Unused. See [Account Abstraction]() section below. |
+| `BALANCE`      | `balance`          | Unused. See [Native wETH](#native-weth) section below. |
+| `CALLVALUE`    | `msg.value`        | Unused. See [Native wETH](#native-weth) section below. |
+| `ORIGIN`       | `tx.origin`        | Unused. See [Account Abstraction](#native-acccount-abstraction) section below. |
 
 
 ### Replaced Opcodes
@@ -40,8 +44,8 @@ Developers using these opcodes need not be concerned with the changes, as the `@
 | EVM Opcode     | OVM Equivalent    | Notes |
 | ----------     | ----------------- | ----- |
 | `ADDRESS`      | `ovmADDRESS`      |       |
-| `NUMBER`       | `ovmNUMBER`       | See [`block.number`]() section below for additional detail. |
-| `TIMESTAMP`    | `ovmTIMESTAMP`    | See [`block.timestamp`]() section below for additional detail. |
+| `NUMBER`       | `ovmNUMBER`       | See [`block.number`](#behavior-of-blocknumber-and-blocktimestamp) section below for additional detail. |
+| `TIMESTAMP`    | `ovmTIMESTAMP`    | See [`block.timestamp`](#behavior-of-blocknumber-and-blocktimestamp) section below for additional detail. |
 | `CHAINID`      | `ovmCHAINID`      |       |
 | `GASLIMIT`     | `ovmGASLIMIT`     | Returns the **transaction gas limit**, not the block gas limit, as there is no notion of blocks in L2. |
 | `REVERT`       | `ovmREVERT`       |       |
@@ -65,7 +69,7 @@ In addition to the above, the OVM introduces some new "opcodes" which are not pr
 | ------         | -------- |
 | `ovmGETNONCE`  | Returns the nonce of the current account. |
 | `ovmSETNONCE`  | Sets the nonce of the current account to a given value. |
-| `ovmCREATEEOA` | Deploys a smart contract wallet. See [Account Abstraction]() section for additional detail. |
+| `ovmCREATEEOA` | Deploys a smart contract wallet. See [Account Abstraction](#native-acccount-abstraction) section for additional detail. |
 
 #### Cross-chain Related
 These opcodes are abstracted away by our standard message-passing contracts, so most developers need not use these directly. However they are technically accessible to any contract.
