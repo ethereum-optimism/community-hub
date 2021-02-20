@@ -104,11 +104,11 @@ Documentation for arbitrary message passing is a Work In Progress, but all featu
 
 ### L1 and L2 Communication Overview
 
-::: details This section while taken from Optimism's old documentation is still relevant. If you are still interested in looking through the old documentation,
+::: details This section while taken from Optimism's old documentation is still relevant. If you are still interested in looking through the old documentation...
 
-you can find it [here](https://github.com/ethereum-optimism/optimism-monorepo/tree/doctest/packages/docs). However, do be aware that Some of the content on the old documentation is now outdated, hence why the domain was taken down.
+You can find it [here](https://github.com/ethereum-optimism/optimism-monorepo/tree/doctest/packages/docs). However, do be aware that Some of the content on the old documentation is now outdated, hence why the domain was taken down.
 
-The [community-hub] documentation (you're on it right now!) is now the proper home for all of Optimism's docs.
+The [community-hub](https://community.optimism.io/) documentation (you're on it right now!) is now the proper home for all of Optimism's docs.
 :::
 
 Our implementation will offer the following abstraction for implementing L1 and L2 communication.
@@ -133,7 +133,7 @@ Here are roughly the functions you get access to \(ignoring any of the "fluff" a
 
 Here is how you use the above messaging functions to implement deposit/withdrawals. You have two contracts, one on L1, and the other on L2. I will write out just the parts of each contract associated with deposits, and then do the same for withdrawals.
 
-#### Deposits
+### Deposits
 
 **L1 contract:**
 
@@ -202,7 +202,7 @@ contract L2DepositWithdrawalContract is ERC20WithMintAndBurn {
 
 As you can see, only when some L2 token is locked in the L1 contract, does the L2 contract mint some new coins. This would enforce that the supply of the L2 token is exactly equal to the supply of locked L1 tokens.
 
-#### Withdrawals
+### Withdrawals
 
 Withdrawals are basically the same thing in reverse! Starting with the L2 contract this time:
 
