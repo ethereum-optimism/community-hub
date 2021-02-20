@@ -104,7 +104,12 @@ Documentation for arbitrary message passing is a Work In Progress, but all featu
 
 ### L1 and L2 Communication Overview
 
-> NOTE: This section is taken from Optimism's old documentation. Some of the content on the old documentation is now outdated, hence why the domain was taken down. If you are still interested in looking through the old documentation, you can find it [here](https://github.com/ethereum-optimism/optimism-monorepo/tree/doctest/packages/docs). However, do be aware that the [community-hub] documentation is now the proper home for all of Optimism's docs.
+::: details This section while taken from Optimism's old documentation is still relevant. If you are still interested in looking through the old documentation,
+
+you can find it [here](https://github.com/ethereum-optimism/optimism-monorepo/tree/doctest/packages/docs). However, do be aware that Some of the content on the old documentation is now outdated, hence why the domain was taken down.
+
+The [community-hub] documentation (you're on it right now!) is now the proper home for all of Optimism's docs.
+:::
 
 Our implementation will offer the following abstraction for implementing L1 and L2 communication.
 
