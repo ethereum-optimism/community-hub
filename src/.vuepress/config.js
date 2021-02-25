@@ -37,21 +37,59 @@ module.exports = {
     sidebar: {
       '/docs/': [
         {
-          title: 'Docs',
+          title: 'Introduction',
           path: '/docs/',
+          collapsable: false,
+          sidebarDepth: 1,
+        },
+        {
+          title: 'Developer Docs',
+          path: '/docs/developers/',
+          children: [
+            {
+              title: 'Deploying to Optimistic Ethereum',
+              path: '/docs/developers/integration.md'
+            },
+          ],
+          collapsable: false,
+          sidebarDepth: 1,
+        },
+        {
+          title: 'Protocol Docs',
+          path: '/docs/protocol',
           children: [
             {
               title: 'Protocol',
-              path: '/docs/protocol.md'
-            },
-            {
-              title: 'Integration',
-              path: '/docs/integration.md'
+              path: '/docs/protocol/protocol.md'
             },
             {
               title: 'EVM Comparison',
-              path: '/docs/evm-comparison.md'
+              path: '/docs/protocol/evm-comparison.md'
             }
+          ],
+          collapsable: false,
+          sidebarDepth: 1,
+        },
+        {
+          title: 'Additional Resources',
+          path: '/docs/resources',
+          children: [
+            {
+              title: 'Guides and Tutorials',
+              path: '/docs/resources/tutorials.md',
+            },
+            {
+              title: 'Protocol Readings',
+              path: '/docs/resources/protocol-readings.md',
+            },
+            {
+              title: 'Talks & Videos',
+              path: '/docs/resources/talks.md',
+            },
+            {
+              title: 'Tooling',
+              path: '/docs/resources/tooling.md',
+            },
           ],
           collapsable: false,
           sidebarDepth: 1,

@@ -1,5 +1,5 @@
 ---
-title: Integration with Optimistic Ethereum
+title: Deploying to Optimistic Ethereum
 lang: en-US
 tags:
     - contracts
@@ -11,7 +11,6 @@ tags:
 ::: tip Heads Up
 _Our documentation is a rapidly improving work in progress. If you have questions or feel like something is missing feel free to ask in our [Discord server](https://discord.gg/5TaAXGn2D8) where we (and our awesome community) are actively responding, or [open an issue](https://github.com/ethereum-optimism/community-hub/issues) in the GitHub repo for this site._
 :::
-
 
 ## Introduction
 
@@ -27,7 +26,7 @@ There are three main steps to trace to get your dApp running on the OVM:
 2. **Integrate full local copy of Optimistic Ethereum (OE):** get those contracts running on a local instance of the full L2 system, including a local L1 chain, sequencer, etc.
 3. **Bridging:** Get L1 and L2 communicating where necessary, such as adding deposits/withdrawals.
 
-## 1. Running on the OVM
+## Running on the OVM
 
 ### Setup and Resources
 
@@ -56,7 +55,7 @@ There are some small differences between the EVM and the OVM (such as removing u
 2. The [scopelift Uniswap tutorial](https://github.com/ScopeLift/ovm-uniswap-v2-core#porting-solidity-contracts-to-optimism-a-guide-using-uniswap-v2) has some great "OVM vs. EVM" sections.
 3. For a [DEEP robust explanation](https://hackmd.io/Inuu-T_UTsSXnzGtrLR8gA) of ALL OVM <> EVM incompatibilities
 
-## 2. Running on Optimistic Ethereum
+## Running on Optimistic Ethereum
 Now you should have a nice easy way to run `test:ovm` and see a bunch of green checkmarks running on a fancy L2 VM.  Yay!
 
 However, this L2 is a standalone simulation.  The next step is to get the system running on a full local copy of Optimisic Ethereum -- this includes things like the L1 contracts which secure the L2 protocol, the sequencer, and fee payments.
@@ -84,7 +83,7 @@ Common things which you might encounter here:
 - Contract deployments may fail because they either exceed the L2 chain tx gas limit of 9m or because the contract contained unsafe bytecode.
 
 
-## 3. Bridging L1 and L2
+## Bridging L1 and L2
 
 The last step to get the system ready to deploy is, if necessary, work on connecting L1 and L2.  We provide a standard message-passing interface for sending data between L1 and L2.  Your application may not need this, or it may just need to use the existing bridge infrastructure for deposits and withdrawals.
 

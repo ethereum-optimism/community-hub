@@ -117,7 +117,7 @@ The smart contracts in the Optimistic Ethereum (OE) protocol can be separated in
 - **[Predeploys:](#predeploys)** A set of essential contracts which are deployed and available in the genesis state of the system. These contracts are similar to Ethereum's precompiles, however they are written in Solidity, and can be found at addresses prefixed with 0x42.
 - **[Accounts:](#ovm-accounts)** Redeployable contracts layer-2 contracts which can represent a user and provide a form of 'account abstraction'. 
 
-![Optimistic Ethereum Architecture Diagram](../assets/OE-Arch-RC0.png)
+![Optimistic Ethereum Architecture Diagram](../../assets/OE-Arch-RC0.png)
 
 <!--
  - Contracts Reference Sheet (aka glossary)
