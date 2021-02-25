@@ -29,7 +29,7 @@ Although this is a little different, the overall experience of using the system 
 The L2 `transaction.gasPrice` will be significantly lower than on Layer 1, so the fee ultimately paid will be proportionally low.
 
 ## Fees for L1 → L2 Transactions
-Transactions that are submitted directly to the [Canonical Transaction Chain]() contract on Layer 1 (as opposed to transactions submitted to a [sequencer]()) are paid for by burning a certain amount of Layer 1 gas.
+Transactions that are submitted directly to the [Canonical Transaction Chain](https://community.optimism.io/docs/protocol.html#chain) contract on Layer 1 (as opposed to transactions submitted to a [sequencer]()) are paid for by burning a certain amount of Layer 1 gas.
 These transactions do **not** have to pay a fee on top of the gas burned.
 The exact amount of gas burned is:
 
@@ -37,7 +37,7 @@ The exact amount of gas burned is:
 fee (ether) = transaction.gasLimit / L2_GAS_DISCOUNT_DIVISOR
 ```
 
-Where [`L2_GAS_DISCOUNT_DIVISOR`]() is a essentially a measure of the "scalability" of the L2 system.
+Where [`L2_GAS_DISCOUNT_DIVISOR`](https://github.com/ethereum-optimism/contracts/blob/b2a98aab650548e66b614571a0f5666c4f54f89d/contracts/optimistic-ethereum/OVM/chain/OVM_CanonicalTransactionChain.sol#L295-L313) is a essentially a measure of the "scalability" of the L2 system.
 This gas burning step is necessary to make sure that a bad actor can't easily spam Optimistic Ethereum with computationally expensive transactions.
 From an end-user perspective, this just looks like a slightly more expensive L1 transaction.
 We imagine that most transactions will be sent via a sequencer and will therefore not have to worry about this gas burning step.
