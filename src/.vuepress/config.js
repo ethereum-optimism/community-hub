@@ -51,6 +51,10 @@ module.exports = {
             {
               title: 'EVM Comparison',
               path: '/docs/evm-comparison.md'
+            },
+            {
+              title: 'Transaction Fees',
+              path: '/docs/fees.md'
             }
           ],
           collapsable: false,
