@@ -27,7 +27,7 @@ Simply connect your wallet to an Optimistic Ethereum node and you're ready to go
 There are, however, a few very minor differences between Optimistic Ethereum and Ethereum that developers may have to account for.
 For instance, we disable infrequently used operations like `CALLCODE`.
 If you're a developer, these differences could potentially require a few minor tweaks to your contract code.
-Please refer to the [Complete EVM/OVM Comparison](/compare) for a full list of differences.
+Please refer to the [Complete EVM/OVM Comparison](http://community.optimism.io/docs/evm-comparison.html) for a full list of differences.
 
 ## Are Optimistic Rollups safe?
 Absolutely.

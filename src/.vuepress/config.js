@@ -47,7 +47,7 @@ module.exports = {
           path: '/docs/developers/',
           children: [
             {
-              title: 'Deploying to Optimistic Ethereum',
+              title: 'Building on Optimistic Ethereum',
               path: '/docs/developers/integration.md'
             },
           ],
@@ -65,6 +65,10 @@ module.exports = {
             {
               title: 'EVM Comparison',
               path: '/docs/protocol/evm-comparison.md'
+            },
+            {
+              title: 'Transaction Fees',
+              path: '/docs/protocol/fees.md'
             }
           ],
           collapsable: false,
