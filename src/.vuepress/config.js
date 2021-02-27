@@ -37,28 +37,72 @@ module.exports = {
     sidebar: {
       '/docs/': [
         {
-          title: 'Docs',
-          path: '/docs/',
+          title: 'Introduction',
+          children: [
+            {
+              title: 'Welcome! (Start here)',
+              path: '/docs/introduction/welcome.md'
+            },
+          ],
+          collapsable: false,
+          sidebarDepth: 1,
+        },
+        {
+          title: 'Developer Docs',
+          children: [
+            {
+              title: 'Building on Optimistic Ethereum',
+              path: '/docs/developers/integration.md'
+            },
+          ],
+          collapsable: false,
+          sidebarDepth: 1,
+        },
+        {
+          title: 'Protocol Docs',
           children: [
             {
               title: 'Protocol',
-              path: '/docs/protocol.md'
-            },
-            {
-              title: 'Integration',
-              path: '/docs/integration.md'
+              path: '/docs/protocol/protocol.md'
             },
             {
               title: 'EVM Comparison',
-              path: '/docs/evm-comparison.md'
+              path: '/docs/protocol/evm-comparison.md'
             },
             {
               title: 'Transaction Fees',
-              path: '/docs/fees.md'
+              path: '/docs/protocol/fees.md'
             }
           ],
           collapsable: false,
           sidebarDepth: 1,
+        },
+        {
+          title: 'Additional Resources',
+          children: [
+            {
+              title: 'Guides and Tutorials',
+              path: '/docs/resources/tutorials.md',
+            },
+            {
+              title: 'Protocol Readings',
+              path: '/docs/resources/protocol-readings.md',
+            },
+            {
+              title: 'Talks and Videos',
+              path: '/docs/resources/talks.md',
+            },
+            {
+              title: 'Developer Tooling',
+              path: '/docs/resources/tooling.md',
+            },
+            {
+              title: 'General Resources',
+              path: '/docs/resources/general-resources.md',
+            },
+          ],
+          collapsable: false,
+          sidebarDepth: 0,
         }
       ],
       '/compare/': [
