@@ -7,3 +7,6 @@ tags:
 ---
 
 # {{ $frontmatter.title }}
+
+Coming very soon!
+Sorry for the empty page!
