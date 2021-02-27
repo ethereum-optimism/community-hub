@@ -1,15 +1,18 @@
-# .github/workflows/check_spelling.yml
 name: Check Spelling
+
 on:
   pull_request:
     paths:
     - '**.md'
+
 jobs:
   spelling:
     runs-on: ubuntu-latest
+
     steps:
     - uses: actions/checkout@v2
       with:
         ref: ${{ github.head_ref }}
+
     - name: Check Spelling
       uses: UnicornGlobal/spellcheck-github-actions@master
