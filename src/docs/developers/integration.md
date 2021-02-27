@@ -35,6 +35,8 @@ You might also want to take the following two steps depending on your specific n
 ## Compiling and Testing Contracts
 
 ### Setup and Resources
+// TODO: Add a better "required tooling" section.
+
 The first part of getting started with Optimistic Ethereum is to get your contracts up and running on a local L2 node.
 This process involves two primary sub-steps:
 
@@ -186,7 +188,6 @@ These contracts are pretty cool and make heavy use of our L1⇔L2 messaging infr
 This section is in line for some significant updates. 
 It's still technically correct, but we'd like to show it some more love.
 :::
-
 
 ### API
 This section details the interface that our system exposes for implementing L1⇔L2 communication.

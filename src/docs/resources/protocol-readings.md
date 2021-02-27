@@ -8,20 +8,32 @@ tags:
 
 # {{ $frontmatter.title }}
 
-- [OVM Deep Dive, Medium post](https://medium.com/ethereum-optimism/ovm-deep-dive-a300d1085f52) (May 5th, 2020)
+::: tip Are we missing something? 🧐
+Want your content featured on this page?
+Think we don't have enough information about a certain topic?
+Hop on the [discord](https://discord.gg/5TaAXGn2D8) and make a post in `#resources` or [open an issue](https://github.com/ethereum-optimism/community-hub/issues) in the GitHub repo for this site. ✨
+:::
 
-    A **thorough** Medium post from Optimism's blog that provides that explains **what the Optimism Virtual Machine (OVM) is and the problem it solves.**
+---
+## [*OVM Deep Dive*](https://medium.com/ethereum-optimism/ovm-deep-dive-a300d1085f52)
 
-- [OVM/EVM differences](https://hackmd.io/Inuu-T_UTsSXnzGtrLR8gA) (October - December 2020)
+* Date: May 5, 2020
+* By: Optimism PBC
 
-    Another HackMD post that examines the significant differences between **OVM and EVM opcodes, native wrapped ether (WETH) support, OVM account abstraction, and gas optimization in the OVM**.
+A **thorough** Medium post from Optimism's blog that provides that explains **what the Optimism Virtual Machine (OVM) is and the problem it solves.**
 
-- [OVM vs. EVM Incompatibilities](https://hackmd.io/elr0znYORiOMSTtfPJVAaA?view#OVM-vs-EVM-Incompatibilities)
+---
+## [*How does Optimism's Rollup really work?*](https://research.paradigm.xyz/optimism)
 
-- [How does Optimism's Rollup really work?](https://research.paradigm.xyz/optimism) by Georgios Konstantopoulos from Paradigm Research
+* Date: Jan 29, 2021
+* By: [Georgios Konstantopoulos](https://twitter.com/gakonst) (Paradigm Research)
 
-    A thorough post by Paradigm's research division that takes a deep dive into the protocol implementation of Optimism's ORUs. **Covers OVM topics like: data availability batches, state commitments, fraud proofs, incentives & bonds, and nuisance gas.**
+A thorough post by Paradigm's research division that takes a deep dive into the protocol implementation of Optimism's ORUs. **Covers OVM topics like: data availability batches, state commitments, fraud proofs, incentives & bonds, and nuisance gas.**
 
-- [MEV Auction: Auctioning transaction ordering rights as a solution to Miner Extractable Value](https://ethresear.ch/t/mev-auction-auctioning-transaction-ordering-rights-as-a-solution-to-miner-extractable-value/6788)
+---
+## [*MEV Auction: Auctioning transaction ordering rights as a solution to Miner Extractable Value*](https://ethresear.ch/t/mev-auction-auctioning-transaction-ordering-rights-as-a-solution-to-miner-extractable-value/6788)
 
-    A thorough discussion on miner extractable value auctions (MEVA) by Karl Floersch. MEVA is used in Optimism's ORUs.
+* Date: Aug 16, 2020
+* By: Karl Floersch
+
+A thorough discussion on miner extractable value auctions (MEVA) by Karl Floersch. MEVA is used in Optimism's ORUs.

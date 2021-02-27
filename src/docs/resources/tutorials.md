@@ -8,14 +8,23 @@ tags:
 
 # {{ $frontmatter.title }}
 
-- [Optimism's official introductory tutorial](../tutorial/) (Jan. 15, 2021)
+::: tip Are we missing something? 🧐
+Want your content featured on this page?
+Think we don't have enough information about a certain topic?
+Hop on the [discord](https://discord.gg/5TaAXGn2D8) and make a post in `#resources` or [open an issue](https://github.com/ethereum-optimism/community-hub/issues) in the GitHub repo for this site. ✨
+:::
 
-    The **official** introductory tutorial by the Optimism team. Note, that this tutorial is _short and sweet_. For more thorough guides, refer to other the resources below, the Protocol, or Intregation
+---
+## [Optimism's introductory tutorial](../tutorial/)
 
-- [Scopelift 's Uniswap v2 OVM tutorial](https://hackmd.io/@scopelift/Hy853dTsP)  (October - December 2020)
+The **official** introductory tutorial by the Optimism team. Note, that this tutorial is _short and sweet_. For more thorough guides, refer to other the resources below, the Protocol, or Intregation
 
-    However, this guide by Scopelift is a bit slightly outdated. For the most up-to-date tutorial, please refer to Optimism's offical introductory tutorial above.
+---
+## Scopelift: [Uniswap v2 OVM tutorial](https://hackmd.io/@scopelift/Hy853dTsP)
 
-- [Unofficial guide on deploying a custom Optimism rollup on Kovan](https://gist.github.com/miguelmota/973e62c8f3da0571fc2c469b65c54d71)
+However, this guide by Scopelift is a bit slightly outdated. For the most up-to-date tutorial, please refer to Optimism's offical introductory tutorial above.
 
-    A short GitHub gist by [@miguelmota](https://twitter.com/miguelmotah) for how to deploy a custom ORU on the Kovan testnet.
+---
+## [Unofficial guide on deploying a custom Optimism rollup on Kovan](https://gist.github.com/miguelmota/973e62c8f3da0571fc2c469b65c54d71)
+
+A short GitHub gist by [@miguelmota](https://twitter.com/miguelmotah) for how to deploy a custom ORU on the Kovan testnet.

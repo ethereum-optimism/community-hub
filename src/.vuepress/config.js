@@ -38,13 +38,17 @@ module.exports = {
       '/docs/': [
         {
           title: 'Introduction',
-          path: '/docs/',
+          children: [
+            {
+              title: 'Welcome! (Start here)',
+              path: '/docs/introduction/welcome.md'
+            },
+          ],
           collapsable: false,
           sidebarDepth: 1,
         },
         {
           title: 'Developer Docs',
-          path: '/docs/developers/',
           children: [
             {
               title: 'Building on Optimistic Ethereum',
@@ -56,7 +60,6 @@ module.exports = {
         },
         {
           title: 'Protocol Docs',
-          path: '/docs/protocol',
           children: [
             {
               title: 'Protocol',
@@ -76,7 +79,6 @@ module.exports = {
         },
         {
           title: 'Additional Resources',
-          path: '/docs/resources',
           children: [
             {
               title: 'Guides and Tutorials',
@@ -87,16 +89,16 @@ module.exports = {
               path: '/docs/resources/protocol-readings.md',
             },
             {
-              title: 'Talks & Videos',
+              title: 'Talks and Videos',
               path: '/docs/resources/talks.md',
             },
             {
-              title: 'Tooling',
+              title: 'Developer Tooling',
               path: '/docs/resources/tooling.md',
             },
           ],
           collapsable: false,
-          sidebarDepth: 1,
+          sidebarDepth: 0,
         }
       ],
       '/compare/': [
