@@ -96,6 +96,10 @@ module.exports = {
               title: 'Developer Tooling',
               path: '/docs/resources/tooling.md',
             },
+            {
+              title: 'General Resources',
+              path: '/docs/resources/general-resources.md',
+            },
           ],
           collapsable: false,
           sidebarDepth: 0,
