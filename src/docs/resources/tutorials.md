@@ -21,7 +21,7 @@ Hop on the [discord](https://discord.gg/5TaAXGn2D8) and make a post in `#resourc
 
 The "official" introductory tutorial by the Optimism team.
 Note, that this tutorial is _short and sweet_.
-For more thorough guides, please refer to other the resources below or to the Protocol/Integration Docs (check the sidebar).
+For more thorough guides, please refer to other the resources below or to the Protocol/Developer Docs (on the sidebar).
 
 ---
 ## [*Porting Solidity Contracts to Optimism: A Guide Using Uniswap V2*](https://hackmd.io/@scopelift/Hy853dTsP)

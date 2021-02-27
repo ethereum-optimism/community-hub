@@ -115,7 +115,7 @@ Because of this, one restriction of the OVM is that there is no `tx.origin` (`OR
 ### Backwards Compatibility
 Developers need not be concerned with any of this when they start building their applications -- we have gone ahead and implemented a standard [ECDSA Contract Account](https://github.com/ethereum-optimism/contracts-v2/blob/master/contracts/optimistic-ethereum/OVM/accounts/OVM_ECDSAContractAccount.sol) which enables backwards compatibility with all existing Ethereum wallets out of the box. In particular, it contains a method `execute(...)` which behaves exactly like EOAs on L1: it recovers the signature based on standard L1 EIP155 transaction encoding, and increments its own nonce the same way as on L1.
 
-The OVM also implements a new opcode, `ovmCREATEEOA`, which enables anybody to deploy the `OVM_ECDSAContractAccount` to the correct address (i.e. what shows up on metamask and is used on L1).  `ovmCREATEEOA` accepts two inputs, a hash and a signature, and recovers the singer of the hash.  This must be a valid L1 EOA account, so an `OVM_ECDSAContractAccount` is deployed to that address.
+The OVM also implements a new opcode, `ovmCREATEEOA`, which enables anybody to deploy the `OVM_ECDSAContractAccount` to the correct address (i.e. what shows up on metamask and is used on L1).  `ovmCREATEEOA` accepts two inputs, a hash and a signature, and recovers the signer of the hash.  This must be a valid L1 EOA account, so an `OVM_ECDSAContractAccount` is deployed to that address.
 
 This deployment is automatically handled by the sequencer the first time an account sends an OVM transaction, so that users need not think about it at all.  The sequencer also handles wrapping the user transaction with a call to `execute(...)`.
 

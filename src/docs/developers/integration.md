@@ -35,7 +35,6 @@ You might also want to take the following two steps depending on your specific n
 ## Compiling and Testing Contracts
 
 ### Setup and Resources
-// TODO: Add a better "required tooling" section.
 
 The first part of getting started with Optimistic Ethereum is to get your contracts up and running on a local L2 node.
 This process involves two primary sub-steps:
@@ -154,7 +153,6 @@ Here's a current list of our testnet endpoints (will be updated when things chan
 | ----------------------------------- | ---------- | ------------------------------------------------------ | ---------------------------------------------------------------- |
 | [Kovan](https://kovan.etherscan.io) | OE Kovan 1 | [https://kovan.optimism.io](https://kovan.optimism.io) | [https://kovan.optimism.io:8546](https://kovan.optimism.io:8546) |
 
-// TODO?
 
 ## Bridging L1 and L2
 ::: tip Work in Progress™
