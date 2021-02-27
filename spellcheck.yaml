@@ -1,0 +1,27 @@
+# spellcheck.yaml
+matrix:
+- name: Markdown
+  expect_match: false
+  apsell:
+    mode: en
+  dictionary:
+    wordlists:
+    - src/dict/default-wordlist.txt
+    - src/dict/custom-wordlist.txt
+    output: src/dict/wordlist.dic
+    encoding: utf-8
+  pipeline:
+  - pyspelling.filters.markdown:
+      markdown_extensions:
+      - markdown.extensions.extra:
+  - pyspelling.filters.html:
+      comments: true
+      attributes:
+      - title
+      - alt
+      ignores:
+      - ':matches(code, pre)'
+      - 'code'
+      - 'pre'
+  sources:
+  - '**/*.md'
