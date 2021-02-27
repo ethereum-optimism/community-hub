@@ -28,7 +28,8 @@ A **thorough** Medium post from Optimism's blog that provides that explains **wh
 * Date: Jan 29, 2021
 * By: [Georgios Konstantopoulos](https://twitter.com/gakonst) (Paradigm Research)
 
-A thorough post by Paradigm's research division that takes a deep dive into the protocol implementation of Optimism's ORUs. **Covers OVM topics like: data availability batches, state commitments, fraud proofs, incentives & bonds, and nuisance gas.**
+A thorough post by Paradigm's research division that takes a deep dive into the protocol implementation of Optimism's ORUs.
+**Covers OVM topics like: data availability batches, state commitments, fraud proofs, incentives & bonds, and nuisance gas.**
 
 ---
 ## [*MEV Auction: Auctioning transaction ordering rights as a solution to Miner Extractable Value*](https://ethresear.ch/t/mev-auction-auctioning-transaction-ordering-rights-as-a-solution-to-miner-extractable-value/6788)
@@ -36,4 +37,4 @@ A thorough post by Paradigm's research division that takes a deep dive into the 
 * Date: Aug 16, 2020
 * By: Karl Floersch
 
-A thorough discussion on miner extractable value auctions (MEVA) by Karl Floersch. MEVA is used in Optimism's ORUs.
+A thorough discussion on miner extractable value auctions (MEVA) by Karl Floersch.
