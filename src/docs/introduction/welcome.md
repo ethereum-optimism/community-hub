@@ -8,11 +8,6 @@ tags:
 
 # {{ $frontmatter.title }}
 
-Welcome to the primary documentation site for the Optimistic Ethereum (OE) protocol.
-Here you'll find a large amount of information about Optimistic Ethereum and Optimistic Rollup systems in general.
-So, **if you've ever wanted to know more about Optimistic Ethereum, you're in the right place.**
-It's great to have you here 😊.
-
 We know documentation can be a bit overwhelming sometimes, especially when the subject matter is unfamiliar.
 Let's make sure you know where to go next!
 
