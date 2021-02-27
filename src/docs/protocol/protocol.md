@@ -161,8 +161,8 @@ In the previous section, we mentioned that the Chain includes a list of the _pro
 resulting from each transaction. Here we explain a bit more about how these proposals happen, and how 
 we come to trust them.
 
-In brief: if a proposed state root is not the correct result of executing a transaction, then a Verifier (which is anyone running an OE 'full node') can initiate a fraud proof. If the transaction is successfully proven to be 
-fraudulent, they Verifier will receive a reward taken from funds which a Sequencer must put up as a bond.
+In brief: If a proposed state root is not the correct result of executing a transaction, then a Verifier (which is anyone running an OE 'full node') can initiate a fraud proof. If the transaction is successfully proven to be 
+fraudulent, the Verifier will receive a reward taken from funds which a Sequencer must put up as a bond.
 
 The fraud proving system is composed of the following concrete contracts:
 
@@ -170,7 +170,7 @@ The fraud proving system is composed of the following concrete contracts:
 
 - **OVM_BondManager:** The Bond Manager contract handles deposits in the form of an ERC20 token from bonded Proposers. It also handles the accounting of gas costs spent by a Verifier during the course of a fraud proof. In the event of a successful fraud proof, the fraudulent Proposer's bond is slashed, and the Verifier's gas costs are refunded.
 
-- **OVM_StateTransitioner:** The State Transitioner coordinates the execution of a state transition during the evaluation of a fraud proof. It feeds verified input to the Execution Manager's run(), and controls a State Manager (which is  uniquely created for each fraud proof). Once a fraud proof has been initialized, this contract is provided with the pre-state root and verifies that the OVM storage slots committed to the State Mangager are contained in that state This contract controls the State Manager and Execution Manager, and uses them to calculate the post-state root by applying the transaction. The Fraud Verifier can then check for fraud by comparing the calculated post-state root with the proposed post-state root.
+- **OVM_StateTransitioner:** The State Transitioner coordinates the execution of a state transition during the evaluation of a fraud proof. It feeds verified input to the Execution Manager's run(), and controls a State Manager (which is  uniquely created for each fraud proof). Once a fraud proof has been initialized, this contract is provided with the pre-state root and verifies that the OVM storage slots committed to the State Manager are contained in that state. This contract controls the State Manager and Execution Manager, and uses them to calculate the post-state root by applying the transaction. The Fraud Verifier can then check for fraud by comparing the calculated post-state root with the proposed post-state root.
 
 - **OVM_StateTransitionerFactory:** Used by the Fraud verifier to create a unique State Transitioner for each fraud proof. 
 <!-- - (TODO: are factories even worth including?) -->
@@ -187,7 +187,7 @@ The fraud proving system is composed of the following concrete contracts:
 The Execution contracts implement the Optimistic Virtual Machine, or OVM. Importantly, these contracts 
 must execute in the same deterministic manner, whether a transaction is run on Layer 2, or Layer 1 (during a fraud proof).
 
-- **OVM_ExecutionManager:** he Execution Manager (EM) is the core of our OVM implementation, and provides a sandboxed environment allowing us to execute OVM transactions deterministically on either Layer 1 or Layer 2. The EM's run() function is the first function called during the execution of any transaction on L2. For each context-dependent EVM operation the EM has a function which implements a corresponding OVM operation, which will read state from the State Manager contract.The EM relies on the Safety Checker to verify that code deployed to Layer 2 does not contain any context-dependent operations.
+- **OVM_ExecutionManager:** The Execution Manager (EM) is the core of our OVM implementation, and provides a sandboxed environment allowing us to execute OVM transactions deterministically on either Layer 1 or Layer 2. The EM's run() function is the first function called during the execution of any transaction on L2. For each context-dependent EVM operation the EM has a function which implements a corresponding OVM operation, which will read state from the State Manager contract. The EM relies on the Safety Checker to verify that code deployed to Layer 2 does not contain any context-dependent operations.
 
 - **OVM_SafetyChecker:** The Safety Checker verifies that contracts deployed on L2 do not contain any "unsafe" operations. An operation is considered unsafe if it would access state variables which are specific to the environment (ie. L1 or L2) in which it is executed, as this could be used to "escape the sandbox" of the OVM, resulting in non-deterministic fraud proofs. That is, an attacker would be able to "prove fraud" on an honestly applied transaction. Note that a "safe" contract requires opcodes to appear in a particular pattern; omission of "unsafe" opcodes is necessary, but not sufficient.
 
@@ -209,7 +209,7 @@ The Bridge contracts implement the functionality required to pass messages betwe
 
 The Bridge is composed of the following concrete contracts:
 
-- **OVM_L1CrossDomainMessenger:** The L1 Cross Domain Messenger (L1xDM)contract sends messages from L1 to L2, and relays messages from L2 onto L1. In the event that a message sent from L1 to L2 is rejected for exceeding the L2 epoch gas limit, it can be resubmitted via this contract's replay function. 
+- **OVM_L1CrossDomainMessenger:** The L1 Cross Domain Messenger (L1xDM) contract sends messages from L1 to L2, and relays messages from L2 onto L1. In the event that a message sent from L1 to L2 is rejected for exceeding the L2 epoch gas limit, it can be resubmitted via this contract's replay function. 
 
 - **OVM_L2CrossDomainMessenger:** The L2 Cross Domain Messenger (L2xDM) contract sends messages from L2 to L1, and is the entry point for L2 messages sent via the L1 Cross Domain Messenger.
 
@@ -231,11 +231,11 @@ Proving fraud against a crossDomain message with a false account for **l1TxOrigi
 The following concrete contracts are predeployed:
 
 
-- **OVM_DeployerWhitelist:** he Deployer Whitelist is a temporary predeploy used to provide additional safety during the initial phases of our mainnet roll out. It is owned by the Optimism team, and defines accounts which are allowed to deploy contracts on Layer2. The Execution Manager will only allow an ovmCREATE or ovmCREATE2 operation to proceed if the deployer's address whitelisted.
+- **OVM_DeployerWhitelist:** The Deployer Whitelist is a temporary predeploy used to provide additional safety during the initial phases of our mainnet roll out. It is owned by the Optimism team, and defines accounts which are allowed to deploy contracts on Layer 2. The Execution Manager will only allow an ovmCREATE or ovmCREATE2 operation to proceed if the deployer's address whitelisted.
 
 - **OVM_ETH:** The ETH predeploy provides an ERC20 interface for ETH deposited to Layer 2. Note that  unlike on Layer 1, Layer 2 accounts do not have a balance field.
-- 
-- **OVM_L1MessageSender:** The L1MessageSender is a predeploy contract running on L2. During the execution of cross  domain transaction from L1 to L2, it returns the address of the L1 account (either an EOA or contract) which sent the message to L2 via the Canonical Transaction Chain's `enqueue()`  function. This contract exclusively serves as a getter for the ovmL1TXORIGIN operation. This is necessary  because there is no corresponding operation in the EVM which the the optimistic solidity compiler  can be replaced with a call to the ExecutionManager's ovmL1TXORIGIN() function.
+
+- **OVM_L1MessageSender:** The L1MessageSender is a predeployed contract running on L2. During the execution of cross  domain transaction from L1 to L2, it returns the address of the L1 account (either an EOA or contract) which sent the message to L2 via the Canonical Transaction Chain's `enqueue()`  function. This contract exclusively serves as a getter for the ovmL1TXORIGIN operation. This is necessary  because there is no corresponding operation in the EVM which the the optimistic solidity compiler  can be replaced with a call to the ExecutionManager's ovmL1TXORIGIN() function.
 
 - **OVM_L2ToL1MessagePasser:** The L2 to L1 Message Passer is a utility contract which facilitate an L1 proof of the  of a message on L2. The L1 Cross Domain Messenger performs this proof in its _verifyStorageProof function, which verifies the existence of the transaction hash in this  contract's `sentMessages` mapping.
 
