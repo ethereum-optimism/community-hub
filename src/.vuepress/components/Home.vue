@@ -18,7 +18,7 @@
       </h1>
 
       <a class="action-button" href="/tutorial">try the tutorial</a>
-      <a class="action-button" href="http://community.optimism.io/docs/introduction/welcome.html">read the docs</a>
+      <a class="action-button" href="/docs">read the docs</a>
       <a class="action-button" href="/faqs">check out the FAQs</a>
       <a class="action-button" href="https://discord.com/invite/jrnFEvq">join the discord</a>
 
