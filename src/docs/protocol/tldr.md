@@ -7,3 +7,6 @@ tags:
 ---
 
 # {{ $frontmatter.title }}
+
+Coming very soon, just waiting on some artwork!
+Sorry!
