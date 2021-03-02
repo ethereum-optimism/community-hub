@@ -41,7 +41,7 @@ module.exports = {
           children: [
             {
               title: 'Welcome! (Start here)',
-              path: '/docs/introduction/welcome.md'
+              path: '/docs/'
             },
           ],
           collapsable: false,
