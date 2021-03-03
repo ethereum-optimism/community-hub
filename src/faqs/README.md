@@ -59,9 +59,6 @@ The Layer 2 ETH ERC20 contract currently resides at the special Layer 2 address 
 **Note**: The [`eth_getBalance` JSON-RPC call](https://eth.wiki/json-rpc/API#eth_getBalance) will retrieve a balance by querying the ETH ERC20 contract and therefore will remain useful for wallets.
 
 ## What are sequencers?
-
-Here's a quick list:
-
 * A sequencer is a special user, selected by a MEVA (Miner Extractable Value Auction), who has the authority to order transactions.
 * A user can send their transaction to the sequencer and get a signed confirmation for instant inclusion.
 * The sequencer receives a bundle of transactions and submits them every couple of minutes.
@@ -74,8 +71,6 @@ _Initially, only authorized parties can_. Eventually, permission will be given v
 
 ## What are bonded proposers?
 
-Here's a quick list:
-
 * A bonded proposer is usually the sequencer.
 * Anyone can become a bonded proposer by putting up some money as a _bond_, but the sequencer gets first priority.
 * A bonded proposer looks at those bundles of transactions, computes the actual Ethereum state trie from the bundle, and then publishes the merkle root onto L1.
@@ -85,8 +80,6 @@ Here's a quick list:
 In the long run, yes! But, you will first have to win an MEV auction. Recall that initially, _only authorized parties_ will have the authority to be a sequencer or bonded proposer.
 
 ## What are (fraud) verifiers/provers?
-
-Here's a quick list:
 
 * Anyone can become a (fraud) verifier.
 * Verifiers compute the actual state but are not looking to propose. Instead, they are looking to catch a bonded proposer who has lied about the correct state.
