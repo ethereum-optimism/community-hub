@@ -22,6 +22,7 @@ Please make sure you've installed the following before continuing:
 
 - [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 - [Node.js](https://nodejs.org/en/download/)
+- [Yarn 1.x](https://yarnpkg.com/en/)
 
 ## Setting Up
 We've structured this tutorial as a follow-along exercise where we'll be writing code in tandem.
