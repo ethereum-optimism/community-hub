@@ -63,6 +63,7 @@ The Layer 2 ETH ERC20 contract currently resides at the special Layer 2 address 
 * A user can send their transaction to the sequencer and get a signed confirmation for instant inclusion.
 * The sequencer receives a bundle of transactions and submits them every couple of minutes.
 * Sequencers earn transaction fees from the transactions that they bundle.
+* Sequencers can order the bundles of transactions however they like in attempt to exploit MEV.
 * If a sequencer does not include a transaction that they have signed and confirmed, a user can submit that signed confirmation to _slash_ the sequencer's bond ([see Paradigm's detailed guide on Optimism's rollups, under "Incentives + Bonds"](https://research.paradigm.xyz/optimism)).
 
 ### Who runs the sequencers?
