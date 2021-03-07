@@ -36,6 +36,15 @@ You might also want to take the following two steps depending on your specific n
 
 ### Setup and Resources
 
+::: tip Required Tooling
+* [`@eth-optimism/plugins`](https://www.npmjs.com/package/@eth-optimism/plugins)
+* [`hardhat`](https://hardhat.org/getting-started/)
+
+Since your OVM-compatible contracts require Optimism's custom `solc` compiler, you'll be using Optimism's `@eth-optimism/plugins` package, which gives you access to both the custom compiler and a custom OVM-compatible version of `ethers`. 
+
+Currently, We're focusing most of our internal development efforts on our [`hardhat`](https://hardhat.org/) tooling. However, we are still attempting to provide continued support for other development frameworks like [`truffle`](https://www.trufflesuite.com/). If any of our plugins are giving you issues, please ping us in our [#tech-support channel](https://discord.gg/NypkmfSkkw) in our discord server and we can help out!
+:::
+
 The first part of getting started with Optimistic Ethereum is to get your contracts up and running on a local L2 node.
 This process involves two primary sub-steps:
 
@@ -60,11 +69,6 @@ For example, you might want to add separate `test:evm` and `test:ovm` scripts th
 **It's very important to make sure that all of your contract tests work in the EVM first before debugging the OVM.**
 Sometimes it looks like the OVM has a bug, when really it's just an error in your contracts.
 
-::: tip
-We're focusing most of our internal development efforts on our [hardhat](https://hardhat.org) tooling.
-However, we are still attempting to provide continued support for other development frameworks like [truffle](https://www.trufflesuite.com/).
-If any of our plugins are giving you issues, please ping us in our [#tech-support channel](https://discord.gg/NypkmfSkkw) in our discord server and we can help out.
-:::
 
 ### Troubleshooting
 
