@@ -54,6 +54,10 @@ module.exports = {
               title: 'Building on Optimistic Ethereum',
               path: '/docs/developers/integration.md'
             },
+            {
+              title: 'Developer Dump',
+              path: '/docs/developers/dev-dump.md'
+            },
           ],
           collapsable: false,
           sidebarDepth: 1,
