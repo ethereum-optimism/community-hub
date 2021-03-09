@@ -194,7 +194,7 @@ The following is an abridged version of the section titled "L1 to L2 interoperab
 
 ---------
 
-Optimism allows asynchronous calls between L1 and L2 users or contracts. Practically, this means that a contract on L1 can make a call to a contract on L2, and vice versa. This contract communication is implemented by deploying "bridge" contracts on both Ethereum and Optimism.
+Optimistic Ethereum allows asynchronous calls between L1 and L2 users or contracts. Practically, this means that a contract on L1 can make a call to a contract on L2, and vice versa. This contract communication is implemented by deploying "messenger" contracts on both Ethereum and Optimistic Ethereum.
 
 The sending chain's contract calls `sendMessage` with the data it wants to pass over, and a relay calls `relayMessage` (from L1 or from L2) on the receiving chain to actually relay the data.
 
@@ -263,13 +263,13 @@ Conveniently, all transactions from L1 to L2 get automatically relayed _by the s
 
 From these calls to `enqueue`, we can, in a way, think of the the sequencer is an "always on" relay for L1 to L2 transactions, while L2 to L1 transactions need to be explicitly relayed by users.
 
-Using the default bridge contracts by Optimism requires all L2 to L1 transactions are at least [1 week old](https://community.optimism.io/faqs/#why-is-there-a-delay-when-moving-assets-from-optimistic-ethereum-to-ethereum). This is so that the transactions are safe from fraud proofs.
+Using the default bridge contracts by Optimism requires all L2 to L1 transactions are at least [1 week old](https://community.optimism.io/faqs/#why-is-there-a-delay-when-moving-assets-from-optimistic-ethereum-to-ethereum). This is to allow enough time for verifiers to submit fraud proofs and prevent invalid withdrawals.
 
 It could be the case that developers deploy their own bridge contracts with semi-trusted mechanisms that allow L2 to L1 transactions with a smaller time restriction. The simplest example of this mechanism would be [depositing an ERC20 on an L1 bridge contract](https://github.com/ethereum-optimism/optimism-tutorial/blob/dev-xdomain/contracts/L1_ERC20Adapter.sol) and [minting the equivalent token amount on L2](https://github.com/ethereum-optimism/optimism-tutorial/blob/dev-xdomain/contracts/L2_ERC20.sol).
 
 ![Passing Messages Between Layer 1 and Layer 2](../..//assets/passing-messages-between-l1-and-l2.png)
 
-As a developer integrating with Optimism's messengers, it's very easy. Just call `<LAYER>CrossDomainMessenger.sendMessage` with the function and target address you want to call on L2. 
+As a developer integrating with Optimism's messengers is very easy. Just call `<LAYER>CrossDomainMessenger.sendMessage` with the calldata, gasLimit and target address you want to call on the destination layer.  
 
 This wraps the message in a [`relayMessage`](https://github.com/ethereum-optimism/contracts/blob/21c38bb51a2d47029b40bdac709eec342d16a761/contracts/optimistic-ethereum/OVM/bridge/messaging/Abs_BaseCrossDomainMessenger.sol#L70-L97) call, targeting the `L2CrossDomainMessenger`. That's all! It's the same general process for L2 to L1. (This is enabled by the `L1MessageSender`, `L1BlockNumber`, and `L1Queue` fields in the message and transaction `meta`.)
 
