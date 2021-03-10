@@ -203,6 +203,43 @@ The Execution Manager (EM) is the core of our OVM implementation, and provides a
 ### [`OVM_SafetyChecker`](https://github.com/ethereum-optimism/contracts/blob/master/contracts/optimistic-ethereum/OVM/execution/OVM_SafetyChecker.sol)
 The Safety Checker verifies that contracts deployed on L2 do not contain any "unsafe" operations. An operation is considered unsafe if it would access state variables which are specific to the environment (ie. L1 or L2) in which it is executed, as this could be used to "escape the sandbox" of the OVM, resulting in non-deterministic fraud proofs. That is, an attacker would be able to "prove fraud" on an honestly applied transaction. Note that a "safe" contract requires opcodes to appear in a particular pattern; omission of "unsafe" opcodes is necessary, but not sufficient.
 
+The following opcodes are disallowed:
+- `ADDRESS`
+- `BALANCE`
+- `ORIGIN`
+- `CALLVALUE`
+- `EXTCODESIZE`
+- `EXTCODECOPY`
+- `EXTCODEHASH`
+- `BLOCKHASH`
+- `COINBASE`
+- `TIMESTAMP`
+- `NUMBER`
+- `DIFFICULTY`
+- `GASLIMIT`
+- `GASPRICE`
+- `CREATE`
+- `CREATE2`
+- `CALLCODE`
+- `DELEGATECALL`
+- `STATICCALL`
+- `SELFDESTRUCT`
+- `SSTORE`
+- `SLOAD`
+- `CHAINID`
+
+The following opcodes are allowed only under special circumstances:
+- `CALLER`
+- `CALL`
+- `REVERT`
+
+These opcodes may appear only as a part of one of the following strings of bytecode:
+
+1. `CALLER PUSH1 0x00 SWAP1 GAS CALL PC PUSH1 0x1d ADD JUMPI RETURNDATASIZE PUSH1 0x01 EQ PC PUSH1 0x0c ADD JUMPI RETURNDATASIZE PUSH1 0x00 DUP1 RETURNDATACOPY RETURNDATASIZE PUSH1 0x00 REVERT JUMPDEST PUSH1 0x01 PUSH1 0x00 RETURN JUMPDEST`
+2. `CALLER POP PUSH1 0x00 PUSH1 0x04 GAS CALL`
+
+Notably, the Safety Checker allows opcodes which are not yet assigned. The Optimistic Ethereum protocol will need to proactively adapt in the event that a new opcode would introduce unsafe behavior.
+
 ### [`OVM_StateManager`](https://github.com/ethereum-optimism/contracts/blob/master/contracts/optimistic-ethereum/OVM/execution/OVM_StateManager.sol)
 The State Manager contract holds all storage values for contracts in the OVM. It can only be written to by the Execution Manager and State Transitioner. It runs on L1 during the setup and execution of a fraud proof. The same logic runs on L2, but has been implemented as a precompile in the L2 go-ethereum client.
 
