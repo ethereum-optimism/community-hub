@@ -112,7 +112,7 @@ Then, run the famous `up.sh` script to spin everything up:
 And that's it!
 You now have an L2 chain (sequencer) at `localhost:9545` connected to an L1 chain at `localhost:8545`.
 
-#### Common Gotchas
+### Common Gotchas
 ::: tip Need help?
 We're doing our best to keep this section updated as common issues come and go.
 If none of the tips here work for you, please report an issue on [discord](https://discord.gg/5TaAXGn2D8).
@@ -121,29 +121,29 @@ If none of the tips here work for you, please report an issue on [discord](https
 People tend to run into a few common issues when first interacting with Optimistic Ethereum.
 Here's a checklist to run through if you're having any problems.
 
-##### Gotcha: Invalid chain ID
+#### Gotcha: Invalid chain ID
 The default chain ID of the `up.sh` script is `420`.
 If you're getting an error when sending transactions, please make sure they you're using the right chain ID.
 
-##### Gotcha: Local node does not charge fees
+#### Gotcha: Local node does not charge fees
 At the moment, the node created by `up.sh` does not charge the user for any fees.
 You can send successfully transactions with `gasPrice = 0`.
 
-##### Gotcha: Constantly exceeding gas limit
+#### Gotcha: Constantly exceeding gas limit
 Because of some technical details about rollups, the maximum gas limit of each transaction is always a bit less than on mainnet.
 You can bypass this during testing by updating [this environment variable](https://github.com/ethereum-optimism/optimism-integration/blob/dccd1b95b890c53679d32b36e14b50165900fb6d/docker-compose.env#L17).
 However, you will still need to decrease your gas usage before deploying to a "live" network.
 
-##### Gotcha: Still seeing the same bug after a patch or new release
+#### Gotcha: Still seeing the same bug after a patch or new release
 We frequently update our software and corresponding docker images.
 Make sure to periodically download the latest code by running the `pull.sh` script inside the `optimism-integration` repository.
 
-##### Gotcha: Gas used appears to be exceeding gas limit
+#### Gotcha: Gas used appears to be exceeding gas limit
 All L2 transactions are technically metatransactions sent by the sequencer.
 This means that `receipt.gasUsed` may be higher than the `tx.gasLimit`, and is currently an underestimate by about 20%.
 This will be fixed in an upcoming release. 
 
-##### Gotcha: Contract deployment appears to fail for no reason
+#### Gotcha: Contract deployment appears to fail for no reason
 Make sure you're compiling with the Optimistic Ethereum version of the Solidity compiler.
 Contract deployments will usually fail if you compile using the standard Solidity compiler.
 
@@ -183,175 +183,107 @@ These contracts are pretty cool and make heavy use of our L1⇔L2 messaging infr
     - [Burning L2 SNX and initiating the withdrawal on L2](https://github.com/Synthetixio/synthetix/blob/49427867e6d50886e0c8725e15c8b87e25aa6f8c/contracts/SynthetixBridgeToBase.sol#L76-L94)
     - [Completing the withdrawal and receiving a balance on L1](https://github.com/Synthetixio/synthetix/blob/49427867e6d50886e0c8725e15c8b87e25aa6f8c/contracts/SynthetixBridgeToOptimism.sol#L126-L136)
 
-## Additional Developer Documentation
+### ☎️ L1 <> L2 Communication
+::: tip Work in Progress™
+This section is also an WIP, but we are quickly working to improve it! If you think that something is unclear, we recommend looking through the OVM's `messaging` contracts for a granular view of this L1 <> L2 communication. As always, feel free to reach out to us on discord with questions 🤗:
 
-### L1 and L2 Communication Overview
-::: tip Old AF™
-This section is in line for some significant updates. 
-It's still technically correct, but we'd like to show it some more love.
+📎 OVM's `messaging` contracts:
+* 📜 [`Abs_BaseCrossDomainMessenger.sol`](https://github.com/ethereum-optimism/contracts/blob/master/contracts/optimistic-ethereum/OVM/bridge/messaging/Abs_BaseCrossDomainMessenger.sol)
+* 📜 [`OVM_L1CrossDomainMessenger.sol`](https://github.com/ethereum-optimism/contracts/blob/master/contracts/optimistic-ethereum/OVM/bridge/messaging/OVM_L1CrossDomainMessenger.sol)
+* 📜 [`OVM_L1MultiMessageRelayer.sol`](https://github.com/ethereum-optimism/contracts/blob/master/contracts/optimistic-ethereum/OVM/bridge/messaging/OVM_L1MultiMessageRelayer.sol)
+* 📜 [`OVM_L2CrossDomainMessenger`](https://github.com/ethereum-optimism/contracts/blob/master/contracts/optimistic-ethereum/OVM/bridge/messaging/OVM_L2CrossDomainMessenger.sol)
 :::
 
-### API
-This section details the interface that our system exposes for implementing L1⇔L2 communication.
-Here are **roughly** the functions you get access to (we're ignoring any of the "fluff" arguments like nonces, etc. that are there in practice).
-If you'd like to view the exact APIs, you can take a look at our [`OVM_L1CrossDomainMessenger`](https://github.com/ethereum-optimism/contracts/blob/master/contracts/optimistic-ethereum/OVM/bridge/messenging/OVM_L1CrossDomainMessenger.sol) and [`OVM_L2CrossDomainMessenger`](https://github.com/ethereum-optimism/contracts/blob/master/contracts/optimistic-ethereum/OVM/bridge/messenging/OVM_L2CrossDomainMessenger.sol) contracts.
+The following is an abridged version of the section titled "L1 to L2 interoperability" in [_How does Optimism's Rollup really work?_](https://research.paradigm.xyz/optimism) by [Georgios Konstantopoulos](https://twitter.com/gakonst) from Paradigm Research.
 
-#### Layer 1 API
+---------
 
-##### sendL1ToL2Message
+Optimistic Ethereum allows asynchronous calls between L1 and L2 users or contracts. Practically, this means that a contract on L1 can make a call to a contract on L2, and vice versa. This contract communication is implemented by deploying "messenger" contracts on both Ethereum and Optimistic Ethereum.
 
-```solidity
-function sendL1ToL2Message(targetL2Contract: address, data: bytes) public;
-```
+The sending chain's contract calls `sendMessage` with the data it wants to pass over, and a relay calls `relayMessage` (from L1 or from L2) on the receiving chain to actually relay the data.
 
-Sends a message the specified some contract on L2. This will trigger a transaction with that `calldata` on L2.
+These methods are shown below for reference:
 
-##### verifyL2ToL1Message
+* (L1 or L2 Sender ) [`sendMessage`](https://github.com/ethereum-optimism/contracts/blob/master/contracts/optimistic-ethereum/OVM/bridge/messaging/Abs_BaseCrossDomainMessenger.sol#L38-L48) of `Abs_BaseCrossDomainMessenger.sol`:
 
 ```solidity
-function verifyL2ToL1Message(l2MessageSender: address, data: bytes) public view returns (bool);
-```
+/**
+ * Sends a cross domain message to the target messenger.
+ * @param _target Target contract address.
+ * @param _message Message to send to the target.
+ * @param _gasLimit Gas limit for the provided message.
+ */
+function sendMessage(
+    address _target,
+    bytes memory _message,
+    uint32 _gasLimit
+)
+    override
+    public
+{
+    bytes memory xDomainCalldata = _getXDomainCalldata(
+        _target,
+        msg.sender,
+        _message,
+        messageNonce
+    );
 
-Verifies that the specified message was sent by the specified contract on L2, and the dispute period has elapsed.
+    messageNonce += 1;
+    sentMessages[keccak256(xDomainCalldata)] = true;
 
-#### Layer 2 API
-
-##### getL1TxOrigin
-
-```solidity
-function getL1TxOrigin() public view returns (address);
-```
-
-Gets the address of the account that called `sendL1ToL2Message(...)` on L1 and triggered this L2 transaction.
-If the current transaction was not sent via `sendL1ToL2Message(...)`, then this function will return the zero address (`0x00...00`).
-
-##### sendL2ToL1Message
-
-```solidity
-function sendL2ToL1Message(data: bytes) public;
-```
-
-Sends a message from L2 to L1, will be verifiable on L1 once the dispute period has elapsed.
-
-### Pseudocode For Deposits and Withdrawals
-Here's some light pseudocode for how you might use the above messaging functions to move ERC20 tokens between Layer 1 and Layer 2.
-We need two contracts in total, one sitting on L1 and another one on L2.
-
-#### Layer 1 Deposit/Withdrawal Contract
-
-::: tip Note
-This is pseudocode and won't actually work if you try to compile it.
-It's just to give you an idea of what's going on.
-:::
-
-```solidity
-contract L1DepositWithdrawalContract {
-    // The rollup contract to handle deposits/withdraws with.
-    address const ROLLUP_CONTRACT: 0x...;
-
-    // Address of the ERC20 token on Layer 1 (Ethereum).
-    address const L1_ERC20_TOKEN: 0x...;
-
-    // Address of the same ERC20 token on Layer 2 (Optimistic Ethereum).
-    address const L2_ERC20_TOKEN_EQUIVALENT: 0x...;
-
-    function depositIntoL2(
-        uint256 _value
-    )
-        public
-    {
-        // Store the deposited funds inside this contract for safekeeping.
-        L1_ERC20_TOKEN_ADDRESS.transferFrom(
-            msg.sender,
-            address(this)
-            value,
-        );
-
-        // Now we tell the L2 contract about the deposit so it can mint equal funds there.
-        // Gotta generate the L1->L2 message calldata.
-        bytes memory data = abi.encodeWithSignature(
-            "processDeposit(uint256,address)",
-            _value,
-            msg.sender
-        );
-
-        // Send the L1->L2 message.
-        ROLLUP_CONTRACT.sendL1ToL2Message(
-            data,
-            L2_ERC20_TOKEN_EQUIVALENT
-        );
-    }
-
-    function redeemWithdrawal(
-        uint256 _amount        
-    )
-        public
-    {
-        address withdrawer = msg.sender;
-
-        // If the withrawal is permitted, this is what should've been sent.
-        bytes memory expectedData = abi.encodePacked(
-            withdrawer,
-            _amount
-        );
-
-        // Verify that the correct L2 contract did indeed authenticate this withdrawal.
-        ROLLUP_CONTRACT.verifyL2ToL1Message(
-            expectedData,
-            L2_ERC20_TOKEN_EQUIVALENT
-        )
-
-        // Send to the withdrawer.
-        L1_ERC20_TOKEN.transfer(amount, withdrawer)
-    }
+    _sendXDomainMessage(xDomainCalldata, _gasLimit);
+    emit SentMessage(xDomainCalldata);
 }
 ```
 
-#### Layer 2 Deposit/Withdrawal Contract
-
-This OVM contract would be deployed at `L2_ERC20_TOKEN_EQUIVALENT` going by the above code.
-Assume it extends a base ERC20 class which allows `mint()`ing and `burn()`ing coins to particular addresses.
-
+2. (L1 Receiver) [`relayMessage`](https://github.com/ethereum-optimism/contracts/blob/master/contracts/optimistic-ethereum/OVM/bridge/messaging/OVM_L1CrossDomainMessenger.sol#L79-L89) of  `OVM_L1CrossDomainMessenger.sol`:
 ```solidity
-import { OvmUtils } from 'somewhere';
-
-contract L2DepositWithdrawalContract is ERC20WithMintAndBurn {
-    // This would be the delpoyed L1 contract above
-    address const L1_DEPOSIT_CONTRACT = 0x...;
-
-    function processDeposit(
-        uint256 _amount,
-        address _depositer
-    )
-        public
-    {
-        // Make sure this is really a deposit.
-        require(
-            OvmUtils.getL1TxOrigin() == L1_DEPOSIT_CONTRACT,
-            'Only the deposit contract may mint this bridged L2 token.'
-        );
-
-        // Mint the L2 version of the token to depositer.
-        mint(_amount, _depositer);
-    }
-
-    function withdrawToL1(
-        uint256 _amount
-    )
-        public
-    {
-        address withdrawer = msg.sender;
-
-        // we need to tell the L1 contract who is withdrawing, and how much.
-        bytes memory data = concat(withdrawer, _amount);
-
-        // send off the message to L1
-        OvmUtils.sendL2ToL1Message(data);
-
-        // Now that it will be unlockable on L1, it must be burned here
-        burn(withdrawer, _amount);
-
-        // That's it, just wait the dispute period to reedeem!
-    }
-}
+/**
+ * Relays a cross domain message to a contract.
+ */
+function relayMessage(
+    address _target,
+    address _sender,
+    bytes memory _message,
+    uint256 _messageNonce,
+    L2MessageInclusionProof memory _proof
+)
 ```
+
+3. (L2 Receiver) [`relayMessage`](https://github.com/ethereum-optimism/contracts/blob/master/contracts/optimistic-ethereum/OVM/bridge/messaging/OVM_L2CrossDomainMessenger.sol#L46-L55) of `OVM_L2CrossDomainMessenger.sol`:
+```solidity
+/**
+ * Relays a cross domain message to a contract.
+ */
+function relayMessage(
+    address _target,
+    address _sender,
+    bytes memory _message,
+    uint256 _messageNonce
+)
+```
+
+Conveniently, all transactions from L1 to L2 get automatically relayed _by the sequencer_. This happens because the L1 ➡️ L2 bridge calls [`enqueue`](https://github.com/ethereum-optimism/contracts/blob/21c38bb51a2d47029b40bdac709eec342d16a761/contracts/optimistic-ethereum/OVM/bridge/messaging/OVM_L1CrossDomainMessenger.sol#L287-L291), queuing up a transaction for execution by the sequencer.
+
+From these calls to `enqueue`, we can, in a way, think of the the sequencer is an "always on" relay for L1 to L2 transactions, while L2 to L1 transactions need to be explicitly relayed by users.
+
+Using the default bridge contracts by Optimism requires all L2 to L1 transactions are at least [1 week old](https://community.optimism.io/faqs/#why-is-there-a-delay-when-moving-assets-from-optimistic-ethereum-to-ethereum). This is to allow enough time for verifiers to submit fraud proofs and prevent invalid withdrawals.
+
+It could be the case that developers deploy their own bridge contracts with semi-trusted mechanisms that allow L2 to L1 transactions with a smaller time restriction. The simplest example of this mechanism would be [depositing an ERC20 on an L1 bridge contract](https://github.com/ethereum-optimism/optimism-tutorial/blob/dev-xdomain/contracts/L1_ERC20Adapter.sol) and [minting the equivalent token amount on L2](https://github.com/ethereum-optimism/optimism-tutorial/blob/dev-xdomain/contracts/L2_ERC20.sol).
+
+![Passing Messages Between Layer 1 and Layer 2](../..//assets/passing-messages-between-l1-and-l2.png)
+
+As a developer integrating with Optimism's messengers is very easy. Just call `<LAYER>CrossDomainMessenger.sendMessage` with the calldata, gasLimit and target address you want to call on the destination layer.  
+
+This wraps the message in a [`relayMessage`](https://github.com/ethereum-optimism/contracts/blob/21c38bb51a2d47029b40bdac709eec342d16a761/contracts/optimistic-ethereum/OVM/bridge/messaging/Abs_BaseCrossDomainMessenger.sol#L70-L97) call, targeting the `L2CrossDomainMessenger`. That's all! It's the same general process for L2 to L1. (This is enabled by the `L1MessageSender`, `L1BlockNumber`, and `L1Queue` fields in the message and transaction `meta`.)
+
+---------
+
+<!-- platocrat's TODO: 
+
+1. Clarify how to interact with these messenger contracts on the page, instead of referring to many external links.
+
+2. Does this section L1 <> L2 comms section provide you enough info to buidl? If not, improve it so it does.
+
+3. Perhaps demo some of the code from the `dev-xdomain` repo in this L1 <> L2 comms section.
+--->
