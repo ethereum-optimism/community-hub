@@ -224,6 +224,7 @@ The following opcodes are disallowed:
 - `DELEGATECALL`
 - `STATICCALL`
 - `SELFDESTRUCT`
+- `SELFBALANCE`
 - `SSTORE`
 - `SLOAD`
 - `CHAINID`
