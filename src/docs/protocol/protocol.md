@@ -207,7 +207,6 @@ The following opcodes are disallowed:
 - `ADDRESS`
 - `BALANCE`
 - `ORIGIN`
-- `CALLVALUE`
 - `EXTCODESIZE`
 - `EXTCODECOPY`
 - `EXTCODEHASH`
@@ -236,7 +235,7 @@ The following opcodes are allowed only under special circumstances:
 
 These opcodes may appear only as a part of one of the following strings of bytecode:
 
-1. `CALLER PUSH1 0x00 SWAP1 GAS CALL PC PUSH1 0x1d ADD JUMPI RETURNDATASIZE PUSH1 0x01 EQ PC PUSH1 0x0c ADD JUMPI RETURNDATASIZE PUSH1 0x00 DUP1 RETURNDATACOPY RETURNDATASIZE PUSH1 0x00 REVERT JUMPDEST PUSH1 0x01 PUSH1 0x00 RETURN JUMPDEST`
+1. `CALLER PUSH1 0x00 SWAP1 GAS CALL PC PUSH1 0x0E ADD JUMPI RETURNDATASIZE PUSH1 0x00 DUP1 RETURNDATACOPY RETURNDATASIZE PUSH1 0x00 REVERT JUMPDEST RETURNDATASIZE PUSH1 0x01 EQ ISZERO PC PUSH1 0x0a ADD JUMPI PUSH1 0x01 PUSH1 0x00 RETURN JUMPDEST`
 2. `CALLER POP PUSH1 0x00 PUSH1 0x04 GAS CALL`
 
 Notably, the Safety Checker allows opcodes which are not yet assigned. The Optimistic Ethereum protocol will need to proactively adapt in the event that a new opcode would introduce unsafe behavior.
