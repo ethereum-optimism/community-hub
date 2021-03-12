@@ -12,12 +12,12 @@ module.exports = {
 
   themeConfig: {
     repo: 'https://github.com/ethereum-optimism/community-hub',
-    repoLabel: 'Edit on GitHub!',
+    repoLabel: 'github',
     editLinks: true,
     docsDir: 'src',
     docsRepo: 'https://github.com/ethereum-optimism/community-hub',
     docsBranch: 'experimental',
-    editLinkText: 'Help us improve this page!',
+    editLinkText: 'Something off? Suggest an edit to this page on GitHub by clicking here ✏️',
     lastUpdated: false,
     nav: [
       {
