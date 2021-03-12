@@ -62,7 +62,12 @@ If you're using another testing suite like [truffle](https://www.trufflesuite.co
 - [`@eth-optimism/plugins`](https://www.npmjs.com/package/@eth-optimism/plugins): exports "OVM-ified" `waffle.mockProvider` and `ganache` packages which will work with contracts output by the compiler.
 
 An example of usage with [waffle](https://getwaffle.io) can be found in [this great tutorial](https://github.com/ScopeLift/ovm-uniswap-v2-core#porting-solidity-contracts-to-optimism-a-guide-using-uniswap-v2) by [Scopelift](https://www.scopelift.co/) which walks through getting Uniswap V2 ported over.
-If you are using [truffle](https://www.trufflesuite.com/), [here is an example config file](https://github.com/ethereum-optimism/optimism-monorepo/blob/6b535ab759aa2d4bf9325d40ea68aa5f7fc466a6/packages/ovm-toolchain/test/config/truffle-config.js) which shows how to incorporate the compiler and `ganache` for the OVM.
+
+<!--           DEAD LINK!  Should we remove?
+
+If you are using [truffle](https://www.trufflesuite.com/), [here is an example config file](https://github.com/ethereum-optimism/optimism-monorepo/blob/master/packages/ovm-toolchain/test/config/truffle-config.js) which shows how to incorporate the compiler and `ganache` for the OVM. 
+
+-->
 
 We recommend preserving EVM functionality when doing your port.
 For example, you might want to add separate `test:evm` and `test:ovm` scripts that use different `truffle-config.js` and `truffle-config-ovm.js` configuration files.
@@ -131,7 +136,7 @@ You can send successfully transactions with `gasPrice = 0`.
 
 #### Gotcha: Constantly exceeding gas limit
 Because of some technical details about rollups, the maximum gas limit of each transaction is always a bit less than on mainnet.
-You can bypass this during testing by updating [this environment variable](https://github.com/ethereum-optimism/optimism-integration/blob/dccd1b95b890c53679d32b36e14b50165900fb6d/docker-compose.env#L17).
+You can bypass this during testing by updating the gas limit in [this config file](https://github.com/ethereum-optimism/optimism-integration/blob/master/docker-compose.env.yml#L45).
 However, you will still need to decrease your gas usage before deploying to a "live" network.
 
 #### Gotcha: Still seeing the same bug after a patch or new release
@@ -178,14 +183,14 @@ In the meantime, you may be interested in taking a look at the Synthetix Bridge 
 These contracts are pretty cool and make heavy use of our L1⇔L2 messaging infrastructure:
 
 1. Depositing SNX into L2
-    - [Initiating a deposit on L1](https://github.com/Synthetixio/synthetix/blob/49427867e6d50886e0c8725e15c8b87e25aa6f8c/contracts/SynthetixBridgeToOptimism.sol#L190-L205)
-    - [Which leads to receiving a balance on L2](https://github.com/Synthetixio/synthetix/blob/49427867e6d50886e0c8725e15c8b87e25aa6f8c/contracts/SynthetixBridgeToBase.sol#L111-L115)
+    - [Initiating a deposit on L1](https://github.com/Synthetixio/synthetix/blob/master/contracts/SynthetixBridgeToOptimism.sol#L190-L205)
+    - [Which leads to receiving a balance on L2](https://github.com/Synthetixio/synthetix/blob/master/contracts/SynthetixBridgeToBase.sol#L111-L115)
 2. Migrate SNX Escrow entries to L2 (transferring large amounts of state from L1->L2):
-    - [Initiating a migration on L1](https://github.com/Synthetixio/synthetix/blob/49427867e6d50886e0c8725e15c8b87e25aa6f8c/contracts/SynthetixBridgeToOptimism.sol#L207-L236)
-    - [Which leads to receiving escrow entries on L2](https://github.com/Synthetixio/synthetix/blob/49427867e6d50886e0c8725e15c8b87e25aa6f8c/contracts/SynthetixBridgeToBase.sol#L98-L108)
+    - [Initiating a migration on L1](https://github.com/Synthetixio/synthetix/blob/master/contracts/SynthetixBridgeToOptimism.sol#L207-L236)
+    - [Which leads to receiving escrow entries on L2](https://github.com/Synthetixio/synthetix/blob/master/contracts/SynthetixBridgeToBase.sol#L98-L108)
 3. Withdrawing SNX to L1:
-    - [Burning L2 SNX and initiating the withdrawal on L2](https://github.com/Synthetixio/synthetix/blob/49427867e6d50886e0c8725e15c8b87e25aa6f8c/contracts/SynthetixBridgeToBase.sol#L76-L94)
-    - [Completing the withdrawal and receiving a balance on L1](https://github.com/Synthetixio/synthetix/blob/49427867e6d50886e0c8725e15c8b87e25aa6f8c/contracts/SynthetixBridgeToOptimism.sol#L126-L136)
+    - [Burning L2 SNX and initiating the withdrawal on L2](https://github.com/Synthetixio/synthetix/blob/master/contracts/SynthetixBridgeToBase.sol#L76-L94)
+    - [Completing the withdrawal and receiving a balance on L1](https://github.com/Synthetixio/synthetix/blob/master/contracts/SynthetixBridgeToOptimism.sol#L126-L136)
 
 ### ☎️ L1 <> L2 Communication
 ::: tip Work in Progress™
@@ -267,7 +272,7 @@ function relayMessage(
 )
 ```
 
-Conveniently, all transactions from L1 to L2 get automatically relayed _by the sequencer_. This happens because the L1 ➡️ L2 bridge calls [`enqueue`](https://github.com/ethereum-optimism/contracts/blob/21c38bb51a2d47029b40bdac709eec342d16a761/contracts/optimistic-ethereum/OVM/bridge/messaging/OVM_L1CrossDomainMessenger.sol#L287-L291), queuing up a transaction for execution by the sequencer.
+Conveniently, all transactions from L1 to L2 get automatically relayed _by the sequencer_. This happens because the L1 ➡️ L2 bridge calls [`enqueue`](https://github.com/ethereum-optimism/contracts/blob/master/contracts/optimistic-ethereum/OVM/bridge/messaging/OVM_L1CrossDomainMessenger.sol#L286-L291), queuing up a transaction for execution by the sequencer.
 
 From these calls to `enqueue`, we can, in a way, think of the the sequencer is an "always on" relay for L1 to L2 transactions, while L2 to L1 transactions need to be explicitly relayed by users.
 
@@ -279,7 +284,7 @@ It could be the case that developers deploy their own bridge contracts with semi
 
 As a developer integrating with Optimism's messengers is very easy. Just call `<LAYER>CrossDomainMessenger.sendMessage` with the calldata, gasLimit and target address you want to call on the destination layer.  
 
-This wraps the message in a [`relayMessage`](https://github.com/ethereum-optimism/contracts/blob/21c38bb51a2d47029b40bdac709eec342d16a761/contracts/optimistic-ethereum/OVM/bridge/messaging/Abs_BaseCrossDomainMessenger.sol#L70-L97) call, targeting the `L2CrossDomainMessenger`. That's all! It's the same general process for L2 to L1. (This is enabled by the `L1MessageSender`, `L1BlockNumber`, and `L1Queue` fields in the message and transaction `meta`.)
+This wraps the message in a [`relayMessage`](https://github.com/ethereum-optimism/contracts/blob/master/contracts/optimistic-ethereum/OVM/bridge/messaging/Abs_BaseCrossDomainMessenger.sol#L70-L97) call, targeting the `L2CrossDomainMessenger`. That's all! It's the same general process for L2 to L1. (This is enabled by the `L1MessageSender`, `L1BlockNumber`, and `L1Queue` fields in the message and transaction `meta`.)
 
 ---------
 
@@ -289,5 +294,8 @@ This wraps the message in a [`relayMessage`](https://github.com/ethereum-optimis
 
 2. Does this section L1 <> L2 comms section provide you enough info to buidl? If not, improve it so it does.
 
-3. Perhaps demo some of the code from the `dev-xdomain` repo in this L1 <> L2 comms section.
+3. Perhaps demo some of the code from the `` repo in this L1 <> L2 comms section.
+
+We now have this standard deposit/withdrawal example that allows deploying of an L1<>L2 token bridge to a local network: https://github.com/ethereum-optimism/optimism-tutorial/tree/deposit-withdrawal
+
 --->
