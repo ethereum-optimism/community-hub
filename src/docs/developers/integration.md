@@ -299,3 +299,33 @@ This wraps the message in a [`relayMessage`](https://github.com/ethereum-optimis
 We now have this standard deposit/withdrawal example that allows deploying of an L1<>L2 token bridge to a local network: https://github.com/ethereum-optimism/optimism-tutorial/tree/deposit-withdrawal
 
 --->
+
+### 🌉 ETH and Token Bridges
+
+Just like on L1, gas fees (i.e. transaction fees on Ethereum, usually denominated in [Gwei](https://gwei.io/)) still apply on L2.
+That means that you need to deposit some ether (ETH) to L2 to be able to pay for these gas fees.
+However, you cannot just directly transfer your ETH from an L1 smart contract or EOA (i.e. wallet) to Optimistic Ethereum's L2.
+
+This is where the ETH (and token) bridge come in!
+
+#### The Standard™️ ETH Bridge
+
+Optimistic Ethereum comes with a standard ETH bridge, [`OVM_L1ETHGateway.sol`](https://github.com/ethereum-optimism/contracts/blob/master/contracts/optimistic-ethereum/OVM/bridge/tokens/OVM_L1ETHGateway.sol). This smart contract acts as a _bridge_ between L1 and L2, letting users deposit ETH into the contract on L1 so that it can be used on L2. 
+
+`OVM_L1ETHGateway` has three important methods to keep in mind:
+
+1. [`initiateDeposit()`](https://github.com/ethereum-optimism/contracts/blob/master/contracts/optimistic-ethereum/OVM/bridge/tokens/OVM_L1ETHGateway.sol#L90-L95): an internal method, where the all the super secret magic happens to create our deposits 🪄 ✨.
+2. [`_deposit()`](https://github.com/ethereum-optimism/contracts/blob/master/contracts/optimistic-ethereum/OVM/bridge/tokens/OVM_L1ETHGateway.sol#L62-L68): an external and payable method, used to call `_initiateDeposit()`, and passes in the caller's address as `msg.sender` to the `_to` and `_from` arguments of `_initiateDeposit()`.
+3. [`receive()`](https://github.com/ethereum-optimism/contracts/blob/master/contracts/optimistic-ethereum/OVM/bridge/tokens/OVM_L1ETHGateway.sol#L162-L168): an another external and payable method, which [will](https://github.com/ethereum-optimism/contracts/pull/311) allow the `OVM_L1ETHGateway` to accept ETH that you send directly to it (by calling `_initiateDeposit()`, similarly to `_deposit()`)
+
+Of these, the most important to keep in mind as a _user_, is the `receive()` method, which has a flow like this:
+
+![User flow for OVM_L1ETHGateway](../../assets/userflow-OVM_L1ETHGateway.png)
+
+With a smart contract, the flow would instead use the `_deposit()` method and look like this:
+
+![Contract flow for OVM_L1ETHGateway](../../assets/contractflow-OVM_L1ETHGateway.png)
+
+
+
+#### Short demo of standard ETH/token bridge
