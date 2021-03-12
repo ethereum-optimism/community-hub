@@ -306,7 +306,7 @@ Just like on L1, gas fees (i.e. transaction fees on Ethereum, usually denominate
 That means that you need to deposit some ether (ETH) to L2 to be able to pay for these gas fees.
 However, you cannot just directly transfer your ETH from an L1 smart contract or EOA (i.e. wallet) to Optimistic Ethereum's L2.
 
-This is where the ETH (and token) bridge come in!
+This is where the ETH (and token) bridges come in!
 
 #### The Standard™️ ETH Bridge
 
@@ -314,9 +314,9 @@ Optimistic Ethereum comes with a standard ETH bridge, [`OVM_L1ETHGateway.sol`](h
 
 `OVM_L1ETHGateway` has three important methods to keep in mind:
 
-1. [`initiateDeposit()`](https://github.com/ethereum-optimism/contracts/blob/master/contracts/optimistic-ethereum/OVM/bridge/tokens/OVM_L1ETHGateway.sol#L90-L95): an internal method, where the all the super secret magic happens to create our deposits 🪄 ✨.
-2. [`_deposit()`](https://github.com/ethereum-optimism/contracts/blob/master/contracts/optimistic-ethereum/OVM/bridge/tokens/OVM_L1ETHGateway.sol#L62-L68): an external and payable method, used to call `_initiateDeposit()`, and passes in the caller's address as `msg.sender` to the `_to` and `_from` arguments of `_initiateDeposit()`.
-3. [`receive()`](https://github.com/ethereum-optimism/contracts/blob/master/contracts/optimistic-ethereum/OVM/bridge/tokens/OVM_L1ETHGateway.sol#L162-L168): an another external and payable method, which [will](https://github.com/ethereum-optimism/contracts/pull/311) allow the `OVM_L1ETHGateway` to accept ETH that you send directly to it (by calling `_initiateDeposit()`, similarly to `_deposit()`)
+1. [`initiateDeposit()`](https://github.com/ethereum-optimism/contracts/blob/master/contracts/optimistic-ethereum/OVM/bridge/tokens/OVM_L1ETHGateway.sol#L90-L95) is an internal method where the all the super secret magic happens to create our deposits 🪄 ✨.
+2. [`_deposit()`](https://github.com/ethereum-optimism/contracts/blob/master/contracts/optimistic-ethereum/OVM/bridge/tokens/OVM_L1ETHGateway.sol#L62-L68) is external and payable method used to call `_initiateDeposit()`, and passes in the caller's address as `msg.sender` to the `_to` and `_from` arguments of `_initiateDeposit()`.
+3. [`receive()`](https://github.com/ethereum-optimism/contracts/blob/master/contracts/optimistic-ethereum/OVM/bridge/tokens/OVM_L1ETHGateway.sol#L162-L168) is an another external and payable method which [will](https://github.com/ethereum-optimism/contracts/pull/311) allow the `OVM_L1ETHGateway` to accept ETH that you send directly to it (by calling `_initiateDeposit()`, similarly to `_deposit()`)
 
 Of these, the most important to keep in mind as a _user_, is the `receive()` method, which has a flow like this:
 
@@ -327,5 +327,26 @@ With a smart contract, the flow would instead use the `_deposit()` method and lo
 ![Contract flow for OVM_L1ETHGateway](../../assets/contractflow-OVM_L1ETHGateway.png)
 
 
+#### Token Bridges
 
-#### Short demo of standard ETH/token bridge
+Similar to the ETH bridge, Optimistic Ethereum comes with bridge contracts that allow for _any_ token transfers between L1 and L2. 
+
+These contracts are:
+1. [`Abs_L1TokenGateway.sol`](https://github.com/ethereum-optimism/contracts/blob/master/contracts/optimistic-ethereum/OVM/bridge/tokens/Abs_L1TokenGateway.sol)
+2. [`Abs_L2DepositedToken`](https://github.com/ethereum-optimism/contracts/blob/master/contracts/optimistic-ethereum/OVM/bridge/tokens/Abs_L2DepositedToken.sol)
+3. [`OVM_L1ERC20Gateway.sol`](https://github.com/ethereum-optimism/contracts/blob/master/contracts/optimistic-ethereum/OVM/bridge/tokens/OVM_L1ERC20Gateway.sol)
+4. [`OVM_L2DepositedERC20.sol`](https://github.com/ethereum-optimism/contracts/blob/master/contracts/optimistic-ethereum/OVM/bridge/tokens/OVM_L2DepositedERC20.sol)
+
+:::tip How-Tos WIP™️
+Guides for how to use these contracts are fast approaching! But they are still WIPs. In the meantime, check out this deposit-withdraw guide below 😉.
+
+As always, reach out to us on [discord](https://discord.gg/5TaAXGn2D8) with any questions, feedback, or issues you may have in these docs. We're here to help!
+:::
+
+Luckily for you, we made a simple example deposit-and-withdraw guide for how to use `Abs_L2DepositedToken.sol` on the [`deposit-withdraw`](https://github.com/ethereum-optimism/optimism-tutorial/tree/deposit-withdrawal) branch of the `optimism-tutorial` repo! 
+The exciting L2 code 😋 you've been waiting for can be found in `contracts/MyL2DepositedERC20.sol` of that branch, and if you run through the `README.md` to deploy your ERC20 contract to your local Optimistic Ethereum L2, you'll be able to see the message-passing system at work in the logs while making an L1 to L2 ERC20 deposit, and back again, with an L2 to L1 ERC20 deposit.
+Those logs should look something like this, if you went through the steps correctly:
+
+![Deploy ERC20, L1 to L2 Deposit, and L2 to L1 Deposit](../../assets/deployERC20-L1toL2Deposit-and-L2toL1Deposit.png)
+
+Doesn't that look absolutely beautiful 😍😍😍!! From here, you're off to the races and ready for testing on Kovan! 🎉
