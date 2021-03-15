@@ -11,10 +11,13 @@ module.exports = {
   ],
 
   themeConfig: {
-    repo: '',
-    editLinks: false,
-    docsDir: '',
-    editLinkText: '',
+    repo: 'https://github.com/ethereum-optimism/community-hub',
+    repoLabel: 'github',
+    editLinks: true,
+    docsDir: 'src',
+    docsRepo: 'https://github.com/ethereum-optimism/community-hub',
+    docsBranch: 'experimental',
+    editLinkText: 'Something off? Suggest an edit to this page on GitHub by clicking here ✏️',
     lastUpdated: false,
     nav: [
       {
@@ -53,6 +56,10 @@ module.exports = {
             {
               title: 'Building on Optimistic Ethereum',
               path: '/docs/developers/integration.md'
+            },
+            {
+              title: 'Developer Dump',
+              path: '/docs/developers/dev-dump.md'
             },
           ],
           collapsable: false,

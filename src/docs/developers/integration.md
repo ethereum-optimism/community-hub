@@ -147,6 +147,10 @@ This will be fixed in an upcoming release.
 Make sure you're compiling with the Optimistic Ethereum version of the Solidity compiler.
 Contract deployments will usually fail if you compile using the standard Solidity compiler.
 
+#### Gotcha: Revert reasons are not returned on `eth_sendRawTransaction` calls
+When `geth` was forked for Optimistic Ethereum, the `geth` had not yet started returning revert reasons for `eth_sendRawTransaction`s. 
+Thus, if you want to retrieve a revert reason for a failing L2 transaction on `eth_sendRawTransaction` calls, you will need to make an `eth_call` (e.g. similar to [this](https://github.com/Synthetixio/synthetix/blob/develop/test/optimism/utils/revertOptimism.js)) at the block height for that transaction. 
+
 ### Testnet Deployment
 You probably want to deploy to testnet before heading over to mainnet (good idea, tbh).
 Our primary L2 testnet is currently deployed on top of Ethereum's [Kovan](https://kovan.etherscan.io) network.
