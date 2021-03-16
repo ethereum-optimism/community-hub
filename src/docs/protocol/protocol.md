@@ -227,18 +227,16 @@ The following opcodes are disallowed:
 - `SSTORE`
 - `SLOAD`
 - `CHAINID`
+- `CALLER`*
+- `CALL`*
+- `REVERT`*
 
-The following opcodes are allowed only under special circumstances:
-- `CALLER`
-- `CALL`
-- `REVERT`
-
-These opcodes may appear only as a part of one of the following strings of bytecode:
+\* The `CALLER`, `CALL`, and `REVERT` opcodes are also disallowed, except in the special case that they appear as part of one of the following strings of bytecode:
 
 1. `CALLER PUSH1 0x00 SWAP1 GAS CALL PC PUSH1 0x0E ADD JUMPI RETURNDATASIZE PUSH1 0x00 DUP1 RETURNDATACOPY RETURNDATASIZE PUSH1 0x00 REVERT JUMPDEST RETURNDATASIZE PUSH1 0x01 EQ ISZERO PC PUSH1 0x0a ADD JUMPI PUSH1 0x01 PUSH1 0x00 RETURN JUMPDEST`
 2. `CALLER POP PUSH1 0x00 PUSH1 0x04 GAS CALL`
 
-Notably, the Safety Checker allows opcodes which are not yet assigned. The Optimistic Ethereum protocol will need to proactively adapt in the event that a new opcode would introduce unsafe behavior.
+Opcodes which are not yet assigned in the EVM are also disallowed.
 
 ### [`OVM_StateManager`](https://github.com/ethereum-optimism/contracts/blob/master/contracts/optimistic-ethereum/OVM/execution/OVM_StateManager.sol)
 The State Manager contract holds all storage values for contracts in the OVM. It can only be written to by the Execution Manager and State Transitioner. It runs on L1 during the setup and execution of a fraud proof. The same logic runs on L2, but has been implemented as a precompile in the L2 go-ethereum client.
@@ -288,7 +286,10 @@ The Deployer Whitelist is a temporary predeploy used to provide additional safet
 The ETH predeploy provides an ERC20 interface for ETH deposited to Layer 2. Note that  unlike on Layer 1, Layer 2 accounts do not have a balance field.
 
 ### [`OVM_L1MessageSender`](https://github.com/ethereum-optimism/contracts/blob/master/contracts/optimistic-ethereum/OVM/precompiles/OVM_L1MessageSender.sol)
-The L1MessageSender is a predeployed contract running on L2. During the execution of cross  domain transaction from L1 to L2, it returns the address of the L1 account (either an EOA or contract) which sent the message to L2 via the Canonical Transaction Chain's `enqueue()`  function. This contract exclusively serves as a getter for the `ovmL1TXORIGIN` operation. This is necessary because there is no corresponding EVM opcode which the optimistic solidity compiler could replace with a call to the ExecutionManager's `ovmL1TXORIGIN()` function. That is, if a contract on L2 wants to know which L1 address initiated a call on L2, the way to do it is by calling `OVM_L1MessageSender.ovmL1TXORIGIN()`.
+The L1MessageSender is a predeployed contract running on L2. During the execution of cross  domain transaction from L1 to L2, it returns the address of the L1 account (either an EOA or contract) which sent the message to L2 via the Canonical Transaction Chain's `enqueue()`  function.
+This contract exclusively serves as a getter for the `ovmL1TXORIGIN` operation.
+This is necessary because there is no corresponding EVM opcode which the optimistic solidity compiler could replace with a call to the ExecutionManager's `ovmL1TXORIGIN()` function.
+That is, if a contract on L2 wants to know which L1 address initiated a call on L2, the way to do it is by calling `OVM_L1MessageSender.ovmL1TXORIGIN()`.
 
 ### [`OVM_L2ToL1MessagePasser`](https://github.com/ethereum-optimism/contracts/blob/master/contracts/optimistic-ethereum/OVM/precompiles/OVM_L2ToL1MessagePasser.sol)
 The L2 to L1 Message Passer is a utility contract which facilitate an L1 proof of the  of a message on L2. The L1 Cross Domain Messenger performs this proof in its _verifyStorageProof function, which verifies the existence of the transaction hash in this  contract's `sentMessages` mapping.
