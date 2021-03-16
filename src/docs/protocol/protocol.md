@@ -286,9 +286,11 @@ The Deployer Whitelist is a temporary predeploy used to provide additional safet
 The ETH predeploy provides an ERC20 interface for ETH deposited to Layer 2. Note that  unlike on Layer 1, Layer 2 accounts do not have a balance field.
 
 ### [`OVM_L1MessageSender`](https://github.com/ethereum-optimism/contracts/blob/master/contracts/optimistic-ethereum/OVM/precompiles/OVM_L1MessageSender.sol)
-The L1MessageSender is a predeployed contract running on L2. During the execution of a cross domain transaction from L1 to L2, it returns the address of the L1 account (either an EOA or contract) which sent the message to L2 via the Canonical Transaction Chain's `enqueue()`  function. This contract exclusively serves as a getter for the `ovmL1TXORIGIN` operation, i.e. if a contract on L2 wants to know which L1 address initiated the call on L2, it can find out by calling `OVM_L1MessageSender.ovmL1TXORIGIN()`. 
-
-This is necessary because making an `ovmCALL` to the Execution Manager is disallowed, and there is no corresponding EVM opcode which the optimistic solidity compiler could replace with a call to the ExecutionManager's `ovmL1TXORIGIN()` function.
+The L1MessageSender is a predeployed contract running on L2.
+During the execution of cross domain transaction from L1 to L2, it returns the address of the L1 account (either an EOA or contract) which sent the message to L2 via the Canonical Transaction Chain's `enqueue()` function.
+This contract exclusively serves as a getter for the `ovmL1TXORIGIN` operation.
+This is necessary because there is no corresponding EVM opcode which the optimistic solidity compiler could replace with a call to the ExecutionManager's `ovmL1TXORIGIN()` function.
+That is, if a contract on L2 wants to know which L1 address initiated a call on L2, the way to do it is by calling `OVM_L1MessageSender.ovmL1TXORIGIN()`.
 
 ### [`OVM_L2ToL1MessagePasser`](https://github.com/ethereum-optimism/contracts/blob/master/contracts/optimistic-ethereum/OVM/precompiles/OVM_L2ToL1MessagePasser.sol)
 The L2 to L1 Message Passer is a utility contract which facilitate an L1 proof of the  of a message on L2. The L1 Cross Domain Messenger performs this proof in its _verifyStorageProof function, which verifies the existence of the transaction hash in this  contract's `sentMessages` mapping.
