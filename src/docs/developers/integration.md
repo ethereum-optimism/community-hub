@@ -56,10 +56,6 @@ This process involves two primary sub-steps:
 1. Compile your contracts with the OVM Solidity compiler.
 2. Deploy and test your contracts onto the local L2 node using `optimism-integration`.
 
-<!-- 
-COMMENTED OUT UNTIL `@eth-optimism/plugins` IS UPDATED TO USE LATEST 
-VERSION OF GETH
-
 If you're using [hardhat](https://hardhat.org), our preferred development environment, this can all be done with the use of some handy plugins we've built.
 For the rest of this documentation, we'll expect you to have your Solidity contracts ready to go.
 Please note that Vyper support is currently not enabled but is planned for a future release.
@@ -68,7 +64,7 @@ If you want to try out an example contract instead of deploying your own, you ca
 If you're using another testing suite like [truffle](https://www.trufflesuite.com/), that tutorial won't apply. But these `npm` packages have got you covered:
 
 - [`@eth-optimism/solc`](https://www.npmjs.com/package/@eth-optimism/solc): exports the Optimistic Ethereum compiler for `solidity@0.5/0.6/0.7`
-- [`@eth-optimism/plugins`](https://www.npmjs.com/package/@eth-optimism/plugins): exports "OVM-ified" `waffle.mockProvider` and `ganache` packages which will work with contracts output by the compiler. 
+- [`@eth-optimism/plugins`](https://www.npmjs.com/package/@eth-optimism/plugins): exports "OVM-ified" `waffle.mockProvider` and `ganache` packages which will work with contracts output by the compiler.
 
 An example of usage with [waffle](https://getwaffle.io) can be found in [this great tutorial](https://github.com/ScopeLift/ovm-uniswap-v2-core#porting-solidity-contracts-to-optimism-a-guide-using-uniswap-v2) by [Scopelift](https://www.scopelift.co/) which walks through getting Uniswap V2 ported over.
 If you are using [truffle](https://www.trufflesuite.com/), [here is an example config file](https://github.com/ethereum-optimism/optimism-monorepo/blob/6b535ab759aa2d4bf9325d40ea68aa5f7fc466a6/packages/ovm-toolchain/test/config/truffle-config.js) which shows how to incorporate the compiler and `ganache` for the OVM.
@@ -77,8 +73,6 @@ We recommend preserving EVM functionality when doing your port.
 For example, you might want to add separate `test:evm` and `test:ovm` scripts that use different `truffle-config.js` and `truffle-config-ovm.js` configuration files.
 **It's very important to make sure that all of your contract tests work in the EVM first before debugging the OVM.**
 Sometimes it looks like the OVM has a bug, when really it's just an error in your contracts.
-
--->
 
 ### Troubleshooting
 
@@ -96,8 +90,9 @@ VERSION OF GETH
 ## Deploying on Optimistic Ethereum
 Assuming you've been able to succesfully follow one of the above tutorials, you should now have an easy way to test your Optimistic Ethereum contracts.
 Hopefully you have a bunch of green checkmarks coming out of a fancy L2 VM!
-Next we're going to get your contracts deployed to a real Optimistic Ethereum node (running on our [fork of go-ethereum](https://github.com/ethereum-optimism/go-ethereum)). 
 -->
+
+Next we're going to get your contracts deployed to a real Optimistic Ethereum node (running on our [fork of go-ethereum](https://github.com/ethereum-optimism/go-ethereum)). 
 
 ### Local Deployment
 This step used to be optional, but is now required (since we're pausing maintenance for unit tests using our plugins package)!
