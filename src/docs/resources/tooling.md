@@ -15,17 +15,13 @@ Hop on the [discord](https://discord.gg/5TaAXGn2D8) and make a post in `#resourc
 :::
 
 ---
-<!-- 
-COMMENTED OUT UNTIL `@eth-optimism/plugins` IS UPDATED TO USE LATEST 
-VERSION OF GETH
 
 ## [@eth-optimism/plugins](https://github.com/ethereum-optimism/plugins)
 
 A `Node.js` package that contains various useful plugins for developing contracts to be deployed on Optimistic Ethereum.
 Particularly useful for its support of the custom OVM Solidity compiler.
 
---- 
--->
+---
 ## [@eth-optimism/contracts](https://github.com/ethereum-optimism/contracts)
   
 The various smart contracts that make up the L1 component of Optimistic Ethereum.
