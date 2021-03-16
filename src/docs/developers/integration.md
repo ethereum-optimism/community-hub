@@ -37,29 +37,28 @@ You might also want to take the following two steps depending on your specific n
 ### Setup and Resources
 
 ::: tip Required Tooling
-<!-- 
-COMMENTED OUT UNTIL `@eth-optimism/plugins` IS UPDATED TO USE LATEST 
-VERSION OF GETH
-
 * [`@eth-optimism/plugins`](https://www.npmjs.com/package/@eth-optimism/plugins) 
--->
 * [`hardhat`](https://hardhat.org/getting-started/)
 
-<!-- 
-COMMENTED OUT UNTIL `@eth-optimism/plugins` IS UPDATED TO USE LATEST 
-VERSION OF GETH
-
 Since your OVM-compatible contracts require Optimism's custom `solc` compiler, you'll be using Optimism's `@eth-optimism/plugins` package, which gives you access to both the custom compiler and a custom OVM-compatible version of `ethers`.  
--->
 
-Currently, We're focusing most of our internal development efforts on our [`hardhat`](https://hardhat.org/) tooling. However, we are still attempting to provide continued support for other development frameworks like [`truffle`](https://www.trufflesuite.com/). If any of our plugins are giving you issues, please ping us in our [#tech-support channel](https://discord.gg/NypkmfSkkw) in our discord server and we can help out!
+Currently, we're pausing maintenance for `@eth-optimism/plugins` and instead focusing most of our internal development efforts on _integration tests_ against the OVM using [`optimism-integration`](https://github.com/ethereum-optimism/optimism-integration), a set of docker containers that provides a local instance of Optimistic Ethereum. 
+What this means is that you'll still need `@eth-optimism/plugins` to compile your contracts and obtain their artifacts. 
+However, you'll no longer be able to run unit tests successfully using the plugins package (this is until we renew maintanence). 
+Thus, we strongly recommend switching to integrations-based testing in your projects to avoid hindrances from relying on unit tests.
+
+If you have any issues with getting through or understanding the content in this section, please ping us in our [#tech-support channel](https://discord.gg/NypkmfSkkw) in our discord server and we can help out!
 :::
 
 The first part of getting started with Optimistic Ethereum is to get your contracts up and running on a local L2 node.
 This process involves two primary sub-steps:
 
 1. Compile your contracts with the OVM Solidity compiler.
-2. Deploy and test your contracts onto the local L2 node.
+2. Deploy and test your contracts onto the local L2 node using `optimism-integration`.
+
+<!-- 
+COMMENTED OUT UNTIL `@eth-optimism/plugins` IS UPDATED TO USE LATEST 
+VERSION OF GETH
 
 If you're using [hardhat](https://hardhat.org), our preferred development environment, this can all be done with the use of some handy plugins we've built.
 For the rest of this documentation, we'll expect you to have your Solidity contracts ready to go.
@@ -69,12 +68,7 @@ If you want to try out an example contract instead of deploying your own, you ca
 If you're using another testing suite like [truffle](https://www.trufflesuite.com/), that tutorial won't apply. But these `npm` packages have got you covered:
 
 - [`@eth-optimism/solc`](https://www.npmjs.com/package/@eth-optimism/solc): exports the Optimistic Ethereum compiler for `solidity@0.5/0.6/0.7`
-<!-- 
-COMMENTED OUT UNTIL `@eth-optimism/plugins` IS UPDATED TO USE LATEST 
-VERSION OF GETH
-
 - [`@eth-optimism/plugins`](https://www.npmjs.com/package/@eth-optimism/plugins): exports "OVM-ified" `waffle.mockProvider` and `ganache` packages which will work with contracts output by the compiler. 
--->
 
 An example of usage with [waffle](https://getwaffle.io) can be found in [this great tutorial](https://github.com/ScopeLift/ovm-uniswap-v2-core#porting-solidity-contracts-to-optimism-a-guide-using-uniswap-v2) by [Scopelift](https://www.scopelift.co/) which walks through getting Uniswap V2 ported over.
 If you are using [truffle](https://www.trufflesuite.com/), [here is an example config file](https://github.com/ethereum-optimism/optimism-monorepo/blob/6b535ab759aa2d4bf9325d40ea68aa5f7fc466a6/packages/ovm-toolchain/test/config/truffle-config.js) which shows how to incorporate the compiler and `ganache` for the OVM.
@@ -84,6 +78,7 @@ For example, you might want to add separate `test:evm` and `test:ovm` scripts th
 **It's very important to make sure that all of your contract tests work in the EVM first before debugging the OVM.**
 Sometimes it looks like the OVM has a bug, when really it's just an error in your contracts.
 
+-->
 
 ### Troubleshooting
 
@@ -94,13 +89,19 @@ For help with these, you can check out the following resources:
 2. [Complete EVM/OVM comparison](/docs/protocol/evm-comparison) of all discrepancies.
 3. [Scopelift Uniswap tutorial](https://github.com/ScopeLift/ovm-uniswap-v2-core#porting-solidity-contracts-to-optimism-a-guide-using-uniswap-v2), which has some great "OVM vs. EVM" sections.
 
+<!-- 
+COMMENTED OUT UNTIL `@eth-optimism/plugins` IS UPDATED TO USE LATEST 
+VERSION OF GETH
+
 ## Deploying on Optimistic Ethereum
 Assuming you've been able to succesfully follow one of the above tutorials, you should now have an easy way to test your Optimistic Ethereum contracts.
 Hopefully you have a bunch of green checkmarks coming out of a fancy L2 VM!
-Next we're going to get your contracts deployed to a real Optimistic Ethereum node (running on our [fork of go-ethereum](https://github.com/ethereum-optimism/go-ethereum)).
+Next we're going to get your contracts deployed to a real Optimistic Ethereum node (running on our [fork of go-ethereum](https://github.com/ethereum-optimism/go-ethereum)). 
+-->
 
-### Local Deployment (Optional)
-This step is technically optional, but we'd recommend going through it anyway.
+### Local Deployment
+This step used to be optional, but is now required (since we're pausing maintenance for unit tests using our plugins package)!
+
 Before deploying to a "real" network (testnet or mainnet), you may want to deploy to a local version of our `go-ethereum` fork.
 If your contracts are relatively simple you may not need to do this.
 However, if you plan to write contracts that communicate between L1 and L2, then we highly recommend reading this section.
@@ -126,6 +127,10 @@ Then, run the famous `up.sh` script to spin everything up:
 
 And that's it!
 You now have an L2 chain (sequencer) at `localhost:9545` connected to an L1 chain at `localhost:8545`.
+
+#### Deploying contracts (locally)
+
+Coming in the next several days!!
 
 ### Common Gotchas
 ::: tip Need help?
