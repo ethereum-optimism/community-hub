@@ -101,10 +101,15 @@ Congrats, you're ready to deploy an application to Optimistic Ethereum!
 It really is that easy.
 
 You can verify that everything went well by checking the `artifacts` folder that should be generated whenever you run `yarn compile`. 
-Alongside the normal compiler output located at `artifacts/contracts/ERC20.sol/ERC20.json`, you should also see `artifacts/contracts/ERC20.sol/ERC20.ovm.json`.
-Here, `.ovm.json` signifies that this file has been compiled for the OVM, the **O**ptimistic **V**irtual **M**achine, as opposed to the Ethereum Virtual Machine.
+Alongside the normal compiler output located at `artifacts/contracts/ERC20.sol/ERC20.json`, you should also see `artifacts/contracts/ERC20.sol/ERC20-ovm.json` (for older versions of `@eth-optimism/plugins` you'll might see `artifacts/contracts/ERC20.sol/ERC20.ovm.json`).
+Here, `-ovm.json` signifies that this file has been compiled for the OVM, the **O**ptimistic **V**irtual **M**achine, as opposed to the Ethereum Virtual Machine.
 
 ### Testing (Again)
+
+Coming in the next several days!!
+
+<!--  COMMENT OUT UNTIL MAINTAINCE FOR `@eth-optimism/plugins` RENEWS
+
 We provided you with an ERC20 test file earlier in this tutorial.
 Now it's time to test this ERC20 again.
 This time, however, we'll be testing our new OVM-compatible smart contract on top of Optimistic Ethereum.
@@ -159,4 +164,5 @@ Confirm that everything worked as expected by running:
 yarn test
 ```
 
-You should see even more green checkmarks this time around.
+You should see even more green checkmarks this time around. 
+-->
