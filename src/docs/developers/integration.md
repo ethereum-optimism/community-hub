@@ -37,10 +37,20 @@ You might also want to take the following two steps depending on your specific n
 ### Setup and Resources
 
 ::: tip Required Tooling
-* [`@eth-optimism/plugins`](https://www.npmjs.com/package/@eth-optimism/plugins)
+<!-- 
+COMMENTED OUT UNTIL `@eth-optimism/plugins` IS UPDATED TO USE LATEST 
+VERSION OF GETH
+
+* [`@eth-optimism/plugins`](https://www.npmjs.com/package/@eth-optimism/plugins) 
+-->
 * [`hardhat`](https://hardhat.org/getting-started/)
 
-Since your OVM-compatible contracts require Optimism's custom `solc` compiler, you'll be using Optimism's `@eth-optimism/plugins` package, which gives you access to both the custom compiler and a custom OVM-compatible version of `ethers`. 
+<!-- 
+COMMENTED OUT UNTIL `@eth-optimism/plugins` IS UPDATED TO USE LATEST 
+VERSION OF GETH
+
+Since your OVM-compatible contracts require Optimism's custom `solc` compiler, you'll be using Optimism's `@eth-optimism/plugins` package, which gives you access to both the custom compiler and a custom OVM-compatible version of `ethers`.  
+-->
 
 Currently, We're focusing most of our internal development efforts on our [`hardhat`](https://hardhat.org/) tooling. However, we are still attempting to provide continued support for other development frameworks like [`truffle`](https://www.trufflesuite.com/). If any of our plugins are giving you issues, please ping us in our [#tech-support channel](https://discord.gg/NypkmfSkkw) in our discord server and we can help out!
 :::
@@ -59,7 +69,12 @@ If you want to try out an example contract instead of deploying your own, you ca
 If you're using another testing suite like [truffle](https://www.trufflesuite.com/), that tutorial won't apply. But these `npm` packages have got you covered:
 
 - [`@eth-optimism/solc`](https://www.npmjs.com/package/@eth-optimism/solc): exports the Optimistic Ethereum compiler for `solidity@0.5/0.6/0.7`
-- [`@eth-optimism/plugins`](https://www.npmjs.com/package/@eth-optimism/plugins): exports "OVM-ified" `waffle.mockProvider` and `ganache` packages which will work with contracts output by the compiler.
+<!-- 
+COMMENTED OUT UNTIL `@eth-optimism/plugins` IS UPDATED TO USE LATEST 
+VERSION OF GETH
+
+- [`@eth-optimism/plugins`](https://www.npmjs.com/package/@eth-optimism/plugins): exports "OVM-ified" `waffle.mockProvider` and `ganache` packages which will work with contracts output by the compiler. 
+-->
 
 An example of usage with [waffle](https://getwaffle.io) can be found in [this great tutorial](https://github.com/ScopeLift/ovm-uniswap-v2-core#porting-solidity-contracts-to-optimism-a-guide-using-uniswap-v2) by [Scopelift](https://www.scopelift.co/) which walks through getting Uniswap V2 ported over.
 If you are using [truffle](https://www.trufflesuite.com/), [here is an example config file](https://github.com/ethereum-optimism/optimism-monorepo/blob/6b535ab759aa2d4bf9325d40ea68aa5f7fc466a6/packages/ovm-toolchain/test/config/truffle-config.js) which shows how to incorporate the compiler and `ganache` for the OVM.
