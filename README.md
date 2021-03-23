@@ -1,6 +1,6 @@
 # The Optimistic Ethereum Community Hub
 
-This is the source for the [community hub](http://community.optimism.io/).
+This is the source for the [community hub](https://community.optimism.io/).
 
 # Usage
 ## Serve Locally
