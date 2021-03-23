@@ -110,7 +110,7 @@ Then, run the famous `up.sh` script to spin everything up:
 ```
 
 And that's it!
-You now have an L2 chain (sequencer) at `localhost:9545` connected to an L1 chain at `localhost:8545`.
+You now have an L2 chain (sequencer) at `localhost:8545` connected to an L1 chain at `localhost:9545`.
 
 ### Common Gotchas
 ::: tip Need help?
