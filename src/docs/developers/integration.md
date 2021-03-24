@@ -36,6 +36,15 @@ You might also want to take the following two steps depending on your specific n
 
 ### Setup and Resources
 
+::: tip Required Tooling
+* [`@eth-optimism/plugins`](https://www.npmjs.com/package/@eth-optimism/plugins)
+* [`hardhat`](https://hardhat.org/getting-started/)
+
+Since your OVM-compatible contracts require Optimism's custom `solc` compiler, you'll be using Optimism's `@eth-optimism/plugins` package, which gives you access to both the custom compiler and a custom OVM-compatible version of `ethers`. 
+
+Currently, We're focusing most of our internal development efforts on our [`hardhat`](https://hardhat.org/) tooling. However, we are still attempting to provide continued support for other development frameworks like [`truffle`](https://www.trufflesuite.com/). If any of our plugins are giving you issues, please ping us in our [#tech-support channel](https://discord.gg/NypkmfSkkw) in our discord server and we can help out!
+:::
+
 The first part of getting started with Optimistic Ethereum is to get your contracts up and running on a local L2 node.
 This process involves two primary sub-steps:
 
@@ -60,11 +69,6 @@ For example, you might want to add separate `test:evm` and `test:ovm` scripts th
 **It's very important to make sure that all of your contract tests work in the EVM first before debugging the OVM.**
 Sometimes it looks like the OVM has a bug, when really it's just an error in your contracts.
 
-::: tip
-We're focusing most of our internal development efforts on our [hardhat](https://hardhat.org) tooling.
-However, we are still attempting to provide continued support for other development frameworks like [truffle](https://www.trufflesuite.com/).
-If any of our plugins are giving you issues, please ping us in our [#tech-support channel](https://discord.gg/NypkmfSkkw) in our discord server and we can help out.
-:::
 
 ### Troubleshooting
 
@@ -106,7 +110,7 @@ Then, run the famous `up.sh` script to spin everything up:
 ```
 
 And that's it!
-You now have an L2 chain (sequencer) at `http://0.0.0.0:8545` connected to an L1 chain at `http://0.0.0.0:9545`. 
+You now have an L2 chain (sequencer) at `http://0.0.0.0:8545` connected to an L1 chain at `http://0.0.0.0:9545`.
 
 ### Setting up a custom network in MetaMask (Optional)
 With the L2 node and L1 nodes running locally, you can use their respective RPC URLs for testing! If you use MetaMask, what you could do next is create a custom RPC network so that you can easily deploy and interact with your contracts using MetaMask! 
@@ -118,26 +122,27 @@ Here's a step-by-step process on how to do that while in your browser:
 
 ![Click on Custom RPC](../../assets/custom-metamask-network-1.png)
 
-3. Next, you'll enter in the network parameters. Enter `Optimistic Ethereum (L2)` for the network name, `http://0.0.0.0:8545` for the RPC URL, and `420` for the chain ID -- additionally, you can also set the currency symbol to `WETH`, but that's not entirely necessary since the use of WETH is implicitly understood. (See example image below.)
+3. Next, you'll enter in the network parameters. Enter `Optimistic Ethereum (Local L2)` for the network name, `http://0.0.0.0:8545` for the RPC URL, and `420` for the chain ID -- additionally, you can also set the currency symbol to `WETH`, but that's not entirely necessary since the use of WETH is implicitly understood. (See example image below.)
 
 ![Network params](../../assets/custom-metamask-network-2.png)
 
-4. Click save! And, you're done! 🙌 😎. You'll then see something like the image below when you click on your new `Optimistic Ethereum (L2)` network! (NOTE: Adding the currency symbol is _optional_.)
+4. Click save! And, you're done! 🙌 😎. You'll then see something like the image below when you click on your new `Optimistic Ethereum (Local L2)` network! (NOTE: Adding the currency symbol is _optional_.)
 
 ![Complete custom network](../../assets/complete-custom-network.png)
 
 **L1 Custom Network (Optional)**
 
 In addition to adding the L2 chain as a custom network, we can also add our local instance of the L1 chain from `optimism-integration`. To do this, you would go through the same steps as above, but instead enter in the following for the network parameters:
-|     Param                    |            Value             |
-| ---------------------------- | :--------------------------: |
-| Network Name                 |  `Optimistic Ethereum (L1)`  |
-| New RPC URL                  |  `http://0.0.0.0:9545`       |
-| Chain ID                     |    `31337`                   |
-| (_OPTIONAL_) Currency Symbol |    `ETH`                   |
+|     Param                    |                Value               |
+| ---------------------------- | :--------------------------------: |
+| Network Name                 |  `Optimistic Ethereum (Local L1)`  |
+| New RPC URL                  |      `http://0.0.0.0:9545`         |
+| Chain ID                     |        `31337`                     |
+| (_OPTIONAL_) Currency Symbol |        `ETH`                       |
 
 However, you'll likely mostly be using the L2 chain for most of your contract and deployment tests. So, we'd advise just adding the L2 custom network, unless you think you really need the local custom L1 chain network.
 
+Later, when you decide to move on to testing on Optimism's Kovan testnet, the simple change
 
 ### Common Gotchas
 ::: tip Need help?
@@ -168,11 +173,15 @@ Make sure to periodically download the latest code by running the `pull.sh` scri
 #### Gotcha: Gas used appears to be exceeding gas limit
 All L2 transactions are technically metatransactions sent by the sequencer.
 This means that `receipt.gasUsed` may be higher than the `tx.gasLimit`, and is currently an underestimate by about 20%.
-This will be fixed in an upcoming release. 
+This will be fixed in an upcoming release.
 
 #### Gotcha: Contract deployment appears to fail for no reason
 Make sure you're compiling with the Optimistic Ethereum version of the Solidity compiler.
 Contract deployments will usually fail if you compile using the standard Solidity compiler.
+
+#### Gotcha: Revert reasons are not returned on `eth_sendRawTransaction` calls
+When `geth` was forked for Optimistic Ethereum, the `geth` had not yet started returning revert reasons for `eth_sendRawTransaction`s. 
+Thus, if you want to retrieve a revert reason for a failing L2 transaction on `eth_sendRawTransaction` calls, you will need to make an `eth_call` (e.g. similar to [this](https://github.com/Synthetixio/synthetix/blob/develop/test/optimism/utils/revertOptimism.js)) at the block height for that transaction. 
 
 ### Testnet Deployment
 You probably want to deploy to testnet before heading over to mainnet (good idea, tbh).

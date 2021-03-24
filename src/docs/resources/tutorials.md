@@ -17,7 +17,7 @@ Hop on the [discord](https://discord.gg/5TaAXGn2D8) and make a post in `#resourc
 ---
 ## [*The "Official" Optimistic Ethereum Tutorial*](../../tutorial/README.md)
 
-* By: [Optimism PBC](http://optimism.io)
+* By: [Optimism PBC](https://optimism.io)
 
 The "official" introductory tutorial by the Optimism team.
 Note, that this tutorial is _short and sweet_.
