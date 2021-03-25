@@ -40,7 +40,8 @@ You might also want to take the following two steps depending on your specific n
 * [`@eth-optimism/plugins`](https://www.npmjs.com/package/@eth-optimism/plugins) 
 * [`hardhat`](https://hardhat.org/getting-started/)
 
-Since your OVM-compatible contracts require Optimism's custom `solc` compiler, you'll be using Optimism's `@eth-optimism/plugins` package, which gives you access to both the custom compiler and a custom OVM-compatible version of `ethers`.  
+Since your OVM-compatible contracts require Optimism's custom Solidity compiler, you'll be using Optimism's `@eth-optimism/plugins` package.
+This package makes it easy to compile contracts and deploy them to an Optimistic Ethereum network. 
 
 Note that Optimism has been focusing most of our internal development efforts on _integration tests_ against the OVM using [`optimism-integration`](https://github.com/ethereum-optimism/optimism-integration) (our integrations repo), a set of docker containers that provides a local instance of Optimistic Ethereum.
 So, while we are cutting down the scope of `@eth-optimism/plugins` to handle just contract compilation ((and no longer allow for OVM unit tests), you can still write contract integration tests locally against the OVM by spinning up that integrations repo.
