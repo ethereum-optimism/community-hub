@@ -42,10 +42,8 @@ You might also want to take the following two steps depending on your specific n
 
 Since your OVM-compatible contracts require Optimism's custom `solc` compiler, you'll be using Optimism's `@eth-optimism/plugins` package, which gives you access to both the custom compiler and a custom OVM-compatible version of `ethers`.  
 
-Currently, we're pausing maintenance for `@eth-optimism/plugins` and instead focusing most of our internal development efforts on _integration tests_ against the OVM using [`optimism-integration`](https://github.com/ethereum-optimism/optimism-integration), a set of docker containers that provides a local instance of Optimistic Ethereum. 
-What this means is that you'll still need `@eth-optimism/plugins` to compile your contracts and obtain their artifacts. 
-However, you'll no longer be able to run unit tests successfully using the plugins package (this is until we renew maintanence). 
-Thus, we strongly recommend switching to integrations-based testing in your projects to avoid hindrances from relying on unit tests.
+Note that Optimism has been focusing most of our internal development efforts on _integration tests_ against the OVM using [`optimism-integration`](https://github.com/ethereum-optimism/optimism-integration) (our integrations repo), a set of docker containers that provides a local instance of Optimistic Ethereum.
+So, while we are cutting down the scope of `@eth-optimism/plugins` to handle just contract compilation ((and no longer allow for OVM unit tests), you can still write contract integration tests locally against the OVM by spinning up that integrations repo.
 
 If you have any issues with getting through or understanding the content in this section, please ping us in our [#tech-support channel](https://discord.gg/NypkmfSkkw) in our discord server and we can help out!
 :::
