@@ -16,7 +16,9 @@ _Our documentation is a rapidly improving work in progress. If you have question
 
 ## Introduction
 
-Hello and welcome!  If you're looking to find out what it takes to get your dApp up and running on layer 2, then you've come to the right place!  This document will serve as a reference to take you through the stages of integrating.
+Hello and welcome!  
+If you're looking to find out what it takes to get your dApp up and running on layer 2, then you've come to the right place!  
+This document will serve as a reference to take you through the stages of integrating.
 
 *Note: if at any time in this process you get stuck or have questions, please reach out on [discord](https://discord.gg/5TaAXGn2D8)!  We just ask that you do this in the public `#tech-support` channel so that others may learn alongside us.* :)
 
@@ -42,7 +44,9 @@ You might also want to take the following two steps depending on your specific n
 
 Since your OVM-compatible contracts require Optimism's custom `solc` compiler, you'll be using Optimism's `@eth-optimism/plugins` package, which gives you access to both the custom compiler and a custom OVM-compatible version of `ethers`. 
 
-Currently, We're focusing most of our internal development efforts on our [`hardhat`](https://hardhat.org/) tooling. However, we are still attempting to provide continued support for other development frameworks like [`truffle`](https://www.trufflesuite.com/). If any of our plugins are giving you issues, please ping us in our [#tech-support channel](https://discord.gg/NypkmfSkkw) in our discord server and we can help out!
+Currently, We're focusing most of our internal development efforts on our [`hardhat`](https://hardhat.org/) tooling.
+However, we are still attempting to provide continued support for other development frameworks like [`truffle`](https://www.trufflesuite.com/).
+If any of our plugins are giving you issues, please ping us in our [#tech-support channel](https://discord.gg/NypkmfSkkw) in our discord server and we can help out!
 :::
 
 The first part of getting started with Optimistic Ethereum is to get your contracts up and running on a local L2 node.
@@ -113,16 +117,17 @@ And that's it!
 You now have an L2 chain at `http://0.0.0.0:8545` connected to an L1 chain at `http://0.0.0.0:9545`.
 
 ### Setting up a custom network in MetaMask (Optional)
-With the L2 node and L1 nodes running locally, you can use their respective RPC URLs for testing! If you use MetaMask, what you could do next is create a custom RPC network so that you can easily deploy and interact with your contracts using MetaMask! 
+With the L2 node and L1 nodes running locally, you can use their respective RPC URLs for testing!
+If you use MetaMask, what you could do next is create a custom RPC network so that you can easily deploy and interact with your contracts using MetaMask!
 
 Here's a step-by-step process on how to do that while in your browser:
 
-1. Open MetaMask the browser extension and click on your currently connected network at the top pane, next to your jazzicon. 
+1. Open MetaMask the browser extension and click on your currently connected network at the top pane, next to your jazzicon.
 2. You'll see a modal open up with list of networks. Click on the "Custom RPC" button at the very bottom. (See example image below.)
 
 ![Custom RPC button](../../assets/custom-metamask-network-1.png)
 
-3. Next, you'll enter in the network parameters. Enter `Optimistic Ethereum (Local L2)` for the network name, `http://0.0.0.0:8545` for the RPC URL, and `420` for the chain ID -- additionally, you can also set the currency symbol to `WETH`, but that's not entirely necessary since the use of WETH is implicitly understood. (See example image below.)
+3. Next, you'll enter in the network parameters. Enter `Optimistic Ethereum (Local L2)` for the network name, `http://0.0.0.0:8545` for the RPC URL, and `420` for the chain ID -- additionally, you can also set the currency symbol to `ETH`, but that's not entirely necessary since the use of ETH is implicitly understood. (See example image below.)
 
 ![Entering network params](../../assets/custom-metamask-network-2.png)
 
@@ -132,7 +137,8 @@ Here's a step-by-step process on how to do that while in your browser:
 
 **L1 Custom Network (Optional)**
 
-In addition to adding the L2 chain as a custom network, we can also add our local instance of the L1 chain from `optimism-integration`. To do this, you would go through the same steps as above, but instead enter in the following for the network parameters:
+In addition to adding the L2 chain as a custom network, we can also add our local instance of the L1 chain from `optimism-integration`.
+To do this, you would go through the same steps as above, but instead enter in the following for the network parameters:
 |     Param                    |                Value               |
 | ---------------------------- | :--------------------------------: |
 | Network Name                 |  `Optimistic Ethereum (Local L1)`  |
@@ -140,9 +146,10 @@ In addition to adding the L2 chain as a custom network, we can also add our loca
 | Chain ID                     |        `31337`                     |
 | (_OPTIONAL_) Currency Symbol |        `ETH`                       |
 
-However, you'll likely mostly be using the L2 chain for most of your contract and deployment tests. So, we'd advise just adding the L2 custom network, unless you think you really need the local custom L1 chain network.
+However, you'll likely mostly be using the L2 chain for most of your contract and deployment tests.
+So, we'd advise just adding the L2 custom network, unless you think you really need the local custom L1 chain network.
 
-Later, when you decide to move on to testing on Optimism's Kovan testnet, the simple change
+Later, when you decide to move on to testing on Optimism's Kovan testnet, the simple change you'd make is just replacing the RPC URL with the RPC URL for Optimism's Kovan testnet.
 
 ### Common Gotchas
 ::: tip Need help?
@@ -180,13 +187,13 @@ Make sure you're compiling with the Optimistic Ethereum version of the Solidity 
 Contract deployments will usually fail if you compile using the standard Solidity compiler.
 
 #### Gotcha: Revert reasons are not returned on `eth_sendRawTransaction` calls
-When `geth` was forked for Optimistic Ethereum, the `geth` had not yet started returning revert reasons for `eth_sendRawTransaction`s. 
-Thus, if you want to retrieve a revert reason for a failing L2 transaction on `eth_sendRawTransaction` calls, you will need to make an `eth_call` (e.g. similar to [this](https://github.com/Synthetixio/synthetix/blob/develop/test/optimism/utils/revertOptimism.js)) at the block height for that transaction. 
+When `geth` was forked for Optimistic Ethereum, the `geth` had not yet started returning revert reasons for `eth_sendRawTransaction`s.
+Thus, if you want to retrieve a revert reason for a failing L2 transaction on `eth_sendRawTransaction` calls, you will need to make an `eth_call` (e.g. similar to [this](https://github.com/Synthetixio/synthetix/blob/develop/test/optimism/utils/revertOptimism.js)) at the block height for that transaction.
 
 ### Testnet Deployment
 You probably want to deploy to testnet before heading over to mainnet (good idea, tbh).
 Our primary L2 testnet is currently deployed on top of Ethereum's [Kovan](https://kovan.etherscan.io) network.
-We sometimes run other testnets too. 
+We sometimes run other testnets too.
 Here's a current list of our testnet endpoints (will be updated when things change):
 
 | L1 Network                          | L2 Network | HTTP Endpoint                                          | Websocket Endpoint                                               |
@@ -221,7 +228,8 @@ These contracts are pretty cool and make heavy use of our L1⇔L2 messaging infr
 
 ### ☎️ L1 <> L2 Communication
 ::: tip Work in Progress™
-This section is also an WIP, but we are quickly working to improve it! If you think that something is unclear, we recommend looking through the OVM's `messaging` contracts for a granular view of this L1 <> L2 communication. As always, feel free to reach out to us on discord with questions 🤗:
+This section is also an WIP, but we are quickly working to improve it! If you think that something is unclear, we recommend looking through the OVM's `messaging` contracts for a granular view of this L1 <> L2 communication.
+As always, feel free to reach out to us on discord with questions 🤗:
 
 📎 OVM's `messaging` contracts:
 * 📜 [`Abs_BaseCrossDomainMessenger.sol`](https://github.com/ethereum-optimism/contracts/blob/master/contracts/optimistic-ethereum/OVM/bridge/messaging/Abs_BaseCrossDomainMessenger.sol)
@@ -234,7 +242,9 @@ The following is an abridged version of the section titled "L1 to L2 interoperab
 
 ---------
 
-Optimistic Ethereum allows asynchronous calls between L1 and L2 users or contracts. Practically, this means that a contract on L1 can make a call to a contract on L2, and vice versa. This contract communication is implemented by deploying "messenger" contracts on both Ethereum and Optimistic Ethereum.
+Optimistic Ethereum allows asynchronous calls between L1 and L2 users or contracts.
+Practically, this means that a contract on L1 can make a call to a contract on L2, and vice versa.
+This contract communication is implemented by deploying "messenger" contracts on both Ethereum and Optimistic Ethereum.
 
 The sending chain's contract calls `sendMessage` with the data it wants to pass over, and a relay calls `relayMessage` (from L1 or from L2) on the receiving chain to actually relay the data.
 
@@ -299,19 +309,25 @@ function relayMessage(
 )
 ```
 
-Conveniently, all transactions from L1 to L2 get automatically relayed _by the sequencer_. This happens because the L1 ➡️ L2 bridge calls [`enqueue`](https://github.com/ethereum-optimism/contracts/blob/21c38bb51a2d47029b40bdac709eec342d16a761/contracts/optimistic-ethereum/OVM/bridge/messaging/OVM_L1CrossDomainMessenger.sol#L287-L291), queuing up a transaction for execution by the sequencer.
+Conveniently, all transactions from L1 to L2 get automatically relayed _by the sequencer_.
+This happens because the L1 ➡️ L2 bridge calls [`enqueue`](https://github.com/ethereum-optimism/contracts/blob/21c38bb51a2d47029b40bdac709eec342d16a761/contracts/optimistic-ethereum/OVM/bridge/messaging/OVM_L1CrossDomainMessenger.sol#L287-L291), queuing up a transaction for execution by the sequencer.
 
 From these calls to `enqueue`, we can, in a way, think of the the sequencer is an "always on" relay for L1 to L2 transactions, while L2 to L1 transactions need to be explicitly relayed by users.
 
-Using the default bridge contracts by Optimism requires all L2 to L1 transactions are at least [1 week old](https://community.optimism.io/faqs/#why-is-there-a-delay-when-moving-assets-from-optimistic-ethereum-to-ethereum). This is to allow enough time for verifiers to submit fraud proofs and prevent invalid withdrawals.
+Using the default bridge contracts by Optimism requires all L2 to L1 transactions are at least [1 week old](https://community.optimism.io/faqs/#why-is-there-a-delay-when-moving-assets-from-optimistic-ethereum-to-ethereum).
+This is to allow enough time for verifiers to submit fraud proofs and prevent invalid withdrawals.
 
-It could be the case that developers deploy their own bridge contracts with semi-trusted mechanisms that allow L2 to L1 transactions with a smaller time restriction. The simplest example of this mechanism would be [depositing an ERC20 on an L1 bridge contract](https://github.com/ethereum-optimism/optimism-tutorial/blob/dev-xdomain/contracts/L1_ERC20Adapter.sol) and [minting the equivalent token amount on L2](https://github.com/ethereum-optimism/optimism-tutorial/blob/dev-xdomain/contracts/L2_ERC20.sol).
+It could be the case that developers deploy their own bridge contracts with semi-trusted mechanisms that allow L2 to L1 transactions with a smaller time restriction.
+The simplest example of this mechanism would be [depositing an ERC20 on an L1 bridge contract](https://github.com/ethereum-optimism/optimism-tutorial/blob/dev-xdomain/contracts/L1_ERC20Adapter.sol) and [minting the equivalent token amount on L2](https://github.com/ethereum-optimism/optimism-tutorial/blob/dev-xdomain/contracts/L2_ERC20.sol).
 
-![L1 <> L2 message passing](../../assets/passing-messages-between-l1-and-l2.png)
+![Passing Messages Between Layer 1 and Layer 2](../../assets/passing-messages-between-l1-and-l2.png)
 
-As a developer integrating with Optimism's messengers is very easy. Just call `<LAYER>CrossDomainMessenger.sendMessage` with the calldata, gasLimit and target address you want to call on the destination layer.  
+As a developer integrating with Optimism's messengers is very easy.
+Just call `<LAYER>CrossDomainMessenger.sendMessage` with the calldata, gasLimit and target address you want to call on the destination layer.  
 
-This wraps the message in a [`relayMessage`](https://github.com/ethereum-optimism/contracts/blob/21c38bb51a2d47029b40bdac709eec342d16a761/contracts/optimistic-ethereum/OVM/bridge/messaging/Abs_BaseCrossDomainMessenger.sol#L70-L97) call, targeting the `L2CrossDomainMessenger`. That's all! It's the same general process for L2 to L1. (This is enabled by the `L1MessageSender`, `L1BlockNumber`, and `L1Queue` fields in the message and transaction `meta`.)
+This wraps the message in a [`relayMessage`](https://github.com/ethereum-optimism/contracts/blob/21c38bb51a2d47029b40bdac709eec342d16a761/contracts/optimistic-ethereum/OVM/bridge/messaging/Abs_BaseCrossDomainMessenger.sol#L70-L97) call, targeting the `L2CrossDomainMessenger`.
+That's all! It's the same general process for L2 to L1.
+(This is enabled by the `L1MessageSender`, `L1BlockNumber`, and `L1Queue` fields in the message and transaction `meta`.)
 
 ---------
 
