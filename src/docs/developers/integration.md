@@ -110,7 +110,7 @@ Then, run the famous `up.sh` script to spin everything up:
 ```
 
 And that's it!
-You now have an L2 chain (sequencer) at `http://0.0.0.0:8545` connected to an L1 chain at `http://0.0.0.0:9545`.
+You now have an L2 chain at `http://0.0.0.0:8545` connected to an L1 chain at `http://0.0.0.0:9545`.
 
 ### Setting up a custom network in MetaMask (Optional)
 With the L2 node and L1 nodes running locally, you can use their respective RPC URLs for testing! If you use MetaMask, what you could do next is create a custom RPC network so that you can easily deploy and interact with your contracts using MetaMask! 
@@ -120,27 +120,15 @@ Here's a step-by-step process on how to do that while in your browser:
 1. Open MetaMask the browser extension and click on your currently connected network at the top pane, next to your jazzicon. 
 2. You'll see a modal open up with list of networks. Click on the "Custom RPC" button at the very bottom. (See example image below.)
 
-<figure>
-    <img
-        src='../../assets/custom-metamask-network-1.png'
-    />
-</figure>
+![Custom RPC button](../../assets/custom-metamask-network-1.png)
 
 3. Next, you'll enter in the network parameters. Enter `Optimistic Ethereum (Local L2)` for the network name, `http://0.0.0.0:8545` for the RPC URL, and `420` for the chain ID -- additionally, you can also set the currency symbol to `WETH`, but that's not entirely necessary since the use of WETH is implicitly understood. (See example image below.)
 
-<figure>
-    <img
-        src='../../assets/custom-metamask-network-2.png'
-    />
-</figure>
+![Entering network params](../../assets/custom-metamask-network-2.png)
 
 4. Click save! And, you're done! 🙌 😎. You'll then see something like the image below when you click on your new `Optimistic Ethereum (Local L2)` network! (NOTE: Adding the currency symbol is _optional_.)
 
-<figure>
-    <img
-        src='../../assets/complete-custom-network.png'
-    />
-</figure>
+![Saving custom network](../../assets/complete-custom-network.png)
 
 **L1 Custom Network (Optional)**
 
@@ -319,10 +307,7 @@ Using the default bridge contracts by Optimism requires all L2 to L1 transaction
 
 It could be the case that developers deploy their own bridge contracts with semi-trusted mechanisms that allow L2 to L1 transactions with a smaller time restriction. The simplest example of this mechanism would be [depositing an ERC20 on an L1 bridge contract](https://github.com/ethereum-optimism/optimism-tutorial/blob/dev-xdomain/contracts/L1_ERC20Adapter.sol) and [minting the equivalent token amount on L2](https://github.com/ethereum-optimism/optimism-tutorial/blob/dev-xdomain/contracts/L2_ERC20.sol).
 
-<figure>
-  <img src='../../assets/passing-messages-between-l1-and-l2.png'>
-  <figcaption style="text-align: center; font-size: 12px;">Diagram created with <a href="https://www.diagrams.net/">draw.io</a>.</figcaption>
-</figure>
+![L1 <> L2 message passing](../../assets/passing-messages-between-l1-and-l2.png)
 
 As a developer integrating with Optimism's messengers is very easy. Just call `<LAYER>CrossDomainMessenger.sendMessage` with the calldata, gasLimit and target address you want to call on the destination layer.  
 
