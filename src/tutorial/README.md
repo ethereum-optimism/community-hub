@@ -96,7 +96,7 @@ The second command being run in this step is, of course, 💃 `yarn compile:ovm`
 
 Here, `artifacts-ovm` signifies that the contracts contained in this directory have been compiled for the OVM, the **O**ptimistic **V**irtual **M**achine, as opposed to the Ethereum Virtual Machine.
 
-### Running Optimistic Ethereum locally
+## Running Optimistic Ethereum locally
 
 To simulate a development environment that is as close to mainnet Optimistic Ethereum while still being local, you're we recommend replicating the layer 1 Ethereum chain and the layer 2 Optimism chain.
 Fortunately, we have a handy dandy [integrations repo](https://github.com/ethereum-optimism/optimism-integration) all nicely dockerized for you to run your own local instance of Optimistic Ethereum!
@@ -129,7 +129,7 @@ The containers will take some time to fully spin up, but once they do, you shoul
 You now have your very own locally deployed instance of Optimistic Ethereum! 🙌
 (NOTE: Keep these containers running! We'll be using your new local instance of Optimistic Ethereum to deploy and then test your contract.)
 
-### Deploying to Optimistic Ethereum
+## Deploying to Optimistic Ethereum
 
 <!-- 1. Intro `hardhat-deploy` -->
 With your local Optimistic Ethereum network ready to go, we'll now need to deploy our ERC20 contract to the local (Optimistic) L2 chain instance.
@@ -213,7 +213,7 @@ You'll see something like the following in your console or terminal if this runn
 
 ![Console logs after running yarn deploy](../assets/running-yarn-deploy.png)
 
-#### A explainer for beginners
+### An explainer for beginners
 
 Similar to when we ran `yarn compile`, there's some Node.js script magic going on here, but it's quite simple.
 
@@ -248,7 +248,7 @@ We've now deployed your ERC20 contract to your local layer 1 Ethereum and layer 
 
 Now onto the smoothest side of this tutorial.
 
-### Test Prep
+## Test Prep
 No, this kind of preparation is not anything even remotely similar to exam preparation.
 What we're doing next is preparing the seamless experience of running our contracts tests for both the EVM and OVM.
 
@@ -258,9 +258,9 @@ And this will only take us a max of 3 steps:
 2. Make the necessary changes in `optimistic-erc20.spec.ts` and friends.
 3. Run `yarn test`
 
-Step one is quite straightforward, so we'll assume you can do that step without guidance and move on to step 2 ➡️
+Since the first step is quite straightforward, we'll assume you can do that step without guidance and move on to step 2 ➡️.
 
-#### 2. Make the necessary changes in `optimistic-erc20.spec.ts` and friends
+### 2. Make the necessary changes in `optimistic-erc20.spec.ts` and friends
 In your newly named `optimistic-erc20.spec.ts` file, we're first going to update the path for `deploymentsInfo` so that we're retreiving your contract artifact for layer 2 Optimistic Ethereum and _not_ layer 1 Ethereum.
 
 Go ahead and change update line 8 to:
@@ -276,7 +276,7 @@ Let's begin this step by adding importing the utility function `assertRevertOpti
 import { assertRevertOptimism } from './utils'
 ```
 
-Then, we'll create the `utils.ts` and under the `test` directory and add the following code to it:
+Then, we'll create the `utils.ts` and under the `test` directory, add the following code to it! (don't worry, too much about the logic going on here for now):
 ```ts
 import { ethers } from 'hardhat'
 
@@ -370,9 +370,9 @@ In your test file there are 3 different it-statements that have revert checks th
 What we'll do first here is add an `await` to the very front of each of these contract calls.
 These 3 it-statements are called:
 
-1. `'should revert the sender does not have enough balance'`, line 88 in `erc20.spec.ts`
-2. `'should revert when the owner account does not have enough balance'`, line 138 in `erc20.spec.ts`
-3. `'should revert when the sender does not have enough of an allowance'`, line 155 in `erc20.spec.ts`
+1. `'should revert the sender does not have enough balance'` (line 88 in `erc20.spec.ts`)
+2. `'should revert when the owner account does not have enough balance'` (line 138 in `erc20.spec.ts`)
+3. `'should revert when the sender does not have enough of an allowance'` (line 155 in `erc20.spec.ts`)
 
 These additions of `await` will ensure that the contract calls complete before running our assertion checks with `assertRevertOptimism`.
 
@@ -398,8 +398,8 @@ respectively, for each it-statement's assertion.
 Way to go!
 You're now set to run your integration tests! 🙌
 
-#### 3. Run `yarn test`
-> "Started from the bottom now where here"
+### 3. Run `yarn test`
+> "Started from the bottom now where here" - Drake
 
 And now...for the moment you've all been waiting for...
 Please, put your fingers together for...
