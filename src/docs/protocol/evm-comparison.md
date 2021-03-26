@@ -11,12 +11,12 @@ tags:
 This page serves as a reference point for dApp developers who want to build or port their systems to the OVM.  In particular, it highlights the main differences between the L2 OVM and L1 EVM that developers should consider.
 
 ## Missing, Replaced, and Custom Opcodes
-The OVM's execution sandbox requires that some EVM opcodes are banned from smart contracts.  Whenever a contract deployment is attempted on the OVM, a ["safety check"](https://github.com/ethereum-optimism/contracts-v2/blob/master/contracts/optimistic-ethereum/OVM/execution/OVM_SafetyChecker.sol#L30)) of the contract code is performed, and if any of the banned opcodes are present, deployment is blocked. 
+The OVM's execution sandbox requires that some EVM opcodes are banned from smart contracts.  Whenever a contract deployment is attempted in the OVM, a ["safety check"](https://github.com/ethereum-optimism/contracts-v2/blob/master/contracts/optimistic-ethereum/OVM/execution/OVM_SafetyChecker.sol#L30)) of the contract code is performed, and if any of the banned opcodes are present, deployment is blocked. 
  
  <!-- For a precise specification of what counts as a "safe" contract, see here. [todo] -->
 
 Of these banned opcodes, there are two main categories:
-1. Opcodes which are re-implemented as OVM contract functions, so that they "still work" on the OVM, and are just invoked differently.
+1. Opcodes which are re-implemented as OVM contract functions, so that they "still work" in the OVM, and are just invoked differently.
 2. Opcodes which have no L2-equivalent, and thus cannot be used in the OVM.
 
 

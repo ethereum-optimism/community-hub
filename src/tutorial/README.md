@@ -85,7 +85,7 @@ And as always, if you have any feedback, comments, or concerns, don't be a stran
 Congrats, you're ready to deploy an application to Optimistic Ethereum!
 It really is that easy.
 
-You can verify that everything went well by checking the two artifact directories (`artifacts` for use on the EVM and `artifacts-ovm` for use on the OVM) and the two cache directories (`cache` and `cache-ovm`) that should be generated whenever you run `yarn compile`.
+You can verify that everything went well by checking the two artifact directories (`artifacts` for use on the EVM and `artifacts-ovm` for the OVM) and the two cache directories (`cache` and `cache-ovm`) that should be generated whenever you run `yarn compile`.
 
 ::: tip Side-note on the Node.js scripts
 Secretly, we hid the logic for this quick command within your `package.json`.
@@ -269,7 +269,7 @@ Go ahead and change update line 8 to:
 import deploymentsInfo from '../deployments/l2/ERC20.json'
 ```
 
-Next, we'll quickly borrowing a set [utility functions from our friends at Synthetix](https://github.com/Synthetixio/synthetix/blob/develop/test/optimism/utils/revertOptimism.js) that will help us retreive transaction revert reasons for transactions of contracts that are deployed on the OVM.
+Next, we'll quickly borrowing a set [utility functions from our friends at Synthetix](https://github.com/Synthetixio/synthetix/blob/develop/test/optimism/utils/revertOptimism.js) that will help us retreive transaction revert reasons for transactions of contracts that are deployed to the OVM.
 
 Let's begin this step by adding importing the utility function `assertRevertOptimism` on the line right after `deploymentsInfo`:
 ```ts
