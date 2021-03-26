@@ -422,7 +422,7 @@ If that didn't take your breath away, I'd suggest running the following command 
 yarn the-kitchen-sink
 ```
 
-[![Take my Breath Away ](https://img.youtube.com/vi/Bx51eegLTY8&t/0.jpg)](https://www.youtube.com/watch?v=Bx51eegLTY8&t=48s)
+![Congrats! You have completed the official Optimism Tutorial!](../assets/videos/optimism-tutorial-completion.mp4)
 
 ## Until next time...
 
