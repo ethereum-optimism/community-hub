@@ -41,7 +41,7 @@ You might also want to take the following two steps depending on your specific n
 * [`hardhat`](https://hardhat.org/getting-started/)
 
 Since your OVM-compatible contracts require Optimism's custom Solidity compiler, you'll be using Optimism's `@eth-optimism/plugins` package.
-This package makes it easy to compile contracts and deploy them to an Optimistic Ethereum network. 
+This package makes it easy to compile contracts and deploy them to an Optimistic Ethereum network.
 
 Note that Optimism has been focusing most of our internal development efforts on _integration tests_ against the OVM using [`optimism-integration`](https://github.com/ethereum-optimism/optimism-integration) (our integrations repo), a set of docker containers that provides a local instance of Optimistic Ethereum.
 So, while we are cutting down the scope of `@eth-optimism/plugins` to handle just contract compilation ((and no longer allow for OVM unit tests), you can still write contract integration tests locally against the OVM by spinning up that integrations repo.
@@ -91,7 +91,7 @@ Assuming you've been able to succesfully follow one of the above tutorials, you 
 Hopefully you have a bunch of green checkmarks coming out of a fancy L2 VM!
 -->
 
-Next we're going to get your contracts deployed to a real Optimistic Ethereum node (running on our [fork of go-ethereum](https://github.com/ethereum-optimism/go-ethereum)). 
+Next we're going to get your contracts deployed to a real Optimistic Ethereum node (running on our [fork of go-ethereum](https://github.com/ethereum-optimism/go-ethereum)).
 
 ### Local Deployment
 This step used to be optional, but is now required (since we're pausing maintenance for unit tests using our plugins package)!
