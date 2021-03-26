@@ -75,14 +75,24 @@ Finally, compile it!
 yarn compile
 ```
 
-> **Side note:**  Previously, we had a plain `yarn compile` command that was used to compile your contracts. Since the recent stable release of [`@eth-optimism/plugins`](https://github.com/ethereum-optimism/plugins/releases/tag/v1.0.0-alpha.2), we made some minor changes to the workflow for compiling, deploying, and testing your contracts (all of which we will cover in this tutorial as we progress, so don't worry if it's not clear about how these pieces fit together yet). But, we think these changes profoundly improve the developer experience! So, we hope you enjoy the boost to your workflow from these changes. And as always, if you have any feedback, comments, or concerns, don't be a stranger 😊 and let us know how we can help by posting a message in our [Discord server](https://discord.gg/NypkmfSkkw)!!
+::: tip 📌 Side-note on `@eth-optimism/plugins` changes
+Previously, we had a plain `yarn compile` command that was used to compile your contracts. 
+Since the recent stable release of [`@eth-optimism/plugins`](https://github.com/ethereum-optimism/plugins/releases/tag/v1.0.0-alpha.2), we made some minor changes to the workflow for compiling, deploying, and testing your contracts (all of which we will cover in this tutorial as we progress, so don't worry if it's not clear about how these pieces fit together yet).
+But, we think these changes profoundly improve the developer experience! So, we hope you enjoy the boost to your workflow from these changes.
+And as always, if you have any feedback, comments, or concerns, don't be a stranger 😊 and let us know how we can help by posting a message in our [Discord server](https://discord.gg/NypkmfSkkw)!!
+:::
 
 Congrats, you're ready to deploy an application to Optimistic Ethereum!
 It really is that easy.
 
 You can verify that everything went well by checking the two artifact directories (`artifacts` for use on the EVM and `artifacts-ovm` for use on the OVM) and the two cache directories (`cache` and `cache-ovm`) that should be generated whenever you run `yarn compile`.
 
-> **Side note:** Secretly, we hid the logic for this quick command within your `package.json`. There are actually _two_ compilation steps being run here, sequentially. First, `yarn compile` runs `yarn compile:evm` which obviously compiles your ERC20 contract and spits out an artifacts folder for use on the EVM. The second command being run in this step is, of course, 💃 `yarn compile:ovm` 🕺, which has a similar process, but instead uses a different naming of filepaths (which we make use of later 😉).
+::: tip Side-note on the Node.js scripts
+Secretly, we hid the logic for this quick command within your `package.json`.
+There are actually _two_ compilation steps being run here, sequentially.
+First, `yarn compile` runs `yarn compile:evm` which obviously compiles your ERC20 contract and spits out an artifacts folder for use on the EVM.
+The second command being run in this step is, of course, 💃 `yarn compile:ovm` 🕺, which has a similar process, but instead uses a different naming of filepaths (which we make use of later 😉).
+:::
 
 Here, `artifacts-ovm` signifies that the contracts contained in this directory have been compiled for the OVM, the **O**ptimistic **V**irtual **M**achine, as opposed to the Ethereum Virtual Machine.
 
@@ -113,8 +123,8 @@ optimism-tutorial % ./up.sh
 The containers will take some time to fully spin up, but once they do, you should see something like this flash by in the logs at some point 
 (NOTE: These logs are not important and are only shared to confirm you're running Optimistic Ethereum correctly.):
 
-![Local OE Network Logs 1](./assets/optimistic-ethereum-local-instance-log1.png)
-![Local OE Network Logs 2](./assets/optimistic-ethereum-local-instance-log2.png)
+![Local OE Network Logs 1](../assets/optimistic-ethereum-local-instance-log1.png)
+![Local OE Network Logs 2](../assets/optimistic-ethereum-local-instance-log2.png)
 
 You now have your very own locally deployed instance of Optimistic Ethereum! 🙌
 (NOTE: Keep these containers running! We'll be using your new local instance of Optimistic Ethereum to deploy and then test your contract.)
@@ -150,6 +160,7 @@ Ain't that neat!
 
 First, we'll show you the deploy function and then explain how it works.
 Let's now add this function below our imports that added in the last step:
+
 ```typescript
 const func: DeployFunction = async (hre: HardhatRuntimeEnvironment) => {
   const { deployments, getNamedAccounts } = hre
@@ -188,7 +199,9 @@ And here is the exciting part: in the deployment options (the second argument de
 
 Easy enough right?
 
-> If you're still confused by these deploy options, we recommend reviewing the [Configuration](https://github.com/wighawag/hardhat-deploy#configuration) and [How to Deploy Contracts](https://github.com/wighawag/hardhat-deploy#how-to-deploy-contracts) sections from `hardhat-deploy`'s documentation.
+::: tip 😕 Confused?
+If you're still confused by these deploy options, we recommend reviewing the [Configuration](https://github.com/wighawag/hardhat-deploy#configuration) and [How to Deploy Contracts](https://github.com/wighawag/hardhat-deploy#how-to-deploy-contracts) sections from `hardhat-deploy`'s documentation.
+:::
 
 To complete our deploy script, we export our function, `func`, and give it a function tag called `ERC20`.
 This function tag helps us specify which deploy script we want to run when using `hardhat-deploy` in the CLI.
@@ -198,7 +211,7 @@ So, to deploy your ERC20 contract to your local layer 1 Ethereum _and_ layer 2 O
 
 You'll see something like the following in your console or terminal if this running the command was successful:
 
-![Console logs after running yarn deploy](./assets/running-yarn-deploy.png)
+![Console logs after running yarn deploy](../assets/running-yarn-deploy.png)
 
 #### A explainer for beginners
 
@@ -216,6 +229,7 @@ Second in the chain of commands is `yarn compile:ovm` which similarly deploys yo
 This black magic process comes from `@eth-optimism/plugins` which lets you specify when you are deploying your contracts with `hardhat-deploy`, whether you are deploying to the OVM or to the EVM with this additional flag in the CLI, `TARGET=ovm`.
 
 The full command:
+
 ```shell
 TARGET=ovm hardhat --network l1 deploy --tags ERC20
 ```
@@ -250,6 +264,7 @@ Step one is quite straightforward, so we'll assume you can do that step without 
 In your newly named `optimistic-erc20.spec.ts` file, we're first going to update the path for `deploymentsInfo` so that we're retreiving your contract artifact for layer 2 Optimistic Ethereum and _not_ layer 1 Ethereum.
 
 Go ahead and change update line 8 to:
+
 ```typescript
 import deploymentsInfo from '../deployments/l2/ERC20.json'
 ```
@@ -335,8 +350,9 @@ Now with that out of the way, let's get back to finishing changes to `optimistic
 At the top, you'll notice a commented code block of `privateKey` variables.
 Uncomment this line so that we can use it to create our 3 accounts.
 
-Next, remove the instantiation of 3 accounts with `getSigners()` (line 35-36 in `erc20.spec.ts`). 
+Next, remove the instantiation of 3 accounts with `getSigners()` (line 35-36 in `erc20.spec.ts`).
 Instead of this line, create 3 new accounts, synchronously, right above the before-statement called `'connect to contracts'`, like so:
+
 ```ts
 // Signers
 const account1: Signer = new ethers.Wallet(privateKey1, provider)
@@ -372,6 +388,7 @@ await assertRevertOptimism({
 ```
 
 where the revert `reason` is equal to:
+
 1. `"You don't have enough balance to make this transfer!"`
 2. `"Can't transfer from the desired account because you don't have enough of an allowance."`
 3. `"Can't transfer from the desired account because you don't have enough of an allowance."`
@@ -394,8 +411,8 @@ yarn test
 
 If you've been following this tutorial closely (but not too closely because this tutorial is claustrophic 😷), and have made no errors along the way, you'll see console logs like this:
 
-![The Beautiful EVM Test Logs](./assets/the-beautiful-evm-tests.png)
-![The Breathtaking EVM Test Logs](./assets/the-breathtaking-ovm-tests.png)
+![The Beautiful EVM Test Logs](../assets/the-beautiful-evm-tests.png)
+![The Breathtaking EVM Test Logs](../assets/the-breathtaking-ovm-tests.png)
 
 <!-- MUST FIX L1 AND L2 LABELING IN TEST STATEMENTS -->
 
@@ -406,7 +423,6 @@ yarn the-kitchen-sink
 ```
 
 [![Take my Breath Away ](https://img.youtube.com/vi/Bx51eegLTY8&t/0.jpg)](https://www.youtube.com/watch?v=Bx51eegLTY8&t=48s)
-
 
 ## Until next time...
 
