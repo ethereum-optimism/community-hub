@@ -30,14 +30,21 @@ h2 {
 .home .hero .action-button {
   color: black !important;
   background-color: white !important;
-  text-decoration: $accentColor underline;
-  text-decoration-thickness: 2px;
   border: 1px solid black !important;
   font-family: "Roboto";
   margin: 15px auto;
   cursor: pointer;
   width: 250px;
   display: block !important;
+}
+
+.home .hero .action-button:hover span.hide-on-hover {
+  visibility: hidden;
+}
+
+.home .hero .action-button u {
+  text-decoration: $accentColor underline;
+  text-decoration-thickness: 2px;
 }
 
 .home .hero .action-button:hover {

@@ -11,29 +11,14 @@
       />
 
       <h1 v-if="data.heroText !== null" id="main-title">
-        The Optimism Community Hub
+        Optimistic Ethereum
       </h1>
 
-      <a class="action-button" href="/tutorial">try the tutorial</a>
-      <a class="action-button" href="/docs">read the docs</a>
-      <a class="action-button" href="/faqs">check out the FAQs</a>
-      <a class="action-button" href="https://discord.com/invite/jrnFEvq"
-        >join the discord</a
-      >
-
-      <h3>
-        This is a work in progress. We'll be updating this site regularly in the
-        coming weeks. Stay tuned!
-      </h3>
-      <h3>
-        Got ideas for the site?
-        <a href="https://github.com/ethereum-optimism/community-hub">
-          Edit our community hub docs on GitHub!
-        </a>
-        <br /><br />
-        Have questions about Optimistic Ethereum?
-        <a href="https://discord.com/invite/jrnFEvq">Come hang on discord</a>.
-      </h3>
+      <a class="action-button" href="/tldr"><span class="hide-on-hover">read the </span><u>tl;dr</u></a>
+      <a class="action-button" href="/tutorial"><span class="hide-on-hover">try the </span><u>tutorial</u></a>
+      <a class="action-button" href="/docs"><span class="hide-on-hover">read the </span><u>docs</u></a>
+      <a class="action-button" href="/faqs"><span class="hide-on-hover">check out the </span><u>FAQs</u></a>
+      <a class="action-button" href="https://discord.com/invite/jrnFEvq"><span class="hide-on-hover">come hang on </span><u>discord</u></a>
     </header>
   </main>
 </template>
