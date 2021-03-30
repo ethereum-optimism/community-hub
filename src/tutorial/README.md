@@ -28,8 +28,8 @@ We've structured this tutorial as a follow-along exercise where we'll be writing
 Please clone and enter [this repository](https://github.com/ethereum-optimism/optimism-tutorial):
 
 ```sh
-optimism-tutorial % git clone https://github.com/ethereum-optimism/optimism-tutorial
-optimism-tutorial % cd optimism-tutorial
+git clone https://github.com/ethereum-optimism/optimism-tutorial
+cd optimism-tutorial
 ```
 
 We're using an Ethereum development framework called [Hardhat](https://hardhat.org) to make our lives a lot easier.
@@ -38,7 +38,7 @@ Hardhat is well designed and full of useful features.
 Go ahead and set up Hardhat by running:
 
 ```sh
-optimism-tutorial % yarn
+yarn
 ```
 
 We'll be writing all of our smart contracts in Solidity and writing the rest of our code in TypeScript.
@@ -58,7 +58,7 @@ We'll need to add a special plugin to hardhat that enables this custom Optimism 
 First, add the Optimism plugins package to your project:
 
 ```sh
-optimism-tutorial % yarn add @eth-optimism/plugins --dev
+yarn add @eth-optimism/plugins --dev
 ```
 
 Next, add the following line to [`optimism-tutorial/hardhat.config.ts`](https://github.com/ethereum-optimism/optimism-tutorial/blob/main/hardhat.config.ts):
@@ -72,7 +72,7 @@ import '@eth-optimism/plugins/hardhat/compiler'
 Finally, compile it!
 
 ```sh
-optimism-tutorial % yarn compile
+yarn compile
 ```
 
 ::: tip 📌 Side-note on `@eth-optimism/plugins` changes
@@ -104,9 +104,9 @@ Fortunately, we have a handy dandy [integrations repo](https://github.com/ethere
 Let's get our local instance setup by running these commands:
 
 ```sh
-optimism-tutorial % git clone git@github.com:ethereum-optimism/optimism-integration.git --recurse-submodules
-optimism-tutorial % cd optimism-integration
-optimism-integration % ./pull.sh
+git clone git@github.com:ethereum-optimism/optimism-integration.git --recurse-submodules
+cd optimism-integration
+./pull.sh
 ```
 
 What we're doing here first is cloning the `optimism-integration` repo, which comes with a dockerized L2 chain (OVM) and a dockerzied L1 chain (EVM).
@@ -116,7 +116,7 @@ Next, we run the `./pull.sh` command to pull all the docker images to start your
 Lastly, we'll run the `./up.sh` command to spin your docker containers up:
 
 ```sh
-optimism-integration % ./up.sh
+./up.sh
 ```
 
 (NOTE: These last two commands are provided by shell scripts that we created for you 😊.)
@@ -137,14 +137,14 @@ To do that, we'll be using the helpful [`hardhat-deploy`](https://github.com/wig
 
 Let's start by adding `hardhat-deploy` to our list of `devDependencies` with the following command:
 ```sh
-optimism-tutorial % yarn add hardhat-deploy --dev
+yarn add hardhat-deploy --dev
 ```
 
 Now, we're able to start writing our deploy script.
 First, we'll want to create a directory called `deploy` and our deploy script within that directory.
 You can do this with the following command:
 ```sh
-optimism-tutorial % mkdir deploy && cd deploy && touch deployERC20.ts
+mkdir deploy && cd deploy && touch deployERC20.ts
 ```
 
 Since we're using TypeScript, we'll start editing our new deploy script by adding types for [`hardhat-deploy`](https://github.com/wighawag/hardhat-deploy) and `hardhat` for static type checking of this file.
@@ -220,7 +220,7 @@ Similar to when we ran `yarn compile`, there's some Node.js script magic going o
 First, `yarn deploy` starts the chain of commands by running `yarn deploy:evm`, which deploys your ERC20 contract with the following command:
 
 ```shell
-optimism-tutorial % hardhat --network l1 deploy --tags ERC20
+hardhat --network l1 deploy --tags ERC20
 ```
 
 What this command does is specify the deployment network `l1` (which is prespecified for you in your `hardhat.config.ts` 😎), then it uses `deploy` ([the `deploy` task from `hardhat-deploy`](https://github.com/wighawag/hardhat-deploy#the-deploy-task)) to run our deploy function by the function tag we used to specify it (i.e. `ERC20`).
@@ -231,7 +231,7 @@ This black magic process comes from `@eth-optimism/plugins` which lets you speci
 The full command:
 
 ```shell
-optimism-tutorial % TARGET=ovm hardhat --network l1 deploy --tags ERC20
+TARGET=ovm hardhat --network l1 deploy --tags ERC20
 ```
 
 WAIT, how the heck are my contract ABIs and bytecode being accounted for when deploying to the `l1` or `l2` networks?
@@ -404,7 +404,7 @@ You're now set to run your integration tests! 🙌
 And now...for the moment you've all been waiting for...
 Please, put your fingers together for...
 ```sh
-optimism-tutorial % yarn test
+yarn test
 ```
 
 (Don't forget to enter the above command in your terminal!)
@@ -419,7 +419,7 @@ If you've been following this tutorial closely (but not too closely because this
 And there you have it.
 If that didn't take your breath away, I'd suggest running the following command while listening to some suitable music:
 ```sh
-optimism-tutorial % yarn the-kitchen-sink
+yarn the-kitchen-sink
 ```
 
 <figure class='video_container'>
