@@ -38,20 +38,14 @@ h2 {
   display: block !important;
 }
 
-.home .hero .action-button:hover span.hide-on-hover {
-  visibility: hidden;
-}
-
 .home .hero .action-button u {
   text-decoration: $accentColor underline;
   text-decoration-thickness: 2px;
 }
 
 .home .hero .action-button:hover {
-  background-color: $accentColor !important;
-  text-decoration: $backgroundColor underline;
-  text-decoration-thickness: 3px;
-  color: white !important;
+  -webkit-box-shadow: 5px 5px 0px -1px $accentColor; 
+  box-shadow: 5px 5px 0px -1px $accentColor;
 }
 
 .tag-info-block {
@@ -63,4 +57,21 @@ h2 {
 
 a > code {
   color: $accentColor !important;
+}
+
+#tagline {
+  position: relative;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    left: -10px;
+  }
+  50% {
+    left: 10px;
+  }
+  100% {
+    left: -10px;
+  }
 }

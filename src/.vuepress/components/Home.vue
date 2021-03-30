@@ -14,11 +14,15 @@
         Optimistic Ethereum
       </h1>
 
+      <h2>"make ethereum cheap again"</h2>
+
       <a class="action-button" href="/tldr"><span class="hide-on-hover">read the </span><u>tl;dr</u></a>
       <a class="action-button" href="/tutorial"><span class="hide-on-hover">try the </span><u>tutorial</u></a>
       <a class="action-button" href="/docs"><span class="hide-on-hover">read the </span><u>docs</u></a>
       <a class="action-button" href="/faqs"><span class="hide-on-hover">check out the </span><u>FAQs</u></a>
       <a class="action-button" href="https://discord.com/invite/jrnFEvq"><span class="hide-on-hover">come hang on </span><u>discord</u></a>
+
+      <h3 id="tagline">{{ tagline }}</h3>
     </header>
   </main>
 </template>
@@ -35,13 +39,19 @@ export default {
     data() {
       return this.$page.frontmatter;
     },
-
-    actionLink() {
-      return {
-        link: this.data.actionLink,
-        text: this.data.actionText,
-      };
-    },
+    tagline() {
+      const taglines = [
+        `eth is for yolo trades, not gas fees`,
+        `pessimists not welcome`,
+        `we put ethereum inside of ethereum`,
+        `keeping ethereum half full`,
+        `highly optimistic`,
+        `hey dawg we heard you like blockchains`,
+        `we got all the lindyness of geth`,
+        `gen z more like degen z amirite`
+      ]
+      return taglines[Math.floor(Math.random() * taglines.length)]
+    }
   },
 };
 </script>
