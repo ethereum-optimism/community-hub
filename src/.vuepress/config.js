@@ -30,7 +30,7 @@ module.exports = {
       },
       {
         text: 'tutorial',
-        link: '/tutorial/',
+        link: 'https://github.com/ethereum-optimism/optimism-tutorial/blob/main/README.md',
       },
       {
         text: 'docs',
