@@ -14,15 +14,13 @@
         Optimistic Ethereum
       </h1>
 
-      <h2>"make ethereum cheap again"</h2>
+      <h2>Layer 2 is coming.</h2>
 
-      <a class="action-button" href="/tldr"><span class="hide-on-hover">read the </span><u>tl;dr</u></a>
-      <a class="action-button" href="/tutorial"><span class="hide-on-hover">try the </span><u>tutorial</u></a>
-      <a class="action-button" href="/docs"><span class="hide-on-hover">read the </span><u>docs</u></a>
-      <a class="action-button" href="/faqs"><span class="hide-on-hover">check out the </span><u>FAQs</u></a>
-      <a class="action-button" href="https://discord.com/invite/jrnFEvq"><span class="hide-on-hover">come hang on </span><u>discord</u></a>
-
-      <h3 id="tagline">{{ tagline }}</h3>
+      <!--<a class="action-button" href="/tldr">read the <u>tl;dr</u></a>-->
+      <a class="action-button" href="/faqs">check out the <u>FAQs</u></a>
+      <a class="action-button" href="/tutorial">try the <u>tutorial</u></a>
+      <a class="action-button" href="/docs">read the <u>docs</u></a>
+      <a class="action-button" href="https://discord.com/invite/jrnFEvq">come hang on <u>discord</u></a>
     </header>
   </main>
 </template>
@@ -39,19 +37,6 @@ export default {
     data() {
       return this.$page.frontmatter;
     },
-    tagline() {
-      const taglines = [
-        `eth is for yolo trades, not gas fees`,
-        `pessimists not welcome`,
-        `we put ethereum inside of ethereum`,
-        `keeping ethereum half full`,
-        `highly optimistic`,
-        `hey dawg we heard you like blockchains`,
-        `we got all the lindyness of geth`,
-        `gen z more like degen z amirite`
-      ]
-      return taglines[Math.floor(Math.random() * taglines.length)]
-    }
   },
 };
 </script>
@@ -66,26 +51,12 @@ export default {
   .hero {
     text-align: center;
 
-    img {
-      max-width: 100%;
-      max-height: 280px;
-      display: block;
-      margin: 3rem auto 1.5rem;
-    }
-
     h1 {
       font-size: 3rem;
     }
 
     h1, .description, .action {
       margin: 1.8rem auto;
-    }
-
-    .description {
-      max-width: 35rem;
-      font-size: 1.6rem;
-      line-height: 1.3;
-      color: lighten($textColor, 40%);
     }
 
     .action-button {
@@ -103,42 +74,6 @@ export default {
         background-color: lighten($accentColor, 10%);
       }
     }
-  }
-
-  .features {
-    border-top: 1px solid $borderColor;
-    padding: 1.2rem 0;
-    margin-top: 2.5rem;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    align-content: stretch;
-    justify-content: space-between;
-  }
-
-  .feature {
-    flex-grow: 1;
-    flex-basis: 30%;
-    max-width: 30%;
-
-    h2 {
-      font-size: 1.4rem;
-      font-weight: 500;
-      border-bottom: none;
-      padding-bottom: 0;
-      color: lighten($textColor, 10%);
-    }
-
-    p {
-      color: lighten($textColor, 25%);
-    }
-  }
-
-  .footer {
-    padding: 2.5rem;
-    border-top: 1px solid $borderColor;
-    text-align: center;
-    color: lighten($textColor, 25%);
   }
 }
 

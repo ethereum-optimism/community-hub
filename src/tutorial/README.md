@@ -1,5 +1,5 @@
 ---
-title: Tutorial | Building on Optimism
+title: The Official™ Optimism Tutorial
 lang: en-US
 tags:
     - contracts
