@@ -16,7 +16,7 @@ module.exports = {
     editLinks: true,
     docsDir: 'src',
     docsRepo: 'https://github.com/ethereum-optimism/community-hub',
-    docsBranch: 'experimental',
+    docsBranch: 'main',
     editLinkText: '✍️ edit this page on github',
     lastUpdated: false,
     nav: [
