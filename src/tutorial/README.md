@@ -108,8 +108,8 @@ Lastly, we'll run the `./up.sh` command to spin up both chains:
 
 Once the containers have fully spinned up, you should see something like this flash by in the logs (the logs themselves are unimportant for us, so we can ignore them):
 
-![Local OE Network Logs 1](./assets/optimistic-ethereum-local-instance-log1.png)
-![Local OE Network Logs 2](./assets/optimistic-ethereum-local-instance-log2.png)
+![Local OE Network Logs 1](../assets/optimistic-ethereum-local-instance-log1.png)
+![Local OE Network Logs 2](../assets/optimistic-ethereum-local-instance-log2.png)
 
 (Make sure to keep these containers running!)
 
@@ -125,7 +125,7 @@ yarn deploy
 
 You should see something like the following in your console logs if this process was successful:
 
-![Deploy contract to the EVM](./assets/run-yarn-deploy-for-evm.png)
+![Deploy contract to the EVM](../assets/run-yarn-deploy-for-evm.png)
 
 ### Testing a contract in the EVM
 
@@ -137,7 +137,7 @@ yarn test
 
 You should see these tests passing in your console logs similar to the image below:
 
-![Test contract in the EVM](./assets/run-yarn-test-for-evm.png)
+![Test contract in the EVM](../assets/run-yarn-test-for-evm.png)
 
 ## Compiling, Deploying, and Testing Contracts for Optimistic Ethereum
 
@@ -211,7 +211,7 @@ yarn deploy:ovm
 
 If the deployment was successful, you will see similar helpful logs as we saw when deploying to Ethereum:
 
-![Deploy a contract to the OVM](./assets/run-yarn-deploy-for-ovm.png)
+![Deploy a contract to the OVM](../assets/run-yarn-deploy-for-ovm.png)
 
 Easy enough right?  
 
@@ -394,7 +394,7 @@ yarn test:ovm
 
 If you've been following this tutorial closely, and have made no errors along the way, you'll see console logs like this:
 
-![Test a contract in the OVM](./assets/run-yarn-test-for-ovm.png)
+![Test a contract in the OVM](../assets/run-yarn-test-for-ovm.png)
 
 And there you have it!
 
