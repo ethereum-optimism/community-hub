@@ -83,15 +83,6 @@ For help with these, you can check out the following resources:
 2. [Complete EVM/OVM comparison](/docs/protocol/evm-comparison) of all discrepancies.
 3. [Scopelift Uniswap tutorial](https://github.com/ScopeLift/ovm-uniswap-v2-core#porting-solidity-contracts-to-optimism-a-guide-using-uniswap-v2), which has some great "OVM vs. EVM" sections.
 
-<!-- 
-COMMENTED OUT UNTIL `@eth-optimism/plugins` IS UPDATED TO USE LATEST 
-VERSION OF GETH
-
-## Deploying on Optimistic Ethereum
-Assuming you've been able to succesfully follow one of the above tutorials, you should now have an easy way to test your Optimistic Ethereum contracts.
-Hopefully you have a bunch of green checkmarks coming out of a fancy L2 VM!
--->
-
 Next we're going to get your contracts deployed to a real Optimistic Ethereum node (running on our [fork of go-ethereum](https://github.com/ethereum-optimism/go-ethereum)).
 
 ### Local Deployment
