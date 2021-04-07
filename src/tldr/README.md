@@ -1,5 +1,5 @@
 ---
-title: Optimistic Ethereum TL;DR
+title: TL;DR
 lang: en-US
 tags:
     - contracts

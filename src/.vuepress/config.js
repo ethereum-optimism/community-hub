@@ -1,7 +1,7 @@
 const { description } = require('../../package')
 
 module.exports = {
-  title: 'Optimism Community Hub',
+  title: 'Stay Optimistic.',
   description: description,
 
   head: [
@@ -16,25 +16,29 @@ module.exports = {
     editLinks: true,
     docsDir: 'src',
     docsRepo: 'https://github.com/ethereum-optimism/community-hub',
-    docsBranch: 'experimental',
-    editLinkText: 'Something off? Suggest an edit to this page on GitHub by clicking here ✏️',
+    docsBranch: 'main',
+    editLinkText: '✍️ edit this page on github',
     lastUpdated: false,
     nav: [
+      // {
+      //   text: 'tl;dr',
+      //   link: '/tldr/',
+      // },
+      {
+        text: 'faq',
+        link: '/faqs/',
+      },
       {
         text: 'docs',
         link: '/docs/',
       },
       {
         text: 'tutorial',
-        link: '/tutorial/',
+        link: 'https://github.com/ethereum-optimism/optimism-tutorial/blob/main/README.md',
       },
       {
-        text: 'FAQs',
-        link: '/faqs/',
-      },
-      {
-        text: 'optimism',
-        link: 'https://optimism.io'
+        text: 'discord',
+        link: 'https://discord.com/invite/jrnFEvq',
       }
     ],
     sidebar: {
@@ -68,10 +72,6 @@ module.exports = {
         {
           title: 'Protocol Docs',
           children: [
-            {
-              title: 'TL;DR',
-              path: '/docs/protocol/tldr.md'
-            },
             {
               title: 'Protocol in Detail',
               path: '/docs/protocol/protocol.md'
@@ -117,13 +117,6 @@ module.exports = {
         }
       ],
       '/compare/': [
-        {
-          children: [ '' ],
-          collapsable: false,
-          sidebarDepth: 1,
-        }
-      ],
-      '/faqs/': [
         {
           children: [ '' ],
           collapsable: false,

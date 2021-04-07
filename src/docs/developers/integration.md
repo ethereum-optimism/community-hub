@@ -59,7 +59,7 @@ If you're using [hardhat](https://hardhat.org), our preferred development enviro
 For the rest of this documentation, we'll expect you to have your Solidity contracts ready to go.
 Please note that Vyper support is currently not enabled but is planned for a future release.
 
-If you want to try out an example contract instead of deploying your own, you can follow our [tutorial](https://github.com/ethereum-optimism/optimism-tutorial) (which should be pretty seamless).
+If you want to try out an example contract instead of deploying your own, you can follow our [tutorial](https://github.com/ethereum-optimism/optimism-tutorial/blob/main/README.md) (which should be pretty seamless).
 If you're using another testing suite like [truffle](https://www.trufflesuite.com/), that tutorial won't apply. But these `npm` packages have got you covered:
 
 - [`@eth-optimism/solc`](https://www.npmjs.com/package/@eth-optimism/solc): exports the Optimistic Ethereum compiler for `solidity@0.5/0.6/0.7`
