@@ -179,9 +179,9 @@ To understand how much transaction fees cost on L2 OE, it behooves you to know h
 
 As a gentle reminder, on L2 OE, gas fees are charged in ETH (but not the same ETH as in L1)!
 
-However, the fee payment itself is equal to to your `gasLimit * eth_gasPrice`, a calculation that is slightly different from L1 Ethereum where the fee you are charged is based on `gasUsed`.
+However, the fee payment itself is equal to to your `gasLimit * gasPrice`, a calculation that is slightly different from L1 Ethereum where the fee you are charged is based on `gasUsed`.
 Due to this slight difference, we recommend using `eth_estimateGas` to calculate your `gasLimit`.
-This is because `eth_gasPrice` is a constant value of 1 Gwei, so your focus should be on optimizing the `gasLimit`.
+This is because `gasPrice` is a constant value of `1 Gwei`, so your focus should be on optimizing the `gasLimit`.
 
 Two critical points to remember for this section here are: 1) you should never drop your `eth_gasPrice` or your transaction will simply get rejected on L2, and 2) never drop your `eth_estimateGas` `gasLimit` or your transaction might revert.
 
@@ -208,17 +208,29 @@ By reducing the size of your state variables, you will likely cut costs to reduc
 
 #### Final note on `gasUsed`
 
-A final note on the amount of `gasused` per transaction.
-**`gasUsed` must always be under 9 million**.
+Some final notes on the amount of `gasUsed` per transaction on L2.
+* **The `gasUsed` must always be under 9 million**.
+* **The `gasPrice` is fixed as a constant (it is initially set to `1 Gwei`)**
+* **The `gasUsed` is always equal to the `gasLimit` (since 100% of gas is always used)**
+* Lastly, **we add `executionGasUsed` as a new field in the transaction receipt.
 
 There is a per transaction gas limit of 9 million in L2 and when you compile your contracts for L2, gas usage can increase by more than 5x.
 
 So, if your transaction does consume more than 1.5 million gas on L1, you should really be mindful of the amount of gas it consumes in L2.
 
-<!-- 
+## Advanced Technical Info
 
-MUST ADD KELVIN'S NOTES ON FEE LOGIC IN L2GETH
+Here we present some more technical documentation on advanced subjects for those interested in learning more about gas from the level of the protocol.
 
-https://www.notion.so/optimismpbc/Fee-Logic-in-L2Geth-82fc5f230d684d03997f35bb98a75948
+### Nuisance Gas
 
--->
+Nuisance gas is a separate subject from the kind the topics we covered above.
+Nonetheless, this type of gas is included in L2 transaction costs.
+
+So, what is _nuisance gas_?
+
+**Nuisance gas exists to **provide an upper bound on the _maximum possible L1 gas_ that a [_fraud proof_](https://research.paradigm.xyz/optimism#fraud-proofs) can cost.**
+This kind of gas is referred to as a "nuisance" because there will be additional gas on L1 Ethereum (i.e. inclusion proofs) that are not needed in normal L2 Optimistic Ethereum execution.
+
+As a developer, nuisance gas is not something to worry about.
+Nuisance gas is set to a very high limit, so as long as nuisance gas is kept under this high limit, it has no impact on your development.
