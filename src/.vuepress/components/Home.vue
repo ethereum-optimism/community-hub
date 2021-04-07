@@ -28,10 +28,11 @@
       <h3>
         Got ideas for the site?
         <a href="https://github.com/ethereum-optimism/community-hub">
-          Edit our community hub docs on GitHub </a
-        >! <br /><br />
+          Edit our community hub docs on GitHub!
+        </a>
+        <br /><br />
         Have questions about Optimistic Ethereum?
-        <a href="https://discord.com/invite/jrnFEvq">Come hang on discord</a>!
+        <a href="https://discord.com/invite/jrnFEvq">Come hang on discord</a>.
       </h3>
     </header>
   </main>
