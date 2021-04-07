@@ -67,7 +67,9 @@ If you're using another testing suite like [truffle](https://www.trufflesuite.co
 
 An example of usage with [waffle](https://getwaffle.io) can be found in [this great tutorial](https://github.com/ScopeLift/ovm-uniswap-v2-core#porting-solidity-contracts-to-optimism-a-guide-using-uniswap-v2) by [Scopelift](https://www.scopelift.co/) which walks through getting Uniswap V2 ported over.
 
-<!--           DEAD LINK!  Should we remove?
+<!--
+
+This section gets updated in [`ethereum-optimism/community-hub/pull/#58`](https://github.com/ethereum-optimism/community-hub/pull/58)
 
 If you are using [truffle](https://www.trufflesuite.com/), [here is an example config file](https://github.com/ethereum-optimism/optimism-monorepo/blob/master/packages/ovm-toolchain/test/config/truffle-config.js) which shows how to incorporate the compiler and `ganache` for the OVM. 
 
@@ -333,20 +335,6 @@ Just call `<LAYER>CrossDomainMessenger.sendMessage` with the calldata, gasLimit 
 This wraps the message in a [`relayMessage`](https://github.com/ethereum-optimism/contracts/blob/21c38bb51a2d47029b40bdac709eec342d16a761/contracts/optimistic-ethereum/OVM/bridge/messaging/Abs_BaseCrossDomainMessenger.sol#L70-L97) call, targeting the `L2CrossDomainMessenger`.
 That's all! It's the same general process for L2 to L1.
 (This is enabled by the `L1MessageSender`, `L1BlockNumber`, and `L1Queue` fields in the message and transaction `meta`.)
-
----------
-
-<!-- platocrat's TODO: 
-
-1. Clarify how to interact with these messenger contracts on the page, instead of referring to many external links.
-
-2. Does this section L1 <> L2 comms section provide you enough info to buidl? If not, improve it so it does.
-
-3. Perhaps demo some of the code from the `` repo in this L1 <> L2 comms section.
-
-We now have this standard deposit/withdrawal example that allows deploying of an L1<>L2 token bridge to a local network: https://github.com/ethereum-optimism/optimism-tutorial/tree/deposit-withdrawal
-
---->
 
 ### 🌉 ETH and Token Bridges
 
