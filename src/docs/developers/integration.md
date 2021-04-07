@@ -339,14 +339,3 @@ Just call `<LAYER>CrossDomainMessenger.sendMessage` with the calldata, gasLimit 
 This wraps the message in a [`relayMessage`](https://github.com/ethereum-optimism/contracts/blob/21c38bb51a2d47029b40bdac709eec342d16a761/contracts/optimistic-ethereum/OVM/bridge/messaging/Abs_BaseCrossDomainMessenger.sol#L70-L97) call, targeting the `L2CrossDomainMessenger`.
 That's all! It's the same general process for L2 to L1.
 (This is enabled by the `L1MessageSender`, `L1BlockNumber`, and `L1Queue` fields in the message and transaction `meta`.)
-
----------
-
-<!-- platocrat's TODO: 
-
-1. Clarify how to interact with these messenger contracts on the page, instead of referring to many external links.
-
-2. Does this section L1 <> L2 comms section provide you enough info to buidl? If not, improve it so it does.
-
-3. Perhaps demo some of the code from the `dev-xdomain` repo in this L1 <> L2 comms section.
---->
