@@ -44,7 +44,7 @@ We're working hard to make sure any changes to your software stack are relativel
 If you're looking for something a else, you may wish to search through our more complete list of [Guides and Resources](/docs/resources/tutorials.md) and catalog of [useful developer tooling](/docs/resources/tooling.md).
 
 ::: tip Just want to play with the system?
-Try this [straightforward tutorial](/tutorial) that highlights the experience of building on top of Optimistic Ethereum.
+Try this [straightforward tutorial](https://github.com/ethereum-optimism/optimism-tutorial/blob/main/README.md) that highlights the experience of building on top of Optimistic Ethereum.
 :::
 
 ## For: Protocol Information
