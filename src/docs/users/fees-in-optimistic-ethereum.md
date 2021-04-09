@@ -59,7 +59,7 @@ To minimize gas costs for users, we recommend minimizing your `rollupTxSize`.
 For example, you can reduce your `uint256` state variables to `uint32` variables wherever possible in your transaction inputs.
 By reducing the size of your state variables, you will likely cut costs to reduce your `rollupTxSize` in exchange for increasing the amount of `gasUsed` for your transaction.
 
-### Final note on `gasUsed`
+### What is the gas limit on L2?
 
 Some final notes on the amount of `gasUsed` per transaction on L2.
 
@@ -90,7 +90,7 @@ What this means is that you should really be mindful of the `Gas Price` in Gwei 
 
 Next, if we look at the `Transaction Fee`, we can see that **this sender paid roughly `$78.42` for an SNX deposit to L2, a gas cost that you would expect for an L1 deposit.**
 
-### 💸 Main cost of a deposit
+### 💸 What is the main cost of a deposit?
 
 The main cost of a deposit comes from sending an L2 message to L1 via a call to the [`sendMessage`](https://github.com/ethereum-optimism/contracts/blob/master/contracts/optimistic-ethereum/OVM/bridge/messaging/Abs_BaseCrossDomainMessenger.sol#L51-L77) method.
 In Synthetix's `SynthetixBridgeToOptimism.sol` contract, under the [`_initiateDeposit`](https://github.com/Synthetixio/synthetix/blob/develop/contracts/SynthetixBridgeToOptimism.sol#L199-L203) function, we see `sendMessage` being called to send a message to L1 (from L2) for an L2 deposit of SNX.
@@ -101,7 +101,7 @@ Afterwards, the [`messenger`](https://github.com/Synthetixio/synthetix/blob/deve
 In [`CanonicalTransactionChain.enqueue`](https://github.com/ethereum-optimism/contracts/blob/master/contracts/optimistic-ethereum/OVM/chain/OVM_CanonicalTransactionChain.sol#L250-L260), we can see [gasToConsume](https://github.com/ethereum-optimism/contracts/blob/c39fcc40aec235511a5a161c3e33a6d3bd24221c/contracts/optimistic-ethereum/OVM/chain/OVM_CanonicalTransactionChain.sol#L282) is calculated from the the `_gasLimit` (that was specified for the transaction for an SNX deposit) divided by the `L2_GAS_DISCOUNT_DIVISOR`.
 (This value is not too important: the gist of what you need to know about the divisor is that it is a manually set parameter.)
 
-#### Calculating gas consumed
+#### How do we calculate L2 gas consumed?
 
 However, what _is_ important to know is that **`gasToConsume` is equal to the L1 gas that is burned.**
 (If you're curious, you can read the `L2_GAS_DISCOUNT_DIVISOR` value from our Mainnet CanonicalTransactionChain (CTC) [here](https://etherscan.io/address/0xed2701f7135eab0D7ca02e6Ab634AD6CbE159Ffb#readContract).)
@@ -109,7 +109,7 @@ However, what _is_ important to know is that **`gasToConsume` is equal to the L1
 Currently, the `L2_GAS_DISCOUNT_DIVISOR` is set to `32`.
 So, if you need to send an L1 → L2 transaction with 9 million gas (the gas limit), you will burn `9m/32 = 281,250` L1 gas in this step of `CanonicalTransactionChain.enqueue`.
 
-#### Gas optimization
+#### How can we optimize the gas limit?
 
 As a developer, you will want to have the minimum gas limit sent with your deposit.
 Minimizing the deposit gas limit will minimize gas costs to your users. For Synthetix, this minimum gas limit seems to be roughly 2 million gas.
@@ -155,10 +155,12 @@ INSERT GAS PRICE TICKER HERE (used for quickly knowing gas cost for withdrawals)
 By now, you might be wondering why the gas cost for these withdrawals are so expensive ($33.65, or $52.11 at the price of April 6th, 2021, is expensive!).
 The explanation comes from the expensive action of having to prove a merkle branch on L2 state. (For more information, you can see this process in the `_verifyStateRootProof` of [OVM_L1CrossDomainMessenger.sol](https://github.com/ethereum-optimism/contracts/blob/c39fcc40aec235511a5a161c3e33a6d3bd24221c/contracts/optimistic-ethereum/OVM/bridge/messaging/OVM_L1CrossDomainMessenger.sol#L201-L220))
 
-### Gas subsidy and self-withdrawals
+### Are there any subsidies for withdrawals?
 
 Currently, we're subsidizing the cost of running `relayMessage` for your withdrawals (🥳).
 However, soon you'll have to claim your own withdrawals.
+
+### Are there risks in making a withdrawal myself?
 
 It's important to know that when you initiate a self-withdrawal, you will have to pay roughly 500k gas at the gas price at the end of the 7-day withdraw window.
 That means that a self-withdrawal can be relayed at any time, so if gas prices shoot up a ton, you can wait for as long as you want (days, weeks, etc.) until you wish to claim and complete your withdrawal.
