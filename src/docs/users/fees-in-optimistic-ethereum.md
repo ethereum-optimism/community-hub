@@ -33,8 +33,8 @@ So, let's learn about gas in OE!
 
 Gas fees on L2 are charged in ETH (remember, [L2 ETH is not the same as ETH on L1](http://community.optimism.io/docs/protocol/evm-comparison.html#native-weth)) 
 
-However, the gas fee payment itself is equal to to your `gasLimit * gasPrice`, a calculation that is slightly different from L1 where the fee you are charged is based on `gasUsed`.
-Due to this slight difference, we recommend using `eth_estimateGas` to calculate your `gasLimit`.
+However, **the gas fee payment itself is equal to to your `gasLimit * gasPrice`**, a calculation that is slightly different from L1 where the fee you are charged is based on `gasUsed`.
+Due to this slight difference, **we recommend using `eth_estimateGas` to calculate your `gasLimit`.**
 This is because `gasPrice` is a constant value of `1 Gwei`, so your focus should be on optimizing the `gasLimit`.
 
 Two critical points to remember for this section here are:
@@ -55,7 +55,7 @@ rollupTxSize * dataPrice + executionPrice * gasUsed
 From these gas estimation variables, this means that the majority of transaction costs _until L2 becomes congested_ will be equal to `rollupTxSize * dataPrice`.
 Additionally, you can expect the `executionPrice` to be fairly minimal, unless L2 becomes congested.
 
-To minimize gas costs for users, we recommend minimizing your `rollupTxSize`.
+**To minimize gas costs for users, we recommend minimizing your `rollupTxSize`.**
 For example, you can reduce your `uint256` state variables to `uint32` variables wherever possible in your transaction inputs.
 By reducing the size of your state variables, you will likely cut costs to reduce your `rollupTxSize` in exchange for increasing the amount of `gasUsed` for your transaction.
 
@@ -106,14 +106,15 @@ In [`CanonicalTransactionChain.enqueue`](https://github.com/ethereum-optimism/co
 However, what _is_ important to know is that **`gasToConsume` is equal to the L1 gas that is burned.**
 (If you're curious, you can read the `L2_GAS_DISCOUNT_DIVISOR` value from our Mainnet CanonicalTransactionChain (CTC) [here](https://etherscan.io/address/0xed2701f7135eab0D7ca02e6Ab634AD6CbE159Ffb#readContract).)
 
-Currently, the `L2_GAS_DISCOUNT_DIVISOR` is set to `32`.
-So, if you need to send an L1 → L2 transaction with 9 million gas (the gas limit), you will burn `9m/32 = 281,250` L1 gas in this step of `CanonicalTransactionChain.enqueue`.
+**Currently, the `L2_GAS_DISCOUNT_DIVISOR` is set to `32`.**
+**So, if you need to send an L1 → L2 transaction with 9 million gas (the gas limit), you will burn `9m/32 = 281,250` L1 gas in this step of `CanonicalTransactionChain.enqueue`.**
 
 #### How can we optimize the gas limit?
 
 As a developer, you will want to have the minimum gas limit sent with your deposit.
-Minimizing the deposit gas limit will minimize gas costs to your users. For Synthetix, this minimum gas limit seems to be roughly 2 million gas.
-Therefore, we suggest that you find the minimum `_gasLimit` that will reliably result in successful deposits and _**add a buffer**_ (e.g. 1.5x the value of the gas limit), to ensure that users will not have their transactions reverted (and will get their tokens on the other side!).
+Minimizing the deposit gas limit will minimize gas costs to your users.
+For Synthetix, this minimum gas limit seems to be roughly 2 million gas.
+Therefore, **we suggest that you find the minimum `_gasLimit` that will reliably result in successful deposits and _add a buffer_ (e.g. 1.5x the value of the gas limit), to ensure that users will not have their transactions reverted (and will get their tokens on the other side!).**
 
 **NOTE: Even though we walked through expected costs for ETH transfers above, the same estimate can be used for other token deposits besides ETH as well.**
 
@@ -167,7 +168,7 @@ That means that a self-withdrawal can be relayed at any time, so if gas prices s
 
 Lastly, note that the gas price (in Gwei) is highly volatile.
 As an example of gas price risk, if you decide to wait on claiming your withdrawal, you could experience higher gas prices than if you had not waited.
-Thus, _there is gas price risk in choosing to postpone your self-withdrawal past the 7-day window._
+Thus, **there is gas price risk in choosing to postpone your self-withdrawal past the 7-day window.**
 
 ------------
 
@@ -185,5 +186,5 @@ Nonetheless, this type of gas is included on L2 transaction costs.
 Nuisance gas **provides an upper bound on the _maximum possible L1 gas_ that a [_fraud proof_](https://research.paradigm.xyz/optimism#fraud-proofs) can cost.**
 This kind of gas is referred to as a "nuisance" because there will be additional gas on L1 (i.e. inclusion proofs) that are not needed in normal L2 execution.
 
-As a developer, nuisance gas is not something to worry about.
+**As a developer, nuisance gas is not something to worry about.**
 Nuisance gas is set to a very high limit, so as long as nuisance gas is kept under this limit, it has no impact on your development.
