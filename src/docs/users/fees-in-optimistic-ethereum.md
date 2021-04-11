@@ -61,7 +61,7 @@ From these gas estimation variables, this means that the majority of transaction
 
 #### How is `executionPrice` calculated?
 
-Here, `executionPrice` is equal to the gasPrice returned by [`SuggestPrice`](https://github.com/ethereum-optimism/go-ethereum/blob/930c9f1381bb304496b036bab8f51899d1e63c71/eth/gasprice/gasprice.go#L76-L148) in L2 `geth`.This means that the `executionPrice == gasPrice == 1`
+Here, [`executionPrice` is equal to the gasPrice returned by `SuggestPrice`](https://github.com/ethereum-optimism/go-ethereum/blob/master/internal/ethapi/api.go#L1022-L1028) (you can find the source for `SuggestPrice` [here](https://github.com/ethereum-optimism/go-ethereum/blob/930c9f1381bb304496b036bab8f51899d1e63c71/eth/gasprice/gasprice.go#L76-L148)) in L2 `geth`.This means that the `executionPrice == gasPrice == 1`
 
 **Additionally, you can expect the `executionPrice` to be fairly minimal, unless L2 becomes congested.**
 
