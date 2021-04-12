@@ -15,6 +15,7 @@ Hop on the [discord](https://discord.gg/5TaAXGn2D8) and make a post in `#resourc
 :::
 
 ---
+
 ## [@eth-optimism/plugins](https://github.com/ethereum-optimism/plugins)
 
 A `Node.js` package that contains various useful plugins for developing contracts to be deployed on Optimistic Ethereum.

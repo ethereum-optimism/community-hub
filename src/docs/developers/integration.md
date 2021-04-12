@@ -39,10 +39,11 @@ You might also want to take the following two steps depending on your specific n
 ### Setup and Resources
 
 ::: tip Required Tooling
-* [`@eth-optimism/plugins`](https://www.npmjs.com/package/@eth-optimism/plugins)
+* [`@eth-optimism/plugins`](https://www.npmjs.com/package/@eth-optimism/plugins) 
 * [`hardhat`](https://hardhat.org/getting-started/)
 
-Since your OVM-compatible contracts require Optimism's custom `solc` compiler, you'll be using Optimism's `@eth-optimism/plugins` package, which gives you access to both the custom compiler and a custom OVM-compatible version of `ethers`. 
+Since your OVM-compatible contracts require Optimism's custom Solidity compiler, you'll be using Optimism's `@eth-optimism/plugins` package.
+This package makes it easy to compile contracts and deploy them to an Optimistic Ethereum network.
 
 Currently, We're focusing most of our internal development efforts on our [`hardhat`](https://hardhat.org/) tooling.
 However, we are still attempting to provide continued support for other development frameworks like [`truffle`](https://www.trufflesuite.com/).
@@ -53,7 +54,7 @@ The first part of getting started with Optimistic Ethereum is to get your contra
 This process involves two primary sub-steps:
 
 1. Compile your contracts with the OVM Solidity compiler.
-2. Deploy and test your contracts onto the local L2 node.
+2. Deploy and test your contracts onto the local L2 node using `optimism-integration`.
 
 If you're using [hardhat](https://hardhat.org), our preferred development environment, this can all be done with the use of some handy plugins we've built.
 For the rest of this documentation, we'll expect you to have your Solidity contracts ready to go.
@@ -66,18 +67,12 @@ If you're using another testing suite like [truffle](https://www.trufflesuite.co
 - [`@eth-optimism/plugins`](https://www.npmjs.com/package/@eth-optimism/plugins): exports "OVM-ified" `waffle.mockProvider` and `ganache` packages which will work with contracts output by the compiler.
 
 An example of usage with [waffle](https://getwaffle.io) can be found in [this great tutorial](https://github.com/ScopeLift/ovm-uniswap-v2-core#porting-solidity-contracts-to-optimism-a-guide-using-uniswap-v2) by [Scopelift](https://www.scopelift.co/) which walks through getting Uniswap V2 ported over.
-
-<!--           DEAD LINK!  Should we remove?
-
-If you are using [truffle](https://www.trufflesuite.com/), [here is an example config file](https://github.com/ethereum-optimism/optimism-monorepo/blob/master/packages/ovm-toolchain/test/config/truffle-config.js) which shows how to incorporate the compiler and `ganache` for the OVM. 
-
--->
+If you are using [truffle](https://www.trufflesuite.com/), [here is an example repository](https://github.com/ethereum-optimism/Truffle-ERC20-Example) which walks through how to start using Optimistic Ethereum with Truffle and a simple ERC-20.
 
 We recommend preserving EVM functionality when doing your port.
-For example, you might want to add separate `test:evm` and `test:ovm` scripts that use different `truffle-config.js` and `truffle-config-ovm.js` configuration files.
+For example, you might want to add separate `test:evm` and `test:ovm` scripts to your `package.json` that use different `truffle-config.js` and `truffle-config-ovm.js` configuration files.
 **It's very important to make sure that all of your contract tests work in the EVM first before debugging the OVM.**
 Sometimes it looks like the OVM has a bug, when really it's just an error in your contracts.
-
 
 ### Troubleshooting
 
@@ -88,13 +83,9 @@ For help with these, you can check out the following resources:
 2. [Complete EVM/OVM comparison](/docs/protocol/evm-comparison) of all discrepancies.
 3. [Scopelift Uniswap tutorial](https://github.com/ScopeLift/ovm-uniswap-v2-core#porting-solidity-contracts-to-optimism-a-guide-using-uniswap-v2), which has some great "OVM vs. EVM" sections.
 
-## Deploying on Optimistic Ethereum
-Assuming you've been able to succesfully follow one of the above tutorials, you should now have an easy way to test your Optimistic Ethereum contracts.
-Hopefully you have a bunch of green checkmarks coming out of a fancy L2 VM!
 Next we're going to get your contracts deployed to a real Optimistic Ethereum node (running on our [fork of go-ethereum](https://github.com/ethereum-optimism/go-ethereum)).
 
-### Local Deployment (Optional)
-This step is technically optional, but we'd recommend going through it anyway.
+### Local Deployment
 Before deploying to a "real" network (testnet or mainnet), you may want to deploy to a local version of our `go-ethereum` fork.
 If your contracts are relatively simple you may not need to do this.
 However, if you plan to write contracts that communicate between L1 and L2, then we highly recommend reading this section.
@@ -155,6 +146,10 @@ However, you'll likely mostly be using the L2 chain for most of your contract an
 So, we'd advise just adding the L2 custom network, unless you think you really need the local custom L1 chain network.
 
 Later, when you decide to move on to testing on Optimism's Kovan testnet, the simple change you'd make is just replacing the RPC URL with the RPC URL for Optimism's Kovan testnet.
+
+#### Deploying contracts (locally)
+
+Coming in the next several days!!
 
 ### Common Gotchas
 ::: tip Need help?
@@ -333,20 +328,6 @@ Just call `<LAYER>CrossDomainMessenger.sendMessage` with the calldata, gasLimit 
 This wraps the message in a [`relayMessage`](https://github.com/ethereum-optimism/contracts/blob/21c38bb51a2d47029b40bdac709eec342d16a761/contracts/optimistic-ethereum/OVM/bridge/messaging/Abs_BaseCrossDomainMessenger.sol#L70-L97) call, targeting the `L2CrossDomainMessenger`.
 That's all! It's the same general process for L2 to L1.
 (This is enabled by the `L1MessageSender`, `L1BlockNumber`, and `L1Queue` fields in the message and transaction `meta`.)
-
----------
-
-<!-- platocrat's TODO: 
-
-1. Clarify how to interact with these messenger contracts on the page, instead of referring to many external links.
-
-2. Does this section L1 <> L2 comms section provide you enough info to buidl? If not, improve it so it does.
-
-3. Perhaps demo some of the code from the `` repo in this L1 <> L2 comms section.
-
-We now have this standard deposit/withdrawal example that allows deploying of an L1<>L2 token bridge to a local network: https://github.com/ethereum-optimism/optimism-tutorial/tree/deposit-withdrawal
-
---->
 
 ### 🌉 ETH and Token Bridges
 

@@ -70,6 +70,17 @@ module.exports = {
           sidebarDepth: 1,
         },
         {
+          title: 'User Docs',
+          children: [
+            {
+              title: 'How Fees Work in Optimistic Ethereum',
+              path: '/docs/users/fees-in-optimistic-ethereum.md'
+            },
+          ],
+          collapsable: false,
+          sidebarDepth: 1,
+        },
+        {
           title: 'Protocol Docs',
           children: [
             {
