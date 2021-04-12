@@ -31,16 +31,23 @@ So, let's learn about gas in OE!
 
 ### How are fees calculated on L2?
 
-Gas fees on L2 are charged in ETH (remember, [L2 ETH is not the same as ETH on L1](http://community.optimism.io/docs/protocol/evm-comparison.html#native-weth)) 
+Gas fees on L2 are charged in ETH (remember, [L2 ETH is not the same as ETH on L1](../protocol/evm-comparison.html#native-weth))
 
 However, **the gas fee payment itself is equal to to your `gasLimit * gasPrice`**, a calculation that is slightly different from L1 where the fee you are charged is based on `gasUsed`.
 Due to this slight difference, **we recommend using `eth_estimateGas` to calculate your `gasLimit`.**
 This is because `gasPrice` is a constant value of `1 Gwei`, so your focus should be on optimizing the `gasLimit`.
 
-Two critical points to remember for this section here are:
+The definitions for these values are:
 
-1. you should never drop your `eth_gasPrice` or your transaction will simply get rejected on L2, and
-2. never drop your `gasLimit` below the value returned by `eth_estimateGas` `gasLimit`, or your transaction might revert.
+* `gasUsed` must always be under 9 million per transaction.
+* `gasPrice` is fixed as a constant (it is initially set to `1 Gwei`).
+* `gasUsed` is always equal to the `gasLimit` (since 100% of gas is always used).
+* `executionGasUsed` is added as a new field in the transaction receipt.
+
+Lastly for this section:
+
+1. You should never reduce your `eth_gasPrice` below the initial value of `1 Gwei` or your transaction will simply get rejected on L2, and
+2. Never drop your `gasLimit` below the value returned by `eth_estimateGas` `gasLimit`, or your transaction might revert.
 
 ### 👩‍💻 Transactions for developers
 
@@ -50,12 +57,19 @@ As a developer, it's important to know that `eth_estimateGas` returns:
 rollupTxSize * dataPrice + executionPrice * gasUsed
 ```
 
+where
+
+* `rollupTxSize` is the size of the serialized rollup transactions if it were published on L1,
+* `dataPrice` is a value set by the sequencer based on the current L1 congestion,
+* `executionPrice` is fetched via the standard `eth_gasPrice` rules that geth uses based on the current L2 congestion, and
+* `gasUsed` is the standard result of `eth_estimateGas` for a transaction.
+
+
 (See [ethereum-optimism/go-ethereum/pull/273](https://github.com/ethereum-optimism/go-ethereum/pull/273) for more info on these variables.)
 
-
 **To minimize gas costs for users, we recommend minimizing your `rollupTxSize`.**
-For example, you can reduce your `uint256` state variables to `uint32` variables wherever possible in your transaction inputs.
-By reducing the size of your state variables, you will likely cut costs to reduce your `rollupTxSize` in exchange for increasing the amount of `gasUsed` for your transaction.
+For example, you can reduce your `uint256` values to `uint32` variables wherever possible in your transaction inputs.
+By reducing the size of your input variables, you will likely cut costs to reduce your `rollupTxSize` in exchange for increasing the amount of `gasUsed` for your transaction.
 
 From these gas estimation variables, this means that the majority of transaction costs _until L2 becomes congested_ will be equal to `rollupTxSize * dataPrice`.
 
@@ -67,13 +81,6 @@ Here, [`executionPrice` is equal to the gasPrice returned by `SuggestPrice`](htt
 
 ### What is the gas limit on L2?
 
-Some final notes on the amount of `gasUsed` per transaction on L2.
-
-* `gasUsed` must always be under 9 million per transaction.
-* `gasPrice` is fixed as a constant (it is initially set to `1 Gwei`).
-* `gasUsed` is always equal to the `gasLimit` (since 100% of gas is always used).
-* `executionGasUsed` is added as a new field in the transaction receipt.
-
 **There is a per transaction gas limit of 9 million on L2 and when you compile your contracts for L2, gas usage can increase by more than 5x**.
 
 So, if your transaction consumes more than 1.5 million gas on L1, you should really be mindful of the amount of gas it consumes on L2.
@@ -81,7 +88,7 @@ So, if your transaction consumes more than 1.5 million gas on L1, you should rea
 ## 🏦 2. Initiating an L1 Deposit
 
 The most immediate thing you'll likely want to do is deposit ether (ETH) to L2 so that you can interact with contracts and applications while on L2.
-(Note, [ETH on L2 is actually WETH](http://community.optimism.io/docs/protocol/evm-comparison.html#native-weth), but we abstract this for you 🙂.)
+(Note, [ETH on L2 is actually WETH](../protocol/evm-comparison.html#native-weth), but we abstract this away for you 🙂.)
 Currently, the only way to do this is to initiate a deposit from L1 to L2.
 
 ### What can you expect to pay in gas costs when depositing from L1 to L2?
@@ -94,7 +101,7 @@ First, let's see what the gas cost is for depositing SNX to L2.
 If we look at the `Transaction Action`, we see a deposit was made for roughly `212.35 SNX` to the Synthetix L2 Bridge. Although this field gives us an easy look at the gas cost, _**it's very important to remember that gas costs (i.e. transaction fees) are dependent on the changing gas price and gas used by the transaction!**_
 What this means is that you should really be mindful of the `Gas Price` in Gwei and the `Gas Used by Transaction` for your transactions.
 
-Next, if we look at the `Transaction Fee`, we can see that **this sender paid roughly `$78.42` for an SNX deposit to L2, a gas cost that you would expect for an L1 deposit.**
+Next, if we look at the `Transaction Fee`, we can see that **this sender paid roughly `$78.42` for an SNX deposit to L2, a gas cost that you would expect for a somewhat complex L1 transaction.**
 
 ### 💸 What is the main cost of a deposit?
 

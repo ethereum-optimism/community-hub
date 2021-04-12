@@ -86,8 +86,6 @@ For help with these, you can check out the following resources:
 Next we're going to get your contracts deployed to a real Optimistic Ethereum node (running on our [fork of go-ethereum](https://github.com/ethereum-optimism/go-ethereum)).
 
 ### Local Deployment
-This step used to be optional, but is now required (since we're pausing maintenance for unit tests using our plugins package)!
-
 Before deploying to a "real" network (testnet or mainnet), you may want to deploy to a local version of our `go-ethereum` fork.
 If your contracts are relatively simple you may not need to do this.
 However, if you plan to write contracts that communicate between L1 and L2, then we highly recommend reading this section.
