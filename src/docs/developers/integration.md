@@ -60,7 +60,7 @@ If you're using [hardhat](https://hardhat.org), our preferred development enviro
 For the rest of this documentation, we'll expect you to have your Solidity contracts ready to go.
 Please note that Vyper support is currently not enabled but is planned for a future release.
 
-If you want to try out an example contract instead of deploying your own, you can follow our [tutorial](https://github.com/ethereum-optimism/optimism-tutorial) (which should be pretty seamless).
+If you want to try out an example contract instead of deploying your own, you can follow our [tutorial](https://github.com/ethereum-optimism/optimism-tutorial/blob/main/README.md) (which should be pretty seamless).
 If you're using another testing suite like [truffle](https://www.trufflesuite.com/), that tutorial won't apply. But these `npm` packages have got you covered:
 
 - [`@eth-optimism/solc`](https://www.npmjs.com/package/@eth-optimism/solc): exports the Optimistic Ethereum compiler for `solidity@0.5/0.6/0.7`
@@ -86,8 +86,6 @@ For help with these, you can check out the following resources:
 Next we're going to get your contracts deployed to a real Optimistic Ethereum node (running on our [fork of go-ethereum](https://github.com/ethereum-optimism/go-ethereum)).
 
 ### Local Deployment
-This step used to be optional, but is now required (since we're pausing maintenance for unit tests using our plugins package)!
-
 Before deploying to a "real" network (testnet or mainnet), you may want to deploy to a local version of our `go-ethereum` fork.
 If your contracts are relatively simple you may not need to do this.
 However, if you plan to write contracts that communicate between L1 and L2, then we highly recommend reading this section.
@@ -172,7 +170,7 @@ You can send successfully transactions with `gasPrice = 0`.
 
 #### Gotcha: Constantly exceeding gas limit
 Because of some technical details about rollups, the maximum gas limit of each transaction is always a bit less than on mainnet.
-You can bypass this during testing by updating [this environment variable](https://github.com/ethereum-optimism/optimism-integration/blob/dccd1b95b890c53679d32b36e14b50165900fb6d/docker-compose.env#L17).
+You can bypass this during testing by updating the gas limit in [this config file](https://github.com/ethereum-optimism/optimism-integration/blob/master/docker-compose.env.yml#L45).
 However, you will still need to decrease your gas usage before deploying to a "live" network.
 
 #### Gotcha: Still seeing the same bug after a patch or new release
@@ -219,14 +217,14 @@ In the meantime, you may be interested in taking a look at the Synthetix Bridge 
 These contracts are pretty cool and make heavy use of our L1⇔L2 messaging infrastructure:
 
 1. Depositing SNX into L2
-    - [Initiating a deposit on L1](https://github.com/Synthetixio/synthetix/blob/49427867e6d50886e0c8725e15c8b87e25aa6f8c/contracts/SynthetixBridgeToOptimism.sol#L190-L205)
-    - [Which leads to receiving a balance on L2](https://github.com/Synthetixio/synthetix/blob/49427867e6d50886e0c8725e15c8b87e25aa6f8c/contracts/SynthetixBridgeToBase.sol#L111-L115)
+    - [Initiating a deposit on L1](https://github.com/Synthetixio/synthetix/blob/master/contracts/SynthetixBridgeToOptimism.sol#L190-L205)
+    - [Which leads to receiving a balance on L2](https://github.com/Synthetixio/synthetix/blob/master/contracts/SynthetixBridgeToBase.sol#L111-L115)
 2. Migrate SNX Escrow entries to L2 (transferring large amounts of state from L1->L2):
-    - [Initiating a migration on L1](https://github.com/Synthetixio/synthetix/blob/49427867e6d50886e0c8725e15c8b87e25aa6f8c/contracts/SynthetixBridgeToOptimism.sol#L207-L236)
-    - [Which leads to receiving escrow entries on L2](https://github.com/Synthetixio/synthetix/blob/49427867e6d50886e0c8725e15c8b87e25aa6f8c/contracts/SynthetixBridgeToBase.sol#L98-L108)
+    - [Initiating a migration on L1](https://github.com/Synthetixio/synthetix/blob/master/contracts/SynthetixBridgeToOptimism.sol#L207-L236)
+    - [Which leads to receiving escrow entries on L2](https://github.com/Synthetixio/synthetix/blob/master/contracts/SynthetixBridgeToBase.sol#L98-L108)
 3. Withdrawing SNX to L1:
-    - [Burning L2 SNX and initiating the withdrawal on L2](https://github.com/Synthetixio/synthetix/blob/49427867e6d50886e0c8725e15c8b87e25aa6f8c/contracts/SynthetixBridgeToBase.sol#L76-L94)
-    - [Completing the withdrawal and receiving a balance on L1](https://github.com/Synthetixio/synthetix/blob/49427867e6d50886e0c8725e15c8b87e25aa6f8c/contracts/SynthetixBridgeToOptimism.sol#L126-L136)
+    - [Burning L2 SNX and initiating the withdrawal on L2](https://github.com/Synthetixio/synthetix/blob/master/contracts/SynthetixBridgeToBase.sol#L76-L94)
+    - [Completing the withdrawal and receiving a balance on L1](https://github.com/Synthetixio/synthetix/blob/master/contracts/SynthetixBridgeToOptimism.sol#L126-L136)
 
 ### ☎️ L1 <> L2 Communication
 ::: tip Work in Progress™
@@ -330,3 +328,54 @@ Just call `<LAYER>CrossDomainMessenger.sendMessage` with the calldata, gasLimit 
 This wraps the message in a [`relayMessage`](https://github.com/ethereum-optimism/contracts/blob/21c38bb51a2d47029b40bdac709eec342d16a761/contracts/optimistic-ethereum/OVM/bridge/messaging/Abs_BaseCrossDomainMessenger.sol#L70-L97) call, targeting the `L2CrossDomainMessenger`.
 That's all! It's the same general process for L2 to L1.
 (This is enabled by the `L1MessageSender`, `L1BlockNumber`, and `L1Queue` fields in the message and transaction `meta`.)
+
+### 🌉 ETH and Token Bridges
+
+Just like on L1, gas fees (i.e. transaction fees on Ethereum, usually denominated in [Gwei](https://gwei.io/)) still apply on L2.
+That means that you need to deposit some ether (ETH) to L2 to be able to pay for these gas fees.
+However, you cannot just directly transfer your ETH from an L1 smart contract or EOA (i.e. wallet) to Optimistic Ethereum's L2.
+
+This is where the ETH (and token) bridges come in!
+
+#### The Standard™️ ETH Bridge
+
+Optimistic Ethereum comes with a standard ETH bridge, [`OVM_L1ETHGateway.sol`](https://github.com/ethereum-optimism/contracts/blob/master/contracts/optimistic-ethereum/OVM/bridge/tokens/OVM_L1ETHGateway.sol). This smart contract acts as a _bridge_ between L1 and L2, letting users deposit ETH into the contract on L1 so that it can be used on L2. 
+
+`OVM_L1ETHGateway` has three important methods to keep in mind:
+
+1. [`initiateDeposit()`](https://github.com/ethereum-optimism/contracts/blob/master/contracts/optimistic-ethereum/OVM/bridge/tokens/OVM_L1ETHGateway.sol#L90-L95) is an internal method where the all the super secret magic happens to create our deposits 🪄 ✨.
+2. [`_deposit()`](https://github.com/ethereum-optimism/contracts/blob/master/contracts/optimistic-ethereum/OVM/bridge/tokens/OVM_L1ETHGateway.sol#L62-L68) is external and payable method used to call `_initiateDeposit()`, and passes in the caller's address as `msg.sender` to the `_to` and `_from` arguments of `_initiateDeposit()`.
+3. [`receive()`](https://github.com/ethereum-optimism/contracts/blob/master/contracts/optimistic-ethereum/OVM/bridge/tokens/OVM_L1ETHGateway.sol#L162-L168) is an another external and payable method which [will](https://github.com/ethereum-optimism/contracts/pull/311) allow the `OVM_L1ETHGateway` to accept ETH that you send directly to it (by calling `_initiateDeposit()`, similarly to `_deposit()`)
+
+Of these, the most important to keep in mind as a _user_, is the `receive()` method, which has a flow like this:
+
+![User flow for OVM_L1ETHGateway](../../assets/userflow-OVM_L1ETHGateway.png)
+
+With a smart contract, the flow would instead use the `_deposit()` method and look like this:
+
+![Contract flow for OVM_L1ETHGateway](../../assets/contractflow-OVM_L1ETHGateway.png)
+
+
+#### Token Bridges
+
+Similar to the ETH bridge, Optimistic Ethereum comes with bridge contracts that allow for _any_ token transfers between L1 and L2. 
+
+These contracts are:
+1. [`Abs_L1TokenGateway.sol`](https://github.com/ethereum-optimism/contracts/blob/master/contracts/optimistic-ethereum/OVM/bridge/tokens/Abs_L1TokenGateway.sol)
+2. [`Abs_L2DepositedToken`](https://github.com/ethereum-optimism/contracts/blob/master/contracts/optimistic-ethereum/OVM/bridge/tokens/Abs_L2DepositedToken.sol)
+3. [`OVM_L1ERC20Gateway.sol`](https://github.com/ethereum-optimism/contracts/blob/master/contracts/optimistic-ethereum/OVM/bridge/tokens/OVM_L1ERC20Gateway.sol)
+4. [`OVM_L2DepositedERC20.sol`](https://github.com/ethereum-optimism/contracts/blob/master/contracts/optimistic-ethereum/OVM/bridge/tokens/OVM_L2DepositedERC20.sol)
+
+:::tip How-Tos WIP™️
+Guides for how to use these contracts are fast approaching! But they are still WIPs. In the meantime, check out this deposit-withdraw guide below 😉.
+
+As always, reach out to us on [discord](https://discord.gg/5TaAXGn2D8) with any questions, feedback, or issues you may have in these docs. We're here to help!
+:::
+
+Luckily for you, we made a simple example deposit-and-withdraw guide for how to use `Abs_L2DepositedToken.sol` on the [`deposit-withdraw`](https://github.com/ethereum-optimism/optimism-tutorial/tree/deposit-withdrawal) branch of the `optimism-tutorial` repo! 
+The exciting L2 code 😋 you've been waiting for can be found in `contracts/MyL2DepositedERC20.sol` of that branch, and if you run through the `README.md` to deploy your ERC20 contract to your local Optimistic Ethereum L2, you'll be able to see the message-passing system at work in the logs while making an L1 to L2 ERC20 deposit, and back again, with an L2 to L1 ERC20 deposit.
+Those logs should look something like this, if you went through the steps correctly:
+
+![Deploy ERC20, L1 to L2 Deposit, and L2 to L1 Deposit](../../assets/deployERC20-L1toL2Deposit-and-L2toL1Deposit.png)
+
+Doesn't that look absolutely beautiful 😍😍😍!! From here, you're off to the races and ready for testing on Kovan! 🎉

@@ -19,8 +19,6 @@ Of these banned opcodes, there are two main categories:
 1. Opcodes which are re-implemented as OVM contract functions, so that they "still work" on the OVM, and are just invoked differently.
 2. Opcodes which have no L2-equivalent, and thus cannot be used in the OVM.
 
-
-
 ### Missing Opcodes
 
 | EVM Opcode     | Solidity Usage     | Reason for Absence |
@@ -105,7 +103,15 @@ The sequencer assigns its transactions' values for these opcodes based on what i
 ## Native wETH
 For the purposes of the OVM, we have removed all notion of native ETH.  OVM contracts do not have a direct `BALANCE`, and the `ovm*CALL` opcodes do not accept a `value` parameter.  Instead, OVM contracts are expected to use a wrapped ETH ERC20 token on L2 instead.  The L2 address will be documented here when Optimistic Ethereum is deployed to mainnet; on testnet, there is no such token and the sequencer allows for a `gasPrice` of 0.
 
-## Native Acccount Abstraction
+As a reminder, L1 ETH was created before there were [Ethereum Improvement Proposal (EIP)](https://eips.ethereum.org/) contract standards.
+Inevitably, this has led to some awkward contract interactions on Ethereum, such as having to exchange ETH for [wrapped ether (or WETH)](https://weth.io/) to engage in numerous applications (e.g. this is prominent DeFi).
+While some apps try to obviate the user experience (UX) of having to perform this ETH for WETH exchange/trade, it still results in a suboptimal UX.
+
+This can add additional complexity to newcomers that are new to dApps that only know and understand ETH but not WETH.
+
+This is what OE solves by making ETH an ERC-20 on L2.
+
+## Native Account Abstraction
 
 ### Overview
 The OVM implements a basic form of [account abstraction](https://docs.ethhub.io/ethereum-roadmap/ethereum-2.0/account-abstraction/) which is most similar to "lazy full abstraction."  In effect, this means that the only type of account is a smart contract (no EOAs), and all user wallets are in fact smart contract wallets.  This means that, at the most granular level, OVM transactions themselves do not have a `signature` field, and instead simply have a `to` address with a `data` payload.  It is expected that the `signature` field will be included within the `data`.

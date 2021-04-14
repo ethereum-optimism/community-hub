@@ -11,29 +11,16 @@
       />
 
       <h1 v-if="data.heroText !== null" id="main-title">
-        The Optimism Community Hub
+        Optimistic Ethereum
       </h1>
 
-      <a class="action-button" href="/tutorial">try the tutorial</a>
-      <a class="action-button" href="/docs">read the docs</a>
-      <a class="action-button" href="/faqs">check out the FAQs</a>
-      <a class="action-button" href="https://discord.com/invite/jrnFEvq"
-        >join the discord</a
-      >
+      <h2>Layer 2 is coming.</h2>
 
-      <h3>
-        This is a work in progress. We'll be updating this site regularly in the
-        coming weeks. Stay tuned!
-      </h3>
-      <h3>
-        Got ideas for the site?
-        <a href="https://github.com/ethereum-optimism/community-hub">
-          Edit our community hub docs on GitHub!
-        </a>
-        <br /><br />
-        Have questions about Optimistic Ethereum?
-        <a href="https://discord.com/invite/jrnFEvq">Come hang on discord</a>.
-      </h3>
+      <!--<a class="action-button" href="/tldr">read the <u>tl;dr</u></a>-->
+      <a class="action-button" href="/faqs">check out the <u>FAQs</u></a>
+      <a class="action-button" href="https://github.com/ethereum-optimism/optimism-tutorial/blob/main/README.md">try the <u>tutorial</u></a>
+      <a class="action-button" href="/docs">read the <u>docs</u></a>
+      <a class="action-button" href="https://discord.com/invite/jrnFEvq">come hang on <u>discord</u></a>
     </header>
   </main>
 </template>
@@ -50,13 +37,6 @@ export default {
     data() {
       return this.$page.frontmatter;
     },
-
-    actionLink() {
-      return {
-        link: this.data.actionLink,
-        text: this.data.actionText,
-      };
-    },
   },
 };
 </script>
@@ -71,26 +51,12 @@ export default {
   .hero {
     text-align: center;
 
-    img {
-      max-width: 100%;
-      max-height: 280px;
-      display: block;
-      margin: 3rem auto 1.5rem;
-    }
-
     h1 {
       font-size: 3rem;
     }
 
     h1, .description, .action {
       margin: 1.8rem auto;
-    }
-
-    .description {
-      max-width: 35rem;
-      font-size: 1.6rem;
-      line-height: 1.3;
-      color: lighten($textColor, 40%);
     }
 
     .action-button {
@@ -108,42 +74,6 @@ export default {
         background-color: lighten($accentColor, 10%);
       }
     }
-  }
-
-  .features {
-    border-top: 1px solid $borderColor;
-    padding: 1.2rem 0;
-    margin-top: 2.5rem;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    align-content: stretch;
-    justify-content: space-between;
-  }
-
-  .feature {
-    flex-grow: 1;
-    flex-basis: 30%;
-    max-width: 30%;
-
-    h2 {
-      font-size: 1.4rem;
-      font-weight: 500;
-      border-bottom: none;
-      padding-bottom: 0;
-      color: lighten($textColor, 10%);
-    }
-
-    p {
-      color: lighten($textColor, 25%);
-    }
-  }
-
-  .footer {
-    padding: 2.5rem;
-    border-top: 1px solid $borderColor;
-    text-align: center;
-    color: lighten($textColor, 25%);
   }
 }
 
