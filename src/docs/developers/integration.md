@@ -54,18 +54,19 @@ The first part of getting started with Optimistic Ethereum is to get your contra
 This process involves two primary sub-steps:
 
 1. Compile your contracts with the OVM Solidity compiler.
-2. Deploy and test your contracts onto the local L2 node using `optimism-integration`.
+2. Deploy and test your contracts onto the local L2 node using our [`optimism`](https://github.com/ethereum-optimism/optimism#integration-tests) monorepo.
 
-If you're using [hardhat](https://hardhat.org), our preferred development environment, this can all be done with the use of some handy plugins we've built.
+If you're using [hardhat](https://hardhat.org), our preferred development environment, this can easily be done with the use of a handy plugin we've built.
 For the rest of this documentation, we'll expect you to have your Solidity contracts ready to go.
 Please note that Vyper support is currently not enabled but is planned for a future release.
 
-If you want to try out an example contract instead of deploying your own, you can follow our [tutorial](https://github.com/ethereum-optimism/optimism-tutorial/blob/main/README.md) (which should be pretty seamless).
+If you want to try out an example contract instead of deploying your own, you can follow our [tutorial](https://github.com/ethereum-optimism/optimism-tutorial) (which should be pretty seamless).
 If you're using another testing suite like [truffle](https://www.trufflesuite.com/), that tutorial won't apply. But these `npm` packages have got you covered:
 
 - [`@eth-optimism/solc`](https://www.npmjs.com/package/@eth-optimism/solc): exports the Optimistic Ethereum compiler for `solidity@0.5/0.6/0.7`
-- [`@eth-optimism/plugins`](https://www.npmjs.com/package/@eth-optimism/plugins): exports "OVM-ified" `waffle.mockProvider` and `ganache` packages which will work with contracts output by the compiler.
+- [`@eth-optimism/hardhat-ovm`](https://www.npmjs.com/package/@eth-optimism/hardhat-ovm): exports "OVM-ified" `artifacts-ovm` folder of contract artifacts which will work with contracts output by the compiler.
 
+<!-- UPDATE ONCE WAFFLE EXAMPLE IS UPDATED -->
 An example of usage with [waffle](https://getwaffle.io) can be found in [this great tutorial](https://github.com/ScopeLift/ovm-uniswap-v2-core#porting-solidity-contracts-to-optimism-a-guide-using-uniswap-v2) by [Scopelift](https://www.scopelift.co/) which walks through getting Uniswap V2 ported over.
 If you are using [truffle](https://www.trufflesuite.com/), [here is an example repository](https://github.com/ethereum-optimism/Truffle-ERC20-Example) which walks through how to start using Optimistic Ethereum with Truffle and a simple ERC-20.
 
@@ -86,11 +87,13 @@ For help with these, you can check out the following resources:
 Next we're going to get your contracts deployed to a real Optimistic Ethereum node (running on our [fork of go-ethereum](https://github.com/ethereum-optimism/go-ethereum)).
 
 ### Local Deployment
+
 Before deploying to a "real" network (testnet or mainnet), you may want to deploy to a local version of our `go-ethereum` fork.
 If your contracts are relatively simple you may not need to do this.
 However, if you plan to write contracts that communicate between L1 and L2, then we highly recommend reading this section.
 
 #### Using the `optimism-integration` Repo
+
 The [`optimism-integration`](https://github.com/ethereum-optimism/optimism-integration) repo gives you a single command to spin up a complete L1/L2 development environment.
 We use [docker](https://www.docker.com/) to standardize our development experience, so please make sure you've [installed docker](https://www.docker.com/products/docker-desktop) and that the docker service is running before you continue.
 You can check out the [tool's full usage page](https://github.com/ethereum-optimism/optimism-integration#usage) for a complete "getting started" guide.
@@ -113,6 +116,7 @@ And that's it!
 You now have an L2 chain at `http://0.0.0.0:8545` connected to an L1 chain at `http://0.0.0.0:9545`.
 
 ### Setting up a custom network in MetaMask (Optional)
+
 With the L2 node and L1 nodes running locally, you can use their respective RPC URLs for testing!
 If you use MetaMask, what you could do next is create a custom RPC network so that you can easily deploy and interact with your contracts using MetaMask!
 
@@ -152,6 +156,7 @@ Later, when you decide to move on to testing on Optimism's Kovan testnet, the si
 Coming in the next several days!!
 
 ### Common Gotchas
+
 ::: tip Need help?
 We're doing our best to keep this section updated as common issues come and go.
 If none of the tips here work for you, please report an issue on [discord](https://discord.gg/5TaAXGn2D8).
@@ -161,32 +166,39 @@ People tend to run into a few common issues when first interacting with Optimist
 Here's a checklist to run through if you're having any problems.
 
 #### Gotcha: Invalid chain ID
+
 The default chain ID of the `up.sh` script is `420`.
 If you're getting an error when sending transactions, please make sure they you're using the right chain ID.
 
 #### Gotcha: Local node does not charge fees
+
 At the moment, the node created by `up.sh` does not charge the user for any fees.
 You can send successfully transactions with `gasPrice = 0`.
 
 #### Gotcha: Constantly exceeding gas limit
+
 Because of some technical details about rollups, the maximum gas limit of each transaction is always a bit less than on mainnet.
 You can bypass this during testing by updating the gas limit in [this config file](https://github.com/ethereum-optimism/optimism-integration/blob/master/docker-compose.env.yml#L45).
 However, you will still need to decrease your gas usage before deploying to a "live" network.
 
 #### Gotcha: Still seeing the same bug after a patch or new release
+
 We frequently update our software and corresponding docker images.
 Make sure to periodically download the latest code by running the `pull.sh` script inside the `optimism-integration` repository.
 
 #### Gotcha: Gas used appears to be exceeding gas limit
+
 All L2 transactions are technically metatransactions sent by the sequencer.
 This means that `receipt.gasUsed` may be higher than the `tx.gasLimit`, and is currently an underestimate by about 20%.
 This will be fixed in an upcoming release.
 
 #### Gotcha: Contract deployment appears to fail for no reason
+
 Make sure you're compiling with the Optimistic Ethereum version of the Solidity compiler.
 Contract deployments will usually fail if you compile using the standard Solidity compiler.
 
 #### Gotcha: Revert reasons are not returned on `eth_sendRawTransaction` calls
+
 When `geth` was forked for Optimistic Ethereum, the `geth` had not yet started returning revert reasons for `eth_sendRawTransaction`s.
 Thus, if you want to retrieve a revert reason for a failing L2 transaction on `eth_sendRawTransaction` calls, you will need to make an `eth_call` (e.g. similar to [this](https://github.com/Synthetixio/synthetix/blob/develop/test/optimism/utils/revertOptimism.js)) at the block height for that transaction.
 
@@ -202,6 +214,7 @@ Here's a current list of our testnet endpoints (will be updated when things chan
 
 
 ## Bridging L1 and L2
+
 ::: tip Work in Progress™
 This section is still a work in progress.
 Cross-chain communication is one of the most complex (but also coolest) parts of our system.
@@ -227,6 +240,7 @@ These contracts are pretty cool and make heavy use of our L1⇔L2 messaging infr
     - [Completing the withdrawal and receiving a balance on L1](https://github.com/Synthetixio/synthetix/blob/master/contracts/SynthetixBridgeToOptimism.sol#L126-L136)
 
 ### ☎️ L1 <> L2 Communication
+
 ::: tip Work in Progress™
 This section is also an WIP, but we are quickly working to improve it! If you think that something is unclear, we recommend looking through the OVM's `messaging` contracts for a granular view of this L1 <> L2 communication.
 As always, feel free to reach out to us on discord with questions 🤗:
@@ -354,7 +368,6 @@ Of these, the most important to keep in mind as a _user_, is the `receive()` met
 With a smart contract, the flow would instead use the `_deposit()` method and look like this:
 
 ![Contract flow for OVM_L1ETHGateway](../../assets/contractflow-OVM_L1ETHGateway.png)
-
 
 #### Token Bridges
 
