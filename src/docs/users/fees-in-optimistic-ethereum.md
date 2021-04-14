@@ -59,10 +59,10 @@ rollupTxSize * dataPrice + executionPrice * gasUsed
 
 where
 
-* `rollupTxSize` is the size of the serialized rollup transactions if it were published on L1,
-* `dataPrice` is a value set by the sequencer based on the current L1 congestion,
+* `rollupTxSize` is the size, in _bytes_, of the serialized rollup transactions if it were published on L1
+* `dataPrice` is a value set by the sequencer based on the current L1 congestion
 * `executionPrice` is fetched via the standard `eth_gasPrice` rules that geth uses based on the current L2 congestion, and
-* `gasUsed` is the standard result of `eth_estimateGas` for a transaction.
+* `gasUsed` (NOTE: this the _expected_ gas to be used at the time `eth_estimateGas` is called) is the standard result of `eth_estimateGas` for a transaction.
 
 (See [ethereum-optimism/go-ethereum/pull/273](https://github.com/ethereum-optimism/go-ethereum/pull/273) for more info on these variables.)
 
