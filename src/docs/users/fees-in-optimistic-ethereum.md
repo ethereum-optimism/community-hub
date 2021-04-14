@@ -64,8 +64,12 @@ where
 * `executionPrice` is fetched via the standard `eth_gasPrice` rules that geth uses based on the current L2 congestion, and
 * `gasUsed` is the standard result of `eth_estimateGas` for a transaction.
 
-
 (See [ethereum-optimism/go-ethereum/pull/273](https://github.com/ethereum-optimism/go-ethereum/pull/273) for more info on these variables.)
+
+You can think of `rollupTxSize * dataPrice` as the L1 costs of Optimistic Ethereum.
+These L1 costs are the only costs that Optimistic Ethereum incurs.
+Additionally, you can think of `executionPrice * gasUsed` as the L2 costs which are paid to the L2 network.
+It's also important to note that L2 congestion is _not_ correlated to L1 congestion, which means that the `executionPrice` and `dataPrice` are independently by the demand for their respective network.
 
 **To minimize gas costs for users, we recommend minimizing your `rollupTxSize`.**
 For example, you can reduce your `uint256` values to `uint32` variables wherever possible in your transaction inputs.
