@@ -19,7 +19,7 @@ If you have questions or feel like something is missing feel free to ask in our 
 ## For: The Casually Interested Reader
 **Are you here because you're interested in Optimistic Ethereum at a high-level?**
 
-**We'd recommend starting with the [Optimistic Ethereum TL;DR](/docs/protocol/tldr.md)**.
+**We'd recommend starting with the [Optimistic Ethereum TL;DR](/tldr/)**.
 
 It's got a great explanation of the protocol at a high-level.
 No deep Ethereum experience necessary.

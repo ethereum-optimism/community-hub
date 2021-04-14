@@ -20,10 +20,10 @@ module.exports = {
     editLinkText: '✍️ edit this page on github',
     lastUpdated: false,
     nav: [
-      // {
-      //   text: 'tl;dr',
-      //   link: '/tldr/',
-      // },
+      {
+        text: 'tl;dr',
+        link: '/tldr/',
+      },
       {
         text: 'faq',
         link: '/faqs/',
