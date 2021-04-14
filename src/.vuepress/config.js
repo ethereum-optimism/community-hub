@@ -62,6 +62,10 @@ module.exports = {
               path: '/docs/developers/integration.md'
             },
             {
+              title: 'Compile, Test, and Deploy',
+              path: '/docs/developers/compile-test-deploy.md'
+            },
+            {
               title: 'Developer Dump',
               path: '/docs/developers/dev-dump.md'
             },
