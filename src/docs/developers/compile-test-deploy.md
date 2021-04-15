@@ -7,22 +7,23 @@ _Our documentation is a rapidly improving work in progress. If you have question
 :::
 
 This document is for developers who wish to take a deep dive into the process of compiling, testing, and deploying your contracts for Ethereum and Optimistic Ethereum.
-Additionally, you'll learn about:
-
-1. Common gotchas while developing for Optimistic Ethereum and how to get around them,
-1. Hardhat vs. Truffle vs. Waffle and the pros and cons for each,
-1. What L1 <> L2 communication is used for in best practices and what it can be used for, and
-1. How to use Optimism contracts in your projects.
-
-
 
 ## Overview
 
+You'll learn about:
 
+1. Common gotchas while developing for Optimistic Ethereum and how to get around them.
+1. Hardhat vs. Truffle vs. Waffle and the pros and cons for each.
+1. What L1 <> L2 communication is used for in best practices and what it can be used for.
+1. How to use Optimism contracts in your projects.
+
+Let's dive in!
 
 ## Ethereum Contracts
 
 ### Step 1. Compile
+
+
 
 ### Step 2. Test
 
