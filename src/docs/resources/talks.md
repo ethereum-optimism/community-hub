@@ -15,17 +15,10 @@ Hop on the [discord](https://discord.gg/5TaAXGn2D8) and make a post in `#resourc
 :::
 
 ---
-## [*From Scalable to Sustainable*](https://www.youtube.com/watch?v=0hppV1IfILw&feature=youtu.be)
+## [*Optimism 🛠 Overview & Code Walkthrough*](https://www.youtube.com/watch?v=AHYSZ51ATWQ)
 
-* Date: Feb. 2020
-* By: Karl Floersch
-
----
-
-## [*Optimistic Rollup*](https://www.youtube.com/watch?v=97DU_YgNPgE&feature=youtu.be)
-
-* Date: Aug. 2020
-* By: Karl Floersch
+* Date: Oct. 2020
+* By: Ben Jones and Kelvin Fichter
 
 ---
 ## [*Optimism: Keeping Ethereum Half-Full*](https://www.youtube.com/watch?v=eYeOW4ePgZE)
@@ -40,7 +33,19 @@ Hop on the [discord](https://discord.gg/5TaAXGn2D8) and make a post in `#resourc
 * By: Ben Jones
 
 ---
+## [*Optimistic Rollup*](https://www.youtube.com/watch?v=97DU_YgNPgE&feature=youtu.be)
+
+* Date: Aug. 2020
+* By: Karl Floersch
+
+---
 ## [*Optimistic Podcast*](https://blockcrunch.libsyn.com/is-plasma-dead-the-rise-of-optimistic-rollups-on-ethereum-kevin-ho-optimism-ep-97)
 
 * Date: Apr. 2020
 * By: Kevin Ho
+
+---
+## [*From Scalable to Sustainable*](https://www.youtube.com/watch?v=0hppV1IfILw&feature=youtu.be)
+
+* Date: Feb. 2020
+* By: Karl Floersch
