@@ -39,10 +39,10 @@ You might also want to take the following two steps depending on your specific n
 ### Setup and Resources
 
 ::: tip Required Tooling
-* [`@eth-optimism/plugins`](https://www.npmjs.com/package/@eth-optimism/plugins) 
+* [`@eth-optimism/hardhat-ovn`](https://www.npmjs.com/package/@eth-optimism/) 
 * [`hardhat`](https://hardhat.org/getting-started/)
 
-Since your OVM-compatible contracts require Optimism's custom Solidity compiler, you'll be using Optimism's `@eth-optimism/plugins` package.
+Since your OVM-compatible contracts require Optimism's custom Solidity compiler, you'll be using Optimism's `@eth-optimism/hardhat-ovm` package.
 This package makes it easy to compile contracts and deploy them to an Optimistic Ethereum network.
 
 Currently, We're focusing most of our internal development efforts on our [`hardhat`](https://hardhat.org/) tooling.
@@ -54,18 +54,19 @@ The first part of getting started with Optimistic Ethereum is to get your contra
 This process involves two primary sub-steps:
 
 1. Compile your contracts with the OVM Solidity compiler.
-2. Deploy and test your contracts onto the local L2 node using `optimism-integration`.
+2. Deploy and test your contracts onto the local L2 node using our [`optimism`](https://github.com/ethereum-optimism/optimism#integration-tests) monorepo.
 
-If you're using [hardhat](https://hardhat.org), our preferred development environment, this can all be done with the use of some handy plugins we've built.
+If you're using [hardhat](https://hardhat.org), our preferred development environment, this can be done with the use of a handy plugin we've built.
 For the rest of this documentation, we'll expect you to have your Solidity contracts ready to go.
 Please note that Vyper support is currently not enabled but is planned for a future release.
 
-If you want to try out an example contract instead of deploying your own, you can follow our [tutorial](https://github.com/ethereum-optimism/optimism-tutorial/blob/main/README.md) (which should be pretty seamless).
+If you want to try out an example contract instead of deploying your own, you can follow our [tutorial](https://github.com/ethereum-optimism/optimism-tutorial) which should be pretty seamless.
 If you're using another testing suite like [truffle](https://www.trufflesuite.com/), that tutorial won't apply. But these `npm` packages have got you covered:
 
 - [`@eth-optimism/solc`](https://www.npmjs.com/package/@eth-optimism/solc): exports the Optimistic Ethereum compiler for `solidity@0.5/0.6/0.7`
-- [`@eth-optimism/plugins`](https://www.npmjs.com/package/@eth-optimism/plugins): exports "OVM-ified" `waffle.mockProvider` and `ganache` packages which will work with contracts output by the compiler.
+- [`@eth-optimism/hardhat-ovm`](https://www.npmjs.com/package/@eth-optimism/hardhat-ovm): exports `artifacts-ovm` folder of contract artifacts which will work with contracts output by the compiler.
 
+<!-- UPDATE ONCE WAFFLE EXAMPLE IS UPDATED -->
 An example of usage with [waffle](https://getwaffle.io) can be found in [this great tutorial](https://github.com/ScopeLift/ovm-uniswap-v2-core#porting-solidity-contracts-to-optimism-a-guide-using-uniswap-v2) by [Scopelift](https://www.scopelift.co/) which walks through getting Uniswap V2 ported over.
 If you are using [truffle](https://www.trufflesuite.com/), [here is an example repository](https://github.com/ethereum-optimism/Truffle-ERC20-Example) which walks through how to start using Optimistic Ethereum with Truffle and a simple ERC-20.
 
@@ -86,11 +87,13 @@ For help with these, you can check out the following resources:
 Next we're going to get your contracts deployed to a real Optimistic Ethereum node (running on our [fork of go-ethereum](https://github.com/ethereum-optimism/go-ethereum)).
 
 ### Local Deployment
+
 Before deploying to a "real" network (testnet or mainnet), you may want to deploy to a local version of our `go-ethereum` fork.
 If your contracts are relatively simple you may not need to do this.
 However, if you plan to write contracts that communicate between L1 and L2, then we highly recommend reading this section.
 
 #### Using the `optimism-integration` Repo
+
 The [`optimism-integration`](https://github.com/ethereum-optimism/optimism-integration) repo gives you a single command to spin up a complete L1/L2 development environment.
 We use [docker](https://www.docker.com/) to standardize our development experience, so please make sure you've [installed docker](https://www.docker.com/products/docker-desktop) and that the docker service is running before you continue.
 You can check out the [tool's full usage page](https://github.com/ethereum-optimism/optimism-integration#usage) for a complete "getting started" guide.
@@ -113,6 +116,7 @@ And that's it!
 You now have an L2 chain at `http://0.0.0.0:8545` connected to an L1 chain at `http://0.0.0.0:9545`.
 
 ### Setting up a custom network in MetaMask (Optional)
+
 With the L2 node and L1 nodes running locally, you can use their respective RPC URLs for testing!
 If you use MetaMask, what you could do next is create a custom RPC network so that you can easily deploy and interact with your contracts using MetaMask!
 
@@ -152,6 +156,7 @@ Later, when you decide to move on to testing on Optimism's Kovan testnet, the si
 Coming in the next several days!!
 
 ### Common Gotchas
+
 ::: tip Need help?
 We're doing our best to keep this section updated as common issues come and go.
 If none of the tips here work for you, please report an issue on [discord](https://discord.gg/5TaAXGn2D8).
@@ -161,36 +166,51 @@ People tend to run into a few common issues when first interacting with Optimist
 Here's a checklist to run through if you're having any problems.
 
 #### Gotcha: Invalid chain ID
+
 The default chain ID of the `up.sh` script is `420`.
 If you're getting an error when sending transactions, please make sure they you're using the right chain ID.
 
 #### Gotcha: Local node does not charge fees
+
 At the moment, the node created by `up.sh` does not charge the user for any fees.
 You can send successfully transactions with `gasPrice = 0`.
 
 #### Gotcha: Constantly exceeding gas limit
+
 Because of some technical details about rollups, the maximum gas limit of each transaction is always a bit less than on mainnet.
-You can bypass this during testing by updating the gas limit in [this config file](https://github.com/ethereum-optimism/optimism-integration/blob/master/docker-compose.env.yml#L45).
-However, you will still need to decrease your gas usage before deploying to a "live" network.
 
 #### Gotcha: Still seeing the same bug after a patch or new release
+
 We frequently update our software and corresponding docker images.
-Make sure to periodically download the latest code by running the `pull.sh` script inside the `optimism-integration` repository.
+Make sure to periodically download the latest code by running the following in your project.
+
+```sh
+git clone git@github.com:ethereum-optimism/optimism.git
+cd optimism
+yarn
+yarn build
+cd ops
+docker-compose build
+```
 
 #### Gotcha: Gas used appears to be exceeding gas limit
-All L2 transactions are technically metatransactions sent by the sequencer.
+
+All L2 transactions are technically meta transactions sent by the sequencer.
 This means that `receipt.gasUsed` may be higher than the `tx.gasLimit`, and is currently an underestimate by about 20%.
 This will be fixed in an upcoming release.
 
 #### Gotcha: Contract deployment appears to fail for no reason
+
 Make sure you're compiling with the Optimistic Ethereum version of the Solidity compiler.
 Contract deployments will usually fail if you compile using the standard Solidity compiler.
 
 #### Gotcha: Revert reasons are not returned on `eth_sendRawTransaction` calls
+
 When `geth` was forked for Optimistic Ethereum, the `geth` had not yet started returning revert reasons for `eth_sendRawTransaction`s.
 Thus, if you want to retrieve a revert reason for a failing L2 transaction on `eth_sendRawTransaction` calls, you will need to make an `eth_call` (e.g. similar to [this](https://github.com/Synthetixio/synthetix/blob/develop/test/optimism/utils/revertOptimism.js)) at the block height for that transaction.
 
 ### Testnet Deployment
+
 You probably want to deploy to testnet before heading over to mainnet (good idea, tbh).
 Our primary L2 testnet is currently deployed on top of Ethereum's [Kovan](https://kovan.etherscan.io) network.
 We sometimes run other testnets too.
@@ -200,8 +220,8 @@ Here's a current list of our testnet endpoints (will be updated when things chan
 | ----------------------------------- | ---------- | ------------------------------------------------------ | ---------------------------------------------------------------- |
 | [Kovan](https://kovan.etherscan.io) | OE Kovan 1 | [https://kovan.optimism.io](https://kovan.optimism.io) | [https://kovan.optimism.io:8546](https://kovan.optimism.io:8546) |
 
-
 ## Bridging L1 and L2
+
 ::: tip Work in Progress™
 This section is still a work in progress.
 Cross-chain communication is one of the most complex (but also coolest) parts of our system.
@@ -227,15 +247,16 @@ These contracts are pretty cool and make heavy use of our L1⇔L2 messaging infr
     - [Completing the withdrawal and receiving a balance on L1](https://github.com/Synthetixio/synthetix/blob/master/contracts/SynthetixBridgeToOptimism.sol#L126-L136)
 
 ### ☎️ L1 <> L2 Communication
+
 ::: tip Work in Progress™
 This section is also an WIP, but we are quickly working to improve it! If you think that something is unclear, we recommend looking through the OVM's `messaging` contracts for a granular view of this L1 <> L2 communication.
 As always, feel free to reach out to us on discord with questions 🤗:
 
-📎 OVM's `messaging` contracts:
-* 📜 [`Abs_BaseCrossDomainMessenger.sol`](https://github.com/ethereum-optimism/contracts/blob/master/contracts/optimistic-ethereum/OVM/bridge/messaging/Abs_BaseCrossDomainMessenger.sol)
-* 📜 [`OVM_L1CrossDomainMessenger.sol`](https://github.com/ethereum-optimism/contracts/blob/master/contracts/optimistic-ethereum/OVM/bridge/messaging/OVM_L1CrossDomainMessenger.sol)
-* 📜 [`OVM_L1MultiMessageRelayer.sol`](https://github.com/ethereum-optimism/contracts/blob/master/contracts/optimistic-ethereum/OVM/bridge/messaging/OVM_L1MultiMessageRelayer.sol)
-* 📜 [`OVM_L2CrossDomainMessenger`](https://github.com/ethereum-optimism/contracts/blob/master/contracts/optimistic-ethereum/OVM/bridge/messaging/OVM_L2CrossDomainMessenger.sol)
+📎 OVM's `messaging` contracts:`
+* 📜 [`Abs_BaseCrossDomainMessenger.sol`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/optimistic-ethereum/OVM/bridge/messaging/Abs_BaseCrossDomainMessenger.sol)
+* 📜 [`OVM_L1CrossDomainMessenger.sol`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/optimistic-ethereum/OVM/bridge/messaging/OVM_L1CrossDomainMessenger.sol)
+* 📜 [`OVM_L1MultiMessageRelayer.sol`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/optimistic-ethereum/OVM/bridge/messaging/OVM_L1MultiMessageRelayer.sol)
+* 📜 [`OVM_L2CrossDomainMessenger`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/optimistic-ethereum/OVM/bridge/messaging/OVM_L2CrossDomainMessenger.sol)
 :::
 
 The following is an abridged version of the section titled "L1 to L2 interoperability" in [_How does Optimism's Rollup really work?_](https://research.paradigm.xyz/optimism) by [Georgios Konstantopoulos](https://twitter.com/gakonst) from Paradigm Research.
@@ -250,7 +271,7 @@ The sending chain's contract calls `sendMessage` with the data it wants to pass 
 
 These methods are shown below for reference:
 
-* (L1 or L2 Sender ) [`sendMessage`](https://github.com/ethereum-optimism/contracts/blob/master/contracts/optimistic-ethereum/OVM/bridge/messaging/Abs_BaseCrossDomainMessenger.sol#L38-L48) of `Abs_BaseCrossDomainMessenger.sol`:
+* (L1 or L2 Sender ) [`sendMessage`](https://github.com/ethereum-optimism/optimism/blob/fae4e29bd90d06ba68f7373dc98140c6a58ebc94/packages/contracts/contracts/optimistic-ethereum/OVM/bridge/messaging/Abs_BaseCrossDomainMessenger.sol#L51-L61) of `Abs_BaseCrossDomainMessenger.sol`:
 
 ```solidity
 /**
@@ -282,7 +303,7 @@ function sendMessage(
 }
 ```
 
-2. (L1 Receiver) [`relayMessage`](https://github.com/ethereum-optimism/contracts/blob/master/contracts/optimistic-ethereum/OVM/bridge/messaging/OVM_L1CrossDomainMessenger.sol#L79-L89) of  `OVM_L1CrossDomainMessenger.sol`:
+2. (L1 Receiver) [`relayMessage`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/optimistic-ethereum/OVM/bridge/messaging/OVM_L1CrossDomainMessenger.sol#L79-L89) of  `OVM_L1CrossDomainMessenger.sol`:
 ```solidity
 /**
  * Relays a cross domain message to a contract.
@@ -296,7 +317,7 @@ function relayMessage(
 )
 ```
 
-3. (L2 Receiver) [`relayMessage`](https://github.com/ethereum-optimism/contracts/blob/master/contracts/optimistic-ethereum/OVM/bridge/messaging/OVM_L2CrossDomainMessenger.sol#L46-L55) of `OVM_L2CrossDomainMessenger.sol`:
+3. (L2 Receiver) [`relayMessage`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/optimistic-ethereum/OVM/bridge/messaging/OVM_L2CrossDomainMessenger.sol#L45-L54) of `OVM_L2CrossDomainMessenger.sol`:
 ```solidity
 /**
  * Relays a cross domain message to a contract.
@@ -310,7 +331,7 @@ function relayMessage(
 ```
 
 Conveniently, all transactions from L1 to L2 get automatically relayed _by the sequencer_.
-This happens because the L1 ➡️ L2 bridge calls [`enqueue`](https://github.com/ethereum-optimism/contracts/blob/21c38bb51a2d47029b40bdac709eec342d16a761/contracts/optimistic-ethereum/OVM/bridge/messaging/OVM_L1CrossDomainMessenger.sol#L287-L291), queuing up a transaction for execution by the sequencer.
+This happens because the L1 ➡️ L2 bridge calls [`enqueue`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/optimistic-ethereum/OVM/bridge/messaging/OVM_L1CrossDomainMessenger.sol#L287-L291), queuing up a transaction for execution by the sequencer.
 
 From these calls to `enqueue`, we can, in a way, think of the the sequencer is an "always on" relay for L1 to L2 transactions, while L2 to L1 transactions need to be explicitly relayed by users.
 
@@ -318,14 +339,13 @@ Using the default bridge contracts by Optimism requires all L2 to L1 transaction
 This is to allow enough time for verifiers to submit fraud proofs and prevent invalid withdrawals.
 
 It could be the case that developers deploy their own bridge contracts with semi-trusted mechanisms that allow L2 to L1 transactions with a smaller time restriction.
-The simplest example of this mechanism would be [depositing an ERC20 on an L1 bridge contract](https://github.com/ethereum-optimism/optimism-tutorial/blob/dev-xdomain/contracts/L1_ERC20Adapter.sol) and [minting the equivalent token amount on L2](https://github.com/ethereum-optimism/optimism-tutorial/blob/dev-xdomain/contracts/L2_ERC20.sol).
 
 ![Passing Messages Between Layer 1 and Layer 2](../../assets/passing-messages-between-l1-and-l2.png)
 
 As a developer integrating with Optimism's messengers is very easy.
 Just call `<LAYER>CrossDomainMessenger.sendMessage` with the calldata, gasLimit and target address you want to call on the destination layer.  
 
-This wraps the message in a [`relayMessage`](https://github.com/ethereum-optimism/contracts/blob/21c38bb51a2d47029b40bdac709eec342d16a761/contracts/optimistic-ethereum/OVM/bridge/messaging/Abs_BaseCrossDomainMessenger.sol#L70-L97) call, targeting the `L2CrossDomainMessenger`.
+This wraps the message in a [`relayMessage`](https://github.com/ethereum-optimism/optimism/blob/fae4e29bd90d06ba68f7373dc98140c6a58ebc94/packages/contracts/contracts/optimistic-ethereum/OVM/bridge/messaging/Abs_BaseCrossDomainMessenger.sol#L83-L96) call, targeting the `L2CrossDomainMessenger`.
 That's all! It's the same general process for L2 to L1.
 (This is enabled by the `L1MessageSender`, `L1BlockNumber`, and `L1Queue` fields in the message and transaction `meta`.)
 
@@ -339,13 +359,13 @@ This is where the ETH (and token) bridges come in!
 
 #### The Standard™️ ETH Bridge
 
-Optimistic Ethereum comes with a standard ETH bridge, [`OVM_L1ETHGateway.sol`](https://github.com/ethereum-optimism/contracts/blob/master/contracts/optimistic-ethereum/OVM/bridge/tokens/OVM_L1ETHGateway.sol). This smart contract acts as a _bridge_ between L1 and L2, letting users deposit ETH into the contract on L1 so that it can be used on L2. 
+Optimistic Ethereum comes with a standard ETH bridge, [`OVM_L1ETHGateway.sol`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/optimistic-ethereum/OVM/bridge/tokens/OVM_L1ETHGateway.sol). This smart contract acts as a _bridge_ between L1 and L2, letting users deposit ETH into the contract on L1 so that it can be used on L2.
 
 `OVM_L1ETHGateway` has three important methods to keep in mind:
 
-1. [`initiateDeposit()`](https://github.com/ethereum-optimism/contracts/blob/master/contracts/optimistic-ethereum/OVM/bridge/tokens/OVM_L1ETHGateway.sol#L90-L95) is an internal method where the all the super secret magic happens to create our deposits 🪄 ✨.
-2. [`_deposit()`](https://github.com/ethereum-optimism/contracts/blob/master/contracts/optimistic-ethereum/OVM/bridge/tokens/OVM_L1ETHGateway.sol#L62-L68) is external and payable method used to call `_initiateDeposit()`, and passes in the caller's address as `msg.sender` to the `_to` and `_from` arguments of `_initiateDeposit()`.
-3. [`receive()`](https://github.com/ethereum-optimism/contracts/blob/master/contracts/optimistic-ethereum/OVM/bridge/tokens/OVM_L1ETHGateway.sol#L162-L168) is an another external and payable method which [will](https://github.com/ethereum-optimism/contracts/pull/311) allow the `OVM_L1ETHGateway` to accept ETH that you send directly to it (by calling `_initiateDeposit()`, similarly to `_deposit()`)
+1. [`initiateDeposit()`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/optimistic-ethereum/OVM/bridge/tokens/OVM_L1ETHGateway.sol#L103-L112) is an internal method where the all the super secret magic happens to create our deposits 🪄 ✨.
+2. [`_deposit()`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/optimistic-ethereum/OVM/bridge/tokens/OVM_L1ETHGateway.sol#L78-L85) is external and payable method used to call `_initiateDeposit()`, and passes in the caller's address as `msg.sender` to the `_to` and `_from` arguments of `_initiateDeposit()`.
+3. [`receive()`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/optimistic-ethereum/OVM/bridge/tokens/OVM_L1ETHGateway.sol#L71-L74) is an another external and payable method which [will](https://github.com/ethereum-optimism/contracts/pull/311) allow the `OVM_L1ETHGateway` to accept ETH that you send directly to it (by calling `_initiateDeposit()`, similarly to `_deposit()`)
 
 Of these, the most important to keep in mind as a _user_, is the `receive()` method, which has a flow like this:
 
@@ -354,7 +374,6 @@ Of these, the most important to keep in mind as a _user_, is the `receive()` met
 With a smart contract, the flow would instead use the `_deposit()` method and look like this:
 
 ![Contract flow for OVM_L1ETHGateway](../../assets/contractflow-OVM_L1ETHGateway.png)
-
 
 #### Token Bridges
 
