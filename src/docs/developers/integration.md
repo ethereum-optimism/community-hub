@@ -27,7 +27,7 @@ This document will serve as a reference to take you through the stages of integr
 There are two main steps to get a dapp running on Optimistic Ethereum:
 
 1. **Compile and test your contracts:** get your existing contract tests running on a local version of Optimistic Ethereum via [truffle](https://www.trufflesuite.com/), [hardhat](https://hardhat.org), or your preferred Ethereum testing framework.
-2. **Deploy your contracts to Optimistic Ethereum:** run those cheap a$$ transactons for real!
+2. **Deploy your contracts to Optimistic Ethereum:** run those cheap a$$ transactions for real!
 
 You might also want to take the following two steps depending on your specific needs:
 
@@ -88,7 +88,7 @@ Next we're going to get your contracts deployed to a real Optimistic Ethereum no
 
 ### Local Deployment
 
-Before deploying to a "real" network (testnet or mainnet), you may want to deploy to a local version of our `go-ethereum` fork.
+Before deploying to a "real" network, like a testnet or mainnet, you may want to deploy to a local version of our `go-ethereum` fork.
 If your contracts are relatively simple you may not need to do this.
 However, if you plan to write contracts that communicate between L1 and L2, then we highly recommend reading this section.
 
@@ -125,13 +125,15 @@ Here's a step-by-step process on how to do that while in your browser:
 
 ![Custom RPC button](../../assets/custom-metamask-network-1.png)
 
-3. Next, you'll enter in the network parameters. Enter `Optimistic Ethereum (Local L2)` for the network name, `http://0.0.0.0:8545` for the RPC URL, and `420` for the chain ID -- additionally, you can also set the currency symbol to `ETH`, but that's not entirely necessary since the use of ETH is implicitly understood. (See example image below.)
+3. Next, you'll enter in the network parameters. Enter `Optimistic Ethereum (Local L2)` for the network name, `http://0.0.0.0:8545` for the RPC URL, and `420` for the chain ID -- additionally, you can also set the currency symbol to `ETH`, but that's not entirely necessary since the use of ETH is implicitly understood:
 
 ![Entering network params](../../assets/custom-metamask-network-2.png)
 
-4. Click save! And, you're done! 🙌 😎. You'll then see something like the image below when you click on your new `Optimistic Ethereum (Local L2)` network! (NOTE: Adding the currency symbol is _optional_.)
+4. Click save! And, you're done! 🙌 😎. You'll then see something like the image below when you click on your new `Optimistic Ethereum (Local L2)` network!
 
 ![Saving custom network](../../assets/complete-custom-network.png)
+
+Adding the currency symbol is _optional_.
 
 **L1 Custom Network (Optional)**
 
@@ -205,7 +207,8 @@ Contract deployments will usually fail if you compile using the standard Solidit
 #### Gotcha: Revert reasons are not returned on `eth_sendRawTransaction` calls
 
 When `geth` was forked for Optimistic Ethereum, the `geth` had not yet started returning revert reasons for `eth_sendRawTransaction`s.
-Thus, if you want to retrieve a revert reason for a failing L2 transaction on `eth_sendRawTransaction` calls, you will need to make an `eth_call` (e.g. similar to [this](https://github.com/Synthetixio/synthetix/blob/develop/test/optimism/utils/revertOptimism.js)) at the block height for that transaction.
+Thus, if you want to retrieve a revert reason for a failing L2 transaction on `eth_sendRawTransaction` calls, you will need to make an `eth_call`.
+For example, [here](https://github.com/Synthetixio/synthetix/blob/develop/test/optimism/utils/revertOptimism.js) is how Synthetix retrieves the revert reason for contract calls in the OVM.
 
 ### Testnet Deployment
 
