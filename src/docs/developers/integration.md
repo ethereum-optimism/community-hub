@@ -27,7 +27,7 @@ This document will serve as a reference to take you through the stages of integr
 There are two main steps to get a dapp running on Optimistic Ethereum:
 
 1. **Compile and test your contracts:** get your existing contract tests running on a local version of Optimistic Ethereum via [truffle](https://www.trufflesuite.com/), [hardhat](https://hardhat.org), or your preferred Ethereum testing framework.
-2. **Deploy your contracts to Optimistic Ethereum:** run those cheap a$$ transactons for real!
+2. **Deploy your contracts to Optimistic Ethereum:** run those cheap a$$ transactions for real!
 
 You might also want to take the following two steps depending on your specific needs:
 
@@ -88,28 +88,26 @@ Next we're going to get your contracts deployed to a real Optimistic Ethereum no
 
 ### Local Deployment
 
-Before deploying to a "real" network (testnet or mainnet), you may want to deploy to a local version of our `go-ethereum` fork.
+Before deploying to a "real" network, like a testnet or mainnet, you may want to deploy to a local version of our `go-ethereum` fork.
 If your contracts are relatively simple you may not need to do this.
 However, if you plan to write contracts that communicate between L1 and L2, then we highly recommend reading this section.
 
 #### Using the `optimism-integration` Repo
 
-The [`optimism-integration`](https://github.com/ethereum-optimism/optimism-integration) repo gives you a single command to spin up a complete L1/L2 development environment.
+The [`optimism`](https://github.com/ethereum-optimism/optimism) monorepo provides you with the docker containers needed to spin up your own local Optimistic Ethereum network.
 We use [docker](https://www.docker.com/) to standardize our development experience, so please make sure you've [installed docker](https://www.docker.com/products/docker-desktop) and that the docker service is running before you continue.
-You can check out the [tool's full usage page](https://github.com/ethereum-optimism/optimism-integration#usage) for a complete "getting started" guide.
+You can check out the [tool's full usage page](https://github.com/ethereum-optimism/optimism#quickstart) for a "Quickstart" guide.
 
-First, run the following commands to get set up:
-
-```shell
-git clone git@github.com:ethereum-optimism/optimism-integration.git --recurse-submodules
-cd optimism-integration
-docker-compose pull
-```
-
-Then, run the famous `up.sh` script to spin everything up:
+Run the following commands to get set up:
 
 ```shell
-./up.sh
+git clone git@github.com:ethereum-optimism/optimism.git
+cd optimism
+yarn install
+yarn build
+cd ops
+docker-compose build
+docker-compose up
 ```
 
 And that's it!
@@ -127,13 +125,15 @@ Here's a step-by-step process on how to do that while in your browser:
 
 ![Custom RPC button](../../assets/custom-metamask-network-1.png)
 
-3. Next, you'll enter in the network parameters. Enter `Optimistic Ethereum (Local L2)` for the network name, `http://0.0.0.0:8545` for the RPC URL, and `420` for the chain ID -- additionally, you can also set the currency symbol to `ETH`, but that's not entirely necessary since the use of ETH is implicitly understood. (See example image below.)
+3. Next, you'll enter in the network parameters. Enter `Optimistic Ethereum (Local L2)` for the network name, `http://0.0.0.0:8545` for the RPC URL, and `420` for the chain ID -- additionally, you can also set the currency symbol to `ETH`, but that's not entirely necessary since the use of ETH is implicitly understood:
 
 ![Entering network params](../../assets/custom-metamask-network-2.png)
 
-4. Click save! And, you're done! 🙌 😎. You'll then see something like the image below when you click on your new `Optimistic Ethereum (Local L2)` network! (NOTE: Adding the currency symbol is _optional_.)
+4. Click save! And, you're done! 🙌 😎. You'll then see something like the image below when you click on your new `Optimistic Ethereum (Local L2)` network!
 
 ![Saving custom network](../../assets/complete-custom-network.png)
+
+Adding the currency symbol is _optional_.
 
 **L1 Custom Network (Optional)**
 
@@ -167,13 +167,13 @@ Here's a checklist to run through if you're having any problems.
 
 #### Gotcha: Invalid chain ID
 
-The default chain ID of the `up.sh` script is `420`.
-If you're getting an error when sending transactions, please make sure they you're using the right chain ID.
+The default chain ID of the local L2 chain is `420`.
+If you're getting an error when sending transactions, please make sure that you are using the right chain ID.
 
 #### Gotcha: Local node does not charge fees
 
-At the moment, the node created by `up.sh` does not charge the user for any fees.
-You can send successfully transactions with `gasPrice = 0`.
+At the moment, the node created by starting the docker containers under `optimism/ops` does not charge the user for any fees.
+You can send successfully transactions by setting `gasPrice` to `0` in your configs and in contract calls.
 
 #### Gotcha: Constantly exceeding gas limit
 
@@ -207,7 +207,8 @@ Contract deployments will usually fail if you compile using the standard Solidit
 #### Gotcha: Revert reasons are not returned on `eth_sendRawTransaction` calls
 
 When `geth` was forked for Optimistic Ethereum, the `geth` had not yet started returning revert reasons for `eth_sendRawTransaction`s.
-Thus, if you want to retrieve a revert reason for a failing L2 transaction on `eth_sendRawTransaction` calls, you will need to make an `eth_call` (e.g. similar to [this](https://github.com/Synthetixio/synthetix/blob/develop/test/optimism/utils/revertOptimism.js)) at the block height for that transaction.
+Thus, if you want to retrieve a revert reason for a failing L2 transaction on `eth_sendRawTransaction` calls, you will need to make an `eth_call`.
+For example, [here](https://github.com/Synthetixio/synthetix/blob/develop/test/optimism/utils/revertOptimism.js) is how Synthetix retrieves the revert reason for contract calls in the OVM.
 
 ### Testnet Deployment
 
@@ -271,7 +272,7 @@ The sending chain's contract calls `sendMessage` with the data it wants to pass 
 
 These methods are shown below for reference:
 
-* (L1 or L2 Sender ) [`sendMessage`](https://github.com/ethereum-optimism/optimism/blob/fae4e29bd90d06ba68f7373dc98140c6a58ebc94/packages/contracts/contracts/optimistic-ethereum/OVM/bridge/messaging/Abs_BaseCrossDomainMessenger.sol#L51-L61) of `Abs_BaseCrossDomainMessenger.sol`:
+* (L1 or L2 Sender ) [`sendMessage`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/optimistic-ethereum/OVM/bridge/messaging/Abs_BaseCrossDomainMessenger.sol#L51-L61) of `Abs_BaseCrossDomainMessenger.sol`:
 
 ```solidity
 /**
@@ -345,7 +346,7 @@ It could be the case that developers deploy their own bridge contracts with semi
 As a developer integrating with Optimism's messengers is very easy.
 Just call `<LAYER>CrossDomainMessenger.sendMessage` with the calldata, gasLimit and target address you want to call on the destination layer.  
 
-This wraps the message in a [`relayMessage`](https://github.com/ethereum-optimism/optimism/blob/fae4e29bd90d06ba68f7373dc98140c6a58ebc94/packages/contracts/contracts/optimistic-ethereum/OVM/bridge/messaging/Abs_BaseCrossDomainMessenger.sol#L83-L96) call, targeting the `L2CrossDomainMessenger`.
+This wraps the message in a [`relayMessage`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/optimistic-ethereum/OVM/bridge/messaging/Abs_BaseCrossDomainMessenger.sol#L83-L96) call, targeting the `L2CrossDomainMessenger`.
 That's all! It's the same general process for L2 to L1.
 (This is enabled by the `L1MessageSender`, `L1BlockNumber`, and `L1Queue` fields in the message and transaction `meta`.)
 
