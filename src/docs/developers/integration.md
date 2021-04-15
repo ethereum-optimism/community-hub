@@ -94,22 +94,20 @@ However, if you plan to write contracts that communicate between L1 and L2, then
 
 #### Using the `optimism-integration` Repo
 
-The [`optimism-integration`](https://github.com/ethereum-optimism/optimism-integration) repo gives you a single command to spin up a complete L1/L2 development environment.
+The [`optimism`](https://github.com/ethereum-optimism/optimism) monorepo provides you with the docker containers needed to spin up your own local Optimistic Ethereum network.
 We use [docker](https://www.docker.com/) to standardize our development experience, so please make sure you've [installed docker](https://www.docker.com/products/docker-desktop) and that the docker service is running before you continue.
-You can check out the [tool's full usage page](https://github.com/ethereum-optimism/optimism-integration#usage) for a complete "getting started" guide.
+You can check out the [tool's full usage page](https://github.com/ethereum-optimism/optimism#quickstart) for a "Quickstart" guide.
 
-First, run the following commands to get set up:
-
-```shell
-git clone git@github.com:ethereum-optimism/optimism-integration.git --recurse-submodules
-cd optimism-integration
-docker-compose pull
-```
-
-Then, run the famous `up.sh` script to spin everything up:
+Run the following commands to get set up:
 
 ```shell
-./up.sh
+git clone git@github.com:ethereum-optimism/optimism.git
+cd optimism
+yarn install
+yarn build
+cd ops
+docker-compose build
+docker-compose up
 ```
 
 And that's it!
@@ -167,13 +165,13 @@ Here's a checklist to run through if you're having any problems.
 
 #### Gotcha: Invalid chain ID
 
-The default chain ID of the `up.sh` script is `420`.
-If you're getting an error when sending transactions, please make sure they you're using the right chain ID.
+The default chain ID of the local L2 chain is `420`.
+If you're getting an error when sending transactions, please make sure that you are using the right chain ID.
 
 #### Gotcha: Local node does not charge fees
 
-At the moment, the node created by `up.sh` does not charge the user for any fees.
-You can send successfully transactions with `gasPrice = 0`.
+At the moment, the node created by starting the docker containers under `optimism/ops` does not charge the user for any fees.
+You can send successfully transactions by setting `gasPrice` to `0` in your configs and in contract calls.
 
 #### Gotcha: Constantly exceeding gas limit
 
@@ -271,7 +269,7 @@ The sending chain's contract calls `sendMessage` with the data it wants to pass 
 
 These methods are shown below for reference:
 
-* (L1 or L2 Sender ) [`sendMessage`](https://github.com/ethereum-optimism/optimism/blob/fae4e29bd90d06ba68f7373dc98140c6a58ebc94/packages/contracts/contracts/optimistic-ethereum/OVM/bridge/messaging/Abs_BaseCrossDomainMessenger.sol#L51-L61) of `Abs_BaseCrossDomainMessenger.sol`:
+* (L1 or L2 Sender ) [`sendMessage`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/optimistic-ethereum/OVM/bridge/messaging/Abs_BaseCrossDomainMessenger.sol#L51-L61) of `Abs_BaseCrossDomainMessenger.sol`:
 
 ```solidity
 /**
@@ -345,7 +343,7 @@ It could be the case that developers deploy their own bridge contracts with semi
 As a developer integrating with Optimism's messengers is very easy.
 Just call `<LAYER>CrossDomainMessenger.sendMessage` with the calldata, gasLimit and target address you want to call on the destination layer.  
 
-This wraps the message in a [`relayMessage`](https://github.com/ethereum-optimism/optimism/blob/fae4e29bd90d06ba68f7373dc98140c6a58ebc94/packages/contracts/contracts/optimistic-ethereum/OVM/bridge/messaging/Abs_BaseCrossDomainMessenger.sol#L83-L96) call, targeting the `L2CrossDomainMessenger`.
+This wraps the message in a [`relayMessage`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/optimistic-ethereum/OVM/bridge/messaging/Abs_BaseCrossDomainMessenger.sol#L83-L96) call, targeting the `L2CrossDomainMessenger`.
 That's all! It's the same general process for L2 to L1.
 (This is enabled by the `L1MessageSender`, `L1BlockNumber`, and `L1Queue` fields in the message and transaction `meta`.)
 
