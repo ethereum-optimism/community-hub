@@ -54,11 +54,3 @@ Note that `optimistic-nfts` uses our old `optimism-integration` repository to cr
 
 A wonderful in-depth guide to porting a complex set of contracts (a la Uniswap) to Optimistic Ethereum.
 Surprisingly painless!
-
----
-## [*Unofficial Guide: Deploy a Custom Optimistic Rollup*](https://gist.github.com/miguelmota/973e62c8f3da0571fc2c469b65c54d71)
-
-* By: [@miguelmota](https://twitter.com/miguelmotah)
-
-A short GitHub gist by [@miguelmota](https://twitter.com/miguelmotah) for how to deploy a custom Optimistic Rollup network on the Kovan testnet.
-Run your own rollup!
