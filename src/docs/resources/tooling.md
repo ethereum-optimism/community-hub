@@ -16,27 +16,27 @@ Hop on the [discord](https://discord.gg/5TaAXGn2D8) and make a post in `#resourc
 
 ---
 
-## [@eth-optimism/plugins](https://github.com/ethereum-optimism/plugins)
+## [@eth-optimism/hardhat-ovm](https://github.com/ethereum-optimism/optimism/tree/master/packages/hardhat-ovm)
 
 A `Node.js` package that contains various useful plugins for developing contracts to be deployed on Optimistic Ethereum.
 Particularly useful for its support of the custom OVM Solidity compiler.
 
 ---
-## [@eth-optimism/contracts](https://github.com/ethereum-optimism/contracts)
+## [@eth-optimism/contracts](https://github.com/ethereum-optimism/optimism/tree/master/packages/contracts)
   
 The various smart contracts that make up the L1 component of Optimistic Ethereum.
 Useful if you're interested in understanding how an Optimistic Rollup works!
 
 ---
-## [optimism-integration](https://github.com/ethereum-optimism/optimism-integration)
+## [optimism](https://github.com/ethereum-optimism/optimism/tree/master/ops)
 
 A single GitHub repository intended to provide the ability to run a local Optimistic Ethereum environment including both L1 & L2 chains.
 This can be used to rapidly iterate over the many Optimism repositories and run integration tests.
 Optimism uses this pretty heavily during development.
 
 ---
-## [@eth-optimism/smock](https://github.com/ethereum-optimism/smock) 
+## [@eth-optimism/smock](https://github.com/ethereum-optimism/optimism/tree/master/packages/smock) 
   
 Smock is a hardhat plugin that allows you to mock the functionality of any smart contract with just a little bit of JavaScript.
-Smock's [README on GitHub](https://github.com/ethereum-optimism/smock/blob/nu-nu/README.md) has thorough documentation.
+Smock's [README on GitHub](https://github.com/ethereum-optimism/optimism/tree/master/packages/smock/README.md) has thorough documentation.
 You can even find a [community example of using Smock](https://soliditydeveloper.com/smock) written by [Markus Waas](https://soliditydeveloper.com/markuswaas/).
