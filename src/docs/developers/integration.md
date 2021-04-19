@@ -364,9 +364,9 @@ Optimistic Ethereum comes with a standard ETH bridge, [`OVM_L1ETHGateway.sol`](h
 
 `OVM_L1ETHGateway` has three important methods to keep in mind:
 
-1. [`initiateDeposit()`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/optimistic-ethereum/OVM/bridge/tokens/OVM_L1ETHGateway.sol#L103-L112) is an internal method where the all the super secret magic happens to create our deposits 🪄 ✨.
-2. [`_deposit()`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/optimistic-ethereum/OVM/bridge/tokens/OVM_L1ETHGateway.sol#L78-L85) is external and payable method used to call `_initiateDeposit()`, and passes in the caller's address as `msg.sender` to the `_to` and `_from` arguments of `_initiateDeposit()`.
-3. [`receive()`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/optimistic-ethereum/OVM/bridge/tokens/OVM_L1ETHGateway.sol#L71-L74) is an another external and payable method which [will](https://github.com/ethereum-optimism/contracts/pull/311) allow the `OVM_L1ETHGateway` to accept ETH that you send directly to it (by calling `_initiateDeposit()`, similarly to `_deposit()`)
+1. [`_initiateDeposit()`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/optimistic-ethereum/OVM/bridge/tokens/OVM_L1ETHGateway.sol#L103-L112) is an internal method where the all the super secret magic happens to create our deposits 🪄 ✨.
+2. [`deposit()`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/optimistic-ethereum/OVM/bridge/tokens/OVM_L1ETHGateway.sol#L78-L85) is external and payable method used to call `_initiateDeposit()`, and passes in the caller's address as `msg.sender` to the `_to` and `_from` arguments of `_initiateDeposit()`.
+3. [`receive()`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/optimistic-ethereum/OVM/bridge/tokens/OVM_L1ETHGateway.sol#L71-L74) is an another external and payable method which [will](https://github.com/ethereum-optimism/contracts/pull/311) allow the `OVM_L1ETHGateway` to accept ETH that you send directly to it (by calling `_initiateDeposit()`, similarly to `deposit()`)
 
 Of these, the most important to keep in mind as a _user_, is the `receive()` method, which has a flow like this:
 
