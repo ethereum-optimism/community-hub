@@ -107,6 +107,7 @@ module.exports = {
 
 The main component to focus on is the `assertRevertOptimism` method.
 It will allow us to make an assertion against:
+
 1. A specified `revertReason`, and
 2. The revert reason retrieved from the transaction of our contract call in our test
 
@@ -127,7 +128,7 @@ await assertRevertOptimism({
 })
 ```
 
-### `block.timestamp` and `block.number`
+### `block.timestamp` and `block.number` in L2
 
 ::: warning These values will soon be updated
 We are working on updating `block.timestamp` and `block.number` so that instead of a delay in the values that are returned, they will return the _current_ `block.number` and current `block.timestamp`.
@@ -135,23 +136,44 @@ We are working on updating `block.timestamp` and `block.number` so that instead 
 
 **Queries to `block.number`:**
 
-* Work just like L1 queries `block.number`
-* Return the `block.number` of the previous block, i.e. transaction
+* Are _slightly_ different than `block.number` in Ethereum.
+* Return the `block.number` of the previous block. Note that there is no such thing as a "block" in Optimistic Ethereum as blocks in Ethereum. A block on Optimistic Ethereum is merely a block of just 1 transaction, where these blocks made up of single transactions are ordered by sequencers in the network.
 
-**Queries of `block.timestamp`:**
+**Queries to `block.timestamp`:**
 
-* Are updated every time a new deposit is submitted
-* Return timestamps from 5 to 10 minutes ago
+* Are _mostly_ different than `block.timestamp` in Ethereum.
+* Are updated every time a new deposit is submitted.
+* Return timestamps from roughly 5 to 10 minutes ago.
 
 ## What is L1 <> L2 communication used for?
 
-L1 <> L2 communication is used for relaying a message with transaction from Ethereum (L1) to Optimistic Ethereum (L2) or vice versa (L2 to L1).
-Message passing is ideal for relaying some kind of important information to your users regarding the state change of your contracts on one chain.
+L1 <> L2 communication is used for relaying a message with your transaction from Ethereum (L1) to Optimistic Ethereum (L2) or vice versa (L2 to L1).
+Message passing is ideal for relaying some kind of important information to your users regarding the state change of your contracts from the sending chain (L1 or L2) to the receiving chain (L2 or L1).
 To illustrate, here's an example of how message passing works with a deposit and withdrawal example.
 
-For example, let's say that you wanted to gift an _ERC721 token_ (NFT) for your friend to withdraw on L2.
-When your friend makes the withdrawal on L2, you also want to _relay a message_ to your friend that notifies them to deposit their tokens to an L2 loan provider to unlock an additional feature of the gifted NFT.
+### Example use case for L1 <> L2 communication
 
-However, to initiate a deposit of some ERC20 token to an L2 loan provider
+Say that you wanted to send a gift of an _ERC721 token_ (NFT) for your friend to withdraw on L2.
+When your friend makes the withdrawal on L2, you also want to _relay a message_ to your friend that notifies them to deposit their tokens to an L2 loan provider (e.g. Loans4NFTs) to unlock an additional feature of the gifted NFT.
 
-First, you would need to initiate a deposit of the ERC20 tokens that you wish to deposit to an ERC20 gateway contract on L1.
+However, to initiate a deposit of this NFT token to Loans4NFTs, you first need to get this NFT on L1.
+So, you initiate a deposit of your NFT to an ERC721 gateway contract (you can think of this deposit as "locking in your token as collateral" to L1) and whitelist your friend's wallet address so that your friend can mint and withdraw the gifted NFT on L2.
+Now that the NFT has been deposited on L1, it can now be withdrawn and claimed by your friend on L2 -- assuming that you include a `require` statement to check that the withdrawer is your friend's address.
+For your friend to mint this NFT, he would have to initiate a withdrawal transaction from the address that you whitelisted in the deposit transaction.
+Assume your friend successfully uses the correct address to withdraw and claim his NFT that you gifted him.
+He then receives a relayed message from L1 that reads, "Hey fren! I left you a surprise for when you deposit your NFT to Loan4NFTs :)".
+And, when your friend deposits their NFT to Loans4NFTs, he receives an additional yield farming reward for the first 30 days while keeping his NFT locked with Loan4NFTs.
+
+### Best practices
+
+The example shown above is to illustrate _just one_ ideal use case for L1 <> L2 communication, but there are a myriad of possible use cases!
+However, since this cross-layer message passing is _asynchronous_, we suggest that it be used mainly for communicating additional information _asynchronously_ from one chain to the next.
+
+Whether that's for notifying your user of:
+
+* A special new gift on the receiving chain,
+* A timestamp of when their withdrawn L2 tokens are ready to be staked at a desired protocol on the receiving chain,
+* A list of compatible exchanges or protocols that their token can be used on,
+* Unique rewards or promotions that can be claimed on specific protocols on the receiving chain,
+
+these messages should serve as a helpful nudge to your users where there otherwise would be absent communication between your user's action and the action that you desire your users to make when withdrawing their tokens on L2.
