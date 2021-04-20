@@ -366,15 +366,15 @@ Optimistic Ethereum comes with a standard ETH bridge, [`OVM_L1ETHGateway.sol`](h
 
 1. [`initiateDeposit()`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/optimistic-ethereum/OVM/bridge/tokens/OVM_L1ETHGateway.sol#L103-L112) is an internal method where the all the super secret magic happens to create our deposits 🪄 ✨.
 2. [`_deposit()`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/optimistic-ethereum/OVM/bridge/tokens/OVM_L1ETHGateway.sol#L78-L85) is external and payable method used to call `_initiateDeposit()`, and passes in the caller's address as `msg.sender` to the `_to` and `_from` arguments of `_initiateDeposit()`.
-3. [`receive()`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/optimistic-ethereum/OVM/bridge/tokens/OVM_L1ETHGateway.sol#L71-L74) is an another external and payable method which [will](https://github.com/ethereum-optimism/contracts/pull/311) allow the `OVM_L1ETHGateway` to accept ETH that you send directly to it (by calling `_initiateDeposit()`, similarly to `_deposit()`)
+3. [`receive()`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/optimistic-ethereum/OVM/bridge/tokens/OVM_L1ETHGateway.sol#L71-L74) (a Solidity built-in function) is an another external and payable method which [will](https://github.com/ethereum-optimism/contracts/pull/311) allow the `OVM_L1ETHGateway` to accept ETH that you send directly to it (by calling `_initiateDeposit()`, similarly to `_deposit()`)
 
-Of these, the most important to keep in mind as a _user_, is the `receive()` method, which has a flow like this:
+Of these, the most important to keep in mind as a _user_, is the built-in `receive()` method, which has a flow like this:
 
-![User flow for OVM_L1ETHGateway](../../assets/userflow-OVM_L1ETHGateway.png)
+![User flow for OVM_L1ETHGateway](../../assets/userflow-eth-deposit.png)
 
 With a smart contract, the flow would instead use the `_deposit()` method and look like this:
 
-![Contract flow for OVM_L1ETHGateway](../../assets/contractflow-OVM_L1ETHGateway.png)
+![Contract flow for OVM_L1ETHGateway](../../assets/contract-eth-deposit.png)
 
 #### Token Bridges
 
