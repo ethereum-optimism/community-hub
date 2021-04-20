@@ -1,4 +1,4 @@
-# Compile, Test, and Deploy Contracts
+# Additional Integration Documentation
 
 ## Introduction
 
@@ -130,7 +130,7 @@ await assertRevertOptimism({
 ### `block.timestamp` and `block.number`
 
 ::: warning These values will soon be updated
-We are working on updating these two values so that instead of a delay in the values that are returned, they will return the _current_ `block.number` and current `block.timestamp`.
+We are working on updating `block.timestamp` and `block.number` so that instead of a delay in the values that are returned, they will return the _current_ `block.number` and current `block.timestamp`.
 :::
 
 **Queries to `block.number`:**
@@ -145,3 +145,13 @@ We are working on updating these two values so that instead of a delay in the va
 
 ## What is L1 <> L2 communication used for?
 
+L1 <> L2 communication is used for relaying a message with transaction from Ethereum (L1) to Optimistic Ethereum (L2) or vice versa (L2 to L1).
+Message passing is ideal for relaying some kind of important information to your users regarding the state change of your contracts on one chain.
+To illustrate, here's an example of how message passing works with a deposit and withdrawal example.
+
+For example, let's say that you wanted to gift an _ERC721 token_ (NFT) for your friend to withdraw on L2.
+When your friend makes the withdrawal on L2, you also want to _relay a message_ to your friend that notifies them to deposit their tokens to an L2 loan provider to unlock an additional feature of the gifted NFT.
+
+However, to initiate a deposit of some ERC20 token to an L2 loan provider
+
+First, you would need to initiate a deposit of the ERC20 tokens that you wish to deposit to an ERC20 gateway contract on L1.
