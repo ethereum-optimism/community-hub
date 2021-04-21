@@ -92,7 +92,7 @@ Before deploying to a "real" network, like a testnet or mainnet, you may want to
 If your contracts are relatively simple you may not need to do this.
 However, if you plan to write contracts that communicate between L1 and L2, then we highly recommend reading this section.
 
-#### Using the `optimism-integration` Repo
+#### Using the `optimism` Repo
 
 The [`optimism`](https://github.com/ethereum-optimism/optimism) monorepo provides you with the docker containers needed to spin up your own local Optimistic Ethereum network.
 We use [docker](https://www.docker.com/) to standardize our development experience, so please make sure you've [installed docker](https://www.docker.com/products/docker-desktop) and that the docker service is running before you continue.
@@ -137,7 +137,7 @@ Adding the currency symbol is _optional_.
 
 **L1 Custom Network (Optional)**
 
-In addition to adding the L2 chain as a custom network, we can also add our local instance of the L1 chain from `optimism-integration`.
+In addition to adding the L2 chain as a custom network, we can also add our local instance of the L1 chain from `optimism`.
 To do this, you would go through the same steps as above, but instead enter in the following for the network parameters:
 |     Param                    |                Value               |
 | ---------------------------- | :--------------------------------: |
