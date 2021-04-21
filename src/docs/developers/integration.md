@@ -362,19 +362,18 @@ This is where the ETH (and token) bridges come in!
 
 Optimistic Ethereum comes with a standard ETH bridge, [`OVM_L1ETHGateway.sol`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/optimistic-ethereum/OVM/bridge/tokens/OVM_L1ETHGateway.sol). This smart contract acts as a _bridge_ between L1 and L2, letting users deposit ETH into the contract on L1 so that it can be used on L2.
 
-`OVM_L1ETHGateway` has three important methods to keep in mind:
+`OVM_L1ETHGateway` has 2 important methods to keep in mind:
 
-1. [`_initiateDeposit()`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/optimistic-ethereum/OVM/bridge/tokens/OVM_L1ETHGateway.sol#L103-L112) is an internal method where the all the super secret magic happens to create our deposits 🪄 ✨.
-2. [`deposit()`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/optimistic-ethereum/OVM/bridge/tokens/OVM_L1ETHGateway.sol#L78-L85) is external and payable method used to call `_initiateDeposit()`, and passes in the caller's address as `msg.sender` to the `_to` and `_from` arguments of `_initiateDeposit()`.
-3. [`receive()`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/optimistic-ethereum/OVM/bridge/tokens/OVM_L1ETHGateway.sol#L71-L74) is an another external and payable method which [will](https://github.com/ethereum-optimism/contracts/pull/311) allow the `OVM_L1ETHGateway` to accept ETH that you send directly to it (by calling `_initiateDeposit()`, similarly to `deposit()`)
+1. [`deposit()`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/optimistic-ethereum/OVM/bridge/tokens/OVM_L1ETHGateway.sol#L81) is external and payable method used to send ETH from an account on L1 to the same address on L2.
+2. [`depositTo()`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/optimistic-ethereum/OVM/bridge/tokens/OVM_L1ETHGateway.sol#L93) is external and payable method used to send ETH to another address on L2.
 
-Of these, the most important to keep in mind as a _user_, is the `receive()` method, which has a flow like this:
+Here's an example deposit flow from L1 to L2 using the `depositTo()` method:
 
-![User flow for OVM_L1ETHGateway](../../assets/userflow-OVM_L1ETHGateway.png)
+![L1 to L2 Deposit](../../assets/l1-l2-eth-deposit.png)
 
-With a smart contract, the flow would instead use the `_deposit()` method and look like this:
+Similarly, here's an example of the flow in reverse, starting with a deposit of ETH on L2 and the funds being sent to the `msg.sender`'s address on L1. Here we use `withdraw()` or [`withdrawTo()`](https://github.com/ethereum-optimism/optimism/blob/fb362ff748c803dc9099326f0e3096889b5dd5aa/packages/contracts/contracts/optimistic-ethereum/OVM/bridge/tokens/Abs_L2DepositedToken.sol#L163), which `OVM_ETH.sol` inherits to initiate our transfer of ETH from L2 to L1:
 
-![Contract flow for OVM_L1ETHGateway](../../assets/contractflow-OVM_L1ETHGateway.png)
+![L2 to L1 Deposit](../../assets/l2-l1-eth-deposit.png)
 
 #### Token Bridges
 
