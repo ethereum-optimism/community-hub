@@ -1,4 +1,13 @@
-# Additional Integration Documentation
+---
+title: Additional Integration Docs
+lang: en-US
+tags:
+    - contracts
+    - buidling
+    - building
+---
+
+# {{ $frontmatter.title }}
 
 ## Introduction
 
@@ -10,12 +19,9 @@ This document is for developers who have to deal with complex contracts and need
 
 The main purpose of this document is to solve blockers that most developers will run into when adding complexity to their contract tests for Optimistic Ethereum.
 
-## Overview
-
 You'll learn about:
 
 1. Common gotchas while developing for Optimistic Ethereum and how to get around them.
-1. Hardhat vs. Truffle vs. Waffle and the pros and cons for each.
 1. What L1 <> L2 communication is used for and best practices for implementing it in your applications.
 
 Let's dive in!

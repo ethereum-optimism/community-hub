@@ -62,13 +62,13 @@ module.exports = {
               path: '/docs/developers/integration.md'
             },
             {
-              title: 'Additional Integration Docs',
-              path: '/docs/developers/additional-integration.md'
-            },
-            {
               title: 'Developer Dump',
               path: '/docs/developers/dev-dump.md'
             },
+            {
+              title: 'Additional Integration Docs',
+              path: '/docs/developers/more-integration.md'
+            }
           ],
           collapsable: false,
           sidebarDepth: 1,
