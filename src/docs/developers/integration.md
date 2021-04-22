@@ -370,7 +370,7 @@ Simply using this syntax will not work to retrieve your revert reason for your c
 
 Instead, when writing tests for Optimistic Ethereum, you will need a clever way to retrieve these revert reasons.
 Fortunately, to retrieve revert reasons for contract calls in the Optimistic Ethereum Virtual Machine (OVM), our friends at [Synthetix](https://www.synthetix.io/) created a utility script called [`revertOptimism.js`](https://github.com/Synthetixio/synthetix/blob/develop/test/optimism/utils/revertOptimism.js).
-We suggest borrowing code from this script, and are working on our own libraries to make this easier.
+We suggest borrowing code from this script. Note that we are working on our own libraries to make this easier.
 
 The main component to focus on in Synthetix's script is the [`assertRevertOptimism` method](https://github.com/Synthetixio/synthetix/blob/develop/test/optimism/utils/revertOptimism.js#L37) that helps to retrieve the revert reason from the transaction of our contract call in our test.
 
