@@ -345,7 +345,6 @@ If none of the tips here work for you, please report an issue on [discord](https
 People tend to run into a few common issues when first interacting with Optimistic Ethereum.
 Here's a checklist to run through if you're having any problems.
 
-
 ### Retrieve contract revert reason
 
 In your Ethereum contract tests, a common test that developers write is for revert reasons.
@@ -364,80 +363,10 @@ await expect(withdrawTx).to.be.revertedWith(
 Simply using this syntax will not work to retrieve your revert reason for your contract.
 
 Instead, when writing tests for Optimistic Ethereum, you will need a clever way to retrieve these revert reasons.
-Fortunately, to retrieve revert reasons for contract calls in the Optimistic Ethereum Virtual Machine (OVM), our friends at [Synthetix](https://www.synthetix.io/) created a utility script called [`revertOptimism.js`](https://github.com/Synthetixio/synthetix/blob/develop/test/optimism/utils/revertOptimism.js):
+Fortunately, to retrieve revert reasons for contract calls in the Optimistic Ethereum Virtual Machine (OVM), our friends at [Synthetix](https://www.synthetix.io/) created a utility script called [`revertOptimism.js`](https://github.com/Synthetixio/synthetix/blob/develop/test/optimism/utils/revertOptimism.js).
+We suggest looking through this script to learn how this method works, however, **we are working on a proper fix to this codebase.**
 
-```js
-const ethers = require('ethers')
-function _hexToString(hex) {
-	let str = ''
-	const terminator = '**zÛ'
-	for (var i = 0 i < hex.length i += 2) {
-		str += String.fromCharCode(parseInt(hex.substr(i, 2), 16))
-		if (str.includes(terminator)) {
-			break
-		}
-	}
-	return str.substring(0, str.length - 4)
-}
-async function getOptimismRevertReason({ tx, provider }) {
-	try {
-		let code = await provider.call(tx)
-		code = code.substr(138)
-		// Try to parse the revert reason bytes.
-		let reason
-		if (code.length === 64) {
-			reason = ethers.utils.parseBytes32String(`0x${code}`)
-		} else {
-			reason = _hexToString(`0x${code}`)
-		}
-		return reason
-	} catch (suberror) {
-		throw new Error(`Unable to parse revert reason: ${suberror}`)
-	}
-}
-async function assertRevertOptimism({ tx, reason, provider }) {
-	let receipt
-	let revertReason
-	try {
-		receipt = await tx.wait()
-	} catch (error) {
-		revertReason = await getOptimismRevertReason({ tx, provider })
-	}
-	if (receipt) {
-		throw new Error(`Transaction was expected to revert with "${reason}", but it did not revert.`)
-	} else {
-		if (!revertReason.includes(reason)) {
-			throw new Error(
-				`Transaction was expected to revert with "${reason}", but it reverted with "${revertReason}" instead.`
-			)
-		}
-	}
-}
-module.exports = {
-	getOptimismRevertReason,
-	assertRevertOptimism,
-}
-```
-
-The main component to focus on is the `assertRevertOptimism` method.
-It will allow us to make an assertion against:
-
-1. A specified `revertReason`, and
-2. The revert reason retrieved from the transaction of our contract call in our test
-
-Here's an example of how this function would be used in your JavaScript test file:
-```js
-/* --- snip --- */
-// We import this method from Synthetix's utility script.
-const { assertRevertOptimism } = require('./utils')
-/* --- snip --- */
-// Test whether the call on Optimism reverts with the following reason.
-await assertRevertOptimism({
-  tx,
-  reason: '<REVERT_REASON>',
-  provider: l2provider
-})
-```
+The main component to focus on is the `assertRevertOptimism` method in Synthetix's script that helps to retrieve the revert reason from the transaction of our contract call in our test.
 
 ### `block.timestamp` and `block.number` in L2
 
@@ -445,17 +374,13 @@ await assertRevertOptimism({
 We are working on updating `block.timestamp` and `block.number` so that instead of a delay in the values that are returned, they will return the _current_ `block.number` and current `block.timestamp`.
 :::
 
-**Queries to `block.number`:**
+Queries to `block.number` are _slightly_ different than `block.number` in Ethereum.
+These queries return the `block.number` of the previous block.
+Note that there is no such thing as a "block" in Optimistic Ethereum as blocks in Ethereum.
+A block on Optimistic Ethereum is merely a block of just 1 transaction, where these blocks made up of single transactions are ordered by sequencers in the network.
 
-* Are _slightly_ different than `block.number` in Ethereum.
-* Return the `block.number` of the previous block. Note that there is no such thing as a "block" in Optimistic Ethereum as blocks in Ethereum. A block on Optimistic Ethereum is merely a block of just 1 transaction, where these blocks made up of single transactions are ordered by sequencers in the network.
-
-**Queries to `block.timestamp`:**
-
-* Are _mostly_ different than `block.timestamp` in Ethereum.
-* Are updated every time a new deposit is submitted.
-* Return timestamps from roughly 5 to 10 minutes ago.
-
+Queries to `block.timestamp` are _mostly_ different than `block.timestamp` in Ethereum.
+These queries are updated every time a new deposit is submitted and return timestamps from roughly 5 to 10 minutes ago.
 
 ### Invalid chain ID
 
