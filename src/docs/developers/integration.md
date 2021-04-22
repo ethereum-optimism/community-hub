@@ -189,7 +189,7 @@ yarn hardhat compile --network optimism
 
 Likewise for L1, we can check for the folders `artifacts-ovm` and `cache-ovm` in our project directory to check whether our contacts were properly compiled by the OVM compiler.
 
-## Step 2. Local Deployment
+## Step 2. Testing contracts
 
 Before deploying to a "real" network, like a testnet or mainnet, you may want to deploy to a local version of our `go-ethereum` fork.
 
@@ -252,7 +252,7 @@ So, we'd advise just adding the L2 custom network, unless you think you really n
 
 Later, when you decide to move on to testing on Optimism's Kovan testnet, the simple change you'd make is just replacing the RPC URL with the RPC URL for Optimism's Kovan testnet.
 
-## Step 3. Testing contracts
+## Step 3. Deploying contracts
 
 First, we will show you how to test your contracts locally and then using the Optimistic Ethereum Kovan testnet.
 
@@ -285,10 +285,6 @@ yarn hardhat --network optimism test
 ```
 
 ### Deploying contracts
-
-Similarly in the previous step, we will show you how to deploy your contracts locally and then using the Kovan testnet.
-
-#### Writing the deploy script
 
 We make use of the [`hardhat-deploy`](https://github.com/wighawag/hardhat-deploy) package to make contract deployments straightforward.
 
