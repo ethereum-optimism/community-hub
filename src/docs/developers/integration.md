@@ -360,6 +360,11 @@ await expect(withdrawTx).to.be.revertedWith(
 )
 ```
 
+::: warning THIS IS A BUG
+Although this is a bug in how we can write our tests, this is **not** an issue with the Optimistic Ethereum system as a whole.
+This bug will be resolved soon, but in the meantime, we suggest using this workaround that Synthetix has implemented.
+:::
+
 Simply using this syntax will not work to retrieve your revert reason for your contract.
 
 Instead, when writing tests for Optimistic Ethereum, you will need a clever way to retrieve these revert reasons.
