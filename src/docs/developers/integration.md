@@ -348,6 +348,8 @@ This wraps the message in a [`relayMessage`](https://github.com/ethereum-optimis
 That's all! It's the same general process for L2 to L1.
 (This is enabled by the `L1MessageSender`, `L1BlockNumber`, and `L1Queue` fields in the message and transaction `meta`.)
 
+---------
+
 ### 🌉 ETH and Token Bridges
 
 Just like on L1, gas fees (i.e. transaction fees on Ethereum, usually denominated in [Gwei](https://gwei.io/)) still apply on L2.
