@@ -125,13 +125,18 @@ Here's a step-by-step process on how to do that while in your browser:
 
 ![Custom RPC button](../../assets/custom-metamask-network-1.png)
 
-3. Next, you'll enter in the network parameters. Enter `Optimistic Ethereum (Local L2)` for the network name, `http://0.0.0.0:8545` for the RPC URL, and `420` for the chain ID and click save.
+3. Next, you'll enter in the network parameters:
+- network name: `Optimistic Ethereum (Local L2)` 
+- RPC URL: `http://0.0.0.0:8545`
+- chain ID: `420`
+
+Then click save.
 
 ![Entering network params](../../assets/custom-metamask-network-2.png)
 
 4. Next, we need to add the ETH address that is used on L2.
 
-To do this, we need to add the **WETH address** address to our account.
+To do this, we need to add the WETH address address to our account.
 
 ![Adding WETH address](../../assets/add-weth-to-account.png)
 
@@ -140,8 +145,10 @@ You should see that the "Token Symbol" is `ETH` if you entered the address corre
 Despite this field reading `ETH`, it's important to understand that **this is actually an ERC20 version of ETH that we call WETH.**
 
 ::: warning L2 WETH address  
-It's very important to note here that the default ETH address that is provided by MetaMask is **NOT** the same as the WETH ([more info here](../protocol/evm-comparison.html#native-weth)), the default type of ETH that is used on L2, we will be using to make transfers between one L2 address and another.
+It's very important to note here that the default ETH address that is provided by MetaMask is **NOT** the same as the default WETH address that is used on L2.
+We will be use WETH to make transfers between one L2 address and another.
 Thus, here we add this specific address to make WETH transfers on L2.
+For more info, see [this section in the docs](../protocol/evm-comparison.html#native-weth).
 :::
 
 **L1 Custom Network (Optional)**
