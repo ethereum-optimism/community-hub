@@ -51,7 +51,7 @@ If any of our plugins are giving you issues, please ping us in our [#tech-suppor
 :::
 
 The first part of getting started with Optimistic Ethereum is to get your contracts up and running on a local L2 node.
-This process involves two primary sub-steps:
+This process involves three steps:
 
 1. Compile your contracts with the OVM Solidity compiler.
 2. Deploy your contracts against a local instance of Optimistic Etheereum and our Kovan testnet.
@@ -62,15 +62,15 @@ For the rest of this documentation, we'll expect you to have your Solidity contr
 Please note that Vyper support is currently not enabled but is planned for a future release.
 
 ::: tip The Official Tutorial that you can fork!
-If you want to try out an example contract instead of deploying your own, you can follow our [optimism-tutorial](https://github.com/ethereum-optimism/optimism-tutorial) which serves as a quick and easy example to start bootstrap your project with.
+If you want to try out an example contract instead of deploying your own, you can follow our [optimism-tutorial](https://github.com/ethereum-optimism/optimism-tutorial) which serves as a quick and easy example to bootstrap your project with.
 :::
 
-If you're using another testing suite like [Truffle](https://www.trufflesuite.com/) or [Waffle](https://getwaffle.io), that tutorial won't apply. But these `npm` packages have got you covered:
+If you're using another framework like [Truffle](https://www.trufflesuite.com/) or [Waffle](https://getwaffle.io), that tutorial won't apply. But these `npm` packages have got you covered:
 
 - [`@eth-optimism/solc`](https://www.npmjs.com/package/@eth-optimism/solc): exports the Optimistic Ethereum compiler for `solidity@0.5/0.6/0.7`
 - [`@eth-optimism/hardhat-ovm`](https://www.npmjs.com/package/@eth-optimism/hardhat-ovm): exports `artifacts-ovm` folder of contract artifacts which will work with contracts output by the compiler.
 
-An example of usage of Waffle with can be found in our [`Waffle-ERC20-Example`](https://github.com/ethereum-optimism/Waffle-ERC20-Example) repository which serves as a simple guide for how to get started using Waffle for Optimistic Ethereum.
+An example of using Waffle on Optimistic Ethereum can be found in our [`Waffle-ERC20-Example`](https://github.com/ethereum-optimism/Waffle-ERC20-Example) repository which serves as a simple guide for how to get started using Waffle for Optimistic Ethereum.
 If you are using Truffle, [here is an example repository](https://github.com/ethereum-optimism/Truffle-ERC20-Example) which walks through how to start using Optimistic Ethereum with Truffle and a simple ERC-20.
 
 We recommend preserving EVM functionality when doing your port.
@@ -88,7 +88,7 @@ For help with these, you can check out the following resources:
 
 ### Adding and installing dependencies
 
-In this step, we will assume that you have a pre-existing Node.js project that you would to turn in to an Optimistic Ethereum project.
+In this step, we will assume that you have a pre-existing Ethereum project build with Node.js, that you would like convert to an Optimistic Ethereum project.
 Make sure to have the prerequisite software installed before continuing.
 Additionally, make sure that you have the following `scripts` and `devDependencies` added to your `package.json`:
 
@@ -181,7 +181,7 @@ yarn hardhat compile
 
 To ensure that your contracts have been compiled correctly, check your project directory for the outputted folders `artifacts` and `cache`.
 
-To compile your contacts for L2, we merely add the `network` flag to our command and specify the network we wish to compile for:
+To compile your contacts for L2, we simply add the `network` flag to our command and specify the network we wish to compile for:
 
 ```sh
 yarn hardhat compile --network optimism
