@@ -125,15 +125,31 @@ Here's a step-by-step process on how to do that while in your browser:
 
 ![Custom RPC button](../../assets/custom-metamask-network-1.png)
 
-3. Next, you'll enter in the network parameters. Enter `Optimistic Ethereum (Local L2)` for the network name, `http://0.0.0.0:8545` for the RPC URL, and `420` for the chain ID -- additionally, you can also set the currency symbol to `ETH`, but that's not entirely necessary since the use of ETH is implicitly understood:
+3. Next, you'll enter in the network parameters:
+- network name: `Optimistic Ethereum (Local L2)` 
+- RPC URL: `http://0.0.0.0:8545`
+- chain ID: `420`
+
+Then click save.
 
 ![Entering network params](../../assets/custom-metamask-network-2.png)
 
-4. Click save! And, you're done! 🙌 😎. You'll then see something like the image below when you click on your new `Optimistic Ethereum (Local L2)` network!
+4. Next, we need to add the ETH address that is used on L2.
 
-![Saving custom network](../../assets/complete-custom-network.png)
+To do this, we need to add the WETH address address to our account.
 
-Adding the currency symbol is _optional_.
+![Adding WETH address](../../assets/add-weth-to-account.png)
+
+The WETH address to add is `0x4200000000000000000000000000000000000006`.
+You should see that the "Token Symbol" is `ETH` if you entered the address correctly.
+Despite this field reading `ETH`, it's important to understand that **this is actually an ERC20 version of ETH that we call WETH.**
+
+::: warning L2 WETH address  
+It's very important to note here that the default ETH address that is provided by MetaMask is **NOT** the same as the default WETH address that is used on L2.
+We will be use WETH to make transfers between one L2 address and another.
+Thus, here we add this specific address to make WETH transfers on L2.
+For more info, see [this section in the docs](../protocol/evm-comparison.html#native-weth).
+:::
 
 **L1 Custom Network (Optional)**
 
@@ -144,7 +160,6 @@ To do this, you would go through the same steps as above, but instead enter in t
 | Network Name                 |  `Optimistic Ethereum (Local L1)`  |
 | New RPC URL                  |      `http://0.0.0.0:9545`         |
 | Chain ID                     |        `31337`                     |
-| (_OPTIONAL_) Currency Symbol |        `ETH`                       |
 
 However, you'll likely mostly be using the L2 chain for most of your contract and deployment tests.
 So, we'd advise just adding the L2 custom network, unless you think you really need the local custom L1 chain network.
