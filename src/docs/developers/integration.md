@@ -234,6 +234,13 @@ We provide a standard message-passing interface for sending data between L1 and 
 If you don't think you'll be sending information between layers, you probably don't need to read through this section.
 
 Documentation for arbitrary message passing is a Work In Progress™, but all features do already work.
+
+::: tip Bridges and messaging passing contracts are pre-deployed on Kovan testnet and Mainnet
+For the following bridge and message passing contracts described in the following sections, these contracts are pre-deployed on L2 Kovan testnet or L2 Mainnet.
+
+_That means that, unlike in your local instance of L2, you do **NOT** need to deploy your own bridge and message passing contracts to leverage either the bridge or the L1 <>  L2 communication functionality._
+:::
+
 In the meantime, you may be interested in taking a look at the Synthetix Bridge contracts.
 These contracts are pretty cool and make heavy use of our L1⇔L2 messaging infrastructure:
 
