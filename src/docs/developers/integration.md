@@ -4,7 +4,6 @@ lang: en-US
 tags:
     - contracts
     - high-level
-    - buidling
     - building
 ---
 
@@ -22,7 +21,7 @@ This document will serve as a reference to take you through the stages of integr
 
 *Note: if at any time in this process you get stuck or have questions, please reach out on [discord](https://discord.gg/5TaAXGn2D8)!  We just ask that you do this in the public `#tech-support` channel so that others may learn alongside us.* :)
 
-## Buidling Overview
+## Building Overview
 
 There are two main steps to get a dapp running on Optimistic Ethereum:
 
