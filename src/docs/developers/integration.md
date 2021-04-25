@@ -359,12 +359,6 @@ await expect(withdrawTx).to.be.revertedWith(
   "There is nothing for you to withdraw!"
 )
 ```
-<!-- 
-::: warning This is NOT a bug with the Optimistic Ethereum network
-Although this is a bug in how we can write our tests, this is **not** an issue with the Optimistic Ethereum system as a whole.
-This bug will be resolved soon, but in the meantime, we suggest using this workaround that Synthetix has implemented.
-:::
- -->
 
 ::: tip This is NOT a bug with the Optimistic Ethereum system
 For more details, see this issue on GitHub:
