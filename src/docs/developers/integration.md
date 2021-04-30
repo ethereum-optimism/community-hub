@@ -361,6 +361,7 @@ await expect(withdrawTx).to.be.revertedWith(
 ```
 
 ::: tip This is NOT a bug with the Optimistic Ethereum system
+The fix for this issue will be pushed to production on 05/03/21.
 For more details, see this issue on GitHub:
 [ethereum-optimism/optimism/issues#474](https://github.com/ethereum-optimism/optimism/issues/474)
 :::
