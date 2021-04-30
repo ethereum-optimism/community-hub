@@ -1,5 +1,5 @@
 ---
-title: Complete EVM/OVM Comparison 
+title: Complete EVM/OVM Comparison
 lang: en-US
 tags:
     - contracts
@@ -11,8 +11,8 @@ tags:
 This page serves as a reference point for dApp developers who want to build or port their systems to the OVM.  In particular, it highlights the main differences between the L2 OVM and L1 EVM that developers should consider.
 
 ## Missing, Replaced, and Custom Opcodes
-The OVM's execution sandbox requires that some EVM opcodes are banned from smart contracts.  Whenever a contract deployment is attempted on the OVM, a ["safety check"](https://github.com/ethereum-optimism/contracts-v2/blob/master/contracts/optimistic-ethereum/OVM/execution/OVM_SafetyChecker.sol#L30)) of the contract code is performed, and if any of the banned opcodes are present, deployment is blocked. 
- 
+The OVM's execution sandbox requires that some EVM opcodes are banned from smart contracts.  Whenever a contract deployment is attempted on the OVM, a ["safety check"](https://github.com/ethereum-optimism/contracts-v2/blob/master/contracts/optimistic-ethereum/OVM/execution/OVM_SafetyChecker.sol#L30)) of the contract code is performed, and if any of the banned opcodes are present, deployment is blocked.
+
  <!-- For a precise specification of what counts as a "safe" contract, see here. [todo] -->
 
 Of these banned opcodes, there are two main categories:
@@ -53,7 +53,7 @@ Developers using these opcodes need not be concerned with the changes, as the `@
 | `STATICCALL`   | `ovmSTATICCALL`   |       |
 | `DELEGATECALL` | `ovmDELEGATECALL` |       |
 | `CREATE`       | `ovmCREATE`       |       |
-| `CREATE2`      | `ovmCREATE2`      |       | 
+| `CREATE2`      | `ovmCREATE2`      |       |
 | `EXTCODECOPY`  | `ovmEXTCODECOPY`  |       |
 | `EXTCODESIZE`  | `ovmEXTCODESIZE`  |       |
 | `EXTCODEHASH`  | `ovmEXTCODEHASH`  |       |
@@ -66,7 +66,7 @@ In addition to the above, the OVM introduces some new "opcodes" which are not pr
 | Opcode         | Function |
 | ------         | -------- |
 | `ovmGETNONCE`  | Returns the nonce of the current account. |
-| `ovmSETNONCE`  | Sets the nonce of the current account to a given value. |
+| `ovmINCREMENTNONCE`  | Increments the nonce of the current account by 1. |
 | `ovmCREATEEOA` | Deploys a smart contract wallet. See [Account Abstraction](#native-acccount-abstraction) section for additional detail. |
 
 #### Cross-chain Related
@@ -125,7 +125,7 @@ The OVM also implements a new opcode, `ovmCREATEEOA`, which enables anybody to d
 
 This deployment is automatically handled by the sequencer the first time an account sends an OVM transaction, so that users need not think about it at all.  The sequencer also handles wrapping the user transaction with a call to `execute(...)`.
 
-### Compatibility with `eth_sign` 
+### Compatibility with `eth_sign`
 For wallets which do not support custom chain IDs, the backwards-compatible transactions described above do not work.  To account for this, the `OVM_ECDSAContractAccount` also allows for an alternate signing scheme which can be activated by the `eth_sign` and `eth_signTypedData` endpoints and follows a standard Solidity ABI-encoded [format](https://github.com/ethereum-optimism/contracts-v2/blob/525477144ecc6fc019e0ada225b85f322c6b5fbc/contracts/optimistic-ethereum/libraries/codec/Lib_OVMCodec.sol#L133).  The `@eth-optimism/provider` package implements a web3 provider which will use this encoding format.
 
 ### Account Upgradeability
