@@ -50,24 +50,27 @@ If any of our plugins are giving you issues, please ping us in our [#tech-suppor
 :::
 
 The first part of getting started with Optimistic Ethereum is to get your contracts up and running on a local L2 node.
-This process involves two primary sub-steps:
+This process involves three steps:
 
 1. Compile your contracts with the OVM Solidity compiler.
-2. Deploy and test your contracts onto the local L2 node using our [`optimism`](https://github.com/ethereum-optimism/optimism#integration-tests) monorepo.
+2. Deploy your contracts against a local instance of Optimistic Etheereum and our Kovan testnet.
+3. Test your contracts against the local instance and Kovan testnet.
 
 If you're using [hardhat](https://hardhat.org), our preferred development environment, this can be done with the use of a handy plugin we've built.
 For the rest of this documentation, we'll expect you to have your Solidity contracts ready to go.
 Please note that Vyper support is currently not enabled but is planned for a future release.
 
-If you want to try out an example contract instead of deploying your own, you can follow our [tutorial](https://github.com/ethereum-optimism/optimism-tutorial) which should be pretty seamless.
-If you're using another testing suite like [truffle](https://www.trufflesuite.com/), that tutorial won't apply. But these `npm` packages have got you covered:
+::: tip The Official Tutorial that you can fork!
+If you want to try out an example contract instead of deploying your own, you can follow our [optimism-tutorial](https://github.com/ethereum-optimism/optimism-tutorial) which serves as a quick and easy example to bootstrap your project with.
+:::
+
+If you're using another framework like [Truffle](https://www.trufflesuite.com/) or [Waffle](https://getwaffle.io), that tutorial won't apply. But these `npm` packages have got you covered:
 
 - [`@eth-optimism/solc`](https://www.npmjs.com/package/@eth-optimism/solc): exports the Optimistic Ethereum compiler for `solidity@0.5/0.6/0.7`
 - [`@eth-optimism/hardhat-ovm`](https://www.npmjs.com/package/@eth-optimism/hardhat-ovm): exports `artifacts-ovm` folder of contract artifacts which will work with contracts output by the compiler.
 
-<!-- UPDATE ONCE WAFFLE EXAMPLE IS UPDATED -->
-An example of usage with [waffle](https://getwaffle.io) can be found in [this great tutorial](https://github.com/ScopeLift/ovm-uniswap-v2-core#porting-solidity-contracts-to-optimism-a-guide-using-uniswap-v2) by [Scopelift](https://www.scopelift.co/) which walks through getting Uniswap V2 ported over.
-If you are using [truffle](https://www.trufflesuite.com/), [here is an example repository](https://github.com/ethereum-optimism/Truffle-ERC20-Example) which walks through how to start using Optimistic Ethereum with Truffle and a simple ERC-20.
+An example of using Waffle on Optimistic Ethereum can be found in our [`Waffle-ERC20-Example`](https://github.com/ethereum-optimism/Waffle-ERC20-Example) repository which serves as a simple guide for how to get started using Waffle for Optimistic Ethereum.
+If you are using Truffle, [here is an example repository](https://github.com/ethereum-optimism/Truffle-ERC20-Example) which walks through how to start using Optimistic Ethereum with Truffle and a simple ERC-20.
 
 We recommend preserving EVM functionality when doing your port.
 For example, you might want to add separate `test:evm` and `test:ovm` scripts to your `package.json` that use different `truffle-config.js` and `truffle-config-ovm.js` configuration files.
@@ -81,17 +84,115 @@ For help with these, you can check out the following resources:
 
 1. [High level overview](https://hackmd.io/elr0znYORiOMSTtfPJVAaA) of differences.
 2. [Complete EVM/OVM comparison](/docs/protocol/evm-comparison) of all discrepancies.
-3. [Scopelift Uniswap tutorial](https://github.com/ScopeLift/ovm-uniswap-v2-core#porting-solidity-contracts-to-optimism-a-guide-using-uniswap-v2), which has some great "OVM vs. EVM" sections.
 
-Next we're going to get your contracts deployed to a real Optimistic Ethereum node (running on our [fork of go-ethereum](https://github.com/ethereum-optimism/go-ethereum)).
+### Adding and installing dependencies
 
-### Local Deployment
+In this step, we will assume that you have a pre-existing Ethereum project build with Node.js, that you would like convert to an Optimistic Ethereum project.
+Make sure to have the prerequisite software installed before continuing.
+Additionally, make sure that you have the following `scripts` and `devDependencies` added to your `package.json`:
+
+```json
+{
+  // ...
+  "scripts": {
+    "clean": "rimraf ./cache-ovm ./cache ./artifacts-ovm ./artifacts ./deployments"
+  },
+  "devDependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.0.1",
+    "@nomiclabs/hardhat-waffle": "^2.0.1",
+    "chai": "4.3.4",
+    "chai-as-promised": "^7.1.1",
+    "ethereum-waffle": "^3.2.1",
+    "ethers": "^5.0.24",
+    "hardhat": "^2.0.7",
+    "hardhat-deploy": "^0.7.0-beta.49",
+    "mocha": "^8.2.1"
+  }
+  // ...
+}
+```
+
+With this added, let's install the dependencies by running:
+
+```sh
+yarn install
+```
+
+### Adding a Hardhat configuration file
+
+Hardhat uses their own configuration file that will control global settings for your project.
+For your Optimistic Ethereum project, we have some customizations so that the Solidity compiler is compatible with the OVM compiler and to use the proper network when testing and deploying your contracts.
+
+Let's create a file called `hardhat.config.js` and add the following to it:
+
+```js
+require('@nomiclabs/hardhat-ethers')
+require('@nomiclabs/hardhat-waffle')
+require('hardhat-deploy')
+
+module.exports = {
+  networks: {
+    hardhat: {
+      accounts: {
+        mnemonic: 'test test test test test test test test test test test junk'
+      }
+    },
+    optimism: {
+      url: 'http://127.0.0.1:8545', // This is the URL of the local L2 instance we will be creating.
+      accounts: {
+        mnemonic: 'test test test test test test test test test test test junk'
+      },
+      gasPrice: 0,
+      ovm: true
+    }
+  },
+  solidity: '0.7.6', // Must match solc version of the OVM compiler
+  ovm: {
+    solcVersion: '0.7.6' // Currently, we only support 0.5.16, 0.6.12, and 0.7.6 of the Solidity compiler
+  },
+  namedAccounts: {
+    deployer: 0
+  },
+}
+```
+
+The network changes that we added here let us use Hardhat's `network` flag to control which network we wish to compile, test, and deploy our contracts for.
+Pretty neat!
+
+Now we're ready to move on to compiling your contracts.
+
+## Step 1. Compiling contracts
+
+We're going to use our `@eth-optimism/hardhat-ovm` package (described in the previous section above).
+If this package is not already in your project, let's install this package now:
+
+```sh
+yarn add @eth-optimism/hardhat-ovm
+```
+
+This package now let's us compile our contracts for the OVM.
+But first, let compile your contracts for L1.
+Run the following command to do so:
+
+```sh
+yarn hardhat compile
+```
+
+To ensure that your contracts have been compiled correctly, check your project directory for the outputted folders `artifacts` and `cache`.
+
+To compile your contacts for L2, we simply add the `network` flag to our command and specify the network we wish to compile for:
+
+```sh
+yarn hardhat compile --network optimism
+```
+
+Likewise for L1, we can check for the folders `artifacts-ovm` and `cache-ovm` in our project directory to check whether our contacts were properly compiled by the OVM compiler.
+
+## Step 2. Testing contracts
 
 Before deploying to a "real" network, like a testnet or mainnet, you may want to deploy to a local version of our `go-ethereum` fork.
-If your contracts are relatively simple you may not need to do this.
-However, if you plan to write contracts that communicate between L1 and L2, then we highly recommend reading this section.
 
-#### Using the `optimism` Repo
+### Using the `optimism` Repo
 
 The [`optimism`](https://github.com/ethereum-optimism/optimism) monorepo provides you with the docker containers needed to spin up your own local Optimistic Ethereum network.
 We use [docker](https://www.docker.com/) to standardize our development experience, so please make sure you've [installed docker](https://www.docker.com/products/docker-desktop) and that the docker service is running before you continue.
@@ -165,11 +266,88 @@ So, we'd advise just adding the L2 custom network, unless you think you really n
 
 Later, when you decide to move on to testing on Optimism's Kovan testnet, the simple change you'd make is just replacing the RPC URL with the RPC URL for Optimism's Kovan testnet.
 
-#### Deploying contracts (locally)
+## Step 3. Deploying contracts
 
-Coming in the next several days!!
+First, we will show you how to test your contracts locally and then using the Optimistic Ethereum Kovan testnet.
 
-### Common Gotchas
+To test your contract locally, you will need to have the `optimism` monorepo containers running that we showed in the ["Using the `optimism` Repo"](http://community.optimism.io/docs/developers/integration.html#using-the-optimism-repo) step above.
+Once those containers are running, we can run the following command to run our contract tests against the local instance of the Optimistic Ethereum instance:
+
+```sh
+yarn hardhat --network optimism test
+```
+
+Now, to run your tests against the Kovan testnet, we need to change the `optimism` network url in our `hardhat.config.js` file to `https://kovan.optimism.io`, like so:
+
+```js
+// ...
+module.exports = {
+    networks: {
+        //...
+        optimism: {
+            url: 'https://kovan.optimism.io', // This is the URL of the Kovan testnet
+        },
+    },
+    // ...
+}
+```
+
+Then, we can run the same command in the previous step to run our contract tests against the Optimistic Ethereum Kovan testnet!
+
+```sh
+yarn hardhat --network optimism test
+```
+
+### Deploying contracts
+
+We make use of the [`hardhat-deploy`](https://github.com/wighawag/hardhat-deploy) package to make contract deployments straightforward.
+
+First, let's create a directory called `deploy` in the top level of your project directory and add the following content to it:
+
+```js
+// Just a standard hardhat-deploy deployment definition file!
+const func = async (hre) => {
+  const { deployments, getNamedAccounts } = hre
+  const { deploy } = deployments
+  const { deployer } = await getNamedAccounts()
+
+  // Replace these two variables with your own contract arguments
+  const initialSupply = 1000000
+  const name = 'My Optimistic Token'
+
+  await deploy('ERC20', { // Replace `ERC20` with your contract's file name
+    from: deployer,
+    args: [initialSupply, name],
+    gasPrice: hre.ethers.BigNumber.from('0'),
+    gasLimit: 8999999,
+    log: true
+  })
+}
+
+func.tags = ['ERC20'] // Replace `ERC20` with your contract's file name
+module.exports = func
+```
+
+This script was made from one of `hardhat-deploy`'s [code examples](https://github.com/wighawag/tutorial-hardhat-deploy/blob/main/deploy/001_deploy_token.ts).
+You can learn more about how the `hardhat-deploy` package works and how it's used [here](https://github.com/wighawag/hardhat-deploy#hardhat-deploy-in-a-nutshell).
+
+#### Deploying
+
+This step is actually pretty easy because the commands to run are almost the same as the commands to run your tests!
+
+Assuming your `hardhat.config.js` has your local L2 network's URL set to `'http://127.0.0.1:8545'`, you can run the following command to deploy to your local L2 instance by running:
+
+```sh
+yarn hardhat deploy --network optimism
+```
+
+And, if you're L2 network is set to `'https://kovan.optimism.io'`, you can deploy to the L2 Kovan testnet by running the same command:
+
+```sh
+yarn hardhat deploy --network optimism
+```
+
+## Common Gotchas
 
 ::: tip Need help?
 We're doing our best to keep this section updated as common issues come and go.
@@ -179,21 +357,21 @@ If none of the tips here work for you, please report an issue on [discord](https
 People tend to run into a few common issues when first interacting with Optimistic Ethereum.
 Here's a checklist to run through if you're having any problems.
 
-#### Gotcha: Invalid chain ID
+### Gotcha: Invalid chain ID
 
 The default chain ID of the local L2 chain is `420`.
 If you're getting an error when sending transactions, please make sure that you are using the right chain ID.
 
-#### Gotcha: Local node does not charge fees
+### Gotcha: Local node does not charge fees
 
 At the moment, the node created by starting the docker containers under `optimism/ops` does not charge the user for any fees.
 You can send successfully transactions by setting `gasPrice` to `0` in your configs and in contract calls.
 
-#### Gotcha: Constantly exceeding gas limit
+### Gotcha: Constantly exceeding gas limit
 
 Because of some technical details about rollups, the maximum gas limit of each transaction is always a bit less than on mainnet.
 
-#### Gotcha: Still seeing the same bug after a patch or new release
+### Gotcha: Still seeing the same bug after a patch or new release
 
 We frequently update our software and corresponding docker images.
 Make sure to periodically download the latest code by running the following in your project.
@@ -207,24 +385,24 @@ cd ops
 docker-compose build
 ```
 
-#### Gotcha: Gas used appears to be exceeding gas limit
+### Gotcha: Gas used appears to be exceeding gas limit
 
 All L2 transactions are technically meta transactions sent by the sequencer.
 This means that `receipt.gasUsed` may be higher than the `tx.gasLimit`, and is currently an underestimate by about 20%.
 This will be fixed in an upcoming release.
 
-#### Gotcha: Contract deployment appears to fail for no reason
+### Gotcha: Contract deployment appears to fail for no reason
 
 Make sure you're compiling with the Optimistic Ethereum version of the Solidity compiler.
 Contract deployments will usually fail if you compile using the standard Solidity compiler.
 
-#### Gotcha: Revert reasons are not returned on `eth_sendRawTransaction` calls
+### Gotcha: Revert reasons are not returned on `eth_sendRawTransaction` calls
 
 When `geth` was forked for Optimistic Ethereum, the `geth` had not yet started returning revert reasons for `eth_sendRawTransaction`s.
 Thus, if you want to retrieve a revert reason for a failing L2 transaction on `eth_sendRawTransaction` calls, you will need to make an `eth_call`.
 For example, [here](https://github.com/Synthetixio/synthetix/blob/develop/test/optimism/utils/revertOptimism.js) is how Synthetix retrieves the revert reason for contract calls in the OVM.
 
-### Testnet Deployment
+## Testnet Deployment
 
 You probably want to deploy to testnet before heading over to mainnet (good idea, tbh).
 Our primary L2 testnet is currently deployed on top of Ethereum's [Kovan](https://kovan.etherscan.io) network.
