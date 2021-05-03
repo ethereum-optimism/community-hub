@@ -335,18 +335,6 @@ You can learn more about how the `hardhat-deploy` package works and how it's use
 
 This step is actually pretty easy because the commands to run are almost the same as the commands to run your tests!
 
-Assuming your `hardhat.config.js` has your local L2 network's URL set to `'http://127.0.0.1:8545'`, you can run the following command to deploy to your local L2 instance by running:
-
-```sh
-yarn hardhat deploy --network optimism
-```
-
-And, if you're L2 network is set to `'https://kovan.optimism.io'`, you can deploy to the L2 Kovan testnet by running the same command:
-
-```sh
-yarn hardhat deploy --network optimism
-```
-
 ## Common Gotchas
 
 ::: tip Need help?
@@ -357,21 +345,133 @@ If none of the tips here work for you, please report an issue on [discord](https
 People tend to run into a few common issues when first interacting with Optimistic Ethereum.
 Here's a checklist to run through if you're having any problems.
 
-### Gotcha: Invalid chain ID
+
+### Retrieve contract revert reason
+
+In your Ethereum contract tests, a common test that developers write is for revert reasons.
+For example, let's say you have a yield farming contract that has a `require` statement on its `withdraw` method to check whether the caller already has a deposit (that has also been accruing interest!).
+If the caller does _not_ have a pre-existing deposit, then your `withdraw` method reverts with a message saying, `"There is nothing for you to withdraw!"`.
+This message is what we would like to test for.
+However, in Optimistic Ethereum, this is not as straightforward as using something like `hardhat`'s `.to.be.reverted` or `.to.be.revertedWith` testing methods:
+
+```js
+// THIS WILL NOT WORK FOR OVM TESTS
+await expect(withdrawTx).to.be.revertedWith(
+  "There is nothing for you to withdraw!"
+)
+```
+
+Simply using this syntax will not work to retrieve your revert reason for your contract.
+
+Instead, when writing tests for Optimistic Ethereum, you will need a clever way to retrieve these revert reasons.
+Fortunately, to retrieve revert reasons for contract calls in the Optimistic Ethereum Virtual Machine (OVM), our friends at [Synthetix](https://www.synthetix.io/) created a utility script called [`revertOptimism.js`](https://github.com/Synthetixio/synthetix/blob/develop/test/optimism/utils/revertOptimism.js):
+
+```js
+const ethers = require('ethers')
+function _hexToString(hex) {
+	let str = ''
+	const terminator = '**zÛ'
+	for (var i = 0 i < hex.length i += 2) {
+		str += String.fromCharCode(parseInt(hex.substr(i, 2), 16))
+		if (str.includes(terminator)) {
+			break
+		}
+	}
+	return str.substring(0, str.length - 4)
+}
+async function getOptimismRevertReason({ tx, provider }) {
+	try {
+		let code = await provider.call(tx)
+		code = code.substr(138)
+		// Try to parse the revert reason bytes.
+		let reason
+		if (code.length === 64) {
+			reason = ethers.utils.parseBytes32String(`0x${code}`)
+		} else {
+			reason = _hexToString(`0x${code}`)
+		}
+		return reason
+	} catch (suberror) {
+		throw new Error(`Unable to parse revert reason: ${suberror}`)
+	}
+}
+async function assertRevertOptimism({ tx, reason, provider }) {
+	let receipt
+	let revertReason
+	try {
+		receipt = await tx.wait()
+	} catch (error) {
+		revertReason = await getOptimismRevertReason({ tx, provider })
+	}
+	if (receipt) {
+		throw new Error(`Transaction was expected to revert with "${reason}", but it did not revert.`)
+	} else {
+		if (!revertReason.includes(reason)) {
+			throw new Error(
+				`Transaction was expected to revert with "${reason}", but it reverted with "${revertReason}" instead.`
+			)
+		}
+	}
+}
+module.exports = {
+	getOptimismRevertReason,
+	assertRevertOptimism,
+}
+```
+
+The main component to focus on is the `assertRevertOptimism` method.
+It will allow us to make an assertion against:
+
+1. A specified `revertReason`, and
+2. The revert reason retrieved from the transaction of our contract call in our test
+
+Here's an example of how this function would be used in your JavaScript test file:
+```js
+/* --- snip --- */
+// We import this method from Synthetix's utility script.
+const { assertRevertOptimism } = require('./utils')
+/* --- snip --- */
+// Test whether the call on Optimism reverts with the following reason.
+await assertRevertOptimism({
+  tx,
+  reason: '<REVERT_REASON>',
+  provider: l2provider
+})
+```
+
+### `block.timestamp` and `block.number` in L2
+
+::: warning These values will soon be updated
+We are working on updating `block.timestamp` and `block.number` so that instead of a delay in the values that are returned, they will return the _current_ `block.number` and current `block.timestamp`.
+:::
+
+**Queries to `block.number`:**
+
+* Are _slightly_ different than `block.number` in Ethereum.
+* Return the `block.number` of the previous block. Note that there is no such thing as a "block" in Optimistic Ethereum as blocks in Ethereum. A block on Optimistic Ethereum is merely a block of just 1 transaction, where these blocks made up of single transactions are ordered by sequencers in the network.
+
+**Queries to `block.timestamp`:**
+
+* Are _mostly_ different than `block.timestamp` in Ethereum.
+* Are updated every time a new deposit is submitted.
+* Return timestamps from roughly 5 to 10 minutes ago.
+
+
+### Invalid chain ID
 
 The default chain ID of the local L2 chain is `420`.
 If you're getting an error when sending transactions, please make sure that you are using the right chain ID.
 
-### Gotcha: Local node does not charge fees
+### Local node does not charge fees
 
 At the moment, the node created by starting the docker containers under `optimism/ops` does not charge the user for any fees.
 You can send successfully transactions by setting `gasPrice` to `0` in your configs and in contract calls.
 
-### Gotcha: Constantly exceeding gas limit
+### Constantly exceeding gas limit
 
 Because of some technical details about rollups, the maximum gas limit of each transaction is always a bit less than on mainnet.
 
-### Gotcha: Still seeing the same bug after a patch or new release
+### Still seeing the same bug after a patch or new release
 
 We frequently update our software and corresponding docker images.
 Make sure to periodically download the latest code by running the following in your project.
@@ -385,18 +485,18 @@ cd ops
 docker-compose build
 ```
 
-### Gotcha: Gas used appears to be exceeding gas limit
+### Gas used appears to be exceeding gas limit
 
 All L2 transactions are technically meta transactions sent by the sequencer.
 This means that `receipt.gasUsed` may be higher than the `tx.gasLimit`, and is currently an underestimate by about 20%.
 This will be fixed in an upcoming release.
 
-### Gotcha: Contract deployment appears to fail for no reason
+### Contract deployment appears to fail for no reason
 
 Make sure you're compiling with the Optimistic Ethereum version of the Solidity compiler.
 Contract deployments will usually fail if you compile using the standard Solidity compiler.
 
-### Gotcha: Revert reasons are not returned on `eth_sendRawTransaction` calls
+### Revert reasons are not returned on `eth_sendRawTransaction` calls
 
 When `geth` was forked for Optimistic Ethereum, the `geth` had not yet started returning revert reasons for `eth_sendRawTransaction`s.
 Thus, if you want to retrieve a revert reason for a failing L2 transaction on `eth_sendRawTransaction` calls, you will need to make an `eth_call`.
@@ -547,7 +647,32 @@ This wraps the message in a [`relayMessage`](https://github.com/ethereum-optimis
 That's all! It's the same general process for L2 to L1.
 (This is enabled by the `L1MessageSender`, `L1BlockNumber`, and `L1Queue` fields in the message and transaction `meta`.)
 
----------
+### Example use case for L1 <> L2 communication
+
+Say that you wanted to send a gift of an _ERC721 token_ (NFT) for your friend to withdraw on L2.
+When your friend makes the withdrawal on L2, you also want to _relay a message_ to your friend that notifies them to deposit their tokens to an L2 loan provider (e.g. Loans4NFTs) to unlock an additional feature of the gifted NFT.
+
+However, to initiate a deposit of this NFT token to Loans4NFTs, you first need to get this NFT on L1.
+So, you initiate a deposit of your NFT to an ERC721 gateway contract (you can think of this deposit as "locking in your token as collateral" to L1) and whitelist your friend's wallet address so that your friend can mint and withdraw the gifted NFT on L2.
+Now that the NFT has been deposited on L1, it can now be withdrawn and claimed by your friend on L2 -- assuming that you include a `require` statement to check that the withdrawer is your friend's address.
+For your friend to mint this NFT, he would have to initiate a withdrawal transaction from the address that you whitelisted in the deposit transaction.
+Assume your friend successfully uses the correct address to withdraw and claim his NFT that you gifted him.
+He then receives a relayed message from L1 that reads, "Hey fren! I left you a surprise for when you deposit your NFT to Loan4NFTs :)".
+And, when your friend deposits their NFT to Loans4NFTs, he receives an additional yield farming reward for the first 30 days while keeping his NFT locked with Loan4NFTs.
+
+#### Best practices
+
+The example shown above is to illustrate _just one_ ideal use case for L1 <> L2 communication, but there are a myriad of possible use cases!
+However, since this cross-layer message passing is _asynchronous_, we suggest that it be used mainly for communicating additional information _asynchronously_ from one chain to the next.
+
+Whether that's for notifying your user of:
+
+* A special new gift on the receiving chain,
+* A timestamp of when their withdrawn L2 tokens are ready to be staked at a desired protocol on the receiving chain,
+* A list of compatible exchanges or protocols that their token can be used on,
+* Unique rewards or promotions that can be claimed on specific protocols on the receiving chain,
+
+these messages should serve as a helpful nudge to your users where there otherwise would be absent communication between your user's action and the action that you desire your users to make when withdrawing their tokens on L2.
 
 ### 🌉 ETH and Token Bridges
 
