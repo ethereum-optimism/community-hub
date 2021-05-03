@@ -37,17 +37,17 @@ However, **the gas fee payment itself is equal to to your `gasLimit * gasPrice`*
 Due to this slight difference, **we recommend using `eth_estimateGas` to calculate your `gasLimit`.**
 This is because `gasPrice` is a constant value of `1 Gwei`, so your focus should be on optimizing the `gasLimit`.
 
-The definitions for these values are:
+Some definitions for these values above are:
 
 * `gasUsed` must always be under 9 million per transaction.
-* `gasPrice` is fixed as a constant (it is initially set to `1 Gwei`).
 * `gasUsed` is always equal to the `gasLimit` (since 100% of gas is always used).
+* `gasPrice` is fixed as a constant (it is initially set to `1 Gwei`).
 * `executionGasUsed` is added as a new field in the transaction receipt.
 
-Lastly for this section:
+Note that:
 
 1. You should never reduce your `eth_gasPrice` below the initial value of `1 Gwei` or your transaction will simply get rejected on L2, and
-2. Never drop your `gasLimit` below the value returned by `eth_estimateGas` `gasLimit`, or your transaction might revert.
+2. You should never drop your `gasLimit` below the value returned by `eth_estimateGas`'s `gasLimit` or your transaction might revert.
 
 ### 👩‍💻 Transactions for developers
 
@@ -62,7 +62,16 @@ where
 * `rollupTxSize` is the size, in _bytes_, of the serialized rollup transactions if it were published on L1
 * `dataPrice` is a value set by the sequencer based on the current L1 congestion
 * `executionPrice` is fetched via the standard `eth_gasPrice` rules that geth uses based on the current L2 congestion, and
-* `gasUsed` (NOTE: this the _expected_ gas to be used at the time `eth_estimateGas` is called) is the standard result of `eth_estimateGas` for a transaction.
+* `gasUsed` is the standard result of `eth_estimateGas` for a transaction.
+
+Note that `gasUsed` is the _expected_ gas to be used at the time `eth_estimateGas` is called.
+
+### **Why is `gasPrice` equal to `1 Gwei`?**
+Since the `gasPrice` is equal to the `executionPrice`, we want to be able to keep the _right-side_ of the equation (`executionPrice * gasUsed`) above positive and scaled linearly to the rate of increase of `gasUsed`.
+This means that a value of `1 Gwei` for `gasPrice` is equal to `1 * gasUsed`.
+For example, if `gasUsed` was `500,000 Gwei`, then the right-side of this equation would be `1 * 500,000` or `500,000`.
+You can easily see how higher values for an `executionPrice` can immediately inflate the total cost of L2 transactions.
+Similarly, values smaller than `1 Gwei` would deflate these computed costs.
 
 (See [ethereum-optimism/go-ethereum/pull/273](https://github.com/ethereum-optimism/go-ethereum/pull/273) for more info on these variables.)
 
@@ -77,7 +86,7 @@ By reducing the size of your input variables, you will likely cut costs to reduc
 
 From these gas estimation variables, this means that the majority of transaction costs _until L2 becomes congested_ will be equal to `rollupTxSize * dataPrice`.
 
-#### How is `executionPrice` calculated?
+### How is `executionPrice` calculated?
 
 Here, [`executionPrice` is equal to the gasPrice returned by `SuggestPrice`](https://github.com/ethereum-optimism/go-ethereum/blob/master/internal/ethapi/api.go#L1022-L1028) (you can find the source for `SuggestPrice` [here](https://github.com/ethereum-optimism/go-ethereum/blob/930c9f1381bb304496b036bab8f51899d1e63c71/eth/gasprice/gasprice.go#L76-L148)) in L2 `geth`.This means that the `executionPrice == gasPrice == 1`
 
@@ -118,7 +127,7 @@ Afterwards, the [`messenger`](https://github.com/Synthetixio/synthetix/blob/deve
 In [`CanonicalTransactionChain.enqueue`](https://github.com/ethereum-optimism/contracts/blob/master/contracts/optimistic-ethereum/OVM/chain/OVM_CanonicalTransactionChain.sol#L250-L260), we can see [gasToConsume](https://github.com/ethereum-optimism/contracts/blob/c39fcc40aec235511a5a161c3e33a6d3bd24221c/contracts/optimistic-ethereum/OVM/chain/OVM_CanonicalTransactionChain.sol#L282) is calculated from the the `_gasLimit` (that was specified for the transaction for an SNX deposit) divided by the `L2_GAS_DISCOUNT_DIVISOR`.
 (This value is not too important: the gist of what you need to know about the divisor is that it is a manually set parameter.)
 
-#### How do we calculate L2 gas consumed?
+### How do we calculate L2 gas consumed?
 
 However, what _is_ important to know is that **`gasToConsume` is equal to the L1 gas that is burned.**
 (If you're curious, you can read the `L2_GAS_DISCOUNT_DIVISOR` value from our Mainnet CanonicalTransactionChain (CTC) [here](https://etherscan.io/address/0xed2701f7135eab0D7ca02e6Ab634AD6CbE159Ffb#readContract).)
@@ -126,7 +135,7 @@ However, what _is_ important to know is that **`gasToConsume` is equal to the L1
 **Currently, the `L2_GAS_DISCOUNT_DIVISOR` is set to `32`.**
 **So, if you need to send an L1 → L2 transaction with 9 million gas (the gas limit), you will burn `9m/32 = 281,250` L1 gas in this step of `CanonicalTransactionChain.enqueue`.**
 
-#### How can we optimize the gas limit?
+### How can we optimize the gas limit?
 
 As a developer, you will want to have the minimum gas limit sent with your deposit.
 Minimizing the deposit gas limit will minimize gas costs to your users.
@@ -148,23 +157,6 @@ Thankfully, initiating a withdrawal is just an approximation of the cost of any 
 This time, we're looking at a transaction that completes an SNX withdrawal on L1.
 For this SNX withdrawal transaction, we have [`relayMessage`](https://github.com/ethereum-optimism/contracts/blob/master/contracts/optimistic-ethereum/iOVM/bridge/messaging/iOVM_L2CrossDomainMessenger.sol#L17-L30) execute the L2 message that was sent by `sendMessage` to L1 (the destination for this transaction) to complete the withdrawal on L1.
 Similar to `sendMessage` in a deposit, it is the call to `relayMessage` that consumes the most gas in this withdrawal.
-
-<!-- 
-
-To make this calculation easy for you, we've included calculator to compute gas cost!
-
-INSERT CALCULATOR HERE
-
-Remove the following paragraph if using calculator
--->
-
-<!-- 
-
-In addition to using the calculator, we're including ticker for the gas price that you can use in your calculations.
-
-INSERT GAS PRICE TICKER HERE (used for quickly knowing gas cost for withdrawals)
-
--->
 
 **Here, the gas cost was roughly $33.65 for completing this L2 to L1 withdrawal of SNX.**
 
@@ -198,7 +190,7 @@ Here we present some more technical documentation on advanced subjects for those
 Nuisance gas is a separate subject from the topics we covered above.
 Nonetheless, this type of gas is included on L2 transaction costs.
 
-#### What is nuisance gas?
+### What is nuisance gas?
 
 Nuisance gas **provides an upper bound on the _maximum possible L1 gas_ that a [_fraud proof_](https://research.paradigm.xyz/optimism#fraud-proofs) can cost.**
 This kind of gas is referred to as a "nuisance" because there will be additional gas on L1 (i.e. inclusion proofs) that are not needed in normal L2 execution.
