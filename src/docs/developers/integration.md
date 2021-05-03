@@ -53,7 +53,7 @@ The first part of getting started with Optimistic Ethereum is to get your contra
 This process involves three steps:
 
 1. Compile your contracts with the OVM Solidity compiler.
-2. Deploy your contracts against a local instance of Optimistic Etheereum and our Kovan testnet.
+2. Deploy your contracts against a local instance of Optimistic Ethereum and our Kovan testnet.
 3. Test your contracts against the local instance and Kovan testnet.
 
 If you're using [hardhat](https://hardhat.org), our preferred development environment, this can be done with the use of a handy plugin we've built.
