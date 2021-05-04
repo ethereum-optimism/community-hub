@@ -20,7 +20,7 @@ Hop on the [discord](https://discord.gg/5TaAXGn2D8) and make a post in `#resourc
 * Date: May 5, 2020
 * By: Optimism PBC
 
-A **thorough** Medium post from Optimism's blog that provides that explains **what the Optimism Virtual Machine (OVM) is and the problem it solves.**
+A **thorough** Medium post from Optimism's blog that provides that explains **what the Optimistic Virtual Machine (OVM) is and the problem it solves.**
 
 ---
 ## [*How does Optimism's Rollup really work?*](https://research.paradigm.xyz/optimism)
