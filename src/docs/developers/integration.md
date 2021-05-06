@@ -38,7 +38,7 @@ You might also want to take the following two steps depending on your specific n
 ### Setup and Resources
 
 ::: tip Required Tooling
-* [`@eth-optimism/hardhat-ovn`](https://www.npmjs.com/package/@eth-optimism/) 
+* [`@eth-optimism/hardhat-ovm`](https://www.npmjs.com/package/@eth-optimism/hardhat-ovm) 
 * [`hardhat`](https://hardhat.org/getting-started/)
 
 Since your OVM-compatible contracts require Optimism's custom Solidity compiler, you'll be using Optimism's `@eth-optimism/hardhat-ovm` package.
