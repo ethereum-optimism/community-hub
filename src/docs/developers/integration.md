@@ -253,7 +253,7 @@ For more info, see [this section in the docs](../protocol/evm-comparison.html#na
 
 **L1 Custom Network (Optional)**
 
-In addition to adding the L2 chain as a custom network, we can also add our local instance of the L1 chain that was spin up by the docker containers.
+In addition to adding the L2 chain as a custom network, we can also add our local instance of the L1 chain that was spun up by the docker containers.
 To do this, you would go through the same steps as above, but instead enter in the following for the network parameters:
 |     Param                    |                Value               |
 | ---------------------------- | :--------------------------------: |
