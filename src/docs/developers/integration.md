@@ -226,7 +226,7 @@ Here's a step-by-step process on how to do that while in your browser:
 ![Custom RPC button](../../assets/custom-metamask-network-1.png)
 
 3. Next, you'll enter in the network parameters:
-- network name: `Optimistic Ethereum (Local L2)` 
+- network name: `Local Optimistic Ethereum (L2)` 
 - RPC URL: `http://0.0.0.0:8545`
 - chain ID: `420`
 
@@ -253,11 +253,11 @@ For more info, see [this section in the docs](../protocol/evm-comparison.html#na
 
 **L1 Custom Network (Optional)**
 
-In addition to adding the L2 chain as a custom network, we can also add our local instance of the L1 chain from `optimism`.
+In addition to adding the L2 chain as a custom network, we can also add our local instance of the L1 chain that was spun up by the docker containers.
 To do this, you would go through the same steps as above, but instead enter in the following for the network parameters:
 |     Param                    |                Value               |
 | ---------------------------- | :--------------------------------: |
-| Network Name                 |  `Optimistic Ethereum (Local L1)`  |
+| Network Name                 |      `Local Ethereum (L1)`         |
 | New RPC URL                  |      `http://0.0.0.0:9545`         |
 | Chain ID                     |        `31337`                     |
 
