@@ -411,7 +411,7 @@ Here's a current list of our testnet endpoints (will be updated when things chan
 
 | L1 Network                          | L2 Network | HTTP Endpoint                                          | Websocket Endpoint                                               |
 | ----------------------------------- | ---------- | ------------------------------------------------------ | ---------------------------------------------------------------- |
-| [Kovan](https://kovan.etherscan.io) | OE Kovan 1 | [https://kovan.optimism.io](https://kovan.optimism.io) | [https://kovan.optimism.io:8546](https://kovan.optimism.io:8546) |
+| [Kovan](https://kovan.etherscan.io) | OE Kovan 1 | [https://kovan.optimism.io](https://kovan.optimism.io) | [https://ws-kovan.optimism.io/](https://ws-kovan.optimism.io/) |
 
 ## Bridging L1 and L2
 
