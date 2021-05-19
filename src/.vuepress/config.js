@@ -25,6 +25,10 @@ module.exports = {
         link: '/tldr/',
       },
       {
+        text: 'testnet',
+        link: '/testnet/',
+      },
+      {
         text: 'faq',
         link: '/faqs/',
       },
