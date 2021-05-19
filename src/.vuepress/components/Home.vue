@@ -21,6 +21,7 @@
       <a class="action-button" href="https://github.com/ethereum-optimism/optimism-tutorial/blob/main/README.md">try the <u>tutorial</u></a>
       <a class="action-button" href="/docs">read the <u>docs</u></a>
       <a class="action-button" href="https://discord.com/invite/jrnFEvq">come hang on <u>discord</u></a>
+      <a class="action-button" href="/testnet">deploy to <u>testnet</u></a>
     </header>
   </main>
 </template>
