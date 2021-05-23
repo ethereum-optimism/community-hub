@@ -44,7 +44,7 @@ What's a fraud proof?
 Great question, we really should be documenting these things.
 In short, it's the mechanism by which we make sure that L2 smart contracts are as secure as L1 smart contracts.
 
-Anyway, the point is: **certain opcodes can't be used** (for security reasons), so **we transform them into contract calls** to a special smart contract (the ["Execution Manager"](LINKGOESHERE)) that provides the functionality of those opcodes instead.
+Anyway, the point is: **certain opcodes can't be used** (for security reasons), so **we transform them into contract calls** to a special smart contract (the ["Execution Manager"](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/OVM/execution/OVM_ExecutionManager.sol)) that provides the functionality of those opcodes instead.
 If you're interested, you can find a full list of the opcodes that we transform over on the [EVM/OVM comparison guide](../protocol/evm-comparison#replaced-opcodes).
 
 We had a few options for how to tackle this transformation problem, but we stuck with one of the easiest: we built a *slight* [fork of the Solidity compiler](https://github.com/ethereum-optimism/solidity) that automatically handles these transformations when you're compiling your contracts.
