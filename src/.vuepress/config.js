@@ -11,22 +11,18 @@ module.exports = {
   ],
 
   themeConfig: {
-    repo: 'https://github.com/ethereum-optimism/community-hub',
+    repo: 'https://github.com/ethereum-optimism/optimism',
     repoLabel: 'github',
     editLinks: true,
     docsDir: 'src',
     docsRepo: 'https://github.com/ethereum-optimism/community-hub',
     docsBranch: 'main',
-    editLinkText: '✍️ edit this page on github',
+    editLinkText: `See a typo? We'd 💖 a pull request over on GitHub`,
     lastUpdated: false,
     nav: [
       {
-        text: 'tl;dr',
-        link: '/tldr/',
-      },
-      {
-        text: 'testnet',
-        link: '/testnet/',
+        text: 'networks',
+        link: '/docs/developers/networks',
       },
       {
         text: 'faq',
@@ -61,10 +57,10 @@ module.exports = {
         {
           title: 'Developer Docs',
           children: [
-            {
-              title: 'Building on Optimistic Ethereum',
-              path: '/docs/developers/integration.md'
-            },
+            '/docs/developers/integration.md',
+            '/docs/developers/networks.md',
+            '/docs/developers/bridging.md',
+            '/docs/developers/metamask.md',
           ],
           collapsable: false,
           sidebarDepth: 1,
