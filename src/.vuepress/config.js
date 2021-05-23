@@ -65,6 +65,14 @@ module.exports = {
               title: 'Building on Optimistic Ethereum',
               path: '/docs/developers/integration.md'
             },
+            {
+              title: 'Bridging L1 and L2',
+              path: '/docs/developers/bridging.md'
+            },
+            {
+              title: 'Connecting via MetaMask',
+              path: '/docs/developers/metamask.md'
+            },
           ],
           collapsable: false,
           sidebarDepth: 1,
