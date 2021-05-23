@@ -84,32 +84,32 @@ This step guarantees that all those blocked opcodes we talked about earlier were
 Unfortunately, there's no clear way to distinguish "data" from "code" inside of contract bytecode.
 Under certain circumstances, **constructor arguments can actually be executable code**.
 
-If your constructor arguments *happen* to be executable code with invalid opcodes, you'll get an error that looks something like this:
+If your constructor arguments happen to be executable code and that executable code happens to contain invalid opcodes, you'll get an error that looks something like this:
 
 ```text
 Contract creation code contains unsafe opcodes. Did you use the right compiler or pass an unsafe constructor argument?
 ```
 
-This sort of error is most common when using "random" constructor arguments (like contract addresses).
+<!-- TODO: explain what makes a constructor argument executable -->
+
+This sort of error is most common when using constructor arguments that contain a lot of "random" bytes (like contract addresses).
 **We recommend using a separate initialization function if you're running into this problem.**
 
 ::: tip EIP-2327: BEGINDATA
-Find this annoying?
 Please consider voicing your support for [EIP-2327](https://eips.ethereum.org/EIPS/eip-2327).
 This EIP would introduce a new opcode (`BEGINDATA`) that would make it possible for us to tell the difference between code and constructor arguments.
 You can view a longer-form discussion of the EIP on the [Fellowship of Ethereum Magicians forum](https://ethereum-magicians.org/t/new-opcode-begindata/3727).
 :::
 
-#### Compiler increases code size by about 25%
+#### Compiler increases bytecode size by about 25%
 
-Ethereum caps contracts at 24kb.
-Ethereum will complain (i.e., revert) if you try to deploy a contract larger than this.
 Because of the way we transform certain opcodes into contract calls, **our fork of the Solidity compiler will produce larger bytecode than the standard compiler.**
-This is important because contracts that originally fit within the 24kb limit on Ethereum might not fit when compiled with our fork of the compiler.
-You may have to break existing contracts out into slightly smaller pieces.
+This is important because Optimistic Ethereum (just like Ethereum) caps contracts at 24kb [because of EIP-170](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-170.md#specification).
+**Contracts that originally compile under the limit may be larger than 24kb when compiled using our fork of the Solidity compiler.**
+As a result, you may have to break existing contracts out into slightly smaller pieces.
 
-Although the exact size increase depends on the contents of the contract, we've found that, on average, **the compiler increases bytecode size by about 25%**.
-This means that if your contract is smaller than ~20kb when compiled with the standard Solidity compiler it *should* be ok to compile with our fork.
+Although the exact size increase depends on the contents of the contract, we've found that, **on average, the compiler increases bytecode size by about 25%**.
+This means that if your contract is smaller than ~20kb when compiled with the standard Solidity compiler it *should* be ok when compiled with our fork.
 
 ## Compiling Contracts
 
@@ -165,8 +165,9 @@ The chain ID for the local Optimistic Ethereum node is `420`.
 #### Need ETH to pay for transactions on your local node
 
 Our local Optimistic Ethereum node setup will try to charge you transaction fees (like you might expect).
-**You can also bypass the need to pay fees locally by attaching `gasPrice: 0` to your transactions.**
-Alternatively, you can take a look at how we [fund accounts on L2 in our integration tests](https://github.com/ethereum-optimism/optimism/blob/68871b7a9e0989a7b126e800ab1b6b19edab2293/integration-tests/test/shared/utils.ts#L90-L101) for some inspiration for how to do this in your own tests.
+**You can bypass the need to pay fees locally by attaching `gasPrice: 0` to your transactions.**
+
+Alternatively, you can [take a look at how we fund accounts on L2 in our integration tests](https://github.com/ethereum-optimism/optimism/blob/68871b7a9e0989a7b126e800ab1b6b19edab2293/integration-tests/test/shared/utils.ts#L90-L101) for some inspiration for how to do this in your own tests.
 If you want to deploy a contract to testnet, you'll need to use our [ETH Gateway](https://gateway.optimism.io/) to deposit some ETH into the L2 system (more on that in a second).
 
 #### Still seeing the same bug after a patch or new release
@@ -200,11 +201,15 @@ We currently maintain two primary networks:
 * `optimistic-kovan`, our public testnet
 * `optimistic-ethereum`, our restricted mainnet
 
+<!-- TODO: add gateway info here -->
+
 ::: tip On our restricted mainnet
 Why is our mainnet "restricted"?
 Honestly, we're just playing it safe.
 Unlike their L1 counterparts, L2s can't just fork if they run into a critical bug.
-We're in uncharted territory right now and we're want to get all of our ducks in a row before we hit the big red yolo mainnet button.
+We're in uncharted territory right now and we want to get all of our ducks in a row before we move forward.
+As much as we'd love to hit the big red YOLO button, we really do need to be very careful.
+We appreciate your patience while we work hard to get everything in place for a smooth public mainnet launch 💗.
 :::
 
 ### Optimistic Kovan
