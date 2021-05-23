@@ -17,7 +17,7 @@ module.exports = {
     docsDir: 'src',
     docsRepo: 'https://github.com/ethereum-optimism/community-hub',
     docsBranch: 'main',
-    editLinkText: '✍️ edit this page on github',
+    editLinkText: `See a typo? We'd 💖 a pull request over on GitHub`,
     lastUpdated: false,
     nav: [
       {
@@ -61,18 +61,10 @@ module.exports = {
         {
           title: 'Developer Docs',
           children: [
-            {
-              title: 'Building on Optimistic Ethereum',
-              path: '/docs/developers/integration.md'
-            },
-            {
-              title: 'Bridging L1 and L2',
-              path: '/docs/developers/bridging.md'
-            },
-            {
-              title: 'Connecting via MetaMask',
-              path: '/docs/developers/metamask.md'
-            },
+            '/docs/developers/integration.md',
+            '/docs/developers/networks.md',
+            '/docs/developers/bridging.md',
+            '/docs/developers/metamask.md',
           ],
           collapsable: false,
           sidebarDepth: 1,

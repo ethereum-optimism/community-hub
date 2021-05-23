@@ -93,11 +93,18 @@ Contract creation code contains unsafe opcodes. Did you use the right compiler o
 This sort of error is most common when using "random" constructor arguments (like contract addresses).
 **We recommend using a separate initialization function if you're running into this problem.**
 
-#### (Slightly) reduced contract size limit
+::: tip EIP-2327: BEGINDATA
+Find this annoying?
+Please consider voicing your support for [EIP-2327](https://eips.ethereum.org/EIPS/eip-2327).
+This EIP would introduce a new opcode (`BEGINDATA`) that would make it possible for us to tell the difference between code and constructor arguments.
+You can view a longer-form discussion of the EIP on the [Fellowship of Ethereum Magicians forum](https://ethereum-magicians.org/t/new-opcode-begindata/3727).
+:::
+
+#### Compiler increases code size by about 25%
 
 Ethereum caps contracts at 24kb.
 Ethereum will complain (i.e., revert) if you try to deploy a contract larger than this.
-**Contracts compiled with our fork of the Solidity compiler tend to be a bit bigger** than if the same contracts were to be compiled with the "real" Solidity compiler.
+Because of the way we transform certain opcodes into contract calls, **our fork of the Solidity compiler will produce larger bytecode than the standard compiler.**
 This is important because contracts that originally fit within the 24kb limit on Ethereum might not fit when compiled with our fork of the compiler.
 You may have to break existing contracts out into slightly smaller pieces.
 
@@ -235,3 +242,4 @@ That's pretty much it.
 It's a lot like Ethereum!
 Except a lot more... Optimistic.
 If you're looking for something quick and easy to tackle next, you might want to take a look at the [Official™ Optimism Tutorial](https://github.com/ethereum-optimism/optimism-tutorial).
+If you're looking for something a little more challenging, you should consider checking out our [guide to bridging L1 and L2](./bridging)
