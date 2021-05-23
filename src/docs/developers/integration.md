@@ -16,10 +16,6 @@ TODO:
 
 # {{ $frontmatter.title }}
 
-::: tip Work in Progress™
-Our documentation is a rapidly improving work in progress. If you have questions or feel like something is missing feel free to ask in our [Discord server](https://discord.gg/5TaAXGn2D8) where we (and our awesome community) are actively responding, or [open an issue](https://github.com/ethereum-optimism/community-hub/issues) in the GitHub repo for this site.
-:::
-
 ## Introduction
 
 Hello and welcome! If you're looking to find out what it takes to get an app up and running on layer 2, then you've come to the right place. If at any time in this process you get stuck or have questions, please reach out on [discord](https://discord.gg/5TaAXGn2D8) and drop a message in the `#support` channel.

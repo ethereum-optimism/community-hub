@@ -171,7 +171,7 @@ modifier onlyOwner() {
 
 Certain interactions, like transferring ERC20 tokens between the two networks, are common enough that we've built some standard bridge contracts you can make use of.
 
-### The Standard™️ ERC20 Bridge
+### The Standard™ ERC20 Bridge
 
 We've built two standard bridge contracts that simplify the process of moving ERC20 tokens between Optimistic Ethereum and Ethereum.
 These contracts are the [`OVM_L1ERC20Gateway`](https://github.com/ethereum-optimism/contracts/blob/master/contracts/optimistic-ethereum/OVM/bridge/tokens/OVM_L1ERC20Gateway.sol) (for Layer 1) and the [`OVM_L2DepositedERC20`](https://github.com/ethereum-optimism/contracts/blob/master/contracts/optimistic-ethereum/OVM/bridge/tokens/OVM_L2DepositedERC20.sol) (for Layer 2).

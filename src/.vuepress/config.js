@@ -59,19 +59,10 @@ module.exports = {
           children: [
             '/docs/developers/integration.md',
             '/docs/developers/networks.md',
+            '/docs/developers/eth-gateway.md',
             '/docs/developers/bridging.md',
+            '/docs/developers/fees.md',
             '/docs/developers/metamask.md',
-          ],
-          collapsable: false,
-          sidebarDepth: 1,
-        },
-        {
-          title: 'User Docs',
-          children: [
-            {
-              title: 'How Fees Work in Optimistic Ethereum',
-              path: '/docs/users/fees-in-optimistic-ethereum.md'
-            },
           ],
           collapsable: false,
           sidebarDepth: 1,
