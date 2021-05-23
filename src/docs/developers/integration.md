@@ -217,7 +217,7 @@ If you'd like to deploy to `optimistic-kovan`, you can use the following connect
 | Network Name | **`Optimistic Kovan`** |
 | Currency | **`Ether (ETH)`**
 | Chain ID | **`69`** |
-| Explorer | **`https://optimistic-kovan.etherscan.io`** |
+| Explorer | **`https://kovan-optimistic.etherscan.io`** |
 | HTTP Endpoint | **`https://kovan.optimism.io`** |
 | WebSocket Endpoint | **`https://ws-kovan.optimism.io`** |
 

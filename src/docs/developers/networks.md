@@ -13,7 +13,7 @@ lang: en-US
 | Description | **`Testnet (public)`** |
 | Currency | **`Ether (ETH)`**
 | Chain ID | **`69`** |
-| Explorer | **`https://optimistic-kovan.etherscan.io`** |
+| Explorer | **`https://kovan-optimistic.etherscan.io`** |
 | HTTP Endpoint | **`https://kovan.optimism.io`** |
 | WebSocket Endpoint | **`https://ws-kovan.optimism.io`** |
 
