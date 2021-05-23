@@ -17,7 +17,7 @@ Hop on the [discord](https://discord.gg/5TaAXGn2D8) and make a post in `#resourc
 ---
 ## [*Optimism 🛠 Overview & Code Walkthrough*](https://www.youtube.com/watch?v=AHYSZ51ATWQ)
 
-* Date: Oct. 2020
+* Date: Apr. 2021
 * By: Ben Jones and Kelvin Fichter
 
 ---

@@ -11,7 +11,7 @@ module.exports = {
   ],
 
   themeConfig: {
-    repo: 'https://github.com/ethereum-optimism/community-hub',
+    repo: 'https://github.com/ethereum-optimism/optimism',
     repoLabel: 'github',
     editLinks: true,
     docsDir: 'src',
@@ -21,12 +21,8 @@ module.exports = {
     lastUpdated: false,
     nav: [
       {
-        text: 'tl;dr',
-        link: '/tldr/',
-      },
-      {
-        text: 'testnet',
-        link: '/testnet/',
+        text: 'networks',
+        link: '/docs/developers/networks',
       },
       {
         text: 'faq',
