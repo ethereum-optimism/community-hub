@@ -77,10 +77,6 @@ module.exports = {
             {
               title: 'Compared to Ethereum',
               path: '/docs/protocol/evm-comparison.md'
-            },
-            {
-              title: 'Transaction Fees',
-              path: '/docs/protocol/fees.md'
             }
           ],
           collapsable: false,
