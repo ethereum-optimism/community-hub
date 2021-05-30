@@ -14,7 +14,6 @@ Think we don't have enough information about a certain topic?
 Hop on the [discord](https://discord.gg/5TaAXGn2D8) and make a post in `#resources` or [open an issue](https://github.com/ethereum-optimism/community-hub/issues) in the GitHub repo for this site. ✨
 :::
 
----
 ## [*Mainnet Soft Launch*](https://medium.com/ethereum-optimism/mainnet-soft-launch-7cacc0143cd5)
 
 * Date: Jan 15th, 2021

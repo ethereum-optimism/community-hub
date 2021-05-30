@@ -85,29 +85,14 @@ module.exports = {
         {
           title: 'Additional Resources',
           children: [
-            {
-              title: 'Guides and Tutorials',
-              path: '/docs/resources/tutorials.md',
-            },
-            {
-              title: 'Protocol Readings',
-              path: '/docs/resources/protocol-readings.md',
-            },
-            {
-              title: 'Talks and Videos',
-              path: '/docs/resources/talks.md',
-            },
-            {
-              title: 'Developer Tooling',
-              path: '/docs/resources/tooling.md',
-            },
-            {
-              title: 'General Resources',
-              path: '/docs/resources/general-resources.md',
-            },
+            '/docs/resources/tutorials.md',
+            '/docs/resources/protocol-readings.md',
+            '/docs/resources/talks.md',
+            '/docs/resources/tooling.md',
+            '/docs/resources/general-resources.md',
           ],
           collapsable: false,
-          sidebarDepth: 0,
+          sidebarDepth: 1,
         }
       ],
       '/compare/': [
