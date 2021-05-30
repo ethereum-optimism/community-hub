@@ -76,7 +76,7 @@ Every L2 ⇒ L1 transaction consists of:
 The cost of the L2 initialization transaction is determined in the same way as any other L2 transaction (see above for more info).
 The cost of the L1 finaliztion transaction again depends on the current L1 congestion level and the ETH price.
 In terms of gas, finalization transactions can currently cost upwards of 4-500k gas because they involve [verifying](https://github.com/ethereum-optimism/optimism/blob/467d6cb6a4a35f2f8c3ea4cfa4babc619bafe7d2/packages/contracts/contracts/optimistic-ethereum/libraries/trie/Lib_MerkleTrie.sol#L73-L93) a [Merkle trie](https://eth.wiki/fundamentals/patricia-tree) inclusion proof.
-We're working to decrease this gas cost by making various optimizations that would reduce the number of proof steps required to successfully verify these L2 ⇒ L1 transactions.
+We're [working to decrease this gas cost by making various optimizations](https://github.com/ethereum-optimism/optimism/pull/942) that would reduce the number of proof steps required to successfully verify these L2 ⇒ L1 transactions.
 
 For some concrete numbers, check out this [example transaction finalizing a withdrawal of SNX](https://etherscan.io/tx/0x1f6601e918572668d40405c1cefb9af96bab430f46f9dde78d82e253e33e4904) which used ~500k gas for a total cost of ~$50.
 
