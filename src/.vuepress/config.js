@@ -37,9 +37,17 @@ module.exports = {
         link: 'https://github.com/ethereum-optimism/optimism-tutorial/blob/main/README.md',
       },
       {
-        text: 'discord',
+        text: 'open issues',
+        link: 'https://github.com/ethereum-optimism/optimism/issues',
+      },
+      {
+        text: 'open pull requests',
+        link: 'https://github.com/ethereum-optimism/optimism/pulls'
+      },
+      {
+        text: 'chat',
         link: 'https://discord.com/invite/jrnFEvq',
-      }
+      },
     ],
     sidebar: {
       '/docs/': [
