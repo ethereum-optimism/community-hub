@@ -15,7 +15,7 @@ lang: en-US
 | Chain ID | **`69`** |
 | Explorer | **`https://kovan-optimistic.etherscan.io`** |
 | HTTP Endpoint | **`https://kovan.optimism.io`** |
-| WebSocket Endpoint | **`https://ws-kovan.optimism.io`** |
+| WebSocket Endpoint | **`wss://ws-kovan.optimism.io`** |
 
 ## Optimistic Ethereum
 
@@ -33,4 +33,4 @@ We know this isn't ideal and we really appreciate your patience while we work ha
 | Chain ID | **`10`** |
 | Explorer | **`https://optimistic.etherscan.io`** |
 | HTTP Endpoint | **`https://mainnet.optimism.io`** |
-| WebSocket Endpoint | **`https://ws-mainnet.optimism.io`** |
+| WebSocket Endpoint | **`wss://ws-mainnet.optimism.io`** |
