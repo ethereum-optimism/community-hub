@@ -78,14 +78,8 @@ module.exports = {
         {
           title: 'Protocol Docs',
           children: [
-            {
-              title: 'Protocol in Detail',
-              path: '/docs/protocol/protocol.md'
-            },
-            {
-              title: 'Compared to Ethereum',
-              path: '/docs/protocol/evm-comparison.md'
-            }
+            '/docs/protocol/protocol.md',
+            '/docs/protocol/evm-comparison.md',
           ],
           collapsable: false,
           sidebarDepth: 1,

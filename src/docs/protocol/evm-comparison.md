@@ -8,18 +8,15 @@ tags:
 
 # {{ $frontmatter.title }}
 
-This page serves as a reference point for dApp developers who want to build or port their systems to the OVM.  In particular, it highlights the main differences between the L2 OVM and L1 EVM that developers should consider.
+For the most part, the EVM and the OVM are pretty much identical.
+However, the OVM *does* slightly diverge from the EVM in certain ways.
+This page acts as a living record of each of these discrepancies and their raison d'être.
 
-## Missing, Replaced, and Custom Opcodes
-The OVM's execution sandbox requires that some EVM opcodes are banned from smart contracts.  Whenever a contract deployment is attempted on the OVM, a ["safety check"](https://github.com/ethereum-optimism/contracts-v2/blob/master/contracts/optimistic-ethereum/OVM/execution/OVM_SafetyChecker.sol#L30)) of the contract code is performed, and if any of the banned opcodes are present, deployment is blocked.
+## Missing Opcodes
 
- <!-- For a precise specification of what counts as a "safe" contract, see here. [todo] -->
-
-Of these banned opcodes, there are two main categories:
-1. Opcodes which are re-implemented as OVM contract functions, so that they "still work" on the OVM, and are just invoked differently.
-2. Opcodes which have no L2-equivalent, and thus cannot be used in the OVM.
-
-### Missing Opcodes
+Some EVM opcodes don't exist in the OVM because they make no sense (like `DIFFICULTY`).
+Others don't exist because they're more trouble than they're worth (like `SELFDESTRUCT`).
+Here's a record of every missing opcode.
 
 | EVM Opcode     | Solidity Usage     | Reason for Absence |
 | ----------     | --------------     | ------------------ |
@@ -27,138 +24,214 @@ Of these banned opcodes, there are two main categories:
 | `DIFFICULTY`   | `block.difficulty` | No equivalent in the OVM. |
 | `BLOCKHASH`    | `blockhash`        | No equivalent in the OVM. |
 | `GASPRICE`     | `tx.gasprice`      | No equivalent in the OVM. |
-| `SELFDESTRUCT` | `selfdestruct`     | Not yet implemented. |
-| `BALANCE`      | `balance`          | Unused. See [Native wETH](#native-weth) section below. |
-| `CALLVALUE`    | `msg.value`        | Unused. See [Native wETH](#native-weth) section below. |
-| `ORIGIN`       | `tx.origin`        | Unused. See [Account Abstraction](#native-acccount-abstraction) section below. |
+| `SELFDESTRUCT` | `selfdestruct`     | It's dumb. |
+| `BALANCE`      | `balance`          | Coming soon™. See [Native ETH](#native-eth). |
+| `CALLVALUE`    | `msg.value`        | Coming soon™. See [Native ETH](#native-eth). |
+| `ORIGIN`       | `tx.origin`        | Coming soon™. See [Account Abstraction](#account-abstraction). |
 
+## Replaced Opcodes
 
-### Replaced Opcodes
+Certain opcodes are banned and cannot be used directly.
+Instead, they must be translated into calls to the [`OVM_ExecutionManager`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/OVM/execution/OVM_ExecutionManager.sol) contract.
+**Our fork of the Solidity compiler handles this translation automatically** so you don't need to worry about this in practice.
 
-Opcodes which require an OVM-specific implementation are written as `ovmOPCODE(...)` functions in the `OVM_ExecutionManager` contract. (see `iOVM_ExecutionManager` interface for [reference](https://github.com/ethereum-optimism/contracts-v2/blob/master/contracts/optimistic-ethereum/iOVM/execution/iOVM_ExecutionManager.sol).)
+The following opcodes must be translated into calls to the execution manager:
 
-Developers using these opcodes need not be concerned with the changes, as the `@eth-optimism/solc` compiler automatically makes sure your contracts correctly invoke the OVM implementations.
+* `ADDRESS`
+* `NUMBER`
+* `TIMESTAMP`
+* `CHAINID`
+* `GASLIMIT`
+* `REVERT`
+* `SLOAD`
+* `SSTORE`
+* `CALL`
+* `STATICCALL`
+* `DELEGATECALL`
+* `CREATE`
+* `CREATE2`
+* `EXTCODECOPY`
+* `EXTCODESIZE`
+* `EXTCODEHASH`
 
-| EVM Opcode     | OVM Equivalent    | Notes |
-| ----------     | ----------------- | ----- |
-| `ADDRESS`      | `ovmADDRESS`      |       |
-| `NUMBER`       | `ovmNUMBER`       | See [`block.number`](#behavior-of-blocknumber-and-blocktimestamp) section below for additional detail. |
-| `TIMESTAMP`    | `ovmTIMESTAMP`    | See [`block.timestamp`](#behavior-of-blocknumber-and-blocktimestamp) section below for additional detail. |
-| `CHAINID`      | `ovmCHAINID`      |       |
-| `GASLIMIT`     | `ovmGASLIMIT`     | Returns the **transaction gas limit**, not the block gas limit, as there is no notion of blocks in L2. |
-| `REVERT`       | `ovmREVERT`       |       |
-| `SLOAD`        | `ovmSLOAD`        |       |
-| `SSTORE`       | `ovmSSTORE`       |       |
-| `CALL`         | `ovmCALL`         |       |
-| `STATICCALL`   | `ovmSTATICCALL`   |       |
-| `DELEGATECALL` | `ovmDELEGATECALL` |       |
-| `CREATE`       | `ovmCREATE`       |       |
-| `CREATE2`      | `ovmCREATE2`      |       |
-| `EXTCODECOPY`  | `ovmEXTCODECOPY`  |       |
-| `EXTCODESIZE`  | `ovmEXTCODESIZE`  |       |
-| `EXTCODEHASH`  | `ovmEXTCODEHASH`  |       |
+### Behavioral differences of replaced opcodes
 
-### Custom Opcodes
-In addition to the above, the OVM introduces some new "opcodes" which are not present in the EVM but may be accessed via a call to the execution manager.
+#### Differences for `STATICCALL`
 
-#### Account Related
+Event opcodes (`LOG0`, `LOG1`, `LOG2`, and `LOG3`) normally cause a revert when executed during a `STATICCALL` in the EVM.
+However, these opcodes *can* be triggered within a `STATICCALL` within the OVM without causing a revert.
 
-| Opcode         | Function |
-| ------         | -------- |
-| `ovmGETNONCE`  | Returns the nonce of the current account. |
-| `ovmINCREMENTNONCE`  | Increments the nonce of the current account by 1. |
-| `ovmCREATEEOA` | Deploys a smart contract wallet. See [Account Abstraction](#native-acccount-abstraction) section for additional detail. |
+#### Differences for `TIMESTAMP` and `NUMBER`
 
-#### Cross-chain Related
-These opcodes are abstracted away by our standard message-passing contracts, so most developers need not use these directly. However they are technically accessible to any contract.
+The behavior of the `TIMESTAMP` (`block.timestamp`) and `NUMBER` (`block.number`) opcodes depends on the manner in which a transaction is added to the [`OVM_CanonicalTransactionChain`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/OVM/chain/OVM_CanonicalTransactionChain.sol).
 
-| Opcode             | Function |
-| ------             | -------- |
-| `ovmL1QUEUEORIGIN` | Returns `Lib_OVMCodec.QueueOrigin.SEQUENCER_QUEUE` or `Lib_OVMCodec.QueueOrigin.L1TOL2_QUEUE` depending on the queue from which this transaction originated. |
-| `ovmL1TXORIGIN`    | Returns the zero address (`0x00...00`) if transaction came from the sequencer queue or the address of the account that called `OVM_CanonicalTransactionChain.enqueue()` and added this transaction to the L2 chain. |
+For transactions that are directly added to the chain via the [`enqueue`](https://github.com/ethereum-optimism/optimism/blob/5a7984973622d1d6e610ac98cfc206ab9a3bfe1a/packages/contracts/contracts/optimistic-ethereum/OVM/chain/OVM_CanonicalTransactionChain.sol#L257) function, `TIMESTAMP` and `NUMBER` will return the timestamp and block number of the block in which `enqueue` was called.
 
-## Behavioral Differences
-This section covers some small functional differences in the current OVM behavior, that differs from normal EVM behavior.
+For transactions added to the chain by the Sequencer, the `TIMESTAMP` and `NUMBER` can be any arbitrary number that satisfies the following conditions:
 
-### Constructor parameters may be unsafe
-In the EVM, as well as the OVM, constructor parameters are technically a part of the code--that is, constructor parameters are implemented by calling `CREATE` with `concat(codeWithoutConstructorArgs, abi.encode(constructorArgs))`.  In the context of the OVM, this means that there is a small chance that the constructor arguments' encoding contain an unsafe EVM opcode, causing deployment to fail.
+1. `TIMESTAMP` and `NUMBER` on L2 may not be greater than the timestamp and block number at the time the transaction is bundled and submitted to L1.
+2. `TIMESTAMP` and `NUMBER` cannot be more than [`forceInclusionPeriodSeconds`](https://github.com/ethereum-optimism/optimism/blob/5a7984973622d1d6e610ac98cfc206ab9a3bfe1a/packages/contracts/contracts/optimistic-ethereum/OVM/chain/OVM_CanonicalTransactionChain.sol#L57) or [`forceInclusionPeriodBlocks`](https://github.com/ethereum-optimism/optimism/blob/5a7984973622d1d6e610ac98cfc206ab9a3bfe1a/packages/contracts/contracts/optimistic-ethereum/OVM/chain/OVM_CanonicalTransactionChain.sol#L58) in the past, respectively.
+3. `TIMESTAMP` and `NUMBER` must be monotonic: the timestamp of some `transaction N` **must** be greater than or equal to the timestamp of `transaction N-1`.
 
-Only a few opcodes are banned, so this is a relatively unlikely event.  However, if you have a strong requirement that your contract can be successfully deployed multiple times, with *absolutely any* parameters, it is problematic.  In that case, you will need to remove constructor arguments and replace them with an `initialize(...)` method which can only be called once on the deployed code.
+## Custom Opcodes
 
-### `ovmSTATICCALL` emits events
-Usage of the event opcodes (`LOG0, LOG1, LOG2, LOG3`) trigger a violation of the static context in the EVM, but not in the OVM -- that is, contracts within an `ovmSTATICCALL` currently may still emit events.
+The OVM introduces some new "opcodes" which are not present in the EVM but may be accessed via a call to the execution manager.
 
-### `ovmEXTCODECOPY` returns a minimum of 2 bytes
-Currently, `ovmEXTCODECOPY` will return a minimum of 2 bytes even if the `length` input is 1.  This limitation will be removed before mainnet release, although the compiler already truncates it to 1 byte on the contract side, so unless you are writing some custom inline assembly, it should not be an issue even now.
+### `ovmGETNONCE`
 
-### Behavior of `block.number` and `block.timestamp`
-The values output by the `ovmNUMBER` and `ovmTIMESTAMP` opcodes are of note, especially when sequencer transactions. If the OVM transaction originated from a non-sequencer via `enqueue(..)`, then the result these opcodes will be the `block.number` and `block.timestamp` at the time they were enqueued.  This ensures that smart contracts which are time-sensitive accurately reflect L1 actions.
+```solidity
+function ovmGETNONCE() public returns (address);
+```
 
-The sequencer assigns its transactions' values for these opcodes based on what it decides off chain.  The sequencer's choice is limited in the folowing ways:
-1. The sequencer may not assign values in the future in relation to the L1 time.
-2. The sequencer may not assign values more than `FORCE_INCLUSION_PERIOD_SECONDS` or `FORCE_INCLUSION_PERIOD_BLOCKS` in the past, respectively.
-3. The sequencer may not assign values which violate monotonicity of all transactions -- that is, `ovmTIMESTAMP` and `ovmNUMBER` must strictly increase.
+Returns the nonce of the calling contract.
 
+### `ovmINCREMENTNONCE`
 
-## Native wETH
-For the purposes of the OVM, we have removed all notion of native ETH.  OVM contracts do not have a direct `BALANCE`, and the `ovm*CALL` opcodes do not accept a `value` parameter.  Instead, OVM contracts are expected to use a wrapped ETH ERC20 token on L2 instead.  The L2 address will be documented here when Optimistic Ethereum is deployed to mainnet; on testnet, there is no such token and the sequencer allows for a `gasPrice` of 0.
+```solidity
+function ovmINCREMENTNONCE() public;
+```
 
-As a reminder, L1 ETH was created before there were [Ethereum Improvement Proposal (EIP)](https://eips.ethereum.org/) contract standards.
-Inevitably, this has led to some awkward contract interactions on Ethereum, such as having to exchange ETH for [wrapped ether (or WETH)](https://weth.io/) to engage in numerous applications (e.g. this is prominent DeFi).
-While some apps try to obviate the user experience (UX) of having to perform this ETH for WETH exchange/trade, it still results in a suboptimal UX.
+Increments the nonce of the calling contract by 1.
+You can call this function as many times as you'd like during a transaction.
+As a result, you can increment your nonce as many times as you have gas to do so.
+Useful for implementing smart contracts that represent user accounts.
+See the [default contract account](https://github.com/ethereum-optimism/optimism/blob/5a7984973622d1d6e610ac98cfc206ab9a3bfe1a/packages/contracts/contracts/optimistic-ethereum/OVM/accounts/OVM_ECDSAContractAccount.sol#L124) for an example of this.
 
-This can add additional complexity to newcomers that are new to dApps that only know and understand ETH but not WETH.
+### `ovmCREATEEOA`
 
-This is what OE solves by making ETH an ERC-20 on L2.
+```solidity
+function ovmCREATEEOA(bytes32 _messageHash, uint8 _v, bytes32 _r, bytes32 _s) public;
+```
 
-## Native Account Abstraction
+Deploys the [default contract account](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/OVM/accounts/OVM_ECDSAContractAccount.sol) on behalf of a user.
+Account address is determined by recovering an ECDSA signature.
+If the account already exists, the account will not be overwritten.
+See [Account Abstraction](#native-acccount-abstraction) section for additional detail.
 
-### Overview
-The OVM implements a basic form of [account abstraction](https://docs.ethhub.io/ethereum-roadmap/ethereum-2.0/account-abstraction/) which is most similar to "lazy full abstraction."  In effect, this means that the only type of account is a smart contract (no EOAs), and all user wallets are in fact smart contract wallets.  This means that, at the most granular level, OVM transactions themselves do not have a `signature` field, and instead simply have a `to` address with a `data` payload.  It is expected that the `signature` field will be included within the `data`.
+### `ovmL1QUEUEORIGIN`
 
-Because of this, one restriction of the OVM is that there is no `tx.origin` (`ORIGIN` EVM opcode) equivalent in the OVM.
+```solidity
+function ovmL1QUEUEORIGIN() public returns (uint8);
+```
 
-### Backwards Compatibility
-Developers need not be concerned with any of this when they start building their applications -- we have gone ahead and implemented a standard [ECDSA Contract Account](https://github.com/ethereum-optimism/contracts-v2/blob/master/contracts/optimistic-ethereum/OVM/accounts/OVM_ECDSAContractAccount.sol) which enables backwards compatibility with all existing Ethereum wallets out of the box. In particular, it contains a method `execute(...)` which behaves exactly like EOAs on L1: it recovers the signature based on standard L1 EIP155 transaction encoding, and increments its own nonce the same way as on L1.
+Returns `0` if this transaction was added to the chain by the Sequencer and `1` if the transaction was added to the chain directly by a call to [`OVM_CanonicalTransactionChain.enqueue`](https://github.com/ethereum-optimism/optimism/blob/5a7984973622d1d6e610ac98cfc206ab9a3bfe1a/packages/contracts/contracts/optimistic-ethereum/OVM/chain/OVM_CanonicalTransactionChain.sol#L257).
 
-The OVM also implements a new opcode, `ovmCREATEEOA`, which enables anybody to deploy the `OVM_ECDSAContractAccount` to the correct address (i.e. what shows up on metamask and is used on L1).  `ovmCREATEEOA` accepts two inputs, a hash and a signature, and recovers the signer of the hash.  This must be a valid L1 EOA account, so an `OVM_ECDSAContractAccount` is deployed to that address.
+### `ovmL1TXORIGIN`
 
-This deployment is automatically handled by the sequencer the first time an account sends an OVM transaction, so that users need not think about it at all.  The sequencer also handles wrapping the user transaction with a call to `execute(...)`.
+```solidity
+function ovmL1TXORIGIN() public returns (address);
+```
 
-### Compatibility with `eth_sign`
-For wallets which do not support custom chain IDs, the backwards-compatible transactions described above do not work.  To account for this, the `OVM_ECDSAContractAccount` also allows for an alternate signing scheme which can be activated by the `eth_sign` and `eth_signTypedData` endpoints and follows a standard Solidity ABI-encoded [format](https://github.com/ethereum-optimism/contracts-v2/blob/525477144ecc6fc019e0ada225b85f322c6b5fbc/contracts/optimistic-ethereum/libraries/codec/Lib_OVMCodec.sol#L133).  The `@eth-optimism/provider` package implements a web3 provider which will use this encoding format.
+If the result of `ovmL1QUEUEORIGIN` is `0` (the transaction came from the Sequencer), then this function returns the zero address (`0x00...00`).
+If the result of `ovmL1QUEUEORIGIN` is `1`, then this function returns the address that called [`OVM_CanonicalTransactionChain.enqueue`](https://github.com/ethereum-optimism/optimism/blob/5a7984973622d1d6e610ac98cfc206ab9a3bfe1a/packages/contracts/contracts/optimistic-ethereum/OVM/chain/OVM_CanonicalTransactionChain.sol#L257) and therefore triggered this transaction.
 
-### Account Upgradeability
-Technically, the `ovmCREATEEOA` opcode deploys a proxy contract which `ovmDELEGATECALL`s to a deployed implementation of `OVM_ECDSAContractAccount`.  This proxy account [can upgrade its implementation](https://github.com/ethereum-optimism/contracts-v2/blob/525477144ecc6fc019e0ada225b85f322c6b5fbc/contracts/optimistic-ethereum/OVM/accounts/OVM_ProxyEOA.sol#L56) by calling its own `upgrade(...)` method.  This means that users can upgrade their smart contract accounts by sending a transaction with a `to` field of *their own address* and a `data` field which calls `upgrade(...)`.
+## Native ETH
 
-Note that the sequencer does not recognize any wallet contracts other than the default at this time, so users should not upgrade their accounts until future releases.
+Because we thought it was cool and because it's quite useful, we turned ETH into an ERC20.
+This means you don't need to use something like [wETH](https://weth.io) -- ETH *is* wETH by default.
+But it's also ETH.
+WooOooooOOOoo spooky.
+
+### Using ETH normally
+
+To use ETH normally, you can just use Solidity built-ins like `msg.value` and `address.transfer(value)`.
+It's the exact same thing you'd do on Ethereum.
+
+For example, you can get your balance via:
+
+```solidity
+uint256 balance = address(this).balance;
+```
+
+### Using ETH as an ERC20 token
+
+To use ETH as an ERC20 token, you can interact with the [`OVM_ETH`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/OVM/predeploys/OVM_ETH.sol) contract deployed to Layer 2 at the address `0x4200000000000000000000000000000000000006`.
+
+For example, you can get your balance via:
+
+```solidity
+uint256 balance = ERC20(0x4200000000000000000000000000000000000006).balanceOf(address(this));
+```
+
+## Account Abstraction
+
+The OVM implements a basic form of [account abstraction](https://docs.ethhub.io/ethereum-roadmap/ethereum-2.0/account-abstraction/).
+In a nutshell, this means that all accounts are smart contracts (there are no "externally owned accounts" like in Ethereum).
+**This has no impact on user experience**, it's just an extension to Ethereum that gives developers a new dimension to experiment with.
+However, this scheme *does* have a few minor effects on developer experience that you may want to be aware of.
+
+### Compatibility with existing wallets
+
+Our account abstraction scheme is **100% compatible with existing wallets**.
+For the most part, developers don't need to understand how the account abstraction scheme works under the hood.
+We've implemented a standard [contract account](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/OVM/accounts/OVM_ECDSAContractAccount.sol) which remains backwards compatible with all existing Ethereum wallets out of the box.
+Contract accounts are automatically deployed on behalf of a user when that user sends their first transaction.
+
+### No transaction origin
+
+The only major restriction that our account abstraction scheme introduces is that **there is no equivalent to `tx.origin`** (the `ORIGIN` EVM opcode) in the OVM.
+Some applications use `tx.origin` to try to block certain transactions from being executed by smart contracts via:
+
+```solidity
+require(msg.sender == tx.origin);
+```
+
+**This will not work on Optimistic Ethereum**.
+You cannot tell the difference between contracts and externally owned accounts (because externally accounts do not exist).
+
+### Upgrading accounts
+
+The default [contract account](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/OVM/accounts/OVM_ECDSAContractAccount.sol) sits behind a [proxy](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/OVM/accounts/OVM_ProxyEOA.sol) that can be upgraded.
+Upgrades can be triggered by having the contract account call the `upgrade(...)` method attached to the proxy.
+Only the account itself can trigger this call, so it's not possible for someone else to upgrade your account.
+
+::: tip Upgrades are disabled
+Contract account upgrades are currently disabled until future notice.
+We're staying on the safe side and making sure that everything is working 100% with the default account before we start allowing users to play with upgrades.
+:::
+
+<!--
+TODO: clean this up
 
 ## Gas and Fee Payments
+
 The OVM mostly, though not entirely, inherits the EVM's gas model.  This section explains the L2-related differences in gas metering and payments.
 
-### Account Abstraction and Gas
-The default `OVM_ECDSAContractAccount` pays `gasPrice * gasLimit` of L2 `WETH` to the `ovmCALLER` (`msg.sender`) of the transaction, where the `msg.sender` is whoever relayed the rollup transaction on L1.  Normally, this will be the sequencer.
+### Account abstraction and gas
+
+The default `OVM_ECDSAContractAccount` pays `gasPrice * gasLimit` of L2 `wETH` to the `ovmCALLER` (`msg.sender`) of the transaction, where the `msg.sender` is whoever relayed the rollup transaction on L1.  Normally, this will be the sequencer.
 
 Because users can upgrade their contract wallets, in the future the gas payment model can be changed pretty arbitrarily, but for now this is how we do it.
 
-#### Paying For Gas on L1
-Transactions which do not originate from the sequencer pay for their gas upfront on L1.  The `enqueue` function where transactions are applied:
-1. takes in a `_gasLimit` for the L1->L2 transaction, which is the gas limit given to the OVM execution.
-2. burns `1/$$L2_GAS_DISCOUNT_DIVISOR$$`th of the `_gasLimit`, in L1 gas, at the time of submission, as an anti-DoS measure.
+### Rate limiting
 
-### Rate Limiting
 The OVM does not have blocks, it just maintains an ordered list of transactions.  Because of this, there is no notion of a block gas limit; instead, the overall gas consumption is "rate limited".  Instead, the OVM state itself includes a special storage slot which is used to track the cumulative gas that has been consumed for all previous transactions ".  If this number grows too much in a single epoch, the OVM treats all transactions as reverting for the remainder of that epoch.  Sequencer transactions are both separately rate limited with this mechanism.
 
-#### Sandbox-Related Overhead
+### Sandbox-related overhead
+
 Calling the `ExecutionManager` takes up a bit of extra EVM gas, and is needed on L1 to preserve the fraud proof's execution sandbox.  However, on `geth-l2`, the sandbox functionality is implemented similarly to a precompile and is much faster.  To account for this, the EM tracks a `gasRefund` which is subtracted from the transaction's gas spent.
 
-### Nuisance Gas
+### Nuisance gas
+
 There is a separate dimension of gas, called "nuisance gas", which is used to bound the net gas cost of fraud proofs.  In particular, witness data for the fraud proof's setup phase is not reflected in the L2 EVM gas cost.  Storage and contract creation `ovmOPCODES` have a separate cost in nuisance gas. If too much nuisance gas is spent in a call, the call's execution fails, like with EVM gas.
+-->
 
-## State Trie
+## State Structure
 
-The OVM state trie is similar to the EVM state trie, with a few small differences.
+### Balance field is always zero
 
-- All account `balance` fields are 0 as there is no native ETH.
-- `0x06a506A506a506A506a506a506A506A506A506A5` is the account under which gas-related metadata (cumulative gas spent, & gas spent since last epoch) is stored.
-- Setting the value of a storage slot to zero (`0x00..00`) does **not** delete the key/value pair from the trie.
+Since ETH is treated as an ERC20, the balance field of any account will always be zero.
+User balances are tracked as storage slots inside the ETH ERC20.
+If you want to determine the ETH balance for a given account, you should directly query the ETH ERC20 contract.
+
+### Storage slots are never deleted
+
+In Ethereum, setting the value of a storage slot to zero will delete the key associated with that storage slot from the trie.
+Because of the technical difficulty of implementing deletions within our Solidity [Merkle Trie library](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/libraries/trie/Lib_MerkleTrie.sol), we currently **do not** delete keys when values are set to zero.
+This discrepancy does not have any significant negative impact on performance.
+We may make an update to our Merkle Trie library that resolves this discrepancy at some point in the future.
+
+### Gas metadata account
+
+A special account `0x06a506A506a506A506a506a506A506A506A506A5` is used to store gas-related metadata (cumulative gas spent, gas spent since the last epoch, etc.).
+You'll see this account pop up in transaction traces and during fraud proofs.

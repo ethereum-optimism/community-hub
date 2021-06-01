@@ -1,5 +1,5 @@
 ---
-title: Understanding the Optimistic Ethereum Protocol
+title: Protocol in Detail
 lang: en-US
 tags:
     - contracts
