@@ -132,6 +132,7 @@ This means you don't need to use something like [wETH](https://weth.io) -- ETH *
 But it's also ETH.
 WooOooooOOOoo spooky.
 
+<!--
 ### Using ETH normally
 
 To use ETH normally, you can just use Solidity built-ins like `msg.value` and `address.transfer(value)`.
@@ -142,6 +143,7 @@ For example, you can get your balance via:
 ```solidity
 uint256 balance = address(this).balance;
 ```
+-->
 
 ### Using ETH as an ERC20 token
 
