@@ -16,14 +16,14 @@ The "official" introductory tutorial by the Optimism team.
 Note, that this tutorial is _short and sweet_.
 For more thorough guides, please refer to other the resources below or to the Protocol/Developer Docs (on the sidebar).
 
-## [Optimistic ERC20s: Truffle Edition](https://github.com/ethereum-optimism/Truffle-ERC20-Example)
+## [Optimistic ERC20s: Truffle Edition](https://github.com/ethereum-optimism/optimism/tree/develop/examples/truffle)
 
 * By: [Optimism PBC](https://optimism.io)
 
 The "official" _Truffle_ tutorial made by the Optimism team.
 This tutorial is shorter than the main tutorial above, but will still walk through the basics of compiling, testing, and deploying your contracts for Optimistic Ethereum using Truffle.
 
-## [Optimistic ERC20s: Waffle Edition](https://github.com/ethereum-optimism/Waffle-ERC20-Example)
+## [Optimistic ERC20s: Waffle Edition](https://github.com/ethereum-optimism/optimism/tree/develop/examples/waffle)
 
 * By: [Optimism PBC](https://optimism.io)
 
