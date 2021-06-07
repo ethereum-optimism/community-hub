@@ -11,7 +11,7 @@ tags:
 ::: tip Are we missing something? 🧐
 Want your content featured on this page?
 Think we don't have enough information about a certain topic?
-Hop on the [discord](https://discord.gg/5TaAXGn2D8) and make a post in `#resources` or [open an issue](https://github.com/ethereum-optimism/community-hub/issues) in the GitHub repo for this site. ✨
+Hop on the [discord](https://discord.optimism.io) and make a post in `#resources` or [open an issue](https://github.com/ethereum-optimism/community-hub/issues) in the GitHub repo for this site. ✨
 :::
 
 ## [*OVM Deep Dive*](https://medium.com/ethereum-optimism/ovm-deep-dive-a300d1085f52)

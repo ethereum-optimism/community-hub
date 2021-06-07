@@ -46,7 +46,7 @@ module.exports = {
       },
       {
         text: 'chat',
-        link: 'https://discord.com/invite/jrnFEvq',
+        link: 'https://discord.optimism.io',
       },
     ],
     sidebar: {

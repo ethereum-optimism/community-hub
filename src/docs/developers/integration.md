@@ -18,7 +18,7 @@ TODO:
 
 ## Introduction
 
-Hello and welcome! If you're looking to find out what it takes to get an app up and running on layer 2, then you've come to the right place. If at any time in this process you get stuck or have questions, please reach out on [discord](https://discord.gg/5TaAXGn2D8) and drop a message in the `#support` channel.
+Hello and welcome! If you're looking to find out what it takes to get an app up and running on layer 2, then you've come to the right place. If at any time in this process you get stuck or have questions, please reach out on [discord](https://discord.optimism.io) and drop a message in the `#support` channel.
 
 ## Overview
 
@@ -52,7 +52,7 @@ Unless...
 
 In theory, we can make the same modifications to the compilers for other langauges.
 We haven't been able to do this yet because we're a relatively small team with a lot on our plates.
-If this is something you'd like to help out with, please reach out to us on [discord](https://discord.gg/5TaAXGn2D8) and tell us!
+If this is something you'd like to help out with, please reach out to us on [discord](https://discord.optimism.io) and tell us!
 Seriously, I'm not just shilling the discord again, we'd love to help make that a reality and discord is the best way to get in touch with us.
 :::
 
@@ -133,7 +133,7 @@ Or we could pay someone to integrate it.
 Or we could even pay *you* to integrate it.
 I don't know.
 We'll figure it out.
-Point is: ping us on [discord](https://discord.gg/5TaAXGn2D8) and let us know how we can help.
+Point is: ping us on [discord](https://discord.optimism.io) and let us know how we can help.
 :::
 
 ## Testing Contracts
