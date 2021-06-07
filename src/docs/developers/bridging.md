@@ -167,6 +167,38 @@ modifier onlyOwner() {
 }
 ```
 
+## Understanding the Fraud Proof Window
+
+One of the most important things to understand about L1 ⇔ L2 interaction is that **messages sent from Layer 2 to Layer 1 cannot be relayed for at least one week**.
+This means that any messages you send from Layer 2 will only be received on Layer 1 after this one week period has elapsed.
+We call this period of time the "fraud proof window" because it's a result of one of the core security mechanisms of the Optimistic Rollup: the fraud proof.
+
+<!-- TODO: full page on fraud proofs? -->
+
+Optimistic Rollups are "optimistic" because they're based around the idea of publishing the *result* of a transaction to Ethereum without actually executing the transaction on Ethereum.
+In the "optimistic" case, this transaction result is correct and we can completely avoid the need to perform complicated (and expensive) logic on Ethereum.
+Cheap transactions, yay!
+
+However, we still need some way to prevent incorrect transaction results from being published in place of correct ones.
+Here's where the "fraud proof" comes into play.
+Whenever a transaction result is published, it's considered "pending" for a period of time known as the fraud proof window.
+During this period of time, anyone may re-execute the transaction *on Ethereum* in an attempt to demonstrate that the published result was incorrect.
+
+If someone performs this fraud proof, then the result is scrubbed from existence and anyone can publish another result in its place (hopefully the correct one this time, financial punishments make incorrect results *very* costly for their publishers).
+Once the window for a given transaction result has fully passed without a challenge the result can be considered fully valid (or else someone would've challenged it).
+
+Anyway, the point here is that **you don't want to be making decisions about Layer 2 transaction results from inside a smart contract on Layer 1 until this fraud proof window has elapsed**.
+Otherwise you might be making decisions based on an invalid transaction result.
+As a result, L2 ⇒ L1 messages sent using the standard messenger contracts cannot be relayed until they've waited out the full fraud proof window.
+
+::: tip On the length of the fraud proof window
+We've set the fraud proof window to be exactly seven days on the `optimistic-ethereum` mainnet.
+We believe this is a reasonable balance between security and usability, with an emphasis on increased security to start.
+We're open to changing the length of the window as long as we feel this can be done without significantly reducing the security of the system.
+If you're strongly opinionated about this, we recommend [opening an issue on GitHub](https://github.com/ethereum-optimism/optimism/issues) explaining your position.
+We *will* hear you out!
+:::
+
 ## Token Bridges
 
 Certain interactions, like transferring ERC20 tokens between the two networks, are common enough that we've built some standard bridge contracts you can make use of.

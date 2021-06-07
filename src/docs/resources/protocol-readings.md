@@ -14,7 +14,6 @@ Think we don't have enough information about a certain topic?
 Hop on the [discord](https://discord.gg/5TaAXGn2D8) and make a post in `#resources` or [open an issue](https://github.com/ethereum-optimism/community-hub/issues) in the GitHub repo for this site. ✨
 :::
 
----
 ## [*OVM Deep Dive*](https://medium.com/ethereum-optimism/ovm-deep-dive-a300d1085f52)
 
 * Date: May 5, 2020
@@ -22,7 +21,6 @@ Hop on the [discord](https://discord.gg/5TaAXGn2D8) and make a post in `#resourc
 
 A **thorough** Medium post from Optimism's blog that provides that explains **what the Optimistic Virtual Machine (OVM) is and the problem it solves.**
 
----
 ## [*How does Optimism's Rollup really work?*](https://research.paradigm.xyz/optimism)
 
 * Date: Jan 29, 2021
@@ -31,7 +29,6 @@ A **thorough** Medium post from Optimism's blog that provides that explains **wh
 A thorough post by Paradigm's research division that takes a deep dive into the protocol implementation of Optimism's ORUs.
 **Covers OVM topics like: data availability batches, state commitments, fraud proofs, incentives & bonds, and nuisance gas.**
 
----
 ## [*MEV Auction: Auctioning transaction ordering rights as a solution to Miner Extractable Value*](https://ethresear.ch/t/mev-auction-auctioning-transaction-ordering-rights-as-a-solution-to-miner-extractable-value/6788)
 
 * Date: Aug 16, 2020
