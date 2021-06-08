@@ -151,15 +151,15 @@ lists of:
 The chain is composed of the following concrete contracts:
 <!-- [concrete contracts][stackex]: -->
 
-### [`OVM_CanonicalTransactionChain`](https://github.com/ethereum-optimism/contracts/blob/master/contracts/optimistic-ethereum/OVM/chain/OVM_CanonicalTransactionChain.sol) (CTC)
+### [`OVM_CanonicalTransactionChain`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/OVM/chain/OVM_CanonicalTransactionChain.sol) (CTC)
 
 The Canonical Transaction Chain (CTC) contract is an append-only log of transactions which must be applied to the OVM state. It defines the ordering of transactions by writing them to the `CTC:batches` instance of the Chain Storage Container.The CTC also allows any account to `enqueue()` an L2 transaction, which the Sequencer must  eventually append to the rollup state.
 
-### [`OVM_StateCommitmentChain`](https://github.com/ethereum-optimism/contracts/blob/master/contracts/optimistic-ethereum/OVM/chain/OVM_StateCommitmentChain.sol) (SCC)
+### [`OVM_StateCommitmentChain`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/OVM/chain/OVM_StateCommitmentChain.sol) (SCC)
 
 The State Commitment Chain (SCC) contract contains a list of proposed state roots which Proposers assert to be a result of each transaction in the Canonical Transaction Chain (CTC). Elements here have a 1:1 correspondence with transactions in the CTC, and should be the unique state root calculated off-chain by applying the canonical transactions one by one.
 
-### [`OVM_ChainStorageContainer`](https://github.com/ethereum-optimism/contracts/blob/master/contracts/optimistic-ethereum/OVM/chain/OVM_ChainStorageContainer.sol)
+### [`OVM_ChainStorageContainer`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/OVM/chain/OVM_ChainStorageContainer.sol)
 
 Provides reusable storage in the form of a "Ring Buffer" data structure, which will overwrite storage slots that are no longer needed. There are three Chain Storage Containers deployed, two are controlled by the CTC, one by the SCC.
 
@@ -176,16 +176,16 @@ fraudulent, the Verifier will receive a reward taken from funds which a Sequence
 
 The fraud proving system is composed of the following concrete contracts:
 
-### [`OVM_FraudVerifier`](https://github.com/ethereum-optimism/contracts/blob/master/contracts/optimistic-ethereum/OVM/verification/OVM_FraudVerifier.sol)
+### [`OVM_FraudVerifier`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/OVM/verification/OVM_FraudVerifier.sol)
 The Fraud Verifier contract coordinates the entire fraud proof verification process. If the fraud proof is successful it prunes any state batches from State Commitment Chain which were published after the fraudulent state root.
 
-### [`OVM_BondManager`](https://github.com/ethereum-optimism/contracts/blob/master/contracts/optimistic-ethereum/OVM/verification/OVM_BondManager.sol)
+### [`OVM_BondManager`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/OVM/verification/OVM_BondManager.sol)
 The Bond Manager contract handles deposits in the form of an ERC20 token from bonded Proposers. It also handles the accounting of gas costs spent by a Verifier during the course of a fraud proof. In the event of a successful fraud proof, the fraudulent Proposer's bond is slashed, and the Verifier's gas costs are refunded.
 
-### [`OVM_StateTransitioner`](https://github.com/ethereum-optimism/contracts/blob/master/contracts/optimistic-ethereum/OVM/verification/OVM_StateTransitioner.sol)
+### [`OVM_StateTransitioner`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/OVM/verification/OVM_StateTransitioner.sol)
 The State Transitioner coordinates the execution of a state transition during the evaluation of a fraud proof. It feeds verified input to the Execution Manager's run(), and controls a State Manager (which is  uniquely created for each fraud proof). Once a fraud proof has been initialized, this contract is provided with the pre-state root and verifies that the OVM storage slots committed to the State Manager are contained in that state. This contract controls the State Manager and Execution Manager, and uses them to calculate the post-state root by applying the transaction. The Fraud Verifier can then check for fraud by comparing the calculated post-state root with the proposed post-state root.
 
-### [`OVM_StateTransitionerFactory`](https://github.com/ethereum-optimism/contracts/blob/master/contracts/optimistic-ethereum/OVM/verification/OVM_StateTransitionerFactory.sol)
+### [`OVM_StateTransitionerFactory`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/OVM/verification/OVM_StateTransitionerFactory.sol)
 Used by the Fraud verifier to create a unique State Transitioner for each fraud proof. 
 <!-- - (TODO: are factories even worth including?) -->
 
@@ -201,10 +201,10 @@ Used by the Fraud verifier to create a unique State Transitioner for each fraud 
 The Execution contracts implement the Optimistic Virtual Machine, or OVM. Importantly, these contracts 
 must execute in the same deterministic manner, whether a transaction is run on Layer 2, or Layer 1 (during a fraud proof).
 
-### [`OVM_ExecutionManager`](https://github.com/ethereum-optimism/contracts/blob/master/contracts/optimistic-ethereum/OVM/execution/OVM_ExecutionManager.sol)
+### [`OVM_ExecutionManager`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/OVM/execution/OVM_ExecutionManager.sol)
 The Execution Manager (EM) is the core of our OVM implementation, and provides a sandboxed environment allowing us to execute OVM transactions deterministically on either Layer 1 or Layer 2. The EM's run() function is the first function called during the execution of any transaction on L2. For each context-dependent EVM operation the EM has a function which implements a corresponding OVM operation, which will read state from the State Manager contract. The EM relies on the Safety Checker to verify that code deployed to Layer 2 does not contain any context-dependent operations.
 
-### [`OVM_SafetyChecker`](https://github.com/ethereum-optimism/contracts/blob/master/contracts/optimistic-ethereum/OVM/execution/OVM_SafetyChecker.sol)
+### [`OVM_SafetyChecker`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/OVM/execution/OVM_SafetyChecker.sol)
 The Safety Checker verifies that contracts deployed on L2 do not contain any "unsafe" operations. An operation is considered unsafe if it would access state variables which are specific to the environment (ie. L1 or L2) in which it is executed, as this could be used to "escape the sandbox" of the OVM, resulting in non-deterministic fraud proofs. That is, an attacker would be able to "prove fraud" on an honestly applied transaction. Note that a "safe" contract requires opcodes to appear in a particular pattern; omission of "unsafe" opcodes is necessary, but not sufficient.
 
 The following opcodes are disallowed:
@@ -242,10 +242,10 @@ The following opcodes are disallowed:
 
 Opcodes which are not yet assigned in the EVM are also disallowed.
 
-### [`OVM_StateManager`](https://github.com/ethereum-optimism/contracts/blob/master/contracts/optimistic-ethereum/OVM/execution/OVM_StateManager.sol)
+### [`OVM_StateManager`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/OVM/execution/OVM_StateManager.sol)
 The State Manager contract holds all storage values for contracts in the OVM. It can only be written to by the Execution Manager and State Transitioner. It runs on L1 during the setup and execution of a fraud proof. The same logic runs on L2, but has been implemented as a precompile in the L2 go-ethereum client.
 
-### [`OVM_StateManagerFactory`](https://github.com/ethereum-optimism/contracts/blob/master/contracts/optimistic-ethereum/OVM/execution/OVM_StateManagerFactory.sol)
+### [`OVM_StateManagerFactory`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/OVM/execution/OVM_StateManagerFactory.sol)
 The State Manager Factory is called by a State Transitioner's init code, to create a new State Manager for use in the Fraud Verification process.
 
 ## Bridge Contracts
@@ -262,10 +262,10 @@ The Bridge contracts implement the functionality required to pass messages betwe
 
 The Bridge is composed of the following concrete contracts:
 
-### [`OVM_L1CrossDomainMessenger`](https://github.com/ethereum-optimism/contracts/blob/master/contracts/optimistic-ethereum/OVM/bridge/messenging/OVM_L1CrossDomainMessenger.sol)
+### [`OVM_L1CrossDomainMessenger`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/OVM/bridge/messaging/OVM_L1CrossDomainMessenger.sol)
 The L1 Cross Domain Messenger (L1xDM) contract sends messages from L1 to L2, and relays messages from L2 onto L1. In the event that a message sent from L1 to L2 is rejected for exceeding the L2 epoch gas limit, it can be resubmitted via this contract's replay function. 
 
-### [`OVM_L2CrossDomainMessenger`](https://github.com/ethereum-optimism/contracts/blob/master/contracts/optimistic-ethereum/OVM/bridge/messenging/OVM_L2CrossDomainMessenger.sol)
+### [`OVM_L2CrossDomainMessenger`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/OVM/bridge/messaging/OVM_L2CrossDomainMessenger.sol)
 The L2 Cross Domain Messenger (L2xDM) contract sends messages from L2 to L1, and is the entry point for L2 messages sent via the L1 Cross Domain Messenger.
 
 
@@ -283,28 +283,24 @@ Proving fraud against a crossDomain message with a false account for **l1TxOrigi
 
 The following concrete contracts are predeployed:
 
-### [`OVM_DeployerWhitelist`](https://github.com/ethereum-optimism/contracts/blob/master/contracts/optimistic-ethereum/OVM/precompiles/OVM_DeployerWhitelist.sol)
+### [`OVM_DeployerWhitelist`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/OVM/predeploys/OVM_DeployerWhitelist.sol)
 The Deployer Whitelist is a temporary predeploy used to provide additional safety during the initial phases of our mainnet roll out. It is owned by the Optimism team, and defines accounts which are allowed to deploy contracts on Layer 2. The Execution Manager will only allow an ovmCREATE or ovmCREATE2 operation to proceed if the deployer's address whitelisted.
 
-### [`OVM_ETH`](https://github.com/ethereum-optimism/contracts/blob/master/contracts/optimistic-ethereum/OVM/precompiles/OVM_ETH.sol)
+### [`OVM_ETH`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/OVM/predeploys/OVM_ETH.sol)
 The ETH predeploy provides an ERC20 interface for ETH deposited to Layer 2. Note that  unlike on Layer 1, Layer 2 accounts do not have a balance field.
 
-### [`OVM_L1MessageSender`](https://github.com/ethereum-optimism/contracts/blob/master/contracts/optimistic-ethereum/OVM/precompiles/OVM_L1MessageSender.sol)
+### [`OVM_L1MessageSender`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/OVM/predeploys/OVM_L1MessageSender.sol)
 The L1MessageSender is a predeployed contract running on L2.
 During the execution of cross domain transaction from L1 to L2, it returns the address of the L1 account (either an EOA or contract) which sent the message to L2 via the Canonical Transaction Chain's `enqueue()` function.
 This contract exclusively serves as a getter for the `ovmL1TXORIGIN` operation.
 This is necessary because there is no corresponding EVM opcode which the optimistic solidity compiler could replace with a call to the ExecutionManager's `ovmL1TXORIGIN()` function.
 That is, if a contract on L2 wants to know which L1 address initiated a call on L2, the way to do it is by calling `OVM_L1MessageSender.ovmL1TXORIGIN()`.
 
-### [`OVM_L2ToL1MessagePasser`](https://github.com/ethereum-optimism/contracts/blob/master/contracts/optimistic-ethereum/OVM/precompiles/OVM_L2ToL1MessagePasser.sol)
+### [`OVM_L2ToL1MessagePasser`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/OVM/predeploys/OVM_L2ToL1MessagePasser.sol)
 The L2 to L1 Message Passer is a utility contract which facilitate an L1 proof of the  of a message on L2. The L1 Cross Domain Messenger performs this proof in its _verifyStorageProof function, which verifies the existence of the transaction hash in this  contract's `sentMessages` mapping.
 
-### [`OVM_ProxySequencerEntrypoint`](https://github.com/ethereum-optimism/contracts/blob/master/contracts/optimistic-ethereum/OVM/precompiles/OVM_ProxySequencerEntrypoint.sol)
-The Proxy Sequencer Entrypoint is a predeployed proxy to the implementation of the  Sequencer Entrypoint. This will enable the Optimism team to upgrade the Sequencer Entrypoint  contract.
-
-### [`OVM_SequencerEntrypoint`](https://github.com/ethereum-optimism/contracts/blob/master/contracts/optimistic-ethereum/OVM/precompiles/OVM_SequencerEntrypoint.sol)
+### [`OVM_SequencerEntrypoint`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/OVM/predeploys/OVM_SequencerEntrypoint.sol)
 The Sequencer Entrypoint is a predeploy which, despite its name, can in fact be called by  any account. It accepts a more efficient compressed calldata format, which it decompresses and  encodes to the standard EIP155 transaction format. This contract is the implementation referenced by the Proxy Sequencer Entrypoint, thus enabling the Optimism team to upgrade the decompression of calldata from the Sequencer.
-
 
 ## Account Contracts
 
@@ -319,8 +315,8 @@ OVM Account contracts are redeployable contracts layer-2 contracts which can rep
 - Fees (Is this where fee discussion should go? Or with RPC docs?)
  -->
 
-### [`OVM_ProxyEOA`](https://github.com/ethereum-optimism/contracts/blob/master/contracts/optimistic-ethereum/OVM/accounts/OVM_ProxyEOA.sol)
+### [`OVM_ProxyEOA`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/OVM/accounts/OVM_ProxyEOA.sol)
 The Proxy EOA contract uses a delegate call to execute the logic in an implementation contract. In combination with the logic implemented in the ECDSA Contract Account, this enables a form of upgradable  'account abstraction' on layer 2.
 
-### [`OVM_ECDSAContractAccount`](https://github.com/ethereum-optimism/contracts/blob/master/contracts/optimistic-ethereum/OVM/accounts/OVM_ECDSAContractAccount.sol)
+### [`OVM_ECDSAContractAccount`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/OVM/accounts/OVM_ECDSAContractAccount.sol)
 The ECDSA Contract Account contract can be used as the implementation for a ProxyEOA deployed by the ovmCREATEEOA operation. It enables backwards compatibility with Ethereum's Layer 1, by  providing eth_sign and EIP155 formatted transaction encodings.
