@@ -19,6 +19,10 @@ module.exports = {
     docsBranch: 'main',
     editLinkText: `See a typo? We'd 💖 a pull request over on GitHub`,
     lastUpdated: false,
+    algolia: {
+      apiKey: '47d21d4ea72ed7cb504b1c6c0a46b5a0',
+      indexName: 'optimism'
+    },
     nav: [
       {
         text: 'networks',
