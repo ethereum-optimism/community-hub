@@ -25,8 +25,6 @@ Here's a record of every missing opcode.
 | `BLOCKHASH`    | `blockhash`        | No equivalent in the OVM. |
 | `GASPRICE`     | `tx.gasprice`      | No equivalent in the OVM. |
 | `SELFDESTRUCT` | `selfdestruct`     | It's dumb. |
-| `BALANCE`      | `balance`          | Coming soon™. See [Native ETH](#native-eth). |
-| `CALLVALUE`    | `msg.value`        | Coming soon™. See [Native ETH](#native-eth). |
 | `ORIGIN`       | `tx.origin`        | Coming soon™. See [Account Abstraction](#account-abstraction). |
 
 ## Replaced Opcodes
@@ -53,6 +51,8 @@ The following opcodes must be translated into calls to the execution manager:
 * `EXTCODECOPY`
 * `EXTCODESIZE`
 * `EXTCODEHASH`
+* `BALANCE`
+* `CALLVALUE`
 
 ### Behavioral differences of replaced opcodes
 
@@ -132,7 +132,6 @@ This means you don't need to use something like [wETH](https://weth.io) -- ETH *
 But it's also ETH.
 WooOooooOOOoo spooky.
 
-<!--
 ### Using ETH normally
 
 To use ETH normally, you can just use Solidity built-ins like `msg.value` and `address.transfer(value)`.
@@ -143,7 +142,6 @@ For example, you can get your balance via:
 ```solidity
 uint256 balance = address(this).balance;
 ```
--->
 
 ### Using ETH as an ERC20 token
 
