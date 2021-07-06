@@ -96,35 +96,39 @@ Please refer to our [guide to Bridging L1 and L2](./bridging) for more informati
 
 <img src="../../assets/docs/developers/withdraw-usage/5.png" alt="accept the withdrawal in metamask" width="400"/>
 
-7. And then simply wait for the withdrawal challenge period to elapse! On the Optimistic Kovan testnet this withdrawal period is only 60 seconds. Feel free grab a drink or go to the bathroom or something while you wait. After 60 seconds you should see the following screen:
+7. Next, click on your address in the top right corner of your screen:
 
-<img src="../../assets/docs/developers/withdraw-usage/6.png" alt="see the withdrawal ready to be relayed" width="400"/>
+<img src="../../assets/docs/developers/withdraw-usage/6.png" alt="click on your address" width="400"/>
 
-8. The next step is to claim your withdrawal on L1. Etherscan provides a nice little UI for performing this claiming process. Click on the Etherscan link to continue:
+8. You should be presented with a list of withdrawals that you've made. Now you simply need to wait for the withdrawal challenge period to elapse! On the Optimistic Kovan testnet this withdrawal period is only 60 seconds. Feel free grab a drink or go to the bathroom or something while you wait. After 60 seconds, the status symbol corresponding to your withdrawal should turn yellow:
+
+<img src="../../assets/docs/developers/withdraw-usage/6-1.png" alt="see yellow status symbol" width="400"/>
+
+9. The next step is to claim your withdrawal on L1. Etherscan provides a nice little UI for performing this claiming process. Click on your withdrawal and you'll be sent to the following screen where you'll need to click the link that says `Click here to relay`:
 
 <img src="../../assets/docs/developers/withdraw-usage/7.png" alt="go to etherscan to claim withdrawal" width="400"/>
 
-9. You'll be shown a page that looks something like the following image:
+10. You'll be brought to an Etherscan page that looks something like this:
 
 <img src="../../assets/docs/developers/withdraw-usage/8.png" alt="view the withdrawal claim page on etherscan" width="800"/>
 
-10. Since you'll be claiming this withdrawal on L1 (Kovan) you'll need switch back to the Kovan test network in MetaMask before you can continue:
+11. Since you'll be claiming this withdrawal on L1 (Kovan) you'll need switch back to the Kovan test network in MetaMask before you can continue:
 
 <img src="../../assets/docs/developers/withdraw-usage/9.gif" alt="switch back to Kovan" width="400"/>
 
-11. Finally, click the `Execute` button on the Etherscan page and accept the confirmation popup that follows:
+12. Finally, click the `Execute` button on the Etherscan page and accept the confirmation popup that follows:
 
 <img src="../../assets/docs/developers/withdraw-usage/10.png" alt="click the execute button on Etherscan" width="800"/>
 
-12. After a few seconds you'll be asked to sign a final transaction in MetaMask:
+13. After a few seconds you'll be asked to sign a final transaction in MetaMask:
 
 <img src="../../assets/docs/developers/withdraw-usage/11.png" alt="accept the last transaction in metamask" width="400"/>
 
-13. Wait for the transaction to be confirmed on Kovan, then refresh the page. If you see that the message is now `Relayed`, then your withdrawal was successful:
+14. Wait for the transaction to be confirmed on Kovan, then refresh the page. If you see that the message is now `Relayed`, then your withdrawal was successful:
 
 <img src="../../assets/docs/developers/withdraw-usage/12.png" alt="check withdrawal was relayed correctly" width="800"/>
 
-14. You can also confirm that your withdrawal was completed by checking your Kovan ETH balance:
+15. You can also confirm that your withdrawal was completed by checking your Kovan ETH balance:
 
 <img src="../../assets/docs/developers/withdraw-usage/13.png" alt="check your balance again" width="400"/>
 
