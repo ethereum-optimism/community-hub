@@ -124,6 +124,10 @@ Please refer to our [guide to Bridging L1 and L2](./bridging) for more informati
 
 <img src="../../assets/docs/developers/withdraw-usage/12.png" alt="check withdrawal was relayed correctly" width="800"/>
 
+14. You can also confirm that your withdrawal was completed by checking your Kovan ETH balance:
+
+<img src="../../assets/docs/developers/withdraw-usage/13.png" alt="check your balance again" width="400"/>
+
 Congrats!
 You've now completed a deposit *and* a withdrawal.
 You're an Optimistic Ethereum pro.
