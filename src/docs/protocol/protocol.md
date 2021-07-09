@@ -12,7 +12,7 @@ tags:
 The following is a list of useful references that can be used in writing this doc:
 
 - [ToB audit brief](https://docs.google.com/document/d/1SA8-5f73I9G8wDDfwCGLojhY0fmK-0kM2B5-YVqv2Co/edit#)
-- [OZ audit brief](https://docs.google.com/document/d/1obZqFlyVLX93HnN6Hpibah4NHa4bZ3QcoZgRQm96UU0/edit#heading=h.ene4josc1vb4) 
+- [OZ audit brief](https://docs.google.com/document/d/1obZqFlyVLX93HnN6Hpibah4NHa4bZ3QcoZgRQm96UU0/edit#heading=h.ene4josc1vb4)
 - [OVM post on Medium](https://medium.com/plasma-group/ethereum-smart-contracts-in-l2-optimistic-rollup-2c1cef2ec537)
 - [gakonst post](https://research.paradigm.xyz/optimism)
 
@@ -43,34 +43,34 @@ I.e., it makes transactions cheap. Real cheap.
 We aim to make transacting on Ethereum affordable and
 accessible to anyone.
 
-This document is intended for anyone looking for a deeper understanding of how the protocol works 
+This document is intended for anyone looking for a deeper understanding of how the protocol works
 'under the hood'.
-If you just want to skip straight to integrating your smart contract application with 
+If you just want to skip straight to integrating your smart contract application with
 OE, check out the [Developer Docs](../developers/integration.md).
 
 Optimistic Ethereum is meant to look, feel and behave like Ethereum but cheaper and faster.
 For developers building on our OE, we aim to make the transition as seamless as possible.
-With very few exceptions, 
+With very few exceptions,
 existing Solidity smart contracts can run on L2 exactly how they run on L1.
 Similarly, off-chain code (ie. UIs and wallets), should be able to interact with L2 contract with little more than an updated RPC endpoint.
 
-<!-- ### Design Philosophy 
+<!-- ### Design Philosophy
 
-// [ref](https://docs.google.com/presentation/d/1_hMomfXES3jhpPxKhV-4tydPwjJ6CUYU49eylDFY1ek/edit?ts=6021777a#slide=id.ga4c51e44d5_1_207) 
+// [ref](https://docs.google.com/presentation/d/1_hMomfXES3jhpPxKhV-4tydPwjJ6CUYU49eylDFY1ek/edit?ts=6021777a#slide=id.ga4c51e44d5_1_207)
 
 We've designed our protocol with the following principles in mind:
 
 - Pragmatism:
-  - We aren't seeking to reinvent the wheel, or to develop the a... 
-- Collaboration: 
+  - We aren't seeking to reinvent the wheel, or to develop the a...
+- Collaboration:
   - Dev in the open
   - lean heavily into ETH1.x
-- Iteration: 
+- Iteration:
   - Learn from Community
   - Work with Community
 
 
-- Developer Experience: 
+- Developer Experience:
 - Compatibility with Layer 1 Ethereum: ... -->
 
 <!-- ## Overview of the Optimistic Ethereum Roll Up
@@ -79,12 +79,12 @@ Fraud proofs:
 
 Sandboxing/containerization
 
-The core of OE is the Optimistic Virtual Machine (OVM), which uses a containerization model enabling smart contract execution to 
-run on Layer 
+The core of OE is the Optimistic Virtual Machine (OVM), which uses a containerization model enabling smart contract execution to
+run on Layer
 
 occur natively during a dispute on L1, but in such a way that the execution has non-interference with any external L1 state.  Verifying that this holds true is our main goal with this audit--effectively, proving that the execution sandbox we have created cannot be escaped.
 yar -->
-<!-- 
+<!--
 ### Similarities and differences between Ethereum and Optimistic Ethereum
 
 ### OVM vs. EVM
@@ -96,7 +96,7 @@ The OVM
 
 Ethereum has Ether, and every Ethereum account has a balance (possibly zero) in Ether. Conversely OE has a built-in ERC20 compatible Wrapped Ether (WETH) token. EVM  -->
 
-<!-- 
+<!--
 ### Key Concepts
 
 _// John: Putting this here for now, we may or may not need this section, but I like how 0x uses it_.
@@ -111,14 +111,14 @@ _// John: Putting this here for now, we may or may not need this section, but I 
 
 ## System Overview
 
-The smart contracts in the Optimistic Ethereum (OE) protocol can be separated into a few key components. We will discuss each component in more detail below. 
+The smart contracts in the Optimistic Ethereum (OE) protocol can be separated into a few key components. We will discuss each component in more detail below.
 
 - **[Chain:](#chain-contracts)** Contracts on layer-1, which hold the ordering of layer-2 transactions, and commitments to the associated layer-2 state roots.
 - **[Fraud Proving:](#fraud-proving-contracts)** Contracts on layer-1 which implement the process for proving a fraudulent state transition.
-- **[Execution:](#execution-contracts)** Contracts which implement the Optimistic Virtual Machine. 
-- **[Bridge:](#bridge-contracts)** Contracts which facilitate message passing between layer-1 and layer-2. 
+- **[Execution:](#execution-contracts)** Contracts which implement the Optimistic Virtual Machine.
+- **[Bridge:](#bridge-contracts)** Contracts which facilitate message passing between layer-1 and layer-2.
 - **[Predeploys:](#predeployed-contracts)** A set of essential contracts which are deployed and available in the genesis state of the system. These contracts are similar to Ethereum's precompiles, however they are written in Solidity, and can be found at addresses prefixed with 0x42.
-- **[Accounts:](#account-contracts)** Redeployable contracts layer-2 contracts which can represent a user and provide a form of 'account abstraction'. 
+- **[Accounts:](#account-contracts)** Redeployable contracts layer-2 contracts which can represent a user and provide a form of 'account abstraction'.
 
 <!-- Using html instead of markdown so we can put a caption on the image. -->
 <figure>
@@ -128,20 +128,20 @@ The smart contracts in the Optimistic Ethereum (OE) protocol can be separated in
 
 <!--
  - Contracts Reference Sheet (aka glossary)
-  - Deployed contracts (with addresses ie. [aave example][aave]) 
+  - Deployed contracts (with addresses ie. [aave example][aave])
 -->
 
 ## Chain Contracts
 
 The Chain is composed of a set of contracts running on the Ethereum mainnet. These contracts store ordered
-lists of: 
+lists of:
 1. An _ordered_ list of all transactions applied to the L2 state.
 2. The proposed state root which would results from the application of each transaction.
 3. Transactions sent from L1 to L2, which are pending inclusion in the ordered list.
 
 <!--
 **Planned section outline**
-- Delineation between CTC and SCC, 
+- Delineation between CTC and SCC,
 - **high priority**: explain once and for all that fraud proofs roll back state roots, but NOT transactions
 - Diagram of "the chains" and what is stored on chain -- ideally illustrates the "roll up" mechanism whereby only roots of batches are SSTOREd
 - Sequencing -- what are the properties, what are the implications
@@ -168,10 +168,10 @@ Provides reusable storage in the form of a "Ring Buffer" data structure, which w
 ## Fraud Proving Contracts
 
 In the previous section, we mentioned that the Chain includes a list of the _proposed_ state roots
-resulting from each transaction. Here we explain a bit more about how these proposals happen, and how 
+resulting from each transaction. Here we explain a bit more about how these proposals happen, and how
 we come to trust them.
 
-In brief: If a proposed state root is not the correct result of executing a transaction, then a Verifier (which is anyone running an OE 'full node') can initiate a fraud proof. If the transaction is successfully proven to be 
+In brief: If a proposed state root is not the correct result of executing a transaction, then a Verifier (which is anyone running an OE 'full node') can initiate a fraud proof. If the transaction is successfully proven to be
 fraudulent, the Verifier will receive a reward taken from funds which a Sequencer must put up as a bond.
 
 The fraud proving system is composed of the following concrete contracts:
@@ -186,7 +186,7 @@ The Bond Manager contract handles deposits in the form of an ERC20 token from bo
 The State Transitioner coordinates the execution of a state transition during the evaluation of a fraud proof. It feeds verified input to the Execution Manager's run(), and controls a State Manager (which is  uniquely created for each fraud proof). Once a fraud proof has been initialized, this contract is provided with the pre-state root and verifies that the OVM storage slots committed to the State Manager are contained in that state. This contract controls the State Manager and Execution Manager, and uses them to calculate the post-state root by applying the transaction. The Fraud Verifier can then check for fraud by comparing the calculated post-state root with the proposed post-state root.
 
 ### [`OVM_StateTransitionerFactory`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/OVM/verification/OVM_StateTransitionerFactory.sol)
-Used by the Fraud verifier to create a unique State Transitioner for each fraud proof. 
+Used by the Fraud verifier to create a unique State Transitioner for each fraud proof.
 <!-- - (TODO: are factories even worth including?) -->
 
 
@@ -198,7 +198,7 @@ Used by the Fraud verifier to create a unique State Transitioner for each fraud 
 - State Management L1/L2 differences
 - Explicit list of opcodes that are replaced -->
 
-The Execution contracts implement the Optimistic Virtual Machine, or OVM. Importantly, these contracts 
+The Execution contracts implement the Optimistic Virtual Machine, or OVM. Importantly, these contracts
 must execute in the same deterministic manner, whether a transaction is run on Layer 2, or Layer 1 (during a fraud proof).
 
 ### [`OVM_ExecutionManager`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/OVM/execution/OVM_ExecutionManager.sol)
@@ -252,34 +252,36 @@ The State Manager Factory is called by a State Transitioner's init code, to crea
 
 The Bridge contracts implement the functionality required to pass messages between layer 1 and layer 2.
 
-<!-- 
+<!--
 **Planned section outline**
-- Low-level tools (ovmL1TXORIGIN, state committment access) 
+- Low-level tools (ovmL1TXORIGIN, state committment access)
 
 ### Key concepts
-- **Relaying** refers to executing a message sent from the other domain, ie. "this message was relayed  
+- **Relaying** refers to executing a message sent from the other domain, ie. "this message was relayed
 -->
 
 The Bridge is composed of the following concrete contracts:
 
 ### [`OVM_L1CrossDomainMessenger`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/OVM/bridge/messaging/OVM_L1CrossDomainMessenger.sol)
-The L1 Cross Domain Messenger (L1xDM) contract sends messages from L1 to L2, and relays messages from L2 onto L1. In the event that a message sent from L1 to L2 is rejected for exceeding the L2 epoch gas limit, it can be resubmitted via this contract's replay function. 
+The L1 Cross Domain Messenger (L1xDM) contract sends messages from L1 to L2, and relays messages from L2 onto L1. In the event that a message sent from L1 to L2 is rejected for exceeding the L2 epoch gas limit, it can be resubmitted via this contract's replay function.
 
 ### [`OVM_L2CrossDomainMessenger`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/OVM/bridge/messaging/OVM_L2CrossDomainMessenger.sol)
 The L2 Cross Domain Messenger (L2xDM) contract sends messages from L2 to L1, and is the entry point for L2 messages sent via the L1 Cross Domain Messenger.
 
 
-<!-- 
+<!--
 JM scribbles:
 Proving fraud against a crossDomain message with a false account for **l1TxOrigin**:
 
-- All L1 to L2 messages must be passed via `enqueue` in the CTC. This records `msg.sender` in the enqueued tx hash. 
-- Recall that each transitioner has a specific txHash, and state root. 
+- All L1 to L2 messages must be passed via `enqueue` in the CTC. This records `msg.sender` in the enqueued tx hash.
+- Recall that each transitioner has a specific txHash, and state root.
 - During a fraud proof, the verifier must provide the transaction data to `applyTransaction()`, and the transitioner just checks that the hashes match. -->
 
 ## Predeployed Contracts
 
-"Predeploys" are a set of essential contracts which are deployed and available in the genesis state of the system. These contracts are similar to Ethereum's precompiles, however they are written in Solidity, and can be found in the OVM at addresses prefixed with 0x42.
+"Predeploys" are a set of essential L2 contracts which are deployed and available in the genesis state of the system. These contracts are similar to Ethereum's precompiles, however they are written in Solidity, and can be found in the OVM at addresses prefixed with 0x42.
+
+Looking up predeploys is available in the Solidity library [`Lib_PredeployAddresses`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/optimistic-ethereum/libraries/constants/Lib_PredeployAddresses.sol) as well as in the `@eth-optimism/contracts` package as `predeploys` export.
 
 The following concrete contracts are predeployed:
 
@@ -287,7 +289,7 @@ The following concrete contracts are predeployed:
 The Deployer Whitelist is a temporary predeploy used to provide additional safety during the initial phases of our mainnet roll out. It is owned by the Optimism team, and defines accounts which are allowed to deploy contracts on Layer 2. The Execution Manager will only allow an ovmCREATE or ovmCREATE2 operation to proceed if the deployer's address whitelisted.
 
 ### [`OVM_ETH`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/OVM/predeploys/OVM_ETH.sol)
-The ETH predeploy provides an ERC20 interface for ETH deposited to Layer 2. Note that  unlike on Layer 1, Layer 2 accounts do not have a balance field.
+The ETH predeploy provides an ERC20 interface for ETH deposited to Layer 2. Note that unlike on Layer 1, Layer 2 accounts do not have a balance field.
 
 ### [`OVM_L1MessageSender`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/OVM/predeploys/OVM_L1MessageSender.sol)
 The L1MessageSender is a predeployed contract running on L2.
@@ -302,11 +304,16 @@ The L2 to L1 Message Passer is a utility contract which facilitate an L1 proof o
 ### [`OVM_SequencerEntrypoint`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/OVM/predeploys/OVM_SequencerEntrypoint.sol)
 The Sequencer Entrypoint is a predeploy which, despite its name, can in fact be called by  any account. It accepts a more efficient compressed calldata format, which it decompresses and  encodes to the standard EIP155 transaction format. This contract is the implementation referenced by the Proxy Sequencer Entrypoint, thus enabling the Optimism team to upgrade the decompression of calldata from the Sequencer.
 
+### [`OVM_L2StandardBridge`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/optimistic-ethereum/OVM/bridge/tokens/OVM_L2StandardBridge.sol)
+The L2 part of the Standard Bridge. Responsible for finalising deposits from L1 and initiating withdrawals from L2 of ETH and compliant ERC20s.
+See [Standard Bridge](../developers/bridging.md#the-standardtm-bridge) for details.
+
+
 ## Account Contracts
 
 OVM Account contracts are redeployable contracts layer-2 contracts which can represent a user and provide a form of 'account abstraction'.
 
-<!-- 
+<!--
 **Planned section outline**
 - **TODO:** figure out how much of this needs to go into "integration" section
 - explanation of createEOA/nonce opcodes which offer backwards compatibility
