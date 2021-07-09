@@ -201,15 +201,19 @@ We *will* hear you out!
 
 ## Token Bridges
 
-Certain interactions, like transferring ERC20 tokens between the two networks, are common enough that we've built some standard bridge contracts you can make use of.
+Certain interactions, like transferring ETH and ERC20 tokens between the two networks, are common enough that we've built some standard bridge contracts you can make use of.
 
-### The Standard™ ERC20 Bridge
+### The Standard™ Bridge
 
-We've built two standard bridge contracts that simplify the process of moving ERC20 tokens between Optimistic Ethereum and Ethereum.
-These contracts are the [`OVM_L1ERC20Gateway`](https://github.com/ethereum-optimism/contracts/blob/master/contracts/optimistic-ethereum/OVM/bridge/tokens/OVM_L1ERC20Gateway.sol) (for Layer 1) and the [`OVM_L2DepositedERC20`](https://github.com/ethereum-optimism/contracts/blob/master/contracts/optimistic-ethereum/OVM/bridge/tokens/OVM_L2DepositedERC20.sol) (for Layer 2).
+The Standard Bridge simplifies the process of moving ETH and ERC20 tokens between Optimistic Ethereum and Ethereum and consists of two contracts: [`OVM_L1StandardBridge`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/optimistic-ethereum/OVM/bridge/tokens/OVM_L1StandardBridge.sol) (for Layer 1) and  [`OVM_L2StandardBridge`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/optimistic-ethereum/OVM/bridge/tokens/OVM_L2StandardBridge.sol) (for Layer 2) where it is also a [predeploy](../protocol/protocol.md#predeployed-contracts).
+
+For an L1/L2 token pair to work on the Standard Bridge the L2 token contract need to implement [`IL2StandardERC20`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/optimistic-ethereum/libraries/standards/IL2StandardERC20.sol). The standard implementation of that is in [`L2StandardERC20`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/optimistic-ethereum/libraries/standards/L2StandardERC20.sol) contract.
+
+Note that deposits and withdrawals are restricted to EOA accounts only. Contracts can still interact with the bridge but using the explicit `depositETHTo`, `depositERC20To`, `withdrawTo` functions.
+
+<!-- TODO: Update this once we have the tutorial ready
 If you'd like to see these contracts in action, you should check out the [L1 ⇔ L2 deposit-and-withdraw example](https://github.com/ethereum-optimism/optimism/tree/develop/examples/l1-l2-deposit-withdrawal).
-
-<!-- TODO: expand this sectio a bit -->
+ -->
 
 ## By Example: Synthetix
 
