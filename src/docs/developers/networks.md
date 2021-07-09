@@ -34,3 +34,6 @@ We know this isn't ideal and we really appreciate your patience while we work ha
 | Explorer | **`https://optimistic.etherscan.io`** |
 | HTTP Endpoint | **`https://mainnet.optimism.io`** |
 | WebSocket Endpoint | **`wss://ws-mainnet.optimism.io`** |
+
+## Deployments
+Latest deployments information can be found at [https://github.com/ethereum-optimism/optimism/tree/master/packages/contracts/deployments](https://github.com/ethereum-optimism/optimism/tree/master/packages/contracts/deployments)
