@@ -49,11 +49,3 @@ As a result, we see a delay of about a week when moving assets back onto Ethereu
 Transactions that you send directly to the rollup smart contracts are paid for by burning a small amount of gas on Ethereum.
 Sequencers and transaction aggregators may additionally charge fees for their services.
 Fees for these services are typically charged by sending the service providers a small amount of ETH on Layer 2.
-
-## Does Optimistic Ethereum use ETH natively?
-Optimistic Ethereum doesn't use ETH natively in the same way that Ethereum does.
-Instead, ETH is represented as an ERC20 token that can be transferred and manipulated, essentially like native version of [wrapped ETH (wETH)](https://weth.io/).
-You're still fully capable of transferring ETH between accounts with the added benefit of being able to avoid a separate token like wETH.
-The Layer 2 ETH ERC20 contract currently resides at the special Layer 2 address `0x4200000000000000000000000000000000000006`.
-
-**Note**: The [`eth_getBalance` JSON-RPC call](https://eth.wiki/json-rpc/API#eth_getBalance) will retrieve a balance by querying the ETH ERC20 contract and therefore will remain useful for wallets.
