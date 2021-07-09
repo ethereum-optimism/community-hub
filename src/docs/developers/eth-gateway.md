@@ -189,7 +189,7 @@ I'm too lazy to draw the whole thing (sorry), but I'll give you the basic steps:
 2. The `OVM_ETH` contract _burns_ the ETH that you want to withdraw.
 3. The `OVM_ETH` contract sends a message to the `OVM_L1ETHGateway` saying that it should unlock some ETH on your behalf.
 4. You wait out the [one week challenge period](bridging.html#understanding-the-challenge-period).
-5. You send send a second, final "withdrawal" transaction to the `OVM_L1ETHGateway` on Layer 2 and get your funds back!
+5. You send send a second, final "withdrawal" transaction to the `OVM_L1ETHGateway` on Layer 1 and get your funds back!
 6. You are happy.
 7. We are happy.
 8. Ethereum gets way cooler.
