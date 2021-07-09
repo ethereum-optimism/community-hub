@@ -114,7 +114,7 @@ _// John: Putting this here for now, we may or may not need this section, but I 
 The smart contracts in the Optimistic Ethereum (OE) protocol can be separated into a few key components. We will discuss each component in more detail below.
 
 - **[Chain:](#chain-contracts)** Contracts on layer-1, which hold the ordering of layer-2 transactions, and commitments to the associated layer-2 state roots.
-- **[Fraud Proving:](#fraud-proving-contracts)** Contracts on layer-1 which implement the process for proving a fraudulent state transition.
+- **[Transaction result challenges:](#transaction-challenge-contracts)** Contracts on layer-1 which implement the process for challenging a transaction result.
 - **[Execution:](#execution-contracts)** Contracts which implement the Optimistic Virtual Machine.
 - **[Bridge:](#bridge-contracts)** Contracts which facilitate message passing between layer-1 and layer-2.
 - **[Predeploys:](#predeployed-contracts)** A set of essential contracts which are deployed and available in the genesis state of the system. These contracts are similar to Ethereum's precompiles, however they are written in Solidity, and can be found at addresses prefixed with 0x42.
@@ -135,6 +135,7 @@ The smart contracts in the Optimistic Ethereum (OE) protocol can be separated in
 
 The Chain is composed of a set of contracts running on the Ethereum mainnet. These contracts store ordered
 lists of:
+
 1. An _ordered_ list of all transactions applied to the L2 state.
 2. The proposed state root which would results from the application of each transaction.
 3. Transactions sent from L1 to L2, which are pending inclusion in the ordered list.
@@ -142,7 +143,7 @@ lists of:
 <!--
 **Planned section outline**
 - Delineation between CTC and SCC,
-- **high priority**: explain once and for all that fraud proofs roll back state roots, but NOT transactions
+- **high priority**: explain once and for all that challenges roll back state roots, but NOT transactions
 - Diagram of "the chains" and what is stored on chain -- ideally illustrates the "roll up" mechanism whereby only roots of batches are SSTOREd
 - Sequencing -- what are the properties, what are the implications
 - Ring buffer?? (lean deprioritize)
@@ -165,28 +166,27 @@ Provides reusable storage in the form of a "Ring Buffer" data structure, which w
 
 <!-- [stackex]: TODO - create a stackexchange Q and A, to make this term real. -->
 
-## Fraud Proving Contracts
+## Transaction Challenge Contracts
 
 In the previous section, we mentioned that the Chain includes a list of the _proposed_ state roots
 resulting from each transaction. Here we explain a bit more about how these proposals happen, and how
 we come to trust them.
 
-In brief: If a proposed state root is not the correct result of executing a transaction, then a Verifier (which is anyone running an OE 'full node') can initiate a fraud proof. If the transaction is successfully proven to be
-fraudulent, the Verifier will receive a reward taken from funds which a Sequencer must put up as a bond.
+In brief: If a proposed state root is not the correct result of executing a transaction, then a Verifier (which is anyone running an OE 'full node') can initiate a transaction result challenge. If the transaction result is successfully proven to be incorrect, the Verifier will receive a reward taken from funds which a Sequencer must put up as a bond.
 
-The fraud proving system is composed of the following concrete contracts:
+The challenge system is composed of the following concrete contracts:
 
 ### [`OVM_FraudVerifier`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/OVM/verification/OVM_FraudVerifier.sol)
-The Fraud Verifier contract coordinates the entire fraud proof verification process. If the fraud proof is successful it prunes any state batches from State Commitment Chain which were published after the fraudulent state root.
+The Fraud Verifier contract coordinates the entire challenge verification process. If the challenge is successful it prunes any state batches from State Commitment Chain which were published after and including the state root in question.
 
 ### [`OVM_BondManager`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/OVM/verification/OVM_BondManager.sol)
-The Bond Manager contract handles deposits in the form of an ERC20 token from bonded Proposers. It also handles the accounting of gas costs spent by a Verifier during the course of a fraud proof. In the event of a successful fraud proof, the fraudulent Proposer's bond is slashed, and the Verifier's gas costs are refunded.
+The Bond Manager contract handles deposits in the form of an ERC20 token from bonded Proposers. It also handles the accounting of gas costs spent by a Verifier during the course of a challenge. In the event of a successful challenge, the faulty Proposer's bond is slashed, and the Verifier's gas costs are refunded.
 
 ### [`OVM_StateTransitioner`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/OVM/verification/OVM_StateTransitioner.sol)
-The State Transitioner coordinates the execution of a state transition during the evaluation of a fraud proof. It feeds verified input to the Execution Manager's run(), and controls a State Manager (which is  uniquely created for each fraud proof). Once a fraud proof has been initialized, this contract is provided with the pre-state root and verifies that the OVM storage slots committed to the State Manager are contained in that state. This contract controls the State Manager and Execution Manager, and uses them to calculate the post-state root by applying the transaction. The Fraud Verifier can then check for fraud by comparing the calculated post-state root with the proposed post-state root.
+The State Transitioner coordinates the execution of a state transition during the evaluation of a challenge. It feeds verified input to the Execution Manager's run(), and controls a State Manager (which is uniquely created for each challenge). Once a challenge has been initialized, this contract is provided with the pre-state root and verifies that the OVM storage slots committed to the State Manager are contained in that state. This contract controls the State Manager and Execution Manager, and uses them to calculate the post-state root by applying the transaction. The Fraud Verifier can then check the correctness of a result by comparing the calculated post-state root with the proposed post-state root.
 
 ### [`OVM_StateTransitionerFactory`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/OVM/verification/OVM_StateTransitionerFactory.sol)
-Used by the Fraud verifier to create a unique State Transitioner for each fraud proof.
+Used by the Fraud verifier to create a unique State Transitioner for each challenge.
 <!-- - (TODO: are factories even worth including?) -->
 
 
@@ -199,15 +199,16 @@ Used by the Fraud verifier to create a unique State Transitioner for each fraud 
 - Explicit list of opcodes that are replaced -->
 
 The Execution contracts implement the Optimistic Virtual Machine, or OVM. Importantly, these contracts
-must execute in the same deterministic manner, whether a transaction is run on Layer 2, or Layer 1 (during a fraud proof).
+must execute in the same deterministic manner, whether a transaction is run on Layer 2, or Layer 1 (during a challenge).
 
 ### [`OVM_ExecutionManager`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/OVM/execution/OVM_ExecutionManager.sol)
 The Execution Manager (EM) is the core of our OVM implementation, and provides a sandboxed environment allowing us to execute OVM transactions deterministically on either Layer 1 or Layer 2. The EM's run() function is the first function called during the execution of any transaction on L2. For each context-dependent EVM operation the EM has a function which implements a corresponding OVM operation, which will read state from the State Manager contract. The EM relies on the Safety Checker to verify that code deployed to Layer 2 does not contain any context-dependent operations.
 
 ### [`OVM_SafetyChecker`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/OVM/execution/OVM_SafetyChecker.sol)
-The Safety Checker verifies that contracts deployed on L2 do not contain any "unsafe" operations. An operation is considered unsafe if it would access state variables which are specific to the environment (ie. L1 or L2) in which it is executed, as this could be used to "escape the sandbox" of the OVM, resulting in non-deterministic fraud proofs. That is, an attacker would be able to "prove fraud" on an honestly applied transaction. Note that a "safe" contract requires opcodes to appear in a particular pattern; omission of "unsafe" opcodes is necessary, but not sufficient.
+The Safety Checker verifies that contracts deployed on L2 do not contain any "unsafe" operations. An operation is considered unsafe if it would access state variables which are specific to the environment (ie. L1 or L2) in which it is executed, as this could be used to "escape the sandbox" of the OVM, resulting in non-deterministic challenges. That is, an attacker would be able to challenge an honestly applied transaction. Note that a "safe" contract requires opcodes to appear in a particular pattern; omission of "unsafe" opcodes is necessary, but not sufficient.
 
 The following opcodes are disallowed:
+
 - `ADDRESS`
 - `BALANCE`
 - `ORIGIN`
@@ -243,10 +244,10 @@ The following opcodes are disallowed:
 Opcodes which are not yet assigned in the EVM are also disallowed.
 
 ### [`OVM_StateManager`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/OVM/execution/OVM_StateManager.sol)
-The State Manager contract holds all storage values for contracts in the OVM. It can only be written to by the Execution Manager and State Transitioner. It runs on L1 during the setup and execution of a fraud proof. The same logic runs on L2, but has been implemented as a precompile in the L2 go-ethereum client.
+The State Manager contract holds all storage values for contracts in the OVM. It can only be written to by the Execution Manager and State Transitioner. It runs on L1 during the setup and execution of a challenge. The same logic runs on L2, but has been implemented as a precompile in the L2 go-ethereum client.
 
 ### [`OVM_StateManagerFactory`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/OVM/execution/OVM_StateManagerFactory.sol)
-The State Manager Factory is called by a State Transitioner's init code, to create a new State Manager for use in the Fraud Verification process.
+The State Manager Factory is called by a State Transitioner's init code, to create a new State Manager for use in the challenge process.
 
 ## Bridge Contracts
 

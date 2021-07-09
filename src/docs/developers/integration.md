@@ -35,8 +35,8 @@ You'll just have to follow four basic steps:
 ## Writing Contracts
 
 For various technical reasons that I've been too lazy to properly document, users can currently only (realistically) deploy applications to Optimistic Ethereum if they're written in Solidity.
-This is because certain EVM opcodes are banned because they can be used to cause non-determinism during a fraud proof.
-What's a fraud proof?
+This is because certain EVM opcodes are banned because they can be used to cause non-determinism during a transaction result challenge.
+What's a transaction result challenge?
 Great question, we really should be documenting these things.
 In short, it's the mechanism by which we make sure that L2 smart contracts are as secure as L1 smart contracts.
 

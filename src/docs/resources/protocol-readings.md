@@ -27,7 +27,7 @@ A **thorough** Medium post from Optimism's blog that provides that explains **wh
 * By: [Georgios Konstantopoulos](https://twitter.com/gakonst) (Paradigm Research)
 
 A thorough post by Paradigm's research division that takes a deep dive into the protocol implementation of Optimism's ORUs.
-**Covers OVM topics like: data availability batches, state commitments, fraud proofs, incentives & bonds, and nuisance gas.**
+**Covers OVM topics like: data availability batches, state commitments, challenges, incentives & bonds, and nuisance gas.**
 
 ## [*MEV Auction: Auctioning transaction ordering rights as a solution to Miner Extractable Value*](https://ethresear.ch/t/mev-auction-auctioning-transaction-ordering-rights-as-a-solution-to-miner-extractable-value/6788)
 

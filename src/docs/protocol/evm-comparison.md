@@ -209,11 +209,11 @@ The OVM does not have blocks, it just maintains an ordered list of transactions.
 
 ### Sandbox-related overhead
 
-Calling the `ExecutionManager` takes up a bit of extra EVM gas, and is needed on L1 to preserve the fraud proof's execution sandbox.  However, on `geth-l2`, the sandbox functionality is implemented similarly to a precompile and is much faster.  To account for this, the EM tracks a `gasRefund` which is subtracted from the transaction's gas spent.
+Calling the `ExecutionManager` takes up a bit of extra EVM gas, and is needed on L1 to preserve the transaction result challenge execution sandbox.  However, on `geth-l2`, the sandbox functionality is implemented similarly to a precompile and is much faster.  To account for this, the EM tracks a `gasRefund` which is subtracted from the transaction's gas spent.
 
 ### Nuisance gas
 
-There is a separate dimension of gas, called "nuisance gas", which is used to bound the net gas cost of fraud proofs.  In particular, witness data for the fraud proof's setup phase is not reflected in the L2 EVM gas cost.  Storage and contract creation `ovmOPCODES` have a separate cost in nuisance gas. If too much nuisance gas is spent in a call, the call's execution fails, like with EVM gas.
+There is a separate dimension of gas, called "nuisance gas", which is used to bound the net gas cost of a transaction result challenge.  In particular, witness data for the challenge setup phase is not reflected in the L2 EVM gas cost.  Storage and contract creation `ovmOPCODES` have a separate cost in nuisance gas. If too much nuisance gas is spent in a call, the call's execution fails, like with EVM gas.
 -->
 
 ## State Structure
@@ -234,4 +234,4 @@ We may make an update to our Merkle Trie library that resolves this discrepancy 
 ### Gas metadata account
 
 A special account `0x06a506A506a506A506a506a506A506A506A506A5` is used to store gas-related metadata (cumulative gas spent, gas spent since the last epoch, etc.).
-You'll see this account pop up in transaction traces and during fraud proofs.
+You'll see this account pop up in transaction traces and during transaction result challenges.

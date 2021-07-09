@@ -32,16 +32,16 @@ Please refer to the [Complete EVM/OVM Comparison](https://community.optimism.io/
 ## Are Optimistic Rollups safe?
 Absolutely.
 Optimistic Rollups are safe as long as Ethereum itself is "live" (not actively censoring transactions).
-This security model is backed by a system of "fraud proofs," whereby users are paid to reveal bad transaction results published to the Optimistic Ethereum chain.
+This security model is backed by a system of "challenges," whereby users are paid to reveal bad transaction results published to the Optimistic Ethereum chain.
 
 ## Why is there a delay when moving assets from Optimistic Ethereum to Ethereum?
 Withdrawal delays exist to keep your funds safe.
-Optimistic Rollups have to make use of a "fraud proof window" (sometimes called a "challenge period").
+Optimistic Rollups have to make use of a "challenge period".
 This window is a period of time after a transaction result has been published during which users can, if necessary, demonstrate that the published result was incorrect.
 This period must be long enough that an invalid result can be detected and reverted, even under extreme conditions.
 
 Currently, community consensus is that this period should be on the order of approximately one week to maximize the safety of user assets.
-Since a result can potentially be reverted during the fraud proof window, applications on Ethereum will typically choose to wait until the window has expired to make decisions about results from the Optimistic Ethereum chain.
+Since a result can potentially be reverted during the challenge period, applications on Ethereum will typically choose to wait until the window has expired to make decisions about results from the Optimistic Ethereum chain.
 
 As a result, we see a delay of about a week when moving assets back onto Ethereum.
 
