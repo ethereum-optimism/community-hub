@@ -37,10 +37,6 @@ module.exports = {
         link: '/docs/',
       },
       {
-        text: 'tutorial',
-        link: 'https://github.com/ethereum-optimism/optimism-tutorial/blob/main/README.md',
-      },
-      {
         text: 'open issues',
         link: 'https://github.com/ethereum-optimism/optimism/issues',
       },
@@ -67,14 +63,30 @@ module.exports = {
           sidebarDepth: 1,
         },
         {
-          title: 'Developer Docs',
+          title: 'User Docs',
           children: [
-            '/docs/developers/integration.md',
-            '/docs/developers/networks.md',
             '/docs/developers/eth-gateway.md',
-            '/docs/developers/bridging.md',
             '/docs/developers/fees.md',
             '/docs/developers/metamask.md',
+          ],
+          collapsable: false,
+          sidebarDepth: 1,
+        },
+        {
+          title: 'Developer Docs',
+          children: [
+            {
+               title: "Tutorials",
+               collapsable: true,
+               children: [
+                   '/docs/resources/hardhat.md',
+                   '/docs/resources/truffle.md'
+               ]
+            },
+            '/docs/developers/integration.md',
+            '/docs/developers/networks.md',
+            '/docs/developers/bridging.md',
+            '/docs/resources/tooling.md',
           ],
           collapsable: false,
           sidebarDepth: 1,
@@ -84,6 +96,7 @@ module.exports = {
           children: [
             '/docs/protocol/protocol.md',
             '/docs/protocol/evm-comparison.md',
+            '/docs/resources/protocol-readings.md',
           ],
           collapsable: false,
           sidebarDepth: 1,
@@ -91,19 +104,9 @@ module.exports = {
         {
           title: 'Additional Resources',
           children: [
-            '/docs/resources/tutorials.md',
-            '/docs/resources/protocol-readings.md',
             '/docs/resources/talks.md',
-            '/docs/resources/tooling.md',
             '/docs/resources/general-resources.md',
           ],
-          collapsable: false,
-          sidebarDepth: 1,
-        }
-      ],
-      '/compare/': [
-        {
-          children: [ '' ],
           collapsable: false,
           sidebarDepth: 1,
         }
