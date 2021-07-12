@@ -42,24 +42,72 @@ module.exports = {
             '/docs/users/gateway.md',
           ],
           collapsable: false,
-          sidebarDepth: 1,
+          sidebarDepth: 3,
         },
         {
           title: 'Developers',
           children: [
-            '/docs/developers/tutorials.md',
-            '/docs/developers/tooling.md',
+            {
+               title: 'Getting Started',
+               children: [
+                 [
+                      'https://github.com/ethereum-optimism/optimism-tutorial/tree/main/hardhat',
+                      'Using Optimistic Ethereum with the Truffle Development Environment'
+                 ],
+                 [
+                      'https://github.com/ethereum-optimism/optimism-tutorial/tree/main/truffle',
+                      'Using Optimistic Ethereum with the Truffle Development Environment'
+                 ],
+               ]
+            },
+            { 
+              title: 'Dapps for Standalone Optimistic Ethereum',
+              children: [
+                 [
+                    '/docs/developers/alone/why.md',
+                    'Why Run in Standalone Optimistic Ethereum?'
+                 ],
+                 [
+                    '/docs/developers/alone/requirements.md',
+                    'Converting Applications for Optimistic Ethernet'
+                 ],
+                 [
+                    '/docs/developers/alone/hardhat.md',
+                    'Hardhat Tooling'
+                 ],
+                 [
+                    '/docs/developers/alone/truffle.md',
+                    'Truffle Tooling'
+                 ]
+              ]
+            },
+            { 
+              title: 'Multinet Dapps',
+              children: [
+                 [ '/docs/developers/multi/erc20.md', 
+                   'Bridging ERC20 Tokens'
+                 ],
+                 [ '/docs/developers/multi/msgs.md',
+                   'General Purpose Bridge'
+                 ],
+                 [ '/docs/developers/multi/fees.md',
+                   'Transaction Fees'
+                 ]
+              ] 
+            }
+
+/*            '/docs/developers/tooling.md',
             '/docs/developers/integration.md',
             '/docs/developers/networks.md',
             '/docs/developers/eth-gateway.md',
             '/docs/developers/bridging.md',
-            '/docs/developers/fees.md',
+            '/docs/developers/fees.md', */
           ],
           collapsable: false,
           sidebarDepth: 1,
         },
         {
-          title: 'Protocol specs',
+          title: 'Protocol Specs',
           children: [
             '/docs/protocol/protocol.md',
             '/docs/protocol/evm-comparison.md',
