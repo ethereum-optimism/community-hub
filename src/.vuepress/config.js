@@ -45,8 +45,9 @@ module.exports = {
           sidebarDepth: 1,
         },
         {
-          title: 'Developer Docs',
+          title: 'Developers',
           children: [
+            '/docs/developers/tutorials.md',
             '/docs/developers/integration.md',
             '/docs/developers/networks.md',
             '/docs/developers/eth-gateway.md',
@@ -68,7 +69,6 @@ module.exports = {
         {
           title: 'Additional Resources',
           children: [
-            '/docs/resources/tutorials.md',
             '/docs/resources/protocol-readings.md',
             '/docs/resources/talks.md',
             '/docs/resources/tooling.md',
