@@ -39,6 +39,7 @@ module.exports = {
           title: 'Users',
           children: [
             '/docs/users/metamask.md',
+            '/docs/users/gateway.md',
           ],
           collapsable: false,
           sidebarDepth: 1,
