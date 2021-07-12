@@ -36,12 +36,9 @@ module.exports = {
     sidebar: {
       '/docs/': [
         {
-          title: 'Introduction',
+          title: 'Users',
           children: [
-            {
-              title: 'Welcome! (Start here)',
-              path: '/docs/'
-            },
+            '/docs/users/metamask.md',
           ],
           collapsable: false,
           sidebarDepth: 1,
@@ -54,7 +51,6 @@ module.exports = {
             '/docs/developers/eth-gateway.md',
             '/docs/developers/bridging.md',
             '/docs/developers/fees.md',
-            '/docs/developers/metamask.md',
           ],
           collapsable: false,
           sidebarDepth: 1,
