@@ -72,7 +72,6 @@ module.exports = {
           children: [
             '/docs/resources/talks.md',
             '/docs/resources/tooling.md',
-            '/docs/resources/general-resources.md',
           ],
           collapsable: false,
           sidebarDepth: 1,
