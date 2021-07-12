@@ -6,7 +6,8 @@ lang: en-US
 # {{ $frontmatter.title }}
 
 The easiest way to move assets between Layer 1 and Layer 2 is to use the [Optimism Gateway](https://gateway.optimism.io).
-You can make use of this gateway on [any of our networks](./networks).
+You can make use of this gateway on any of our networks.
+[Click here for a list of our networks and connection details](./networks).
 
 ## Tutorial: Depositing into L2
 
