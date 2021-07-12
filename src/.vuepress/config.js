@@ -58,10 +58,11 @@ module.exports = {
           sidebarDepth: 1,
         },
         {
-          title: 'Protocol Docs',
+          title: 'Protocol specs',
           children: [
             '/docs/protocol/protocol.md',
             '/docs/protocol/evm-comparison.md',
+            '/docs/protocol/protocol-readings.md',
           ],
           collapsable: false,
           sidebarDepth: 1,
@@ -69,7 +70,6 @@ module.exports = {
         {
           title: 'Additional Resources',
           children: [
-            '/docs/resources/protocol-readings.md',
             '/docs/resources/talks.md',
             '/docs/resources/tooling.md',
             '/docs/resources/general-resources.md',
