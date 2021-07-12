@@ -25,31 +25,11 @@ module.exports = {
     },
     nav: [
       {
-        text: 'networks',
-        link: '/docs/developers/networks',
-      },
-      {
-        text: 'faq',
+        text: 'faqs',
         link: '/faqs/',
       },
       {
-        text: 'docs',
-        link: '/docs/',
-      },
-      {
-        text: 'tutorial',
-        link: 'https://github.com/ethereum-optimism/optimism-tutorial/blob/main/README.md',
-      },
-      {
-        text: 'open issues',
-        link: 'https://github.com/ethereum-optimism/optimism/issues',
-      },
-      {
-        text: 'open pull requests',
-        link: 'https://github.com/ethereum-optimism/optimism/pulls'
-      },
-      {
-        text: 'chat',
+        text: 'discord',
         link: 'https://discord.optimism.io',
       },
     ],
