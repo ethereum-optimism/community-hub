@@ -48,19 +48,6 @@ module.exports = {
           title: 'Developers',
           children: [
             {
-               title: 'Getting Started',
-               children: [
-                 [
-                      'https://github.com/ethereum-optimism/optimism-tutorial/tree/main/hardhat',
-                      'Using Optimistic Ethereum with the Truffle Development Environment'
-                 ],
-                 [
-                      'https://github.com/ethereum-optimism/optimism-tutorial/tree/main/truffle',
-                      'Using Optimistic Ethereum with the Truffle Development Environment'
-                 ],
-               ]
-            },
-            { 
               title: 'Dapps for Standalone Optimistic Ethereum',
               children: [
                  [
@@ -81,10 +68,10 @@ module.exports = {
                  ]
               ]
             },
-            { 
+            {
               title: 'Multinet Dapps',
               children: [
-                 [ '/docs/developers/multi/erc20.md', 
+                 [ '/docs/developers/multi/erc20.md',
                    'Bridging ERC20 Tokens'
                  ],
                  [ '/docs/developers/multi/msgs.md',
@@ -93,7 +80,21 @@ module.exports = {
                  [ '/docs/developers/multi/fees.md',
                    'Transaction Fees'
                  ]
-              ] 
+              ]
+            },
+            {
+               title: 'Learning resourses',
+               children: [
+                 [
+                      'https://github.com/ethereum-optimism/optimism-tutorial/tree/main/hardhat',
+                      'Optimistic Ethereum with Hardhat'
+                 ],
+                 [
+                      'https://github.com/ethereum-optimism/optimism-tutorial/tree/main/truffle',
+                      'Optimistic Ethereum with Truffle'
+                 ],
+                 '/docs/developers/resources/talks.md',
+               ]
             }
 
 /*            '/docs/developers/tooling.md',
@@ -112,14 +113,6 @@ module.exports = {
             '/docs/protocol/protocol.md',
             '/docs/protocol/evm-comparison.md',
             '/docs/protocol/protocol-readings.md',
-          ],
-          collapsable: false,
-          sidebarDepth: 1,
-        },
-        {
-          title: 'Additional Resources',
-          children: [
-            '/docs/resources/talks.md',
           ],
           collapsable: false,
           sidebarDepth: 1,
