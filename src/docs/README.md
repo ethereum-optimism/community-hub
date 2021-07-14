@@ -18,7 +18,7 @@ Let's make sure you know where to go next!
 ## For: Casually Interested Readers
 **Are you here because you're interested in Optimistic Ethereum at a high-level?**
 
-**We're working on a TL;DR page for just you.**
+**We're working on a TL;DR page just for you.**
 
 In the meantime, you might find what you're looking for in our [collection of talks and videos](/docs/resources/talks.md).
 
