@@ -32,7 +32,7 @@ contract MyOtherContract {
 }
 ```
 
-Here, `MyOtherContract.doTheThing` triggers a "call" to `MyContract.toSomething`.
+Here, `MyOtherContract.doTheThing` triggers a "call" to `MyContract.doSomething`.
 A "call" is defined by a few key input parameters, mainly a `target address` and some `calldata`.
 In this specific example, the `target address` is going to be the address of our instance of `MyContract`.
 The `calldata`, on the other hand, depends on the function we're trying to call.
