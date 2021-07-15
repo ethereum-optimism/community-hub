@@ -199,32 +199,4 @@ We *will* hear you out!
 
 ## Token Bridges
 
-Certain interactions, like transferring ETH and ERC20 tokens between the two networks, are common enough that we've built some standard bridge contracts you can make use of.
-
-### The Standard™ Bridge
-
-The Standard Bridge simplifies the process of moving ETH and ERC20 tokens between Optimistic Ethereum and Ethereum and consists of two contracts: [`OVM_L1StandardBridge`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/optimistic-ethereum/OVM/bridge/tokens/OVM_L1StandardBridge.sol) (for Layer 1) and  [`OVM_L2StandardBridge`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/optimistic-ethereum/OVM/bridge/tokens/OVM_L2StandardBridge.sol) (for Layer 2) where it is also a [predeploy](../protocol/protocol.md#predeployed-contracts).
-
-For an L1/L2 token pair to work on the Standard Bridge the L2 token contract need to implement [`IL2StandardERC20`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/optimistic-ethereum/libraries/standards/IL2StandardERC20.sol). The standard implementation of that is in [`L2StandardERC20`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/optimistic-ethereum/libraries/standards/L2StandardERC20.sol) contract.
-
-Note that deposits and withdrawals are restricted to EOA accounts only. Contracts can still interact with the bridge but using the explicit `depositETHTo`, `depositERC20To`, `withdrawTo` functions.
-
-<!-- TODO: Update this once we have the tutorial ready
-If you'd like to see these contracts in action, you should check out the [L1 ⇔ L2 deposit-and-withdraw example](https://github.com/ethereum-optimism/optimism/tree/develop/examples/l1-l2-deposit-withdrawal).
- -->
-
-## By Example: Synthetix
-
-If you find examples useful, you might be interested in taking a look at the bridge contracts that [Synthetix](https://synthetix.io/) wrote for their [L2 mainnet launch](https://blog.synthetix.io/l2-mainnet-launch/).
-These contracts are pretty slick and make heavy use of our L1 ⇔ L2 messaging infrastructure.
-Here's a quick play-by-play:
-
-1. Depositing SNX into L2
-    - [Initiating a deposit on L1](https://github.com/Synthetixio/synthetix/blob/master/contracts/SynthetixBridgeToOptimism.sol#L190-L205)
-    - [Which leads to receiving a balance on L2](https://github.com/Synthetixio/synthetix/blob/master/contracts/SynthetixBridgeToBase.sol#L111-L115)
-2. Migrate SNX Escrow entries to L2 (transferring large amounts of state from L1->L2):
-    - [Initiating a migration on L1](https://github.com/Synthetixio/synthetix/blob/master/contracts/SynthetixBridgeToOptimism.sol#L207-L236)
-    - [Which leads to receiving escrow entries on L2](https://github.com/Synthetixio/synthetix/blob/master/contracts/SynthetixBridgeToBase.sol#L98-L108)
-3. Withdrawing SNX to L1:
-    - [Burning L2 SNX and initiating the withdrawal on L2](https://github.com/Synthetixio/synthetix/blob/master/contracts/SynthetixBridgeToBase.sol#L76-L94)
-    - [Completing the withdrawal and receiving a balance on L1](https://github.com/Synthetixio/synthetix/blob/master/contracts/SynthetixBridgeToOptimism.sol#L126-L136)
+Certain interactions, like transferring ETH and ERC20 tokens between the two networks, are common enough that we've built some standard bridge contracts you can make use of. See Standard bridge section.

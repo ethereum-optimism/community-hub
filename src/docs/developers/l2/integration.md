@@ -1,5 +1,5 @@
 ---
-title: Building Stuff on Optimistic Ethereum
+title: Converting applications for OE
 lang: en-US
 tags:
     - contracts
@@ -16,21 +16,10 @@ TODO:
 
 # {{ $frontmatter.title }}
 
-## Introduction
-
-Hello and welcome! If you're looking to find out what it takes to get an app up and running on layer 2, then you've come to the right place. If at any time in this process you get stuck or have questions, please reach out on [discord](https://discord.optimism.io) and drop a message in the `#support` channel.
-
 ## Overview
 
 Optimistic Ethereum is designed from the ground up to be (almost) identical to Ethereum (but cheaper).
 If you've built an app on Ethereum before then you're more than equipped to deploy to OP.
-
-You'll just have to follow four basic steps:
-
-1. [Write](#writing-contracts)
-2. [Compile](#compiling-contracts)
-3. [Test](#testing-contracts)
-4. [Deploy](#deploying-contracts)
 
 ## Writing Contracts
 
@@ -188,59 +177,3 @@ docker-compose build --parallel
 Because of some technical reasons that are hard to explain here, **the maximum amount of gas you can have available to your transaction is about ~1,000,000 gas *below* the block gas limit**.
 If the block gas limit is 9,000,000 and you try to send a transaction with 9,000,000 gas, you'll actually only get to use about ~8,000,000 gas.
 The exact amount that you'll be able to use depends on the amount of data that you send along with your transaction (more data means slightly less gas available).
-
-## Deploying Contracts
-
-Once you've written, compiled, and tested your contracts you'll probably want to deploy them to a live network!
-We currently maintain two primary networks:
-
-* `optimistic-kovan`, our public testnet
-* `optimistic-ethereum`, our restricted mainnet
-
-<!-- TODO: add gateway info here -->
-
-::: tip On our restricted mainnet
-Why is our mainnet "restricted"?
-Honestly, we're just playing it safe.
-Unlike their L1 counterparts, L2s can't just fork if they run into a critical bug.
-We're in uncharted territory right now and we want to get all of our ducks in a row before we move forward.
-As much as we'd love to hit the big red YOLO button, we really do need to be very careful.
-We appreciate your patience while we work hard to get everything in place for a smooth public mainnet launch 💗.
-:::
-
-### Optimistic Kovan
-
-`optimistic-kovan` is our public testnet and it's probably where you'll be going next.
-If you'd like to deploy to `optimistic-kovan`, you can use the following connection details:
-
-| Parameter | Value |
-| --------- | ----- |
-| Network Name | **`Optimistic Kovan`** |
-| Currency | **`Ether (ETH)`**
-| Chain ID | **`69`** |
-| Explorer | **`https://kovan-optimistic.etherscan.io`** |
-| HTTP Endpoint | **`https://kovan.optimism.io`** |
-| WebSocket Endpoint | **`https://ws-kovan.optimism.io`** |
-
-### Optimistic Ethereum
-
-`optimistic-ethereum` is a restricted mainnet.
-Although we're currently limiting contract deployment on mainnet, you might still want to connect to the network.
-`optimistic-ethereum` connection details are:
-
-| Parameter | Value |
-| --------- | ----- |
-| Network Name | **`Optimistic Ethereum`** |
-| Currency | **`Ether (ETH)`**
-| Chain ID | **`10`** |
-| Explorer | **`https://optimistic.etherscan.io`** |
-| HTTP Endpoint | **`https://mainnet.optimism.io`** |
-| WebSocket Endpoint | **`https://ws-mainnet.optimism.io`** |
-
-## Conclusion
-
-That's pretty much it.
-It's a lot like Ethereum!
-Except a lot more... Optimistic.
-If you're looking for something quick and easy to tackle next, you might want to take a look at the [Official™ Optimism Tutorial](https://github.com/ethereum-optimism/optimism-tutorial).
-If you're looking for something a little more challenging, you should consider checking out our [guide to bridging L1 and L2](./bridging)

@@ -1,5 +1,5 @@
 ---
-title: Developer Tooling
+title: Developer Tools
 lang: en-US
 tags:
     - contracts
@@ -20,12 +20,12 @@ A `Node.js` package that contains various useful plugins for developing contract
 Particularly useful for its support of the custom OVM Solidity compiler.
 
 ## [@eth-optimism/contracts](https://github.com/ethereum-optimism/optimism/tree/master/packages/contracts)
-  
+
 The various smart contracts that make up the L1 component of Optimistic Ethereum.
 Useful if you're interested in understanding how an Optimistic Rollup works!
 
-## [@eth-optimism/smock](https://github.com/ethereum-optimism/optimism/tree/master/packages/smock) 
-  
+## [@eth-optimism/smock](https://github.com/ethereum-optimism/optimism/tree/master/packages/smock)
+
 Smock is a hardhat plugin that allows you to mock the functionality of any smart contract with just a little bit of JavaScript.
 Smock's [README on GitHub](https://github.com/ethereum-optimism/optimism/tree/master/packages/smock/README.md) has thorough documentation.
 You can even find a [community example of using Smock](https://soliditydeveloper.com/smock) written by [Markus Waas](https://soliditydeveloper.com/markuswaas/).

@@ -40,46 +40,32 @@ module.exports = {
           children: [
             '/docs/users/metamask.md',
             '/docs/users/gateway.md',
+            '/docs/users/wallets.md',
+            '/docs/users/dapps.md',
           ],
           collapsable: false,
           sidebarDepth: 3,
         },
         {
-          title: 'Developers',
+          title: 'Developer Docs',
           children: [
             {
-              title: 'Dapps for Standalone Optimistic Ethereum',
+              title: 'Working on Optimistic Ethereum',
               children: [
-                 [
-                    '/docs/developers/alone/why.md',
-                    'Why Run in Standalone Optimistic Ethereum?'
-                 ],
-                 [
-                    '/docs/developers/alone/requirements.md',
-                    'Converting Applications for Optimistic Ethernet'
-                 ],
-                 [
-                    '/docs/developers/alone/hardhat.md',
-                    'Hardhat Tooling'
-                 ],
-                 [
-                    '/docs/developers/alone/truffle.md',
-                    'Truffle Tooling'
-                 ]
+                '/docs/developers/l2/why.md',
+                '/docs/developers/l2/integration.md',
+                '/docs/developers/l2/block-time.md',
+                '/docs/developers/l2/rpc.md',
+                '/docs/developers/l2/hardhat.md',
+                '/docs/developers/l2/truffle.md',
+                '/docs/developers/l2/dev-node.md',
               ]
             },
             {
-              title: 'Multinet Dapps',
+              title: 'Bridging L1 and L2',
               children: [
-                 [ '/docs/developers/multi/erc20.md',
-                   'Bridging ERC20 Tokens'
-                 ],
-                 [ '/docs/developers/multi/msgs.md',
-                   'General Purpose Bridge'
-                 ],
-                 [ '/docs/developers/multi/fees.md',
-                   'Transaction Fees'
-                 ]
+                '/docs/developers/bridge/messaging.md',
+                '/docs/developers/bridge/standard-bridge.md',
               ]
             },
             {
@@ -93,16 +79,30 @@ module.exports = {
                       'https://github.com/ethereum-optimism/optimism-tutorial/tree/main/truffle',
                       'Optimistic Ethereum with Truffle'
                  ],
-                 '/docs/developers/resources/talks.md',
+                 [
+                      'https://github.com/ethereum-optimism/optimism-tutorial/tree/main/',
+                      'ERC20 deposit-withdrawal example'
+                 ],
+                 [
+                      'https://github.com/ethereum-optimism/optimism-tutorial/tree/main/',
+                      'Generic L1-L2 example'
+                 ],
+                 '/docs/developers/talks.md',
                ]
-            }
-
-/*            '/docs/developers/tooling.md',
-            '/docs/developers/integration.md',
-            '/docs/developers/networks.md',
-            '/docs/developers/eth-gateway.md',
-            '/docs/developers/bridging.md',
-            '/docs/developers/fees.md', */
+            },
+            '/docs/developers/tools.md',
+          ],
+          collapsable: false,
+          sidebarDepth: 1,
+        },
+        {
+          title: 'OPerations',
+          children: [
+            '/docs/operations/networks.md',
+            '/docs/operations/fees.md',
+            '/docs/operations/third-party-tools.md',
+            '/docs/operations/network-node.md',
+            '/docs/operations/monitoring.md',
           ],
           collapsable: false,
           sidebarDepth: 1,
