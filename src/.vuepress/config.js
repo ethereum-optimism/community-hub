@@ -52,8 +52,8 @@ module.exports = {
             {
               title: 'Working on Optimistic Ethereum',
               children: [
-                '/docs/developers/l2/why.md',
                 '/docs/developers/l2/integration.md',
+                '/docs/developers/l2/convert.md',
                 '/docs/developers/l2/block-time.md',
                 '/docs/developers/l2/rpc.md',
                 '/docs/developers/l2/hardhat.md',
