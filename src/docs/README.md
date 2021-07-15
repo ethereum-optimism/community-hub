@@ -51,6 +51,8 @@ It walks you through the complete process of deploying an application to Optimis
 It's a lot like deploying to Ethereum, we promise.
 We're working hard to make sure any changes to your software stack are relatively minimal.
 
+If you're trying to deploy to mainnet, you might be able to use our forthcoming ERC20 token factory contract (which _should_ be deployed by the end of July 🤞). Otherwise, you can [fill out this form](https://docs.google.com/forms/d/e/1FAIpQLSdKyXpXY1C4caWD3baQBK1dPjEboOJ9dpj9flc-ursqq8KU0w/viewform) and we'll consider whitelisting your deployer address.
+
 If you're looking for something a else, you may wish to search through our more complete list of [Guides and Resources](/docs/resources/tutorials.md) and our catalog of [useful developer tooling](/docs/resources/tooling.md).
 
 ::: tip Itching to get started?
