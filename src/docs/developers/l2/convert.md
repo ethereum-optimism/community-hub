@@ -24,7 +24,7 @@ we are running in L1 or L2. [You can see the list of replaced opcodes
 here](https://community.optimism.io/docs/protocol/evm-comparison.html#replaced-opcodes). 
 
 Because of this issue, and due to the fact the tests have to run on geth, there are a 
-few differences between developing contracts for L1 and developing them of Open Ethereum:
+few differences between developing contracts for L1 and developing them of Optimistic Ethereum:
 
 
 ## Language Limitation

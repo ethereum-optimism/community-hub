@@ -7,7 +7,7 @@ lang: en-US
 
 
 ::: tip
-This is just a brief overview for reference. For step by step directions [see the
+For detailed step by step instructions [see the
 tutorial](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/truffle).
 :::
 

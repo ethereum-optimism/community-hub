@@ -6,8 +6,7 @@ lang: en-US
 # {{ $frontmatter.title }}
 
 ::: tip
-This is just a brief overview for reference. For step by step directions [see one
-of the getting started 
+For detailed step by step instructions [see one of the getting started 
 tutorials](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/hardhat).
 :::
 
