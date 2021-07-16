@@ -21,7 +21,7 @@ Optimistic Ethereum gets around this problem by using a slightly modified Solidi
 compiler. Where the standard compiler produces those opcodes, the Optimistic version
 produces a call to a different contract that provides consistent information, whether
 we are running in L1 or L2. [You can see the list of replaced opcodes 
-here](https://community.optimism.io/docs/protocol/evm-comparison.html#replaced-opcodes). 
+here](/docs/protocol/evm-comparison.html#replaced-opcodes). 
 
 Because of this issue, and due to the fact the tests have to run on geth, there are a 
 few differences between developing contracts for L1 and developing them of Optimistic Ethereum:
@@ -34,13 +34,14 @@ here](https://github.com/ethereum-optimism/solc-bin/tree/gh-pages/bin)). We woul
 love to provide compilers for Vyper and Yul, but those aren't our priority at the moment.
 
 
-## Contract Length
+## Contract Bytecode Size
 
-Contract length limits are stricter. The length limit is still 
-[24 kB](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-170.md), but
-the problem opcodes are one byte long. We replace them with a contract call that 
-needs to push parameters into the stack, have the call itself, and then read the
-result. This means that a contract that was close to the limit when compiled with
+The length limit is still 
+[24 kB](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-170.md). 
+However, we are [replacing 
+opcodes](/docs/protocol/evm-comparison.html#replaced-opcodes), which 
+are one byte long each, with contract calls which require multiple opcodes. 
+This means that a contract that was close to the limit when compiled with
 normal Solidity might be over the limit with our version of the compiler. 
 
 To solve this, remember that the 24 kB limit is *per contract*. If you need more you 
