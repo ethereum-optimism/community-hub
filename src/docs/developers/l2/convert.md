@@ -38,8 +38,8 @@ love to provide compilers for Vyper and Yul, but those aren't our priority at th
 
 The length limit is still 
 [24 kB](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-170.md). 
-However, we are [replacing 
-opcodes](/docs/protocol/evm-comparison.html#replaced-opcodes), which 
+However, we are replacing 
+[opcodes](/docs/protocol/evm-comparison.html#replaced-opcodes), which 
 are one byte long each, with contract calls which require multiple opcodes. 
 This means that a contract that was close to the limit when compiled with
 normal Solidity might be over the limit with our version of the compiler. 

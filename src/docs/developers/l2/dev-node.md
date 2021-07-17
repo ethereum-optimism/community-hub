@@ -81,6 +81,10 @@ There are two interfaces that respond to Ethereum RPC commands:
 | The Underlying L1 Ethereum network     | 9545                 |
 
 
+For a rich (in pretend ETH) testing account use the mnemonic 
+`test test test test test test test test test test test junk`. 
+
+
 ### Accessing the Logs
 
 The logs appear on the command-line window used for the `docker-compose up`
