@@ -25,77 +25,93 @@ module.exports = {
     },
     nav: [
       {
-        text: 'networks',
-        link: '/docs/developers/networks',
-      },
-      {
-        text: 'faq',
+        text: 'faqs',
         link: '/faqs/',
       },
       {
-        text: 'docs',
-        link: '/docs/',
-      },
-      {
-        text: 'tutorial',
-        link: 'https://github.com/ethereum-optimism/optimism-tutorial/blob/main/README.md',
-      },
-      {
-        text: 'open issues',
-        link: 'https://github.com/ethereum-optimism/optimism/issues',
-      },
-      {
-        text: 'open pull requests',
-        link: 'https://github.com/ethereum-optimism/optimism/pulls'
-      },
-      {
-        text: 'chat',
+        text: 'discord',
         link: 'https://discord.optimism.io',
       },
     ],
     sidebar: {
       '/docs/': [
         {
-          title: 'Introduction',
+          title: 'Users',
           children: [
-            {
-              title: 'Welcome! (Start here)',
-              path: '/docs/'
-            },
+            '/docs/users/metamask.md',
+            '/docs/users/gateway.md',
+            '/docs/users/wallets.md',
+            '/docs/users/dapps.md',
           ],
           collapsable: false,
-          sidebarDepth: 1,
+          sidebarDepth: 3,
         },
         {
           title: 'Developer Docs',
           children: [
-            '/docs/developers/integration.md',
-            '/docs/developers/networks.md',
-            '/docs/developers/eth-gateway.md',
-            '/docs/developers/bridging.md',
-            '/docs/developers/fees.md',
-            '/docs/developers/metamask.md',
+            {
+              title: 'Working on Optimistic Ethereum',
+              children: [
+                '/docs/developers/l2/convert.md',
+                '/docs/developers/l2/block-time.md',
+                '/docs/developers/l2/rpc.md',
+                '/docs/developers/l2/hardhat.md',
+                '/docs/developers/l2/truffle.md',
+                '/docs/developers/l2/dev-node.md',
+              ]
+            },
+            {
+              title: 'Bridging L1 and L2',
+              children: [
+                '/docs/developers/bridge/messaging.md',
+                '/docs/developers/bridge/standard-bridge.md',
+              ]
+            },
+            {
+               title: 'Learning resourses',
+               children: [
+                 [
+                      'https://github.com/ethereum-optimism/optimism-tutorial/tree/main/hardhat',
+                      'Optimistic Ethereum with Hardhat'
+                 ],
+                 [
+                      'https://github.com/ethereum-optimism/optimism-tutorial/tree/main/truffle',
+                      'Optimistic Ethereum with Truffle'
+                 ],
+                 [
+                      'https://github.com/ethereum-optimism/optimism-tutorial/tree/main/',
+                      'ERC20 deposit-withdrawal example'
+                 ],
+                 [
+                      'https://github.com/ethereum-optimism/optimism-tutorial/tree/main/',
+                      'Generic L1-L2 example'
+                 ],
+                 '/docs/developers/talks.md',
+               ]
+            },
+            '/docs/developers/tools.md',
           ],
           collapsable: false,
           sidebarDepth: 1,
         },
         {
-          title: 'Protocol Docs',
+          title: 'OPerations',
+          children: [
+            '/docs/operations/networks.md',
+            '/docs/operations/fees.md',
+            '/docs/operations/third-party-tools.md',
+            '/docs/operations/network-node.md',
+            '/docs/operations/monitoring.md',
+          ],
+          collapsable: false,
+          sidebarDepth: 1,
+        },
+        {
+          title: 'Protocol Specs',
           children: [
             '/docs/protocol/protocol.md',
             '/docs/protocol/evm-comparison.md',
-          ],
-          collapsable: false,
-          sidebarDepth: 1,
-        },
-        {
-          title: 'Additional Resources',
-          children: [
-            '/docs/resources/tutorials.md',
-            '/docs/resources/protocol-readings.md',
-            '/docs/resources/talks.md',
-            '/docs/resources/tooling.md',
-            '/docs/resources/general-resources.md',
+            '/docs/protocol/protocol-readings.md',
           ],
           collapsable: false,
           sidebarDepth: 1,

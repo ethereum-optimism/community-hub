@@ -1,3 +1,10 @@
+---
+title: Fees
+lang: en-US
+---
+
+# {{ $frontmatter.title }}
+
 # Transaction Fees
 
 Transaction fees on Optimistic Ethereum are handled a little differently than on Ethereum.
