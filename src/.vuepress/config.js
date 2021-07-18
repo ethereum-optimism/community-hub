@@ -107,6 +107,13 @@ module.exports = {
           collapsable: false,
           sidebarDepth: 1,
         }
+      ],
+      '/faqs/': [
+        {
+          children: [ '' ],
+          collapsable: false,
+          sidebarDepth: 1,
+        }
       ]
     }
   },
