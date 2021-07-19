@@ -49,45 +49,52 @@ module.exports = {
         {
           title: 'Developer Docs',
           children: [
+            // Moved Learning resources to the top because
+            // it's the first thing I want noobs to see. 
+            {
+              title: 'Learning resources',
+              children: [
+                [
+                     'https://github.com/ethereum-optimism/optimism-tutorial/tree/main/hardhat',
+                     'Optimistic Ethereum with Hardhat'
+                ],
+                [
+                     'https://github.com/ethereum-optimism/optimism-tutorial/tree/main/truffle',
+                     'Optimistic Ethereum with Truffle'
+                ],
+                [
+                     'https://github.com/ethereum-optimism/optimism-tutorial/tree/main/',
+                     'ERC20 deposit-withdrawal example'
+                ],
+                [
+                     'https://github.com/ethereum-optimism/optimism-tutorial/tree/main/',
+                     'Generic L1-L2 example'
+                ],
+                '/docs/developers/talks.md',
+              ]
+            },
             {
               title: 'Working on Optimistic Ethereum',
+              // Reordered to follow the order in which I
+              // expect people will do things, followed by
+              // more advanced topics such as RPC and Block Time
               children: [
+                '/docs/developers/l2/dev-node.md',
+                '/docs/developers/l2/hardhat.md',
+                '/docs/developers/l2/truffle.md',                
                 '/docs/developers/l2/convert.md',
                 '/docs/developers/l2/block-time.md',
                 '/docs/developers/l2/rpc.md',
-                '/docs/developers/l2/hardhat.md',
-                '/docs/developers/l2/truffle.md',
-                '/docs/developers/l2/dev-node.md',
               ]
             },
             {
               title: 'Bridging L1 and L2',
               children: [
-                '/docs/developers/bridge/messaging.md',
+                // Common (standard bridge) before
+                // rare (messaging)
                 '/docs/developers/bridge/standard-bridge.md',
+                '/docs/developers/bridge/messaging.md',
               ]
-            },
-            {
-               title: 'Learning resourses',
-               children: [
-                 [
-                      'https://github.com/ethereum-optimism/optimism-tutorial/tree/main/hardhat',
-                      'Optimistic Ethereum with Hardhat'
-                 ],
-                 [
-                      'https://github.com/ethereum-optimism/optimism-tutorial/tree/main/truffle',
-                      'Optimistic Ethereum with Truffle'
-                 ],
-                 [
-                      'https://github.com/ethereum-optimism/optimism-tutorial/tree/main/',
-                      'ERC20 deposit-withdrawal example'
-                 ],
-                 [
-                      'https://github.com/ethereum-optimism/optimism-tutorial/tree/main/',
-                      'Generic L1-L2 example'
-                 ],
-                 '/docs/developers/talks.md',
-               ]
             },
             '/docs/developers/tools.md',
           ],
