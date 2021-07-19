@@ -1,13 +1,9 @@
 ---
-title: Bridging L1 and L2
+title: Messaging
 lang: en-US
 ---
 
 # {{ $frontmatter.title }}
-
-::: tip Work in Progress™
-Our documentation is a rapidly improving work in progress. If you have questions or feel like something is missing feel free to ask in our [Discord server](https://discord.optimism.io) where we (and our awesome community) are actively responding, or [open an issue](https://github.com/ethereum-optimism/community-hub/issues) in the GitHub repo for this site.
-:::
 
 Apps on Optimistic Ethereum can be made to interact with apps on Ethereum via a process called "bridging".
 In a nutshell, **contracts on Optimistic Ethereum can send messages to contracts on Ethereum, and vice versa**.
@@ -196,7 +192,3 @@ We're open to changing the length of the window as long as we feel this can be d
 If you're strongly opinionated about this, we recommend [opening an issue on GitHub](https://github.com/ethereum-optimism/optimism/issues) explaining your position.
 We *will* hear you out!
 :::
-
-## Token Bridges
-
-Certain interactions, like transferring ETH and ERC20 tokens between the two networks, are common enough that we've built some standard bridge contracts you can make use of. See Standard bridge section.
