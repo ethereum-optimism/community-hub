@@ -34,10 +34,10 @@ You'll just have to follow four basic steps:
 
 ## Writing Contracts
 
-For various technical reasons that I've been too lazy to properly document, users can currently only (realistically) deploy applications to Optimistic Ethereum if they're written in Solidity.
-This is because certain EVM opcodes are banned because they can be used to cause non-determinism during a transaction result challenge.
-What's a transaction result challenge?
-Great question, we really should be documenting these things.
+Due to some technical reasons, users can currently only (realistically) deploy applications to Optimistic Ethereum if they're written in Solidity. The main reason being certain EVM opcodes are banned because they can be used to cause non-determinism during a transaction result challenge.
+
+**What's a transaction result challenge?** 
+
 In short, it's the mechanism by which we make sure that L2 smart contracts are as secure as L1 smart contracts.
 
 Anyway, the point is: **certain opcodes can't be used** (for security reasons), so **we transform them into contract calls** to a special smart contract (the ["Execution Manager"](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/OVM/execution/OVM_ExecutionManager.sol)) that provides the functionality of those opcodes instead.
