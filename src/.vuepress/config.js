@@ -42,6 +42,7 @@ module.exports = {
             '/docs/users/gateway.md',
             '/docs/users/wallets.md',
             '/docs/users/dapps.md',
+            '/docs/users/fees.md'
           ],
           collapsable: false,
           sidebarDepth: 3,
