@@ -27,11 +27,13 @@ Because of this issue, and due to the fact the tests have to run on geth, there 
 few differences between developing contracts for L1 and developing them of Optimistic Ethereum:
 
 
-## Language Limitation
-Contracts have to be written in Solidity, in a version that already has a modified
-compiler ([see the supported versions 
-here](https://github.com/ethereum-optimism/solc-bin/tree/gh-pages/bin)). We would 
-love to provide compilers for Vyper and Yul, but those aren't our priority at the moment.
+## Solidity Contracts
+Contracts have to be written in Solidity, in a version that already has 
+a modified compiler ([see the supported versions 
+here](https://github.com/ethereum-optimism/solc-bin/tree/gh-pages/bin)).
+This lets you use your existing Solidity development skills, and maybe
+even the same contracts you use on L1.
+
 
 
 ## Contract Bytecode Size
