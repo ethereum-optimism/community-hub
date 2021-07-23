@@ -10,7 +10,9 @@ interface for regular Ethereum, so most wallets should work as long as you
 follow these rules:
 
 - Use a valid RPC URL. You can get one, for example, from 
-  [Infura](https://blog.infura.io/infura-launches-support-for-optimistic-ethereum/).
+  [Infura](https://blog.infura.io/infura-launches-support-for-optimistic-ethereum/). Alternatively, you
+  can use [QuickNode](https://www.quicknode.com/chains/optimism). Our
+  end points there are `mainnet.optimism.io` and `kovan.optimism.io`.  
 - Use the correct 
   [chainID](/docs/operations/networks.html): 
   **10** for the production Optimistic Ethereum network, 
