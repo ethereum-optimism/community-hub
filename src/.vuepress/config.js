@@ -108,7 +108,10 @@ module.exports = {
             '/docs/operations/networks.md',
             '/docs/operations/fees.md',
             '/docs/operations/third-party-tools.md',
-            '/docs/operations/network-node.md',
+            [
+              'https://github.com/optimisticben/op-replica/blob/main/README.md',
+              'Running a network node'
+            ],
             '/docs/operations/monitoring.md',
           ],
           collapsable: false,
