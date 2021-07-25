@@ -36,4 +36,4 @@ We know this isn't ideal and we really appreciate your patience while we work ha
 | WebSocket Endpoint | **`wss://ws-mainnet.optimism.io`** |
 
 ## Deployments
-Latest deployments information can be found at [https://github.com/ethereum-optimism/optimism/tree/master/packages/contracts/deployments](https://github.com/ethereum-optimism/optimism/tree/master/packages/contracts/deployments)
+Latest deployments information, including contract addresses, can be found at [https://github.com/ethereum-optimism/optimism/tree/master/packages/contracts/deployments](https://github.com/ethereum-optimism/optimism/tree/master/packages/contracts/deployments)
