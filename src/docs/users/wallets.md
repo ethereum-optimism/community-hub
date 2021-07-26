@@ -21,27 +21,12 @@ follow these rules:
   freely editable as they are on L1 Ethereum.
 
 
-These are wallets that we verified work with Optimistic Ethereum:
+Supported wallets on Optimistic Ethereum:
 
+<img style="vertical-align:baseline; float:left; width:20px; height:20px;" src="./metamask.png">[Metamask, see the detailed tutorial](/docs/users/metamask.html)
 
-## Metamask 
+<img style="vertical-align:baseline; float:left; width:20px; height:20px;" src="./imToken.jpeg">[imToken](https://support.token.im/hc/en-us/articles/900006289803-How-to-use-Layer-2-network-through-imToken's-custom-network-function-)
 
-[See the detailed tutorial here](http://localhost:8080/docs/users/metamask.html)
+<img style="vertical-align:baseline; float:left; width:20px; height:20px;" src="./rainbow.png">[Rainbow Wallet](https://github.com/rainbow-me/rainbow)
 
-## ImToken
-
-[Click here for an explanation of how to use imToken with Optimistic 
-Ethereum](https://support.token.im/hc/en-us/articles/900006289803-How-to-use-Layer-2-network-through-imToken's-custom-network-function-)
-
-
-## Rainbow Wallet
-
-[Rainbow Wallet](https://rainbow.me/) has a [pull request with
-Optimistic Ethereum 
-support](https://github.com/rainbow-me/rainbow/pull/2116).
-
-
-## Coinbase Wallet 
-
-[Coinbase Wallet also supports Optimistic 
-Ethereum](https://medium.com/ethereum-optimism/improving-ux-on-l2-ff2f88f44836)
+<img style="vertical-align:baseline; float:left; width:20px; height:20px;" src="./coinbase.png">[Coinbase Wallet](https://medium.com/ethereum-optimism/improving-ux-on-l2-ff2f88f44836)
