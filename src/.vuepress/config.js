@@ -112,7 +112,7 @@ module.exports = {
               'Running a network node'
             ],
             '/docs/infra/monitoring.md',
-            '/docs/infra/monitoring-tools.md'            
+            '/docs/infra/third-party-tools.md'            
           ],
           collapsable: false,
           sidebarDepth: 1,
