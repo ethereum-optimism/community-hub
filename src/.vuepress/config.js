@@ -103,16 +103,16 @@ module.exports = {
           sidebarDepth: 1,
         },
         {
-          title: 'OPerations',
+          title: 'Infrastructure',
           children: [
-            '/docs/operations/networks.md',
-            '/docs/operations/fees.md',
-            '/docs/operations/third-party-tools.md',
+            '/docs/infra/networks.md',
+            '/docs/infra/fees.md',
             [
               'https://github.com/optimisticben/op-replica/blob/main/README.md',
               'Running a network node'
             ],
-            '/docs/operations/monitoring.md',
+            '/docs/infra/monitoring.md',
+            '/docs/infra/monitoring-tools.md'            
           ],
           collapsable: false,
           sidebarDepth: 1,
