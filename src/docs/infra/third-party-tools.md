@@ -87,7 +87,7 @@ lang: en-US
 
 | Mainnet Support | Kovan Testnet Support |
 | --------------- | --------------------- |
-| ☑               |                       |
+| ☑               | Soon™                 |
 
 ---
 
@@ -104,7 +104,7 @@ lang: en-US
 
 | Mainnet Support | Kovan Testnet Support |
 | --------------- | --------------------- |
-| ☑               |                       |
+| ☑               | Soon™                 |
 
 ---
 
