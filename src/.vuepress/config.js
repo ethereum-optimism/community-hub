@@ -83,7 +83,7 @@ module.exports = {
                 '/docs/developers/l2/dev-node.md',
                 '/docs/developers/l2/hardhat.md',
                 '/docs/developers/l2/truffle.md',                
-                '/docs/developers/l2/convert.md',
+                '/docs/developers/l2/convert.md', 
                 '/docs/developers/l2/block-time.md',
                 '/docs/developers/l2/rpc.md',
               ]
@@ -98,6 +98,7 @@ module.exports = {
               ]
             },
             '/docs/developers/tools.md',
+            '/docs/developers/fees.md',            
           ],
           collapsable: false,
           sidebarDepth: 1,
@@ -106,7 +107,6 @@ module.exports = {
           title: 'Infrastructure',
           children: [
             '/docs/infra/networks.md',
-            '/docs/infra/fees.md',
             [
               'https://github.com/optimisticben/op-replica/blob/main/README.md',
               'Running a network node'
