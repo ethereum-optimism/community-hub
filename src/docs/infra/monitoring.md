@@ -1,9 +1,6 @@
 ---
-title: Monitoring
+title: Monitoring (coming soon)
 lang: en-US
 ---
 
 # {{ $frontmatter.title }}
-
-
-Link to https://duneanalytics.com/Marcov/Optimism-Ethereum

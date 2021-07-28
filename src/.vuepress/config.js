@@ -1,7 +1,7 @@
 const { description } = require('../../package')
 
 module.exports = {
-  title: 'Stay Optimistic.',
+  title: 'Stay Optimistic',
   description: description,
 
   head: [
@@ -105,6 +105,7 @@ module.exports = {
               ]
             },
             '/docs/developers/tools.md',
+            '/docs/developers/util.md',
             '/docs/developers/fees.md'
           ],
           collapsable: true,
