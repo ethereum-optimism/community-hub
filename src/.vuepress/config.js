@@ -49,6 +49,7 @@ module.exports = {
         },
         {
           title: 'Developer Docs',
+          sidebarDepth: 3,
           children: [
             // Moved Learning resources to the top because
             // it's the first thing I want noobs to see. 
@@ -71,12 +72,12 @@ module.exports = {
                 [
                      'https://github.com/ethereum-optimism/optimism-tutorial/tree/main/l1-l2-deposit-withdrawal',
                      'ERC20 deposit-withdrawal example'
-                ],
+                ], 
                 [
                      'https://github.com/ethereum-optimism/optimism-tutorial/tree/main/',
                      'Generic L1-L2 example (coming soon)'
                 ],
-                '/docs/developers/talks.md',
+                '/docs/developers/talks.md'
               ]
             },
             {
@@ -88,7 +89,7 @@ module.exports = {
                 '/docs/developers/l2/dev-node.md',
                 '/docs/developers/l2/hardhat.md',
                 '/docs/developers/l2/truffle.md',
-                '/docs/developers/l2/remix.md',                
+                '/docs/developers/l2/remix.md',            
                 '/docs/developers/l2/convert.md', 
                 '/docs/developers/l2/block-time.md',
                 '/docs/developers/l2/rpc.md',
@@ -100,14 +101,13 @@ module.exports = {
                 // Common (standard bridge) before
                 // rare (messaging)
                 '/docs/developers/bridge/standard-bridge.md',
-                '/docs/developers/bridge/messaging.md',
+                '/docs/developers/bridge/messaging.md'
               ]
             },
             '/docs/developers/tools.md',
             '/docs/developers/fees.md'
           ],
           collapsable: true,
-          sidebarDepth: 1,
         },
         {
           title: 'Infrastructure',
