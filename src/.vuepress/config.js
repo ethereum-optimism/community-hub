@@ -45,11 +45,11 @@ module.exports = {
             '/docs/users/fees.md'
           ],
           collapsable: true,
-          sidebarDepth: 3,
+          sidebarDepth: 2,
         },
         {
           title: 'Developer Docs',
-          sidebarDepth: 3,
+          sidebarDepth: 1,
           children: [
             // Moved Learning resources to the top because
             // it's the first thing I want noobs to see. 
