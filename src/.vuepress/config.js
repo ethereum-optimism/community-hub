@@ -44,14 +44,14 @@ module.exports = {
             '/docs/users/dapps.md',
             '/docs/users/fees.md'
           ],
-          collapsable: false,
+          collapsable: true,
           sidebarDepth: 3,
         },
         {
           title: 'Developer Docs',
           children: [
             // Moved Learning resources to the top because
-            // it's the first thing I want noobs to see.
+            // it's the first thing I want noobs to see. 
             {
               title: 'Learning resources',
               children: [
@@ -63,6 +63,7 @@ module.exports = {
                      'https://github.com/ethereum-optimism/optimism-tutorial/tree/main/truffle',
                      'Optimistic Ethereum with Truffle'
                 ],
+                '/docs/developers/l2/remix.md',
                 [
                      'https://github.com/ethereum-optimism/optimism-tutorial/tree/main/standard-bridge-token',
                      'Bridging your ERC20 token'
@@ -73,7 +74,7 @@ module.exports = {
                 ],
                 [
                      'https://github.com/ethereum-optimism/optimism-tutorial/tree/main/',
-                     'Generic L1-L2 example'
+                     'Generic L1-L2 example (coming soon)'
                 ],
                 '/docs/developers/talks.md',
               ]
@@ -87,7 +88,8 @@ module.exports = {
                 '/docs/developers/l2/dev-node.md',
                 '/docs/developers/l2/hardhat.md',
                 '/docs/developers/l2/truffle.md',
-                '/docs/developers/l2/convert.md',
+                '/docs/developers/l2/remix.md',                
+                '/docs/developers/l2/convert.md', 
                 '/docs/developers/l2/block-time.md',
                 '/docs/developers/l2/rpc.md',
               ]
@@ -102,9 +104,9 @@ module.exports = {
               ]
             },
             '/docs/developers/tools.md',
-            '/docs/developers/fees.md',
+            '/docs/developers/fees.md'
           ],
-          collapsable: false,
+          collapsable: true,
           sidebarDepth: 1,
         },
         {
@@ -118,7 +120,7 @@ module.exports = {
             '/docs/infra/monitoring.md',
             '/docs/infra/third-party-tools.md'
           ],
-          collapsable: false,
+          collapsable: true,
           sidebarDepth: 1,
         },
         {
@@ -128,7 +130,7 @@ module.exports = {
             '/docs/protocol/evm-comparison.md',
             '/docs/protocol/protocol-readings.md',
           ],
-          collapsable: false,
+          collapsable: true,
           sidebarDepth: 1,
         }
       ],
