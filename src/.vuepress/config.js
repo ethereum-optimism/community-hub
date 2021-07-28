@@ -51,7 +51,7 @@ module.exports = {
           title: 'Developer Docs',
           children: [
             // Moved Learning resources to the top because
-            // it's the first thing I want noobs to see. 
+            // it's the first thing I want noobs to see.
             {
               title: 'Learning resources',
               children: [
@@ -64,7 +64,11 @@ module.exports = {
                      'Optimistic Ethereum with Truffle'
                 ],
                 [
-                     'https://github.com/ethereum-optimism/optimism-tutorial/tree/main/',
+                     'https://github.com/ethereum-optimism/optimism-tutorial/tree/main/standard-bridge-token',
+                     'Bridging your ERC20 token'
+                ],
+                [
+                     'https://github.com/ethereum-optimism/optimism-tutorial/tree/main/l1-l2-deposit-withdrawal',
                      'ERC20 deposit-withdrawal example'
                 ],
                 [
@@ -82,8 +86,8 @@ module.exports = {
               children: [
                 '/docs/developers/l2/dev-node.md',
                 '/docs/developers/l2/hardhat.md',
-                '/docs/developers/l2/truffle.md',                
-                '/docs/developers/l2/convert.md', 
+                '/docs/developers/l2/truffle.md',
+                '/docs/developers/l2/convert.md',
                 '/docs/developers/l2/block-time.md',
                 '/docs/developers/l2/rpc.md',
               ]
@@ -98,7 +102,7 @@ module.exports = {
               ]
             },
             '/docs/developers/tools.md',
-            '/docs/developers/fees.md',            
+            '/docs/developers/fees.md',
           ],
           collapsable: false,
           sidebarDepth: 1,
@@ -112,7 +116,7 @@ module.exports = {
               'Running a network node'
             ],
             '/docs/infra/monitoring.md',
-            '/docs/infra/third-party-tools.md'            
+            '/docs/infra/third-party-tools.md'
           ],
           collapsable: false,
           sidebarDepth: 1,
