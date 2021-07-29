@@ -324,5 +324,8 @@ Wraps Uniswap V3 positions in the ERC721 non-fungible token interface
 
 
 
+## Synthetix
 
+[Optimistic Ethereum contracts](https://docs.synthetix.io/addresses/#mainnet-optimism-l2)
 
+[Optimisitic Kovan contracts](https://docs.synthetix.io/addresses/#kovan-optimism-l2)
