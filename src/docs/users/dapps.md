@@ -5,9 +5,11 @@ lang: en-US
 
 # {{ $frontmatter.title }}
 
-## Synthetix
+## Mainnet
 
-[<img src="../../assets/logos/synthetix.svg" align="left">](https://synthetix.io/)
+### Synthetix
+
+<img src="../../assets/logos/synthetix.png" width="200" align="right">
 
 [Synthetix](https://docs.synthetix.io/litepaper) is a system designed to
 let users hold and trade synthetic assets whose value can be tied to
@@ -22,11 +24,9 @@ rate and a percent of every transaction in the synthetic assets.
 learn how Optimistic Ethereum lets stakers run their transactions at a
 lower price.
 
+### Uniswap
 
-## Uniswap
-
-
-[<img src="../../assets/logos/uniswap.svg" width="100" height="100" align="left">](https://uniswap.io)
+<img src="../../assets/logos/uniswap.svg" width="200" align="right">
 
 [The Uniswap protocol](https://docs.uniswap.org/protocol/what-is-uniswap)
 is a peer-to-peer system designed for

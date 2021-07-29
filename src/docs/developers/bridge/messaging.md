@@ -1,5 +1,5 @@
 ---
-title: Sending data between L1 and L2
+title: Sending Data Between L1 and L2
 lang: en-US
 ---
 

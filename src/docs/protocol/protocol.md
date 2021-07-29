@@ -1,5 +1,5 @@
 ---
-title: Contracts overview
+title: Contract Overview
 lang: en-US
 tags:
     - contracts

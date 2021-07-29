@@ -5,9 +5,9 @@ module.exports = {
   description: description,
 
   head: [
-    [ 'meta', { name: 'theme-color', content: '#3eaf7c' } ],
-    [ 'meta', { name: 'apple-mobile-web-app-capable', content: 'yes' } ],
-    [ 'meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' } ]
+    ['meta', { name: 'theme-color', content: '#3eaf7c' }],
+    ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
+    ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }]
   ],
 
   themeConfig: {
@@ -36,11 +36,34 @@ module.exports = {
     sidebar: {
       '/docs/': [
         {
-          title: 'Users',
+          title: 'User Docs',
           children: [
+            // {
+            //   title: 'Supported Wallets',
+            //   children: [
+            //     [
+            //       '/docs/users/metamask.md',
+            //       'MetaMask'
+            //     ],
+            //     [
+            //       `https://rainbow.me/`,
+            //       `Rainbow`
+            //     ],
+            //     [
+            //       `https://support.token.im/hc/en-us/articles/900006289803-How-to-use-Layer-2-network-through-imToken's-custom-network-function-`,
+            //       'imToken'
+            //     ],
+            //     [
+            //       `https://medium.com/ethereum-optimism/improving-ux-on-l2-ff2f88f44836`,
+            //       `Coinbase Wallet`
+            //     ]
+            //   ],
+            //   collapsable: false,
+            //   sidebarDepth: 0,
+            // },
             '/docs/users/metamask.md',
-            '/docs/users/gateway.md',
             '/docs/users/wallets.md',
+            '/docs/users/gateway.md',
             '/docs/users/dapps.md',
             '/docs/users/fees.md'
           ],
@@ -56,25 +79,28 @@ module.exports = {
               title: 'Guides and Tutorials',
               children: [
                 [
-                     'https://github.com/ethereum-optimism/optimism-tutorial/tree/main/hardhat',
-                     'Optimistic Ethereum with Hardhat'
+                  'https://github.com/ethereum-optimism/optimism-tutorial/tree/main/hardhat',
+                  'Optimistic Ethereum with Hardhat'
                 ],
                 [
-                     'https://github.com/ethereum-optimism/optimism-tutorial/tree/main/truffle',
-                     'Optimistic Ethereum with Truffle'
-                ],
-                '/docs/developers/l2/remix.md',
-                [
-                     'https://github.com/ethereum-optimism/optimism-tutorial/tree/main/standard-bridge-token',
-                     'Bridging your ERC20 token'
+                  'https://github.com/ethereum-optimism/optimism-tutorial/tree/main/truffle',
+                  'Optimistic Ethereum with Truffle'
                 ],
                 [
-                     'https://github.com/ethereum-optimism/optimism-tutorial/tree/main/l1-l2-deposit-withdrawal',
-                     'ERC20 deposit-withdrawal example'
+                  '/docs/developers/l2/remix.md',
+                  'Optimistic Ethereum with Remix (coming soon)'
+                ],
+                // [
+                //   'https://github.com/ethereum-optimism/optimism-tutorial/tree/main/standard-bridge-token',
+                //   'Bridging your ERC20 token'
+                // ],
+                [
+                  'https://github.com/ethereum-optimism/optimism-tutorial/tree/main/l1-l2-deposit-withdrawal',
+                  'Depositing and Withdrawing ERC20 Tokens'
                 ],
                 [
-                     'https://github.com/ethereum-optimism/optimism-tutorial/tree/main/',
-                     'Generic L1-L2 example (coming soon)'
+                  'https://github.com/ethereum-optimism/optimism-tutorial/tree/main/',
+                  'Generic L1 ⇔ L2 Communication (coming soon)'
                 ],
                 '/docs/developers/talks.md'
               ],
@@ -90,7 +116,6 @@ module.exports = {
                 '/docs/developers/l2/dev-node.md',
                 '/docs/developers/l2/hardhat.md',
                 '/docs/developers/l2/truffle.md',
-                '/docs/developers/l2/remix.md',
                 '/docs/developers/l2/convert.md',
                 '/docs/developers/l2/block-time.md',
                 '/docs/developers/l2/rpc.md',
@@ -122,10 +147,10 @@ module.exports = {
             '/docs/infra/networks.md',
             [
               'https://github.com/optimisticben/op-replica/blob/main/README.md',
-              'Running a network node'
+              'Running a Node'
             ],
+            '/docs/infra/third-party-tools.md',
             '/docs/infra/monitoring.md',
-            '/docs/infra/third-party-tools.md'
           ],
           collapsable: false,
           sidebarDepth: 0,
@@ -143,7 +168,7 @@ module.exports = {
       ],
       '/compare/': [
         {
-          children: [ '' ],
+          children: [''],
           collapsable: false,
           sidebarDepth: 0,
         }

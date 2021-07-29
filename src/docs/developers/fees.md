@@ -1,5 +1,5 @@
 ---
-title: Gas costs on L2
+title: Gas Costs on L2
 lang: en-US
 ---
 

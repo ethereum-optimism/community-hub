@@ -1,5 +1,5 @@
 ---
-title: The Standard™ Bridge
+title: The Standard Bridge
 lang: en-US
 ---
 

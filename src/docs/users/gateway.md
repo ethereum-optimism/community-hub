@@ -1,5 +1,5 @@
 ---
-title: The Optimism Gateway™
+title: The Optimism Gateway
 lang: en-US
 ---
 
