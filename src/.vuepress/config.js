@@ -17,7 +17,7 @@ module.exports = {
     docsDir: 'src',
     docsRepo: 'https://github.com/ethereum-optimism/community-hub',
     docsBranch: 'main',
-    editLinkText: `See a typo? We'd 💖 a pull request over on GitHub`,
+    editLinkText: `Want to suggest a change? We'd 💖 a pull request over on GitHub`,
     lastUpdated: false,
     algolia: {
       apiKey: '47d21d4ea72ed7cb504b1c6c0a46b5a0',
@@ -90,19 +90,18 @@ module.exports = {
                   '/docs/developers/l2/remix.md',
                   'Optimistic Ethereum with Remix (coming soon)'
                 ],
-                // [
-                //   'https://github.com/ethereum-optimism/optimism-tutorial/tree/main/standard-bridge-token',
-                //   'Bridging your ERC20 token'
-                // ],
+                [
+                  'https://github.com/ethereum-optimism/optimism-tutorial/tree/main/standard-bridge-token',
+                  'Registering an ERC20 Token on L2 (coming soon)'
+                ],
                 [
                   'https://github.com/ethereum-optimism/optimism-tutorial/tree/main/l1-l2-deposit-withdrawal',
-                  'Depositing and Withdrawing ERC20 Tokens'
+                  'Depositing and Withdrawing ERC20 Tokens (coming soon)'
                 ],
                 [
                   'https://github.com/ethereum-optimism/optimism-tutorial/tree/main/',
                   'Generic L1 ⇔ L2 Communication (coming soon)'
-                ],
-                '/docs/developers/talks.md'
+                ]
               ],
               collapsable: false,
               sidebarDepth: 0,
@@ -117,6 +116,7 @@ module.exports = {
                 '/docs/developers/l2/hardhat.md',
                 '/docs/developers/l2/truffle.md',
                 '/docs/developers/l2/convert.md',
+                '/docs/developers/l2/contracts.md',
                 '/docs/developers/l2/block-time.md',
                 '/docs/developers/l2/rpc.md',
               ],
@@ -134,9 +134,9 @@ module.exports = {
               collapsable: false,
               sidebarDepth: 0,
             },
-            '/docs/developers/tools.md',
             '/docs/developers/util.md',
-            '/docs/developers/fees.md'
+            '/docs/developers/fees.md',
+            '/docs/developers/talks.md'
           ],
           collapsable: false,
           sidebarDepth: 0,

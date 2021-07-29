@@ -1,5 +1,5 @@
 ---
-title: Truffle Tooling
+title: Tooling for Truffle
 lang: en-US
 ---
 

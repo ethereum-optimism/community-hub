@@ -8,12 +8,6 @@ tags:
 
 # {{ $frontmatter.title }}
 
-::: tip Are we missing something? 🧐
-Want your content featured on this page?
-Think we don't have enough information about a certain topic?
-Hop on the [discord](https://discord.optimism.io) and make a post in `#resources` or [open an issue](https://github.com/ethereum-optimism/community-hub/issues) in the GitHub repo for this site. ✨
-:::
-
 ## [*Optimism 🛠 Overview & Code Walkthrough*](https://www.youtube.com/watch?v=AHYSZ51ATWQ)
 
 * Date: Apr. 2021

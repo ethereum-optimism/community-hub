@@ -1,5 +1,5 @@
 ---
-title: Hardhat Tooling
+title: Tooling for Hardhat
 lang: en-US
 ---
 

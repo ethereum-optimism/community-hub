@@ -1,5 +1,5 @@
 ---
-title: The Optimism Gateway
+title: Depositing and Withdrawing Assets
 lang: en-US
 ---
 
