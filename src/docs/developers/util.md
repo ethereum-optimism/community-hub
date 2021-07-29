@@ -1,5 +1,5 @@
 ---
-title: Utility Contracts
+title: Useful Contract Addresses
 lang: en-US
 ---
 
@@ -11,6 +11,10 @@ These are contracts that are expected to be useful for multiple projects.
 ## Optimism
 
 ### Wrapped Eth
+
+This is the ERC-20 token that is used for gas in Optimistic Ethereum. 
+You can read how to use ERC-20 tokens 
+[here](https://ethereum.org/en/developers/docs/standards/tokens/erc-20/).
 
 [Source](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/OVM/predeploys/OVM_ETH.sol)
 
@@ -187,21 +191,6 @@ Router for stateless execution of swaps against Uniswap V3
 
 
 
-### Multicall V2
-
-Enables calling multiple methods in a single call to the contract
-
-[Source](https://github.com/Uniswap/uniswap-v3-periphery-optimism/blob/54272682985ce05003b3461f72e78f4c992932eb/contracts/base/Multicall.sol)
-
-[Reference](https://docs.uniswap.org/protocol/reference/periphery/base/Multicall)
-
-
-| Network             | Address |
-| ------------------- | ------- |
-| Optimistic Ethereum | [0x90f872b3d8f33f305e0250db6A2761B354f7710A](https://optimistic.etherscan.io/address/0x90f872b3d8f33f305e0250db6A2761B354f7710A) |
-| Optimistic Kovan    | [0x90f872b3d8f33f305e0250db6A2761B354f7710A](https://kovan-optimistic.etherscan.io/address/0x90f872b3d8f33f305e0250db6A2761B354f7710A) |
-
-
 
 ### Proxy Admin
 
@@ -214,10 +203,34 @@ Enables calling multiple methods in a single call to the contract
 | Optimistic Kovan    | [0xB753548F6E010e7e680BA186F9Ca1BdAB2E90cf2](https://kovan-optimistic.etherscan.io/address/0xB753548F6E010e7e680BA186F9Ca1BdAB2E90cf2) |
 
 
+### Transparent Upgradeable Proxy
+
+
+[Source](https://github.com/Uniswap/uniswap-v3-periphery-optimism/blob/54272682985ce05003b3461f72e78f4c992932eb/contracts/TransparentUpgradeableProxyOptimism.sol)
+
+| Network             | Address |
+| ------------------- | ------- |
+| Optimistic Ethereum | [0xEe6A57eC80ea46401049E92587E52f5Ec1c24785](https://optimistic.etherscan.io/address/0xEe6A57eC80ea46401049E92587E52f5Ec1c24785) |
+| Optimistic Kovan    | [0xEe6A57eC80ea46401049E92587E52f5Ec1c24785](https://kovan-optimistic.etherscan.io/address/0xEe6A57eC80ea46401049E92587E52f5Ec1c24785) |
+
 
 
 
 ### Lens
+
+
+#### Multicall
+
+Enables calling multiple methods in a single call to the contract
+
+[Source](https://github.com/Uniswap/uniswap-v3-periphery-optimism/blob/54272682985ce05003b3461f72e78f4c992932eb/contracts/lens/UniswapInterfaceMulticall.sol)
+
+
+| Network             | Address |
+| ------------------- | ------- |
+| Optimistic Ethereum | [0x90f872b3d8f33f305e0250db6A2761B354f7710A](https://optimistic.etherscan.io/address/0x90f872b3d8f33f305e0250db6A2761B354f7710A) |
+| Optimistic Kovan    | [0x90f872b3d8f33f305e0250db6A2761B354f7710A](https://kovan-optimistic.etherscan.io/address/0x90f872b3d8f33f305e0250db6A2761B354f7710A) |
+
 
 #### Quoter
 
@@ -235,8 +248,7 @@ Allows getting the expected amount out or amount in for a given swap without exe
 
 
 
-
-#### Tick Lens
+#### Tick
 
 [Source](https://github.com/Uniswap/uniswap-v3-periphery-optimism/blob/54272682985ce05003b3461f72e78f4c992932eb/contracts/lens/TickLens.sol)
 
@@ -310,19 +322,6 @@ Wraps Uniswap V3 positions in the ERC721 non-fungible token interface
 | Optimistic Ethereum | [0xC36442b4a4522E871399CD717aBDD847Ab11FE88](https://optimistic.etherscan.io/address/0xC36442b4a4522E871399CD717aBDD847Ab11FE88) |
 | Optimistic Kovan    | [0xC36442b4a4522E871399CD717aBDD847Ab11FE88](https://kovan-optimistic.etherscan.io/address/0xC36442b4a4522E871399CD717aBDD847Ab11FE88) |
 
-
-
-
-
-## ???????????????????
-
-### Descriptor Proxy
-
-
-| Network             | Address |
-| ------------------- | ------- |
-| Optimistic Ethereum | [0xEe6A57eC80ea46401049E92587E52f5Ec1c24785](https://optimistic.etherscan.io/address/0xEe6A57eC80ea46401049E92587E52f5Ec1c24785) |
-| Optimistic Kovan    | [0xEe6A57eC80ea46401049E92587E52f5Ec1c24785](https://kovan-optimistic.etherscan.io/address/0xEe6A57eC80ea46401049E92587E52f5Ec1c24785) |
 
 
 
