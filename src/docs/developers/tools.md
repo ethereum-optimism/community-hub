@@ -49,7 +49,7 @@ module.exports = {
     optimistic: {
        url: 'http://127.0.0.1:8545',
        accounts: { mnemonic: 'test test test test test test test test test test test junk' },
-       gasPrice: 15000000,          
+       gasPrice: 15000000,
        ovm: true
     }
   }
@@ -123,20 +123,3 @@ const { predeploys } = require("@eth-optimism/contracts");
 // Returns an address (string)
 const ovmETHAddress = predeploys.OVM_ETH; // or whatever contract
 ```
-
-## [@eth-optimism/smock](https://github.com/ethereum-optimism/optimism/tree/master/packages/smock)
-
-Smock is a `hardhat` plugin that allows you to mock the functionality of any smart contract with just a little bit of JavaScript.
-
-### Installation
-
-Install via `npm` or `yarn`:
-
-```sh
-npm install @eth-optimism/smock
-```
-
-### Usage
-
-See smock's [README on GitHub](https://github.com/ethereum-optimism/optimism/tree/master/packages/smock/README.md) for thorough documentation.
-You can also find a [community example of using Smock](https://soliditydeveloper.com/smock) written by [Markus Waas](https://soliditydeveloper.com/markuswaas/).

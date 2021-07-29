@@ -1,5 +1,5 @@
 ---
-title: Messaging
+title: Sending data between L1 and L2
 lang: en-US
 ---
 

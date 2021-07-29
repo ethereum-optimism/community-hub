@@ -44,17 +44,16 @@ module.exports = {
             '/docs/users/dapps.md',
             '/docs/users/fees.md'
           ],
-          collapsable: true,
-          sidebarDepth: 2,
+          collapsable: false,
+          sidebarDepth: 0,
         },
         {
           title: 'Developer Docs',
-          sidebarDepth: 1,
           children: [
             // Moved Learning resources to the top because
-            // it's the first thing I want noobs to see. 
+            // it's the first thing I want noobs to see.
             {
-              title: 'Learning resources',
+              title: 'Guides and Tutorials',
               children: [
                 [
                      'https://github.com/ethereum-optimism/optimism-tutorial/tree/main/hardhat',
@@ -72,13 +71,15 @@ module.exports = {
                 [
                      'https://github.com/ethereum-optimism/optimism-tutorial/tree/main/l1-l2-deposit-withdrawal',
                      'ERC20 deposit-withdrawal example'
-                ], 
+                ],
                 [
                      'https://github.com/ethereum-optimism/optimism-tutorial/tree/main/',
                      'Generic L1-L2 example (coming soon)'
                 ],
                 '/docs/developers/talks.md'
-              ]
+              ],
+              collapsable: false,
+              sidebarDepth: 0,
             },
             {
               title: 'Working on Optimistic Ethereum',
@@ -89,11 +90,13 @@ module.exports = {
                 '/docs/developers/l2/dev-node.md',
                 '/docs/developers/l2/hardhat.md',
                 '/docs/developers/l2/truffle.md',
-                '/docs/developers/l2/remix.md',            
-                '/docs/developers/l2/convert.md', 
+                '/docs/developers/l2/remix.md',
+                '/docs/developers/l2/convert.md',
                 '/docs/developers/l2/block-time.md',
                 '/docs/developers/l2/rpc.md',
-              ]
+              ],
+              collapsable: false,
+              sidebarDepth: 0,
             },
             {
               title: 'Bridging L1 and L2',
@@ -102,13 +105,16 @@ module.exports = {
                 // rare (messaging)
                 '/docs/developers/bridge/standard-bridge.md',
                 '/docs/developers/bridge/messaging.md'
-              ]
+              ],
+              collapsable: false,
+              sidebarDepth: 0,
             },
             '/docs/developers/tools.md',
             '/docs/developers/util.md',
             '/docs/developers/fees.md'
           ],
-          collapsable: true,
+          collapsable: false,
+          sidebarDepth: 0,
         },
         {
           title: 'Infrastructure',
@@ -121,8 +127,8 @@ module.exports = {
             '/docs/infra/monitoring.md',
             '/docs/infra/third-party-tools.md'
           ],
-          collapsable: true,
-          sidebarDepth: 1,
+          collapsable: false,
+          sidebarDepth: 0,
         },
         {
           title: 'Protocol Specs',
@@ -131,15 +137,15 @@ module.exports = {
             '/docs/protocol/evm-comparison.md',
             '/docs/protocol/protocol-readings.md',
           ],
-          collapsable: true,
-          sidebarDepth: 1,
+          collapsable: false,
+          sidebarDepth: 0,
         }
       ],
       '/compare/': [
         {
           children: [ '' ],
           collapsable: false,
-          sidebarDepth: 1,
+          sidebarDepth: 0,
         }
       ]
     }

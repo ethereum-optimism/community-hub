@@ -1,5 +1,5 @@
 ---
-title: Utility Contracts
+title: Useful Contract Addresses
 lang: en-US
 ---
 
@@ -23,7 +23,7 @@ These are contracts that are expected to be useful for multiple projects.
 
 ### L2 Standard Token Factory
 
-Factory contract for creating standard L2 token representations of 
+Factory contract for creating standard L2 token representations of
 L1 ERC20s compatible with and working on the standard bridge.
 
 
