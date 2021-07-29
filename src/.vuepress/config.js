@@ -61,8 +61,8 @@ module.exports = {
             //   collapsable: false,
             //   sidebarDepth: 0,
             // },
-            '/docs/users/metamask.md',
             '/docs/users/wallets.md',
+            '/docs/users/metamask.md',
             '/docs/users/gateway.md',
             '/docs/users/dapps.md',
             '/docs/users/fees.md'
