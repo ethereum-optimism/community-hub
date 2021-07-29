@@ -16,6 +16,8 @@ lang: en-US
 | Explorer | **`https://kovan-optimistic.etherscan.io`** |
 | HTTP Endpoint | **`https://kovan.optimism.io`** |
 | WebSocket Endpoint | **`wss://ws-kovan.optimism.io`** |
+| L1 Contract Addresses | [link](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/deployments#kovan) |
+| L2 Contract Addresses | [link](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/deployments#layer-2) |
 
 ## Optimistic Ethereum
 
@@ -34,6 +36,5 @@ We know this isn't ideal and we really appreciate your patience while we work ha
 | Explorer | **`https://optimistic.etherscan.io`** |
 | HTTP Endpoint | **`https://mainnet.optimism.io`** |
 | WebSocket Endpoint | **`wss://ws-mainnet.optimism.io`** |
-
-## Deployments
-Latest deployments information, including contract addresses, can be found at [https://github.com/ethereum-optimism/optimism/tree/master/packages/contracts/deployments](https://github.com/ethereum-optimism/optimism/tree/master/packages/contracts/deployments)
+| L1 Contract Addresses | [link](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/deployments#mainnet) |
+| L2 Contract Addresses | [link](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/deployments#layer-2) |
