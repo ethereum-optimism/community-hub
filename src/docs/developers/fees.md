@@ -1,5 +1,5 @@
 ---
-title: Transaction Fees
+title: Gas costs on L2
 lang: en-US
 ---
 
@@ -17,14 +17,14 @@ feedback.
 
 ## L1 Ethereum
 
-In [L1 
+In [L1
 Ethereum](https://ethereum.org/en/developers/docs/gas/#why-do-gas-fees-exist) the cost of a transaction is determined by two
 factors:
 
 - `gasPrice`, the cost of each unit of gas. Users can modify this value
   to trade off between speed and cost.
-- `gasLimit`, the maximum amount of gas the transaction can 
-  spend. This value depends on the transaction, the contract it 
+- `gasLimit`, the maximum amount of gas the transaction can
+  spend. This value depends on the transaction, the contract it
   calls, etc.
 
 The total transaction cost is `gasPrice*gasLimit`.
@@ -60,11 +60,11 @@ Where:
 * `dataPrice` is a variable that reflects the current cost of publishing
   data to Layer 1.
 * `gasUsed` is the standard result of `eth_estimateGas` for a transaction.
-* `executionPrice` is a variable that reflects the current congestion 
+* `executionPrice` is a variable that reflects the current congestion
   level on Layer 2, much like the `baseFeePerGas` on Layer 1.
 
 So we need to fit four parameters into a user interface that is only
-designed to handle two: `gasPrice` and `gasLimit`. 
+designed to handle two: `gasPrice` and `gasLimit`.
 
 The way we do it is to set `gasPrice` to a fixed amount, 0.015 gwei.
 Then, when you call `eth_estimateGas` to get the value for `gasLimit`
@@ -84,14 +84,14 @@ knowing that you need to run `eth_estimateGas`, use that as your
 transaction gas limit, and use a gas price of 0.015 gwei.
 
 ::: tip
-In Optimistic Ethereum the cost of a transaction is always 
+In Optimistic Ethereum the cost of a transaction is always
 `tx.gasLimit*tx.gasPrice`, in contrast to L1 where it can be lower.
 :::
 
 
 ### L1 to L2 Transactions
 
-For an L1 to L2 transaction you only pay the L1 cost. You send a 
+For an L1 to L2 transaction you only pay the L1 cost. You send a
 transaction to the [`OVM_L1CrossDomainMessenger`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/OVM/bridge/messaging/OVM_L1CrossDomainMessenger.sol)
 contract, which then sends a call to [`OVM_L1CrossDomainMessenger`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/OVM/bridge/messaging/OVM_L1CrossDomainMessenger.sol).
 
@@ -102,8 +102,8 @@ Each message from L2 to L1 requires two transactions:
 1. An L2 transaction that *initiates* the transaction, which is priced
    the same way that pure L2 transactions are priced.
 1. An L1 transaction that *finalizes* the transaction. This transaction
-   is expensive because it includes [verifying](https://github.com/ethereum-optimism/optimism/blob/467d6cb6a4a35f2f8c3ea4cfa4babc619bafe7d2/packages/contracts/contracts/optimistic-ethereum/libraries/trie/Lib_MerkleTrie.sol#L73-L93) 
-   a [Merkle trie](https://eth.wiki/fundamentals/patricia-tree) 
-   inclusion proof. On the production network this transaction has to 
+   is expensive because it includes [verifying](https://github.com/ethereum-optimism/optimism/blob/467d6cb6a4a35f2f8c3ea4cfa4babc619bafe7d2/packages/contracts/contracts/optimistic-ethereum/libraries/trie/Lib_MerkleTrie.sol#L73-L93)
+   a [Merkle trie](https://eth.wiki/fundamentals/patricia-tree)
+   inclusion proof. On the production network this transaction has to
    happen at least a week after the initializing transaction to allow
    for the challenge-response process.

@@ -1,5 +1,5 @@
 ---
-title: Protocol in Detail
+title: Contracts overview
 lang: en-US
 tags:
     - contracts

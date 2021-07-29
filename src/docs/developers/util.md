@@ -27,7 +27,7 @@ You can read how to use ERC-20 tokens
 
 ### L2 Standard Token Factory
 
-Factory contract for creating standard L2 token representations of 
+Factory contract for creating standard L2 token representations of
 L1 ERC20s compatible with and working on the standard bridge.
 
 
