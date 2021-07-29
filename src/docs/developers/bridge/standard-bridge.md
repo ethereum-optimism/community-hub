@@ -1,5 +1,5 @@
 ---
-title: The Standard Bridge
+title: Using the Standard Bridge
 lang: en-US
 ---
 
