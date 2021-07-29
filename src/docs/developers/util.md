@@ -21,6 +21,20 @@ These are contracts that are expected to be useful for multiple projects.
 | Optimistic Kovan    | [0x4200000000000000000000000000000000000006](https://kovan-optimistic.etherscan.io/address/0x4200000000000000000000000000000000000006) |
 
 
+### L2 Standard Token Factory
+
+Factory contract for creating standard L2 token representations of 
+L1 ERC20s compatible with and working on the standard bridge.
+
+
+[Source](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/OVM/bridge/tokens/OVM_L2StandardTokenFactory.sol)
+
+
+| Network             | Address |
+| ------------------- | ------- |
+| Optimistic Ethereum | [0x2e985AcD6C8Fa033A4c5209b0140940E24da7C5C](https://optimistic.etherscan.io/address/0x2e985AcD6C8Fa033A4c5209b0140940E24da7C5C) |
+| Optimistic Kovan    | [0x50EB44e3a68f1963278b4c74c6c343508d31704C](https://kovan-optimistic.etherscan.io/address/0x50EB44e3a68f1963278b4c74c6c343508d31704C) |
+
 
 
 ## Uniswap Core
