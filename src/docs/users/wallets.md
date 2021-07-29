@@ -23,10 +23,10 @@ follow these rules:
 
 Supported wallets on Optimistic Ethereum:
 
-<img style="vertical-align:baseline; float:left; width:20px; height:20px;" src="./metamask.png">[Metamask, see the detailed tutorial](/docs/users/metamask.html)
+<img style="vertical-align:baseline; float:left; width:20px; height:20px;" src="../../assets/logos/metamask.png">[Metamask, see the detailed tutorial](/docs/users/metamask.html)
 
-<img style="vertical-align:baseline; float:left; width:20px; height:20px;" src="./imToken.jpeg">[imToken](https://support.token.im/hc/en-us/articles/900006289803-How-to-use-Layer-2-network-through-imToken's-custom-network-function-)
+<img style="vertical-align:baseline; float:left; width:20px; height:20px;" src="../../assets/logos/imtoken.jpeg">[imToken](https://support.token.im/hc/en-us/articles/900006289803-How-to-use-Layer-2-network-through-imToken's-custom-network-function-)
 
-<img style="vertical-align:baseline; float:left; width:20px; height:20px;" src="./rainbow.png">[Rainbow Wallet](https://github.com/rainbow-me/rainbow)
+<img style="vertical-align:baseline; float:left; width:20px; height:20px;" src="../../assets/logos/rainbow.png">[Rainbow Wallet](https://github.com/rainbow-me/rainbow)
 
-<img style="vertical-align:baseline; float:left; width:20px; height:20px;" src="./coinbase.png">[Coinbase Wallet](https://medium.com/ethereum-optimism/improving-ux-on-l2-ff2f88f44836)
+<img style="vertical-align:baseline; float:left; width:20px; height:20px;" src="../../assets/logos/coinbase-wallet.png">[Coinbase Wallet](https://medium.com/ethereum-optimism/improving-ux-on-l2-ff2f88f44836)

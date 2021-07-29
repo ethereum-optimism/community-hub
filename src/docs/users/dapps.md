@@ -7,7 +7,7 @@ lang: en-US
 
 ## Synthetix
 
-[<img src="./synthetix.svg" align="left">](https://synthetix.io/)
+[<img src="../../assets/logos/synthetix.svg" align="left">](https://synthetix.io/)
 
 [Synthetix](https://docs.synthetix.io/litepaper) is a system designed to
 let users hold and trade synthetic assets whose value can be tied to
@@ -26,7 +26,7 @@ lower price.
 ## Uniswap
 
 
-[<img src="./uniswap-logo.4a50b488.svg" width="100" height="100" align="left">](https://uniswap.io)
+[<img src="../../assets/logos/uniswap.svg" width="100" height="100" align="left">](https://uniswap.io)
 
 [The Uniswap protocol](https://docs.uniswap.org/protocol/what-is-uniswap)
 is a peer-to-peer system designed for
