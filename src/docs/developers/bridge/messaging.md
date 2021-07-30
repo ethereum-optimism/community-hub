@@ -9,7 +9,7 @@ Apps on Optimistic Ethereum can be made to interact with apps on Ethereum via a 
 In a nutshell, **contracts on Optimistic Ethereum can send messages to contracts on Ethereum, and vice versa**.
 With just a little bit of elbow grease, you too can create contracts that bridge the gap between Layer 1 and Layer 2!
 
-## Understanding Contract Calls
+## Understanding contract calls
 
 In order to understand the process of creating bridges between contracts on Layer 1 and Layer 2, you should first have a basic understanding of the way contracts on *Ethereum* communicate with one another.
 If you're a smart contract developer, you might be familiar with stuff like this:
@@ -59,7 +59,7 @@ contract MyOtherContract {
 Here we're using the [low-level "call" function](https://docs.soliditylang.org/en/v0.8.4/units-and-global-variables.html#members-of-address-types) and one of the [ABI encoding functions built into Solidity](https://docs.soliditylang.org/en/v0.8.4/units-and-global-variables.html#abi-encoding-and-decoding-functions).
 Although these two code snippets look a bit different, they're actually functionally identical.
 
-## L1 ⇔ L2 Communication Basics
+## L1 ⇔ L2 communication basics
 
 Cool!
 Now that you have a general idea of how contracts on Ethereum interact with one another, let's take a look at how we do the same thing *between* Optimistic Ethereum and Ethereum.
@@ -163,7 +163,7 @@ modifier onlyOwner() {
 }
 ```
 
-## Understanding the Challenge Period
+## Understanding the challenge period
 
 One of the most important things to understand about L1 ⇔ L2 interaction is that **messages sent from Layer 2 to Layer 1 cannot be relayed for at least one week**.
 This means that any messages you send from Layer 2 will only be received on Layer 1 after this one week period has elapsed.
