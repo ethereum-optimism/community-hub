@@ -5,7 +5,7 @@ lang: en-US
 
 # {{ $frontmatter.title }}
 
-## Finding Contract Addresses
+## Finding contract addresses
 
 Check out the [Networks and Connection Details page](/docs/infra/networks.md) for links to the contract addresses for each network.
 You can also find the addresses for all networks in the [`deployments` folder](https://github.com/ethereum-optimism/optimism/tree/master/packages/contracts/deployments) of the [`contracts` package](https://github.com/ethereum-optimism/optimism/tree/master/packages/contracts).

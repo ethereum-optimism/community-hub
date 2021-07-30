@@ -8,7 +8,7 @@ lang: en-US
 Most JSON-RPC methods in Optimistic Ethereum are identical to the corresponding methods in the Ethereum JSON-RPC API.
 However, a few JSON-RPC methods have been added or changed to better fit the needs of Optimistic Ethereum.
 
-## Modified JSON-RPC Methods
+## Modified JSON-RPC methods
 
 ### `eth_estimateGas`
 
@@ -21,7 +21,7 @@ Currently, Optimistic Ethereum blocks only include a single transaction.
 If you query `eth_getBlockByNumber` or `eth_getBlockByHash`, you should expect to only see one transaction.
 Note that this increases the number of blocks produced by the network, which may have an impact on the performance of applications that assume a slower block production rate.
 
-## Added JSON-RPC Methods
+## Added JSON-RPC methods
 
 ::: tip On custom JSON-RPC methods
 Our custom JSON-RPC methods are highly subject to change.
@@ -123,7 +123,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"rollup_gasPrices","params":[],"i
 }
 ```
 
-## Unsupported JSON-RPC Methods
+## Unsupported JSON-RPC methods
 
 ### `eth_getAccounts`
 

@@ -7,18 +7,18 @@ lang: en-US
 
 Block numbers and timestamps in Optimistic Ethereum are similar, but not entirely identical, to those in Ethereum.
 
-## Block Numbers
+## Block numbers
 
 There are currently two different things that we refer to as "block numbers" within Optimistic Ethereum:
 
-1. **L2 Geth Block Number**
+### L2 Geth Block Number
 
 The **L2 Geth block number** refers to the number of blocks in the L2 blockchain.
 Because we mine one block per transaction, this is the same as the number of transactions in the chain.
 This is the value returned by the `eth_getBlockNumber` JSON-RPC endpoint.
 If you'd like to query a specific L2 block, you will refer to the block by it's L2 Geth block number.
 
-2. **OVM Block Number**
+### OVM Block Number
 
 When you call `block.number` inside of a contract, you will get the **OVM block number**.
 This block number corresponds to the L1 block number of the last confirmed L1 ⇒ L2 transaction.
@@ -33,7 +33,7 @@ Every OVM transaction has an additional field, `l1BlockNumber`, which contains t
 
 ## Timestamps
 
-1. **OVM Timestamp**
+### OVM Timestamp
 
 Unlike with the block number, there is no difference between the **L2 Geth timestamp** and the **OVM timestamp**.
 The timestamp of a block when queried via the `eth_getBlockByNumber` JSON-RPC endpoint is the same as the value of `block.timestamp` inside of a contract executed within that block.

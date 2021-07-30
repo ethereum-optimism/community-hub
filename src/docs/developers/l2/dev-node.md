@@ -22,7 +22,7 @@ You'll need to install the following before you can continue:
 1. [Node.js](https://nodejs.org/en/), version 12 or later
 1. [Classic Yarn](https://classic.yarnpkg.com/lang/en/)
 
-## Building the Node
+## Building the node
 
 With the packages installed, the next step is to build the node:
 
@@ -55,9 +55,9 @@ With the packages installed, the next step is to build the node:
 
 5. Wait for the "Build complete" message to appear.
 
-## Using the Node
+## Using the node
 
-### Starting the Node
+### Starting the node
 
 Starting the node is a single command:
 
@@ -75,7 +75,7 @@ cd optimism/ops
 scripts/wait-for-sequencer.sh
 ```
 
-### Accessing the Node
+### Accessing the node
 
 `docker-compose up` creates both an L1 node and an L2 node.
 You can interact with both of these nodes at the following ports:
@@ -100,7 +100,7 @@ You can also generate the complete list of accounts and private keys by running:
 npx hardhat node
 ```
 
-### Accessing the Logs
+### Accessing Logs
 
 The logs appear on the command-line window used for the `docker-compose up` command, but they scroll too quickly to be of much use.
 If you'd like to look at the logs for a specific container, you'll first need to know the name of the container you want to inspect.
