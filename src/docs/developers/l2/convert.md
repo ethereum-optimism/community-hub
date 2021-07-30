@@ -5,110 +5,68 @@ lang: en-US
 
 # {{ $frontmatter.title }}
 
-Optimistic Ethereum contracts are subject to a few limitations, because they need to
-be able to run in two separate environments:
+::: warning NOTICE
+This page refers to the design of the current iteration of the Optimistic Ethereum protocol.
+Details here are subject to change as the Optimistic Ethereum protocol evolves.
+:::
 
-- In Optimistic Ethereum itself, for normal operations.
-- Inside a virtualized environment on the main Ethereum network in case of a
-  [transaction challenge](/docs/protocol/protocol.html#transaction-challenge-contracts).
+## Useful background info
 
-The issue is that even if the state of the contract is identical, certain 
-opcodes such as `CHAINID` and `TIMESTAMP` produce different results. This could
-result in a legitimate transaction result being challenged, and the challenge producing
-a different result.
+Optimistic Ethereum contracts are (currently) subject to a few limitations that don't exist on Ethereum
+These limitations arise because contracts need to be executable under two circumstances:
+1. In Optimistic Ethereum itself, for normal operations.
+1. Inside a virtualized environment on the main Ethereum network in case of a [transaction result challenge](/docs/protocol/protocol.html#transaction-challenge-contracts).
 
-Optimistic Ethereum gets around this problem by using a slightly modified Solidity
-compiler. Where the standard compiler produces those opcodes, the Optimistic version
-produces a call to a different contract that provides consistent information, whether
-we are running in L1 or L2. [You can see the list of replaced opcodes 
-here](/docs/protocol/evm-comparison.html#replaced-opcodes). 
+During a transaction result challenge, a transaction is re-executed on L1 in order to check the result of the transaction on L2.
+Certain opcodes like `CHAINID` and `TIMESTAMP` would cause this re-execution to produce completely different results.
+This could result in a legitimate transaction result being considered invalid even if the result was completely correct.
 
-Because of this issue, and due to the fact the tests have to run on geth, there are a 
-few differences between developing contracts for L1 and developing them of Optimistic Ethereum:
+Optimistic Ethereum circumvents this problem by using a slightly modified Solidity compiler.
+Where the standard compiler produces those opcodes, the Optimistic version produces a call to a special contract (the "Execution Manager") that provides consistent behavior for these opcodes, whether we're running in L1 or L2.
+[You can see the list of replaced opcodes here](/docs/protocol/evm-comparison.html#replaced-opcodes). 
 
+As a result of the requirement that we have this modified compiler, there are a few key differences between the process of developing apps for Ethereum and for Optimistic Ethereum.
+Here are the most important things to keep in mind.
 
-## Solidity Contracts
-Contracts have to be written in Solidity, in a version that already has 
-a modified compiler ([see the supported versions 
-here](https://github.com/ethereum-optimism/solc-bin/tree/gh-pages/bin)).
-This lets you use your existing Solidity development skills, and maybe
-even the same contracts you use on L1.
+## Solidity contracts
 
+Contracts **must** currently be written in Solidity.
+You must also use a Solidity version that has a corresponding modified compiler.
+You can find a full list of supported versions [over on GitHub](https://github.com/ethereum-optimism/solc-bin/tree/gh-pages/bin).
 
+We're actively exploring support for other languages (like Vyper) and alternative protocol designs that may obviate the need for the modified compiler entirely.
 
-## Contract Bytecode Size
+## Contract bytecode size
 
-The length limit is still 
-[24 kB](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-170.md). 
-However, we are replacing 
-[opcodes](/docs/protocol/evm-comparison.html#replaced-opcodes), which 
-are one byte long each, with contract calls which require multiple opcodes. 
-This means that a contract that was close to the limit when compiled with
-normal Solidity might be over the limit with our version of the compiler. 
+The contract code size limit on Optimistic Ethereum is the same [24 kB](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-170.md) limit as on Ethereum. 
+However, the modified Solidity compiler replaces certain [opcodes](/docs/protocol/evm-comparison.html#replaced-opcodes) with contract calls (which take up a few bytes). 
+This means that a contract that was close to the limit when compiled with normal Solidity might be over the limit with our version of the compiler. 
 
-To solve this, remember that the 24 kB limit is *per contract*. If you need more you 
-can always move some of your code to 
-[a library](https://docs.soliditylang.org/en/v0.8.6/contracts.html#libraries),
-which means that code would be placed in a different contract. 
+If you're finding that your contracts are exceeding the 24 kB limit, you should consider moving some of your code into [external libraries](https://docs.soliditylang.org/en/v0.8.6/contracts.html#libraries).
 
+## Constructor parameters
 
-## Constructor Parameters
+Contracts must run through a static analysis that guarantees that they do not contain any [banned opcodes](/docs/protocol/evm-comparison.html#replaced-opcodes).
+Under a few special circumstances, contract constructors can fail to pass this static analysis even though the rest of the contract is considered "safe".
+As a result, users need to be careful when designing contracts with constructors.
 
-Constructor parameters are discouraged. They are a problem because of the 
-interaction of two factors:
-- Optimistic Ethereum has to check that code running on the L2 chain
-  does not contain any of the problem opcodes. As this is a security check, it
-  has to be done by a contract on the blockchain.
-- Contracts can have 
-  [constructors](https://docs.soliditylang.org/en/v0.8.6/contracts.html). However, as
-  there is no other mechanism to provide constructors with parameters, their 
-  parameters are provided as part of the constructor code.
+Generally speaking, we encourage devs to follow these guidelines:
+1. If you're able to change your inputs without breaking the contract, then you're *probably* fine when using constructors. You may have to try different input configurations until you find an input that passes the static analysis. For instance, if you're passing an `address` as an input, you may have to try multiple different addresses until you find one that works.
+2. If you are *not* able to change your inputs without breaking the contract, then you should explicitly test the constructor with the inputs that you expect to provide. If you find that you are unable to pass the static analysis, you should consider using the [initializable](https://docs.openzeppelin.com/upgrades-plugins/1.x/writing-upgradeable) pattern linked below.
+3. If you're designing a contract *factory* system, you should be very careful about using constructors. You should almost definitely be using the initialaizable pattern instead.
 
-The problem is that Optimistic Ethereum has no way to distinguish between code,
-where having certain opcodes is a problem, and the constructor parameters where
-those same bytes could exist innocently. As a result, if it sees such values it
-rejects the constructor.
+### Using the initializable pattern
 
-The solution is to use 
-[Initializable](
-https://docs.openzeppelin.com/upgrades-plugins/1.x/writing-upgradeable) contracts.
-Instead of putting the initialization code in the constructor, put it in an externally
-accessible function that can only be called once by the contract's creator.
+You can sidestep these issues with constructors by using the [initializable](https://docs.openzeppelin.com/upgrades-plugins/1.x/writing-upgradeable) contract pattern.
+Instead of putting the initialization code in the constructor, put it in an externally accessible function that can only be called once by the contract's creator.
 
-## Tests Have to Run on Geth
+## Tests need to run on geth
 
-Both Hardhat and Truffle allow you to run contract tests against their own 
-implementations of the EVM. However, to test contracts that run on Optimistic
-Ethereum you need to run them on a local copy of Optimistic Ethereum, which uses
-[geth](https://geth.ethereum.org/). 
-   
+Both Hardhat and Truffle allow you to run contract tests against their own implementations of the EVM.
+However, to test contracts that run on Optimistic Ethereum you need to run them on a local copy of Optimistic Ethereum (which is built on top of [geth](https://geth.ethereum.org/)).
+
 There are two issues involved in running your tests against a geth instance, 
 rather than an EVM running inside your development environment:
 
-- Calls take longer, because they require inter-process communication (at least) and
-  therefore you might get a [`Promise` 
-  object](https://www.w3schools.com/js/js_promise.asp) that isn't resolved yet. You
-  have to write your tests to be 
-  [asynchronous](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Concepts).
-
-  To cause the test to wait until the actual result is attained, put `await` before 
-  the call. If you are defining functions, define them with the `async` keyword. [You 
-  can read more about this here](https://www.w3schools.com/js/js_async.asp). 
-
-  ::: tip  
-  When you send a transaction there are actually two promises involved. The first
-  is for the network access to submit the transaction (which could take a non-trivial
-  amount of time). The second is for getting the transaction receipt. The proper
-  syntax to use to get the receipt of a transaction is:
-
-  ```javascript
-  (await  <contract>.<function>(<parameters>)).wait()
-  ```
-  :::
-
-- Both [Truffle's Ganache](https://github.com/trufflesuite/ganache-cli#custom-methods)
-  and [Hardhat](https://hardhat.org/hardhat-network/#special-testing-debugging-methods)
-  support custom debugging methods such as `evm_snapshot` and `evm_revert`. You 
-  cannot use these methods in tests for Optimistic Ethereum contracts because they 
-  are not available in geth. Nor can you use [Hardhat's 
-  `console.log`](https://hardhat.org/tutorial/debugging-with-hardhat-network.html).
+1. Tests will take longer. For development purposes, Geth is quite a bit slower than the [hardhat](https://hardhat.org) EVM or Truffle's [ganache](https://github.com/trufflesuite/ganache-cli). You will likely have to make more liberal use of [asynchronous](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Concepts) functions within your tests.
+2. Both [Truffle](https://github.com/trufflesuite/ganache-cli#custom-methods) and [hardhat](https://hardhat.org/hardhat-network/#special-testing-debugging-methods) support custom debugging methods such as `evm_snapshot` and `evm_revert`. You cannot use these methods in tests for Optimistic Ethereum contracts because they are not available in geth. Nor can you use [Hardhat's `console.log`](https://hardhat.org/tutorial/debugging-with-hardhat-network.html).
