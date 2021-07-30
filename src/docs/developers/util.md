@@ -10,6 +10,9 @@ These are contracts that are expected to be useful for multiple projects.
 
 ## Optimism
 
+The list of Optimism contracts and their addresses is available
+[in the monorepo](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/deployments). 
+
 ### Wrapped Eth
 
 This is the ERC-20 token that is used for gas in Optimistic Ethereum. 
