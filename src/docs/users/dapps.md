@@ -26,7 +26,7 @@ This makes it possible to invest in and trade assets without actually having to 
 
 ### [Uniswap](https://uniswap.org/)
 
-<img src="../../assets/logos/uniswap.svg" width="200" align="right">
+<img src="../../assets/logos/uniswap.png" width="200" align="right">
 
 The Uniswap protocol is a peer-to-peer system designed for exchanging [ERC20 Tokens](https://ethereum.org/en/developers/docs/standards/tokens/erc-20/) on EVM-compatible blockchains.
 The protocol is implemented as a set of persistent, non-upgradable smart contracts; designed to prioritize censorship resistance, security, self-custody, and to function without any trusted intermediaries who may selectively restrict access.
