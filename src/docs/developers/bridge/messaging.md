@@ -1,19 +1,15 @@
 ---
-title: Bridging L1 and L2
+title: Sending Data Between L1 and L2
 lang: en-US
 ---
 
 # {{ $frontmatter.title }}
 
-::: tip Work in Progress™
-Our documentation is a rapidly improving work in progress. If you have questions or feel like something is missing feel free to ask in our [Discord server](https://discord.optimism.io) where we (and our awesome community) are actively responding, or [open an issue](https://github.com/ethereum-optimism/community-hub/issues) in the GitHub repo for this site.
-:::
-
 Apps on Optimistic Ethereum can be made to interact with apps on Ethereum via a process called "bridging".
 In a nutshell, **contracts on Optimistic Ethereum can send messages to contracts on Ethereum, and vice versa**.
 With just a little bit of elbow grease, you too can create contracts that bridge the gap between Layer 1 and Layer 2!
 
-## Understanding Contract Calls
+## Understanding contract calls
 
 In order to understand the process of creating bridges between contracts on Layer 1 and Layer 2, you should first have a basic understanding of the way contracts on *Ethereum* communicate with one another.
 If you're a smart contract developer, you might be familiar with stuff like this:
@@ -63,7 +59,7 @@ contract MyOtherContract {
 Here we're using the [low-level "call" function](https://docs.soliditylang.org/en/v0.8.4/units-and-global-variables.html#members-of-address-types) and one of the [ABI encoding functions built into Solidity](https://docs.soliditylang.org/en/v0.8.4/units-and-global-variables.html#abi-encoding-and-decoding-functions).
 Although these two code snippets look a bit different, they're actually functionally identical.
 
-## L1 ⇔ L2 Communication Basics
+## L1 ⇔ L2 communication basics
 
 Cool!
 Now that you have a general idea of how contracts on Ethereum interact with one another, let's take a look at how we do the same thing *between* Optimistic Ethereum and Ethereum.
@@ -167,7 +163,7 @@ modifier onlyOwner() {
 }
 ```
 
-## Understanding the Challenge Period
+## Understanding the challenge period
 
 One of the most important things to understand about L1 ⇔ L2 interaction is that **messages sent from Layer 2 to Layer 1 cannot be relayed for at least one week**.
 This means that any messages you send from Layer 2 will only be received on Layer 1 after this one week period has elapsed.
@@ -196,35 +192,3 @@ We're open to changing the length of the window as long as we feel this can be d
 If you're strongly opinionated about this, we recommend [opening an issue on GitHub](https://github.com/ethereum-optimism/optimism/issues) explaining your position.
 We *will* hear you out!
 :::
-
-## Token Bridges
-
-Certain interactions, like transferring ETH and ERC20 tokens between the two networks, are common enough that we've built some standard bridge contracts you can make use of.
-
-### The Standard™ Bridge
-
-The Standard Bridge simplifies the process of moving ETH and ERC20 tokens between Optimistic Ethereum and Ethereum and consists of two contracts: [`OVM_L1StandardBridge`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/optimistic-ethereum/OVM/bridge/tokens/OVM_L1StandardBridge.sol) (for Layer 1) and  [`OVM_L2StandardBridge`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/optimistic-ethereum/OVM/bridge/tokens/OVM_L2StandardBridge.sol) (for Layer 2) where it is also a [predeploy](../protocol/protocol.md#predeployed-contracts).
-
-For an L1/L2 token pair to work on the Standard Bridge the L2 token contract need to implement [`IL2StandardERC20`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/optimistic-ethereum/libraries/standards/IL2StandardERC20.sol). The standard implementation of that is in [`L2StandardERC20`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/optimistic-ethereum/libraries/standards/L2StandardERC20.sol) contract.
-
-Note that deposits and withdrawals are restricted to EOA accounts only. Contracts can still interact with the bridge but using the explicit `depositETHTo`, `depositERC20To`, `withdrawTo` functions.
-
-<!-- TODO: Update this once we have the tutorial ready
-If you'd like to see these contracts in action, you should check out the [L1 ⇔ L2 deposit-and-withdraw example](https://github.com/ethereum-optimism/optimism/tree/develop/examples/l1-l2-deposit-withdrawal).
- -->
-
-## By Example: Synthetix
-
-If you find examples useful, you might be interested in taking a look at the bridge contracts that [Synthetix](https://synthetix.io/) wrote for their [L2 mainnet launch](https://blog.synthetix.io/l2-mainnet-launch/).
-These contracts are pretty slick and make heavy use of our L1 ⇔ L2 messaging infrastructure.
-Here's a quick play-by-play:
-
-1. Depositing SNX into L2
-    - [Initiating a deposit on L1](https://github.com/Synthetixio/synthetix/blob/master/contracts/SynthetixBridgeToOptimism.sol#L190-L205)
-    - [Which leads to receiving a balance on L2](https://github.com/Synthetixio/synthetix/blob/master/contracts/SynthetixBridgeToBase.sol#L111-L115)
-2. Migrate SNX Escrow entries to L2 (transferring large amounts of state from L1->L2):
-    - [Initiating a migration on L1](https://github.com/Synthetixio/synthetix/blob/master/contracts/SynthetixBridgeToOptimism.sol#L207-L236)
-    - [Which leads to receiving escrow entries on L2](https://github.com/Synthetixio/synthetix/blob/master/contracts/SynthetixBridgeToBase.sol#L98-L108)
-3. Withdrawing SNX to L1:
-    - [Burning L2 SNX and initiating the withdrawal on L2](https://github.com/Synthetixio/synthetix/blob/master/contracts/SynthetixBridgeToBase.sol#L76-L94)
-    - [Completing the withdrawal and receiving a balance on L1](https://github.com/Synthetixio/synthetix/blob/master/contracts/SynthetixBridgeToOptimism.sol#L126-L136)

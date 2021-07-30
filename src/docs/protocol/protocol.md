@@ -1,5 +1,5 @@
 ---
-title: Protocol in Detail
+title: Contract Overview
 lang: en-US
 tags:
     - contracts
@@ -122,7 +122,7 @@ The smart contracts in the Optimistic Ethereum (OE) protocol can be separated in
 
 <!-- Using html instead of markdown so we can put a caption on the image. -->
 <figure>
-  <img src='../../assets/OE-Arch-RC0.png'>
+  <img src='../../assets/docs/protocol/oe-arch-rc0.png'>
   <figcaption style="text-align: center; font-size: 12px;">Diagram created with <a href="https://www.diagrams.net/">draw.io</a>. <br>Editable source <a href="https://docs.google.com/document/d/1OObmIhuVyh5GEekqT4dd3bzO58ejSQb_rlnrBmxcNN0/edit#">here</a>.</figcaption>
 </figure>
 

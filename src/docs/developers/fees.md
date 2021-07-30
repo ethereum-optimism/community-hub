@@ -1,87 +1,109 @@
-# Transaction Fees
+---
+title: Gas Costs on L2
+lang: en-US
+---
 
-Transaction fees on Optimistic Ethereum are handled a little differently than on Ethereum.
-Your end-users won't notice any difference, but you might be interested to understand exactly where fees come from and how they're computed.
+# {{ $frontmatter.title }}
 
-Users will be taking three primary actions when interacting with Optimistic Ethereum:
+::: warning NOTICE
+This page documents the current status of the Optimistic Ethereum protocol, and the details here are subject to change based on feedback.
+:::
 
-1. L2 transactions
-2. L1 ⇒ L2 transactions
-3. L2 ⇒ L1 transactions
+Optimistic Ethereum is a lot cheaper than regular Ethereum but transaction fees do still exist.
+Here we'll cover what those fees are for, how to estimate them, and how to present them to your users.
 
-On this page we'll explain the costs related to each of these actions.
+We recommend that you first read the [user's guide to transaction fees](/docs/users/fees.md).
 
-## Fees for L2 transactions
+## Transation fees on L1
 
-Just like on Ethereum, fees on Optimistic Ethereum are denominated in ETH.
-The formula for gas cost on Ethereum is:
+In [Ethereum](https://ethereum.org/en/developers/docs/gas/#why-do-gas-fees-exist) the cost of a transaction is determined by two factors:
 
-```text
-fee = transaction.gasPrice * gasUsed
+1. Gas limit: the maximum amount of gas that the transaction can use.
+1. Gas price: the cost (in wei) of each unit of gas spent. Users can modify this value to trade off between speed and cost.
+
+The total cost of a transaction on L1 is:
+
 ```
-
-However, the formula for gas cost on Optimistic Ethereum is:
-
-```text
-fee = transaction.gasPrice * transaction.gasLimit (⇐ this part is different)
-```
-
-The exact reason for this difference is a little hard to explain.
-In a nutshell, it has to do with the fact that **the majority of the cost of running a Layer 2 system comes from the gas cost of publishing transaction data to Layer 1**.
-
-Practically speaking, **this shouldn't have much of an impact on the user experience**.
-You should still use `eth_gasPrice` to figure out the appropriate gas price and `eth_estimateGas` to find an appropriate gas limit.
-
-Please note that:
-
-* If you supply a `transaction.gasPrice` less than 1 Gwei, your transaction will be rejected.
-* If you supply a `transaction.gasLimit` less than the value returned by `eth_estimateGas`, your transaction will be rejected.
-
-### Understanding our gas estimation method
-
-As a developer, it's important to know that `eth_estimateGas` returns:
-
-```text
-estimate = (rollupTransactionSize * dataPrice) + (gasUsed * executionPrice)
+total_cost = gas_price * gas_used
 ```
 
 Where:
 
-* `rollupTransactionSize` is the size (in bytes) of the serialized transaction that will be published to Layer 1.
-* `dataPrice` is a variable that reflects the current cost of publishing data to Layer 1.
-* `gasUsed` is the standard result of `eth_estimateGas` for a transaction.
-* `executionPrice` is a variable that reflects the current congestion level on Layer 2, much like the `gasPrice` on Layer 1.
+```
+gas_used <= gas_limit
+```
 
-## Fees for L1 ⇒ L2 transactions
+## Transaction fees on L2
 
-When you create L1 ⇒ L2 transactions, you'll *only* have to pay for the standard Ethereum gas costs associated with the transaction.
-Concretely, this means sending a transaction to the [`OVM_L1CrossDomainMessenger`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/OVM/bridge/messaging/OVM_L1CrossDomainMessenger.sol) which then makes a call to the [`OVM_CanonicalTransactionChain`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/OVM/chain/OVM_CanonicalTransactionChain.sol).
+The gas calculations in Optimistic Ethereum are a little more complicated.
+Most of this complexity arises out of the need to account for both execution cost (the way we normally think about gas) and the cost to store transaction data on L1 in the form of calldata.
 
-We're [working hard](https://github.com/ethereum-optimism/optimism/pull/667) to minimize the amount of gas used by this sort of transaction.
-We're currently down to about ~75k gas for an L1 ⇒ L2 transaction.
-Depending on current L1 congestion levels and the current ETH price, the USD-denominated cost of this sort of transaction can be anywhere from about ~$15 to about ~$75.
+### Fees for Sequencer transactions
 
-Furthermore, your mileage will vary depending on any additional contract logic you perform before you execute the L1 ⇒ L2 transaction.
-For example, [this deposit of 200 SNX via the Synthetix L2 Bridge](https://etherscan.io/tx/0xbc86558426c2c62fd49a57b830182b37c9e71646e1ba12aebf71b356253e785c) cost about ~$78 USD.
+#### What you actually need to know
 
-## Fees for L2 ⇒ L1 transactions
+You probably don't actually need to know much about how any of this works under the hood.
+The only thing you absolutely *must* keep in mind is that:
+1. You should always use the gas price suggested by `eth_gasPrice`.
+2. You should always use the gas limit suggested by `eth_estimateGas`.
 
-L2 ⇒ L1 transactions tend to be a little more expensive than their L1 ⇒ L2 counterparts because you'll need to make a transaction on both L2 *and* L1.
+#### Under the hood
 
-Every L2 ⇒ L1 transaction consists of:
+For transactions sent directly to the Sequencer, the cost of a transaction is determined by two cost centers:
 
-1. An L2 transaction that *initiates* the transaction.
-2. An L1 transaction that *finalizes* the transaction.
+1. **Data cost**, the cost of storing the transaction's data on L1. The majority of the cost of a transaction comes from this factor.
+2. **Execution cost**, the cost of the actual execution on Optimistic Ethereum nodes. This cost is typically very low, but it could increase when Optimistic Ethereum is congested.
 
-The cost of the L2 initialization transaction is determined in the same way as any other L2 transaction (see above for more info).
-The cost of the L1 finaliztion transaction again depends on the current L1 congestion level and the ETH price.
-In terms of gas, finalization transactions can currently cost upwards of 400k-500k gas because they involve [verifying](https://github.com/ethereum-optimism/optimism/blob/467d6cb6a4a35f2f8c3ea4cfa4babc619bafe7d2/packages/contracts/contracts/optimistic-ethereum/libraries/trie/Lib_MerkleTrie.sol#L73-L93) a [Merkle trie](https://eth.wiki/fundamentals/patricia-tree) inclusion proof.
-We're [working to decrease this gas cost by making various optimizations](https://github.com/ethereum-optimism/optimism/pull/942) that would reduce the number of proof steps required to successfully verify these L2 ⇒ L1 transactions.
+Ultimately, the cost of a transaction is computed by the following formula:
 
-For some concrete numbers, check out this [example transaction finalizing a withdrawal of SNX](https://etherscan.io/tx/0x1f6601e918572668d40405c1cefb9af96bab430f46f9dde78d82e253e33e4904) which used ~500k gas for a total cost of ~$50.
+```text
+total_cost = (transaction_size_in_bytes * data_price) + (gas_limit * execution_price)
+```
 
-::: tip On withdrawal subsidies
-We've been subsidizing L2 ⇒ L1 transactions and processing them on your behalf for the last few months.
-However, **you'll soon need to start finalizing these transactions on your own**.
-We'll provide you with all the necessary tools to do this.
+Where:
+
+* `transaction_size_in_bytes` is the size (in bytes) of the serialized transaction that will be published to Layer 1.
+* `data_price` is a variable that reflects the current cost of publishing data to Layer 1.
+* `execution_gas_limit` is the amount of gas that the transaction can use.
+* `execution_price` is the cost (in wei) per unit gas allotted (much like `gas_price` on L1).
+
+
+::: tip
+In Optimistic Ethereum the cost of a transaction is always
+`tx.gasLimit*tx.gasPrice`, in contrast to L1 where it can be lower.
 :::
+
+#### Encoding Sequencer transaction costs
+
+Problems arise because we need to fit these four parameters into an interface that's only designed to handle two (`gas_price` and `gas_limit`).
+We essentially have two choices here: we can either (1) modify the Ethereum transaction format to support these additional fields or (2) somehow encode these values into the existing format.
+Option (1) requires significant effort on the part of wallet software, so we've chosen to go for option (2) for now.
+
+We manage to encode these values into the `gas_limit` field as follows:
+
+1. First, we set the `gas_price` to a **fixed** value of 0.015 gwei.
+2. Next, when you call `eth_estimateGas`, the L2 node computes:
+
+```text
+              (transaction_size_in_bytes * data_price) + (execution_gas_limit * execution_price)
+gas_limit  =  ----------------------------------------------------------------------------------
+                                                    gas_price
+```
+
+You can do some math to work backwards from this formula to get original values out, which is how the fees actually get paid during the L2 transaction.
+
+### Fees for L1 to L2 transactions
+
+For an L1 to L2 transaction you only pay the L1 cost of submitting the transaction.
+You send a transaction to the [`OVM_L1CrossDomainMessenger`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/OVM/bridge/messaging/OVM_L1CrossDomainMessenger.sol)
+contract, which then sends a call to the [`OVM_CanonicalTransactionChain`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/OVM/chain/OVM_CanonicalTransactionChain.sol).
+This generally isn't *too* expensive, but it mainly depends on L1 congestion.
+
+### Fees for L2 to L1 transactions
+
+Each message from L2 to L1 requires two transactions:
+
+1. An L2 transaction that *initiates* the transaction, which is priced the same way that Sequencer transactions are priced.
+1. An L1 transaction that *finalizes* the transaction. This transaction is somewhat expensive because it includes [verifying](https://github.com/ethereum-optimism/optimism/blob/467d6cb6a4a35f2f8c3ea4cfa4babc619bafe7d2/packages/contracts/contracts/optimistic-ethereum/libraries/trie/Lib_MerkleTrie.sol#L73-L93) a [Merkle trie](https://eth.wiki/fundamentals/patricia-tree) inclusion proof.
+
+The total cost of an L2 to L1 transaction is therefore the combined cost of the L2 initialization transaction and the L1 finalization transaction.
