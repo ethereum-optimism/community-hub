@@ -85,6 +85,10 @@ You can interact with both of these nodes at the following ports:
 | L2 (Optimistic Ethereum dev node)            | 8545 |
 | L1 ([hardhat](https://hardhat.org) dev node) | 9545 |
 
+
+[Click here to see the differences between the L1 Ethereum RPC interface and the Optimistic
+Ethereum RPC interface](/docs/developers/l2/rpc.html)
+
 ### Getting ETH on your dev node
 
 All of the default hardhat accounts are funded with ETH on both L1 and L2.
