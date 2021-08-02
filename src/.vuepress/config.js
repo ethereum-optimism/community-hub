@@ -91,12 +91,12 @@ module.exports = {
                   'Optimistic Ethereum with Remix (coming soon)'
                 ],
                 [
-                  'https://github.com/ethereum-optimism/optimism-tutorial/tree/main/standard-bridge-token',
-                  'Registering an ERC20 Token on L2 (coming soon)'
+                  'https://github.com/ethereum-optimism/optimism-tutorial/tree/main/l1-l2-deposit-withdrawal',
+                  'Depositing and Withdrawing ERC20 Tokens'
                 ],
                 [
-                  'https://github.com/ethereum-optimism/optimism-tutorial/tree/main/l1-l2-deposit-withdrawal',
-                  'Depositing and Withdrawing ERC20 Tokens (coming soon)'
+                  'https://github.com/ethereum-optimism/optimism-tutorial/tree/main/standard-bridge-token',
+                  'Registering an ERC20 Token on L2'
                 ],
                 [
                   'https://github.com/ethereum-optimism/optimism-tutorial/tree/main/',
