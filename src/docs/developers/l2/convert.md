@@ -10,7 +10,8 @@ This page refers to the design of the current iteration of the Optimistic Ethere
 Details here are subject to change as the Optimistic Ethereum protocol evolves.
 :::
 
-## Useful background info
+
+## Differences from L1 Ethereum
 
 Optimistic Ethereum contracts are (currently) subject to a few limitations that don't exist on Ethereum
 These limitations arise because contracts need to be executable under two circumstances:
@@ -28,7 +29,9 @@ Where the standard compiler produces those opcodes, the Optimistic version produ
 As a result of the requirement that we have this modified compiler, there are a few key differences between the process of developing apps for Ethereum and for Optimistic Ethereum.
 Here are the most important things to keep in mind.
 
-## Solidity contracts
+
+
+### Solidity contracts
 
 Contracts **must** currently be written in Solidity.
 You must also use a Solidity version that has a corresponding modified compiler.
@@ -36,7 +39,7 @@ You can find a full list of supported versions [over on GitHub](https://github.c
 
 We're actively exploring support for other languages (like Vyper) and alternative protocol designs that may obviate the need for the modified compiler entirely.
 
-## Contract bytecode size
+### Contract bytecode size
 
 The contract code size limit on Optimistic Ethereum is the same [24 kB](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-170.md) limit as on Ethereum. 
 However, the modified Solidity compiler replaces certain [opcodes](/docs/protocol/evm-comparison.html#replaced-opcodes) with contract calls (which take up a few bytes). 
@@ -44,7 +47,7 @@ This means that a contract that was close to the limit when compiled with normal
 
 If you're finding that your contracts are exceeding the 24 kB limit, you should consider moving some of your code into [external libraries](https://docs.soliditylang.org/en/v0.8.6/contracts.html#libraries).
 
-## Constructor parameters
+### Constructor parameters
 
 Contracts must run through a static analysis that guarantees that they do not contain any [banned opcodes](/docs/protocol/evm-comparison.html#replaced-opcodes).
 Under a few special circumstances, contract constructors can fail to pass this static analysis even though the rest of the contract is considered "safe".
@@ -55,12 +58,12 @@ Generally speaking, we encourage devs to follow these guidelines:
 2. If you are *not* able to change your inputs without breaking the contract, then you should explicitly test the constructor with the inputs that you expect to provide. If you find that you are unable to pass the static analysis, you should consider using the [initializable](https://docs.openzeppelin.com/upgrades-plugins/1.x/writing-upgradeable) pattern linked below.
 3. If you're designing a contract *factory* system, you should be very careful about using constructors. You should almost definitely be using the initialaizable pattern instead.
 
-### Using the initializable pattern
+#### Using the initializable pattern
 
 You can sidestep these issues with constructors by using the [initializable](https://docs.openzeppelin.com/upgrades-plugins/1.x/writing-upgradeable) contract pattern.
 Instead of putting the initialization code in the constructor, put it in an externally accessible function that can only be called once by the contract's creator.
 
-## Tests need to run on geth
+### Tests need to run on geth
 
 Both Hardhat and Truffle allow you to run contract tests against their own implementations of the EVM.
 However, to test contracts that run on Optimistic Ethereum you need to run them on a local copy of Optimistic Ethereum (which is built on top of [geth](https://geth.ethereum.org/)).
@@ -68,5 +71,25 @@ However, to test contracts that run on Optimistic Ethereum you need to run them 
 There are two issues involved in running your tests against a geth instance, 
 rather than an EVM running inside your development environment:
 
-1. Tests will take longer. For development purposes, Geth is quite a bit slower than the [hardhat](https://hardhat.org) EVM or Truffle's [ganache](https://github.com/trufflesuite/ganache-cli). You will likely have to make more liberal use of [asynchronous](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Concepts) functions within your tests.
-2. Both [Truffle](https://github.com/trufflesuite/ganache-cli#custom-methods) and [hardhat](https://hardhat.org/hardhat-network/#special-testing-debugging-methods) support custom debugging methods such as `evm_snapshot` and `evm_revert`. You cannot use these methods in tests for Optimistic Ethereum contracts because they are not available in geth. Nor can you use [Hardhat's `console.log`](https://hardhat.org/tutorial/debugging-with-hardhat-network.html).
+1. Tests will take longer. For development purposes, Geth is quite a bit slower than the [Hardhat](https://hardhat.org) EVM or Truffle's [ganache](https://github.com/trufflesuite/ganache-cli). You will likely have to make more liberal use of [asynchronous](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Concepts) functions within your tests.
+2. Both [Truffle](https://github.com/trufflesuite/ganache-cli#custom-methods) and [Hardhat](https://hardhat.org/hardhat-network/#special-testing-debugging-methods) support custom debugging methods such as `evm_snapshot` and `evm_revert`. You cannot use these methods in tests for Optimistic Ethereum contracts because they are not available in geth. Nor can you use [Hardhat's `console.log`](https://hardhat.org/tutorial/debugging-with-hardhat-network.html).
+
+
+## Workflow
+
+Roughly speaking, these are the steps you need to take to develop for Optimistic
+Ethereum:
+
+1. Develop the decentralized application normally, writing the contracts in Solidity
+   and the user interface as you normally would.
+1. [Create an Optimistic Ethereum development node](/docs/developers/l2/dev-node.html)
+1. Compile for Optimistic Ethereum using a supported environment such as 
+   [Hardhat](/docs/developers/l2/hardhat.html) or 
+   [Truffle](/docs/developers/l2/truffle.html).
+1. Run your tests on the Optimistic Ethereum development node you created.
+1. Deploy your test to the [Optimistic 
+   Kovan](/docs/infra/networks.html#optimistic-kovan) network and test it in that
+   environment.
+1. [Ask to be added to the Optimistic Ethereum whitelist](https://docs.google.com/forms/d/e/1FAIpQLSdKyXpXY1C4caWD3baQBK1dPjEboOJ9dpj9flc-ursqq8KU0w/viewform)    
+1. Once added, deploy your contracts to the 
+   [Optimistic Ethereum](/docs/infra/networks.html#optimistic-ethereum) network.
