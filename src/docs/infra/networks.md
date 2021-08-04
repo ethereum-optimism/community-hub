@@ -7,6 +7,11 @@ lang: en-US
 
 ## Optimistic Kovan
 
+::: tip Purpose
+This is our **test** network. You're welcome to deploy whatever contracts to wish to test
+here.
+:::
+
 | Parameter | Value |
 | --------- | ----- |
 | Network Name | **`Optimistic Kovan`** |
@@ -21,10 +26,16 @@ lang: en-US
 
 ## Optimistic Ethereum
 
-::: tip Heads up
-This is our "restricted" mainnet.
-We currently have a whitelist system in place that limits who can deploy contracts to this network (for security reasons).
-We know this isn't ideal and we really appreciate your patience while we work hard to make sure that the system is 100% safe 💗.
+::: tip Restricted Access
+This is our production network, our equivalent of mainnet.
+We currently have a whitelist system in place that limits who can deploy contracts 
+to this network for reasons of performance, availability, and security. Eventually
+we will open it up to anybody who wants to deploy, but we need to do more development
+and testing before we get there. 99.9% secure is not good enough.
+
+When you are ready to deploy to production please fill up 
+[this form](https://docs.google.com/forms/d/e/1FAIpQLSdKyXpXY1C4caWD3baQBK1dPjEboOJ9dpj9flc-ursqq8KU0w/viewform) 
+and we'll get back to you.
 :::
 
 | Parameter | Value |
