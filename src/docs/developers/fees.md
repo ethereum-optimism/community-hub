@@ -14,7 +14,7 @@ Here we'll cover what those fees are for, how to estimate them, and how to prese
 
 We recommend that you first read the [user's guide to transaction fees](/docs/users/fees.md).
 
-## Transation fees on L1
+## Transaction fees on L1
 
 In [Ethereum](https://ethereum.org/en/developers/docs/gas/#why-do-gas-fees-exist) the cost of a transaction is determined by two factors:
 
