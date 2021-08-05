@@ -1,5 +1,5 @@
 ---
-title: Welcome to Optimistic Ethereum.
+title: Welcome to Optimistic Ethereum
 lang: en-US
 tags:
     - contracts
@@ -8,9 +8,24 @@ tags:
 
 # {{ $frontmatter.title }}
 
+You can see the documentation table of content on the left sidebar. 
+
+| What do you want to do?            | You should read                   |
+| ---------------------------------- | --------------------------------- |
+| Use dapps on Optimistic Ethereum   | **User Docs**                     |
+| Administer operations for a dapp   | The above plus **Infrastructure** |
+| Develop a dapp                     | The above plus **Developer Docs**, at least those that are relevant to you |
+| Understand why this is safe and cheap | **Protocol Specs** |
+| Take over the world                | [Ask this guy](https://www.youtube.com/watch?v=SGUqwaORfbU&list=PLfPP3LyOI8Om38VTPVIKcsve6TboopdPX&index=11) |
+
+
 ::: tip Work in Progress™
-Our documentation is a rapidly improving work in progress. If you have questions or feel like something is missing feel free to ask in our [Discord server](https://discord.optimism.io) where we (and our awesome community) are actively responding, or [open an issue](https://github.com/ethereum-optimism/community-hub/issues) in the GitHub repo for this site.
+Our documentation, like most things in the world, is imperfect. 
+If you have questions or feel like something is missing feel free to ask in our [Discord server](https://discord.optimism.io) where we (and our awesome community) are actively responding, or [open an issue](https://github.com/ethereum-optimism/community-hub/issues) in the GitHub repo for this site.
 :::
+
+
+<!--
 
 We know documentation can be a bit overwhelming sometimes, especially when the subject matter is unfamiliar.
 Let's make sure you know where to go next!
@@ -40,7 +55,7 @@ We'll even throw in the fun audio and visuals for free.
 It's like the world's best portable source of esoteric blockchain knowledge!
 :::
 
--->
+
 
 ## For: Developers
 **Are you a developer who wants to deploy a smart contract to Optimistic Ethereum?**
@@ -67,3 +82,5 @@ This is probably most useful if you want to learn how Optimistic Ethereum works 
 
 You definitely don't *need* to go through this material in order to build applications on top of the system.
 However, it's quite fascinating stuff and we won't stop you from reading it 😊.
+
+-->
