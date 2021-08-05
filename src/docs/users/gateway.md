@@ -8,13 +8,20 @@ lang: en-US
 ::: tip Where is my money?
 If you are not sure what is happening with your withdrawal, [search for the transaction
 hash here](https://optimistic.etherscan.io/messagerelayer). It might still be in the
-fraud proof period. Alternatively, you might need to 
+fraud proof period. Alternatively, you might just need to 
 [finalize the transaction](/docs/users/gateway.html#finalizing-the-withdrawal).
 :::
 
 The easiest way to move assets between Layer 1 and Layer 2 is to use the [Optimism Gateway](https://gateway.optimism.io).
 You can make use of this gateway on any of our networks.
-[Click here for a list of our networks and connection details](./networks).
+[Click here for a list of our networks and connection 
+details](/docs/infra/networks.html).
+
+Note that in Optimistic Ethereum there is no ETH as we know it. Instead, gas costs
+are charged using a [wrapped ETH ERC-20 
+token](/docs/protocol/evm-comparison.html#using-eth-as-an-erc20-token). 
+When you deposit ETH into Optimistic Ethereum, those ERC-20 tokens are what you get 
+on L2.
 
 ## Depositing into L2
 
