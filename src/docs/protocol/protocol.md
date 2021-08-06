@@ -321,6 +321,13 @@ go through virtualization. It is used to call
 [OVM_ExecutionManager](#ovm-executionmanager).
 
 
+### [`ERC1820Registry.sol`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/OVM/predeploys/ERC1820Registry.sol)
+[ERC1820](https://eips.ethereum.org/EIPS/eip-1820) specifies a registry
+service that lets addresses report what interfaces they support and ask 
+about other addresses. 
+
+### [`L2_CROSS_DOMAIN_MESSENGER`]()
+
 ## Account Contracts
 
 OVM Account contracts are redeployable contracts layer-2 contracts which can represent a user and provide a form of 'account abstraction'.
