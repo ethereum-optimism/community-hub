@@ -11,7 +11,8 @@ These are contracts that are expected to be useful for multiple projects.
 ## Optimism
 
 The list of Optimism contracts and their addresses is available
-[in the monorepo](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/deployments). 
+[in the monorepo](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/deployments). You can read more about them 
+[here](/docs/protocol/protocol.html).
 
 ### Wrapped Eth
 

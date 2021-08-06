@@ -305,9 +305,20 @@ The L2 to L1 Message Passer is a utility contract which facilitate an L1 proof o
 ### [`OVM_SequencerEntrypoint`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/OVM/predeploys/OVM_SequencerEntrypoint.sol)
 The Sequencer Entrypoint is a predeploy which, despite its name, can in fact be called by  any account. It accepts a more efficient compressed calldata format, which it decompresses and  encodes to the standard EIP155 transaction format. This contract is the implementation referenced by the Proxy Sequencer Entrypoint, thus enabling the Optimism team to upgrade the decompression of calldata from the Sequencer.
 
+### [`OVM_SequencerFeeVault`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/OVM/predeploys/OVM_SequencerFeeVault.sol)
+This contract holds fees paid to the sequencer until there is enough to 
+justify the transaction cost of sending them to L1 where they are used to
+pay for L1 transaction costs (mostly the cost of publishing all L2 transaction
+data as CALLDATA on L1).
+
 ### [`OVM_L2StandardBridge`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/optimistic-ethereum/OVM/bridge/tokens/OVM_L2StandardBridge.sol)
 The L2 part of the Standard Bridge. Responsible for finalising deposits from L1 and initiating withdrawals from L2 of ETH and compliant ERC20s.
 See [Standard Bridge](../developers/bridging.md#the-standardtm-bridge) for details.
+
+### [`OVM_ExecutionManagerWrapper.sol`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/OVM/predeploys/OVM_ExecutionManagerWrapper.sol)
+This is the one contract on L2 that can call another contract without having to
+go through virtualization. It is used to call 
+[OVM_ExecutionManager](#ovm-executionmanager).
 
 
 ## Account Contracts
