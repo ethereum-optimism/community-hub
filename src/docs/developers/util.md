@@ -12,7 +12,7 @@ These are contracts that are expected to be useful for multiple projects.
 
 The list of Optimism contracts and their addresses is available
 [in the monorepo](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/deployments). You can also read [additional information 
-here](http://localhost:8080/docs/protocol/protocol.html).
+here](/docs/protocol/protocol.html).
 
 ### Wrapped Eth
 
@@ -50,7 +50,7 @@ L1 ERC20s compatible with and working on the standard bridge.
 There are two easy ways to achieve multisig functionality on Optimistic Ethereum
 
 1. You can use [a clone of OG Gnsosis](https://ogg.scopelift.co/). 
-2. Use any L1 multisig and then [relay the message to L2](http://localhost:8080/docs/developers/bridge/messaging.html).
+2. Use any L1 multisig and then [relay the message to L2](/docs/developers/bridge/messaging.html).
 
 ## Uniswap Core
 
