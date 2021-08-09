@@ -218,12 +218,6 @@ There is a separate dimension of gas, called "nuisance gas", which is used to bo
 
 ## State Structure
 
-### Balance field is always zero
-
-Since ETH is treated as an ERC20, the balance field of any account will always be zero.
-User balances are tracked as storage slots inside the ETH ERC20.
-If you want to determine the ETH balance for a given account, you should directly query the ETH ERC20 contract.
-
 ### Storage slots are never deleted
 
 In Ethereum, setting the value of a storage slot to zero will delete the key associated with that storage slot from the trie.
