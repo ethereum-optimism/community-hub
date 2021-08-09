@@ -5,9 +5,23 @@ lang: en-US
 
 # {{ $frontmatter.title }}
 
+::: tip Where is my money?
+If you are not sure what is happening with your withdrawal, [search for the transaction
+hash here](https://optimistic.etherscan.io/messagerelayer). It might still be in the
+fraud proof period. Alternatively, you might just need to 
+[finalize the transaction](/docs/users/gateway.html#finalizing-the-withdrawal).
+:::
+
 The easiest way to move assets between Layer 1 and Layer 2 is to use the [Optimism Gateway](https://gateway.optimism.io).
 You can make use of this gateway on any of our networks.
-[Click here for a list of our networks and connection details](./networks).
+[Click here for a list of our networks and connection 
+details](/docs/infra/networks.html).
+
+Note that in Optimistic Ethereum there is no ETH as we know it. Instead, gas costs
+are charged using a [wrapped ETH ERC-20 
+token](/docs/protocol/evm-comparison.html#using-eth-as-an-erc20-token). 
+When you deposit ETH into Optimistic Ethereum, those ERC-20 tokens are what you get 
+on L2.
 
 ## Depositing into L2
 
@@ -97,47 +111,49 @@ Please refer to our [guide to Bridging L1 and L2](./bridging) for more informati
 
 <img src="../../assets/docs/developers/gateway/withdraw/5.png" alt="accept the withdrawal in metamask" width="400px" />
 
+### Finalizing the withdrawal
+
 7. After the waiting period has passed, **you'll need to submit a second transaction on L1 to complete your withdrawal**. You should now see a screen that displays the date and time when your withdrawal can be completed. Since we're on Kovan, this should only be a minute from the time when you started the withdrawal on L2:
 
 <img src="../../assets/docs/developers/gateway/withdraw/6.png" alt="see when the withdrawal can be completed"/>
 
-7. Click on your address in the top right corner of your screen to see the status of your withdrawal:
+8. Click on your address in the top right corner of your screen to see the status of your withdrawal:
 
 <img src="../../assets/docs/developers/gateway/withdraw/7.png" alt="click on your address"/>
 
-8. You should be presented with a list of withdrawals that you've made. Now you simply need to wait for the withdrawal challenge period to elapse! On the Optimistic Kovan testnet this withdrawal period is only 60 seconds. Feel free grab a drink or go to the bathroom or something while you wait. Click on your withdrawal once the status symbol turns yellow:
+9. You should be presented with a list of withdrawals that you've made. Now you simply need to wait for the withdrawal challenge period to elapse! On the Optimistic Kovan testnet this withdrawal period is only 60 seconds. Feel free grab a drink or go to the bathroom or something while you wait. Click on your withdrawal once the status symbol turns yellow:
 
 <img src="../../assets/docs/developers/gateway/withdraw/8.png" alt="see yellow status symbol"/>
 
-9. Assuming you've waited 60 seconds or more, you can now claim your withdrawal on L1. Click the button that says `CLAIM WITHDRAWAL`:
+10. Assuming you've waited 60 seconds or more, you can now claim your withdrawal on L1. Click the button that says `CLAIM WITHDRAWAL`:
 
 <img src="../../assets/docs/developers/gateway/withdraw/9.png" alt="go to etherscan to claim withdrawal"/>
 
-10. You'll be brought to a page on Etherscan that looks something like the following. Note that the status of your withdrawal is `Ready for relay`:
+11. You'll be brought to a page on Etherscan that looks something like the following. Note that the status of your withdrawal is `Ready for relay`:
 
 <img src="../../assets/docs/developers/gateway/withdraw/10.png" alt="view the withdrawal claim page on etherscan"/>
 
-11. Since you'll be claiming this withdrawal on L1 (Kovan) you'll need switch back to the Kovan test network in MetaMask before you can continue:
+12. Since you'll be claiming this withdrawal on L1 (Kovan) you'll need switch back to the Kovan test network in MetaMask before you can continue:
 
 <img src="../../assets/docs/developers/gateway/withdraw/11.png" alt="switch back to Kovan" width="400px" />
 
-12. Once you've switched back to Kovan, click the `Execute` button on the Etherscan page:
+13. Once you've switched back to Kovan, click the `Execute` button on the Etherscan page:
 
 <img src="../../assets/docs/developers/gateway/withdraw/12.png" alt="click the execute button on Etherscan"/>
 
-13. Accept the confirmation popup:
+14. Accept the confirmation popup:
 
 <img src="../../assets/docs/developers/gateway/withdraw/13.png" alt="accept the confirmation popup"/>
 
-13. After a few seconds you'll be asked to sign a final transaction in MetaMask:
+15. After a few seconds you'll be asked to sign a final transaction in MetaMask:
 
 <img src="../../assets/docs/developers/gateway/withdraw/14.png" alt="accept the last transaction in metamask" width="400px" />
 
-14. Wait for the transaction to be confirmed on Kovan, then refresh the page. If you see that the message is now `Relayed`, then your withdrawal was successful:
+16. Wait for the transaction to be confirmed on Kovan, then refresh the page. If you see that the message is now `Relayed`, then your withdrawal was successful:
 
 <img src="../../assets/docs/developers/gateway/withdraw/15.png" alt="check withdrawal was relayed correctly"/>
 
-15. You can also confirm that your withdrawal was completed by going back to [gateway.optimism.io](https://gateway.optimism.io) and confirming that your L2 balance has decreased and your L1 balance has increased:
+17. You can also confirm that your withdrawal was completed by going back to [gateway.optimism.io](https://gateway.optimism.io) and confirming that your L2 balance has decreased and your L1 balance has increased:
 
 <img src="../../assets/docs/developers/gateway/withdraw/16.png" alt="check your balance again"/>
 
@@ -151,3 +167,4 @@ If you're still confused by something, we'd love to hear how we can make this tu
 Please always feel free to leave feedback by [creating an issue on GitHub](https://github.com/ethereum-optimism/community-hub/issues).
 We read through our issues almost every day and try to fix issues within a week.
 :::
+
