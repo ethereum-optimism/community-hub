@@ -22,9 +22,42 @@ You'll need to install the following before you can continue:
 1. [Node.js](https://nodejs.org/en/), version 12 or later
 1. [Classic Yarn](https://classic.yarnpkg.com/lang/en/)
 
-## Building the node
 
-With the packages installed, the next step is to build the node:
+## Creating a node
+
+You can either download the docker images from [Docker 
+Hub](https://hub.docker.com/u/ethereumoptimism) or build the software 
+from the [source code](https://github.com/ethereum-optimism/optimism).
+
+
+### Downloading the docker images
+
+If you want to download the images, perform these steps:
+
+
+1. Clone the [Optimism monorepo](https://github.com/ethereum-optimism/optimism).
+
+   ```sh
+   git clone https://github.com/ethereum-optimism/optimism.git
+   cd optimism/ops
+   ```
+
+2. Start the Optimistic Ethereum node. This process downloads the images
+   from [the Docker hub](https://hub.docker.com/u/ethereumoptimism), and it
+   typically takes about ten minutes.
+
+   ```sh
+   cd optimism/ops
+   docker-compose -f docker-compose-nobuild.yml up -t 60
+   ``` 
+
+   You might get a timeout at first. If that is the case, just run the 
+   `docker-compose` command again.
+
+
+### Building from source
+
+If you want to build from the source code, perform these steps:
 
 1. Clone the [Optimism monorepo](https://github.com/ethereum-optimism/optimism).
 
@@ -59,12 +92,20 @@ With the packages installed, the next step is to build the node:
 
 ### Starting the node
 
-Starting the node is a single command:
+- To start a node for which you downloaded the images use:
+
+```sh
+cd optimism/ops
+docker-compose -f docker-compose-nobuild.yml up
+```
+
+- To start a node which you compiled and build yourself, use:
 
 ```sh
 cd optimism/ops
 docker-compose up
 ```
+
 
 The startup process may take some time.
 For the impatient, you can run the following script to know when your node is ready.
