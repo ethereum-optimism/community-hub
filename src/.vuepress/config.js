@@ -64,7 +64,7 @@ module.exports = {
             '/docs/users/wallets.md',
             '/docs/users/metamask.md',
             '/docs/users/gateway.md',
-            '/docs/users/dapps.md',
+            '/docs/users/apps.md',
             '/docs/users/fees.md'
           ],
           collapsable: false,
