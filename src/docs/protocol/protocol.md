@@ -315,18 +315,21 @@ data as CALLDATA on L1).
 The L2 part of the Standard Bridge. Responsible for finalising deposits from L1 and initiating withdrawals from L2 of ETH and compliant ERC20s.
 See [Standard Bridge](../developers/bridging.md#the-standardtm-bridge) for details.
 
-### [`OVM_ExecutionManagerWrapper.sol`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/OVM/predeploys/OVM_ExecutionManagerWrapper.sol)
+### [`OVM_ExecutionManagerWrapper`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/OVM/predeploys/OVM_ExecutionManagerWrapper.sol)
 This is the one contract on L2 that can call another contract without having to
 go through virtualization. It is used to call 
 [OVM_ExecutionManager](#ovm-executionmanager).
 
 
-### [`ERC1820Registry.sol`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/OVM/predeploys/ERC1820Registry.sol)
+### [`ERC1820Registry`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/OVM/predeploys/ERC1820Registry.sol)
 [ERC1820](https://eips.ethereum.org/EIPS/eip-1820) specifies a registry
 service that lets addresses report what interfaces they support and ask 
 about other addresses. 
 
-### [`L2_CROSS_DOMAIN_MESSENGER`]()
+### [`LIB_AddressManager`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/libraries/resolver/Lib_AddressManager.sol)
+This is a library that stores the mappings between names and their addresses.
+It is used by [`OVM_L1CrossDomainMessenger`](#ovm-l1crossdomainmessenger).
+
 
 ## Account Contracts
 
