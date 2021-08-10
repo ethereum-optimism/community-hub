@@ -1,5 +1,5 @@
 ---
-title: Useful Contract Addresses
+title: Useful Contracts
 lang: en-US
 ---
 
@@ -11,8 +11,8 @@ These are contracts that are expected to be useful for multiple projects.
 ## Optimism
 
 The list of Optimism contracts and their addresses is available
-[in the monorepo](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/deployments). You can read more about them 
-[here](/docs/protocol/protocol.html).
+[in the monorepo](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/deployments). You can also read [additional information 
+here](/docs/protocol/protocol.html).
 
 ### Wrapped Eth
 
