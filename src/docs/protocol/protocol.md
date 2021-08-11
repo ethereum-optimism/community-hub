@@ -326,7 +326,7 @@ go through virtualization. It is used to call
 service that lets addresses report what interfaces they support and ask 
 about other addresses. 
 
-### [`LIB_AddressManager`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/libraries/resolver/Lib_AddressManager.sol)
+### [`Lib_AddressManager`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/libraries/resolver/Lib_AddressManager.sol)
 This is a library that stores the mappings between names and their addresses.
 It is used by [`OVM_L1CrossDomainMessenger`](#ovm-l1crossdomainmessenger).
 
