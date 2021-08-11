@@ -43,14 +43,13 @@ L1 ERC20s compatible with and working on the standard bridge.
 | Optimistic Ethereum | [0x2e985AcD6C8Fa033A4c5209b0140940E24da7C5C](https://optimistic.etherscan.io/address/0x2e985AcD6C8Fa033A4c5209b0140940E24da7C5C) |
 | Optimistic Kovan    | [0x50EB44e3a68f1963278b4c74c6c343508d31704C](https://kovan-optimistic.etherscan.io/address/0x50EB44e3a68f1963278b4c74c6c343508d31704C) |
 
-
-
 ## Multisig
 
 There are two easy ways to achieve multisig functionality on Optimistic Ethereum
 
 1. You can use [a clone of OG Gnsosis](https://ogg.scopelift.co/). 
 2. Use any L1 multisig and then [relay the message to L2](/docs/developers/bridge/messaging.html).
+
 
 ## Uniswap Core
 
