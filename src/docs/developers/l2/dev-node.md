@@ -39,16 +39,15 @@ If you want to download the images, perform these steps:
 
    ```sh
    git clone https://github.com/ethereum-optimism/optimism.git
-   cd optimism/ops
    ```
 
-2. Start the Optimistic Ethereum node. This process downloads the images
-   from [the Docker hub](https://hub.docker.com/u/ethereumoptimism), and it
-   typically takes about ten minutes.
+2. Download the images from [the Docker 
+   hub](https://hub.docker.com/u/ethereumoptimism). Depending on the hardware
+   and network connection, this process can take up to ten minutes.
 
    ```sh
    cd optimism/ops
-   docker-compose -f docker-compose-nobuild.yml up -t 60
+   docker-compose -f docker-compose-nobuild.yml up -t 60 --nostart
    ``` 
 
    You might get a timeout at first. If that is the case, just run the 
