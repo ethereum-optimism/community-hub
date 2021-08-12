@@ -57,12 +57,12 @@ For transactions sent directly to the Sequencer, the cost of a transaction is de
 Ultimately, the cost of a transaction is computed by the following formula:
 
 ```text
-total_cost = (transaction_size_in_bytes * data_price) + (gas_limit * execution_price)
+total_cost = (tx_size * data_price) + (execution_gas_limit * execution_price)
 ```
 
 Where:
 
-* `transaction_size_in_bytes` is the size (in bytes) of the serialized transaction that will be published to Layer 1.
+* `tx_size` is the size (in bytes) of the serialized transaction that will be published to Layer 1.
 * `data_price` is a variable that reflects the current cost of publishing data to Layer 1.
 * `execution_gas_limit` is the amount of gas that the transaction can use.
 * `execution_price` is the cost (in wei) per unit gas allotted (much like `gas_price` on L1).

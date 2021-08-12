@@ -52,7 +52,14 @@ We are exploring this as a future system feature.
 
 <!-- TODO: link to fees page once finished -->
 
-Yes, users are required to pay fees when sending transactions on an Optimistic Ethereum (just like on Ethereum). However, these fees are greatly reduced when compared to Ethereum. Refer to our [recent Medium post](https://community.optimism.io/docs/developers/fees.html) for more information about transaction fees. Alternatively, check out our [gas comparison page](https://optimism.io/gas-comparison) for concrete numbers comparing the cost of transactions on Ethereum to transactions on Optimistic Ethereum.
+Yes, users are required to pay fees when sending transactions on an 
+Optimistic Ethereum (just like on Ethereum). However, these fees are 
+greatly reduced when compared to Ethereum. Refer to our [recent Medium post](https://community.optimism.io/docs/developers/fees.html) for more 
+information about transaction fees. Alternatively, check out our [gas comparison page](https://optimism.io/gas-comparison) for concrete numbers comparing 
+the cost of transactions on Ethereum to transactions on Optimistic Ethereum.
+
+Fees have to be paid in ETH. [Click here for more information about how they
+are calculated](/docs/developers/fees.html).
 
 ## The Software
 

@@ -251,7 +251,8 @@ The State Manager Factory is called by a State Transitioner's init code, to crea
 
 ## Bridge Contracts
 
-The Bridge contracts implement the functionality required to pass messages between layer 1 and layer 2.
+The Bridge contracts implement the functionality required to pass messages between layer 1 and layer 2.  [You can read an overview
+here](/docs/developers/bridge/messaging.html)
 
 <!--
 **Planned section outline**
@@ -268,6 +269,24 @@ The L1 Cross Domain Messenger (L1xDM) contract sends messages from L1 to L2, and
 
 ### [`OVM_L2CrossDomainMessenger`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/OVM/bridge/messaging/OVM_L2CrossDomainMessenger.sol)
 The L2 Cross Domain Messenger (L2xDM) contract sends messages from L2 to L1, and is the entry point for L2 messages sent via the L1 Cross Domain Messenger.
+
+
+## The Standard Bridge
+
+One common case of message passing is "transferring" either ERC-20
+tokens or ETH between L1 and Optimistic Ethereum. To deposit tokens 
+into Optimistic Ethereum, the bridge locks them on L1 and mints equivalent
+tokens in Optimistic Ethereum. To withdraw tokens, the bridge burns the 
+Optimistic Ethereum tokens and releases the locked L1 tokens. [More details
+are here](/docs/developers/bridge/standard-bridge.html)
+
+
+### [`OVM_L1StandardBridge`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/optimistic-ethereum/OVM/bridge/tokens/OVM_L1StandardBridge.sol)
+The L1 part of the Standard Bridge. Responsible for finalising withdrawals from L2 and initiating deposits into L2 of ETH and compliant ERC20s.
+
+
+### [`OVM_L2StandardBridge`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/optimistic-ethereum/OVM/bridge/tokens/OVM_L2StandardBridge.sol)
+The L2 part of the Standard Bridge. Responsible for finalising deposits from L1 and initiating withdrawals from L2 of ETH and compliant ERC20s.
 
 
 <!--
@@ -313,7 +332,22 @@ data as CALLDATA on L1).
 
 ### [`OVM_L2StandardBridge`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/optimistic-ethereum/OVM/bridge/tokens/OVM_L2StandardBridge.sol)
 The L2 part of the Standard Bridge. Responsible for finalising deposits from L1 and initiating withdrawals from L2 of ETH and compliant ERC20s.
-See [Standard Bridge](../developers/bridging.md#the-standardtm-bridge) for details.
+See [Standard Bridge](/docs/developers/bridge/standard-bridge.html) for details.
+
+### [`OVM_ExecutionManagerWrapper`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/OVM/predeploys/OVM_ExecutionManagerWrapper.sol)
+This is the one contract on L2 that can call another contract without having to
+go through virtualization. It is used to call 
+[OVM_ExecutionManager](#ovm-executionmanager).
+
+
+### [`ERC1820Registry`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/OVM/predeploys/ERC1820Registry.sol)
+[ERC1820](https://eips.ethereum.org/EIPS/eip-1820) specifies a registry
+service that lets addresses report what interfaces they support and ask 
+about other addresses. 
+
+### [`Lib_AddressManager`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/libraries/resolver/Lib_AddressManager.sol)
+This is a library that stores the mappings between names and their addresses.
+It is used by [`OVM_L1CrossDomainMessenger`](#ovm-l1crossdomainmessenger).
 
 ### [`OVM_ExecutionManagerWrapper`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/OVM/predeploys/OVM_ExecutionManagerWrapper.sol)
 This is the one contract on L2 that can call another contract without having to
