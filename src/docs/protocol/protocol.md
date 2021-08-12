@@ -252,7 +252,7 @@ The State Manager Factory is called by a State Transitioner's init code, to crea
 ## Bridge Contracts
 
 The Bridge contracts implement the functionality required to pass messages between layer 1 and layer 2.  [You can read an overview
-here](http://localhost:8080/docs/developers/bridge/messaging.html)
+here](/docs/developers/bridge/messaging.html)
 
 <!--
 **Planned section outline**
