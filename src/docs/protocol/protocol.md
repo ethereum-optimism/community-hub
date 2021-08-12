@@ -332,7 +332,7 @@ data as CALLDATA on L1).
 
 ### [`OVM_L2StandardBridge`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/optimistic-ethereum/OVM/bridge/tokens/OVM_L2StandardBridge.sol)
 The L2 part of the Standard Bridge. Responsible for finalising deposits from L1 and initiating withdrawals from L2 of ETH and compliant ERC20s.
-See [Standard Bridge](../developers/bridging.md#the-standardtm-bridge) for details.
+See [Standard Bridge](/docs/developers/bridge/standard-bridge.html) for details.
 
 ### [`OVM_ExecutionManagerWrapper`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/OVM/predeploys/OVM_ExecutionManagerWrapper.sol)
 This is the one contract on L2 that can call another contract without having to
