@@ -38,29 +38,6 @@ module.exports = {
         {
           title: 'User Docs',
           children: [
-            // {
-            //   title: 'Supported Wallets',
-            //   children: [
-            //     [
-            //       '/docs/users/metamask.md',
-            //       'MetaMask'
-            //     ],
-            //     [
-            //       `https://rainbow.me/`,
-            //       `Rainbow`
-            //     ],
-            //     [
-            //       `https://support.token.im/hc/en-us/articles/900006289803-How-to-use-Layer-2-network-through-imToken's-custom-network-function-`,
-            //       'imToken'
-            //     ],
-            //     [
-            //       `https://medium.com/ethereum-optimism/improving-ux-on-l2-ff2f88f44836`,
-            //       `Coinbase Wallet`
-            //     ]
-            //   ],
-            //   collapsable: false,
-            //   sidebarDepth: 0,
-            // },
             '/docs/users/wallets.md',
             '/docs/users/metamask.md',
             '/docs/users/gateway.md',
@@ -191,7 +168,9 @@ module.exports = {
     [
       '@vuepress/plugin-medium-zoom',
       {
-        selector: 'img'
+        // When an image is inside a link, it means we don't to expand it
+        // when clicked
+        selector: ':not(a) > img'
       }
     ]
   ]
