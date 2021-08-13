@@ -92,6 +92,53 @@ gas_limit  =  ------------------------------------------------------------------
 
 You can do some math to work backwards from this formula to get original values out, which is how the fees actually get paid during the L2 transaction.
 
+#### Estimating gas costs in JavaScript
+
+You can use the standard mechanisms, `estimateGas` 
+on the function and `getGasPrice` on the provider, to get the actual
+cost.
+
+```javascript
+    contract = new ethers.Contract("0x614df14f1ef98aEe7c9926571421D9cb141F8B45",
+                                   greeterContractData.abi, L2Wallet)
+```
+
+The [Hardhat Greeter test contract](https://github.com/nomiclabs/hardhat/tree/master/packages/hardhat-core/sample-project/contracts) is installed on 
+address 0x614df14f1ef98aEe7c9926571421D9cb141F8B45 on Optimistic Kovan.
+
+```javascript
+    const newGreeting = "Hola mundo"
+
+    const gasEstimate = await contract.estimateGas.setGreeting(newGreeting)
+    const gasPrice = await L2Wallet.provider.getGasPrice()
+```
+
+This is the standard way to get the cost of a transaction before it actually
+happens. On L1 this is a maximum, but on Optimistic Ethereum `gasEstimate*gasPrice`
+is the actual cost being charged.
+
+```javascript
+    const oldBalance = await L2Wallet.getBalance()
+    const tx = await contract.setGreeting(newGreeting)
+    await tx.wait()
+    const newBalance = await L2Wallet.getBalance()    
+    const cost = oldBalance - newBalance
+```
+
+This code runs the transaction and gets the actual cost.
+
+```javascript
+    console.log(`(1) gas estimate:                 ${gasEstimate.toString()}`)
+    console.log(`(2) gas limit in the transaction: ${tx.gasLimit.toString()}`)
+    console.log(`(3) transaction cost: ${cost.toString()} wei`)
+    console.log(`  (4) corresponding to:           ${(cost/gasPrice).toString()} gas`)
+    console.log(`  (5) gas price: ${gasPrice.toString()}`)  
+```
+
+When you run this code you see that the gas estimate (1), the gas limit in the 
+transaction (2) and the gas amount (4) are the same.
+
+
 ### Fees for L1 to L2 transactions
 
 For an L1 to L2 transaction you only pay the L1 cost of submitting the transaction.
