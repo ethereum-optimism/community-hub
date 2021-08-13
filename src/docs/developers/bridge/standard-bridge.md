@@ -34,23 +34,19 @@ Note that the token amount deposited will need to have been approved for the sta
 Initiating withdrawals are the same for ETH and ERC20s as ETH is ERC20-compatible on L2.
 Use the `withdraw` and `withdrawTo` methods on the `OVM_L2StandardBridge` to initiate a withdrawal.
 
-
-<!-- TODO: Update this once we have the tutorial ready
-If you'd like to see these contracts in action, you should check out the [L1 ⇔ L2 deposit-and-withdraw example](https://github.com/ethereum-optimism/optimism/tree/develop/examples/l1-l2-deposit-withdrawal).
- -->
+If you'd like to see these contracts in action, you should check out the [L1 ⇔ L2 deposit-and-withdraw example](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/l1-l2-deposit-withdrawal).
 
 ## Adding an ERC20 token to the Standard Bridge
 
 ::: tip
-See detailed tutorial on [bridging your ERC20 token to Optimism](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/standard-bridge-token) using the Standard Bridge.
+See detailed tutorial on [bridging your standard ERC20 token to Optimism](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/standard-bridge-standard-token) using the Standard Bridge.
 :::
 
-Anyone can register a new ERC20 token to the Standard Bridge.
+Anyone can add a new ERC20 token to the Standard Bridge.
 You must have a token contract on both L1 and L2.
 Your L2 token contract must also implement the [`IL2StandardERC20`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/optimistic-ethereum/libraries/standards/IL2StandardERC20.sol) interface.
 Optimism provides a standard implementation of that interface as the [`L2StandardERC20`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/optimistic-ethereum/libraries/standards/L2StandardERC20.sol) contract.
 
-<!-- TODO: factory (?) -->
 
 If the `L2StandardERC20` implementation does not satisfy your requirements, you can deploy an alternative implementation as long as it's compliant with the `IL2StandardERC20` interface.
 You can freely deploy your proposed implementation to the Optimistic Kovan testnet.

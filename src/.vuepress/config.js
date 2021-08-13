@@ -95,8 +95,12 @@ module.exports = {
                   'Depositing and Withdrawing ERC20 Tokens'
                 ],
                 [
-                  'https://github.com/ethereum-optimism/optimism-tutorial/tree/main/standard-bridge-token',
-                  'Registering an ERC20 Token on L2'
+                  'https://github.com/ethereum-optimism/optimism-tutorial/tree/main/standard-bridge-standard-token',
+                  'Registering a Standard ERC20 Token on L2'
+                ],
+                [
+                  'https://github.com/ethereum-optimism/optimism-tutorial/tree/main/standard-bridge-custom-token',
+                  'Registering a Custom ERC20 Token on L2'
                 ],
                 [
                   'https://github.com/ethereum-optimism/optimism-tutorial/tree/main/',
