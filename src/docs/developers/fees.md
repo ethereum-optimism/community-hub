@@ -142,7 +142,8 @@ transaction (2) and the gas amount (4) are the same.
 
 Sometimes it is advantageous to run the gas estimate locally instead of asking
 a network node. For example, you might want to run a what-if scenario if the
-L1 gas price goes up or down.
+L1 gas price goes up or down, or if a transaction that fails in the current
+state were successful.
 
 To do this, we provide the Javascript package 
 [`@eth-optimism/core-utils`](https://www.npmjs.com/package/@eth-optimism/core-utils). Here is sample code that uses it:
@@ -162,31 +163,26 @@ it's OK to give a dummy address and not have a provider or wallet.
     let tx = await contract.populateTransaction.setGreeting(newGreeting)
 ```
 
-[The `populateTransaction` function](https://docs.ethers.io/v5/api/contract/contract/#contract-populateTransaction) allows us to create the transaction
+[`populateTransaction`](https://docs.ethers.io/v5/api/contract/contract/#contract-populateTransaction) allows us to create the transaction
 that we'd normally send to run a function. 
 
 ```javascript
-    const L1GasPrice = await L1Provider.getGasPrice()
-```
-
-The major cost of an Optimistic Ethereum transaction is 
-[the L1 storage](#under-the-hood). The transaction data has to be stored in the CALLDATA of an L1 transaction. The cost of that storage depends on the cost of
-L1 gas, so we need to [obtain that 
-information](https://docs.ethers.io/v5/api/providers/provider/#Provider-getGasPrice).
-
-```javascript
-    const L2GasLimit = 270_000   // Estimate
-```
-
-L2 gas is purchased in units of 10,000, and each unit costs 0.015 gwei.
-At writing 1 ETH &asymp; $3000, so it costs about a cent for two hundred
-thousand of those units. It is better to err on the high side.
-
-```javascript
     const encoded = coreUtils.TxGasLimit.encode({
-        l1GasPrice: L1GasPrice,
-        l2GasLimit: L2GasLimit,
-        l2GasPrice: 10_000,
+        l1GasPrice: l1GasPrice,
+        l2GasPrice: l2GasPrice,
+```
+
+The L1 and L2 gas prices are available through [our RPC 
+interface](/docs/developers/l2/rpc.html#rollup-gasprices). For the L1
+gas price you can also use [`getGasPrice`](https://docs.ethers.io/v5/api/providers/provider/#Provider-getGasPrice).
+
+```javascript                
+        l2GasLimit: l2GasLimit,
+```
+
+An estimate of how much gas the transaction will take. 
+
+```javascript
         data: tx.data,
     })
 ```
@@ -196,10 +192,11 @@ to figure the storage cost. The exception is the transaction's calldata, which w
 take from `populateTransaction`.
 
 ```javascript
-    console.log("\n\nUsing core-utils:")
-    console.log(`L1 GasPrice: ${L1GasPrice.toString().slice(0,-9)} gwei`)  
     console.log(`coreUtils gasLimit: ${encoded}`)
 ```
+
+The `gasLimit` we need to provide is the `encoded` value. That, times 
+`0.015 gwei`, is the cost of the transaction.
 
 ### Fees for L1 to L2 transactions
 
