@@ -103,8 +103,8 @@ cost.
                                    greeterContractData.abi, L2Wallet)
 ```
 
-The [Hardhat Greeter test contract](https://github.com/nomiclabs/hardhat/tree/master/packages/hardhat-core/sample-project/contracts) is installed on 
-address 0x614df14f1ef98aEe7c9926571421D9cb141F8B45 on Optimistic Kovan.
+The [Hardhat Greeter test contract](https://github.com/nomiclabs/hardhat/blob/master/packages/hardhat-core/sample-projects/basic/contracts/Greeter.sol) is installed on 
+address `0x614df14f1ef98aEe7c9926571421D9cb141F8B45` on Optimistic Kovan.
 
 ```javascript
     const newGreeting = "Hola mundo"
@@ -132,12 +132,74 @@ This code runs the transaction and gets the actual cost.
     console.log(`(2) gas limit in the transaction: ${tx.gasLimit.toString()}`)
     console.log(`(3) transaction cost: ${cost.toString()} wei`)
     console.log(`  (4) corresponding to:           ${(cost/gasPrice).toString()} gas`)
-    console.log(`  (5) gas price: ${gasPrice.toString()}`)  
+    console.log(`  (5) gas price: ${gasPrice.toString()} wei/gas`)  
 ```
 
 When you run this code you see that the gas estimate (1), the gas limit in the 
 transaction (2) and the gas amount (4) are the same.
 
+#### Estimating costs locally
+
+Sometimes it is advantageous to run the gas estimate locally instead of asking
+a network node. For example, you might want to run a what-if scenario if the
+L1 gas price goes up or down.
+
+To do this, we provide the Javascript package 
+[`@eth-optimism/core-utils`](https://www.npmjs.com/package/@eth-optimism/core-utils). Here is sample code that uses it:
+
+
+```javascript
+    contract = new ethers.Contract("0x0000000000000000000000000000000000000000", 
+          greeterContractData.abi)
+```
+
+We need a contract instance to get the transaction data, but it doesn't
+actually need to be connected to a contract on an Ethereum network, so
+it's OK to give a dummy address and not have a provider or wallet.
+
+```javascript
+    const newGreeting = "Hola mundo"
+    let tx = await contract.populateTransaction.setGreeting(newGreeting)
+```
+
+[The `populateTransaction` function](https://docs.ethers.io/v5/api/contract/contract/#contract-populateTransaction) allows us to create the transaction
+that we'd normally send to run a function. 
+
+```javascript
+    const L1GasPrice = await L1Provider.getGasPrice()
+```
+
+The major cost of an Optimistic Ethereum transaction is 
+[the L1 storage](#under-the-hood). The transaction data has to be stored in the CALLDATA of an L1 transaction. The cost of that storage depends on the cost of
+L1 gas, so we need to [obtain that 
+information](https://docs.ethers.io/v5/api/providers/provider/#Provider-getGasPrice).
+
+```javascript
+    const L2GasLimit = 270_000   // Estimate
+```
+
+L2 gas is purchased in units of 10,000, and each unit costs 0.015 gwei.
+At writing 1 ETH &asymp; $3000, so it costs about a cent for two hundred
+thousand of those units. It is better to err on the high side.
+
+```javascript
+    const encoded = coreUtils.TxGasLimit.encode({
+        l1GasPrice: L1GasPrice,
+        l2GasLimit: L2GasLimit,
+        l2GasPrice: 10_000,
+        data: tx.data,
+    })
+```
+
+Most fields in a transaction are fixed length and we don't need their values
+to figure the storage cost. The exception is the transaction's calldata, which we 
+take from `populateTransaction`.
+
+```javascript
+    console.log("\n\nUsing core-utils:")
+    console.log(`L1 GasPrice: ${L1GasPrice.toString().slice(0,-9)} gwei`)  
+    console.log(`coreUtils gasLimit: ${encoded}`)
+```
 
 ### Fees for L1 to L2 transactions
 
