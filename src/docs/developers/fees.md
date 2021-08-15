@@ -92,6 +92,7 @@ gas_limit  =  ------------------------------------------------------------------
 
 You can do some math to work backwards from this formula to get original values out, which is how the fees actually get paid during the L2 transaction.
 
+
 #### Estimating gas costs in JavaScript
 
 You can use the standard mechanisms, `estimateGas` 
@@ -197,6 +198,21 @@ take from `populateTransaction`.
 
 The `gasLimit` we need to provide is the `encoded` value. That, times 
 `0.015 gwei`, is the cost of the transaction.
+
+
+#### How much does L2 gas cost?
+
+L2 gas is purchased in units of 10,000 gas. The last four digits of 
+`gasLimit` are the number of units purchased. At writing `1 ETH ≈ $3000`,
+so these digits can add at most `10,000 * 0.015 gwei * 3000 / 10^9` to the
+transaction cost. This works out to `0.045 ¢`, so I am going to ignore this
+added cost from now on.
+ 
+At writing `l2GasPrice` on the Optimistic Ethereum is a million. Every 10^5 
+gas adds 10,000 to `gasLimit` (for other gas prices 
+it should also be every `10^11 / l2GasPrice` gas). At present prices it means
+that a cent buys you approximately 2.2 million gas. 
+
 
 ### Fees for L1 to L2 transactions
 
