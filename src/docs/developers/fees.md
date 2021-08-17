@@ -56,7 +56,7 @@ For transactions sent directly to the Sequencer, the cost of a transaction is de
 Ultimately, the cost of a transaction is computed by the following formula:
 
 ```text
-total_cost = ((tx_size * d_price) + (exec_gas * exec_price)) * premium
+total_cost = ((tx_size * d_price) + (exec_gas * exec_price))
 ```
 
 Where:
@@ -68,9 +68,7 @@ Where:
 * `exec_gas` is the amount of gas that the transaction can use.
 * `exec_price` is the cost (in wei) per unit gas allotted (much like
   `gas_price` on L1).
-* `premium` is the premium we charge for our service and for the fact that L1 data 
-  costs might increase while the transaction is being processed.
-  At present that value is 1.5.
+
 
 ::: tip
 In Optimistic Ethereum the cost of a transaction is always
@@ -90,7 +88,7 @@ We manage to encode these values into the `gas_limit` field as follows:
 
 ```text
               (tx_size * d_price) + (exec_gas * exec_price)
-gas_limit  =  ---------------------------------------------  * premium
+gas_limit  =  ---------------------------------------------
                                 gas_price
 ```
 
