@@ -70,6 +70,7 @@ Where:
   `gas_price` on L1).
 * `premium` is the premium we charge for our service and for the fact that L1 data 
   costs might increase while the transaction is being processed.
+  At present that value is 1.5.
 
 ::: tip
 In Optimistic Ethereum the cost of a transaction is always
