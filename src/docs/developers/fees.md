@@ -211,13 +211,24 @@ The `gasLimit` we need to provide is the `encoded` value. That, times
 L2 gas is purchased in units of 10,000 gas. The last four digits of 
 `gasLimit` are the number of units purchased. At writing `1 ETH ≈ $3000`,
 so these digits can add at most `10,000 * 0.015 gwei * 3000 / 10^9` to the
-transaction cost. This works out to `0.045 ¢`, so I am going to ignore this
-added cost from now on.
+transaction cost. This works out to `0.045 ¢`, a negligible cost.
  
 At writing `l2GasPrice` on the Optimistic Ethereum is a million. Every 10^5 
 gas adds 10,000 to `gasLimit` (for other gas prices 
-it should also be every `10^11 / l2GasPrice` gas). At present prices it means
-that a cent buys you approximately 2.2 million gas. 
+it should also be every `10^11 / l2GasPrice` gas). In other words, 10 gas units
+cost 0.015 gwei. 
+
+On L1 a gas unit typically costs over twenty gwei 
+([click here for a graph](https://ycharts.com/indicators/ethereum_average_gas_price)). This means that teb thousand units of L2
+gas cost are cheaper than one unit of L1 gas.
+
+At present prices a cent buys you approximately 2.2 million L2 gas. 
+
+::: warning Congestion Pricing
+The `l2GasPrice` is normally a million, but it could rise at times of
+high congestion.
+:::
+
 
 
 ### Fees for L1 to L2 transactions
