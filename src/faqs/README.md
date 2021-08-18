@@ -41,7 +41,7 @@ The easiest way to move assets into or out of an Optimistic Ethereum network is 
 
 ### Why do I need to wait a week when moving assets out of Optimistic Ethereum?
 
-Users are required to wait for a period of one week when moving assets out of the Optimistic Ethereum mainnet. This period of time is called the Challenge Period and serves to help secure the assets stored on an Optimistic Ethereum network. You can find more information about the Challenge Period [here](https://community.optimism.io/docs/developers/bridging.html#understanding-the-challenge-period). Please note that the [Optimistic Kovan testnet](https://community.optimism.io/docs/developers/networks.html#optimistic-kovan) has a Challenge Period of only 60 seconds to simplify the development process.
+Users are required to wait for a period of one week when moving assets out of the Optimistic Ethereum mainnet. This period of time is called the Challenge Period and serves to help secure the assets stored on an Optimistic Ethereum network. You can find more information about the Challenge Period [here](https://community.optimism.io/docs/developers/bridge/messaging.html#understanding-the-challenge-period). Please note that the [Optimistic Kovan testnet](https://community.optimism.io/docs/developers/networks.html#optimistic-kovan) has a Challenge Period of only 60 seconds to simplify the development process.
 
 ### Can I cancel a withdrawal after it has been submitted?
 
