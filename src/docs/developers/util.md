@@ -33,6 +33,7 @@ You can read how to use ERC-20 tokens
 
 Factory contract for creating standard L2 token representations of
 L1 ERC20s compatible with and working on the standard bridge.
+[Click here to see how to use it](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/standard-bridge-standard-token)
 
 
 [Source](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/OVM/bridge/tokens/OVM_L2StandardTokenFactory.sol)
@@ -49,6 +50,11 @@ There are two easy ways to achieve multisig functionality on Optimistic Ethereum
 
 1. You can use [a clone of OG Gnsosis](https://ogg.scopelift.co/). 
 2. Use any L1 multisig and then [relay the message to L2](/docs/developers/bridge/messaging.html).
+
+
+## Tokens
+
+There is a list of tokens and their addresses [here](https://github.com/ethereum-optimism/ethereum-optimism.github.io/blob/master/optimism.tokenlist.json).
 
 
 ## Uniswap Core
