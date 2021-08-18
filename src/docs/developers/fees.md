@@ -219,7 +219,7 @@ it should also be every `10^11 / l2GasPrice` gas). In other words, 10 gas units
 cost 0.015 gwei. 
 
 On L1 a gas unit typically costs over twenty gwei 
-([click here for a graph](https://ycharts.com/indicators/ethereum_average_gas_price)). This means that teb thousand units of L2
+([click here for a graph](https://ycharts.com/indicators/ethereum_average_gas_price)). This means that ten thousand units of L2
 gas cost are cheaper than one unit of L1 gas.
 
 At present prices a cent buys you approximately 2.2 million L2 gas. 
