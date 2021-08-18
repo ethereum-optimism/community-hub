@@ -138,10 +138,12 @@ transaction (2) and the gas amount (4) are the same.
     console.log(`(1) gas estimate:                 ${gasEstimate.toString()}`)
     console.log(`(2) gas limit in the transaction: ${tx.gasLimit.toString()}`)
     console.log(`(3) transaction cost: ${cost.toString()} wei`)
-    console.log(`  (4) corresponding to:           ${(cost/gasPrice).toString()} gas`)
-    console.log(`  (5) gas price: ${gasPrice.toString()} wei/gas`)  
+    console.log(`(4) the cost corresponds to:      ${(cost/gasPrice).toString()} gas`)
+    console.log(`(5) gas price: ${gasPrice.toString()} wei/gas`)  
 ```
 
+
+<!--
 
 #### Estimating costs locally
 
@@ -204,8 +206,9 @@ The `gasLimit` we need to provide is the `encoded` value. That, times
 ```
 
 
+-->
 
-
+<!--
 #### How much does L2 gas cost?
 
 L2 gas is purchased in units of 10,000 gas. The last four digits of 
@@ -229,7 +232,7 @@ The `l2GasPrice` is normally a million, but it could rise at times of
 high congestion.
 :::
 
-
+-->
 
 ### Fees for L1 to L2 transactions
 
