@@ -137,9 +137,9 @@ transaction (2) and the gas amount (4) are the same.
 ```javascript
     console.log(`(1) gas estimate:                 ${gasEstimate.toString()}`)
     console.log(`(2) gas limit in the transaction: ${tx.gasLimit.toString()}`)
-    console.log(`(3) transaction cost: ${cost.toString()} wei`)
+    console.log(`(3) transaction cost:             ${cost.toString()} wei`)
     console.log(`(4) the cost corresponds to:      ${(cost/gasPrice).toString()} gas`)
-    console.log(`(5) gas price: ${gasPrice.toString()} wei/gas`)  
+    console.log(`(5) gas price:                    ${gasPrice.toString()} wei/gas`)  
 ```
 
 
