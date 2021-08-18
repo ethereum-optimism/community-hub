@@ -15,9 +15,9 @@ Details here are subject to change as the Optimistic Ethereum protocol evolves. 
 
 We currently require addresses to be whitelisted before they can deploy to our mainnet. To read the full context around this, please see our post on Medium. Below is the current list of criteria required to be whitelisted for mainnet deployment.
 
-# Requirements and Key Info
+## Requirements and Key Info
 
-## Requirements
+### Requirements
 
 1. Carefully check through the list of potentially breaking changes of the next upgrade below and ensure your contracts will not be affected
 2. Deploy your contracts to our Optimistic Kovan test network
@@ -33,7 +33,7 @@ If you are whitelisted and deploy to Mainnet, you must:
 
 *Note: If your protocol uses contracts that you *cannot* verify on Etherescan, they will be wiped from state in the next upgrade and you would have to re-deploy them.
 
-## Key Info
+### Key Info
 
 1. There are multiple  "regenesis" upgrades scheduled over the coming months. You can track their dates and read up more on their implications here:
 
