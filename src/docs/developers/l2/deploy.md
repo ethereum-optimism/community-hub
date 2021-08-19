@@ -7,13 +7,14 @@ lang: en-US
 
 ::: warning NOTICE
 This page refers to the design of the current iteration of the Optimistic Ethereum protocol.
-Details here are subject to change as the Optimistic Ethereum protocol evolves. To see the full announcement of criteria to be whitelisted, please see our Medium post.
+Details here are subject to change as the Optimistic Ethereum protocol evolves.
 :::
 
 
 ## Whitelisting
 
-We currently require addresses to be whitelisted before they can deploy to our mainnet. To read the full context around this, please see our post on Medium. Below is the current list of criteria required to be whitelisted for mainnet deployment.
+We currently require addresses to be whitelisted before they can deploy onto the Optimistic Ethereum mainnet. To get the full rundown, 
+[see our post on Medium](https://medium.com/ethereum-optimism/community-launch-7c9a2a9d3e84). Below is the current list of criteria required to be whitelisted for mainnet deployment.
 
 ## Requirements and Key Info
 

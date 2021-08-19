@@ -97,6 +97,7 @@ module.exports = {
                 '/docs/developers/l2/hardhat.md',
                 '/docs/developers/l2/truffle.md',
                 '/docs/developers/l2/convert.md',
+                '/docs/developers/l2/deploy.md',
                 '/docs/developers/l2/contracts.md',
                 '/docs/developers/l2/block-time.md',
                 '/docs/developers/l2/rpc.md',
