@@ -13,7 +13,8 @@ Details here are subject to change as the Optimistic Ethereum protocol evolves.
 
 ## Whitelisting
 
-We currently require addresses to be whitelisted before they can deploy onto the Optimistic Ethereum mainnet. To get the full rundown, see our post on Medium. Below is the current list of criteria required to be whitelisted for mainnet deployment.
+We currently require addresses to be whitelisted before they can deploy onto the Optimistic Ethereum mainnet. To get the full rundown, 
+[see our post on Medium](https://medium.com/ethereum-optimism/community-launch-7c9a2a9d3e84). Below is the current list of criteria required to be whitelisted for mainnet deployment.
 
 ## Requirements and Key Info
 
