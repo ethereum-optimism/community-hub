@@ -43,11 +43,12 @@ If you are whitelisted and deploy to Mainnet, you must:
 Please ensure that your project can handle the downtime and wiping of chain history that will occur during a Regenesis
 
 1. During the next regenesis (currently targeting October), we will have a series of breaking changes as a part of an upgrade to the OVM. Fundamentally, this will drastically reduce the differences between the OVM and EVM so that developers can implement their contracts with mostly just one target in mind, instead of managing OVM idiosyncrasies with separate contracts. Thus the changes can be viewed as a reversion to most things listed on this page [https://community.optimism.io/docs/protocol/evm-comparison.html](https://community.optimism.io/docs/protocol/evm-comparison.html). Here is the list of key breaking changes to watch for:
-    1. ETH will no longer be an ERC20
-        - Currently users can send and interact with ETH both as an ERC20 located at `0x4200000000000000000000000000000000000006` and as native ETH. After this upgrade, ETH can only be interacted with as native ETH (e.g. in `msg.value` and `payable` functions)
-        - To best handle the upgrade, we recommend that projects do not use the ERC20 version of ETH at `0x4200000000000000000000000000000000000006` and instead interact with it as you would interact with ETH in your L1 Ethereum contracts.
-    2. We will be re-compiling every verified contract with a different compiler.
-        - This will break any usage of a hardcoded codehash because both the codehash and codesize of every verified contract will change post-upgrade
+    1. ETH may no longer be ERC20 compatible.
+        - Currently users can send and interact with ETH both as an ERC20 located at `0x4200000000000000000000000000000000000006` and as native ETH. We are reviewing this feature for security vulnerabilities and collecting feedback from developers. Depending on the result of this review, we may decide to remove ERC20 compatibility.
+        - Projects that currently use the ETH ERC20 feature should be aware that this functionality may be removed in the future. We will announce this change in advance if we do in fact decide to remove this functionality.
+        - We recommend that projects do not write new contracts that rely on this feature until we've made a final decision.
+    2. We will be re-compiling every verified contract with the standard Solidity compiler.
+        - This will break any usage of a hardcoded codehash because both the codehash and codesize of every verified contract will change post-upgrade.
         - This may have implications for re-computing CREATE2'ed contract addresses.
         - Uniswap pools will be moved to their L1-equivalent addresses corresponding to CREATE2 with the new bytecode.  Do NOT use Uniswap pool addresses in storage; only use the getter from the factory.
     3. EOAs will no longer be contract wallets
@@ -57,7 +58,7 @@ Please ensure that your project can handle the downtime and wiping of chain hist
     4. Gas usage will decrease
         - The OVM usually results in an increase in gas usage because of compiled OVM opcodes, sometimes inflating gas costs by up to 10x the costs on L1 Ethereum.
         - With this OVM upgrade, gas usage on Optimistic Ethereum should now exactly match the expected gas usage from a deployment to L1 Ethereum in almost all cases.
-    5. Know that the "unsupported opcodes in the OVM" will be added, but will return null/zero values
+    5. Certain opcodes remain unsupported and will return null/zero values
         - Certain opcodes not supported in the OVM such as `DIFFICULTY` `COINBASE` `BLOCKHASH` `GASPRICE` `SELFDESTRUCT` will be added to Optimistic Ethereum, but for now will just return null/zero values.
             - `DIFFICULTY` `COINBASE` and `GASPRICE` will return 0.
             - `BLOCKHASH` will return `0x0000000000000000000000000000000000000000000000000000000000000000`.
