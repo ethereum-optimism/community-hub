@@ -48,7 +48,8 @@ Please ensure that your project can handle the downtime and wiping of chain hist
         - To best handle the upgrade, we recommend that projects do not use the ERC20 version of ETH at `0x4200000000000000000000000000000000000006` and instead interact with it as you would interact with ETH in your L1 Ethereum contracts.
     2. We will be re-compiling every verified contract with a different compiler.
         - This will break any usage of a hardcoded codehash because both the codehash and codesize of every verified contract will change post-upgrade
-        - This may have implications for re-computing CREATE2'ed contract addresses
+        - This may have implications for re-computing CREATE2'ed contract addresses.
+        - Uniswap pools will be moved to their L1-equivalent addresses corresponding to CREATE2 with the new bytecode.  Do NOT use Uniswap pool addresses in storage; only use the getter from the factory.
     3. EOAs will no longer be contract wallets
         - Currently, every new EOA in Optimistic Ethereum deploys a proxy contract to that address, making every EOA a contract account.
         - After the upgrade, every known contract account will be reverted to an EOA with no code.
