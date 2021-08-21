@@ -120,7 +120,7 @@ lang: en-US
 
 | Mainnet Support | Kovan Testnet Support |
 | --------------- | --------------------- |
-| Soon™           | Soon™                 |
+| ☑               | ☑                     |
 
 ---
 

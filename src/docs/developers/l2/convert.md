@@ -87,9 +87,12 @@ Ethereum:
    [Hardhat](/docs/developers/l2/hardhat.html) or 
    [Truffle](/docs/developers/l2/truffle.html).
 1. Run your tests on the Optimistic Ethereum development node you created.
-1. Deploy your test to the [Optimistic 
+1. Deploy your dapp to the [Optimistic 
    Kovan](/docs/infra/networks.html#optimistic-kovan) network and test it in that
    environment.
+1. Upload and verify the contracts' source code on [Optimistic Kovan 
+   Etherscan](https://kovan-optimistic.etherscan.io/verifyContract) 
 1. [Ask to be added to the Optimistic Ethereum whitelist](https://docs.google.com/forms/d/e/1FAIpQLSdKyXpXY1C4caWD3baQBK1dPjEboOJ9dpj9flc-ursqq8KU0w/viewform)    
 1. Once added, deploy your contracts to the 
-   [Optimistic Ethereum](/docs/infra/networks.html#optimistic-ethereum) network.
+   [Optimistic Ethereum](/docs/infra/networks.html#optimistic-ethereum) network. Then, upload and 
+   verify your contracts' source code on [Optimistic Etherscan](https://optimistic.etherscan.io/verifyContract).
