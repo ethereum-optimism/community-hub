@@ -63,9 +63,9 @@ module.exports = {
                   'https://github.com/ethereum-optimism/optimism-tutorial/tree/main/truffle',
                   'Optimistic Ethereum with Truffle'
                 ],
-                [
-                  '/docs/developers/l2/remix.md',
-                  'Optimistic Ethereum with Remix (coming soon)'
+                [ 
+                  'https://remix-optimism-compiler-plugin.readthedocs.io/en/latest/',
+                  'Optimistic Ethereum with Remix'
                 ],
                 [
                   'https://github.com/ethereum-optimism/optimism-tutorial/tree/main/l1-l2-deposit-withdrawal',
