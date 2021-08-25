@@ -46,7 +46,7 @@ accessible to anyone.
 This document is intended for anyone looking for a deeper understanding of how the protocol works
 'under the hood'.
 If you just want to skip straight to integrating your smart contract application with
-OE, check out the [Developer Docs](../developers/integration.md).
+OE, check out the [Developer Docs](/docs/developers/l2/convert.html).
 
 Optimistic Ethereum is meant to look, feel and behave like Ethereum but cheaper and faster.
 For developers building on our OE, we aim to make the transition as seamless as possible.
