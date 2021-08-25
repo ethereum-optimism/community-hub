@@ -9,7 +9,7 @@ lang: en-US
 
 ---
 
-[<img src="../../assets/logos/optimism.svg" width="50" align="left">](https://gateway.optimism.io/)
+[<img src="../../assets/logos/optimism.svg" height="50" align="left">](https://gateway.optimism.io/)
 
 <br/>
 
@@ -19,7 +19,28 @@ The Optimism Gateway allows you to transfer assets between L1 and Optimistic Eth
 
 ---
 
-[<img src="../../assets/logos/synthetix.png" width="200" align="left">](https://synthetix.io/)
+
+[<img src="../../assets/logos/chainlink-logo.svg" height="50" align="left">](https://chain.link/)
+
+</br>
+
+Chainlink's decentralized oracle network provides reliable, tamper-proof inputs and outputs for complex smart contracts on any blockchain.
+
+---
+
+[<img src="../../assets/logos/lyra.png" height="50" align="left">](https://www.lyra.finance/)
+
+<br/>
+
+Lyra is an automated market maker (AMM) for [option 
+trading](https://www.lyra.finance/files/whitepaper.pdf). 
+
+
+* [Onboarding Guide](https://blog.lyra.finance/onboarding-guide/)
+
+---
+
+[<img src="../../assets/logos/synthetix.png" height="50" align="left">](https://synthetix.io/)
 
 <br/>
 
@@ -34,7 +55,7 @@ This makes it possible to invest in and trade assets without actually having to 
 
 ---
 
-[<img src="../../assets/logos/uniswap.png" width="200" align="left">](https://uniswap.org/)
+[<img src="../../assets/logos/uniswap.png" height="50" align="left">](https://uniswap.org/)
 
 </br>
 
@@ -45,12 +66,5 @@ The protocol is implemented as a set of persistent, non-upgradable smart contrac
 * [Uniswap (live on L2)](https://app.uniswap.org/#/swap)
 
 
----
 
-
-[<img src="../../assets/logos/chainlink-logo.svg" width="200" align="left">](https://chain.link/)
-
-</br>
-
-Chainlink's decentralized oracle network provides reliable, tamper-proof inputs and outputs for complex smart contracts on any blockchain.
 
