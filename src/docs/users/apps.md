@@ -12,8 +12,8 @@ lang: en-US
 | [<img src="../../assets/logos/optimism.svg" height="50">](#optimism) | [<img src="../../assets/logos/uniswap.png" height="50">](#uniswap) | [<img src="../../assets/logos/synthetix.png" height="50">](#synthetix) | [<img src="../../assets/logos/chainlink-logo.svg" height="50">](#chainlink) |
 | - | - | - | - |
 
-| [<img src="../../assets/logos/lyra.png" height="50">](#lyra) | [<img src="../../assets/logos/hop-logo.svg" height="50">](#hop-exchange) |
-| - | - |
+| [<img src="../../assets/logos/lyra.png" height="50">](#lyra) | [<img src="../../assets/logos/hop-logo.svg" height="50">](#hop-exchange) | [<img src="../../assets/logos/1inch-logo.png" height="50">](#_1inch) |
+| - | - | - |
 
 [To see our list of supported wallets, check here](/docs/users/wallets.html)
 
@@ -25,6 +25,14 @@ lang: en-US
 The Optimism Gateway allows you to transfer assets between L1 and Optimistic Ethereum.
 
 * [Documentation](/docs/users/gateway.html)
+
+---
+
+## [1inch <img src="../../assets/logos/1inch-logo.png" height="50" align="right">](https://help.1inch.io/en/articles/5468238-optimism-how-to-use-1inch-on-optimistic-ethereum)
+
+1inch's aggregation protocol, which allows you to choose the best decentralized exchange for your
+transaction, is available on Optimistic Ethereum.
+
 
 ---
 
