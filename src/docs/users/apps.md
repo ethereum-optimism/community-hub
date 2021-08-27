@@ -60,8 +60,6 @@ Kwenta allows you to trade real world assets and derivatives on-chain.
 
 ---
 
-
-
 ## [Lyra <img src="../../assets/logos/lyra.png" height="50" align="right">](https://www.lyra.finance/)
 
 Lyra is an automated market maker (AMM) for [option 
