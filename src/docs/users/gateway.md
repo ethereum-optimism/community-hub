@@ -7,8 +7,8 @@ lang: en-US
 
 ::: tip Where is my money?
 If you are not sure what is happening with your withdrawal, [search for the transaction
-hash here](https://optimistic.etherscan.io/messagerelayer). It might still be in the
-fraud proof period. Alternatively, you might just need to 
+hash here](https://optimistic.etherscan.io/messagerelayer), the withdrawal might 
+still be in the validity proof period. Alternatively, you might just need to 
 [finalize the transaction](/docs/users/gateway.html#finalizing-the-withdrawal).
 :::
 
@@ -104,56 +104,74 @@ Please make sure you've already completed [the previous tutorial about depositin
 While communication from Layer 1 to Layer 2 only takes a few minutes, **communication from Layer 2 to Layer 1 on the Optimistic Ethereum mainnet takes about a week.**
 This is a security measure that leaves enough time for invalid transaction results to be caught and reverted before they become "finalized."
 This means that **you must wait one week before you can claim a withdrawal on the Optimistic Ethereum mainnet**.
-Please refer to our [guide to Bridging L1 and L2](./bridging) for more information about this withdrawal delay.
 :::
 
 6. Accept the transaction in MetaMask:
 
 <img src="../../assets/docs/developers/gateway/withdraw/5.png" alt="accept the withdrawal in metamask" width="400px" />
 
+### When is the Withdrawal Ready?
+
+7. During the challenge period there are several ways to check on your withdrawal:
+
+   * Use the [gateway](https://gateway.optimism.io/account) to see a list of withdrawals and
+     deposits.
+
+     <img src="../../assets/docs/developers/gateway/status/gw.png" alt="Check on the withdrawal in the gateway" width="400px" />
+
+   * Use [Etherscan](https://optimistic.etherscan.io/) to view the L2 transaction (identified by
+     its hash). and once it is recorded in L1 click the **L1 State Root Submission Tx Hash**:
+
+     <img src="../../assets/docs/developers/gateway/status/l2tx.png" alt="Look at the L2 transaction" width="400px" />   
+
+     The challenge period starts at the timestamp of the L1 state root transaction. On Optimistic
+     Ethereum you can withdraw once seven days have passed from that timestamp.
+
+     <img src="../../assets/docs/developers/gateway/status/l1tx.png" alt="Look at the L1 transaction" width="400px" />        
+
 ### Finalizing the withdrawal
 
-7. After the waiting period has passed, **you'll need to submit a second transaction on L1 to complete your withdrawal**. You should now see a screen that displays the date and time when your withdrawal can be completed. Since we're on Kovan, this should only be a minute from the time when you started the withdrawal on L2:
+8. After the waiting period has passed, **you'll need to submit a second transaction on L1 to complete your withdrawal**. You should now see a screen that displays the date and time when your withdrawal can be completed. Since we're on Kovan, this should only be a minute from the time when you started the withdrawal on L2:
 
 <img src="../../assets/docs/developers/gateway/withdraw/6.png" alt="see when the withdrawal can be completed"/>
 
-8. Click on your address in the top right corner of your screen to see the status of your withdrawal:
+9. Click on your address in the top right corner of your screen to see the status of your withdrawal:
 
 <img src="../../assets/docs/developers/gateway/withdraw/7.png" alt="click on your address"/>
 
-9. You should be presented with a list of withdrawals that you've made. Now you simply need to wait for the withdrawal challenge period to elapse! On the Optimistic Kovan testnet this withdrawal period is only 60 seconds. Feel free grab a drink or go to the bathroom or something while you wait. Click on your withdrawal once the status symbol turns yellow:
+10. You should be presented with a list of withdrawals that you've made. Now you simply need to wait for the withdrawal challenge period to elapse! On the Optimistic Kovan testnet this withdrawal period is only 60 seconds. Feel free grab a drink or go to the bathroom or something while you wait. Click on your withdrawal once the status symbol turns yellow:
 
 <img src="../../assets/docs/developers/gateway/withdraw/8.png" alt="see yellow status symbol"/>
 
-10. Assuming you've waited 60 seconds or more, you can now claim your withdrawal on L1. Click the button that says `CLAIM WITHDRAWAL`:
+11. Assuming you've waited 60 seconds or more, you can now claim your withdrawal on L1. Click the button that says `CLAIM WITHDRAWAL`:
 
 <img src="../../assets/docs/developers/gateway/withdraw/9.png" alt="go to etherscan to claim withdrawal"/>
 
-11. You'll be brought to a page on Etherscan that looks something like the following. Note that the status of your withdrawal is `Ready for relay`:
+12. You'll be brought to a page on Etherscan that looks something like the following. Note that the status of your withdrawal is `Ready for relay`:
 
 <img src="../../assets/docs/developers/gateway/withdraw/10.png" alt="view the withdrawal claim page on etherscan"/>
 
-12. Since you'll be claiming this withdrawal on L1 (Kovan) you'll need switch back to the Kovan test network in MetaMask before you can continue:
+13. Since you'll be claiming this withdrawal on L1 (Kovan) you'll need switch back to the Kovan test network in MetaMask before you can continue:
 
 <img src="../../assets/docs/developers/gateway/withdraw/11.png" alt="switch back to Kovan" width="400px" />
 
-13. Once you've switched back to Kovan, click the `Execute` button on the Etherscan page:
+14. Once you've switched back to Kovan, click the `Execute` button on the Etherscan page:
 
 <img src="../../assets/docs/developers/gateway/withdraw/12.png" alt="click the execute button on Etherscan"/>
 
-14. Accept the confirmation popup:
+15. Accept the confirmation popup:
 
 <img src="../../assets/docs/developers/gateway/withdraw/13.png" alt="accept the confirmation popup"/>
 
-15. After a few seconds you'll be asked to sign a final transaction in MetaMask:
+16. After a few seconds you'll be asked to sign a final transaction in MetaMask:
 
 <img src="../../assets/docs/developers/gateway/withdraw/14.png" alt="accept the last transaction in metamask" width="400px" />
 
-16. Wait for the transaction to be confirmed on Kovan, then refresh the page. If you see that the message is now `Relayed`, then your withdrawal was successful:
+17. Wait for the transaction to be confirmed on Kovan, then refresh the page. If you see that the message is now `Relayed`, then your withdrawal was successful:
 
 <img src="../../assets/docs/developers/gateway/withdraw/15.png" alt="check withdrawal was relayed correctly"/>
 
-17. You can also confirm that your withdrawal was completed by going back to [gateway.optimism.io](https://gateway.optimism.io) and confirming that your L2 balance has decreased and your L1 balance has increased:
+18. You can also confirm that your withdrawal was completed by going back to [gateway.optimism.io](https://gateway.optimism.io) and confirming that your L2 balance has decreased and your L1 balance has increased:
 
 <img src="../../assets/docs/developers/gateway/withdraw/16.png" alt="check your balance again"/>
 
