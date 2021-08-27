@@ -9,7 +9,7 @@ lang: en-US
 --- 
 
 
-| [<img src="../../assets/logos/optimism.svg" height="50">](#optimism) | [<img src="../../assets/logos/uniswap.png" height="50">](#uniswap) | [<img src="../../assets/logos/synthetix.png" height="50">](#synthetix) | [<img src="../../assets/logos/chainlink-logo.png" height="50">](#chainlink) | [<img src="../../assets/logos/lyra.png" height="50">](#lyra) | [<img src="../../assets/logos/hop_logo.png" height="50">](#hop-exchange) | [<img src="../../assets/logos/1inch.png" height="50">](#_1inch) | [<img src="../../assets/logos/kwenta.jpeg" height="50" align="right">](#kwenta) |
+| [<img src="../../assets/logos/optimism.svg" class="logo">](#optimism) | [<img src="../../assets/logos/uniswap.png" class="logo">](#uniswap) | [<img src="../../assets/logos/synthetix.png" class="logo">](#synthetix) | [<img src="../../assets/logos/chainlink-logo.png" class="logo">](#chainlink) | [<img src="../../assets/logos/lyra.png" class="logo">](#lyra) | [<img src="../../assets/logos/hop_logo.png" class="logo">](#hop-exchange) | [<img src="../../assets/logos/1inch.png" class="logo">](#_1inch) | [<img src="../../assets/logos/kwenta.jpeg" class="logo" align="right">](#kwenta) |
 | - | - | - | - | - | - | - | - |
 
 
@@ -21,7 +21,7 @@ lang: en-US
 
 ---
 
-## [Optimism <img src="../../assets/logos/optimism.svg" height="50" align="right">](https://gateway.optimism.io/)
+## [Optimism <img src="../../assets/logos/optimism.svg" class="logo" align="right">](https://gateway.optimism.io/)
 
 The Optimism Gateway allows you to transfer assets between L1 and Optimistic Ethereum.
 
@@ -29,7 +29,7 @@ The Optimism Gateway allows you to transfer assets between L1 and Optimistic Eth
 
 ---
 
-## [1inch <img src="../../assets/logos/1inch.png" height="50" align="right">](https://help.1inch.io/en/articles/5468238-optimism-how-to-use-1inch-on-optimistic-ethereum)
+## [1inch <img src="../../assets/logos/1inch.png" class="logo" align="right">](https://help.1inch.io/en/articles/5468238-optimism-how-to-use-1inch-on-optimistic-ethereum)
 
 1inch's aggregation protocol, which allows you to choose the best decentralized exchange for your
 transaction, is available on Optimistic Ethereum.
@@ -38,7 +38,7 @@ transaction, is available on Optimistic Ethereum.
 
 ---
 
-## [Chainlink <img src="../../assets/logos/chainlink-logo.png" height="50" align="right">](https://chain.link/)
+## [Chainlink <img src="../../assets/logos/chainlink-logo.png" class="logo" align="right">](https://chain.link/)
 
 Chainlink's decentralized oracle network provides reliable, tamper-proof inputs and outputs for complex smart contracts on any blockchain.
 
@@ -46,13 +46,13 @@ Chainlink's decentralized oracle network provides reliable, tamper-proof inputs 
 
 
 
-## [Hop.Exchange <img src="../../assets/logos/hop_logo.png" height="50" align="right">](https://app.hop.exchange/send?sourceNetwork=ethereum&destNetwork=optimism)
+## [Hop.Exchange <img src="../../assets/logos/hop_logo.png" class="logo" align="right">](https://app.hop.exchange/send?sourceNetwork=ethereum&destNetwork=optimism)
 
 Hop allows you to quickly bridge assets between L1 and various L2 solutions.
 
 ---
 
-## [Kwenta <img src="../../assets/logos/kwenta.jpeg" height="50" align="right">](https://kwenta.io/)
+## [Kwenta <img src="../../assets/logos/kwenta.jpeg" class="logo" align="right">](https://kwenta.io/)
 
 Kwenta allows you to trade real world assets and derivatives on-chain.
 
@@ -60,7 +60,7 @@ Kwenta allows you to trade real world assets and derivatives on-chain.
 
 ---
 
-## [Lyra <img src="../../assets/logos/lyra.png" height="50" align="right">](https://www.lyra.finance/)
+## [Lyra <img src="../../assets/logos/lyra.png" class="logo" align="right">](https://www.lyra.finance/)
 
 Lyra is an automated market maker (AMM) for [option 
 trading](https://www.lyra.finance/files/whitepaper.pdf). 
@@ -72,7 +72,7 @@ trading](https://www.lyra.finance/files/whitepaper.pdf).
 
 ---
 
-## [Synthetix <img src="../../assets/logos/synthetix.png" height="50" align="right">](https://staking.synthetix.io/)
+## [Synthetix <img src="../../assets/logos/synthetix.png" class="logo" align="right">](https://staking.synthetix.io/)
 
 Synthetix is a system designed to let users hold and trade synthetic assets whose value can be tied to
 [real-world assets](https://docs.synthetix.io/tokens/list).
@@ -87,7 +87,7 @@ This makes it possible to invest in and trade assets without actually having to 
 
 ---
 
-## [Uniswap <img src="../../assets/logos/uniswap.png" height="50" align="right">](https://uniswap.org/)
+## [Uniswap <img src="../../assets/logos/uniswap.png" class="logo" align="right">](https://uniswap.org/)
 
 
 
