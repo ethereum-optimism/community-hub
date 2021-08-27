@@ -23,6 +23,13 @@ token](/docs/protocol/evm-comparison.html#using-eth-as-an-erc20-token).
 When you deposit ETH into Optimistic Ethereum, those ERC-20 tokens are what you get 
 on L2.
 
+## Which Assets?
+
+We have a [list of supported ERC-20 tokens](https://static.optimism.io/optimism.tokenlist.json),
+but you are not limited to them, [you can select any 
+token that exists on both L1 and L2](https://optimismpbc.medium.com/arbitrary-token-bridging-d552f6bef694).
+
+
 ## Depositing into L2
 
 First we'll go over the basics of transferring tokens for L1 into L2.
