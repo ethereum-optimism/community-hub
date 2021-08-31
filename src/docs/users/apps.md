@@ -9,8 +9,8 @@ lang: en-US
 --- 
 
 
-| [<img src="../../assets/logos/optimism.svg" class="logo">](#optimism) | [<img src="../../assets/logos/uniswap.png" class="logo">](#uniswap) | [<img src="../../assets/logos/synthetix.png" class="logo">](#synthetix) | [<img src="../../assets/logos/chainlink-logo.png" class="logo">](#chainlink) | [<img src="../../assets/logos/lyra.png" class="logo">](#lyra) | [<img src="../../assets/logos/hop_logo.png" class="logo">](#hop-exchange) | [<img src="../../assets/logos/1inch.png" class="logo">](#_1inch) | [<img src="../../assets/logos/kwenta.jpeg" class="logo" align="right">](#kwenta) | [<img src="../../assets/logos/gnosis.png" class="logo" align="right">](#og-gnosis-multisig) |
-| - | - | - | - | - | - | - | - | - |
+| [<img src="../../assets/logos/optimism.svg" class="logo">](#optimism) | [<img src="../../assets/logos/uniswap.png" class="logo">](#uniswap) | [<img src="../../assets/logos/synthetix.png" class="logo">](#synthetix) | [<img src="../../assets/logos/chainlink-logo.png" class="logo">](#chainlink) | [<img src="../../assets/logos/lyra.png" class="logo">](#lyra) | [<img src="../../assets/logos/hop_logo.png" class="logo">](#hop-exchange) | [<img src="../../assets/logos/1inch.png" class="logo">](#_1inch) | [<img src="../../assets/logos/kwenta.jpeg" class="logo" align="right">](#kwenta) | [<img src="../../assets/logos/gnosis.png" class="logo" align="right">](#og-gnosis-multisig) | [<img src="../../assets/logos/debank.png" class="logo" align="right">](#debank) |
+| - | - | - | - | - | - | - | - | - | - |
 
 
 
@@ -44,6 +44,11 @@ Chainlink's decentralized oracle network provides reliable, tamper-proof inputs 
 
 ---
 
+## [DeBank <img src="../../assets/logos/debank.png" class="logo" align="right">](https://debank.com/)
+
+Debank is a multi-chain portfolio tracker.
+
+---
 
 ## [Hop.Exchange <img src="../../assets/logos/hop_logo.png" class="logo" align="right">](https://app.hop.exchange/send?sourceNetwork=ethereum&destNetwork=optimism)
 
