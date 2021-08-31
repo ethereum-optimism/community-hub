@@ -37,7 +37,10 @@ If you expect to need this old data, it is recommended that you store it on your
 ### Schedule
 
 * 0.4.0 - ETH value, Standard Bridge, Fees. 22-JUN-2021
-* 0.5.0 - OVM 2.0, mid-October 2021 (expected). [You can read about the expected 
+* 0.5.0 - OVM 2.0 [You can read about the expected 
   changes here](/docs/developers/l2/deploy.html#key-info)
+  * Testnet, tentatively mid-late September
+  * Mainnet, tentatively early-mid October
+
 * 0.6.0 - London, Q1 2022 (expected)
 
