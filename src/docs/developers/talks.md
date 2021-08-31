@@ -8,7 +8,7 @@ tags:
 
 # {{ $frontmatter.title }}
 
-## [*Justin Moses: Tips and Tricks to Deploy L1 Smart Contracts on Optimism*](https://www.youtube.com/watch?v=cAxQJS7YZPY)
+## [*Tips and Tricks to Deploy L1 Smart Contracts on Optimism*](https://www.youtube.com/watch?v=cAxQJS7YZPY)
 
 * By: Justin Moses, CTO of [Synthetix](https://synthetix.io/)
 
