@@ -144,7 +144,7 @@ You can also generate the complete list of accounts and private keys by running:
 npx hardhat node
 ```
 
-### Accessing Logs
+### Accessing logs
 
 The logs appear on the command-line window used for the `docker-compose up` command, but they scroll too quickly to be of much use.
 If you'd like to look at the logs for a specific container, you'll first need to know the name of the container you want to inspect.
@@ -182,3 +182,18 @@ If you'd like to follow these logs as they're being generated, run:
 ```sh
 docker logs --follow <name of container>
 ```
+
+
+### Getting contract addresses
+
+The [Optimistic Ethereum contracts](/docs/protocol/protocol.html#chain-contracts) 
+are already deployed on the development nodes. The contracts on L2 always have the 
+addresses same, so you can 
+[get them from the repository](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/deployments#predeploy-contracts). But the L1 addresses can vary, and
+you need to get them from the logs.
+
+For example, use this command to get the addresses for contracts that are used to relay data:
+
+  ```sh
+  docker logs ops_relayer_1 |& grep 'Connected to OVM_' | tail -4 
+  ```
