@@ -55,6 +55,6 @@ This condition only remains as long as the Optimistic Ethereum mainnet has a whi
 
 ## The Optimism token list
 
-The Standard bridge allows a one-to-may mapping between L1 and L2 tokens, meaning that there can be many OE implementations of an L1 token.
+The Standard bridge allows a one-to-many mapping between L1 and L2 tokens, meaning that there can be many OE implementations of an L1 token.
 However there is always a one-to-one mapping between L1 and L2 tokens in the [Optimism token list](https://github.com/ethereum-optimism/ethereum-optimism.github.io/blob/master/optimism.tokenlist.json).
 The token list is used as the source of truth for the [Optimism Gateway](https://gateway.optimism.io) which is the main portal for moving assets between Layer 1 and Layer 2.
