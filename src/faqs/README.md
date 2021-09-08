@@ -43,6 +43,13 @@ The easiest way to move assets into or out of an Optimistic Ethereum network is 
 
 Users are required to wait for a period of one week when moving assets out of the Optimistic Ethereum mainnet. This period of time is called the Challenge Period and serves to help secure the assets stored on an Optimistic Ethereum network. You can find more information about the Challenge Period [here](https://community.optimism.io/docs/developers/bridge/messaging.html#understanding-the-challenge-period). Please note that the [Optimistic Kovan testnet](https://community.optimism.io/docs/developers/networks.html#optimistic-kovan) has a Challenge Period of only 60 seconds to simplify the development process.
 
+### Can I change the gas price or gas limit of my Optimistic Ethereum transactions in MetaMask?
+
+<!--- TODO: Clean up a bit --->
+NO!! The gas price must be set to `0.015 gwei` or else your transaction will fail. You also should _not_ change the gas limit. The gas limit encodes multiple values and should never be set manually in your wallet.
+
+More information on how to pay fees in Optimistic Ethereum can be found on [this notion document](https://www.notion.so/optimismpbc/How-to-pay-Fees-in-Optimistic-Ethereum-f706f4e5b13e460fa5671af48ce9a695).
+
 ### Can I cancel a withdrawal after it has been submitted?
 
 **No, withdrawals currently cannot be cancelled once submitted.**
