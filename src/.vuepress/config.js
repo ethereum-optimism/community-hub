@@ -54,6 +54,8 @@ module.exports = {
             // it's the first thing I want noobs to see.
             {
               title: 'Guides and Tutorials',
+              // When you update here, make sure to also update
+              // /docs/developers/tutorials.html
               children: [
                 [
                   'https://github.com/ethereum-optimism/optimism-tutorial/tree/main/hardhat',
