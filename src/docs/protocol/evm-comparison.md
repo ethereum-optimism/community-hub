@@ -164,7 +164,7 @@ However, this scheme *does* have a few minor effects on developer experience tha
 
 Our account abstraction scheme is **100% compatible with existing wallets**.
 For the most part, developers don't need to understand how the account abstraction scheme works under the hood.
-We've implemented a standard [contract account](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/OVM/accounts/OVM_ECDSAContractAccount.sol) which remains backwards compatible with all existing Ethereum wallets out of the box.
+We've implemented a standard [contract account](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/OVM/predeploys/OVM_ECDSAContractAccount.sol) which remains backwards compatible with all existing Ethereum wallets out of the box.
 Contract accounts are automatically deployed on behalf of a user when that user sends their first transaction.
 
 ### No transaction origin
