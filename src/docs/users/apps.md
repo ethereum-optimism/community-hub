@@ -13,12 +13,12 @@ lang: en-US
 | - | - | - | - | - |
 
 
-| [<img src="../../assets/logos/hop_logo.png" class="logo">](#hop-exchange) | [<img src="../../assets/logos/1inch.png" class="logo">](#_1inch) | [<img src="../../assets/logos/kwenta.jpeg" class="logo" align="right">](#kwenta) | [<img src="../../assets/logos/gnosis.png" class="logo" align="right">](#og-gnosis-multisig) | [<img src="../../assets/logos/debank.png" class="logo" align="right">](#debank) |
+| [<img src="../../assets/logos/hop_logo.png" class="logo">](#hop-exchange) | [<img src="../../assets/logos/1inch.png" class="logo">](#_1inch) | [<img src="../../assets/logos/kwenta.jpeg" class="logo">](#kwenta) | [<img src="../../assets/logos/gnosis.png" class="logo">](#og-gnosis-multisig) | [<img src="../../assets/logos/debank.png" class="logo">](#debank) |
 | - | - | - | - | - | - |
 
 
-| [<img src="../../assets/logos/celer.png" class="logo" align="right">](#celer) | [<img src="../../assets/logos/dune-square.png" class="logo" align="right">](#dune-analytics) | 
-| - | - |
+| [<img src="../../assets/logos/celer.png" class="logo">](#celer) | [<img src="../../assets/logos/dune-square.png" class="logo">](#dune-analytics) | [<img src="../../assets/logos/rubicon.png" class="logo">](#rubicon) |
+| - | - | - |
 
 
 
@@ -76,6 +76,13 @@ trading](https://www.lyra.finance/files/whitepaper.pdf).
 
 
 * [Onboarding Guide](https://blog.lyra.finance/onboarding-guide/)
+
+---
+
+### [Rubicon <img src="../../assets/logos/rubicon.png" class="logo" align="right">](https://app.rubicon.finance/)
+
+Rubicon is a custody-less order book trading protocol.
+
 
 ---
 
