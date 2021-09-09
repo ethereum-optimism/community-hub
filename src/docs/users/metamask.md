@@ -16,7 +16,7 @@ The easiest way is to use `chainid.link`:
 ## Connecting manually
 
 Alternatively, it's pretty easy to manually add a network to MetaMask.
-First, take a look at our [Networks and Connection Details](./networks) page and figure out which network you'd like to connect to.
+First, take a look at our [Networks and Connection Details](../infra/networks) page and figure out which network you'd like to connect to.
 Then, follow these three easy steps:
 
 1. Open the MetaMask browser extension and click on the network name at the top of the pane:
@@ -27,7 +27,7 @@ Then, follow these three easy steps:
 
 <img src="../../assets/docs/developers/metamask/2.png" alt="click on custom RPC button" width="400"/>
 
-3. Now you'll be prompted to input your connection details. Make sure to refer to the [Networks and Connection Details](./networks) page and input the details for your desired network:
+3. Now you'll be prompted to input your connection details. Make sure to refer to the [Networks and Connection Details](../infra/networks) page and input the details for your desired network:
 
 <img src="../../assets/docs/developers/metamask/3.png" alt="input connection details" width="400"/>
 
