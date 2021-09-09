@@ -13,12 +13,12 @@ lang: en-US
 | - | - | - | - | - |
 
 
-| [<img src="../../assets/logos/hop_logo.png" class="logo">](#hop-exchange) | [<img src="../../assets/logos/1inch.png" class="logo">](#_1inch) | [<img src="../../assets/logos/kwenta.jpeg" class="logo" align="right">](#kwenta) | [<img src="../../assets/logos/gnosis.png" class="logo" align="right">](#og-gnosis-multisig) | [<img src="../../assets/logos/debank.png" class="logo" align="right">](#debank) |
+| [<img src="../../assets/logos/hop_logo.png" class="logo">](#hop-exchange) | [<img src="../../assets/logos/1inch.png" class="logo">](#_1inch) | [<img src="../../assets/logos/kwenta.jpeg" class="logo">](#kwenta) | [<img src="../../assets/logos/gnosis.png" class="logo">](#og-gnosis-multisig) | [<img src="../../assets/logos/debank.png" class="logo">](#debank) |
 | - | - | - | - | - | - |
 
 
-| [<img src="../../assets/logos/celer.png" class="logo" align="right">](#celer) | [<img src="../../assets/logos/dune-square.png" class="logo" align="right">](#dune-analytics) | 
-| - | - |
+| [<img src="../../assets/logos/celer.png" class="logo">](#celer) | [<img src="../../assets/logos/dune-square.png" class="logo">](#dune-analytics) | [<img src="../../assets/logos/rubicon.png" class="logo">](#rubicon) |
+| - | - | - |
 
 
 
@@ -26,10 +26,11 @@ lang: en-US
 
 [See our list of supported wallets here](/docs/users/wallets.html)
 
+## Gateways and Bridges
 
 ---
 
-## [Optimism <img src="../../assets/logos/optimism.svg" class="logo" align="right">](https://gateway.optimism.io/)
+### [Optimism <img src="../../assets/logos/optimism.svg" class="logo" align="right">](https://gateway.optimism.io/)
 
 The Optimism Gateway allows you to transfer assets between L1 and Optimistic Ethereum.
 
@@ -37,47 +38,30 @@ The Optimism Gateway allows you to transfer assets between L1 and Optimistic Eth
 
 ---
 
-## [1inch <img src="../../assets/logos/1inch.png" class="logo" align="right">](https://help.1inch.io/en/articles/5468238-optimism-how-to-use-1inch-on-optimistic-ethereum)
-
-1inch's aggregation protocol, which allows you to choose the best decentralized exchange for your
-transaction, is available on Optimistic Ethereum.
-
-
----
-
-## [Celer <img src="../../assets/logos/celer.png" class="logo" align="right">](https://cbridge.celer.network/#/)
+### [Celer <img src="../../assets/logos/celer.png" class="logo" align="right">](https://cbridge.celer.network/#/)
 
 You can use Celer's bridge to transfer assets between Optimism and other Ethereum
-networks (L1, other rollovers, and side chains).
+networks (L1, other rollups, and side chains).
 
 ---
 
-## [Chainlink <img src="../../assets/logos/chainlink-logo.png" class="logo" align="right">](https://chain.link/)
-
-Chainlink's decentralized oracle network provides reliable, tamper-proof inputs and outputs for complex smart contracts on any blockchain.
-
----
-
-## [DeBank <img src="../../assets/logos/debank.png" class="logo" align="right">](https://debank.com/)
-
-Debank is a multi-chain portfolio tracker.
-
----
-
-## [Dune Analytics <img src="../../assets/logos/dune-square.png" class="logo" align="right">](https://duneanalytics.com/Marcov/Optimism-Ethereum)
-
-Dune Analytics allows you to explore activity on the Optimistic Ethereum network and also 
-[create your own Optimistic Ethereum dashboards](https://docs.duneanalytics.com/#queries).
-
----
-
-## [Hop.Exchange <img src="../../assets/logos/hop_logo.png" class="logo" align="right">](https://app.hop.exchange/send?sourceNetwork=ethereum&destNetwork=optimism)
+### [Hop.Exchange <img src="../../assets/logos/hop_logo.png" class="logo" align="right">](https://app.hop.exchange/send?sourceNetwork=ethereum&destNetwork=optimism)
 
 Hop allows you to quickly bridge assets between L1 and various L2 solutions.
 
 ---
 
-## [Kwenta <img src="../../assets/logos/kwenta.jpeg" class="logo" align="right">](https://kwenta.io/)
+
+## Trading
+
+### [1inch <img src="../../assets/logos/1inch.png" class="logo" align="right">](https://help.1inch.io/en/articles/5468238-optimism-how-to-use-1inch-on-optimistic-ethereum)
+
+1inch's aggregation protocol, which allows you to choose the best decentralized exchange for your
+transaction, is available on Optimistic Ethereum.
+
+---
+
+### [Kwenta <img src="../../assets/logos/kwenta.jpeg" class="logo" align="right">](https://kwenta.io/)
 
 Kwenta allows you to trade real world assets and derivatives on-chain.
 
@@ -85,7 +69,7 @@ Kwenta allows you to trade real world assets and derivatives on-chain.
 
 ---
 
-## [Lyra <img src="../../assets/logos/lyra.png" class="logo" align="right">](https://www.lyra.finance/)
+### [Lyra <img src="../../assets/logos/lyra.png" class="logo" align="right">](https://www.lyra.finance/)
 
 Lyra is an automated market maker (AMM) for [option 
 trading](https://www.lyra.finance/files/whitepaper.pdf). 
@@ -95,16 +79,14 @@ trading](https://www.lyra.finance/files/whitepaper.pdf).
 
 ---
 
+### [Rubicon <img src="../../assets/logos/rubicon.png" class="logo" align="right">](https://app.rubicon.finance/)
 
-## [OG Gnosis Multisig<img src="../../assets/logos/gnosis.png" class="logo" align="right">](https://ogg.scopelift.co/)
+Rubicon is a custody-less order book trading protocol.
 
-We have a copy of the OG Gnosis Multisig running on Optimistic Ethereum, in case you need to
-create a multisig.
 
 ---
 
-
-## [Synthetix <img src="../../assets/logos/synthetix.png" class="logo" align="right">](https://staking.synthetix.io/)
+### [Synthetix <img src="../../assets/logos/synthetix.png" class="logo" align="right">](https://staking.synthetix.io/)
 
 Synthetix is a system designed to let users hold and trade synthetic assets whose value can be tied to
 [real-world assets](https://docs.synthetix.io/tokens/list).
@@ -119,7 +101,7 @@ This makes it possible to invest in and trade assets without actually having to 
 
 ---
 
-## [Uniswap <img src="../../assets/logos/uniswap.png" class="logo" align="right">](https://uniswap.org/)
+### [Uniswap <img src="../../assets/logos/uniswap.png" class="logo" align="right">](https://uniswap.org/)
 
 
 
@@ -128,4 +110,39 @@ The protocol is implemented as a set of persistent, non-upgradable smart contrac
 
 * [Learn how to use Uniswap on faster & cheaper Layer 2 networks](https://help.uniswap.org/en/collections/3033942-layer-2)
 * [Uniswap (live on L2)](https://app.uniswap.org/#/swap)
+
+
+
+## User Information
+
+
+### [DeBank <img src="../../assets/logos/debank.png" class="logo" align="right">](https://debank.com/)
+
+Debank is a multi-chain portfolio tracker.
+
+---
+
+### [Dune Analytics <img src="../../assets/logos/dune-square.png" class="logo" align="right">](https://duneanalytics.com/Marcov/Optimism-Ethereum)
+
+Dune Analytics allows you to explore activity on the Optimistic Ethereum network and also 
+[create your own Optimistic Ethereum dashboards](https://docs.duneanalytics.com/#queries).
+
+---
+
+
+## Misc.
+
+### [Chainlink <img src="../../assets/logos/chainlink-logo.png" class="logo" align="right">](https://chain.link/)
+
+Chainlink's decentralized oracle network provides reliable, tamper-proof inputs and outputs for complex smart contracts on any blockchain.
+
+---
+
+### [OG Gnosis Multisig<img src="../../assets/logos/gnosis.png" class="logo" align="right">](https://ogg.scopelift.co/)
+
+We have a copy of the OG Gnosis Multisig running on Optimistic Ethereum, in case you need to
+create a multisig.
+
+---
+
 
