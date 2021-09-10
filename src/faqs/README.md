@@ -22,7 +22,7 @@ TODO: this section needs to be written
 
 ### Where can I find more information about Optimistic Ethereum?
 
-The most up-to-date information about Optimistic Ethereum can always be found on the [Optimism Community Hub](https://community.optimism.io/docs/). There you'll find stuff like docs, tutorials, and collections of videos related to Optimistic Ethereum. If you're unable to find what you're looking for there, feel free to [make an issue over on GitHub](https://github.com/ethereum-optimism/community-hub/issues).
+The most up-to-date information about Optimistic Ethereum can always be found on the [Optimism Community Hub](/docs). There you'll find stuff like docs, tutorials, and collections of videos related to Optimistic Ethereum. If you're unable to find what you're looking for there, feel free to [make an issue over on GitHub](https://github.com/ethereum-optimism/community-hub/issues).
 
 ## Using Optimistic Ethereum
 
@@ -33,11 +33,11 @@ With the introduction of the [`wallet_addEthereumChain`](https://docs.metamask.i
 If your wallet does not support this feature, you will have to connect manually.
 The exact process for connecting your wallet to an Optimistic Ethereum network depends on the specific wallet software you're using. We've provided connection walkthroughs for the following wallets:
 
-- [MetaMask](https://community.optimism.io/docs/developers/metamask.html)
+- [MetaMask](/docs/users/metamask.html)
 
 ### How do I move assets into or out of Optimistic Ethereum?
 
-The easiest way to move assets into or out of an Optimistic Ethereum network is to use [Optimism's Gateway application](https://gateway.optimism.io/). We've written a [detailed walkthrough](https://community.optimism.io/docs/developers/eth-gateway.html) that explains how to use the Gateway.
+The easiest way to move assets into or out of an Optimistic Ethereum network is to use [Optimism's Gateway application](https://gateway.optimism.io/). We've written a [detailed walkthrough](/docs/users/gateway.html) that explains how to use the Gateway.
 
 ### Why do I need to wait a week when moving assets out of Optimistic Ethereum?
 
@@ -61,7 +61,7 @@ We are exploring this as a future system feature.
 
 Yes, users are required to pay fees when sending transactions on an 
 Optimistic Ethereum (just like on Ethereum). However, these fees are 
-greatly reduced when compared to Ethereum. Refer to our [recent Medium post](https://community.optimism.io/docs/developers/fees.html) for more 
+greatly reduced when compared to Ethereum. Refer to our [recent Medium post](/docs/developers/fees.html) for more 
 information about transaction fees. Alternatively, check out our [gas comparison page](https://optimism.io/gas-comparison) for concrete numbers comparing 
 the cost of transactions on Ethereum to transactions on Optimistic Ethereum.
 
