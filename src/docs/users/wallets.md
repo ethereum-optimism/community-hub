@@ -21,6 +21,8 @@ The following wallets officially support Optimistic Ethereum:
 
 <img style="vertical-align:baseline; float:left; width:20px; height:20px; position:relative; top:4px; margin-right:5px" src="../../assets/logos/rabby.png">[Rabby](https://rabby.io/)
 
+<img style="vertical-align:baseline; float:left; width:20px; height:20px; position:relative; top:4px; margin-right:5px" src="../../assets/logos/tokenpocket.png">[Token Pocket](https://www.tokenpocket.pro/)
+
 ## Other wallets
 
 Generally speaking, you should be able to use Optimistic Ethereum with any wallet that allows you to manually connect to other EVM-compatible chains.
