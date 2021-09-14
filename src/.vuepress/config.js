@@ -100,6 +100,8 @@ module.exports = {
                 '/docs/developers/l2/truffle.md',
                 '/docs/developers/l2/convert.md',
                 '/docs/developers/l2/deploy.md',
+                '/docs/developers/l2/changeset.md',
+                '/docs/developers/l2/new-fees.md',
                 '/docs/developers/l2/future.md',
                 '/docs/developers/l2/contracts.md',
                 '/docs/developers/l2/block-time.md',
