@@ -81,8 +81,10 @@ trading](https://www.lyra.finance/files/whitepaper.pdf).
 
 ### [Rubicon <img src="../../assets/logos/rubicon.png" class="logo" align="right">](https://app.rubicon.finance/)
 
-Rubicon is a custody-less order book trading protocol.
+Rubicon is an open order book protocol for Ethereum. Trade with limit and market orders on a next generation decentralized exchange and earn in democratic liquidity pools.
 
+* [Rubicon Protocol Overview](https://medium.com/rubicon-finance/rubicon-protocol-overview-e8881d6a2f63)
+* [What are Rubicon Pools](https://docs.rubicon.finance/getting-started/what-are-rubicon-pools)
 
 ---
 
