@@ -25,7 +25,7 @@ During the next regenesis (September 28th on Kovan, October on the main network)
       addresses corresponding to `CREATE2` with the new bytecode. For more detail, see the [Uniswap](#uniswap) section below
 
 1. ETH will no longer be ERC20 compatible.
-   1. Users will **no longer** be able to tranfer and interact with ETH 
+   1. Users will **no longer** be able to transfer and interact with ETH 
       as an ERC20 located at `0x4200000000000000000000000000000000000006`.
    1. Please let us know if you rely on this functionality on Optimistic 
       Ethereum mainnet currently as we will have to migrate those balances
