@@ -5,7 +5,7 @@ lang: en-US
 
 # {{ $frontmatter.title }}
 
-During the next regenesis (September 28th on Kovan, October on the main network), we will have a series of breaking changes as a part of an upgrade to the OVM. Fundamentally, this will drastically reduce the differences between the OVM and EVM so that developers can implement their contracts with mostly just one target in mind, instead of managing OVM idiosyncrasies with separate contracts. Thus the changes can be viewed as a reversion to most things listed on this page [https://community.optimism.io/docs/protocol/evm-comparison.html](/docs/protocol/evm-comparison.html). Here is the list of key breaking changes to watch for:
+During the next regenesis (Early October on Kovan, End of October on the main network), we will have a series of breaking changes as a part of an upgrade to the OVM. Fundamentally, this will drastically reduce the differences between the OVM and EVM so that developers can implement their contracts with mostly just one target in mind, instead of managing OVM idiosyncrasies with separate contracts. Thus the changes can be viewed as a reversion to most things listed on this page [https://community.optimism.io/docs/protocol/evm-comparison.html](/docs/protocol/evm-comparison.html). Here is the list of key breaking changes to watch for:
 
 1. Contracts whose source code has not been verified on Etherscan 
    ([Kovan](https://kovan-optimistic.etherscan.io/verifyContract),
@@ -29,8 +29,7 @@ During the next regenesis (September 28th on Kovan, October on the main network)
       as an ERC20 located at `0x4200000000000000000000000000000000000006`.
    1. Please let us know if you rely on this functionality on Optimistic 
       Ethereum mainnet currently as we will have to migrate those balances
-      to a standard WETH9 contract which will be deployed to 
-      `0x4200000000000000000000000000000000000006`
+      to a standard WETH9 contract which will be deployed to a new TBD address
    1. The `Transfer` event currently emitted on ETH fee payment will be
     removed
 
@@ -52,7 +51,7 @@ During the next regenesis (September 28th on Kovan, October on the main network)
 
 1. Certain opcodes will have updated functionality:
     1. `NUMBER` - `block.number` in L2 will now correspond to the L2 
-       block number, not “Last finalized L1 block number” like it used to. Any project currently using `block.number` must check that this will not break their implementation.
+       block number, not “Last finalized L1 block number” like it used to. Any project currently using `block.number` must check that this will not break their implementation. The L1 Block number will be made accessible via a new predeployed contract.
     2. `COINBASE` is set by the sequencer. For the near-term future, 
        it will return the `OVM_SequencerFeeVault` address (currently `0x4200000000000000000000000000000000000011`)
     3. `DIFFICULTY` will return 0
@@ -73,6 +72,7 @@ During the next regenesis (September 28th on Kovan, October on the main network)
     8. `Lib_AddressManager`
     
     All other OVM predeploys will remain at the same addresses as before the regenesis
+9. `TIMESTAMP` will function the same as before, updating with each new deposit or after 5 minutes if there has not been a deposit. `TIMESTAMP` will still correspond to "Last Finalized L1 Timestamp" - [See here for details](block-time.html)
 
 
 ## Applications
