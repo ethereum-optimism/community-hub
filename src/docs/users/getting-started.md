@@ -8,7 +8,7 @@ lang: en-US
 
 ## Why use Optimistic Ethereum?
 
-The Optimistic Ethereum scaling solution lets you run transactions, similar to Ethereum, but
+The Optimistic Ethereum network lets you send transactions, similar to Ethereum, but
 with two important advantages:
 
 * Near-instant transaction finality. You know almost immediately if your transaction took place
