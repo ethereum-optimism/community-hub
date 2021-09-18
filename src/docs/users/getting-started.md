@@ -11,12 +11,12 @@ lang: en-US
 The Optimistic Ethereum network lets you send transactions, similar to Ethereum, but
 with two important advantages:
 
-* Near-instant transaction finality. You know almost immediately if your transaction took place
+* **Near-instant transaction finality.** You know almost immediately if your transaction took place
   or not.
-* Much lower transaction fees. L1 gas cost only affects the cost to write the transaction to L1
-  for security purposes, which is **a lot less** than the cost of running the transaction on L1. 
-  When Optimistic Ethereum is not congested, the gas price is 0.001 Gwei. [For the current gas price,
+* **Much lower transaction fees.** Typically between a 1% and 10% of of the cost on L1.
+  [For the current gas price and a few sample transactions' costs,
   see here](https://public-grafana.optimism.io/d/9hkhMxn7z/public-dashboard?orgId=1&refresh=5m).
+* **Decentralization.** All transactions are posted to L1 Ethereum, inheriting the strong security guarantees of Ethereum
 
 ## Depositing assets
 
@@ -24,7 +24,11 @@ Before you can use assets (Ether, ERC-20 tokens, etc) on Optimistic Ethereum you
 them using [a bridge](/docs/users/apps.html#gateways-and-bridges). For depositing ETH, the best
 mechanism is [our own gateway](https://gateway.optimism.io/).
 
-1. Log on to your wallet.
+1. If you do not have any ETH, purchase some through a centralized exchange, such as 
+   [Coinbase](https://www.coinbase.com/signup), Gemini(https://exchange.gemini.com/register), 
+   or Binance(https://accounts.binance.com/en/register).
+1. Set up a wallet, for example [Metamask](https://metamask.io/), and withdraw the ETH from the centralized
+   exchange to your wallet.   
 1. [Browse to the gateway](https://gateway.optimism.io/).
 1. Click **CONNECT**, select your wallet type, and approve the connection in the 
    wallet itself if asked.
