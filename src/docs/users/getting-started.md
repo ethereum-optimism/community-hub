@@ -21,7 +21,7 @@ with two important advantages:
 ## Depositing assets
 
 Before you can use assets (Ether, ERC-20 tokens, etc) on Optimistic Ethereum you need to deposit
-them using [a bridge](/docs/users/apps.html#gateways-and-bridges). For depositing ETH, the best
+them from Mainnet Ethereum using [a bridge](/docs/users/apps.html#gateways-and-bridges). For depositing ETH, the best
 mechanism is [our own gateway](https://gateway.optimism.io/).
 
 1. If you do not have any ETH, purchase some through a centralized exchange, such as 
