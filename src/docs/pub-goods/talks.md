@@ -1,5 +1,5 @@
 ---
-title: Retroactive Public-Good Funding Talks
+title: Retroactive Public Goods Funding Talks
 lang: en-US
 tags:
     - contracts
