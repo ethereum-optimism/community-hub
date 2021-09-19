@@ -151,7 +151,15 @@ module.exports = {
           ],
           collapsable: false,
           sidebarDepth: 0,
-        }
+        },
+        {
+          title: 'Retroactive Public Goods Funding',
+          children: [
+            '/docs/pub-goods/talks.md'
+          ],
+          collapsable: false,
+          sidebarDepth: 0,
+        }        
       ],
       '/compare/': [
         {
