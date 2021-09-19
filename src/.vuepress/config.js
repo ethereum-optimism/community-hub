@@ -153,7 +153,7 @@ module.exports = {
           sidebarDepth: 0,
         },
         {
-          title: 'Retroactive Public-Good Funding',
+          title: 'Retroactive Public Goods Funding',
           children: [
             '/docs/pub-goods/talks.md'
           ],
