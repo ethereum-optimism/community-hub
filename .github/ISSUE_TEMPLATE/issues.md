@@ -1,12 +1,11 @@
 ---
-name: Issues
-about: Please only post issues related to the documentation
-title: ''
-labels: ''
-assignees: ''
+name: Documentation Issue
 
 ---
 
-If you have a support problem, please [join our discord](https://discord.gg/C8CjvkaU4w) and post it in the appropriate channel, either `#user-support` or `#dev-support`.
+<!--
+This repository only accepts issues related to the documentation here https://community.optimism.io/ 
 
-You will get much faster responses that way.
+If you have a support problem, [join our discord](https://discord.gg/C8CjvkaU4w) and post it in the appropriate channel, either `#user-support` or `#dev-support`.
+
+-->
