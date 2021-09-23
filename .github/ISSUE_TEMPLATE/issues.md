@@ -1,5 +1,6 @@
 ---
 name: Documentation Issue
+about: Report incorrect or missing information from https://community.optimism.io/
 
 ---
 
