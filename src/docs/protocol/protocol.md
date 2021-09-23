@@ -1,5 +1,5 @@
 ---
-title: Contract Overview
+title: Contract Overview for OVM 1.0
 lang: en-US
 tags:
     - contracts
