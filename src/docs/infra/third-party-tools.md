@@ -41,6 +41,22 @@ lang: en-US
 
 ---
 
+## GetBlock
+
+<img src="../../assets/logos/getblock.png" width="200" align="right" >
+
+### Services
+
+- [Get access to Optimistic Ethereum nodes](https://getblock.io/en/nodes/optimism/)
+
+### Support
+
+| Mainnet Support | Kovan Testnet Support |
+| --------------- | --------------------- |
+| ☑               | Soon™                     |
+
+---
+
 ## QuickNode
 
 <img src="../../assets/logos/quicknode.png" width="200" align="right" >
