@@ -32,10 +32,16 @@ import { ethers } from 'ethers'
 const OVM_GasPriceOracle = getContractFactory('OVM_GasPriceOracle')
 .attach(predeploys.OVM_GasPriceOracle)
 const WETH = new Contract(...) //Contract with no signer
-const input = WETH.populateTransaction.transfer(to, amount)
-//TODO ensure input includes a signature and is full RLP-encoded tx
-// probably fill in all 0xff for the signature
-const l1FeeInWei = await OVM_GasPriceOracle.getL1Fee(input)
+const unsignedTx = WETH.populateTransaction.transfer(to, amount)
+const signedTx = serialize({
+      nonce: parseInt(unsignedTx.nonce.toString(10), 10),
+      value: unsignedTx.value,
+      gasPrice: unsignedTx.gasPrice,
+      gasLimit: unsignedTx.gasLimit,
+      to: unsignedTx.to,
+      data: unsignedTx.data,
+    })
+const l1FeeInWei = await OVM_GasPriceOracle.getL1Fee(signedTx)
 
 
 
