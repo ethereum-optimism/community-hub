@@ -168,14 +168,16 @@ The following concrete contracts are predeployed:
 ### [`OVM_DeployerWhitelist`](https://github.com/ethereum-optimism/optimism/blob/experimental/packages/contracts/contracts/L2/predeploys/OVM_DeployerWhitelist.sol)
 The Deployer Whitelist is a temporary predeploy used to provide additional safety during the initial phases of our mainnet roll out. It is owned by the Optimism team, and defines accounts which are allowed to deploy contracts on Layer 2. The Execution Manager will only allow a `CREATE` or `CREATE2` operation to proceed if the deployer's address whitelisted.
 
-<!--
-### [`OVM_L1MessageSender`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/OVM/predeploys/OVM_L1MessageSender.sol)
+
+### [`OVM_L1MessageSender`](https://github.com/ethereum-optimism/optimism/blob/experimental/packages/contracts/contracts/L2/predeploys/iOVM_L1MessageSender.sol)
+
 The L1MessageSender is a predeployed contract running on L2.
 During the execution of cross domain transaction from L1 to L2, it returns the address of the L1 account (either an EOA or contract) which sent the message to L2 via the Canonical Transaction Chain's `enqueue()` function.
-This contract exclusively serves as a getter for the `ovmL1TXORIGIN` operation.
-This is necessary because there is no corresponding EVM opcode which the optimistic solidity compiler could replace with a call to the ExecutionManager's `ovmL1TXORIGIN()` function.
-That is, if a contract on L2 wants to know which L1 address initiated a call on L2, the way to do it is by calling `OVM_L1MessageSender.ovmL1TXORIGIN()`.
--->
+
+Note that this contract is not written in Solidity. However, 
+the interface linked above still works as if it were. In this way
+it is similar to the EVM's predeploys.
+
 
 ### [`OVM_L2ToL1MessagePasser`](https://github.com/ethereum-optimism/optimism/blob/experimental/packages/contracts/contracts/L2/predeploys/OVM_L2ToL1MessagePasser.sol)
 The L2 to L1 Message Passer is a utility contract which facilitate an L1 proof of the  of a message on L2. The L1 Cross Domain Messenger performs this proof in its _verifyStorageProof function, which verifies the existence of the transaction hash in this  contract's `sentMessages` mapping.
