@@ -5,8 +5,10 @@ lang: en-US
 
 # {{ $frontmatter.title }}
 
-::: warning NOTICE
-This page documents the current status of the Optimistic Ethereum protocol, and the details here are subject to change based on feedback.
+::: danger OVM 1.0 Page
+This page refers to the **current** state of the Optimistic Ethereum
+network. Some of the information may be relevant to OVM 2.0, which will
+be deployed in October, but some of it may change.
 :::
 
 Optimistic Ethereum is a lot cheaper than regular Ethereum but transaction fees do still exist.

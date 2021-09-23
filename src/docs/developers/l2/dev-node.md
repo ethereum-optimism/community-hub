@@ -5,6 +5,14 @@ lang: en-US
 
 # {{ $frontmatter.title }}
 
+::: danger OVM 1.0 Page
+This page refers to the **current** state of the Optimistic Ethereum
+network. Some of the information may be relevant to OVM 2.0, which will
+be deployed in October, but some of it may change.
+:::
+
+
+
 ::: tip
 You can [check out one of the getting started tutorials](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/hardhat) for a step-by-step guide to using a development node.
 You can also find some more detailed information about working with the development node on the [Optimism monorepo](https://github.com/ethereum-optimism/optimism#development-quick-start).

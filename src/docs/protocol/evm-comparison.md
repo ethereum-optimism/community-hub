@@ -8,6 +8,12 @@ tags:
 
 # {{ $frontmatter.title }}
 
+::: danger OVM 1.0 Page
+This page refers to the **current** state of the Optimistic Ethereum
+network. Some of the information may be relevant to OVM 2.0, which will
+be deployed in October, but some of it may change.
+:::
+
 For the most part, the EVM and the OVM are pretty much identical.
 However, the OVM *does* slightly diverge from the EVM in certain ways.
 This page acts as a living record of each of these discrepancies and their raison d'être.

@@ -5,6 +5,13 @@ lang: en-US
 
 # {{ $frontmatter.title }}
 
+::: danger OVM 1.0 Page
+This page refers to the **current** state of the Optimistic Ethereum
+network. Some of the information may be relevant to OVM 2.0, which will
+be deployed in October, but some of it may change.
+:::
+
+
 Apps on Optimistic Ethereum can be made to interact with apps on Ethereum via a process called "bridging".
 In a nutshell, **contracts on Optimistic Ethereum can send messages to contracts on Ethereum, and vice versa**.
 With just a little bit of elbow grease, you too can create contracts that bridge the gap between Layer 1 and Layer 2!

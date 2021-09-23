@@ -5,6 +5,12 @@ lang: en-US
 
 # {{ $frontmatter.title }}
 
+::: warning OVM 2.0 Page
+This page refers to the **new** state of Optimistic Ethereum after the
+OVM 2.0 update. We expect to deploy OVM 2.0 mid October on the Kovan
+test network and by the end of October on the production network.
+:::
+
 ## For Users:
 
 - We recommend not changing your transaction gasPrice from what is quoted to you. Unlike on L1 Ethereum, the sequencer currently either immediately accepts your transaction if it pays a high enough gasPrice or rejects it if the gasPrice provided is too low.
