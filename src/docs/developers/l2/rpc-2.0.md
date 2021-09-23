@@ -1,14 +1,14 @@
 ---
-title: JSON-RPC API Differences in OVM 1.0
+title: JSON-RPC API Differences in OVM 2.0
 lang: en-US
 ---
 
 # {{ $frontmatter.title }}
 
-::: danger OVM 1.0 Page
-This page refers to the **current** state of the Optimistic Ethereum
-network. Some of the information may be relevant to OVM 2.0, which will
-be deployed in October, but some of it may change.
+::: warning OVM 2.0 Page
+This page refers to the **new** state of Optimistic Ethereum after the
+OVM 2.0 update. We expect to deploy OVM 2.0 mid October on the Kovan
+test network and by the end of October on the production network.
 :::
 
 Most JSON-RPC methods in Optimistic Ethereum are identical to the corresponding methods in the Ethereum JSON-RPC API.
@@ -18,8 +18,8 @@ However, a few JSON-RPC methods have been added or changed to better fit the nee
 
 ### `eth_estimateGas`
 
-`eth_estimateGas` has been modified to encode information about both the cost of _executing_ a transaction and the cost to _publish_ the transaction data to Layer 1 (Ethereum).
-See our dedicated [Transaction Fees page](docs/infra/fees.html) for more information.
+`eth_estimateGas` only returns information about the L2 execution fee. 
+See our [transaction fees page](new-fees.html) for more information.
 
 ### `eth_getBlockByNumber` and `eth_getBlockByHash`
 
@@ -33,11 +33,6 @@ Note that this increases the number of blocks produced by the network, which may
 Our custom JSON-RPC methods are highly subject to change.
 We generally do not recommend relying on these JSON-RPC methods for the moment.
 :::
-
-### `eth_estimateExecutionGas`
-
-Behaves identically to `eth_estimateGas` on a standard L1 node.
-Returns the expected _execution_ gas cost of a transaction and does not include any information about the cost to publish the transaction data to Layer 1.
 
 ### `eth_getBlockRange`
 
@@ -58,6 +53,7 @@ Like `eth_getBlockByNumber` but accepts a range of block numbers instead of just
 **Returns**
 
 An array of blocks (see [eth_getBlockByHash](https://eth.wiki/json-rpc/API#eth_getblockbyhash)).
+
 
 ### `rollup_getInfo`
 

@@ -108,6 +108,7 @@ module.exports = {
                 '/docs/developers/l2/contracts-2.0.md',                
                 '/docs/developers/l2/block-time.md',
                 '/docs/developers/l2/rpc.md',
+                '/docs/developers/l2/rpc-2.0.md',                
               ],
               collapsable: false,
               sidebarDepth: 0,
