@@ -52,15 +52,16 @@ During the next regenesis (Early October on Kovan, End of October on the main ne
 1. Certain opcodes will have updated functionality:
     1. `NUMBER` - `block.number` in L2 will now correspond to the L2 
        block number, not “Last finalized L1 block number” like it used to. Any project currently using `block.number` must check that this will not break their implementation. The L1 Block number will be made accessible via a new predeployed contract.
-    2. `COINBASE` is set by the sequencer. For the near-term future, 
+    1. `COINBASE` is set by the sequencer. For the near-term future, 
        it will return the `OVM_SequencerFeeVault` address (currently `0x4200000000000000000000000000000000000011`)
-    3. `DIFFICULTY` will return 0
-    4. `BLOCKHASH` will return the L2 block hash. Note that this value 
+    1. `DIFFICULTY` will return 0
+    1. `BLOCKHASH` will return the L2 block hash. Note that this value 
        can be manipulated by the sequencer and is not a safe source of randomness.
-    5. `SELFDESTRUCT` will now work just as it currently works in the EVM.
-    6. `GASPRICE` will now return the l2GasPrice
-    7. `BASEFEE` will be unsupported - execution will revert if it is 
+    1. `SELFDESTRUCT` will now work just as it currently works in the EVM.
+    1. `GASPRICE` will now return the l2GasPrice
+    1. `BASEFEE` will be unsupported - execution will revert if it is 
        used.
+    1. `ORIGIN` will be supported normally.
 8. Certain OVM system contracts will be wiped from the state. We will remove:
     1.  `OVM_ExecutionManager`
     2.  `OVM_SequencerEntrypoint`
