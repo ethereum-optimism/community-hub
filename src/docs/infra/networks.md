@@ -34,7 +34,7 @@ we will open it up to anybody who wants to deploy, but we need to do more develo
 and testing before we get there. 99.9% secure is not good enough.
 
 When you are ready to deploy to production please fill up 
-[this form](https://docs.google.com/forms/d/e/1FAIpQLSdKyXpXY1C4caWD3baQBK1dPjEboOJ9dpj9flc-ursqq8KU0w/viewform) 
+[this form](https://docs.google.com/forms/d/e/1FAIpQLSfBGsJN3nZQRLdMjqCS_svfQoPkn35o_cc4HUVnLlXN2BHmPw/viewform) 
 and we'll get back to you.
 :::
 

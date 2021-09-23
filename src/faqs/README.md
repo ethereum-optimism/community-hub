@@ -113,7 +113,7 @@ A Sequencer node is a special node in an Optimistic Ethereum network that can or
 
 ### Mainnet contract deployments are restricted by a whitelist
 
-Contract deployments to the Optimistic Ethereum mainnet are currently restricted by a whitelist. We are slowly introducing new applications to the mainnet system in order to reduce the available exploit surface and to throttle usage. Please fill out our [integration support signup form](https://docs.google.com/forms/u/1/d/e/1FAIpQLSdKyXpXY1C4caWD3baQBK1dPjEboOJ9dpj9flc-ursqq8KU0w/viewform) if you'd like to deploy an application to the OE mainnet. The [Optimistic Kovan testnet](https://community.optimism.io/docs/developers/networks.html#optimistic-kovan) is fully accessible to the general public.
+Contract deployments to the Optimistic Ethereum mainnet are currently restricted by a whitelist. We are slowly introducing new applications to the mainnet system in order to reduce the available exploit surface and to throttle usage. Please fill out our [integration support signup form](https://docs.google.com/forms/d/e/1FAIpQLSfBGsJN3nZQRLdMjqCS_svfQoPkn35o_cc4HUVnLlXN2BHmPw/viewform) if you'd like to deploy an application to the OE mainnet. The [Optimistic Kovan testnet](https://community.optimism.io/docs/developers/networks.html#optimistic-kovan) is fully accessible to the general public.
 
 ### Optimism's codebase is only partially audited
 

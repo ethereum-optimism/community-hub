@@ -50,7 +50,7 @@ Optimism provides a standard implementation of that interface as the [`L2Standar
 
 If the `L2StandardERC20` implementation does not satisfy your requirements, you can deploy an alternative implementation as long as it's compliant with the `IL2StandardERC20` interface.
 You can freely deploy your proposed implementation to the Optimistic Kovan testnet.
-Once you're ready with a tested kovan deployment, you can request a review via [this](https://docs.google.com/forms/d/e/1FAIpQLSdKyXpXY1C4caWD3baQBK1dPjEboOJ9dpj9flc-ursqq8KU0w/viewform) form and we'll consider whitelisting your deployer address on the Optimistic Ethereum mainnet.
+Once you're ready with a tested kovan deployment, you can request a review via [this](https://docs.google.com/forms/d/e/1FAIpQLSfBGsJN3nZQRLdMjqCS_svfQoPkn35o_cc4HUVnLlXN2BHmPw/viewform) form and we'll consider whitelisting your deployer address on the Optimistic Ethereum mainnet.
 This condition only remains as long as the Optimistic Ethereum mainnet has a whitelist.
 
 ## The Optimism token list

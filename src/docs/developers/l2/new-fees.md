@@ -36,6 +36,9 @@ const input = WETH.populateTransaction.transfer(to, amount)
 //TODO ensure input includes a signature and is full RLP-encoded tx
 // probably fill in all 0xff for the signature
 const l1FeeInWei = await OVM_GasPriceOracle.getL1Fee(input)
+
+
+
 ```
 
 - You should *not* allow users to change their `tx.gasPrice`
