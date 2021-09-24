@@ -64,7 +64,15 @@ mechanism is [our own gateway](https://gateway.optimism.io/).
 1. Click **DEPOSIT** again to confirm.
 1. Confirm the transaction in the wallet, wait until the transaction is confirmed and the ETH
    deposited to Optimistic Ethereum.
+1. [Browse here](https://chainid.link/?network=optimism) and click
+   **connect** to add the Optimistic Ethereum network to your wallet. 
+   You will need to approve this addition in your wallet. The network
+   notification in MetaMask is shown below, other wallets are likely
+   to be similar
 
+      <div style="display:inline-block">
+      <img src="../../assets/docs/users/getting-started/add-net-metamask.png" alt="MetaMask add network notification" width="40%" style="float:left">
+      </div>   
 
 ## Applications
 
