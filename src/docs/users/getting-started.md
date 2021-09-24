@@ -35,16 +35,30 @@ mechanism is [our own gateway](https://gateway.optimism.io/).
 1. Make sure the form is correct:
 
    A. **Deposit** is selected
+    
+      <div style="display:inline-block">
+      <img src="../../assets/docs/users/getting-started/deposit-form-a.png" alt="Deposit form" width="40%" style="float:left">
+      </div>
 
    B. From **MAINNET**
 
-   C. The amount is possible. Click **MAX** to see the maximum amount you can
-      deposit (after accounting for transaction costs), and if relevant enter
-      a lower amount.
+      <div style="display:inline-block">
+      <img src="../../assets/docs/users/getting-started/deposit-form-b.png" alt="Deposit form" width="40%" style="float:left">
+      </div>
+
+   C. The amount is possible. Click **MAX** to see the maximum amount 
+      you can deposit (after accounting for transaction costs), and 
+      if relevant enter a lower amount.
+
+      <div style="display:inline-block">
+      <img src="../../assets/docs/users/getting-started/deposit-form-c.png" alt="Deposit form" width="40%" style="float:left">
+      </div>
 
    D. The asset is **ETH**.
-   
-   <img src="../../assets/docs/users/getting-started/deposit.png" alt="Deposit form" width="50%">
+
+      <div style="display:inline-block">
+      <img src="../../assets/docs/users/getting-started/deposit-form-d.png" alt="Deposit form" width="40%" style="float:left">
+      </div>
 
 1. Click **DEPOSIT**.
 1. Click **DEPOSIT** again to confirm.
@@ -71,12 +85,22 @@ see that applications are used the same way they are on mainnet.
 1. Select:
 
    A. The token you give
-
+      
+      <div style="display:inline-block">
+      <img src="../../assets/docs/users/getting-started/swap-form-a.png" alt="Swap form" width="40%" style="float:left"> 
+      </div>
+   
    B. The token you get back
+
+      <div style="display:inline-block">
+      <img src="../../assets/docs/users/getting-started/swap-form-b.png" alt="Swap form" width="40%" style="float:left">
+      </div>
 
    C. Type an amount (of either token)
 
-   <img src="../../assets/docs/users/getting-started/uniswap.png" alt="Uniswap form" width="50%">
+      <div style="display:inline-block">
+      <img src="../../assets/docs/users/getting-started/swap-form-c.png" alt="Swap form" width="40%" style="float:left">
+      </div>
 
 1. Click **Swap**.
 1. Click **Confirm Swap**.
@@ -101,14 +125,28 @@ this tutorial we use Hop.
    
    A. Asset type
 
+      <div style="display:inline-block">
+      <img src="../../assets/docs/users/getting-started/withdraw-form-a.png" alt="Deposit form" width="40%" style="float:left">
+      </div>
+
    B. Source network (if you are withdrawing, this is **Optimism**)
+
+      <div style="display:inline-block">
+      <img src="../../assets/docs/users/getting-started/withdraw-form-b.png" alt="Deposit form" width="40%" style="float:left">
+      </div>   
 
    C. Amount to withdraw (or **MAX**)
 
+      <div style="display:inline-block">
+      <img src="../../assets/docs/users/getting-started/withdraw-form-c.png" alt="Deposit form" width="40%" style="float:left">
+      </div>
+
    D. Destination network
 
-   <img src="../../assets/docs/users/getting-started/hop.png" alt="Hop form" width="50%">
-
+      <div style="display:inline-block">
+      <img src="../../assets/docs/users/getting-started/withdraw-form-d.png" alt="Deposit form" width="40%" style="float:left">
+      </div>
+      
 1. Scroll down to accept the transaction fee and click **Approve**.
 1. Clear **Approve all** to limit Hop's spending allowance to the amount you with to withdraw and 
    then click **Approve** again to confirm.
