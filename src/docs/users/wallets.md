@@ -21,7 +21,7 @@ The following wallets officially support Optimistic Ethereum:
 
 <img style="vertical-align:baseline; float:left; width:20px; height:20px; position:relative; top:4px; margin-right:5px" src="../../assets/logos/rabby.png">[Rabby](https://rabby.io/)
 
-<img style="vertical-align:baseline; float:left; width:20px; height:20px; position:relative; top:4px; margin-right:5px" src="../../assets/logos/tokenpocket.png">[Token Pocket](https://www.tokenpocket.pro/)
+<img style="vertical-align:baseline; float:left; width:20px; height:20px; position:relative; top:4px; margin-right:5px" src="../../assets/logos/tokenpocket.png">[TokenPocket](https://www.tokenpocket.pro/)
 
 ## Other wallets
 
