@@ -5,6 +5,12 @@ lang: en-US
 
 # {{ $frontmatter.title }}
 
+::: warning OVM 2.0 Page
+This page refers to the **new** state of Optimistic Ethereum after the
+OVM 2.0 update. We expect to deploy OVM 2.0 mid October on the Kovan
+test network and by the end of October on the production network.
+:::
+
 ## For Users:
 
 - We recommend not changing your transaction gasPrice from what is quoted to you. Unlike on L1 Ethereum, the sequencer currently either immediately accepts your transaction if it pays a high enough gasPrice or rejects it if the gasPrice provided is too low.
@@ -32,10 +38,19 @@ import { ethers } from 'ethers'
 const OVM_GasPriceOracle = getContractFactory('OVM_GasPriceOracle')
 .attach(predeploys.OVM_GasPriceOracle)
 const WETH = new Contract(...) //Contract with no signer
-const input = WETH.populateTransaction.transfer(to, amount)
-//TODO ensure input includes a signature and is full RLP-encoded tx
-// probably fill in all 0xff for the signature
-const l1FeeInWei = await OVM_GasPriceOracle.getL1Fee(input)
+const unsignedTx = WETH.populateTransaction.transfer(to, amount)
+const signedTx = serialize({
+      nonce: parseInt(unsignedTx.nonce.toString(10), 10),
+      value: unsignedTx.value,
+      gasPrice: unsignedTx.gasPrice,
+      gasLimit: unsignedTx.gasLimit,
+      to: unsignedTx.to,
+      data: unsignedTx.data,
+    })
+const l1FeeInWei = await OVM_GasPriceOracle.getL1Fee(signedTx)
+
+
+
 ```
 
 - You should *not* allow users to change their `tx.gasPrice`

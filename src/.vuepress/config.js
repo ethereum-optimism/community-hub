@@ -42,7 +42,8 @@ module.exports = {
             '/docs/users/metamask.md',
             '/docs/users/gateway.md',
             '/docs/users/apps.md',
-            '/docs/users/fees.md'
+            '/docs/users/fees.md',
+            '/docs/users/fees-2.0.md',            
           ],
           collapsable: false,
           sidebarDepth: 0,
@@ -104,8 +105,10 @@ module.exports = {
                 '/docs/developers/l2/new-fees.md',
                 '/docs/developers/l2/future.md',
                 '/docs/developers/l2/contracts.md',
+                '/docs/developers/l2/contracts-2.0.md',                
                 '/docs/developers/l2/block-time.md',
                 '/docs/developers/l2/rpc.md',
+                '/docs/developers/l2/rpc-2.0.md',                
               ],
               collapsable: false,
               sidebarDepth: 0,
@@ -146,6 +149,7 @@ module.exports = {
           title: 'Protocol Specs',
           children: [
             '/docs/protocol/protocol.md',
+            '/docs/protocol/protocol-2.0.md',            
             '/docs/protocol/evm-comparison.md',
             '/docs/protocol/protocol-readings.md',
           ],

@@ -1,26 +1,26 @@
 ---
-title: Using the Protocol Contracts in OVM 1.0
+title: Using the Protocol Contracts in OVM 2.0
 lang: en-US
 ---
 
 # {{ $frontmatter.title }}
 
-::: danger OVM 1.0 Page
-This page refers to the **current** state of the Optimistic Ethereum
-network. Some of the information may be relevant to OVM 2.0, which will
-be deployed in October, but some of it may change.
+::: warning OVM 2.0 Page
+This page refers to the **new** state of Optimistic Ethereum after the
+OVM 2.0 update. We expect to deploy OVM 2.0 mid October on the Kovan
+test network and by the end of October on the production network.
 :::
 
 ## Finding contract addresses
 
 Check out the [Networks and Connection Details page](/docs/infra/networks.md) for links to the contract addresses for each network.
 You can also find the addresses for all networks in the [`deployments` folder](https://github.com/ethereum-optimism/optimism/tree/master/packages/contracts/deployments) of the [`contracts` package](https://github.com/ethereum-optimism/optimism/tree/master/packages/contracts).
-Take a look at the [Contract Overview](/docs/protocol/protocol.md) for a list of all protocol contracts and their purpose within the system.
+Take a look at the [Contract Overview](/docs/protocol/protocol-2.0.md) for a list of all protocol contracts and their purpose within the system.
 
 ## [@eth-optimism/contracts](https://github.com/ethereum-optimism/optimism/tree/master/packages/contracts)
 
 The easiest way to interact with the Optimistic Ethereum protocol contracts is to use the [@eth-optimism/contracts](https://github.com/ethereum-optimism/optimism/tree/master/packages/contracts) npm package.
-You can use this package to get an interface or factory instance for any of the OE contracts.
+You can use this package to get an interface or factory instance for any of the Optimistic Ethereum contracts.
 
 ### Installation
 
@@ -41,7 +41,7 @@ Here are some of the most useful tools exported by the package:
 const { getContractInterface } = require("@eth-optimism/contracts");
 
 // Returns an ethers.utils.Interface object
-const iface = getContractInterface("OVM_CanonicalTransactionChain"); // or whatever contract
+const iface = getContractInterface("CanonicalTransactionChain"); // or whatever contract
 ```
 
 #### `getContractFactory`
@@ -50,7 +50,7 @@ const iface = getContractInterface("OVM_CanonicalTransactionChain"); // or whate
 const { getContractFactory } = require("@eth-optimism/contracts");
 
 // Returns an ethers.ContractFactory object
-const factory = getContractFactory("OVM_CanonicalTransactionChain"); // or whatever contract
+const factory = getContractFactory("CanonicalTransactionChain"); // or whatever contract
 ```
 
 #### `getL1ContractData`
@@ -59,7 +59,7 @@ const factory = getContractFactory("OVM_CanonicalTransactionChain"); // or whate
 const { getL1ContractData } = require("@eth-optimism/contracts");
 
 // Returns an ethers.Contract object at the correct address
-const contract = getL1ContractData("mainnet").OVM_CanonicalTransactionChain; // or whatever contract
+const contract = getL1ContractData("mainnet").CanonicalTransactionChain; // or whatever contract
 ```
 
 #### `getL2ContractData`
@@ -68,7 +68,7 @@ const contract = getL1ContractData("mainnet").OVM_CanonicalTransactionChain; // 
 const { getL2ContractData } = require("@eth-optimism/contracts");
 
 // Returns an ethers.Contract object at the correct address
-const contract = getL2ContractData().OVM_ETH; // or whatever contract
+const contract = getL2ContractData().L2StandardBridge; // or whatever contract
 ```
 
 #### `predeploys`
@@ -77,5 +77,5 @@ const contract = getL2ContractData().OVM_ETH; // or whatever contract
 const { predeploys } = require("@eth-optimism/contracts");
 
 // Returns an address (string)
-const ovmETHAddress = predeploys.OVM_ETH; // or whatever contract
+const ovmETHAddress = predeploys.OVM_GasPriceOracle; // or whatever contract
 ```
