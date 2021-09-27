@@ -11,6 +11,8 @@ OVM 2.0 update. We expect to deploy OVM 2.0 mid October on the Kovan
 test network and by the end of October on the production network.
 :::
 
+You can see how the fee is calculated and deducted [here](/docs/users/fees-2.0.html).
+
 ## For backend developers:
 - You must send your transaction with a tx.gasPrice that is greater than or equal to the sequencer's l2 gas price. You can read this value from the Sequencer by querying the `OVM_GasPriceOracle` contract  (`OVM_GasPriceOracle.gasPrice`) or by simply making an RPC query to `eth_gasPrice`.  If you don't specify your `gasPrice` as an override when sending a transaction , `ethers` by default queries `eth_gasPrice` which will return the lowest acceptable L2 gas price.
 - You can set your `tx.gasLimit` however you might normally set it (e.g. via `eth_estimateGas`). You can expect that gas usage for transactions on Optimism Ethereum will be identical to gas usage on Ethereum.
