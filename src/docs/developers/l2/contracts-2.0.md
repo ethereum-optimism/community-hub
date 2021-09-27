@@ -68,7 +68,7 @@ const contract = getL1ContractData("mainnet").CanonicalTransactionChain; // or w
 const { getL2ContractData } = require("@eth-optimism/contracts");
 
 // Returns an ethers.Contract object at the correct address
-const contract = getL2ContractData().L2StandardBridge; // or whatever contract
+const contract = getL2ContractData().Lib_AddressManager; // or whatever contract
 ```
 
 #### `predeploys`

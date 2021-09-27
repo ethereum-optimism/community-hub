@@ -17,7 +17,7 @@ Fees on Optimistic Ethereum are, for the most part, significantly
 lower than on the Ethereum mainnet. Every Optimistic Ethereum
 transaction has two costs:
 
-1. **L2 execution fee**. This fee is `tx.gasLimit * l2gasUsed`, 
+1. **L2 execution fee**. This fee is `tx.gasPrice * l2gasUsed`, 
    where `l2gasUsed ≤ tx.gasLimit`. This is similar to the L1 cost, but
    **much** lower (unless Optimistic Ethereum congestion is extremely high). [You 
    can see the current cost here](https://public-grafana.optimism.io/d/9hkhMxn7z/public-dashboard?orgId=1&refresh=5m). User interfaces such
