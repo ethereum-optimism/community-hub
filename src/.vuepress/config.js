@@ -44,6 +44,7 @@ module.exports = {
             '/docs/users/apps.md',
             '/docs/users/fees.md',
             '/docs/users/fees-2.0.md',            
+            '/docs/users/deposit.md'
           ],
           collapsable: false,
           sidebarDepth: 0,
