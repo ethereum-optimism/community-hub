@@ -19,3 +19,4 @@ your Ether to Optimistic Ethereum.
 
 At writing the other two bridges, [cBridge](https://cbridge.celer.network/#/transfer)
 and [Hop](https://app.hop.exchange/), do not support ETH transfers.
+However, they can be cheaper and faster option for depositing and withdrawing tokens.
