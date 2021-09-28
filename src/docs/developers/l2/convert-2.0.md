@@ -16,13 +16,13 @@ test network and by the end of October on the production network.
 
 ### Opcode differences
 
-::: note
+::: tip
 [See here for the list of opcodes in the OVM](https://github.com/ethereum-optimism/optimism/blob/experimental/l2geth/core/vm/opcodes.go).
 :::
 
-The L1 verification challenge mechanism needs to be able to simulate every possible opcode that
-an L2 contract may have. The requires a few minor differences in Opcode support between standard EVM
-and the Optimistic Virtual Machine (OVM)
+The L1 verification challenge mechanism needs to be able to simulate every possible 
+opcode that an L2 contract may have. The requires a few minor differences in Opcode 
+support between standard EVM and the Optimistic Virtual Machine (OVM)
 
 | EVM Opcode  | Solidity equivalent | OVM Behavior |
 | - | - | - |
@@ -35,7 +35,8 @@ and the Optimistic Virtual Machine (OVM)
 | NUMBER     | `block.number`     | L2 block number |
 | TIMESTAMP  | `block.timestamp`  | Timestamp of latest verified L1 block |
 
-### New Opcodes
+
+### L1 -> L2 messages
 
 OVM includes a couple of new opcodes to provide information about L1 -> L2 messages.
 
@@ -43,6 +44,15 @@ OVM includes a couple of new opcodes to provide information about L1 -> L2 messa
 | - | - | - |
 | L1MESSAGESENDER | `assembly { solidityVariableName := verbatim_0i_1o("0x4A")}` | The address of the message sender on L1 |
 | L1BLOCKNUMBER | `assembly { solidityVariableName := verbatim_0i_1o("0x4B")}` | The L1 block that contains the message |
+
+Additionally, the behavior of `ORIGIN` (`tx.origin` in Solidity) is a bit different.
+It depends on the source of the transaction:
+
+* If the source of the transaction is on Optimistic Ethereum, it returns the real origin.
+* If the source of the transaction is on L1, the value is 
+  `<l1 origin> + 0x1111000000000000000000000000000000001111`. This allows programmers
+  to distinguish between a contract on L1 and a contract on the same address on L2
+  (for security reasons, they could be different contracts).
 
 
 ### Tests need to run on geth
