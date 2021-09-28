@@ -18,7 +18,7 @@
 
       <!--<a class="action-button" href="/tldr">read the <u>tl;dr</u></a>-->
       <a class="action-button" href="/docs">read the <u>docs</u></a>
-      <a class="action-button" href="https://github.com/ethereum-optimism/optimism-tutorial/blob/main/README.md">try the <u>tutorial</u></a>
+      <a class="action-button" href="https://github.com/ethereum-optimism/optimism-tutorial/blob/main/README.md">try the <u>tutorials</u></a>
       <a class="action-button" href="/faqs">check out the <u>FAQs</u></a>
       <a class="action-button" href="https://discord.optimism.io">come hang on <u>discord</u></a>
     </header>

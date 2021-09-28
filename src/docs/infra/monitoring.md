@@ -3,6 +3,12 @@ title: Monitoring
 lang: en-US
 ---
 
+::: tip OVM 2.0 Release Dates
+OVM 2.0 will be released October 14th on the Kovan test network,
+and October 28th into the production Optimistic Ethereum network.
+:::
+
+
 # {{ $frontmatter.title }}
 
 * [Optimism public dashboard](https://public-grafana.optimism.io/d/9hkhMxn7z/public-dashboard?orgId=1&refresh=5m)

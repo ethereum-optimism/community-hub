@@ -3,6 +3,12 @@ title: Connecting via MetaMask
 lang: en-US
 ---
 
+::: tip OVM 2.0 Release Dates
+OVM 2.0 will be released October 14th on the Kovan test network,
+and October 28th into the production Optimistic Ethereum network.
+:::
+
+
 # {{ $frontmatter.title }}
 
 ## Connecting with chainid.link
