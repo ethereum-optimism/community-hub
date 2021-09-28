@@ -11,17 +11,7 @@ OVM 2.0 update. We expect to deploy OVM 2.0 mid October on the Kovan
 test network and by the end of October on the production network.
 :::
 
-## For Users:
-
-- We recommend not changing your transaction gasPrice from what is quoted to you. Unlike on L1 Ethereum, the sequencer currently either immediately accepts your transaction if it pays a high enough gasPrice or rejects it if the gasPrice provided is too low.
-- The gas limit for your transaction can be thought of exactly like the gas limit for any transaction you might send on L1 Ethereum
-- What fee do I pay?
-   - You pay the sum of two fees: Your L2 (execution) fee and your L1 (security) fee. At a high level, the L1 fee is the estimated cost to submit your transaction to L1 (in a rollup batch) and the L2 fee is the cost to execute your transaction in L2. Your L2 fee is charged as your tx.gasPrice * l2GasUsed (up to tx.gasLimit, of course). Your L1 fee is automatically charged as l1GasPrice * l1GasUsed.
-- How is the L1 fee calculated?
-   - Your L1 fee is automatically charged as l1GasPrice * l1GasUsed. The L1GasPrice is updated by the sequencer in the `OVM_GasPriceOracle` contract Your l1GasUsed is calculated as 1.5 *(2750 gas + calldataGas). Thus, more calldata your transaction includes, the more expensive your L1 fee will be. For example, an ETH transfer has no calldata, so it will have the cheapest L1 fee, whereas large contract deployments can have over 25kb of calldata and will result in a high L1 fee.  We currently add a 50% overhead to the L1 fee to ensure the fee paid covers the actual L1 costs.
-- How do I get ETH?
-   - You can deposit ETH via [https://gateway.optimism.io/](https://gateway.optimism.io/) on both Kovan or Mainnet. Soon you will be able to also deposit ETH for slightly cheaper via [https://hop.exchange/](https://hop.exchange/)
-
+You can see how the fee is calculated and deducted [here](/docs/users/fees-2.0.html).
 
 ## For backend developers:
 - You must send your transaction with a tx.gasPrice that is greater than or equal to the sequencer's l2 gas price. You can read this value from the Sequencer by querying the `OVM_GasPriceOracle` contract  (`OVM_GasPriceOracle.gasPrice`) or by simply making an RPC query to `eth_gasPrice`.  If you don't specify your `gasPrice` as an override when sending a transaction , `ethers` by default queries `eth_gasPrice` which will return the lowest acceptable L2 gas price.
@@ -48,9 +38,6 @@ const signedTx = serialize({
       data: unsignedTx.data,
     })
 const l1FeeInWei = await OVM_GasPriceOracle.getL1Fee(signedTx)
-
-
-
 ```
 
 - You should *not* allow users to change their `tx.gasPrice`
