@@ -3,6 +3,11 @@ title: OVM 2.0 Changeset
 lang: en-US
 ---
 
+::: tip OVM 2.0 Release Dates
+OVM 2.0 will be released October 14th on the Kovan test network,
+and October 28th into the production Optimistic Ethereum network.
+:::
+
 # {{ $frontmatter.title }}
 
 During the next regenesis (Early October on Kovan, End of October on the main network), we will have a series of breaking changes as a part of an upgrade to the OVM. Fundamentally, this will drastically reduce the differences between the OVM and EVM so that developers can implement their contracts with mostly just one target in mind, instead of managing OVM idiosyncrasies with separate contracts. Thus the changes can be viewed as a reversion to most things listed on this page [https://community.optimism.io/docs/protocol/evm-comparison.html](/docs/protocol/evm-comparison.html). Here is the list of key breaking changes to watch for:
