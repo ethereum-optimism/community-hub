@@ -25,8 +25,8 @@ them from Mainnet Ethereum using [a bridge](/docs/users/apps.html#gateways-and-b
 mechanism is [our own gateway](https://gateway.optimism.io/).
 
 1. If you do not have any ETH, purchase some through a centralized exchange, such as 
-   [Coinbase](https://www.coinbase.com/signup), Gemini(https://exchange.gemini.com/register), 
-   or Binance(https://accounts.binance.com/en/register).
+   [Coinbase](https://www.coinbase.com/signup), [Gemini](https://exchange.gemini.com/register), 
+   or [Binance](https://accounts.binance.com/en/register).
 1. Set up a wallet, for example [Metamask](https://metamask.io/), and withdraw the ETH from the centralized
    exchange to your wallet.   
 1. [Browse to the gateway](https://gateway.optimism.io/).
