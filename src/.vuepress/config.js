@@ -39,10 +39,12 @@ module.exports = {
           title: 'User Docs',
           children: [
             '/docs/users/getting-started.md',
-            '/docs/users/wallets.md',
             '/docs/users/metamask.md',
             '/docs/users/gateway.md',
-            '/docs/users/apps.md',
+            [
+              'https://www.optimism.io/apps/all',
+              'Applications on Optimistic Ethereum'
+            ],   
             '/docs/users/fees.md',
             '/docs/users/fees-2.0.md',            
             '/docs/users/deposit.md'
@@ -104,7 +106,10 @@ module.exports = {
               'https://github.com/optimisticben/op-replica/blob/main/README.md',
               'Running a Node'
             ],
-            '/docs/infra/third-party-tools.md',
+            [
+              'https://www.optimism.io/apps/tools',
+              'Third Party Tools'
+            ],            
             '/docs/infra/monitoring.md',
           ],
           collapsable: false,
