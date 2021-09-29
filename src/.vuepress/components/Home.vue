@@ -14,6 +14,10 @@
         Optimistic Ethereum
       </h1>
 
+      <script>
+        location.href="/docs"
+      </script>
+
       <h2>Layer 2 is coming.</h2>
 
       <!--<a class="action-button" href="/tldr">read the <u>tl;dr</u></a>-->
