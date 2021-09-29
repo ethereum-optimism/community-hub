@@ -26,7 +26,7 @@ module.exports = {
     nav: [
       {
         text: 'faqs',
-        link: '/faqs/',
+        link: 'https://www.optimism.io/faqs',
       },
       {
         text: 'discord',
@@ -53,45 +53,8 @@ module.exports = {
         {
           title: 'Developer Docs',
           children: [
-            // Moved Learning resources to the top because
-            // it's the first thing I want noobs to see.
-            {
-              title: 'Guides and Tutorials',
-              // When you update here, make sure to also update
-              // /docs/developers/tutorials.html
-              children: [
-                [
-                  'https://github.com/ethereum-optimism/optimism-tutorial/tree/main/hardhat',
-                  'Optimistic Ethereum with Hardhat'
-                ],
-                [
-                  'https://github.com/ethereum-optimism/optimism-tutorial/tree/main/truffle',
-                  'Optimistic Ethereum with Truffle'
-                ],
-                [ 
-                  'https://remix-optimism-compiler-plugin.readthedocs.io/en/latest/',
-                  'Optimistic Ethereum with Remix'
-                ],
-                [
-                  'https://github.com/ethereum-optimism/optimism-tutorial/tree/main/l1-l2-deposit-withdrawal',
-                  'Depositing and Withdrawing ERC20 Tokens'
-                ],
-                [
-                  'https://github.com/ethereum-optimism/optimism-tutorial/tree/main/standard-bridge-standard-token',
-                  'Registering a Standard ERC20 Token on L2'
-                ],
-                [
-                  'https://github.com/ethereum-optimism/optimism-tutorial/tree/main/standard-bridge-custom-token',
-                  'Registering a Custom ERC20 Token on L2'
-                ],
-                [
-                  'https://github.com/ethereum-optimism/optimism-tutorial/tree/main/',
-                  'Generic L1 ⇔ L2 Communication (coming soon)'
-                ]
-              ],
-              collapsable: false,
-              sidebarDepth: 0,
-            },
+            // Moved to a separate page that's linkable from the homepage
+            '/docs/developers/tutorials.md',
             {
               title: 'Working on Optimistic Ethereum',
               // Reordered to follow the order in which I
@@ -173,14 +136,7 @@ module.exports = {
           collapsable: false,
           sidebarDepth: 0,
         }
-      ],
-      '/faqs/': [
-        {
-          children: [ '' ],
-          collapsable: false,
-          sidebarDepth: 1,
-        }
-      ]
+      ]     
     }
   },
 
