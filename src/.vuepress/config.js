@@ -25,6 +25,10 @@ module.exports = {
     },
     nav: [
       {
+        text: 'Home',
+        link: 'https://www.optimism.io',
+      },      
+      {
         text: 'faqs',
         link: 'https://www.optimism.io/faqs',
       },
