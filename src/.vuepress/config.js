@@ -33,8 +33,7 @@ module.exports = {
         link: 'https://discord.optimism.io',
       },
     ],
-    sidebar: {
-      '/docs/': [
+    sidebar: [
         {
           title: 'User Docs',
           children: [
@@ -133,16 +132,8 @@ module.exports = {
           ],
           collapsable: false,
           sidebarDepth: 0,
-        }        
-      ],
-      '/compare/': [
-        {
-          children: [''],
-          collapsable: false,
-          sidebarDepth: 0,
         }
-      ]     
-    }
+    ]
   },
 
   plugins: [

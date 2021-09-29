@@ -1,6 +1,6 @@
 <template>
   <main
-    class="home"
+    class="page"
     :aria-labelledby="data.heroText !== null ? 'main-title' : null"
   >
     <header class="hero">
@@ -15,7 +15,7 @@
       </h1>
 
       <script>
-        location.href="/docs"
+        alert("Home page still being processed")
       </script>
 
       <h2>Layer 2 is coming.</h2>
@@ -31,11 +31,12 @@
 
 <script>
 import NavLink from "@theme/components/NavLink.vue";
+import Sidebar from "@theme/components/Sidebar.vue";
 
 export default {
   name: "Home",
 
-  components: { NavLink },
+  components: { NavLink, Sidebar },
 
   computed: {
     data() {
