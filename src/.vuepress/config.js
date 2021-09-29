@@ -38,6 +38,7 @@ module.exports = {
         {
           title: 'User Docs',
           children: [
+            '/docs/users/getting-started.md',
             '/docs/users/wallets.md',
             '/docs/users/metamask.md',
             '/docs/users/gateway.md',
