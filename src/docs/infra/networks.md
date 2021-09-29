@@ -23,7 +23,7 @@ This is the information for a
 | Currency | **`Ether (ETH)`**
 | Chain ID | **`420`** |
 | HTTP Endpoint | **`https://localhost:8545`** |
-| HTTP Endpoint for L1 | **`https://localhost:7545`** |
+| HTTP Endpoint for L1 | **`https://localhost:9545`** |
 | Mnemonic for rich account | **`test test test test test test test test test test test junk`** |
 
 ## Optimistic Kovan
