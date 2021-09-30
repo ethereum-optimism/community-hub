@@ -77,11 +77,11 @@ mechanism is [our own gateway](https://gateway.optimism.io/).
 ## Applications
 
 Optimistic Ethereum supports [a large and growing list of 
-applications](https://community.optimism.io/docs/users/apps.html). To tell your wallet to
+applications](https://www.optimism.io/apps/all). To tell your wallet to
 change to Optimistic Ethereum click **Withdraw** in the gateway and confirm the network
 switch in the wallet.
 
-### Uniswap <img src="../../assets/logos/uniswap.png" align="right" width="50px">
+### Uniswap <img src="../../assets/docs/users/getting-started/uniswap-logo.png" align="right" width="50px">
 
 Uniswap lets you swap between assets. It is currently the most commonly used
 Open Ethereum application, so here are step by step directions to let you
