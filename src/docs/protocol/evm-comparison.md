@@ -42,7 +42,7 @@ Here's a record of every missing opcode.
 ## Replaced Opcodes
 
 Certain opcodes are banned and cannot be used directly.
-Instead, they must be translated into calls to the [`OVM_ExecutionManager`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/OVM/execution/OVM_ExecutionManager.sol) contract.
+Instead, they must be translated into calls to the [`OVM_ExecutionManager`](https://github.com/ethereum-optimism/optimism/blob/ef5343d61708f2d15f51dca981f03ee4ac447c21/packages/contracts/contracts/optimistic-ethereum/OVM/execution/OVM_ExecutionManager.sol) contract.
 **Our fork of the Solidity compiler handles this translation automatically** so you don't need to worry about this in practice.
 
 The following opcodes must be translated into calls to the execution manager:
@@ -75,7 +75,7 @@ However, these opcodes *can* be triggered within a `STATICCALL` within the OVM w
 
 #### Differences for `TIMESTAMP` and `NUMBER`
 
-The behavior of the `TIMESTAMP` (`block.timestamp`) and `NUMBER` (`block.number`) opcodes depends on the manner in which a transaction is added to the [`OVM_CanonicalTransactionChain`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/OVM/chain/OVM_CanonicalTransactionChain.sol).
+The behavior of the `TIMESTAMP` (`block.timestamp`) and `NUMBER` (`block.number`) opcodes depends on the manner in which a transaction is added to the [`OVM_CanonicalTransactionChain`](https://github.com/ethereum-optimism/optimism/blob/ef5343d61708f2d15f51dca981f03ee4ac447c21/packages/contracts/contracts/optimistic-ethereum/OVM/chain/OVM_CanonicalTransactionChain.sol).
 
 For transactions that are directly added to the chain via the [`enqueue`](https://github.com/ethereum-optimism/optimism/blob/5a7984973622d1d6e610ac98cfc206ab9a3bfe1a/packages/contracts/contracts/optimistic-ethereum/OVM/chain/OVM_CanonicalTransactionChain.sol#L257) function, `TIMESTAMP` and `NUMBER` will return the timestamp and block number of the block in which `enqueue` was called.
 
@@ -115,7 +115,7 @@ See the [default contract account](https://github.com/ethereum-optimism/optimism
 function ovmCREATEEOA(bytes32 _messageHash, uint8 _v, bytes32 _r, bytes32 _s) public;
 ```
 
-Deploys the [default contract account](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/OVM/accounts/OVM_ECDSAContractAccount.sol) on behalf of a user.
+Deploys the [default contract account](https://github.com/ethereum-optimism/optimism/blob/ef5343d61708f2d15f51dca981f03ee4ac447c21/packages/contracts/contracts/optimistic-ethereum/OVM/accounts/OVM_ECDSAContractAccount.sol) on behalf of a user.
 Account address is determined by recovering an ECDSA signature.
 If the account already exists, the account will not be overwritten.
 See [Account Abstraction](#native-acccount-abstraction) section for additional detail.
@@ -157,7 +157,7 @@ uint256 balance = address(this).balance;
 
 ### Using ETH as an ERC20 token
 
-To use ETH as an ERC20 token, you can interact with the [`OVM_ETH`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/OVM/predeploys/OVM_ETH.sol) contract deployed to Layer 2 at the address `0x4200000000000000000000000000000000000006`.
+To use ETH as an ERC20 token, you can interact with the [`OVM_ETH`](https://github.com/ethereum-optimism/optimism/blob/ef5343d61708f2d15f51dca981f03ee4ac447c21/packages/contracts/contracts/optimistic-ethereum/OVM/predeploys/OVM_ETH.sol) contract deployed to Layer 2 at the address `0x4200000000000000000000000000000000000006`.
 
 For example, you can get your balance via:
 
@@ -176,7 +176,7 @@ However, this scheme *does* have a few minor effects on developer experience tha
 
 Our account abstraction scheme is **100% compatible with existing wallets**.
 For the most part, developers don't need to understand how the account abstraction scheme works under the hood.
-We've implemented a standard [contract account](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/OVM/predeploys/OVM_ECDSAContractAccount.sol) which remains backwards compatible with all existing Ethereum wallets out of the box.
+We've implemented a standard [contract account](https://github.com/ethereum-optimism/optimism/blob/ef5343d61708f2d15f51dca981f03ee4ac447c21/packages/contracts/contracts/optimistic-ethereum/OVM/predeploys/OVM_ECDSAContractAccount.sol) which remains backwards compatible with all existing Ethereum wallets out of the box.
 Contract accounts are automatically deployed on behalf of a user when that user sends their first transaction.
 
 ### No transaction origin
@@ -193,7 +193,7 @@ You cannot tell the difference between contracts and externally owned accounts (
 
 ### Upgrading accounts
 
-The default [contract account](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/OVM/accounts/OVM_ECDSAContractAccount.sol) sits behind a [proxy](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/OVM/accounts/OVM_ProxyEOA.sol) that can be upgraded.
+The default [contract account](https://github.com/ethereum-optimism/optimism/blob/ef5343d61708f2d15f51dca981f03ee4ac447c21/packages/contracts/contracts/optimistic-ethereum/OVM/accounts/OVM_ECDSAContractAccount.sol) sits behind a [proxy](https://github.com/ethereum-optimism/optimism/blob/ef5343d61708f2d15f51dca981f03ee4ac447c21/packages/contracts/contracts/optimistic-ethereum/OVM/accounts/OVM_ProxyEOA.sol) that can be upgraded.
 Upgrades can be triggered by having the contract account call the `upgrade(...)` method attached to the proxy.
 Only the account itself can trigger this call, so it's not possible for someone else to upgrade your account.
 
@@ -233,7 +233,7 @@ There is a separate dimension of gas, called "nuisance gas", which is used to bo
 ### Storage slots are never deleted
 
 In Ethereum, setting the value of a storage slot to zero will delete the key associated with that storage slot from the trie.
-Because of the technical difficulty of implementing deletions within our Solidity [Merkle Trie library](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/libraries/trie/Lib_MerkleTrie.sol), we currently **do not** delete keys when values are set to zero.
+Because of the technical difficulty of implementing deletions within our Solidity [Merkle Trie library](https://github.com/ethereum-optimism/optimism/blob/ef5343d61708f2d15f51dca981f03ee4ac447c21/packages/contracts/contracts/optimistic-ethereum/libraries/trie/Lib_MerkleTrie.sol), we currently **do not** delete keys when values are set to zero.
 This discrepancy does not have any significant negative impact on performance.
 We may make an update to our Merkle Trie library that resolves this discrepancy at some point in the future.
 

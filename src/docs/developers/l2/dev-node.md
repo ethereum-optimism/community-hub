@@ -202,7 +202,7 @@ docker logs --follow <name of container>
 The [Optimistic Ethereum contracts](/docs/protocol/protocol.html#chain-contracts) 
 are already deployed on the development nodes. The contracts on L2 always have the 
 same addresses, so you can 
-[get them from the repository](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/deployments#predeploy-contracts). But the L1 addresses can vary, and
+[get them from the repository](https://github.com/ethereum-optimism/optimism/tree/ef5343d61708f2d15f51dca981f03ee4ac447c21/packages/contracts/deployments#predeploy-contracts). But the L1 addresses can vary, and
 you need to get them from the logs.
 
 For example, use this command to get the addresses for contracts that are used to relay data:
