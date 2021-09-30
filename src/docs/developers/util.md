@@ -24,7 +24,7 @@ These are contracts that are expected to be useful for multiple projects.
 ## Optimism
 
 The list of Optimism contracts and their addresses is available
-[in the monorepo](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/deployments). You can also read [additional information 
+[in the monorepo](https://github.com/ethereum-optimism/optimism/tree/ef5343d61708f2d15f51dca981f03ee4ac447c21/packages/contracts/deployments). You can also read [additional information 
 here](/docs/protocol/protocol.html).
 
 ### Wrapped Eth
@@ -33,7 +33,7 @@ This is the ERC-20 token that is used for gas in Optimistic Ethereum.
 You can read how to use ERC-20 tokens 
 [here](https://ethereum.org/en/developers/docs/standards/tokens/erc-20/).
 
-[Source](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/OVM/predeploys/OVM_ETH.sol)
+[Source](https://github.com/ethereum-optimism/optimism/blob/ef5343d61708f2d15f51dca981f03ee4ac447c21/packages/contracts/contracts/optimistic-ethereum/OVM/predeploys/OVM_ETH.sol)
 
 
 | Network             | Address |
@@ -49,7 +49,7 @@ L1 ERC20s compatible with and working on the standard bridge.
 [Click here to see how to use it](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/standard-bridge-standard-token)
 
 
-[Source](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/OVM/bridge/tokens/OVM_L2StandardTokenFactory.sol)
+[Source](https://github.com/ethereum-optimism/optimism/blob/ef5343d61708f2d15f51dca981f03ee4ac447c21/packages/contracts/contracts/optimistic-ethereum/OVM/bridge/tokens/OVM_L2StandardTokenFactory.sol)
 
 
 | Network             | Address |
