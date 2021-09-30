@@ -125,6 +125,7 @@ module.exports = {
             '/docs/protocol/protocol.md',
             '/docs/protocol/protocol-2.0.md',            
             '/docs/protocol/evm-comparison.md',
+            '/docs/protocol/sequencing.md',
             '/docs/protocol/protocol-readings.md',
           ],
           collapsable: false,
