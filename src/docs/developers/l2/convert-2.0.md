@@ -73,6 +73,27 @@ rather than an EVM running inside your development environment:
    because they are not available in geth. Nor can you use 
    [Hardhat's `console.log`](https://hardhat.org/tutorial/debugging-with-hardhat-network.html).
 
+## Connect user's wallet to Optimistic Ethereum
+
+Your user interface can ask the user's wallet to connect to a new chain using
+the [`wallet_addEthereumChain`](https://docs.metamask.io/guide/rpc-api.html#other-rpc-methods) command:
+
+```javascript
+window.ethereum.sendAsync({
+   id: 1,
+   jsonrpc: "2.0",
+   method: "wallet_addEthereumChain",
+   params: [
+      {
+         chainId: "0xa", // 10
+         chainName: "Optimistic Ethereum",
+         rpcUrls: ["https://mainnet.optimism.io"],
+         blockExplorerUrls: ["https://optimistic.etherscan.io/"]
+      }
+   ]
+})
+```
+
 ## Workflow
 
 Roughly speaking, these are the steps you need to take to develop for Optimistic
