@@ -18,18 +18,31 @@ network. Some of the information may be relevant to OVM 2.0, which will
 be deployed in October, but some of it may change.
 :::
 
+## Development Node
+
+::: tip Purpose
+This is the information for a 
+[local development node](/docs/developers/l2/dev-node.html).
+:::
+
+| Parameter | Value |
+| --------- | ----- |
+| Currency | **`Ether (ETH)`**
+| Chain ID | **`420`** |
+| HTTP Endpoint | **`https://localhost:8545`** |
+| HTTP Endpoint for L1 | **`https://localhost:9545`** |
+| Mnemonic for rich account | **`test test test test test test test test test test test junk`** |
+
 ## Optimistic Kovan
 
 ::: tip Purpose
-This is our **test** network. You're welcome to deploy whatever contracts to wish to test
-here.
+This is our **test** network. You're welcome to deploy whatever contracts to wish to test here.
 :::
 
 | Parameter | Value |
 | --------- | ----- |
 | Network Name | **`Optimistic Kovan`** |
 | Description | **`Testnet (public)`** |
-| Currency | **`Ether (ETH)`**
 | Chain ID | **`69`** |
 | Explorer | **`https://kovan-optimistic.etherscan.io`** |
 | HTTP Endpoint | **`https://kovan.optimism.io`** |
@@ -55,7 +68,6 @@ and we'll get back to you.
 | --------- | ----- |
 | Network Name | **`Optimistic Ethereum`** |
 | Description | **`Mainnet (restricted)`** |
-| Currency | **`Ether (ETH)`**
 | Chain ID | **`10`** |
 | Explorer | **`https://optimistic.etherscan.io`** |
 | HTTP Endpoint | **`https://mainnet.optimism.io`** |

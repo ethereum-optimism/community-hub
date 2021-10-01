@@ -1,5 +1,5 @@
 ---
-title: Tooling for Truffle
+title: Tooling for Truffle in OVM 1.0
 lang: en-US
 ---
 

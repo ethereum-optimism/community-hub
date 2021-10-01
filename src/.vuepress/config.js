@@ -69,6 +69,7 @@ module.exports = {
                 '/docs/developers/l2/dev-node.md',
                 '/docs/developers/l2/hardhat.md',
                 '/docs/developers/l2/truffle.md',
+                '/docs/developers/l2/tooling-2.0.md',                
                 '/docs/developers/l2/convert.md',
                 '/docs/developers/l2/convert-2.0.md',                
                 '/docs/developers/l2/deploy.md',

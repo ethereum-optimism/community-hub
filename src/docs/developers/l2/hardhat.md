@@ -1,5 +1,5 @@
 ---
-title: Tooling for Hardhat
+title: Tooling for Hardhat in OVM 1.0
 lang: en-US
 ---
 
