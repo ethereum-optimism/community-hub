@@ -128,6 +128,10 @@ module.exports = {
             '/docs/protocol/evm-comparison.md',
             '/docs/protocol/sequencing.md',
             '/docs/protocol/protocol-readings.md',
+            [
+              'https://github.com/ethereum-optimism/optimistic-specs',
+              'Standard specification (WIP)'
+            ]
           ],
           collapsable: false,
           sidebarDepth: 0,
