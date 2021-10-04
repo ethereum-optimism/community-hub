@@ -1,9 +1,13 @@
 ---
-title: Depositing ETH into Optimistic Ethereum
+title: Depositing into Optimistic Ethereum
 lang: en-US
 ---
 
 # {{ $frontmatter.title }}
+
+## Which Assets?
+
+### Ether
 
 Optimistic Ethereum transactions require ETH, just as do L1 Ethereum
 transactions (except a lot less of it). Here are some ways to get 
@@ -13,10 +17,69 @@ your Ether to Optimistic Ethereum.
   allows you transfer up to 0.05 ETH. It is a cheap gateway, but a
   custodial one (meaning you trust the people running it to be 
   honest)
-* [The Optimism Gateway](/docs/users/gateway.html#depositing-into-l2), 
+* [The Optimism Gateway](https://gateway.optimism.io/), 
   which costs more but allows for larger transfers and uses the same
   underlying trust mechanisms as Optimistic Ethereum itself.
 
-At writing the other two bridges, [cBridge](https://cbridge.celer.network/#/transfer)
-and [Hop](https://app.hop.exchange/), do not support ETH transfers.
-However, they can be cheaper and faster option for depositing and withdrawing tokens.
+### ERC-20 Tokens
+
+* [The Optimism Gateway](https://gateway.optimism.io/).
+  We have a [list of supported ERC-20 tokens](https://static.optimism.io/optimism.tokenlist.json), but you are not limited to them, [you can select any 
+  token that exists on both L1 and L2](https://optimismpbc.medium.com/arbitrary-token-bridging-d552f6bef694).
+
+  ::: tip
+  Do **not** attempt to transfer a token that isn't in the user interface unless
+  you are sure of the Optimistic Ethereum address of the equivalent ERC-20 token.
+  :::
+
+* [Third-party bridges](https://www.optimism.io/apps/bridges). Those bridges are
+  usually cheaper and faster than our main gateway, but have a more limited list
+  of supported tokens.
+
+
+## Depositing through the Optimism Gateway
+
+1. [Browse to the gateway](https://gateway.optimism.io/).
+1. Click **CONNECT**, select your wallet type, and approve the connection in the 
+   wallet itself if asked.
+1. Make sure the form is correct:
+
+   A. **Deposit** is selected
+    
+      <div style="display:inline-block">
+      <img src="../../assets/docs/users/getting-started/deposit-form-a.png" alt="Deposit form" width="40%" style="float:left">
+      </div>
+
+   B. From **MAINNET**
+
+      <div style="display:inline-block">
+      <img src="../../assets/docs/users/getting-started/deposit-form-b.png" alt="Deposit form" width="40%" style="float:left">
+      </div>
+
+   C. The amount is possible. Click **MAX** to see the maximum amount 
+      you can deposit (after accounting for transaction costs), and 
+      if relevant enter a lower amount.
+
+      <div style="display:inline-block">
+      <img src="../../assets/docs/users/getting-started/deposit-form-c.png" alt="Deposit form" width="40%" style="float:left">
+      </div>
+
+   D. The asset is the one you wish to deposit.
+
+      <div style="display:inline-block">
+      <img src="../../assets/docs/users/getting-started/deposit-form-d.png" alt="Deposit form" width="40%" style="float:left">
+      </div>
+
+1. Click **DEPOSIT**.
+1. Click **DEPOSIT** again to confirm.
+1. Confirm the transaction in the wallet, wait until the transaction is confirmed and the ETH
+   deposited to Optimistic Ethereum.
+1. [Browse here](https://chainid.link/?network=optimism) and click
+   **connect** to add the Optimistic Ethereum network to your wallet. 
+   You will need to approve this addition in your wallet. The network
+   notification in MetaMask is shown below, other wallets are likely
+   to be similar
+
+      <div style="display:inline-block">
+      <img src="../../assets/docs/users/getting-started/add-net-metamask.png" alt="MetaMask add network notification" width="40%" style="float:left">
+      </div>   

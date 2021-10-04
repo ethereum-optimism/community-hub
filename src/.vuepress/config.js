@@ -43,14 +43,14 @@ module.exports = {
           children: [
             '/docs/users/getting-started.md',
             '/docs/users/metamask.md',
-            '/docs/users/gateway.md',
+            '/docs/users/deposit.md',
+            '/docs/users/withdrawal.md',
             [
               'https://www.optimism.io/apps/all',
               'Applications on Optimistic Ethereum'
             ],   
             '/docs/users/fees.md',
-            '/docs/users/fees-2.0.md',            
-            '/docs/users/deposit.md'
+            '/docs/users/fees-2.0.md'          
           ],
           collapsable: false,
           sidebarDepth: 0,
