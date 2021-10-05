@@ -76,19 +76,19 @@ Withdrawals through the Optimism Gateway is a multi-step process:
       <img src="../../assets/docs/users/withdraw/withdraw-form-b.png" alt="Withdrawal form" width="40%" style="float:left">
       </div>
 
-   C. The amount is possible. Click **MAX** to see the maximum amount 
-      you can deposit (after accounting for transaction costs), and 
-      if relevant enter a lower amount.
+   C. The asset is the one you with to withdraw.
+
+      <div style="display:inline-block">
+      <img src="../../assets/docs/users/withdraw/withdraw-form-d.png" alt="Withdrawal form" width="40%" style="float:left">
+      </div>
+
+   D. Set an amount that is available in your account. Click **MAX** if 
+      you want to deposit your entire balance.
 
       <div style="display:inline-block">
       <img src="../../assets/docs/users/withdraw/withdraw-form-c.png" alt="Withdrawal form" width="40%" style="float:left">
       </div>
 
-   D. The asset is the one you with to withdraw.
-
-      <div style="display:inline-block">
-      <img src="../../assets/docs/users/withdraw/withdraw-form-d.png" alt="Withdrawal form" width="40%" style="float:left">
-      </div>
 
 1. Click **WITHDRAW**.
 1. Click **WITHDRAW** again to confirm.

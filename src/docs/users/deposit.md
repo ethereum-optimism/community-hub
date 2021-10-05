@@ -56,19 +56,18 @@ your Ether to Optimistic Ethereum.
       <img src="../../assets/docs/users/getting-started/deposit-form-b.png" alt="Deposit form" width="40%" style="float:left">
       </div>
 
-   C. The amount is possible. Click **MAX** to see the maximum amount 
-      you can deposit (after accounting for transaction costs), and 
-      if relevant enter a lower amount.
-
-      <div style="display:inline-block">
-      <img src="../../assets/docs/users/getting-started/deposit-form-c.png" alt="Deposit form" width="40%" style="float:left">
-      </div>
-
-   D. The asset is the one you wish to deposit.
+   C. The asset is the one you wish to deposit.
 
       <div style="display:inline-block">
       <img src="../../assets/docs/users/getting-started/deposit-form-d.png" alt="Deposit form" width="40%" style="float:left">
       </div>
+
+   D. Set an amount that is available in your account. Click **MAX** if 
+      you want to deposit your entire balance.
+
+      <div style="display:inline-block">
+      <img src="../../assets/docs/users/getting-started/deposit-form-c.png" alt="Deposit form" width="40%" style="float:left">
+      </div>      
 
 1. Click **DEPOSIT**.
 1. Click **DEPOSIT** again to confirm.
