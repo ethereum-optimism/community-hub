@@ -130,7 +130,7 @@ module.exports = {
             '/docs/protocol/protocol-readings.md',
             [
               'https://github.com/ethereum-optimism/optimistic-specs',
-              'Protocokl Specs'
+              'Protocol Specs'
             ]
           ],
           collapsable: false,
