@@ -121,13 +121,17 @@ module.exports = {
           sidebarDepth: 0,
         },
         {
-          title: 'Protocol Specs',
+          title: 'Protocol Docs',
           children: [
             '/docs/protocol/protocol.md',
             '/docs/protocol/protocol-2.0.md',            
             '/docs/protocol/evm-comparison.md',
             '/docs/protocol/sequencing.md',
             '/docs/protocol/protocol-readings.md',
+            [
+              'https://github.com/ethereum-optimism/optimistic-specs',
+              'Protocol Specs'
+            ]
           ],
           collapsable: false,
           sidebarDepth: 0,
