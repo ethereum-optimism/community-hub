@@ -52,8 +52,9 @@ option to withdraw ETH directly.
 Withdrawals through the Optimism Gateway is a multi-step process:
 
 1. [Initiate the withdrawal](#initiate-the-withdrawal) on Optimistic Ethereum
-1. Wait the verification challenge period, which is *seven days*. Note that the
-   seven days are counted from the point the transaction is published on L1,
+1. [Wait the verification challenge period](#while-waiting), which 
+   is *seven days*. Note that the seven days are counted from the point the 
+   transaction is published on L1,
    which in case of outage may be later than when you initiate the withdrawal.
 1. [Finalize the transaction](#finalize-the-withdrawal)
 
@@ -94,41 +95,44 @@ Withdrawals through the Optimism Gateway is a multi-step process:
 1. Click **WITHDRAW** again to confirm.
 1. Confirm the transaction in the wallet.
 
+### While waiting
+
+There are several ways to see if your withdrawal is ready to be finalized:
+
+*  [Browse to the gateway](https://gateway.optimism.io/) and click your
+  account. This shows you the list of recent withdrawals and their status:
+
+  <div style="display:inline-block">
+  <img src="../../assets/docs/users/withdraw/withdrawal-gw-1.png" alt="Withdrawal date on the gateway" width="40%" style="float:left">
+  </div>
+
+  Click a specific withdrawal to see exactly when it will become available.
+
+  <div style="display:inline-block">
+  <img src="../../assets/docs/users/withdraw/withdrawal-gw-2.png" alt="Withdrawal date on the gateway" width="40%" style="float:left">
+  </div>
+
+* Search the transaction hash on 
+  [the Etherscan message relayer](https://optimistic.etherscan.io/messagerelayer). 
+  If the transaction is ready to be finalized, the **Execute** button will be 
+  enabled.
+
+*  You can search for the transaction hash on 
+  [Optimistic Etherscan](https://optimistic.etherscan.io/). Click the L1
+  State Root Submission Tx. 
+
+  <div style="display:inline-block">
+  <img src="../../assets/docs/users/withdraw/withdrawal-etherscan-1.png" alt="Withdrawal date on Etherscan" width="40%" style="float:left">
+  </div>
+
+  The verification challenge period starts when
+  that transaction is confirmed:
+
+  <div style="display:inline-block">
+  <img src="../../assets/docs/users/withdraw/withdrawal-etherscan-2.png" alt="Withdrawal date on Etherscan" width="40%" style="float:left">
+  </div>
+
 ### Finalize the withdrawal
-
-1. There are several ways to see if your withdrawal is ready to be finalized:
-
-   *  [Browse to the gateway](https://gateway.optimism.io/) and click your
-      account. This shows you the list of recent withdrawals and their status:
-
-      <div style="display:inline-block">
-      <img src="../../assets/docs/users/withdraw/withdrawal-gw-1.png" alt="Withdrawal date on the gateway" width="40%" style="float:left">
-      </div>
-
-      Click a specific withdrawal to see exactly when it will become available.
-
-      <div style="display:inline-block">
-      <img src="../../assets/docs/users/withdraw/withdrawal-gw-2.png" alt="Withdrawal date on the gateway" width="40%" style="float:left">
-      </div>
-
-   * Search the transaction hash on 
-     [the message relayer](https://optimistic.etherscan.io/messagerelayer). If the 
-     transaction is ready to be finalized, the **Execute** button will be available.
-
-   *  You can search for the transaction hash on 
-      [Optimistic Etherscan](https://optimistic.etherscan.io/). Click the L1
-      State Root Submission Tx. 
-
-      <div style="display:inline-block">
-      <img src="../../assets/docs/users/withdraw/withdrawal-etherscan-1.png" alt="Withdrawal date on Etherscan" width="40%" style="float:left">
-      </div>
-
-      The verification challenge period starts when
-      that transaction is confirmed:
-
-      <div style="display:inline-block">
-      <img src="../../assets/docs/users/withdraw/withdrawal-etherscan-2.png" alt="Withdrawal date on Etherscan" width="40%" style="float:left">
-      </div>
 
 1. Once the challenge period is over, the status in the gateway changes 
    to **Ready to claim!**. Click the transaction.
