@@ -34,31 +34,31 @@ mechanism is [our own gateway](https://gateway.optimism.io/).
    wallet itself if asked.
 1. Make sure the form is correct:
 
-   A. **Deposit** is selected
+   * **Deposit** is selected
     
-      <div style="display:inline-block">
-      <img src="../../assets/docs/users/getting-started/deposit-form-a.png" alt="Deposit form" width="40%" style="float:left">
-      </div>
+     <div style="display:inline-block">
+     <img src="../../assets/docs/users/getting-started/deposit-form-a.png" alt="Deposit form" width="40%" style="float:left">
+     </div>
 
-   B. From **MAINNET**
+   * From **MAINNET**
 
-      <div style="display:inline-block">
-      <img src="../../assets/docs/users/getting-started/deposit-form-b.png" alt="Deposit form" width="40%" style="float:left">
-      </div>
+     <div style="display:inline-block">
+     <img src="../../assets/docs/users/getting-started/deposit-form-b.png" alt="Deposit form" width="40%" style="float:left">
+     </div>
 
-   C. The amount is possible. Click **MAX** to see the maximum amount 
-      you can deposit (after accounting for transaction costs), and 
-      if relevant enter a lower amount.
+   * The asset is **ETH**.
+   
+     <div style="display:inline-block">
+     <img src="../../assets/docs/users/getting-started/deposit-form-c.png" alt="Deposit form" width="40%" style="float:left">
+     </div>
 
-      <div style="display:inline-block">
-      <img src="../../assets/docs/users/getting-started/deposit-form-c.png" alt="Deposit form" width="40%" style="float:left">
-      </div>
+   * The amount is possible. Click **MAX** to see the maximum amount 
+     you can deposit (after accounting for transaction costs), and 
+     if relevant enter a lower amount.
 
-   D. The asset is **ETH**.
-
-      <div style="display:inline-block">
-      <img src="../../assets/docs/users/getting-started/deposit-form-d.png" alt="Deposit form" width="40%" style="float:left">
-      </div>
+     <div style="display:inline-block">
+     <img src="../../assets/docs/users/getting-started/deposit-form-d.png" alt="Deposit form" width="40%" style="float:left">
+     </div>
 
 1. Click **DEPOSIT**.
 1. Click **DEPOSIT** again to confirm.

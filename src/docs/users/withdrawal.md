@@ -64,30 +64,30 @@ Withdrawals through the Optimism Gateway is a multi-step process:
    wallet itself if asked.
 1. Make sure the form is correct:
 
-   A. **Withdraw** is selected
+   * **Withdraw** is selected
     
-      <div style="display:inline-block">
-      <img src="../../assets/docs/users/withdraw/withdraw-form-a.png" alt="Withdrawal form" width="40%" style="float:left">
-      </div>
+     <div style="display:inline-block">
+     <img src="../../assets/docs/users/withdraw/withdraw-form-a.png" alt="Withdrawal form" width="40%" style="float:left">
+     </div>
 
-   B. From **OPTIMISTIC ETHEREUM**
+   * From **OPTIMISTIC ETHEREUM**
 
-      <div style="display:inline-block">
-      <img src="../../assets/docs/users/withdraw/withdraw-form-b.png" alt="Withdrawal form" width="40%" style="float:left">
-      </div>
+     <div style="display:inline-block">
+     <img src="../../assets/docs/users/withdraw/withdraw-form-b.png" alt="Withdrawal form" width="40%" style="float:left">
+     </div>
 
-   C. The asset is the one you with to withdraw.
+   * The asset is the one you with to withdraw.
 
-      <div style="display:inline-block">
-      <img src="../../assets/docs/users/withdraw/withdraw-form-d.png" alt="Withdrawal form" width="40%" style="float:left">
-      </div>
+     <div style="display:inline-block">
+     <img src="../../assets/docs/users/withdraw/withdraw-form-d.png" alt="Withdrawal form" width="40%" style="float:left">
+     </div>
 
-   D. Set an amount that is available in your account. Click **MAX** if 
-      you want to deposit your entire balance.
+   * Set an amount that is available in your account. Click **MAX** if 
+     you want to deposit your entire balance.
 
-      <div style="display:inline-block">
-      <img src="../../assets/docs/users/withdraw/withdraw-form-c.png" alt="Withdrawal form" width="40%" style="float:left">
-      </div>
+     <div style="display:inline-block">
+     <img src="../../assets/docs/users/withdraw/withdraw-form-c.png" alt="Withdrawal form" width="40%" style="float:left">
+     </div>
 
 
 1. Click **WITHDRAW**.
@@ -130,10 +130,16 @@ Withdrawals through the Optimism Gateway is a multi-step process:
       <img src="../../assets/docs/users/withdraw/withdrawal-etherscan-2.png" alt="Withdrawal date on Etherscan" width="40%" style="float:left">
       </div>
 
-1. Once the challenge period is over, you can either click on the transaction at
-   the gateway or search for its hash on 
-   [the message relayer](https://optimistic.etherscan.io/messagerelayer).
+1. Once the challenge period is over, the status in the gateway changes 
+   to **Ready to claim!**. Click the transaction.
 
-1. If the Execute button isn't greyed out it means the transaction is ready
-   to be finalized. Make sure your wallet is connected to the L1 Ethereum network
-   (mainnet) and click **Execute**.
+   <div style="display:inline-block">
+   <img src="../../assets/docs/users/withdraw/finalize-a.png" alt="Finalizing" width="40%" style="float:left">
+   </div>
+
+1. Click **CLAIM WITHDRAWAL**, wait for the transaction to be created, and approve it
+   in your wallet.  
+
+   <div style="display:inline-block">
+   <img src="../../assets/docs/users/withdraw/finalize-b.png" alt="Finalizing" width="40%" style="float:left">
+   </div>

@@ -44,30 +44,29 @@ your Ether to Optimistic Ethereum.
    wallet itself if asked.
 1. Make sure the form is correct:
 
-   A. **Deposit** is selected
+   * **Deposit** is selected
     
-      <div style="display:inline-block">
-      <img src="../../assets/docs/users/getting-started/deposit-form-a.png" alt="Deposit form" width="40%" style="float:left">
-      </div>
+     <div style="display:inline-block">
+     <img src="../../assets/docs/users/getting-started/deposit-form-a.png" alt="Deposit form" width="40%" style="float:left">
+     </div>
 
-   B. From **MAINNET**
+   * From **MAINNET**
+     <div style="display:inline-block">
+     <img src="../../assets/docs/users/getting-started/deposit-form-b.png" alt="Deposit form" width="40%" style="float:left">
+     </div>
 
-      <div style="display:inline-block">
-      <img src="../../assets/docs/users/getting-started/deposit-form-b.png" alt="Deposit form" width="40%" style="float:left">
-      </div>
+   * The asset is the one you wish to deposit.
 
-   C. The asset is the one you wish to deposit.
+     <div style="display:inline-block">
+     <img src="../../assets/docs/users/getting-started/deposit-form-c.png" alt="Deposit form" width="40%" style="float:left">
+     </div>
 
-      <div style="display:inline-block">
-      <img src="../../assets/docs/users/getting-started/deposit-form-d.png" alt="Deposit form" width="40%" style="float:left">
-      </div>
+   * Set an amount that is available in your account. Click **MAX** if 
+     you want to deposit your entire balance.
 
-   D. Set an amount that is available in your account. Click **MAX** if 
-      you want to deposit your entire balance.
-
-      <div style="display:inline-block">
-      <img src="../../assets/docs/users/getting-started/deposit-form-c.png" alt="Deposit form" width="40%" style="float:left">
-      </div>      
+     <div style="display:inline-block">
+     <img src="../../assets/docs/users/getting-started/deposit-form-d.png" alt="Deposit form" width="40%" style="float:left">
+     </div>      
 
 1. Click **DEPOSIT**.
 1. Click **DEPOSIT** again to confirm.
