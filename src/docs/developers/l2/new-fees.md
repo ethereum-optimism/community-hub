@@ -34,7 +34,7 @@ const OVM_GasPriceOracle = getContractFactory('OVM_GasPriceOracle')
 .attach(predeploys.OVM_GasPriceOracle)
 const WETH = new Contract(...) //Contract with no signer
 const unsignedTx = WETH.populateTransaction.transfer(to, amount)
-const signedTx = serialize({
+const serializedTx = serialize({
       nonce: parseInt(unsignedTx.nonce.toString(10), 10),
       value: unsignedTx.value,
       gasPrice: unsignedTx.gasPrice,
@@ -42,7 +42,7 @@ const signedTx = serialize({
       to: unsignedTx.to,
       data: unsignedTx.data,
     })
-const l1FeeInWei = await OVM_GasPriceOracle.getL1Fee(signedTx)
+const l1FeeInWei = await OVM_GasPriceOracle.getL1Fee(serializedTx)
 ```
 
 - You should *not* allow users to change their `tx.gasPrice`
