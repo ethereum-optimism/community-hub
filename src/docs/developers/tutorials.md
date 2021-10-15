@@ -3,10 +3,12 @@ title: Tutorials
 lang: en-US
 ---
 
-<!-- When you update here, make sure to also update config.js -->
 # {{ $frontmatter.title }}
 
-
+::: tip OVM 2.0 Release Dates
+OVM 2.0 is already released on the Kovan test network.
+On October 28th we will deploy it to the production Optimistic Ethereum network.
+:::
 
 ## Getting Started
 

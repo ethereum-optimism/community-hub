@@ -5,12 +5,10 @@ lang: en-US
 
 # {{ $frontmatter.title }}
 
-::: warning OVM 2.0 Page
-This page refers to the **new** state of Optimistic Ethereum after the
-OVM 2.0 update. We expect to deploy OVM 2.0 mid October on the Kovan
-test network and by the end of October on the production network.
+::: tip OVM 2.0 Release Dates
+OVM 2.0 is already released on the Kovan test network.
+On October 28th we will deploy it to the production Optimistic Ethereum network.
 :::
-
 
 ## Differences from L1 Ethereum
 

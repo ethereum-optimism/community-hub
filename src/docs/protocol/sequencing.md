@@ -5,6 +5,11 @@ lang: en-US
 
 # {{ $frontmatter.title }}
 
+::: tip OVM 2.0 Release Dates
+OVM 2.0 is already released on the Kovan test network.
+On October 28th we will deploy it to the production Optimistic Ethereum network.
+:::
+
 ## What is a sequencer?
 
 Optimistic Ethereum block production is primarily managed by a single party, called the "sequencer," which helps the network by providing the following services:

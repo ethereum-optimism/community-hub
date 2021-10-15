@@ -18,7 +18,6 @@ You can see the documentation table of contents on the left sidebar.
 | Administer operations for an app   | The above plus **Infrastructure** |
 | Develop an app                     | The above plus **Developer Docs** |
 | Understand why this is safe and cheap | **Protocol Specs**             |
-| Take over the world                | [Ask this guy](https://www.youtube.com/watch?v=SGUqwaORfbU&list=PLfPP3LyOI8Om38VTPVIKcsve6TboopdPX&index=11) |
 
 
 ::: tip Work in Progress™

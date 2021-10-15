@@ -4,8 +4,8 @@ lang: en-US
 ---
 
 ::: tip OVM 2.0 Release Dates
-OVM 2.0 will be released October 14th on the Kovan test network,
-and October 28th into the production Optimistic Ethereum network.
+OVM 2.0 is already released on the Kovan test network.
+On October 28th we will deploy it to the production Optimistic Ethereum network.
 :::
 
 # {{ $frontmatter.title }}
@@ -19,7 +19,7 @@ on what we think is going to happen, and some things will turn out to be differe
 
 ## Regenesis
 
-We are still in alpha. In order to quickly iterate and make significant changes to the 
+In order to quickly iterate and make significant changes to the 
 Optimistic Ethereum network, we will need to perform a type of upgrade called a "regenesis". 
 During a regenesis, the state of the chain is snapshotted (including all users' nonces, 
 token balances, contract code, and contract storage) and a new chain is spun up from that 
