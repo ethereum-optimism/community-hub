@@ -25,6 +25,10 @@ your Ether to Optimistic Ethereum.
 * [The Optimism Gateway](https://gateway.optimism.io/), 
   which costs more but allows for larger transfers and uses the same
   underlying trust mechanisms as Optimistic Ethereum itself.
+* [Hop](https://app.hop.exchange/send?token=ETH&sourceNetwork=ethereum&destNetwork=optimism)
+  which also allows large transfers, but may have a different exchange 
+  rate than 1:1. 
+
 
 ### ERC-20 Tokens
 
