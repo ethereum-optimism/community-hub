@@ -19,8 +19,13 @@ still be in the validity challenge period. Alternatively, you might just need to
 
 ### Ether
 
-At writing [the Optimism Gateway](https://gateway.optimism.io/) is the sole
-option to withdraw ETH directly.
+At writing there are two ways to withdraw ETH:
+
+1. [Hop exchange](https://app.hop.exchange/send?token=ETH&sourceNetwork=optimism&destNetwork=ethereum), which is quick and tells you the cost upfront.
+
+1. [The Optimism Gateway](https://gateway.optimism.io/), which requires you to
+   wait the challenge verification period (one week) and then 
+   [claim the withdrawal](#claim-the-withdrawal), which costs extra gas.
 
 
 ### ERC-20 Tokens
