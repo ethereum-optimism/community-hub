@@ -59,7 +59,7 @@ accessible to anyone.
 This document is intended for anyone looking for a deeper understanding of how the protocol works
 'under the hood'.
 If you just want to skip straight to integrating your smart contract application with
-OE, check out the [Developer Docs](/docs/developers/l2/convert.html).
+OE, check out the [Developer Docs](../developers/l2/convert.md).
 
 Optimistic Ethereum is meant to look, feel and behave like Ethereum but cheaper and faster.
 For developers building on our OE, we aim to make the transition as seamless as possible.
@@ -163,7 +163,7 @@ lists of:
 -->
 
 The chain is composed of the following concrete contracts:
-<!-- [concrete contracts][stackex]: -->
+<!-- concrete contracts     stackex -->
 
 ### [`OVM_CanonicalTransactionChain`](https://github.com/ethereum-optimism/optimism/blob/ef5343d61708f2d15f51dca981f03ee4ac447c21/packages/contracts/contracts/optimistic-ethereum/OVM/chain/OVM_CanonicalTransactionChain.sol) (CTC)
 
@@ -177,7 +177,7 @@ The State Commitment Chain (SCC) contract contains a list of proposed state root
 
 Provides reusable storage in the form of a "Ring Buffer" data structure, which will overwrite storage slots that are no longer needed. There are three Chain Storage Containers deployed, two are controlled by the CTC, one by the SCC.
 
-<!-- [stackex]: TODO - create a stackexchange Q and A, to make this term real. -->
+<!-- stackex: TODO - create a stackexchange Q and A, to make this term real. -->
 
 ## Transaction Challenge Contracts
 
@@ -345,7 +345,7 @@ data as CALLDATA on L1).
 
 ### [`OVM_L2StandardBridge`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/optimistic-ethereum/OVM/bridge/tokens/OVM_L2StandardBridge.sol)
 The L2 part of the Standard Bridge. Responsible for finalising deposits from L1 and initiating withdrawals from L2 of ETH and compliant ERC20s.
-See [Standard Bridge](/docs/developers/bridge/standard-bridge.html) for details.
+See [Standard Bridge](../developers/bridge/standard-bridge.md) for details.
 
 ### [`OVM_ExecutionManagerWrapper`](https://github.com/ethereum-optimism/optimism/blob/ef5343d61708f2d15f51dca981f03ee4ac447c21/packages/contracts/contracts/optimistic-ethereum/OVM/predeploys/OVM_ExecutionManagerWrapper.sol)
 This is the one contract on L2 that can call another contract without having to

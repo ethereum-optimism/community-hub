@@ -10,7 +10,7 @@ On October 28th we will deploy it to the production Optimistic Ethereum network.
 
 # {{ $frontmatter.title }}
 
-For OVM 2.0 we will have a series of breaking changes as a part of an upgrade to the OVM. Fundamentally, this will drastically reduce the differences between the OVM and EVM so that developers can implement their contracts with mostly just one target in mind, instead of managing OVM idiosyncrasies with separate contracts. Thus the changes can be viewed as a reversion to most things listed on this page [https://community.optimism.io/docs/protocol/evm-comparison.html](/docs/protocol/evm-comparison.html). Here is the list of key breaking changes to watch for:
+For OVM 2.0 we will have a series of breaking changes as a part of an upgrade to the OVM. Fundamentally, this will drastically reduce the differences between the OVM and EVM so that developers can implement their contracts with mostly just one target in mind, instead of managing OVM idiosyncrasies with separate contracts. Thus the changes can be viewed as a reversion to most things listed on this page [https://community.optimism.io/docs/protocol/evm-comparison.html](../../protocol/evm-comparison.md). Here is the list of key breaking changes to watch for:
 
 1. Contracts whose source code has not been verified on Etherscan 
    ([Kovan](https://kovan-optimistic.etherscan.io/verifyContract),
@@ -39,7 +39,7 @@ For OVM 2.0 we will have a series of breaking changes as a part of an upgrade to
     removed
 
 1. Our fee scheme will be altered. 
-   [See here for details](new-fees.html)    
+   [See here for details](new-fees.md)
 
 1. EOAs will no longer be contract wallets
     1. Currently, every new EOA in Optimistic Ethereum deploys a proxy
@@ -78,7 +78,7 @@ For OVM 2.0 we will have a series of breaking changes as a part of an upgrade to
     8. `Lib_AddressManager`
     
     All other OVM predeploys will remain at the same addresses as before the regenesis
-9. `TIMESTAMP` will function the same as before, updating with each new deposit or after 5 minutes if there has not been a deposit. `TIMESTAMP` will still correspond to "Last Finalized L1 Timestamp" - [See here for details](block-time.html)
+9. `TIMESTAMP` will function the same as before, updating with each new deposit or after 5 minutes if there has not been a deposit. `TIMESTAMP` will still correspond to "Last Finalized L1 Timestamp" - [See here for details](block-time.md)
 
 
 ## Applications

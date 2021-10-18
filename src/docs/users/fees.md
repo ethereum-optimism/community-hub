@@ -33,4 +33,4 @@ Please keep the following in mind when using Optimistic Ethereum:
 2. At the moment, we use the gas limit to encode information about both the cost to execute the transaction on L2 and the cost to publish the transaction on L1. **You should never modify the gas limit provided to you by an application.** Modifying your gas limit will likely cause your transaction to be rejected.
 
 Curious to know more about how all of this works under the hood?
-Check out our [dedicated page explaining gas costs on L2](/docs/developers/fees.md).
+Check out our [dedicated page explaining gas costs on L2](../developers/fees.md).

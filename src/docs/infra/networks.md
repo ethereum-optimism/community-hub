@@ -11,16 +11,12 @@ On October 28th we will deploy it to the production Optimistic Ethereum network.
 
 # {{ $frontmatter.title }}
 
-::: danger OVM 1.0 Page
-This page refers to the **current** state of the Optimistic Ethereum
-network. 
-:::
 
 ## Development Node
 
 ::: tip Purpose
 This is the information for a 
-[local development node](/docs/developers/l2/dev-node.html).
+[local development node](../developers/l2/dev-node.md).
 :::
 
 | Parameter | Value |
@@ -34,7 +30,7 @@ This is the information for a
 ## Optimistic Kovan
 
 ::: tip Purpose
-This is our **test** network. You're welcome to deploy whatever contracts to wish to test here.
+This is our **test** network. You're welcome to deploy whatever contracts to wish to test here. This network is already OVM 2.0.
 :::
 
 | Parameter | Value |
@@ -60,6 +56,8 @@ and testing before we get there. 99.9% secure is not good enough.
 When you are ready to deploy to production please fill up 
 [this form](https://docs.google.com/forms/d/e/1FAIpQLSfBGsJN3nZQRLdMjqCS_svfQoPkn35o_cc4HUVnLlXN2BHmPw/viewform) 
 and we'll get back to you.
+
+This network is still OVM 1.0
 :::
 
 | Parameter | Value |
@@ -76,5 +74,5 @@ and we'll get back to you.
 
 ## Third Party Applications
 
-[Click here](/docs/developers/util.html) to see the addresses for other applications
+[Click here](../developers/util.md) to see the addresses for other applications
 running in Optimistic Ethereum.
