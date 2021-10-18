@@ -350,7 +350,7 @@ See [Standard Bridge](../developers/bridge/standard-bridge.md) for details.
 ### [`OVM_ExecutionManagerWrapper`](https://github.com/ethereum-optimism/optimism/blob/ef5343d61708f2d15f51dca981f03ee4ac447c21/packages/contracts/contracts/optimistic-ethereum/OVM/predeploys/OVM_ExecutionManagerWrapper.sol)
 This is the one contract on L2 that can call another contract without having to
 go through virtualization. It is used to call 
-[OVM_ExecutionManager](#ovm-executionmanager).
+`OVM_ExecutionManager`
 
 
 ### [`ERC1820Registry`](https://github.com/ethereum-optimism/optimism/blob/ef5343d61708f2d15f51dca981f03ee4ac447c21/packages/contracts/contracts/optimistic-ethereum/OVM/predeploys/ERC1820Registry.sol)
@@ -360,12 +360,12 @@ about other addresses.
 
 ### [`Lib_AddressManager`](https://github.com/ethereum-optimism/optimism/blob/ef5343d61708f2d15f51dca981f03ee4ac447c21/packages/contracts/contracts/optimistic-ethereum/libraries/resolver/Lib_AddressManager.sol)
 This is a library that stores the mappings between names and their addresses.
-It is used by [`OVM_L1CrossDomainMessenger`](#ovm-l1crossdomainmessenger).
+It is used by `OVM_L1CrossDomainMessenger`.
 
 ### [`OVM_ExecutionManagerWrapper`](https://github.com/ethereum-optimism/optimism/blob/ef5343d61708f2d15f51dca981f03ee4ac447c21/packages/contracts/contracts/optimistic-ethereum/OVM/predeploys/OVM_ExecutionManagerWrapper.sol)
 This is the one contract on L2 that can call another contract without having to
 go through virtualization. It is used to call 
-[OVM_ExecutionManager](#ovm-executionmanager).
+`OVM_ExecutionManager`.
 
 
 ### [`ERC1820Registry`](https://github.com/ethereum-optimism/optimism/blob/ef5343d61708f2d15f51dca981f03ee4ac447c21/packages/contracts/contracts/optimistic-ethereum/OVM/predeploys/ERC1820Registry.sol)
@@ -375,7 +375,7 @@ about other addresses.
 
 ### [`Lib_AddressManager`](https://github.com/ethereum-optimism/optimism/blob/ef5343d61708f2d15f51dca981f03ee4ac447c21/packages/contracts/contracts/optimistic-ethereum/libraries/resolver/Lib_AddressManager.sol)
 This is a library that stores the mappings between names and their addresses.
-It is used by [`OVM_L1CrossDomainMessenger`](#ovm-l1crossdomainmessenger).
+It is used by `OVM_L1CrossDomainMessenger`.
 
 
 ## Account Contracts
