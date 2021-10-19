@@ -23,7 +23,7 @@ However, a few JSON-RPC methods have been added or changed to better fit the nee
 ### `eth_estimateGas`
 
 `eth_estimateGas` only returns information about the L2 execution fee. 
-See our [transaction fees page](new-fees.html) for more information.
+See our [transaction fees page](new-fees.md) for more information.
 
 ### `eth_getBlockByNumber` and `eth_getBlockByHash`
 

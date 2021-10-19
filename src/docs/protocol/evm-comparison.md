@@ -118,7 +118,7 @@ function ovmCREATEEOA(bytes32 _messageHash, uint8 _v, bytes32 _r, bytes32 _s) pu
 Deploys the [default contract account](https://github.com/ethereum-optimism/optimism/blob/ef5343d61708f2d15f51dca981f03ee4ac447c21/packages/contracts/contracts/optimistic-ethereum/OVM/accounts/OVM_ECDSAContractAccount.sol) on behalf of a user.
 Account address is determined by recovering an ECDSA signature.
 If the account already exists, the account will not be overwritten.
-See [Account Abstraction](#native-acccount-abstraction) section for additional detail.
+See [Account Abstraction](#account-abstraction) section for additional detail.
 
 ### `ovmL1QUEUEORIGIN`
 

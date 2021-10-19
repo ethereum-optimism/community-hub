@@ -12,5 +12,5 @@ On October 28th we will deploy it to the production Optimistic Ethereum network.
 
 
 There is no more need for special tooling. Just add 
-[the appropriate Optimistic Network](/docs/infra/networks.html) to the
+[the appropriate Optimistic Network](../../infra/networks.md) to the
 configuration file.

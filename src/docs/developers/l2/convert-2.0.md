@@ -98,13 +98,13 @@ Roughly speaking, these are the steps you need to take to develop for Optimistic
 Ethereum:
 
 1. Develop the decentralized application normally.
-1. [Create an Optimistic Ethereum development node](/docs/developers/l2/dev-node.html)
+1. [Create an Optimistic Ethereum development node](dev-node.md)
 1. Run your tests on the Optimistic Ethereum development node you created.
 1. Deploy your dapp to the [Optimistic 
-   Kovan](/docs/infra/networks.html#optimistic-kovan) network and test it in that
+   Kovan](../../infra/networks.md#optimistic-kovan) network and test it in that
    environment.
 1. [Ask to be added to the Optimistic Ethereum whitelist](https://docs.google.com/forms/d/e/1FAIpQLSfBGsJN3nZQRLdMjqCS_svfQoPkn35o_cc4HUVnLlXN2BHmPw/viewform)    
 1. Once added, deploy your contracts to the 
-   [Optimistic Ethereum](/docs/infra/networks.html#optimistic-ethereum) network. 
+   [Optimistic Ethereum](../../infra/networks.md#optimistic-ethereum) network. 
    - Ideally, you should also upload and 
    verify your contracts' source code on [Optimistic Etherscan](https://optimistic.etherscan.io/verifyContract).

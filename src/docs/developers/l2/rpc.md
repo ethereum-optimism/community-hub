@@ -23,7 +23,7 @@ However, a few JSON-RPC methods have been added or changed to better fit the nee
 ### `eth_estimateGas`
 
 `eth_estimateGas` has been modified to encode information about both the cost of _executing_ a transaction and the cost to _publish_ the transaction data to Layer 1 (Ethereum).
-See our dedicated [Transaction Fees page](docs/infra/fees.html) for more information.
+See our dedicated [Transaction Fees page](../fees.md) for more information.
 
 ### `eth_getBlockByNumber` and `eth_getBlockByHash`
 

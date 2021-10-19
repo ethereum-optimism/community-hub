@@ -23,7 +23,7 @@ be deployed in October, but some of it may change.
 Optimistic Ethereum contracts are (currently) subject to a few limitations that don't exist on Ethereum
 These limitations arise because contracts need to be executable under two circumstances:
 1. In Optimistic Ethereum itself, for normal operations.
-1. Inside a virtualized environment on the main Ethereum network in case of a [transaction result challenge](/docs/protocol/protocol.html#transaction-challenge-contracts).
+1. Inside a virtualized environment on the main Ethereum network in case of a [transaction result challenge](../../protocol/protocol.md#transaction-challenge-contracts).
 
 During a transaction result challenge, a transaction is re-executed on L1 in order to check the result of the transaction on L2.
 Certain opcodes like `CHAINID` and `TIMESTAMP` would cause this re-execution to produce completely different results.
@@ -31,7 +31,7 @@ This could result in a legitimate transaction result being considered invalid ev
 
 Optimistic Ethereum circumvents this problem by using a slightly modified Solidity compiler.
 Where the standard compiler produces those opcodes, the Optimistic version produces a call to a special contract (the "Execution Manager") that provides consistent behavior for these opcodes, whether we're running in L1 or L2.
-[You can see the list of replaced opcodes here](/docs/protocol/evm-comparison.html#replaced-opcodes). 
+[You can see the list of replaced opcodes here](../../protocol/evm-comparison.md#replaced-opcodes). 
 
 As a result of the requirement that we have this modified compiler, there are a few key differences between the process of developing apps for Ethereum and for Optimistic Ethereum.
 Here are the most important things to keep in mind.
@@ -49,14 +49,14 @@ We're actively exploring support for other languages (like Vyper) and alternativ
 ### Contract bytecode size
 
 The contract code size limit on Optimistic Ethereum is the same [24 kB](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-170.md) limit as on Ethereum. 
-However, the modified Solidity compiler replaces certain [opcodes](/docs/protocol/evm-comparison.html#replaced-opcodes) with contract calls (which take up a few bytes). 
+However, the modified Solidity compiler replaces certain [opcodes](../../protocol/evm-comparison.md#replaced-opcodes) with contract calls (which take up a few bytes). 
 This means that a contract that was close to the limit when compiled with normal Solidity might be over the limit with our version of the compiler. 
 
 If you're finding that your contracts are exceeding the 24 kB limit, you should consider moving some of your code into [external libraries](https://docs.soliditylang.org/en/v0.8.6/contracts.html#libraries).
 
 ### Constructor parameters
 
-Contracts must run through a static analysis that guarantees that they do not contain any [banned opcodes](/docs/protocol/evm-comparison.html#replaced-opcodes).
+Contracts must run through a static analysis that guarantees that they do not contain any [banned opcodes](../../protocol/evm-comparison.md#replaced-opcodes).
 Under a few special circumstances, contract constructors can fail to pass this static analysis even though the rest of the contract is considered "safe".
 As a result, users need to be careful when designing contracts with constructors.
 
@@ -89,10 +89,10 @@ Ethereum:
 
 1. Develop the decentralized application normally, writing the contracts in Solidity
    and the user interface as you normally would.
-1. [Create an Optimistic Ethereum development node](/docs/developers/l2/dev-node.html)
+1. [Create an Optimistic Ethereum development node](dev-node.md)
 1. Compile for Optimistic Ethereum using a supported environment such as 
-   [Hardhat](/docs/developers/l2/hardhat.html) or 
-   [Truffle](/docs/developers/l2/truffle.html).
+   [Hardhat](hardhat.md) or 
+   [Truffle](truffle.md).
 1. Run your tests on the Optimistic Ethereum development node you created.
 1. Deploy your dapp to the [Optimistic 
    Kovan](/docs/infra/networks.html#optimistic-kovan) network and test it in that
@@ -101,5 +101,5 @@ Ethereum:
    Etherscan](https://kovan-optimistic.etherscan.io/verifyContract) 
 1. [Ask to be added to the Optimistic Ethereum whitelist](https://docs.google.com/forms/d/e/1FAIpQLSfBGsJN3nZQRLdMjqCS_svfQoPkn35o_cc4HUVnLlXN2BHmPw/viewform)    
 1. Once added, deploy your contracts to the 
-   [Optimistic Ethereum](/docs/infra/networks.html#optimistic-ethereum) network. Then, upload and 
+   [Optimistic Ethereum](../../infra/networks.md#optimistic-ethereum) network. Then, upload and 
    verify your contracts' source code on [Optimistic Etherscan](https://optimistic.etherscan.io/verifyContract).
