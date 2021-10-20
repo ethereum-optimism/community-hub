@@ -1,5 +1,5 @@
 ---
-title: Running an OVM 2.0 Development Node
+title: Running a Development Node
 lang: en-US
 ---
 
