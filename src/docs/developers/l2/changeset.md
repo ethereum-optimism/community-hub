@@ -30,13 +30,13 @@ For OVM 2.0 we will have a series of breaking changes as a part of an upgrade to
       addresses corresponding to `CREATE2` with the new bytecode. For more detail, see the [Uniswap](#uniswap) section below
 
 1. ETH will no longer be ERC20 compatible.
-   1. Users will **no longer** be able to transfer and interact with ETH 
-      as an ERC20 located at `0x4200000000000000000000000000000000000006`.
-   1. Please let us know if you rely on this functionality on Optimistic 
-      Ethereum mainnet currently as we will have to migrate those balances
-      to a standard WETH9 contract which will be deployed to a new TBD address
-   1. The `Transfer` event currently emitted on ETH fee payment will be
-    removed
+   1. If you need wrapped ETH we deployed a standard 
+      [WETH9](https://blog.0xproject.com/canonical-weth-a9aa7d0279dd) contract
+      at `0x4200000000000000000000000000000000000006`.
+   1. To withdraw ETH you call the `withdraw` function of
+      [`L2StandardBridge`](../../protocol/protocol-2.0.md#l2standardbridge)
+      with an L2 token address of
+      `0xDeadDeAddeAddEAddeadDEaDDEAdDeaDDeAD0000`.
 
 1. Our fee scheme will be altered. 
    [See here for details](new-fees.md)
