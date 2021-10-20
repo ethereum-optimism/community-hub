@@ -30,13 +30,13 @@ For OVM 2.0 we will have a series of breaking changes as a part of an upgrade to
       addresses corresponding to `CREATE2` with the new bytecode. For more detail, see the [Uniswap](#uniswap) section below
 
 1. ETH will no longer be ERC20 compatible.
-   1. Users will **no longer** be able to transfer and interact with ETH 
-      as an ERC20 located at `0x4200000000000000000000000000000000000006`.
-   1. Please let us know if you rely on this functionality on Optimistic 
-      Ethereum mainnet currently as we will have to migrate those balances
-      to a standard WETH9 contract which will be deployed to a new TBD address
-   1. The `Transfer` event currently emitted on ETH fee payment will be
-    removed
+   1. If you need wrapped ETH we deployed a standard 
+      [WETH9](https://blog.0xproject.com/canonical-weth-a9aa7d0279dd) contract
+      at `0x4200000000000000000000000000000000000006`.
+   1. To withdraw ETH you call the `withdraw` function of
+      [`L2StandardBridge`](../../protocol/protocol-2.0.md#l2standardbridge)
+      with an L2 token address of
+      `0xDeadDeAddeAddEAddeadDEaDDEAdDeaDDeAD0000`.
 
 1. Our fee scheme will be altered. 
    [See here for details](new-fees.md)
@@ -67,19 +67,68 @@ For OVM 2.0 we will have a series of breaking changes as a part of an upgrade to
     1. `BASEFEE` will be unsupported - execution will revert if it is 
        used.
     1. `ORIGIN` will be supported normally.
-8. Certain OVM system contracts will be wiped from the state. We will remove:
+1. Certain OVM system contracts will be wiped from the state. We will remove:
     1.  `OVM_ExecutionManager`
-    2.  `OVM_SequencerEntrypoint`
-    3. `OVM_StateManager`
-    4. `OVM_StateManagerFactory`
-    5. `OVM_SafetyChecker`
-    6. `OVM_ECDSAContractAccount`
-    7. `OVM_ExecutionManagerWrapper`
-    8. `Lib_AddressManager`
+    1.  `OVM_SequencerEntrypoint`
+    1. `OVM_StateManager`
+    1. `OVM_StateManagerFactory`
+    1. `OVM_SafetyChecker`
+    1. `OVM_ECDSAContractAccount`
+    1. `OVM_ExecutionManagerWrapper`
+    1. `Lib_AddressManager`
     
     All other OVM predeploys will remain at the same addresses as before the regenesis
-9. `TIMESTAMP` will function the same as before, updating with each new deposit or after 5 minutes if there has not been a deposit. `TIMESTAMP` will still correspond to "Last Finalized L1 Timestamp" - [See here for details](block-time.md)
+1. `TIMESTAMP` will function the same as before, updating with each new deposit or after 5 minutes if there has not been a deposit. `TIMESTAMP` will still correspond to "Last Finalized L1 Timestamp" - [See here for details](block-time.md)
 
+
+### Javascript Code
+
+1. Until OVM 2.0 is officially released, the OVM 2.0 packages are tagged as `canary`,
+   here is an example `package.json` file:
+
+   ```javascript
+   {
+      "name": "standard-bridge-tutorial",
+      "version": "1.0.0",
+      "license": "MIT",
+      "scripts": {
+         "clean": "rimraf ./cache && rimraf ./artifacts",
+         "compile": "yarn clean && hardhat compile && hardhat --network optimism compile"
+      },
+      "dependencies": {
+         "@eth-optimism/contracts": "canary",
+         "@eth-optimism/core-utils": "canary",
+         "rimraf": "^3.0.2"
+      }
+   }
+   ```
+
+1. Contract names no longer start with `OVM_` and their directory location changed.
+   [Here are the details](contracts-2.0.md).
+
+1. Because we no longer have an address manager on L2, the way to get the address of
+   `L1CrossDomainMessenger` is to start from the `L2CrossDomainMessenger` contract:
+
+   ```javascript
+   const { predeploys, getContractInterface } = require('@eth-optimism/contracts')   
+   
+   const l2Messenger = new ethers.Contract(
+      predeploys.L2CrossDomainMessenger,
+      getContractInterface('L2CrossDomainMessenger'),
+      l2RpcProvider
+   )
+   const l1Messenger = new ethers.Contract(
+      await l2Messenger.l1CrossDomainMessenger(),
+      getContractInterface('L1CrossDomainMessenger'),
+      l1RpcProvider
+   )
+   const l1MessengerAddress = l1Messenger.address
+   // L2 messenger address is always the same, 0x42....07
+   const l2MessengerAddress = l2Messenger.address
+   ```
+
+1. There is no longer an `artifacts-ovm` directory. The OVM 2.0 artifacts are the
+   same as the artifacts you use for L1.   
 
 ## Applications
 
