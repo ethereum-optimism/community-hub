@@ -12,9 +12,9 @@ On October 28th we will deploy it to the production Optimistic Ethereum network.
 
 # {{ $frontmatter.title }}
 
-::: danger OVM 1.0 Page
-This page refers to the **current** state of the Optimistic Ethereum
-network. 
+::: tip OVM 2.0 Page
+This page refers to the OVM 2.0 Kovan test network. It will be updated for
+the production network after it is released.
 :::
 
 These are contracts that are expected to be useful for multiple projects.
@@ -23,21 +23,20 @@ These are contracts that are expected to be useful for multiple projects.
 ## Optimism
 
 The list of Optimism contracts and their addresses is available
-[in the monorepo](https://github.com/ethereum-optimism/optimism/tree/ef5343d61708f2d15f51dca981f03ee4ac447c21/packages/contracts/deployments). You can also read [additional information 
-here](/docs/protocol/protocol.html).
+[in the monorepo](https://github.com/ethereum-optimism/optimism/tree/regenesis/0.5.0/packages/contracts/deployments). You can also read [additional information 
+here](../protocol/protocol-2.0.md).
 
 ### Wrapped Eth
 
-This is the ERC-20 token that is used for gas in Optimistic Ethereum. 
-You can read how to use ERC-20 tokens 
-[here](https://ethereum.org/en/developers/docs/standards/tokens/erc-20/).
-
-[Source](https://github.com/ethereum-optimism/optimism/blob/ef5343d61708f2d15f51dca981f03ee4ac447c21/packages/contracts/contracts/optimistic-ethereum/OVM/predeploys/OVM_ETH.sol)
+This is a standard [WETH9](https://blog.0xproject.com/canonical-weth-a9aa7d0279dd)
+contract, for use when you need wrapped ETH.
 
 
 | Network             | Address |
 | ------------------- | ------- |
+<!--
 | Optimistic Ethereum | [0x4200000000000000000000000000000000000006](https://optimistic.etherscan.io/address/0x4200000000000000000000000000000000000006) |
+-->
 | Optimistic Kovan    | [0x4200000000000000000000000000000000000006](https://kovan-optimistic.etherscan.io/address/0x4200000000000000000000000000000000000006) |
 
 
@@ -53,8 +52,10 @@ L1 ERC20s compatible with and working on the standard bridge.
 
 | Network             | Address |
 | ------------------- | ------- |
-| Optimistic Ethereum | [0x2e985AcD6C8Fa033A4c5209b0140940E24da7C5C](https://optimistic.etherscan.io/address/0x2e985AcD6C8Fa033A4c5209b0140940E24da7C5C) |
-| Optimistic Kovan    | [0x50EB44e3a68f1963278b4c74c6c343508d31704C](https://kovan-optimistic.etherscan.io/address/0x50EB44e3a68f1963278b4c74c6c343508d31704C) |
+<!--
+| Optimistic Ethereum | [0x4200000000000000000000000000000000000012](https://optimistic.etherscan.io/address/0x4200000000000000000000000000000000000012) |
+-->
+| Optimistic Kovan    | [0x4200000000000000000000000000000000000012](https://kovan-optimistic.etherscan.io/address/0x4200000000000000000000000000000000000012) |
 
 ## Multisig
 
