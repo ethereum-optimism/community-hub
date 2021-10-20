@@ -1,5 +1,5 @@
 ---
-title: Running a Development Node
+title: Running an OVM 2.0 Development Node
 lang: en-US
 ---
 
@@ -9,14 +9,6 @@ On October 28th we will deploy it to the production Optimistic Ethereum network.
 :::
 
 # {{ $frontmatter.title }}
-
-::: danger OVM 1.0 Page
-This page refers to the **current** state of the Optimistic Ethereum
-network. Some of the information may be relevant to OVM 2.0, but some 
-of it may change.
-:::
-
-
 
 ::: tip
 You can [check out one of the getting started tutorials](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/hardhat) for a step-by-step guide to using a development node.
@@ -49,10 +41,19 @@ If you want to download the images, perform these steps:
 
 
 1. Clone the [Optimism monorepo](https://github.com/ethereum-optimism/optimism).
+   The branch to clone depends on the OVM version you need.
 
-   ```sh
-   git clone https://github.com/ethereum-optimism/optimism.git
-   ```
+   - For OVM 1.0, use the `main` branch.
+
+     ```sh
+     git clone https://github.com/ethereum-optimism/optimism.git
+     ```
+
+   - For OVM 2.0, use the `regenesis/0.5` branch.
+
+     ```sh
+     git clone https://github.com/ethereum-optimism/optimism.git -b regenesis/0.5
+     ```
 
 2. Download the images from [the Docker 
    hub](https://hub.docker.com/u/ethereumoptimism). Depending on the hardware
@@ -60,8 +61,11 @@ If you want to download the images, perform these steps:
 
    ```sh
    cd optimism/ops
-   docker-compose -f docker-compose-nobuild.yml up -t 60 --nostart
+   docker-compose -f docker-compose-nobuild.yml up -t 600 --no-start
    ``` 
+
+   If you want to start the development node as soon as it is downloaded,
+   remove the `--no-start` argument.
 
    You might get a timeout at first. If that is the case, just run the 
    `docker-compose` command again.
