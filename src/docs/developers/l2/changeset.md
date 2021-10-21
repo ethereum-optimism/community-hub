@@ -34,7 +34,7 @@ For OVM 2.0 we will have a series of breaking changes as a part of an upgrade to
       [WETH9](https://blog.0xproject.com/canonical-weth-a9aa7d0279dd) contract
       at `0x4200000000000000000000000000000000000006`.
    1. To withdraw ETH you call the `withdraw` function of
-      [`L2StandardBridge`](../../protocol/protocol-2.0.md#l2standardbridge)
+      [`L2StandardBridge`](../../protocol/protocol-2.0.md)
       with an L2 token address of
       `0xDeadDeAddeAddEAddeadDEaDDEAdDeaDDeAD0000`.
 
