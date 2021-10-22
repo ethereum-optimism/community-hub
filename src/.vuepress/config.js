@@ -156,6 +156,7 @@ module.exports = {
         // when clicked
         selector: ':not(a) > img'
       }
-    ]
+    ],
+    "plausible-analytics"
   ]
 }
