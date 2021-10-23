@@ -67,9 +67,10 @@ For OVM 2.0 we will have a series of breaking changes as a part of an upgrade to
     1. `BASEFEE` will be unsupported - execution will revert if it is 
        used.
     1. `ORIGIN` will be supported normally.
+    1. `TIMESTAMP` will provide the time in which the transaction is processed on L2.
 1. Certain OVM system contracts will be wiped from the state. We will remove:
-    1.  `OVM_ExecutionManager`
-    1.  `OVM_SequencerEntrypoint`
+    1. `OVM_ExecutionManager`
+    1. `OVM_SequencerEntrypoint`
     1. `OVM_StateManager`
     1. `OVM_StateManagerFactory`
     1. `OVM_SafetyChecker`
@@ -78,7 +79,7 @@ For OVM 2.0 we will have a series of breaking changes as a part of an upgrade to
     1. `Lib_AddressManager`
     
     All other OVM predeploys will remain at the same addresses as before the regenesis
-1. `TIMESTAMP` will function the same as before, updating with each new deposit or after 5 minutes if there has not been a deposit. `TIMESTAMP` will still correspond to "Last Finalized L1 Timestamp" - [See here for details](block-time.md)
+
 
 
 ### Javascript Code
