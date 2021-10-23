@@ -6,13 +6,23 @@ lang: en-US
 # {{ $frontmatter.title }}
 
 ::: tip Where is my money?
-If you are not sure what is happening with your withdrawal, [search for the transaction
-hash here](https://optimistic.etherscan.io/messagerelayer), the withdrawal might 
-still be in the validity challenge period. Alternatively, you might just need to 
-[claim the withdrawal](#claim-the-withdrawal).
+If you withdrew using the Optimism gateway and are not sure what is happening 
+with your withdrawal, 
+[search for the transaction hash here](https://optimistic.etherscan.io/messagerelayer), 
+the withdrawal might still be in the validity challenge period. 
+Alternatively, you might just need to [claim the withdrawal](#claim-the-withdrawal).
 :::
 
+::: warning Centralized Exchanges
+When you transfer assets to a centralized exchange you send it to an address
+provided by that centralized exchange. By default, this is an L1 address and
+the exchange does **not** look at this address in Optimistic Ethereum. As a
+result, assets transferred directly to a centralized exchange that doesn't
+support Optimistic Ethereum are irrevocably lost. **Don't do it**.
 
+When a centralized exchange supports Optimistic Ethereum we will publish that
+fact.
+:::
 
 
 ## Which Assets?
