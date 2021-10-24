@@ -40,6 +40,9 @@ module.exports = {
     sidebar: [
         {
           title: 'User Docs',
+
+          //  When updating here, update also users/README.md
+
           children: [
             '/docs/users/getting-started.md',
             '/docs/users/metamask.md',
