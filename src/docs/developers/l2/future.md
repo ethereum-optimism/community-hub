@@ -16,6 +16,11 @@ future](https://quoteinvestigator.com/2013/10/20/no-predict/). This document is 
 on what we think is going to happen, and some things will turn out to be different.
 :::
 
+**Between the dates of November 4th and November 11th it will be impossible to deploy
+new contracts on the production Optimistic Ethereum network.**
+
+
+
 
 ## Regenesis
 
