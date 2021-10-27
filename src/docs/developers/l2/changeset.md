@@ -36,8 +36,15 @@ For OVM 2.0 we will have a series of breaking changes as a part of an upgrade to
       - Interacts with ETH as an ERC-20 at address `0x42....06`
       - Makes ERC-20 calls to arbitrary addresses (that aren't themselves ERC-20 tokens)
 
-      Your code will break during regenesis. Message us and we may be able to find
-      a workaround solution.
+      Your code will break during regenesis. For example, this would allow depositing ETH as an ERC-20, but that ETH would be stranded after regenesis. 
+
+      ```js
+      function deposit(address _anyToken, uint256 _amount) external {
+      	_anyToken.transferFrom(msg.sender, _amount);
+      }
+      ```  
+     
+      If you are concerned that your code may be affected, message us and we may be able to find a workaround solution.
 
    - After the upgrade, we will have a standard 
       [WETH9](https://blog.0xproject.com/canonical-weth-a9aa7d0279dd) 
