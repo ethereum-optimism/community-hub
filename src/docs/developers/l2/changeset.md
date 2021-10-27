@@ -29,11 +29,27 @@ For OVM 2.0 we will have a series of breaking changes as a part of an upgrade to
    1. Uniswap pools will be moved to their L1-equivalent 
       addresses corresponding to `CREATE2` with the new bytecode. For more detail, see the [Uniswap](#uniswap) section below
 
-1. ETH will no longer be ERC20 compatible.
-   1. If you need wrapped ETH we deployed a standard 
-      [WETH9](https://blog.0xproject.com/canonical-weth-a9aa7d0279dd) contract
-      at `0x4200000000000000000000000000000000000006`.
-   1. To withdraw ETH you call the `withdraw` function of
+1. ETH will no longer be ERC-20 compatible.
+   - Developers need to use native ETH in their contracts to be forward compatible.
+      If you have code that either:
+
+      - Interacts with ETH as an ERC-20 at address `0x42....06`
+      - Makes ERC-20 calls to arbitrary addresses (that aren't themselves ERC-20 tokens)
+
+      ... then your code will break during regenesis. For example, the following function would allow depositing ETH as an ERC-20, but that ETH would be stranded after regenesis. 
+
+      ```js
+      function deposit(address _anyToken, uint256 _amount) external {
+      	_anyToken.transferFrom(msg.sender, _amount);
+      }
+      ```  
+     
+      If you are concerned that your code may be affected, message us and we may be able to find a workaround solution.
+
+   - After the upgrade, we will have a standard 
+      [WETH9](https://blog.0xproject.com/canonical-weth-a9aa7d0279dd) 
+      contract deployed at `0x4200000000000000000000000000000000000006`.
+   - To withdraw ETH you call the `withdraw` function of
       [`L2StandardBridge`](../../protocol/protocol-2.0.md)
       with an L2 token address of
       `0xDeadDeAddeAddEAddeadDEaDDEAdDeaDDeAD0000`.
