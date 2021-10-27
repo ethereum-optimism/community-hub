@@ -36,7 +36,7 @@ For OVM 2.0 we will have a series of breaking changes as a part of an upgrade to
       - Interacts with ETH as an ERC-20 at address `0x42....06`
       - Makes ERC-20 calls to arbitrary addresses (that aren't themselves ERC-20 tokens)
 
-      Your code will break during regenesis. For example, this would allow depositing ETH as an ERC-20, but that ETH would be stranded after regenesis. 
+      ... then your code will break during regenesis. For example, the following function would allow depositing ETH as an ERC-20, but that ETH would be stranded after regenesis. 
 
       ```js
       function deposit(address _anyToken, uint256 _amount) external {
