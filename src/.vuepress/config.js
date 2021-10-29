@@ -143,7 +143,11 @@ module.exports = {
         {
           title: 'Retroactive Public Goods Funding',
           children: [
-            '/docs/pub-goods/talks.md'
+            '/docs/pub-goods/talks.md',
+            [
+              'https://quadraticvote.co/event?id=2c357972-9b0d-4390-b738-32297b653cf1',
+              'Vote #1 results dashboard'
+            ]
           ],
           collapsable: false,
           sidebarDepth: 0,
