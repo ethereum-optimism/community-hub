@@ -52,7 +52,6 @@ module.exports = {
               'https://www.optimism.io/apps/all',
               'Applications on Optimistic Ethereum'
             ],   
-            '/docs/users/fees.md',
             '/docs/users/fees-2.0.md'          
           ],
           collapsable: false,
@@ -70,19 +69,14 @@ module.exports = {
               // more advanced topics such as RPC and Block Time
               children: [
                 '/docs/developers/l2/dev-node.md',
-                '/docs/developers/l2/hardhat.md',
-                '/docs/developers/l2/truffle.md',
                 '/docs/developers/l2/tooling-2.0.md',                
-                '/docs/developers/l2/convert.md',
                 '/docs/developers/l2/convert-2.0.md',                
                 '/docs/developers/l2/deploy.md',
                 '/docs/developers/l2/changeset.md',
                 '/docs/developers/l2/new-fees.md',
                 '/docs/developers/l2/future.md',
-                '/docs/developers/l2/contracts.md',
                 '/docs/developers/l2/contracts-2.0.md',                
                 '/docs/developers/l2/block-time.md',
-                '/docs/developers/l2/rpc.md',
                 '/docs/developers/l2/rpc-2.0.md',                
               ],
               collapsable: false,
@@ -100,7 +94,6 @@ module.exports = {
               sidebarDepth: 0,
             },
             '/docs/developers/util.md',
-            '/docs/developers/fees.md',
             '/docs/developers/talks.md'
           ],
           collapsable: false,
@@ -126,7 +119,6 @@ module.exports = {
         {
           title: 'Protocol Docs',
           children: [
-            '/docs/protocol/protocol.md',
             '/docs/protocol/protocol-2.0.md',            
             '/docs/protocol/evm-comparison.md',
             '/docs/protocol/sequencing.md',
@@ -151,6 +143,21 @@ module.exports = {
           ],
           collapsable: false,
           sidebarDepth: 0,
+        },
+        {
+          title: "OVM 1.0 docs",
+          collapsable: true,
+          sidebarDepth: 0,
+          children: [
+            '/docs/users/fees.md',
+            '/docs/developers/l2/hardhat.md',
+            '/docs/developers/l2/truffle.md',
+            '/docs/developers/l2/convert.md',    
+            '/docs/developers/fees.md',
+            '/docs/developers/l2/contracts.md',                
+            '/docs/developers/l2/rpc.md',                 
+            '/docs/protocol/protocol.md',            
+          ]
         }
     ]
   },
