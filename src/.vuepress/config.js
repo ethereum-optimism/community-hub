@@ -93,6 +93,12 @@ module.exports = {
               collapsable: false,
               sidebarDepth: 0,
             },
+            {
+              title: 'Common Development Tasks',
+              children: [
+                '/docs/developers/howto/wallet-dev.md'
+              ]
+            },
             '/docs/developers/util.md',
             '/docs/developers/talks.md'
           ],

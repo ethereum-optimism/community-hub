@@ -21,7 +21,6 @@ This is the information for a
 
 | Parameter | Value |
 | --------- | ----- |
-| Currency | **`Ether (ETH)`**
 | Chain ID | **`420`** |
 | HTTP Endpoint | **`https://localhost:8545`** |
 | HTTP Endpoint for L1 | **`https://localhost:9545`** |
@@ -39,8 +38,11 @@ This is our **test** network. You're welcome to deploy whatever contracts to wis
 | Description | **`Testnet (public)`** |
 | Chain ID | **`69`** |
 | Explorer | **`https://kovan-optimistic.etherscan.io`** |
-| HTTP Endpoint | **`https://kovan.optimism.io`** |
-| WebSocket Endpoint | **`wss://ws-kovan.optimism.io`** |
+| HTTP Endpoint (rate limited) | **`https://kovan.optimism.io`** |
+| WebSocket Endpoint (rate limited) | **`wss://ws-kovan.optimism.io`** |
+| Infura Endpoint | **`https://optimism-kovan.infura.io/v3/<infura ID>`** |
+| Alchemy Endpoint | **`wss://opt-kovan.g.alchemy.com/v2/<alchemy ID>`** |
+| Quicknode Endpoint | Create your own |
 | L1 Contract Addresses | [link](https://github.com/ethereum-optimism/optimism/tree/ef5343d61708f2d15f51dca981f03ee4ac447c21/packages/contracts/deployments#kovan) |
 | L2 Contract Addresses | [link](https://github.com/ethereum-optimism/optimism/tree/ef5343d61708f2d15f51dca981f03ee4ac447c21/packages/contracts/deployments#layer-2) |
 
@@ -66,8 +68,11 @@ This network is still OVM 1.0
 | Description | **`Mainnet (restricted)`** |
 | Chain ID | **`10`** |
 | Explorer | **`https://optimistic.etherscan.io`** |
-| HTTP Endpoint | **`https://mainnet.optimism.io`** |
-| WebSocket Endpoint | **`wss://ws-mainnet.optimism.io`** |
+| HTTP Endpoint (rate limited) | **`https://mainnet.optimism.io`** |
+| WebSocket Endpoint (rate limited) | **`wss://ws-mainnet.optimism.io`** |
+| Infura Endpoint | **`https://optimism-mainnet.infura.io/v3/<infura ID>`** |
+| Alchemy Endpoint | **`wss://opt-mainnet.g.alchemy.com/v2/<alchemy ID>`** |
+| Quicknode Endpoint | You create your own |
 | L1 Contract Addresses | [link](https://github.com/ethereum-optimism/optimism/tree/ef5343d61708f2d15f51dca981f03ee4ac447c21/packages/contracts/deployments#mainnet) |
 | L2 Contract Addresses | [link](https://github.com/ethereum-optimism/optimism/tree/ef5343d61708f2d15f51dca981f03ee4ac447c21/packages/contracts/deployments#layer-2) |
 

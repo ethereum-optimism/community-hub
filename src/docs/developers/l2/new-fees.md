@@ -30,7 +30,8 @@ You can see how the fee is calculated and deducted [here](../../users/fees-2.0.m
 import { getContractFactory, predeploys }from '@eth-optimism/contracts'
 import { ethers } from 'ethers'
 const OVM_GasPriceOracle = getContractFactory('OVM_GasPriceOracle')
-.attach(predeploys.OVM_GasPriceOracle)
+                                   .attach(predeploys.OVM_GasPriceOracle)
+
 const WETH = new Contract(...) //Contract with no signer
 const unsignedTx = WETH.populateTransaction.transfer(to, amount)
 const serializedTx = serialize({
@@ -46,9 +47,10 @@ const l1FeeInWei = await OVM_GasPriceOracle.getL1Fee(serializedTx)
 
 - You should *not* allow users to change their `tx.gasPrice`
    - If they lower it, their transaction will get reverted
-   - If they increase it, they willl still have their tx immediately included, but will have overpaid.
+   - If they increase it, they willl still have their tx immediately included, but will 
+     have overpaid.
 - Users are welcome to change their `tx.gasLimit` as it functions exactly like on L1
-- You can show the math :
+- You can show the math:
 
    ```jsx
    L1 Fee: .00098 ETH ($3.94)
@@ -60,7 +62,7 @@ const l1FeeInWei = await OVM_GasPriceOracle.getL1Fee(serializedTx)
 - Or you can hide the formula behind a tooltip or an "Advanced" section and just display the estimated fee to users
    - For MVP: don't *need* to display the L1 or L2 fee
 - Might need to regularly refresh the L1 Fee and L2 Fee estimate to ensure it is accurate at the time the user sends it (e.g. they get the fee quote and leave for 12 hours then come back)
-   - Ideas: If the L1 fee quoted is > Xminutes old, could display a warning next to it
+   - Ideas: If the L1 fee quoted is > X minutes old, could display a warning next to it
 
 
 ## Common RPC Errors
