@@ -13,7 +13,7 @@ We expect to deploy it to the production Optimistic Ethereum network on November
 
 ## The RPC Endpoints
 
-[You can see the PRC endpoints here](../../network.md). You can choose between our own
+[You can see the PRC endpoints here](../../networks.md). You can choose between our own
 endpoints, which are rate limited, and commercially available ones. 
 
 ## Switch into and out of Optimistic Ethereum
