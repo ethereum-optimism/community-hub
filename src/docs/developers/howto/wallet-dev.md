@@ -56,3 +56,8 @@ And possibly additional L2 chains such as Arbitrum or Polygon.
 Transaction fees in Optimistic Ethereum are [a bit complicated](../../users/fees-2.0.md). 
 You can use [this code sample](../l2/new-fees.md#for-frontend-and-wallet-developers) to
 show users how much a transaction will cost in advance.
+
+::: tip Which packages to use?
+The currently released API packages are still OVM 1.0. To use the OVM 2.0 packages, use
+the version tag `canary`.
+:::
