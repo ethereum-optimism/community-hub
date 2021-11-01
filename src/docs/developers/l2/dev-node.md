@@ -34,7 +34,8 @@ Hopefully, everything you need to test an optimistic application:
    mnemonic is 
    `test test test test test test test test test test test junk`).
 1. All the Optimistic Ethereum contracts and servers for cross
-   domain communications.   
+   domain communications, except that the challenge period is
+   a few seconds instead of a week.   
 
 
 ## Prerequisites
