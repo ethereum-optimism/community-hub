@@ -11,12 +11,32 @@ We expect to deploy it to the production Optimistic Ethereum network on November
 # {{ $frontmatter.title }}
 
 ::: tip
-You can [check out one of the getting started tutorials](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/hardhat) for a step-by-step guide to using a development node.
+You can [check out one of the getting started tutorials](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/hardhat) for a step-by-step guide to creating and using a development node.
 You can also find some more detailed information about working with the development node on the [Optimism monorepo](https://github.com/ethereum-optimism/optimism#development-quick-start).
 :::
 
-You'll need a development node to be able to test your app against Optimistic Ethereum.
-Here we'll go over the basic steps to build and start your own development node.
+## What is this?
+
+A development node is a local installation of Optimistic Ethereum.
+Having such an installation lets you debug your optimistic 
+application with the performance of a local server before you 
+"graduate" to 
+[our testnet](../../infra/networks.md#optimistic-kovan) prior
+to a mainnet deployment.
+
+### What does it include?
+
+Hopefully, everything you need to test an optimistic application:
+
+1. An L1 network available at https://localhost:9545.
+1. An L2 network available at https://localhost:8545.
+1. An account with 10k ETH to spend on testing (the account
+   mnemonic is 
+   `test test test test test test test test test test test junk`).
+1. All the Optimistic Ethereum contracts and servers for cross
+   domain communications, except that the challenge period is
+   a few seconds instead of a week.   
+
 
 ## Prerequisites
 
@@ -31,8 +51,7 @@ You'll need to install the following before you can continue:
 ## Creating a node
 
 You can either download the docker images from [Docker 
-Hub](https://hub.docker.com/u/ethereumoptimism) or build the software 
-from the [source code](https://github.com/ethereum-optimism/optimism).
+Hub](https://hub.docker.com/u/ethereumoptimism) or build the software from the [source code](https://github.com/ethereum-optimism/optimism).
 
 
 ### Downloading the docker images
@@ -64,11 +83,11 @@ If you want to download the images, perform these steps:
    docker-compose -f docker-compose-nobuild.yml up -t 600 --no-start
    ``` 
 
-   If you want to start the development node as soon as it is downloaded,
-   remove the `--no-start` argument.
+   If you want to start the development node as soon as 
+   it is downloaded, remove the `--no-start` argument.
 
-   You might get a timeout at first. If that is the case, just run the 
-   `docker-compose` command again.
+   You might get a timeout at first. If that is the case, just 
+   run the `docker-compose` command again.
 
 
 ### Building from source

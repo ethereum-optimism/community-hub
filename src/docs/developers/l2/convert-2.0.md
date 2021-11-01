@@ -99,6 +99,7 @@ Ethereum:
 
 1. Develop the decentralized application normally.
 1. [Create an Optimistic Ethereum development node](dev-node.md)
+   to be able to test locally.
 1. Run your tests on the Optimistic Ethereum development node you created.
 1. Deploy your dapp to the [Optimistic 
    Kovan](../../infra/networks.md#optimistic-kovan) network and test it in that
