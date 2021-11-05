@@ -13,8 +13,9 @@ We expect to deploy it to the production Optimistic Ethereum network on November
 For an L1 to L2 transaction the major fee is the L1 cost of submitting the transaction. You send a transaction to the [`L1CrossDomainMessenger`](https://github.com/ethereum-optimism/optimism/blob/regenesis/0.5.0/packages/contracts/contracts/L1/messaging/L1CrossDomainMessenger.sol)
 contract, which then sends a call to the [`CanonicalTransactionChain`](https://github.com/ethereum-optimism/optimism/blob/regenesis/0.5.0/packages/contracts/contracts/L1/rollup/CanonicalTransactionChain.sol). This generally isn't *too* expensive, but it mainly depends on L1 gas costs.
 
-An L1 to L2 message can trigger contract execution on L2. In that case, if the execution costs less than about 1.92 million gas it happens automatically. If you need more than that, you can burn gas on L1 to get L2 gas, at a ratio of 32 L2 gas for each L1 gas.
+### L2 gas costs
 
+An L1 to L2 message can trigger contract execution on L2. The gas limit for that transaction is provided as part of the message. If the gas limit is below 1.92 million (at writing, it might change) that L2 gas is free. For the gas above that limit we burn one L1 gas for every 32 L2 gas to prevent denial of service attacks.
 
 
 ## Fees for L2 to L1 transactions
