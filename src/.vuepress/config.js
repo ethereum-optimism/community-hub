@@ -69,7 +69,8 @@ module.exports = {
                 // Common (standard bridge) before
                 // rare (messaging)
                 '/docs/developers/bridge/standard-bridge.md',
-                '/docs/developers/bridge/messaging.md'
+                '/docs/developers/bridge/messaging.md',
+                '/docs/developers/bridge/fees.md'
               ],
               collapsable: false,
               sidebarDepth: 0,
