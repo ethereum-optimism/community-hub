@@ -38,25 +38,10 @@ module.exports = {
       },
     ],
     sidebar: [
-        {
-          title: 'User Docs',
-
-          //  When updating here, update also users/README.md
-
-          children: [
-            '/docs/users/getting-started.md',
-            '/docs/users/metamask.md',
-            '/docs/users/deposit.md',
-            '/docs/users/withdrawal.md',
-            [
-              'https://www.optimism.io/apps/all',
-              'Apps on Optimism'
-            ],   
-            '/docs/users/fees-2.0.md'          
-          ],
-          collapsable: false,
-          sidebarDepth: 0,
-        },
+        [
+          'https://optimismhelp.zendesk.com/',
+          'User Docs'
+        ],
         {
           title: 'Developer Docs',
           children: [
