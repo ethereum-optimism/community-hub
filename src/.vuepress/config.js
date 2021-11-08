@@ -60,6 +60,48 @@ module.exports = {
         {
           title: 'Developer Docs',
           children: [
+            {
+               title: "Task",
+               children: [
+                {
+                  title: "Wallet",
+                  children: [
+                    '/docs/developers/guides/switch_chain.md',
+                    '/docs/developers/guides/token_info.md',
+                    '/docs/developers/l2/new-fees.md',
+                    '/docs/developers/l2/rpc-2.0.md',
+                  ]
+                },                 
+                {
+                   title: "Frontend",
+                   children: [
+                     '/docs/developers/guides/switch_chain.md',
+                     '/docs/developers/guides/token_info.md',
+                     '/docs/developers/l2/new-fees.md',
+                     '/docs/developers/l2/rpc-2.0.md', 
+                     [
+                      'https://github.com/ethereum-optimism/optimism-tutorial/tree/main/l1-l2-deposit-withdrawal',
+                      'Depositing and Withdrawing ERC20 Tokens'
+                     ],                    
+                   ],
+                },
+                {
+                   title: "Backend",
+                   children: [
+                     [
+                       "https://github.com/ethereum-optimism/optimism-tutorial/tree/main/standard-bridge-standard-token",
+                       "Registering a Standard ERC20 Token on L2"
+                     ],
+                     [
+                      "https://github.com/ethereum-optimism/optimism-tutorial/tree/main/standard-bridge-custom-token",
+                      "Registering a Custom ERC20 Token on L2"
+                    ],
+                   ]
+                }
+               ],
+               collapsable: false,
+               sidebarDepth: 4
+            },
             // Moved to a separate page that's linkable from the homepage
             '/docs/developers/tutorials.md',
             {
@@ -90,7 +132,7 @@ module.exports = {
                 '/docs/developers/bridge/standard-bridge.md',
                 '/docs/developers/bridge/messaging.md'
               ],
-              collapsable: false,
+              collapsable: true,
               sidebarDepth: 0,
             },
             {

@@ -10,26 +10,22 @@ We expect to deploy it to the production Optimistic Ethereum network on November
 
 # {{ $frontmatter.title }}
 
-::: warning OVM 2.0 Page
-This page refers to the **new** state of Optimistic Ethereum after the
-OVM 2.0 update. 
-:::
-
 Most JSON-RPC methods in Optimistic Ethereum are identical to the corresponding methods in the Ethereum JSON-RPC API.
 However, a few JSON-RPC methods have been added or changed to better fit the needs of Optimistic Ethereum.
+
+::: tip Not EIP-1559 compatible yet
+Optimistic Ethereum is still on the Berlin fork, so we cannot accept EIP 1559 transactions at this time.
+:::
 
 ## Modified JSON-RPC methods
 
 ### `eth_estimateGas`
 
-`eth_estimateGas` only returns information about the L2 execution fee. 
-See our [transaction fees page](new-fees.md) for more information.
+`eth_estimateGas` only returns information about the L2 execution fee. See our [transaction fees page](new-fees.md) for more information.
 
 ### `eth_getBlockByNumber` and `eth_getBlockByHash`
 
-Currently, Optimistic Ethereum blocks only include a single transaction.
-If you query `eth_getBlockByNumber` or `eth_getBlockByHash`, you should expect to only see one transaction.
-Note that this increases the number of blocks produced by the network, which may have an impact on the performance of applications that assume a slower block production rate.
+Currently, Optimistic Ethereum blocks only include a single transaction. If you query `eth_getBlockByNumber` or `eth_getBlockByHash`, you should expect to only see one transaction. Note that this increases the number of blocks produced by the network, which may have an impact on the performance of applications that assume a slower block production rate.
 
 ## Added JSON-RPC methods
 
