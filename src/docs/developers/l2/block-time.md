@@ -25,7 +25,7 @@ Block numbers and timestamps in Optimistic Ethereum are similar, but not entirel
 
 ## Timestamps
 
-The OVM 2.0 time stamp functions the same as before, updating with each new deposit or after 5 minutes if there has not been a deposit. `TIMESTAMP` will still correspond to "Last Finalized L1 Timestamp" 
+The OVM 2.0 time stamp updates with each new deposit or after 5 minutes if there has not been a deposit. So it correspond to "Last Finalized L1 Timestamp" 
 
 The timestamp of a block when queried via the `eth_getBlockByNumber` JSON-RPC endpoint is the same as the value of `block.timestamp` inside of a contract executed within that block.
 Just like the OVM block number, the OVM timestamp corresponds to the L1 timestamp of the last confirmed L1 ⇒ L2 transaction.
