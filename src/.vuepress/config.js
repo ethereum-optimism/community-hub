@@ -60,6 +60,7 @@ module.exports = {
         {
           title: 'Developer Docs',
           children: [
+            '/docs/developers/howto/wallet-dev.md',
             {
                title: "Task",
                children: [

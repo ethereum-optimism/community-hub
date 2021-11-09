@@ -9,6 +9,8 @@ We expect to deploy it to the production Optimistic Ethereum network on November
 :::
 
 
+<VuePressVersioning/>
+
 # {{ $frontmatter.title }}
 
 ## The RPC Endpoints

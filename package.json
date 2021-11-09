@@ -14,6 +14,7 @@
     "vuepress-plugin-plausible-analytics": "^0.2.1"
   },
   "dependencies": {
-    "check-md": "^1.0.2"
+    "check-md": "^1.0.2",
+    "markdown-it": "^12.2.0"
   }
 }
