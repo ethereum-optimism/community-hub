@@ -40,6 +40,10 @@ contract, for use when you need wrapped ETH.
 | Optimistic Ethereum | [0x4200000000000000000000000000000000000006](https://optimistic.etherscan.io/address/0x4200000000000000000000000000000000000006) |
 -->
 
+::: tip This is not bridged L1 WETH
+If you want Optimistic Ethereum WETH, you can't just bridge it over from L1, instead you need to unwrapped the ETH on L1, bridge ETH into L2, and then rewrap it.
+:::
+
 ### L2 Standard Token Factory
 
 Factory contract for creating standard L2 token representations of
