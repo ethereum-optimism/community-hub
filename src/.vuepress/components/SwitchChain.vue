@@ -30,7 +30,7 @@ There are two places where a user might switch into Optimistic Ethereum:
 
 <table border><tr><td>
 <p>
-If you are a wallet developer you **must** ask for user confirmation if you receive these 
+If you are a wallet developer you <b>must</b> ask for user confirmation if you receive these 
 two RPC methods. They can be abused by an unscrupulous front end.
 </p>
 </td></tr></table>

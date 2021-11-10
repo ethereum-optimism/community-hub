@@ -27,10 +27,12 @@ need to query:
   <th>ERC-20 Contract Address</th>
 </tr><tr>
   <td>L1</td>
-  <td>0x6B175474E89094C44Da98b954EedeAC495271d0F</td>
+  <td><a href="https://etherscan.io/address/0x6B175474E89094C44Da98b954EedeAC495271d0F" target="_blank">
+      0x6B175474E89094C44Da98b954EedeAC495271d0F</a></td>
 </tr><tr>
   <td>Optimistic Ethereum</td>
-  <td>0xDA10009cBd5D07dd0CeCc66161FC93D7c9000da1</td>
+  <td><a href="https://optimistic.etherscan.io/address/0xDA10009cBd5D07dd0CeCc66161FC93D7c9000da1" target="_blank">
+      0xDA10009cBd5D07dd0CeCc66161FC93D7c9000da1</a></td>
 </tr></table>
 
 <p>

@@ -23,7 +23,11 @@ We expect to deploy it to the production Optimistic Ethereum network on November
 
 <TokenInfo/>
 
+## Submitting transactions
 
-## Transaction Fees
+<TxSubmit/>
+
+### Transaction fees
 
 <TxFees/>
+
