@@ -26,7 +26,7 @@ The list of Optimism contracts and their addresses is available
 [in the monorepo](https://github.com/ethereum-optimism/optimism/tree/regenesis/0.5.0/packages/contracts/deployments). You can also read [additional information 
 here](../protocol/protocol-2.0.md).
 
-### Wrapped Eth
+### Wrapped Ether (WETH)
 
 This is a standard [WETH9](https://blog.0xproject.com/canonical-weth-a9aa7d0279dd)
 contract, for use when you need wrapped ETH.
