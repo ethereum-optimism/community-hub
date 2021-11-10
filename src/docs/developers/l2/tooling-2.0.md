@@ -1,5 +1,5 @@
 ---
-title: Tooling in OVM 2.0
+title: Tooling for Optimistic Ethereum development
 lang: en-US
 ---
 

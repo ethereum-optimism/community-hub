@@ -14,7 +14,7 @@ We expect to deploy it to the production Optimistic Ethereum network on November
 
 * [Optimistic Ethereum with Hardhat](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/hardhat)
 * [Optimistic Ethereum with Truffle](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/truffle)
-* [Optimistic Ethereum with Remix](https://remix-optimism-compiler-plugin.readthedocs.io/en/latest/)
+* [Optimistic Ethereum with Remix](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/remix)
 
 
 ## ERC-20 Tokens

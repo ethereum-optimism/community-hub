@@ -1,5 +1,5 @@
 ---
-title: Using the Protocol Contracts in OVM 2.0
+title: Using the Protocol Contracts
 lang: en-US
 ---
 

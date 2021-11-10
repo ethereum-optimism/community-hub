@@ -1,5 +1,5 @@
 ---
-title: Porting Existing Apps to OVM 2.0
+title: Porting Existing Apps to Optimistic Ethereum
 lang: en-US
 ---
 

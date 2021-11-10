@@ -1,5 +1,5 @@
 ---
-title: JSON-RPC API Differences in OVM 2.0
+title: JSON-RPC API Differences between L1 and Optimistic Ethereum
 lang: en-US
 ---
 

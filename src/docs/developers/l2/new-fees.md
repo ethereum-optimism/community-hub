@@ -1,5 +1,5 @@
 ---
-title: Fee Scheme in OVM 2.0
+title: Fee Scheme
 lang: en-US
 ---
 

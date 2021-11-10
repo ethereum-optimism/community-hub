@@ -1,5 +1,5 @@
 ---
-title: Transaction Fees in OVM 2.0
+title: Transaction Fees in Optimistic Ethereum
 lang: en-US
 ---
 
