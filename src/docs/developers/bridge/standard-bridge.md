@@ -3,18 +3,9 @@ title: Using the Standard Bridge
 lang: en-US
 ---
 
-::: tip OVM 2.0 Release Dates
-OVM 2.0 is already released on the Kovan test network.
-We expect to deploy it to the production Optimistic Ethereum network on November 11th.
-:::
 
 # {{ $frontmatter.title }}
 
-::: danger OVM 1.0 Page
-This page refers to the **current** state of the Optimistic Ethereum
-network. Some of the information may be relevant to OVM 2.0, which will
-be deployed in November, but some of it may change.
-:::
 
 Certain interactions, like transferring ETH and ERC20 tokens between the two networks, are common enough that we've built the "Standard Bridge" to make moving these assets betwen L1 and L2 as easy as possible.
 The Standard Bridge is composed of two main contracts the [`OVM_L1StandardBridge`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/optimistic-ethereum/OVM/bridge/tokens/OVM_L1StandardBridge.sol) (for Layer 1) and the [`OVM_L2StandardBridge`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/optimistic-ethereum/OVM/bridge/tokens/OVM_L2StandardBridge.sol) (for Layer 2).
