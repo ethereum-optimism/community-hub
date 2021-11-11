@@ -104,7 +104,7 @@ Ethereum:
 1. Deploy your dapp to the [Optimistic 
    Kovan](../../infra/networks.md#optimistic-kovan) network and test it in that
    environment.
-1. [Ask to be added to the Optimistic Ethereum whitelist](https://docs.google.com/forms/d/e/1FAIpQLSfBGsJN3nZQRLdMjqCS_svfQoPkn35o_cc4HUVnLlXN2BHmPw/viewform)    
+1. [Ask to be added to the Optimistic Ethereum whitelist](https://p02pp4m8did.typeform.com/to/zRajq1Fl)    
 1. Once added, deploy your contracts to the 
    [Optimistic Ethereum](../../infra/networks.md#optimistic-ethereum) network. 
    - Ideally, you should also upload and 
