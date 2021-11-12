@@ -32,7 +32,7 @@ OVM 2.0 已经在 Kovan 测试网络上发布。
 5. 确保选择了正确的选项：
 
    * 已选定 **Deposit** 
-    
+
      <div style="display:inline-block">
      <img src="../../assets/docs/users/getting-started/deposit-form-a.png" alt="Deposit form" width="40%" style="float:left">
      </div>
@@ -44,13 +44,13 @@ OVM 2.0 已经在 Kovan 测试网络上发布。
      </div>
 
    * 选定代币为 **ETH**.
-   
+
      <div style="display:inline-block">
      <img src="../../assets/docs/users/getting-started/deposit-form-c.png" alt="Deposit form" width="40%" style="float:left">
      </div>
 
    * 数额是可行的。可以单击MAX查看您可以存入的最大数额（去除转账手续费以后），如果相关，请输入低于MAX显示的数额。
-   
+
      <div style="display:inline-block">
      <img src="../../assets/docs/users/getting-started/deposit-form-d.png" alt="Deposit form" width="40%" style="float:left">
      </div>
@@ -80,11 +80,11 @@ Uniswap 允许您在资产之间进行交换。它是目前最常用的开源以
 3. 选择:
 
    A. 您支付的代币
-      
+
       <div style="display:inline-block">
       <img src="../../assets/docs/users/getting-started/swap-form-a.png" alt="Swap form" width="40%" style="float:left"> 
       </div>
-   
+
    B. 您想要交易获得的代币
 
       <div style="display:inline-block">
@@ -115,7 +115,7 @@ Optimism 网关需要 7 天时间将资金从Optimism网络提取到以太坊主
 
 1. 浏览打开 [Hop.Exchange](https://app.hop.exchange/send?sourceNetwork=optimism&destNetwork=mainnet&token=USDC).
 2. 选择:
-   
+
    A. 资产类型
 
       <div style="display:inline-block">
@@ -139,9 +139,9 @@ Optimism 网关需要 7 天时间将资金从Optimism网络提取到以太坊主
       <div style="display:inline-block">
       <img src="../../assets/docs/users/getting-started/withdraw-form-d.png" alt="Deposit form" width="40%" style="float:left">
       </div>
-      
+
 3. 向下滚动，接受交易费用并点击**批准**.
 4. 清除 **全部批准** 将 Hop 的支出限额限制为您可以提取的金额，然后再次单击 **批准** 进行确认.
 5. 在钱包中确认交易。
 6. 点击 **Send**，允许钱包中的网络切换，再次点击 **Send** , 在钱包中确认交易。
-7. 几分钟后，您将在 L1 中取回资产（已扣除转移的费用）.    
+7. 几分钟后，您将在 L1 中取回资产（已扣除转移的费用）.  
