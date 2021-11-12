@@ -15,7 +15,7 @@ We expect to deploy it to the production Optimistic Ethereum network on November
 ### Opcode differences
 
 ::: tip
-[See here for the list of opcodes in the OVM](https://github.com/ethereum-optimism/optimism/blob/experimental/l2geth/core/vm/opcodes.go).
+[See here for the list of opcodes in the OVM](https://github.com/ethereum-optimism/optimism/blob/master/l2geth/core/vm/opcodes.go).
 :::
 
 The L1 verification challenge mechanism needs to be able to simulate every possible 
