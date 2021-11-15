@@ -40,7 +40,7 @@ module.exports = {
     sidebar: [
         [
           'https://intercom.help/optimism/en/',
-          'User Docs'
+          'User Docs & Help Center '
         ],
         {
           title: 'Developer Docs',
