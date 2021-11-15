@@ -1,19 +1,9 @@
 ---
-title: JSON-RPC API Differences in OVM 2.0
+title: JSON-RPC API Differences
 lang: en-US
 ---
 
-::: tip OVM 2.0 Release Dates
-OVM 2.0 is already released on the Kovan test network.
-We expect to deploy it to the production Optimistic Ethereum network on November 11th.
-:::
-
 # {{ $frontmatter.title }}
-
-::: warning OVM 2.0 Page
-This page refers to the **new** state of Optimistic Ethereum after the
-OVM 2.0 update. 
-:::
 
 Most JSON-RPC methods in Optimistic Ethereum are identical to the corresponding methods in the Ethereum JSON-RPC API.
 However, a few JSON-RPC methods have been added or changed to better fit the needs of Optimistic Ethereum.
