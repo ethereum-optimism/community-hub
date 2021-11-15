@@ -143,21 +143,6 @@ module.exports = {
           ],
           collapsable: false,
           sidebarDepth: 0,
-        },
-        {
-          title: "OVM 1.0 docs",
-          collapsable: true,
-          sidebarDepth: 0,
-          children: [
-            '/docs/users/fees.md',
-            '/docs/developers/l2/hardhat.md',
-            '/docs/developers/l2/truffle.md',
-            '/docs/developers/l2/convert.md',    
-            '/docs/developers/fees.md',
-            '/docs/developers/l2/contracts.md',                
-            '/docs/developers/l2/rpc.md',                 
-            '/docs/protocol/protocol.md',            
-          ]
         }
     ]
   },
