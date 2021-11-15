@@ -10,11 +10,6 @@ We expect to deploy it to the production Optimistic Ethereum network on November
 
 # {{ $frontmatter.title }}
 
-::: danger OVM 1.0 Page
-This page refers to the **current** state of the Optimistic Ethereum
-network. Some of the information may be relevant to OVM 2.0, which will
-be deployed in November, but some of it may change.
-:::
 
 Certain interactions, like transferring ETH and ERC20 tokens between the two networks, are common enough that we've built the "Standard Bridge" to make moving these assets betwen L1 and L2 as easy as possible.
 The Standard Bridge is composed of two main contracts the [`OVM_L1StandardBridge`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/optimistic-ethereum/OVM/bridge/tokens/OVM_L1StandardBridge.sol) (for Layer 1) and the [`OVM_L2StandardBridge`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/optimistic-ethereum/OVM/bridge/tokens/OVM_L2StandardBridge.sol) (for Layer 2).
@@ -61,7 +56,7 @@ Optimism provides a standard implementation of that interface as the [`L2Standar
 
 If the `L2StandardERC20` implementation does not satisfy your requirements, you can deploy an alternative implementation as long as it's compliant with the `IL2StandardERC20` interface.
 You can freely deploy your proposed implementation to the Optimistic Kovan testnet.
-Once you're ready with a tested kovan deployment, you can request a review via [this](https://docs.google.com/forms/d/e/1FAIpQLSfBGsJN3nZQRLdMjqCS_svfQoPkn35o_cc4HUVnLlXN2BHmPw/viewform) form and we'll consider whitelisting your deployer address on the Optimistic Ethereum mainnet.
+Once you're ready with a tested kovan deployment, you can request a review via [this](https://p02pp4m8did.typeform.com/to/zRajq1Fl) form and we'll consider whitelisting your deployer address on the Optimistic Ethereum mainnet.
 This condition only remains as long as the Optimistic Ethereum mainnet has a whitelist.
 
 ## The Optimism token list

@@ -28,7 +28,7 @@ We currently require addresses to be whitelisted before they can deploy onto the
 1. Carefully check through [the list of potentially breaking changes of the next upgrade](changeset.md) and ensure your contracts will not be affected
 2. Deploy your contracts to our Optimistic Kovan test network
 3. Verify each of these contracts on Optimistic Kovan Etherscan*
-4. Fill out [the Whitelist application form](https://docs.google.com/forms/d/e/1FAIpQLSfBGsJN3nZQRLdMjqCS_svfQoPkn35o_cc4HUVnLlXN2BHmPw/viewform)
+4. Fill out [the Whitelist application form](https://p02pp4m8did.typeform.com/to/zRajq1Fl)
 5. After the next Kovan regenesis, you must confirm that your Kovan deployment has remained fully functional
 
 If you are whitelisted and deploy to Mainnet, you must:
