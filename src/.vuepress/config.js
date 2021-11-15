@@ -72,7 +72,6 @@ module.exports = {
                 '/docs/developers/l2/tooling-2.0.md',                
                 '/docs/developers/l2/convert-2.0.md',                
                 '/docs/developers/l2/deploy.md',
-                '/docs/developers/l2/changeset.md',
                 '/docs/developers/l2/new-fees.md',
                 '/docs/developers/l2/future.md',
                 '/docs/developers/l2/contracts-2.0.md',                
