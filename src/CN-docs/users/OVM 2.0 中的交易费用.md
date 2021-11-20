@@ -3,14 +3,16 @@
 语言: CN-中文
 ---
 
-::: 提示 OVM 2.0 发布日期
+::: tip
+ OVM 2.0 发布日期
 OVM 2.0 is already released on the Kovan test network.
-OVM 2.0 已经在 Kovan 测试网络上发布。我们预计将在 11 月 11 日将其部署到以太坊 Optimistic 网络。:::
+OVM 2.0 已经在 Kovan 测试网络上发布。我们预计将在 11 月 11 日将其部署到以太坊 Optimistic 生产环境。:::
 
 
 # {{ $frontmatter.title }}
 
-::: 提示OVM 2.0 页面 此页面指的是OVM 2.0 更新后以太坊 Optimistic 网络的**最新**状态。:::
+::: tip
+OVM 2.0 页面 此页面指的是OVM 2.0 更新后以太坊 Optimistic 网络的**最新**状态。:::
 
 ## 费用简述
 

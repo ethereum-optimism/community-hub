@@ -5,9 +5,10 @@
 
 # {{ $frontmatter.title }}
 
-::: 提示 OVM 2.0 发布日期
+::: tip
+ OVM 2.0 发布日期
 OVM 2.0 已经在 Kovan 测试网络上发布。
-我们预计将在 11 月 11 日将其部署到以太网 Optimistic 网络。
+我们预计将在 11 月 11 日将其部署到以太网 Optimistic 生产环境。
 :::
 
 ## 为什么使用以太坊 Optimistic 网络?
@@ -16,18 +17,18 @@ OVM 2.0 已经在 Kovan 测试网络上发布。
 
 * **近乎即时的交易结果反馈。** 您几乎可以立即知道您的交易是否完成。
 * **更低的交易手续费。** 通常在 L1 成本的 1% 到 10% 之间。
-  [关于当前的 gas 费用和一些示例交易的成本，请参见此处。](https://public-grafana.optimism.io/d/9hkhMxn7z/public-dashboard?orgId=1&refresh=5m).
-* **去中心化。** 所有交易都发布到L1 以太坊，继承了以太坊强大的安全保障
+  [关于当前的 gas 费用和一些示例交易的成本，请参见此处。](https://public-grafana.optimism.io/d/9hkhMxn7z/public-dashboard?orgId=1&refresh=5m)
+* **去中心化。** 所有交易都发布到L1 以太坊，继承了以太坊强大的安全保障。
 
 ## 存放资产
 
-在 Optimistic 以太坊上使用资产（Eth、ERC-20 代币等）之前，您需要使用 [跨链桥](https://www.optimism.io/apps/dapps). 对于存入 ETH，您可以使用 [我们自己的跨链桥](https://gateway.optimism.io/).
+在 Optimistic 以太坊上使用资产（Eth、ERC-20 代币等）之前，您需要使用 [跨链桥](https://www.optimism.io/apps/dapps)。对于存入 ETH，您可以使用 [我们自己的跨链桥](https://gateway.optimism.io/)。
 
 1. 如果您没有 ETH，可以通过中心化交易所购买一些，例如 
-   [Coinbase](https://www.coinbase.com/signup), [Gemini](https://exchange.gemini.com/register), 
-   或者 [Binance](https://accounts.binance.com/en/register).
+   [Coinbase](https://www.coinbase.com/signup)、 [Gemini](https://exchange.gemini.com/register)
+   或者 [Binance](https://accounts.binance.com/en/register)。
 2. 设置一个钱包，例如 [Metamask](https://metamask.io/)，然后将 ETH 从中心化交易所提币到您的钱包中。   
-3. [进入我们的跨链桥](https://gateway.optimism.io/).  
+3. [进入我们的跨链桥](https://gateway.optimism.io/)。
 4. 点击 **CONNECT**, 选择您的钱包类型，并在询问时在钱包内批准连接。
 5. 确保选择了正确的选项：
 
@@ -49,7 +50,7 @@ OVM 2.0 已经在 Kovan 测试网络上发布。
      <img src="../../assets/docs/users/getting-started/deposit-form-c.png" alt="Deposit form" width="40%" style="float:left">
      </div>
 
-   * 数额是可行的。可以单击MAX查看您可以存入的最大数额（去除转账手续费以后），如果相关，请输入低于MAX显示的数额。
+   * 请确保此处输入的ETH数额小于钱包余额，同时您可以点击MAX查看您当前可存入的最大数额（由于考虑转账手续费，所以MAX数额会略小于钱包余额）。
 
      <div style="display:inline-block">
      <img src="../../assets/docs/users/getting-started/deposit-form-d.png" alt="Deposit form" width="40%" style="float:left">
@@ -91,7 +92,7 @@ Uniswap 允许您在资产之间进行交换。它是目前最常用的开源以
       <img src="../../assets/docs/users/getting-started/swap-form-b.png" alt="Swap form" width="40%" style="float:left">
       </div>
 
-   C. 输入任意代币的数额
+   C. 输入您愿意支付的代币数额或者在下行输入希望通过交易获得的代币数额。
 
       <div style="display:inline-block">
       <img src="../../assets/docs/users/getting-started/swap-form-c.png" alt="Swap form" width="40%" style="float:left">
