@@ -37,6 +37,8 @@ Use the `withdraw` and `withdrawTo` methods on the `L2StandardBridge` to initiat
 
 If you'd like to see these contracts in action, you should check out the [L1 ⇔ L2 deposit-and-withdraw example](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/l1-l2-deposit-withdrawal).
 
+**Note:** When withdrawing ETH, use the L2 token address `0xDeadDeAddeAddEAddeadDEaDDEAdDeaDDeAD0000`.
+
 ## Adding an ERC20 token to the Standard Bridge
 
 ::: tip
