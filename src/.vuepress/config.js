@@ -72,7 +72,6 @@ module.exports = {
                 '/docs/developers/l2/tooling-2.0.md',                
                 '/docs/developers/l2/convert-2.0.md',                
                 '/docs/developers/l2/deploy.md',
-                '/docs/developers/l2/changeset.md',
                 '/docs/developers/l2/new-fees.md',
                 '/docs/developers/l2/future.md',
                 '/docs/developers/l2/contracts-2.0.md',                
@@ -119,8 +118,7 @@ module.exports = {
         {
           title: 'Protocol Docs',
           children: [
-            '/docs/protocol/protocol-2.0.md',            
-            '/docs/protocol/evm-comparison.md',
+            '/docs/protocol/protocol-2.0.md',
             '/docs/protocol/sequencing.md',
             '/docs/protocol/fraud-proofs.md',
             '/docs/protocol/protocol-readings.md',
