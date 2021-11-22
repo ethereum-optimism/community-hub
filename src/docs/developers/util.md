@@ -3,22 +3,9 @@ title: Useful Contracts
 lang: en-US
 ---
 
-
-::: tip OVM 2.0 Release Dates
-OVM 2.0 is already released on the Kovan test network.
-We expect to deploy it to the production Optimistic Ethereum network on November 11th.
-:::
-
-
 # {{ $frontmatter.title }}
 
-::: tip OVM 2.0 Page
-This page refers to the OVM 2.0 Kovan test network. It will be updated for
-the production network after it is released.
-:::
-
 These are contracts that are expected to be useful for multiple projects.
-
 
 ## Optimism
 

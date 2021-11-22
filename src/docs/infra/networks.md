@@ -3,14 +3,7 @@ title: Networks and Connection Details
 lang: en-US
 ---
 
-
-::: tip OVM 2.0 Release Dates
-OVM 2.0 is already released on the Kovan test network.
-We expect to deploy it to the production Optimistic Ethereum network on November 11th.
-:::
-
 # {{ $frontmatter.title }}
-
 
 ## Development Node
 
