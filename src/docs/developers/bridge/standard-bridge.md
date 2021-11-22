@@ -7,7 +7,7 @@ lang: en-US
 
 
 Certain interactions, like transferring ETH and ERC20 tokens between the two networks, are common enough that we've built the "Standard Bridge" to make moving these assets betwen L1 and L2 as easy as possible.
-The Standard Bridge is composed of two main contracts the [`OVM_L1StandardBridge`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/optimistic-ethereum/OVM/bridge/tokens/OVM_L1StandardBridge.sol) (for Layer 1) and the [`OVM_L2StandardBridge`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/optimistic-ethereum/OVM/bridge/tokens/OVM_L2StandardBridge.sol) (for Layer 2).
+The Standard Bridge is composed of two main contracts the [`L1StandardBridge`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/L1/messaging/L1StandardBridge.sol) (for Layer 1) and the [`L2StandardBridge`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/L2/messaging/L2StandardBridge.sol) (for Layer 2).
 Here we'll go over the basics of using this bridge to move ERC20 assets between Layer 1 and Layer 2.
 
 ## Deposits and withdrawals
@@ -33,7 +33,7 @@ Note that the token amount deposited will need to have been approved for the sta
 ### Withdrawing Assets
 
 Initiating withdrawals are the same for ETH and ERC20s as ETH is ERC20-compatible on L2.
-Use the `withdraw` and `withdrawTo` methods on the `OVM_L2StandardBridge` to initiate a withdrawal.
+Use the `withdraw` and `withdrawTo` methods on the `L2StandardBridge` to initiate a withdrawal.
 
 If you'd like to see these contracts in action, you should check out the [L1 ⇔ L2 deposit-and-withdraw example](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/l1-l2-deposit-withdrawal).
 
@@ -45,8 +45,8 @@ See detailed tutorial on [bridging your standard ERC20 token to Optimism](https:
 
 Anyone can add a new ERC20 token to the Standard Bridge.
 You must have a token contract on both L1 and L2.
-Your L2 token contract must also implement the [`IL2StandardERC20`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/optimistic-ethereum/libraries/standards/IL2StandardERC20.sol) interface.
-Optimism provides a standard implementation of that interface as the [`L2StandardERC20`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/optimistic-ethereum/libraries/standards/L2StandardERC20.sol) contract.
+Your L2 token contract must also implement the [`IL2StandardERC20`]( https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/standards/IL2StandardERC20.sol) interface.
+Optimism provides a standard implementation of that interface as the [`L2StandardERC20`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/standards/L2StandardERC20.sol) contract.
 
 
 If the `L2StandardERC20` implementation does not satisfy your requirements, you can deploy an alternative implementation as long as it's compliant with the `IL2StandardERC20` interface.
