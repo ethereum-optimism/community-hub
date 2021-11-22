@@ -26,7 +26,7 @@ The list of Optimism contracts and their addresses is available
 [in the monorepo](https://github.com/ethereum-optimism/optimism/tree/regenesis/0.5.0/packages/contracts/deployments). You can also read [additional information 
 here](../protocol/protocol-2.0.md).
 
-### Wrapped Eth
+### Wrapped Ether (WETH)
 
 This is a standard [WETH9](https://blog.0xproject.com/canonical-weth-a9aa7d0279dd)
 contract, for use when you need wrapped ETH.
@@ -39,6 +39,10 @@ contract, for use when you need wrapped ETH.
 <!--
 | Optimistic Ethereum | [0x4200000000000000000000000000000000000006](https://optimistic.etherscan.io/address/0x4200000000000000000000000000000000000006) |
 -->
+
+::: tip This is not bridged L1 WETH
+If you want Optimistic Ethereum WETH, you can't just bridge it over from L1, instead you need to unwrapped the ETH on L1, bridge ETH into L2, and then rewrap it.
+:::
 
 ### L2 Standard Token Factory
 
