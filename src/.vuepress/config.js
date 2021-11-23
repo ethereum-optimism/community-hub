@@ -70,7 +70,7 @@ module.exports = {
               children: [
                 '/docs/developers/l2/dev-node.md',
                 '/docs/developers/l2/tooling-2.0.md',                
-                '/docs/developers/l2/convert-2.0.md',                
+                '/docs/developers/l2/differences.md',                
                 '/docs/developers/l2/deploy.md',
                 '/docs/developers/l2/new-fees.md',
                 '/docs/developers/l2/future.md',
