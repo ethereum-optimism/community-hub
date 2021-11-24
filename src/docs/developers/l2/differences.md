@@ -96,3 +96,9 @@ The value of `tx.origin` is determined as follows:
 
 The value of `msg.sender` at the top-level (the very first contract being called) is always equal to `tx.origin`.
 Therefore, if the value of `tx.origin` is impacted by the rules defined above, the top-level value of `msg.sender` will also be impacted.
+
+## JSON-RPC Differences
+
+Optimistic Ethereum uses the same [JSON-RPC API](https://eth.wiki/json-rpc/API) as Ethereum.
+Some additional Optimistic Ethereum specific methods have been introduced.
+See the full list of [custom JSON-RPC methods](./json-rpc.html) for more information.
