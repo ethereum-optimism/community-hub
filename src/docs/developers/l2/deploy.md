@@ -19,4 +19,4 @@ Whitelisting is easy, just do the following:
 
 1. Deploy your contracts to our Optimistic Kovan test network
 2. Verify each of these contracts on [Optimistic Kovan Etherscan](https://kovan-optimistic.etherscan.io)
-3. Fill out [the Whitelist application form](https://p02pp4m8did.typeform.com/to/zRajq1Fl)
+3. Fill out [the Whitelist application form](https://optimismpbc.typeform.com/onboard)
