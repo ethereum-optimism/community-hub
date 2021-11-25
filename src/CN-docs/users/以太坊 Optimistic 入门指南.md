@@ -5,12 +5,6 @@
 
 # {{ $frontmatter.title }}
 
-::: tip
- OVM 2.0 发布日期
-OVM 2.0 已经在 Kovan 测试网络上发布。
-我们预计将在 11 月 11 日将其部署到以太网 Optimistic 生产环境。
-:::
-
 ## 为什么使用以太坊 Optimistic 网络?
 
 以太坊 Optimistic 网络允许您发送交易，类似于以太坊，但具有两个重要优势：

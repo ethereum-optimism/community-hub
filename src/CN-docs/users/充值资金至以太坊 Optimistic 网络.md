@@ -5,12 +5,6 @@
 
 # {{ $frontmatter.title }}
 
-::: tip
- OVM 2.0 发布日期
-OVM 2.0 已经在 Kovan 测试网络上发布。
-我们已于 11 月 11 日将其部署到以太坊 Optimistic 生产环境。
-:::
-
 ## 哪些资金可以充值至以太坊 Optimistic 网络?
 
 ### 以太坊
