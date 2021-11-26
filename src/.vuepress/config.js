@@ -17,7 +17,7 @@ module.exports = {
     docsDir: 'src',
     docsRepo: 'https://github.com/ethereum-optimism/community-hub',
     docsBranch: 'main',
-    editLinkText: `Want to suggest a change? We'd 💖 a pull request over on GitHub`,
+    editLinkText: `Something off? Click here to suggest an edit to this page on GitHub 👩‍💻`,
     lastUpdated: false,
     algolia: {
       apiKey: '47d21d4ea72ed7cb504b1c6c0a46b5a0',
@@ -27,7 +27,7 @@ module.exports = {
       {
         text: 'optimism',
         link: 'https://www.optimism.io',
-      },      
+      },
       {
         text: 'faqs',
         link: 'https://www.optimism.io/faqs',
@@ -39,91 +39,57 @@ module.exports = {
     ],
     sidebar: [
         {
-          title: 'User Docs',
-
-          //  When updating here, update also users/README.md
-
+          title: 'Getting Started',
           children: [
-            '/docs/users/getting-started.md',
-            '/docs/users/metamask.md',
-            '/docs/users/deposit.md',
-            '/docs/users/withdrawal.md',
-            [
-              'https://www.optimism.io/apps/all',
-              'Apps on Optimistic Ethereum'
-            ],   
-            '/docs/users/fees-2.0.md'          
+            '/docs/getting-started/basics.md',
+            '/docs/getting-started/first-tx.md',
+            '/docs/getting-started/deposit-and-withdraw.md',
+            '/docs/getting-started/things-to-do.md',
+            '/docs/getting-started/contributing.md',
           ],
           collapsable: false,
           sidebarDepth: 0,
         },
         {
-          title: 'Developer Docs',
+          title: 'Building Apps on OE',
           children: [
-            // Moved to a separate page that's linkable from the homepage
-            '/docs/developers/tutorials.md',
-            {
-              title: 'Working on Optimistic Ethereum',
-              // Reordered to follow the order in which I
-              // expect people will do things, followed by
-              // more advanced topics such as RPC and Block Time
-              children: [
-                '/docs/developers/l2/dev-node.md',
-                '/docs/developers/l2/deploy.md',
-                '/docs/developers/l2/new-fees.md',
-                '/docs/developers/l2/future.md',
-                '/docs/developers/l2/contracts-2.0.md',
-                '/docs/developers/l2/json-rpc.md',
-                '/docs/developers/l2/differences.md',
-              ],
-              collapsable: false,
-              sidebarDepth: 0,
-            },
-            {
-              title: 'Bridging L1 and L2',
-              children: [
-                // Common (standard bridge) before
-                // rare (messaging)
-                '/docs/developers/bridge/standard-bridge.md',
-                '/docs/developers/bridge/messaging.md'
-              ],
-              collapsable: false,
-              sidebarDepth: 0,
-            },
-            '/docs/developers/util.md',
-            '/docs/developers/talks.md'
+            '/docs/building-apps/basic-deploy.md',
+            '/docs/building-apps/favorite-tools.md',
+            '/docs/building-apps/transaction-fees.md',
+            '/docs/building-apps/system-contracts.md',
+            '/docs/building-apps/standard-bridge.md',
+            '/docs/building-apps/sending-messages.md',
+            '/docs/building-apps/dev-node.md',
+            '/docs/building-apps/network-node.md',
+            '/docs/building-apps/mainnet-deployment.md',
+            '/docs/building-apps/regenesis.md',
+            '/docs/building-apps/differences.md',
           ],
           collapsable: false,
           sidebarDepth: 0,
         },
         {
-          title: 'Infrastructure',
+          title: 'Useful Tools for Developers',
           children: [
-            '/docs/infra/networks.md',
-            [
-              'https://github.com/optimisticben/op-replica/blob/main/README.md',
-              'Running a Node'
-            ],
+            '/docs/useful-tools/networks.md',
+            '/docs/useful-tools/faucets.md',
+            '/docs/useful-tools/explorers.md',
+            '/docs/useful-tools/providers.md',
+            '/docs/useful-tools/running-a-node.md',
+            '/docs/useful-tools/monitoring.md',
+            '/docs/useful-tools/debugging.md',
             [
               'https://www.optimism.io/apps/tools',
-              'Third Party Tools'
-            ],            
-            '/docs/infra/monitoring.md',
+              'And a big list of other OE tools'
+            ],
           ],
           collapsable: false,
           sidebarDepth: 0,
         },
         {
-          title: 'Protocol Docs',
+          title: 'Under the Hood',
           children: [
-            '/docs/protocol/protocol-2.0.md',
-            '/docs/protocol/sequencing.md',
-            '/docs/protocol/challenges.md',
-            '/docs/protocol/protocol-readings.md',
-            [
-              'https://github.com/ethereum-optimism/optimistic-specs',
-              'Protocol Specs'
-            ]
+            '/docs/under-the-hood/theory.md',
           ],
           collapsable: false,
           sidebarDepth: 0,
@@ -131,11 +97,22 @@ module.exports = {
         {
           title: 'Retroactive Public Goods Funding',
           children: [
-            '/docs/pub-goods/talks.md',
-            [
-              'https://quadraticvote.co/event?id=2c357972-9b0d-4390-b738-32297b653cf1',
-              'Vote #1 results dashboard'
-            ]
+            '/docs/retropgf/what-is-retropgf.md',
+            '/docs/retropgf/resources.md',
+            '/docs/retropgf/rounds.md',
+          ],
+          collapsable: false,
+          sidebarDepth: 0,
+        },
+        {
+          title: 'Getting Involved',
+          children: [
+            '/docs/getting-involved/forums.md',
+            '/docs/getting-involved/contributing-to-code.md',
+            '/docs/getting-involved/contributing-to-protocol.md',
+            '/docs/getting-involved/contributing-to-retropgf.md',
+            '/docs/getting-involved/contributing-to-docs.md',
+            '/docs/getting-involved/other-ways.md',
           ],
           collapsable: false,
           sidebarDepth: 0,

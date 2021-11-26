@@ -1,5 +1,5 @@
 ---
-title: Welcome to Optimistic Ethereum
+title: Optimistic Ethereum Docs
 lang: en-US
 tags:
     - contracts
@@ -10,17 +10,20 @@ class: page
 
 # {{ $frontmatter.title }}
 
-You can see the documentation table of contents on the left sidebar. 
+Hello and welcome to the Optimistic Ethereum Docs!
+We aim to be the best source of technical information about [Optimistic Ethereum](https://optimistic.etherscan.io/).
 
-| What do you want to do?            | You should read                   |
-| ---------------------------------- | --------------------------------- |
-| Use apps on Optimistic Ethereum    | **User Docs**                     |
-| Administer operations for an app   | The above plus **Infrastructure** |
-| Develop an app                     | The above plus **Developer Docs** |
-| Understand why this is safe and cheap | **Protocol Specs**             |
+## Table of Contents
 
+<!-- TODO: Figure out how to automatically generate this -->
 
-::: tip Work in Progress™
-Our documentation, like most things in the world, is imperfect. 
-If you have questions or feel like something is missing feel free to ask in our [Discord server](https://discord.optimism.io) where we (and our awesome community) are actively responding, or [open an issue](https://github.com/ethereum-optimism/community-hub/issues) in the GitHub repo for this site.
-:::
+- Getting Started
+    - The Basics of Optimistic Ethereum
+        - What is Optimistic Ethereum?
+    - Using Optimistic Ethereum
+    - What to do on Optimistic Ethereum
+- 
+
+## Contributing
+
+<!-- TODO: Need to figure out how to draw more attention to the edit link that shows up at the bottom of these pages -->
