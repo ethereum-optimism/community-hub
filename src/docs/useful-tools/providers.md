@@ -26,8 +26,8 @@ Additional capacity can be purchased if needed.
 
 ### Supported Networks
 
-- ✅ Optimistic Ethereum
-- ✅ Optimistic Kovan
+- Optimistic Ethereum
+- Optimistic Kovan
 
 ## Infura
 
