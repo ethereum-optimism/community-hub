@@ -3,11 +3,6 @@ title: Running a Development Node
 lang: en-US
 ---
 
-::: tip OVM 2.0 Release Dates
-OVM 2.0 is already released on the Kovan test network.
-We expect to deploy it to the production Optimistic Ethereum network on November 11th.
-:::
-
 # {{ $frontmatter.title }}
 
 ::: tip
@@ -222,7 +217,7 @@ docker logs --follow <name of container>
 
 ### Getting contract addresses
 
-The [Optimistic Ethereum contracts](../../protocol/protocol.md#chain-contracts) 
+The [Optimistic Ethereum contracts](../../protocol/protocol-2.0.md#chain-contracts) 
 are already deployed on the development nodes. The contracts on L2 always have the 
 same addresses, so you can 
 [get them from the repository](https://github.com/ethereum-optimism/optimism/tree/ef5343d61708f2d15f51dca981f03ee4ac447c21/packages/contracts/deployments#predeploy-contracts). But the L1 addresses can vary, and

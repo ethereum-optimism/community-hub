@@ -1,25 +1,12 @@
 ---
-title: Contract Overview for OVM 2.0
+title: Contract Overview
 lang: en-US
 tags:
     - contracts
     - high-level
 ---
 
-::: tip OVM 2.0 Release Dates
-OVM 2.0 is already released on the Kovan test network.
-We expect to deploy it to the production Optimistic Ethereum network on November 11th.
-:::
-
-
-
 # {{ $frontmatter.title }}
-
-::: warning OVM 2.0 Page
-This page refers to the **new** state of Optimistic Ethereum after the
-OVM 2.0 update.
-:::
-
 
 ## Introduction
 
@@ -32,8 +19,6 @@ accessible to anyone.
 
 This document is intended for anyone looking for a deeper understanding of how the protocol works
 'under the hood'.
-If you just want to skip straight to integrating your smart contract application with
-OE, check out the [Developer Docs](../developers/l2/convert.md).
 
 Optimistic Ethereum is meant to look, feel and behave like Ethereum but cheaper and faster.
 For developers building on our OE, we aim to make the transition as seamless as possible.
@@ -84,15 +69,15 @@ lists of:
 The chain is composed of the following concrete contracts:
 <!-- concrete contracts stackex : -->
 
-### [`CanonicalTransactionChain`](https://github.com/ethereum-optimism/optimism/blob/experimental/packages/contracts/contracts/L1/rollup/CanonicalTransactionChain.sol) (CTC)
+### [`CanonicalTransactionChain`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/L1/rollup/CanonicalTransactionChain.sol) (CTC)
 
 The Canonical Transaction Chain (CTC) contract is an append-only log of transactions which must be applied to the OVM state. It defines the ordering of transactions by writing them to the `CTC:batches` instance of the Chain Storage Container. The CTC also allows any account to `enqueue()` an L2 transaction, which the Sequencer must  eventually append to the rollup state.
 
-### [`StateCommitmentChain`](https://github.com/ethereum-optimism/optimism/blob/experimental/packages/contracts/contracts/L1/rollup/StateCommitmentChain.sol) (SCC)
+### [`StateCommitmentChain`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/L1/rollup/StateCommitmentChain.sol) (SCC)
 
 The State Commitment Chain (SCC) contract contains a list of proposed state roots which Proposers assert to be a result of each transaction in the Canonical Transaction Chain (CTC). Elements here have a 1:1 correspondence with transactions in the CTC, and should be the unique state root calculated off-chain by applying the canonical transactions one by one.
 
-### [`ChainStorageContainer`](https://github.com/ethereum-optimism/optimism/blob/experimental/packages/contracts/contracts/L1/rollup/ChainStorageContainer.sol)
+### [`ChainStorageContainer`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/L1/rollup/ChainStorageContainer.sol)
 
 Provides reusable storage in the form of a "Ring Buffer" data structure, which will overwrite storage slots that are no longer needed. There are three Chain Storage Containers deployed, two are controlled by the CTC, one by the SCC.
 
@@ -113,7 +98,7 @@ change
 
 
 
-### [`BondManager`](https://github.com/ethereum-optimism/optimism/blob/experimental/packages/contracts/contracts/L1/verification/BondManager.sol)
+### [`BondManager`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/L1/verification/BondManager.sol)
 The Bond Manager contract handles deposits in the form of an ERC20 token from bonded Proposers. It also handles the accounting of gas costs spent by a Verifier during the course of a challenge. In the event of a successful challenge, the faulty Proposer's bond is slashed, and the Verifier's gas costs are refunded.
 
 
@@ -133,10 +118,10 @@ here](/docs/developers/bridge/messaging.html)
 
 The Bridge is composed of the following concrete contracts:
 
-### [`L1CrossDomainMessenger`](https://github.com/ethereum-optimism/optimism/blob/experimental/packages/contracts/contracts/L1/messaging/L1CrossDomainMessenger.sol)
+### [`L1CrossDomainMessenger`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/L1/messaging/L1CrossDomainMessenger.sol)
 The L1 Cross Domain Messenger (L1xDM) contract sends messages from L1 to L2, and relays messages from L2 onto L1. In the event that a message sent from L1 to L2 is rejected for exceeding the L2 epoch gas limit, it can be resubmitted via this contract's replay function.
 
-### [`L2CrossDomainMessenger`](https://github.com/ethereum-optimism/optimism/blob/experimental/packages/contracts/contracts/L2/messaging/L2CrossDomainMessenger.sol)
+### [`L2CrossDomainMessenger`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/L2/messaging/L2CrossDomainMessenger.sol)
 The L2 Cross Domain Messenger (L2xDM) contract sends messages from L2 to L1, and is the entry point for L2 messages sent via the L1 Cross Domain Messenger.
 
 
@@ -150,14 +135,14 @@ Optimistic Ethereum tokens and releases the locked L1 tokens. [More details
 are here](/docs/developers/bridge/standard-bridge.html)
 
 
-### [`L1StandardBridge`](https://github.com/ethereum-optimism/optimism/blob/experimental/packages/contracts/contracts/L1/messaging/L1StandardBridge.sol)
+### [`L1StandardBridge`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/L1/messaging/L1StandardBridge.sol)
 The L1 part of the Standard Bridge. Responsible for finalising withdrawals from L2 and initiating deposits into L2 of ETH and compliant ERC20s.
 
 
-### [`L2StandardBridge`](https://github.com/ethereum-optimism/optimism/blob/experimental/packages/contracts/contracts/L2/messaging/L2StandardBridge.sol)
+### [`L2StandardBridge`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/L2/messaging/L2StandardBridge.sol)
 The L2 part of the Standard Bridge. Responsible for finalising deposits from L1 and initiating withdrawals from L2 of ETH and compliant ERC20s.
 
-### [`L2StandardTokenFactory`](https://github.com/ethereum-optimism/optimism/blob/experimental/packages/contracts/contracts/L2/messaging/L2StandardTokenFactory.sol)
+### [`L2StandardTokenFactory`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/L2/messaging/L2StandardTokenFactory.sol)
 
 Factory contract for creating standard L2 token representations of L1 ERC20s compatible with and working on the standard bridge. 
 [See here for more information](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/standard-bridge-standard-token).
@@ -167,15 +152,15 @@ Factory contract for creating standard L2 token representations of L1 ERC20s com
 
 "Predeploys" are a set of essential L2 contracts which are deployed and available in the genesis state of the system. These contracts are similar to Ethereum's precompiles, however they are written in Solidity and can be found in the OVM at addresses prefixed with 0x42.
 
-Looking up predeploys is available in the Solidity library [`Lib_PredeployAddresses`](https://github.com/ethereum-optimism/optimism/blob/experimental/packages/contracts/contracts/libraries/constants/Lib_PredeployAddresses.sol) as well as in the `@eth-optimism/contracts` package as `predeploys` export.
+Looking up predeploys is available in the Solidity library [`Lib_PredeployAddresses`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/libraries/constants/Lib_PredeployAddresses.sol) as well as in the `@eth-optimism/contracts` package as `predeploys` export.
 
 The following concrete contracts are predeployed:
 
-### [`OVM_DeployerWhitelist`](https://github.com/ethereum-optimism/optimism/blob/experimental/packages/contracts/contracts/L2/predeploys/OVM_DeployerWhitelist.sol)
+### [`OVM_DeployerWhitelist`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/L2/predeploys/OVM_DeployerWhitelist.sol)
 The Deployer Whitelist is a temporary predeploy used to provide additional safety during the initial phases of our mainnet roll out. It is owned by the Optimism team, and defines accounts which are allowed to deploy contracts on Layer 2. The Execution Manager will only allow a `CREATE` or `CREATE2` operation to proceed if the deployer's address whitelisted.
 
 
-### [`OVM_L1MessageSender`](https://github.com/ethereum-optimism/optimism/blob/experimental/packages/contracts/contracts/L2/predeploys/iOVM_L1MessageSender.sol)
+### [`OVM_L1MessageSender`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/L2/predeploys/iOVM_L1MessageSender.sol)
 
 The L1MessageSender is a predeployed contract running on L2.
 During the execution of cross domain transaction from L1 to L2, it returns the address of the L1 account (either an EOA or contract) which sent the message to L2 via the Canonical Transaction Chain's `enqueue()` function.
@@ -185,7 +170,7 @@ the interface linked above still works as if it were. In this way
 it is similar to the EVM's predeploys.
 
 
-### [`OVM_L2ToL1MessagePasser`](https://github.com/ethereum-optimism/optimism/blob/experimental/packages/contracts/contracts/L2/predeploys/OVM_L2ToL1MessagePasser.sol)
+### [`OVM_L2ToL1MessagePasser`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/L2/predeploys/OVM_L2ToL1MessagePasser.sol)
 The L2 to L1 Message Passer is a utility contract which facilitate an L1 proof of the  of a message on L2. The L1 Cross Domain Messenger performs this proof in its _verifyStorageProof function, which verifies the existence of the transaction hash in this  contract's `sentMessages` mapping.
 
 <!--
@@ -193,7 +178,7 @@ The L2 to L1 Message Passer is a utility contract which facilitate an L1 proof o
 The Sequencer Entrypoint is a predeploy which, despite its name, can in fact be called by  any account. It accepts a more efficient compressed calldata format, which it decompresses and  encodes to the standard EIP155 transaction format. This contract is the implementation referenced by the Proxy Sequencer Entrypoint, thus enabling the Optimism team to upgrade the decompression of calldata from the Sequencer.
 --> 
 
-### [`OVM_SequencerFeeVault`](https://github.com/ethereum-optimism/optimism/blob/experimental/packages/contracts/contracts/L2/predeploys/OVM_SequencerFeeVault.sol)
+### [`OVM_SequencerFeeVault`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/L2/predeploys/OVM_SequencerFeeVault.sol)
 This contract holds fees paid to the sequencer until there is enough to 
 justify the transaction cost of sending them to L1 where they are used to
 pay for L1 transaction costs (mostly the cost of publishing all L2 transaction
@@ -220,7 +205,7 @@ service that lets addresses report what interfaces they support and ask
 about other addresses. 
 -->
 
-### [`Lib_AddressManager`](https://github.com/ethereum-optimism/optimism/blob/experimental/packages/contracts/contracts/libraries/resolver/Lib_AddressManager.sol)
+### [`Lib_AddressManager`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/libraries/resolver/Lib_AddressManager.sol)
 This is a library that stores the mappings between names and their addresses.
 It is used by `L1CrossDomainMessenger`.
 

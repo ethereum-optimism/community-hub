@@ -3,14 +3,7 @@ title: Networks and Connection Details
 lang: en-US
 ---
 
-
-::: tip OVM 2.0 Release Dates
-OVM 2.0 is already released on the Kovan test network.
-We expect to deploy it to the production Optimistic Ethereum network on November 11th.
-:::
-
 # {{ $frontmatter.title }}
-
 
 ## Development Node
 
@@ -30,7 +23,7 @@ This is the information for a
 ## Optimistic Kovan
 
 ::: tip Purpose
-This is our **test** network. You're welcome to deploy whatever contracts to wish to test here. This network is already OVM 2.0.
+This is our **test** network. You're welcome to deploy whatever contracts to wish to test here, no whitelist required
 :::
 
 | Parameter | Value |
@@ -54,10 +47,9 @@ we will open it up to anybody who wants to deploy, but we need to do more develo
 and testing before we get there. 99.9% secure is not good enough.
 
 When you are ready to deploy to production please fill up 
-[this form](https://docs.google.com/forms/d/e/1FAIpQLSfBGsJN3nZQRLdMjqCS_svfQoPkn35o_cc4HUVnLlXN2BHmPw/viewform) 
+[this form](https://p02pp4m8did.typeform.com/to/zRajq1Fl) 
 and we'll get back to you.
 
-This network is still OVM 1.0
 :::
 
 | Parameter | Value |

@@ -5,11 +5,6 @@ lang: en-US
 
 # {{ $frontmatter.title }}
 
-::: tip OVM 2.0 Release Dates
-OVM 2.0 is already released on the Kovan test network.
-We expect to deploy it to the production Optimistic Ethereum network on November 11th.
-:::
-
 ## Why use Optimistic Ethereum?
 
 The Optimistic Ethereum network lets you send transactions, similar to Ethereum, but
@@ -17,7 +12,7 @@ with two important advantages:
 
 * **Near-instant transaction finality.** You know almost immediately if your transaction took place
   or not.
-* **Much lower transaction fees.** Typically between a 1% and 10% of of the cost on L1.
+* **Much lower transaction fees.** Typically between a 1% and 10% of the cost on L1.
   [For the current gas price and a few sample transactions' costs,
   see here](https://public-grafana.optimism.io/d/9hkhMxn7z/public-dashboard?orgId=1&refresh=5m).
 * **Decentralization.** All transactions are posted to L1 Ethereum, inheriting the strong security guarantees of Ethereum
