@@ -68,8 +68,7 @@ module.exports = {
               // expect people will do things, followed by
               // more advanced topics such as RPC and Block Time
               children: [
-                '/docs/developers/l2/dev-node.md',
-                '/docs/developers/l2/tooling-2.0.md',                
+                '/docs/developers/l2/dev-node.md',              
                 '/docs/developers/l2/differences.md',                
                 '/docs/developers/l2/deploy.md',
                 '/docs/developers/l2/new-fees.md',
