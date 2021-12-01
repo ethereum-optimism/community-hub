@@ -1,7 +1,7 @@
 const { description } = require('../../package')
 
 module.exports = {
-  title: 'Stay Optimistic',
+  title: 'Optimistic Ethereum Docs',
   description: description,
 
   head: [
@@ -25,7 +25,7 @@ module.exports = {
     },
     nav: [
       {
-        text: 'home',
+        text: 'optimism',
         link: 'https://www.optimism.io',
       },      
       {
@@ -50,7 +50,7 @@ module.exports = {
             '/docs/users/withdrawal.md',
             [
               'https://www.optimism.io/apps/all',
-              'Applications on Optimistic Ethereum'
+              'Apps on Optimistic Ethereum'
             ],   
             '/docs/users/fees-2.0.md'          
           ],
