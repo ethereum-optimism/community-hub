@@ -86,8 +86,7 @@ There are two easy ways to achieve multisig functionality on Optimistic Ethereum
 ## PolyNetwork
 
 * [Docs](https://github.com/polynetwork/docs/tree/master/eth)
-
-<!-- asked for addresses on Discord, 11/30/2021 -->
+* [Addresses](https://github.com/polynetwork/docs/blob/master/config/README.md#optimistic)
 
 ## Rari Capital Nova
 
