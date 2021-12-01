@@ -118,7 +118,7 @@ module.exports = {
           children: [
             '/docs/protocol/protocol-2.0.md',
             '/docs/protocol/sequencing.md',
-            '/docs/protocol/fraud-proofs.md',
+            '/docs/protocol/challenges.md',
             '/docs/protocol/protocol-readings.md',
             [
               'https://github.com/ethereum-optimism/optimistic-specs',

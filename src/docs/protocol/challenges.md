@@ -1,12 +1,14 @@
 ---
-title: Fraud Proofs
+title: Transaction Challenges
 lang: en-US
 ---
 
 # {{ $frontmatter.title }}
 
-::: tip Security Model
-Optimistic Ethereum is still in beta, and not all security features are currently active.  You can check out an up-to-date analysis of the current security model [here](https://l2beat.com/projects/optimism/).
+::: tip NOTICE
+Optimistic Ethereum is still in beta.
+**As of the [OVM 2.0 upgrade](https://medium.com/ethereum-optimism/introducing-evm-equivalence-5c2021deb306), the Transaction Challenge process described in this article has been temporarily disabled as we rebuild the mechanism for the new EVM equivalent version of the Optimistic Etheruem protocol.**
+You can check out an up-to-date analysis of the current security model [here](https://l2beat.com/projects/optimism/).
 :::
 
 Optimistic Ethereum is secured by a set of dispute contracts which live on Layer 1. Bonded "proposers" can make a claim about the state of the chain, and the dispute contracts allow for anybody watching the chain (a "verifier") to challenge malicious proposals. If a proposal goes unchallenged for enough time (the "challenge period", currently set to 1 week), then it is considered finalized. This allows the system to enforce that only correct proposals are finalized, and the rest are rejected, so long as 1 honest verifier responds before the week is up.
