@@ -81,8 +81,7 @@ There are two easy ways to achieve multisig functionality on Optimistic Ethereum
 ## Lyra
 
 * [Docs](https://docs.lyra.finance/implementation/lyra-protocol-architecture)
-
-<!-- asked for addresses on Discord, 11/30/2021 -->
+* [Addresses (the are the same on all networks)](https://raw.githubusercontent.com/lyra-finance/lyra-protocol/master/deployments/mainnet-ovm/lyra.json)
 
 ## PolyNetwork
 
