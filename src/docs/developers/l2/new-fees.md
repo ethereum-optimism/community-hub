@@ -42,7 +42,7 @@ Because the **L1 security fee** is the major cost of transactions, it is critica
 
 ## For Frontend and Wallet developers
 - We recommend displaying an estimated fee to users via the following math:
-   1. To estimate the L1 (security) fee that the user should expect to pay. For example, calculating the L1 fee for sending a USDC transfer:
+   1. To estimate the L1 (security) fee that the user should expect to pay. For example, calculating the L1 fee for sending a WETH transfer:
 
       ```jsx
       import { getContractFactory, predeploys }from '@eth-optimism/contracts'
@@ -64,7 +64,8 @@ Because the **L1 security fee** is the major cost of transactions, it is critica
 
 - You should *not* allow users to change their `tx.gasPrice`
    - If they lower it, their transaction will get reverted
-   - If they increase it, they willl still have their tx immediately included, but will have overpaid.
+   - If they increase it, they will get their transaction included immediately (same as with the  
+     correct price) but at a higher cost
 - Users are welcome to change their `tx.gasLimit` as it functions exactly like on L1
 - You can show the math :
 
