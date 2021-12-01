@@ -18,6 +18,6 @@ An L1 to L2 message can trigger contract execution on L2. The gas limit for that
 Each message from L2 to L1 requires two transactions:
 
 1. An L2 transaction that *initiates* the transaction, which is priced the same way that Sequencer transactions are priced.
-1. An L1 transaction that *finalizes* the transaction. This transaction can only be submitted after the [verification challenge period (one week on mainnet)](../../protocol/fraud-proofs.md) has passed. This transaction is expensive because it includes verifying a [Merkle trie](https://eth.wiki/fundamentals/patricia-tree) inclusion proof.
+1. An L1 transaction that *finalizes* the transaction. This transaction can only be submitted after the [transaction challenge period (one week on mainnet)](../../protocol/challenges.md) has passed. This transaction is expensive because it includes verifying a [Merkle trie](https://eth.wiki/fundamentals/patricia-tree) inclusion proof.
 
 The total cost of an L2 to L1 transaction is therefore the combined cost of the L2 initialization transaction and the L1 finalization transaction. The L1 finalization transaction cost is typically the more expensive one.
