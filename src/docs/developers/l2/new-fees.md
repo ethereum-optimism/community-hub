@@ -16,20 +16,18 @@ Every Optimistic Ethereum transaction has two costs:
 
 1. The **L1 security fee** pays for the cost of publishing the transaction on L1 (the cost of Ethereum equivalent security). It is deducted automatically from the user's ETH balance on Optimistic Ethereum. It is based on two factors:
 
-   - `l1GasPrice` is the current gas price for L1 transactions. You can see it [here](https://public-grafana.optimism.io/d/9hkhMxn7z/public-dashboard?orgId=1&refresh=5m).
+   - `l1GasPrice` is the gas price for L1 transactions (when the transaction was processed). You can see the current value [here](https://public-grafana.optimism.io/d/9hkhMxn7z/public-dashboard?orgId=1&refresh=5m).
 
-   - The transaction's call data, because that call data has to be written on L1 as part of publishing the transaction. [Call data costs approximately 16 gas per byte](https://eips.ethereum.org/EIPS/eip-2028).
+   - The transaction's call data, because that call data has to be written on L1 as part of publishing the transaction. [Call data costs four gas for bytes containing zero, sixteen gas for bytes containing any other value](https://eips.ethereum.org/EIPS/eip-2028).
 
-   The exact function is `l1GasPrice * 1.5 * (2750 + calldata gas)`. 
+   The exact function is `l1GasPrice * 1.5 * (2750 + 16*nonzeroBytes + 4*zeroBytes)`. 
 
 
-For example, lets look at [this transaction](https://kovan-optimistic.etherscan.io/tx/0xcf2e2f7f7088e4332a2b5369f85b1bafa8a8a007122e228d90778a1d14c41286). The **L2 execution fee** is the gas used, `195,057`, times the current l2 gas price, which is 0.001 gwei. In other words, approximately 195 gwei. The **L1 security fee**, on the other hand, is based on a gas usage of of `1.5 * (2750 + 16*11 + 4*25)` (bytes with zero only cost four gas), or 4539 gas. At the current L1 gas price of 150 gwei, this costs 680,850 gwei, about 3500 times the 
+For example, lets look at [this transaction](https://kovan-optimistic.etherscan.io/tx/0xcf2e2f7f7088e4332a2b5369f85b1bafa8a8a007122e228d90778a1d14c41286). The **L2 execution fee** is the gas used, `195,057`, times the l2 gas price at the time, which was 0.001 gwei. In other words, approximately 195 gwei. The **L1 security fee**, on the other hand, is based on a gas usage of of `1.5 * (2750 + 16*11 + 4*25)`, or 4539 gas. At the current L1 gas price of 150 gwei, this costs 680,850 gwei, about 3500 times the 
 **L2 execution fee**.
 
 ::: tip 
 This transaction is typical. In almost all cases **L2 execution fee** is negligible compared to the **L1 security fee**. 
-
-Because the **L1 security fee** is the major cost of transactions, it is critical for wallets to display the **L1 security fee** to the user before the user approves the transaction.
 :::
 
 
