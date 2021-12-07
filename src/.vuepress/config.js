@@ -69,7 +69,6 @@ module.exports = {
               // more advanced topics such as RPC and Block Time
               children: [
                 '/docs/developers/l2/dev-node.md',
-                '/docs/developers/l2/deploy.md',
                 '/docs/developers/l2/new-fees.md',
                 '/docs/developers/l2/future.md',
                 '/docs/developers/l2/contracts-2.0.md',

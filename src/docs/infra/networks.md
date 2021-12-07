@@ -23,7 +23,7 @@ This is the information for a
 ## Optimistic Kovan
 
 ::: tip Purpose
-This is our **test** network. You're welcome to deploy whatever contracts to wish to test here, no whitelist required
+This is our **test** network.
 :::
 
 | Parameter | Value |
@@ -39,17 +39,8 @@ This is our **test** network. You're welcome to deploy whatever contracts to wis
 
 ## Optimistic Ethereum
 
-::: tip Restricted Access
-This is our production network, our equivalent of mainnet.
-We currently have a whitelist system in place that limits who can deploy contracts 
-to this network for reasons of performance, availability, and security. Eventually
-we will open it up to anybody who wants to deploy, but we need to do more development
-and testing before we get there. 99.9% secure is not good enough.
-
-When you are ready to deploy to production please fill up 
-[this form](https://p02pp4m8did.typeform.com/to/zRajq1Fl) 
-and we'll get back to you.
-
+::: tip Purpose
+This is our production network, our equivalent of mainnet. It *used* to require whitelisting, but that is no longer the case.
 :::
 
 | Parameter | Value |
