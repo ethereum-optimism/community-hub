@@ -30,7 +30,7 @@ module.exports = {
       },
       {
         text: 'faqs',
-        link: 'https://www.optimism.io/faqs',
+        link: 'https://optimismhelp.zendesk.com/hc/en-us/categories/4411903430427-FAQ',
       },
       {
         text: 'discord',
@@ -39,8 +39,9 @@ module.exports = {
     ],
     sidebar: [
         [
-          'https://intercom.help/optimism/en/',
-          'User Docs & Help Center '
+          // In the sidebar for now because that is where people expect it
+          'https://help.optimism.io',
+          'User Docs & Help Center'
         ],
         {
           title: 'Developer Docs',
