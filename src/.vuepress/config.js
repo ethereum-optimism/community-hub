@@ -97,18 +97,20 @@ module.exports = {
           sidebarDepth: 0,
         },
         {
-          title: 'Infrastructure',
+          title: 'Useful Tools for Developers',
           children: [
-            '/docs/infra/networks.md',
+            '/docs/useful-tools/networks.md',
+            '/docs/useful-tools/faucets.md',
+            '/docs/useful-tools/explorers.md',
             [
               'https://github.com/optimisticben/op-replica/blob/main/README.md',
               'Running a Node'
             ],
             [
               'https://www.optimism.io/apps/tools',
-              'Third Party Tools'
+              'Third Party Tools on OE'
             ],            
-            '/docs/infra/monitoring.md',
+            '/docs/useful-tools/monitoring.md',
           ],
           collapsable: false,
           sidebarDepth: 0,
