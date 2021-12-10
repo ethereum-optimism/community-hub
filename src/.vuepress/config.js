@@ -65,6 +65,23 @@ module.exports = {
             '/docs/developers/build/dev-node.md',
             '/docs/developers/build/run-a-node.md',
             '/docs/developers/build/differences.md',
+          ]
+        },
+        {
+          title: 'Useful Tools for Developers',
+          children: [
+            '/docs/useful-tools/networks.md',
+            '/docs/useful-tools/faucets.md',
+            '/docs/useful-tools/explorers.md',
+            [
+              'https://github.com/optimisticben/op-replica/blob/main/README.md',
+              'Running a Node'
+            ],
+            [
+              'https://www.optimism.io/apps/tools',
+              'Third Party Tools on OE'
+            ],
+            '/docs/useful-tools/monitoring.md',
           ],
           collapsable: true,
         },

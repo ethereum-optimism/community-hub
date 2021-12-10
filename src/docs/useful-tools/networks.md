@@ -1,40 +1,42 @@
 ---
-title: Networks and Public RPC Endpoints
+title: Networks and public RPC endpoints
 lang: en-US
 ---
 
 # {{ $frontmatter.title }}
 
-## Optimism (mainnet)
+## Optimistic Ethereum (OE mainnet)
 
-::: tip Point and deploy
-We recently removed our whitelist! This means that anyone can deploy onto Optimism. However, if you want support getting live on Optimism, or if you want some PR hype you can apply [here](https://optimismpbc.typeform.com/get-in-touch).
+::: tip Restricted Access
+This is our production network, our equivalent of mainnet.
+We currently have a whitelist system in place that limits who can deploy contracts
+to this network for reasons of performance, availability, and security. Eventually
+we will open it up to anybody who wants to deploy, but we need to do more development
+and testing before we get there. 99.9% secure is not good enough.
+
+When you are ready to deploy to production please fill up
+[this form](https://p02pp4m8did.typeform.com/to/zRajq1Fl)
+and we'll get back to you.
+TODO remove whitelist mention
 :::
 
 | Parameter | Value |
 | --------- | ----- |
 | Network Name | **`Optimism`** |
-| Description | **`Mainnet`** |
+| Description | **`Mainnet (restricted)`** |
 | Chain ID | **`10`** |
 | Explorer | **`https://optimistic.etherscan.io`** |
-| HTTP Endpoint | **`https://mainnet.optimism.io`** _Not for production systems._ See the list of available RPC endpoints below |
+| HTTP Endpoint | **`https://mainnet.optimism.io`**  _Not for production systems._ See the list of available RPC endpoints below |
 | WebSocket Endpoint | **`wss://ws-mainnet.optimism.io`** |
 | L1 Contract Addresses | [link](https://github.com/ethereum-optimism/optimism/tree/ef5343d61708f2d15f51dca981f03ee4ac447c21/packages/contracts/deployments#mainnet) |
 | L2 Contract Addresses | [link](https://github.com/ethereum-optimism/optimism/tree/ef5343d61708f2d15f51dca981f03ee4ac447c21/packages/contracts/deployments#layer-2) |
 
-### RPC endpoints
-
-Please set up a private RPC endpoint with any of the following providers:
-- [Alchemy](https://www.alchemy.com/layer2/optimism)
-- [Infura](https://blog.infura.io/what-is-optimistic-ethereum/)
-- [QuickNode](https://www.quicknode.com/chains/optimism)
-
-The public endpoints are provided as a convenience in order to make it easier to develop dApps on Optimism. **These public endpoints are strictly rate limited and should not be used in production systems**.
+### Public RPC endpoints
 
 - HTTP endpoint: [https://mainnet.optimism.io](https://mainnet.optimism.io)
 - WebSocket endpoint: [wss://ws-mainnet.optimism.io](wss://ws-mainnet.optimism.io)
 
-## Optimism Kovan (testnet)
+## Optimistic Kovan (testnet)
 
 ::: tip Purpose
 This is our **test** network.
@@ -51,17 +53,11 @@ This is our **test** network.
 | L1 Contract Addresses | [link](https://github.com/ethereum-optimism/optimism/tree/ef5343d61708f2d15f51dca981f03ee4ac447c21/packages/contracts/deployments#kovan) |
 | L2 Contract Addresses | [link](https://github.com/ethereum-optimism/optimism/tree/ef5343d61708f2d15f51dca981f03ee4ac447c21/packages/contracts/deployments#layer-2) |
 
-### RPC endpoints
-
-Please set up a private RPC endpoint with any of the following providers:
-- [Alchemy](https://www.alchemy.com/layer2/optimism)
-- [Infura](https://blog.infura.io/what-is-optimistic-ethereum/)
-- [QuickNode](https://www.quicknode.com/chains/optimism)
-
 ## Development Node (local)
 
 ::: tip Purpose
-This is the information for a [local development node](../developers/build/dev-node.md).
+This is the information for a
+[local development node](../developers/l2/dev-node.md).
 :::
 
 | Parameter | Value |
