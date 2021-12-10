@@ -70,13 +70,14 @@ module.exports = {
         {
           title: 'Useful Tools for Developers',
           children: [
-            '/docs/useful-tools/networks.md',
             '/docs/useful-tools/faucets.md',
+            '/docs/useful-tools/monitoring.md',
             '/docs/useful-tools/explorers.md',
             '/docs/useful-tools/providers.md',
+            '/docs/useful-tools/networks.md',
             [
               'https://github.com/optimisticben/op-replica/blob/main/README.md',
-              'Running a Node'
+              'Running a Network Node'
             ],
             [
               'https://www.optimism.io/apps/tools',
