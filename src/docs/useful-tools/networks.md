@@ -1,5 +1,5 @@
 ---
-title: Networks and public RPC endpoints
+title: Networks and Public RPC Endpoints
 lang: en-US
 ---
 
