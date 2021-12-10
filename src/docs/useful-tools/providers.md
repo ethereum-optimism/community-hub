@@ -1,5 +1,5 @@
 ---
-title: Node providers
+title: Node Providers
 lang: en-US
 ---
 
