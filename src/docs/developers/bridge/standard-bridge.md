@@ -1,5 +1,5 @@
 ---
-title: Using the Standard Bridge
+title: Using the Standard Token Bridge
 lang: en-US
 ---
 
