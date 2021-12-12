@@ -5,12 +5,6 @@ lang: en-US
 
 # {{ $frontmatter.title }}
 
-* [Optimism public dashboard](https://public-grafana.optimism.io/d/9hkhMxn7z/public-dashboard?orgId=1&refresh=5m)
-* [Etherscan dashboard](https://optimistic.etherscan.io/)
-* [Dune analytics](https://dune.xyz/browse) has multiple Optimism dashboards, and you can also
-  [create your own](https://docs.dune.xyz/#queries)
-
-
 ## Optimism's public Grafana dashboard
 
 [Optimism](https://optimism.io) maintains a [public Grafana dashboard](https://public-grafana.optimism.io/d/9hkhMxn7z/public-dashboard?orgId=1&refresh=5m) that tracks gas prices, transaction volume, and network uptime in one place.
@@ -25,7 +19,7 @@ Check out the [mainnet explorer](https://optimistic.etherscan.io/) or the [testn
 ## Dashboards on Dune Analytics
 
 [Dune Analytics](https://dune.xyz) allows anyone to create dashboards that present information about Optimistic Ethereum.
-You can find a full list of community created dashboards for Optimistic Ethereum [here](https://dune.xyz/browse/dashboards?q=optimism).
+You can find a full list of community created dashboards for Optimistic Ethereum [here](https://dune.xyz/browse/dashboards?q=optimism), or [create your own](https://docs.dune.xyz/#queries) dashboard.
 
 Here are some of our favorite dashboards so far:
 
