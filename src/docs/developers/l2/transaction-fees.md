@@ -1,5 +1,5 @@
 ---
-title: Transaction Fees for Developers
+title: Transaction Fees on L2
 lang: en-US
 ---
 
