@@ -43,7 +43,8 @@ This transaction is typical. In almost all cases **L2 execution fee** is negligi
 
       ```jsx
       import { getContractFactory, predeploys }from '@eth-optimism/contracts'
-      import { ethers } from 'ethers'
+      import { serialize } from '@ethersproject/transactions'
+      import { Contract } from 'ethers'
       const OVM_GasPriceOracle = getContractFactory('OVM_GasPriceOracle')
             .attach(predeploys.OVM_GasPriceOracle)
       const WETH = new Contract(...) //Contract with no signer
