@@ -48,7 +48,7 @@ contract MyOtherContract {
     function doTheThing(address myContractAddress, uint256 myFunctionParam) public {
         myContractAddress.call(
             abi.encodeWithSignature(
-                "doSomething(uint256)",
+                "doSomething()",
                 myFunctionParam
             )
         );
@@ -108,7 +108,7 @@ contract MyOtherContract {
         ovmL1CrossDomainMessenger.sendMessage(
             myOptimisticContractAddress,
             abi.encodeWithSignature(
-                "doSomething(uint256)",
+                "doSomething()",
                 myFunctionParam
             ),
             1000000 // use whatever gas limit you want
