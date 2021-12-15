@@ -92,6 +92,7 @@ module.exports = {
             '/docs/developers/util.md',
             '/docs/developers/talks.md',
             '/docs/developers/known-issues.md',
+            '/docs/developers/contact-us.md'            
           ],
           collapsable: false,
           sidebarDepth: 0,
