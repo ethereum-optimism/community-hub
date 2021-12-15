@@ -1,7 +1,7 @@
 const { description } = require('../../package')
 
 module.exports = {
-  title: 'Stay Optimistic',
+  title: 'Optimistic Ethereum Docs',
   description: description,
 
   head: [
@@ -25,7 +25,7 @@ module.exports = {
     },
     nav: [
       {
-        text: 'home',
+        text: 'optimism',
         link: 'https://www.optimism.io',
       },      
       {
@@ -50,7 +50,7 @@ module.exports = {
             '/docs/users/withdrawal.md',
             [
               'https://www.optimism.io/apps/all',
-              'Applications on Optimistic Ethereum'
+              'Apps on Optimistic Ethereum'
             ],   
             '/docs/users/fees-2.0.md'          
           ],
@@ -71,15 +71,12 @@ module.exports = {
               // more advanced topics such as RPC and Block Time
               children: [
                 '/docs/developers/l2/dev-node.md',
-                '/docs/developers/l2/tooling-2.0.md',                
-                '/docs/developers/l2/convert-2.0.md',                
                 '/docs/developers/l2/deploy.md',
-                '/docs/developers/l2/changeset.md',
                 '/docs/developers/l2/new-fees.md',
                 '/docs/developers/l2/future.md',
-                '/docs/developers/l2/contracts-2.0.md',                
-                '/docs/developers/l2/block-time.md',
-                '/docs/developers/l2/rpc-2.0.md',                
+                '/docs/developers/l2/contracts-2.0.md',
+                '/docs/developers/l2/json-rpc.md',
+                '/docs/developers/l2/differences.md',
               ],
               collapsable: false,
               sidebarDepth: 0,
@@ -127,10 +124,9 @@ module.exports = {
         {
           title: 'Protocol Docs',
           children: [
-            '/docs/protocol/protocol-2.0.md',            
-            '/docs/protocol/evm-comparison.md',
+            '/docs/protocol/protocol-2.0.md',
             '/docs/protocol/sequencing.md',
-            '/docs/protocol/fraud-proofs.md',
+            '/docs/protocol/challenges.md',
             '/docs/protocol/protocol-readings.md',
             [
               'https://github.com/ethereum-optimism/optimistic-specs',
@@ -151,21 +147,6 @@ module.exports = {
           ],
           collapsable: false,
           sidebarDepth: 0,
-        },
-        {
-          title: "OVM 1.0 docs",
-          collapsable: true,
-          sidebarDepth: 0,
-          children: [
-            '/docs/users/fees.md',
-            '/docs/developers/l2/hardhat.md',
-            '/docs/developers/l2/truffle.md',
-            '/docs/developers/l2/convert.md',    
-            '/docs/developers/fees.md',
-            '/docs/developers/l2/contracts.md',                
-            '/docs/developers/l2/rpc.md',                 
-            '/docs/protocol/protocol.md',            
-          ]
         }
     ]
   },

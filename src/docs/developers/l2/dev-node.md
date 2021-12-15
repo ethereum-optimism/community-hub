@@ -3,20 +3,35 @@ title: Running a Development Node
 lang: en-US
 ---
 
-::: tip OVM 2.0 Release Dates
-OVM 2.0 is already released on the Kovan test network.
-We expect to deploy it to the production Optimistic Ethereum network on November 11th.
-:::
-
 # {{ $frontmatter.title }}
 
 ::: tip
-You can [check out one of the getting started tutorials](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/hardhat) for a step-by-step guide to using a development node.
+You can [check out one of the getting started tutorials](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/hardhat) for a step-by-step guide to creating and using a development node.
 You can also find some more detailed information about working with the development node on the [Optimism monorepo](https://github.com/ethereum-optimism/optimism#development-quick-start).
 :::
 
-You'll need a development node to be able to test your app against Optimistic Ethereum.
-Here we'll go over the basic steps to build and start your own development node.
+## What is this?
+
+A development node is a local installation of Optimistic Ethereum.
+Having such an installation lets you debug your optimistic 
+application with the performance of a local server before you 
+"graduate" to 
+[our testnet](../../infra/networks.md#optimistic-kovan) prior
+to a mainnet deployment.
+
+### What does it include?
+
+Hopefully, everything you need to test an optimistic application:
+
+1. An L1 network available at https://localhost:9545.
+1. An L2 network available at https://localhost:8545.
+1. An account with 10k ETH to spend on testing (the account
+   mnemonic is 
+   `test test test test test test test test test test test junk`).
+1. All the Optimistic Ethereum contracts and servers for cross
+   domain communications, except that the challenge period is
+   a few seconds instead of a week.   
+
 
 ## Prerequisites
 
@@ -31,8 +46,7 @@ You'll need to install the following before you can continue:
 ## Creating a node
 
 You can either download the docker images from [Docker 
-Hub](https://hub.docker.com/u/ethereumoptimism) or build the software 
-from the [source code](https://github.com/ethereum-optimism/optimism).
+Hub](https://hub.docker.com/u/ethereumoptimism) or build the software from the [source code](https://github.com/ethereum-optimism/optimism).
 
 
 ### Downloading the docker images
@@ -64,11 +78,11 @@ If you want to download the images, perform these steps:
    docker-compose -f docker-compose-nobuild.yml up -t 600 --no-start
    ``` 
 
-   If you want to start the development node as soon as it is downloaded,
-   remove the `--no-start` argument.
+   If you want to start the development node as soon as 
+   it is downloaded, remove the `--no-start` argument.
 
-   You might get a timeout at first. If that is the case, just run the 
-   `docker-compose` command again.
+   You might get a timeout at first. If that is the case, just 
+   run the `docker-compose` command again.
 
 
 ### Building from source
@@ -203,7 +217,7 @@ docker logs --follow <name of container>
 
 ### Getting contract addresses
 
-The [Optimistic Ethereum contracts](../../protocol/protocol.md#chain-contracts) 
+The [Optimistic Ethereum contracts](../../protocol/protocol-2.0.md#chain-contracts) 
 are already deployed on the development nodes. The contracts on L2 always have the 
 same addresses, so you can 
 [get them from the repository](https://github.com/ethereum-optimism/optimism/tree/ef5343d61708f2d15f51dca981f03ee4ac447c21/packages/contracts/deployments#predeploy-contracts). But the L1 addresses can vary, and

@@ -1,19 +1,9 @@
 ---
-title: Fee Scheme in OVM 2.0
+title: Transaction Fees for Developers
 lang: en-US
 ---
 
-::: tip OVM 2.0 Release Dates
-OVM 2.0 is already released on the Kovan test network.
-We expect to deploy it to the production Optimistic Ethereum network on November 11th.
-:::
-
 # {{ $frontmatter.title }}
-
-::: warning OVM 2.0 Page
-This page refers to the **new** state of Optimistic Ethereum after the
-OVM 2.0 update. 
-:::
 
 You can see how the fee is calculated and deducted [here](../../users/fees-2.0.md).
 
