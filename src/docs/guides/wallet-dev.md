@@ -1,5 +1,5 @@
 ---
-title: Common Wallet Development Tasks
+title: Wallet Developers
 lang: en-US
 ---
 
@@ -30,4 +30,5 @@ We expect to deploy it to the production Optimistic Ethereum network on November
 ### Transaction fees
 
 <TxFees/>
+
 

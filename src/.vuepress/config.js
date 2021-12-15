@@ -60,8 +60,6 @@ module.exports = {
         {
           title: 'Developer Docs',
           children: [
-            '/docs/developers/howto/wallet-dev.md',
-
             // Moved to a separate page that's linkable from the homepage
             '/docs/developers/tutorials.md',
             {
@@ -89,38 +87,37 @@ module.exports = {
                 '/docs/developers/bridge/standard-bridge.md',
                 '/docs/developers/bridge/messaging.md'
               ],
-              collapsable: true,
+              collapsable: false,
               sidebarDepth: 0,
             },
-            {
-              title: 'Common Development Tasks',
-              children: [
-                '/docs/developers/howto/wallet-dev.md'
-              ]
-            },
             '/docs/developers/util.md',
-            '/docs/developers/talks.md'
+            '/docs/developers/talks.md',
+            '/docs/developers/known-issues.md',
           ],
           collapsable: false,
           sidebarDepth: 0,
         },
         {
-          title: 'Useful Tools for Developers',
+          title: 'Guides',
           children: [
-            '/docs/useful-tools/networks.md',
-            '/docs/useful-tools/debugging.md',
-            '/docs/useful-tools/faucets.md',
-            '/docs/useful-tools/monitoring.md',
-            '/docs/useful-tools/explorers.md',
-            '/docs/useful-tools/providers.md',
+            'docs/guides/wallet-dev.md'
+          ],
+          collapsable: false,
+          sidebarDepth: 0,
+        },
+        {
+          title: 'Infrastructure',
+          children: [
+            '/docs/infra/networks.md',
             [
               'https://github.com/optimisticben/op-replica/blob/main/README.md',
-              'Running a Network Node'
+              'Running a Node'
             ],
             [
               'https://www.optimism.io/apps/tools',
-              'Third Party Tools on OE'
+              'Third Party Tools'
             ],            
+            '/docs/infra/monitoring.md',
           ],
           collapsable: false,
           sidebarDepth: 0,
