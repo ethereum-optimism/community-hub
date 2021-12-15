@@ -39,7 +39,7 @@ For the sake of learning, let's take a look at how we can duplicate the same cod
 
 ```solidity
 contract MyContract {
-    doSomething() public {
+    doSomething(uint256) public {
         // ... some sort of code goes here
     }
 }
@@ -48,7 +48,7 @@ contract MyOtherContract {
     function doTheThing(address myContractAddress, uint256 myFunctionParam) public {
         myContractAddress.call(
             abi.encodeWithSignature(
-                "doSomething()",
+                "doSomething(uint256)",
                 myFunctionParam
             )
         );
@@ -97,7 +97,7 @@ It's dead simple:
 ```solidity
 // Pretend this is on L2
 contract MyOptimisticContract {
-    doSomething() public {
+    doSomething(uint256) public {
         // ... some sort of code goes here
     }
 }
@@ -108,7 +108,7 @@ contract MyOtherContract {
         ovmL1CrossDomainMessenger.sendMessage(
             myOptimisticContractAddress,
             abi.encodeWithSignature(
-                "doSomething()",
+                "doSomething(uint256)",
                 myFunctionParam
             ),
             1000000 // use whatever gas limit you want
