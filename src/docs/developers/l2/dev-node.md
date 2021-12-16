@@ -16,7 +16,7 @@ A development node is a local installation of Optimistic Ethereum.
 Having such an installation lets you debug your optimistic 
 application with the performance of a local server before you 
 "graduate" to 
-[our testnet](../../infra/networks.md#optimistic-kovan) prior
+[our testnet](../../infra/networks.md#optimistic-kovan-testnet) prior
 to a mainnet deployment.
 
 ### What does it include?
