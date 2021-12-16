@@ -2,10 +2,10 @@
 title: Optimistic Ethereum Docs
 lang: en-US
 tags:
-    - contracts
-    - high-level
-sidebar: true   
-class: page 
+  - contracts
+  - high-level
+sidebar: true
+class: page
 ---
 
 # {{ $frontmatter.title }}
@@ -18,17 +18,17 @@ You'll find links to all of our documentation in the sidebar to the left 👈.
 
 ### Play with some apps on Optimistic Ethereum
 
-[Get Started](./docs/users/getting-started.md) with setting up your wallet, and getting ETH on Optimistic Ethereum. Once you are all set up you can look at the [decentralized apps on Optimistic Ethereum](https://www.optimism.io/apps/defi).
+[Get Started](./users/getting-started.md) with setting up your wallet, and getting ETH on Optimistic Ethereum. Once you are all set up you can look at the [decentralized apps on Optimistic Ethereum](https://www.optimism.io/apps/defi).
 
 ### Build your own app on Optimistic Ethereum
 
-If you want to build and deploy your own decentralized app on Optimistic Ethereum, read through the [deployment doc](./docs/developers/l2/deploy.md) section.
-You might also find value in our [networks page](./docs/infra/networks.md).
+If you want to build and deploy your own decentralized app on Optimistic Ethereum, read through the [deployment doc](./developers/l2/deploy.md) section.
+You might also find value in our [networks page](./infra/networks.md).
 
 ### Learn about Retroactive Public Goods Funding
 
 [Optimism](https://optimism.io) is experimenting with a new model for funding public goods called Retroactive Public Goods Funding (aka RetroPGF).
-If you're interested in learning more, check out our [retroPGF talks page](./docs/pub-goods/talks.md).
+If you're interested in learning more, check out our [retroPGF talks page](./pub-goods/talks.md).
 
 ## Contributing
 
