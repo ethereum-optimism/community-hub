@@ -1,5 +1,5 @@
 ---
-title: Optimistic Ethereum Docs
+title: Optimism Docs
 lang: en-US
 tags:
     - contracts
@@ -10,19 +10,19 @@ class: page
 
 # {{ $frontmatter.title }}
 
-Hello and welcome to the Optimistic Ethereum Docs!
-We aim to be the best source of technical information about [Optimistic Ethereum](https://optimistic.etherscan.io/).
+Hello and welcome to the Optimism Docs!
+We aim to be the best source of technical information about [Optimism](https://optimistic.etherscan.io/).
 You'll find links to all of our documentation in the sidebar to the left 👈.
 
 ## What do you want to do?
 
-### Play with some apps on Optimistic Ethereum
+### Play with some apps on Optimism
 
-[Get Started](./docs/users/getting-started.md) with setting up your wallet, and getting ETH on Optimistic Ethereum. Once you are all set up you can look at the [decentralized apps on Optimistic Ethereum](https://www.optimism.io/apps/defi).
+[Get Started](./docs/users/getting-started.md) with setting up your wallet, and getting ETH on Optimism. Once you are all set up you can look at the [decentralized apps on Optimism](https://www.optimism.io/apps/defi).
 
-### Build your own app on Optimistic Ethereum
+### Build your own app on Optimism
 
-If you want to build and deploy your own decentralized app on Optimistic Ethereum, it is almost identical to building on Ethereum! You just need to keep in mind some [differences](./docs/developers/l2/differences.md), and a [known issue about gas pricing discrepancy](./docs/developers/known-issues.md). 
+If you want to build and deploy your own decentralized app on Optimism, it is almost identical to building on Ethereum! You just need to keep in mind some [differences](./docs/developers/l2/differences.md), and a [known issue about gas pricing discrepancy](./docs/developers/known-issues.md). 
 You will also need to look at our [networks page](./docs/infra/networks.md) for all the RPC endpoints and network settings you'll need.
 
 ### Learn about Retroactive Public Goods Funding
@@ -36,7 +36,7 @@ Interested in contributing to this website? We'd love to have you. We've always 
 
 For example, you can:
 
-- [Contribute to the OE protocol specification](https://github.com/ethereum-optimism/optimism/contribute)
+- [Contribute to the Optimism protocol specification](https://github.com/ethereum-optimism/optimism/contribute)
 - [Contribute to the docs](https://github.com/ethereum-optimism/community-hub/contribute)
 - [Join the discord and support the community](https://discord.com/invite/optimism)
 

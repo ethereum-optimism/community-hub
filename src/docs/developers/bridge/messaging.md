@@ -5,8 +5,8 @@ lang: en-US
 
 # {{ $frontmatter.title }}
 
-Apps on Optimistic Ethereum can be made to interact with apps on Ethereum via a process called "bridging".
-In a nutshell, **contracts on Optimistic Ethereum can send messages to contracts on Ethereum, and vice versa**.
+Apps on Optimism can be made to interact with apps on Ethereum via a process called "bridging".
+In a nutshell, **contracts on Optimism can send messages to contracts on Ethereum, and vice versa**.
 With just a little bit of elbow grease, you too can create contracts that bridge the gap between Layer 1 and Layer 2!
 
 ## Understanding contract calls
@@ -62,7 +62,7 @@ Although these two code snippets look a bit different, they're actually function
 ## L1 ⇔ L2 communication basics
 
 Cool!
-Now that you have a general idea of how contracts on Ethereum interact with one another, let's take a look at how we do the same thing *between* Optimistic Ethereum and Ethereum.
+Now that you have a general idea of how contracts on Ethereum interact with one another, let's take a look at how we do the same thing *between* Optimism and Ethereum.
 
 At a high level, this process is pretty similar to the same process for two contracts on Ethereum (with a few caveats).
 **Communication between L1 and L2 is enabled by two special smart contracts called the "messengers"**.
@@ -91,7 +91,7 @@ Except, of course, that we're calling a contract on a completely different netwo
 
 We're glossing over a lot of the technical details that make this whole thing work under the hood but whatever.
 Point is, it works!
-Want to call a contract on Optimistic Ethereum from a contract on Ethereum?
+Want to call a contract on Optimism from a contract on Ethereum?
 It's dead simple:
 
 ```solidity
@@ -133,7 +133,7 @@ Let's take a look at the things you should keep in mind when you use these contr
 
 Calls between two contracts on Ethereum happen synchronously and atomically within the same transaction.
 That is, you'll be told about the result of the call right away.
-Calls between contracts on Optimistic Ethereum and Ethereum happen *asynchronously*.
+Calls between contracts on Optimism and Ethereum happen *asynchronously*.
 If you want to know about the result of the call, you'll have to wait for the other contract send a message back to you.
 
 <!-- TODO: do we need an example here? -->
@@ -186,7 +186,7 @@ Otherwise you might be making decisions based on an invalid transaction result.
 As a result, L2 ⇒ L1 messages sent using the standard messenger contracts cannot be relayed until they've waited out the full challenge period.
 
 ::: tip On the length of the challenge period
-We've set the challenge period to be exactly seven days on the Optimistic Ethereum mainnet.
+We've set the challenge period to be exactly seven days on the Optimism mainnet.
 We believe this is a reasonable balance between security and usability, with an emphasis on increased security to start.
 We're open to changing the length of the window as long as we feel this can be done without significantly reducing the security of the system.
 If you're strongly opinionated about this, we recommend [opening an issue on GitHub](https://github.com/ethereum-optimism/optimism/issues) explaining your position.

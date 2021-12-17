@@ -11,7 +11,7 @@
       />
 
       <h1 v-if="data.heroText !== null" id="main-title">
-        Optimistic Ethereum
+        Optimism
       </h1>
 
       <script>

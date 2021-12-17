@@ -5,8 +5,8 @@ lang: en-US
 
 # {{ $frontmatter.title }}
 
-Optimistic Ethereum shares the same [JSON-RPC API](https://eth.wiki/json-rpc/API) as Ethereum.
-Some custom methods have been introduced to simplify certain Optimistic Ethereum specific interactions.
+Optimism shares the same [JSON-RPC API](https://eth.wiki/json-rpc/API) as Ethereum.
+Some custom methods have been introduced to simplify certain Optimism specific interactions.
 
 ## Custom JSON-RPC Methods
 
@@ -185,12 +185,12 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"rollup_gasPrices","params":[],"i
 ### `eth_getAccounts`
 
 This method is used to retrieve a list of addresses owned by a user.
-Optimistic Ethereum nodes do not expose internal wallets for security reasons and therefore block the `eth_getAccounts` method by default.
+Optimism nodes do not expose internal wallets for security reasons and therefore block the `eth_getAccounts` method by default.
 You should use external wallet software as an alternative.
 
 ### `eth_sendTransaction`
 
-Optimistic Ethereum nodes also block the `eth_sendTransaction` method for the same reasons as `eth_getAccounts`.
+Optimism nodes also block the `eth_sendTransaction` method for the same reasons as `eth_getAccounts`.
 You should use external wallet software as an alternative.
 Please note that this is not the same as the `eth_sendRawTransaction` method, which accepts a signed transaction as an input.
-`eth_sendRawTransaction` _is_ supported by Optimistic Ethereum.
+`eth_sendRawTransaction` _is_ supported by Optimism.

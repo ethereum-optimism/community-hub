@@ -7,8 +7,8 @@ lang: en-US
 
 ## Fees in a nutshell
 
-Fees on Optimistic Ethereum are, for the most part, significantly 
-lower than on the Ethereum mainnet. Every Optimistic Ethereum
+Fees on Optimism are, for the most part, significantly 
+lower than on the Ethereum mainnet. Every Optimism
 transaction has two costs:
 
 You pay the sum of two fees: Your L2 (execution) fee and your L1 (security) fee. At a high level, the L2 fee is the cost to execute your transaction in L2 and the L1 fee is the estimated cost to submit your transaction to L1 (in a rollup batch).
@@ -27,7 +27,7 @@ You pay the sum of two fees: Your L2 (execution) fee and your L1 (security) fee.
       and will result in a high L1 fee.  We currently add a 50% overhead to the L1 
       fee to ensure the fee paid covers the actual L1 costs.
 
-To get ETH on Optimistic Ethereum you can deposit ETH 
+To get ETH on Optimism you can deposit ETH 
 via [https://gateway.optimism.io/](https://gateway.optimism.io/) on both Kovan 
 or Mainnet. Soon you will be able to also deposit ETH for slightly cheaper 
 via [https://hop.exchange/](https://hop.exchange/)

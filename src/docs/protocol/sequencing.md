@@ -7,7 +7,7 @@ lang: en-US
 
 ## What is a sequencer?
 
-Optimistic Ethereum block production is primarily managed by a single party, called the "sequencer," which helps the network by providing the following services:
+Optimism block production is primarily managed by a single party, called the "sequencer," which helps the network by providing the following services:
 
 - Providing instant transaction confirmations and state updates.
 - Constructing and executing L2 blocks.
@@ -26,7 +26,7 @@ The rules of the chain require that these "forced transactions" be placed into a
 
 ## How will the sequencer be decentralized over time?
 
-Currently, Optimism runs the sole sequencer on Optimistic Ethereum.  As discussed above, this does not mean that Optimism can censor user transactions. However, it is still desirable to decentralize the sequencer over time, eliminating Optimism's role entirely.
+Currently, Optimism runs the sole sequencer on Optimism.  As discussed above, this does not mean that Optimism can censor user transactions. However, it is still desirable to decentralize the sequencer over time, eliminating Optimism's role entirely.
 
 The first step to decentralizing the sequencer is to still have one sequencer at a time, but rotate that sequencer with some frequency. The precise mechanic for sequencer rotation is not yet finalized, but will involve two components:
 

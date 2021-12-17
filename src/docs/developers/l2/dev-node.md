@@ -12,11 +12,11 @@ You can also find some more detailed information about working with the developm
 
 ## What is this?
 
-A development node is a local installation of Optimistic Ethereum.
+A development node is a local installation of Optimism.
 Having such an installation lets you debug your optimistic 
 application with the performance of a local server before you 
 "graduate" to 
-[our testnet](../../infra/networks.md#optimistic-kovan-testnet) prior
+[our testnet](../../infra/networks.md#optimism-kovan-testnet) prior
 to a mainnet deployment.
 
 ### What does it include?
@@ -28,7 +28,7 @@ Hopefully, everything you need to test an optimistic application:
 1. An account with 10k ETH to spend on testing (the account
    mnemonic is 
    `test test test test test test test test test test test junk`).
-1. All the Optimistic Ethereum contracts and servers for cross
+1. All the Optimism contracts and servers for cross
    domain communications, except that the challenge period is
    a few seconds instead of a week.   
 
@@ -153,12 +153,11 @@ You can interact with both of these nodes at the following ports:
 
 | Node                                         | Port | 
 | -------------------------------------------- | ---- |
-| L2 (Optimistic Ethereum dev node)            | 8545 |
+| L2 (Optimism dev node)            | 8545 |
 | L1 ([hardhat](https://hardhat.org) dev node) | 9545 |
 
 
-[Click here to see the differences between the L1 Ethereum RPC interface and the Optimistic
-Ethereum RPC interface](/docs/developers/l2/rpc.html)
+[Click here to see the differences between the L1 Ethereum RPC interface and the Optimism RPC interface](./json-rpc.md)
 
 ### Getting ETH on your dev node
 
@@ -217,7 +216,7 @@ docker logs --follow <name of container>
 
 ### Getting contract addresses
 
-The [Optimistic Ethereum contracts](../../protocol/protocol-2.0.md#chain-contracts) 
+The [Optimism contracts](../../protocol/protocol-2.0.md#chain-contracts) 
 are already deployed on the development nodes. The contracts on L2 always have the 
 same addresses, so you can 
 [get them from the repository](https://github.com/ethereum-optimism/optimism/tree/ef5343d61708f2d15f51dca981f03ee4ac447c21/packages/contracts/deployments#predeploy-contracts). But the L1 addresses can vary, and

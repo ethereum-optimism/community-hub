@@ -13,8 +13,8 @@ Take a look at the [Contract Overview](../../protocol/protocol-2.0.md) for a lis
 
 ## [@eth-optimism/contracts](https://github.com/ethereum-optimism/optimism/tree/master/packages/contracts)
 
-The easiest way to interact with the Optimistic Ethereum protocol contracts is to use the [@eth-optimism/contracts](https://github.com/ethereum-optimism/optimism/tree/master/packages/contracts) npm package.
-You can use this package to get an interface or factory instance for any of the Optimistic Ethereum contracts.
+The easiest way to interact with the Optimism protocol contracts is to use the [@eth-optimism/contracts](https://github.com/ethereum-optimism/optimism/tree/master/packages/contracts) npm package.
+You can use this package to get an interface or factory instance for any of the Optimism contracts.
 
 ### Installation
 

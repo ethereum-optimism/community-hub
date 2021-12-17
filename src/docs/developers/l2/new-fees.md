@@ -5,16 +5,16 @@ lang: en-US
 
 # {{ $frontmatter.title }}
 
-## The logic of Optimistic Ethereum fees
+## The logic of Optimism fees
 You can see how the fee is calculated and deducted [here](../../users/fees-2.0.md).
 
-Every Optimistic Ethereum transaction has two costs:
+Every Optimism transaction has two costs:
 
 1. The **L2 execution fee** pays for the costs incurred in running the transaction. It is calculated the same way as in L1 Ethereum: `tx.gasPrice * l2GasUsed`. Typically `tx.gasPrice` is 0.001 gwei ([You can check the current L2 gas price here](https://public-grafana.optimism.io/d/9hkhMxn7z/public-dashboard?orgId=1&refresh=5m)), but in time of congestion it can rise.
 
    This is cost is accessible via the normal Ethereum mechanisms, you can estimate it using ethers' [`estimateGas`](https://docs.ethers.io/v5/api/contract/contract/#contract-estimateGas), for example.
 
-1. The **L1 security fee** pays for the cost of publishing the transaction on L1 (the cost of Ethereum equivalent security). It is deducted automatically from the user's ETH balance on Optimistic Ethereum. It is based on two factors:
+1. The **L1 security fee** pays for the cost of publishing the transaction on L1 (the cost of Ethereum equivalent security). It is deducted automatically from the user's ETH balance on Optimism. It is based on two factors:
 
    - `l1GasPrice` is the gas price for L1 transactions (when the transaction was processed). You can see the current value [here](https://public-grafana.optimism.io/d/9hkhMxn7z/public-dashboard?orgId=1&refresh=5m).
 

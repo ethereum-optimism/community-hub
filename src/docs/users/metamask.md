@@ -7,11 +7,11 @@ lang: en-US
 
 ## Connecting with chainid.link
 
-There are a few easy to ways connect to Optimistic Ethereum via MetaMask.
+There are a few easy to ways connect to Optimism via MetaMask.
 The easiest way is to use `chainid.link`:
 
-* [Click here to connect to `optimistic-kovan`](https://chainid.link?network=optimism-kovan)
-* [Click here to connect to `optimistic-ethereum`](https://chainid.link?network=optimism)
+* [Click here to connect to Optimism](https://chainid.link?network=optimism)
+* [Click here to connect to Optimism Kovan](https://chainid.link?network=optimism-kovan)
 
 ## Connecting manually
 
@@ -32,7 +32,7 @@ Then, follow these three easy steps:
 <img src="../../assets/docs/developers/metamask/3.png" alt="input connection details" width="400"/>
 
 Once you hit `save`, you'll be automatically connected to the network.
-You're ready to play with Optimistic Ethereum! 
+You're ready to play with Optimism! 
 
 ::: tip Having issues connecting?
 Make sure you've correctly inputted all of your network details.

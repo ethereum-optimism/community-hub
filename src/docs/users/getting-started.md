@@ -1,13 +1,13 @@
 ---
-title: Getting Started with Optimistic Ethereum
+title: Getting Started with Optimism
 lang: en-US
 ---
 
 # {{ $frontmatter.title }}
 
-## Why use Optimistic Ethereum?
+## Why use Optimism?
 
-The Optimistic Ethereum network lets you send transactions, similar to Ethereum, but
+The Optimism network lets you send transactions, similar to Ethereum, but
 with two important advantages:
 
 * **Near-instant transaction finality.** You know almost immediately if your transaction took place
@@ -19,7 +19,7 @@ with two important advantages:
 
 ## Depositing assets
 
-Before you can use assets (Ether, ERC-20 tokens, etc) on Optimistic Ethereum you need to deposit
+Before you can use assets (Ether, ERC-20 tokens, etc) on Optimism you need to deposit
 them from Mainnet Ethereum using [a bridge](https://www.optimism.io/apps/dapps). For depositing ETH, you can use [our own gateway](https://gateway.optimism.io/).
 
 1. If you do not have any ETH, purchase some through a centralized exchange, such as 
@@ -61,9 +61,9 @@ them from Mainnet Ethereum using [a bridge](https://www.optimism.io/apps/dapps).
 1. Click **DEPOSIT**.
 1. Click **DEPOSIT** again to confirm.
 1. Confirm the transaction in the wallet, wait until the transaction is confirmed and the ETH
-   deposited to Optimistic Ethereum.
+   deposited to Optimism.
 1. [Browse here](https://chainid.link/?network=optimism) and click
-   **connect** to add the Optimistic Ethereum network to your wallet. 
+   **connect** to add the Optimism network to your wallet. 
    You will need to approve this addition in your wallet. The network
    notification in MetaMask is shown below, other wallets are likely
    to be similar
@@ -74,9 +74,9 @@ them from Mainnet Ethereum using [a bridge](https://www.optimism.io/apps/dapps).
 
 ## Applications
 
-Optimistic Ethereum supports [a large and growing list of 
+Optimism supports [a large and growing list of 
 applications](https://www.optimism.io/apps/all). To tell your wallet to
-change to Optimistic Ethereum click **Withdraw** in the gateway and confirm the network
+change to Optimism click **Withdraw** in the gateway and confirm the network
 switch in the wallet.
 
 ### Uniswap <img src="../../assets/docs/users/getting-started/uniswap-logo.png" align="right" width="50px">
@@ -111,8 +111,7 @@ see that applications are used the same way they are on mainnet.
 1. Click **Swap**.
 1. Click **Confirm Swap**.
 1. Confirm the transaction in the wallet.
-1. After the transaction is executed, browse to [Etherscan for Optimistic 
-   Ethereum](https://optimistic.etherscan.io/) and enter your address. Confirm
+1. After the transaction is executed, browse to [Etherscan for Optimism](https://optimistic.etherscan.io/) and enter your address. Confirm
    you now have the correct amount of the new token.   
 
    <img src="../../assets/docs/users/getting-started/etherscan.png" alt="Etherscan with result" width="50%">   

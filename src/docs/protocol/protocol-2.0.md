@@ -12,7 +12,7 @@ tags:
 
 <!-- - Welcome!  Give context -- "how to read these docs" -->
 
-Optimistic Ethereum (OE) is a Layer 2 scaling protocol for Ethereum applications.
+Optimism is a Layer 2 scaling protocol for Ethereum applications.
 I.e., it makes transactions cheap. Real cheap.
 We aim to make transacting on Ethereum affordable and
 accessible to anyone.
@@ -20,8 +20,8 @@ accessible to anyone.
 This document is intended for anyone looking for a deeper understanding of how the protocol works
 'under the hood'.
 
-Optimistic Ethereum is meant to look, feel and behave like Ethereum but cheaper and faster.
-For developers building on our OE, we aim to make the transition as seamless as possible.
+Optimism is meant to look, feel and behave like Ethereum but cheaper and faster.
+For developers building on our Optimism, we aim to make the transition as seamless as possible.
 With very few exceptions,
 existing Solidity smart contracts can run on L2 exactly how they run on L1.
 Similarly, off-chain code (ie. UIs and wallets), should be able to interact with L2 contract with little more than an updated RPC endpoint.
@@ -29,7 +29,7 @@ Similarly, off-chain code (ie. UIs and wallets), should be able to interact with
 
 ## System Overview
 
-The smart contracts in the Optimistic Ethereum (OE) protocol can be separated into a few key components. We will discuss each component in more detail below.
+The smart contracts in the Optimism protocol can be separated into a few key components. We will discuss each component in more detail below.
 
 - **[Chain:](#chain-contracts)** Contracts on layer-1, which hold the ordering of layer-2 transactions, and commitments to the associated layer-2 state roots.
 - **[Verification:](#verification)** Contracts on layer-1 which implement the process for challenging a transaction result.
@@ -89,7 +89,7 @@ In the previous section, we mentioned that the Chain includes a list of the _pro
 resulting from each transaction. Here we explain a bit more about how these proposals happen, and how
 we come to trust them.
 
-In brief: If a proposed state root is not the correct result of executing a transaction, then a Verifier (which is anyone running an OE 'full node') can initiate a transaction result challenge. If the transaction result is successfully proven to be incorrect, the Verifier will receive a reward taken from funds which a Sequencer must put up as a bond.
+In brief: If a proposed state root is not the correct result of executing a transaction, then a Verifier (which is anyone running an Optimism 'full node') can initiate a transaction result challenge. If the transaction result is successfully proven to be incorrect, the Verifier will receive a reward taken from funds which a Sequencer must put up as a bond.
 
 ::: Notice
 This system is still being written, so these details are likely to
@@ -128,10 +128,10 @@ The L2 Cross Domain Messenger (L2xDM) contract sends messages from L2 to L1, and
 ## The Standard Bridge
 
 One common case of message passing is "transferring" either ERC-20
-tokens or ETH between L1 and Optimistic Ethereum. To deposit tokens 
-into Optimistic Ethereum, the bridge locks them on L1 and mints equivalent
-tokens in Optimistic Ethereum. To withdraw tokens, the bridge burns the 
-Optimistic Ethereum tokens and releases the locked L1 tokens. [More details
+tokens or ETH between L1 and Optimism. To deposit tokens 
+into Optimism, the bridge locks them on L1 and mints equivalent
+tokens in Optimism. To withdraw tokens, the bridge burns the 
+Optimism tokens and releases the locked L1 tokens. [More details
 are here](/docs/developers/bridge/standard-bridge.html)
 
 

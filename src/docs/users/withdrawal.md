@@ -1,5 +1,5 @@
 ---
-title: Withdrawing from Optimistic Ethereum
+title: Withdrawing from Optimism
 lang: en-US
 ---
 
@@ -16,11 +16,11 @@ Alternatively, you might just need to [claim the withdrawal](#claim-the-withdraw
 ::: warning Centralized Exchanges
 When you transfer assets to a centralized exchange you send it to an address
 provided by that centralized exchange. By default, this is an L1 address and
-the exchange does **not** look at this address in Optimistic Ethereum. As a
+the exchange does **not** look at this address in Optimism. As a
 result, assets transferred directly to a centralized exchange that doesn't
-support Optimistic Ethereum are irrevocably lost. **Don't do it**.
+support Optimism are irrevocably lost. **Don't do it**.
 
-When a centralized exchange supports Optimistic Ethereum we will publish that
+When a centralized exchange supports Optimism we will publish that
 fact.
 :::
 
@@ -66,7 +66,7 @@ At writing there are two ways to withdraw ETH:
 
 Withdrawals through the Optimism Gateway is a multi-step process:
 
-1. [Initiate the withdrawal](#initiate-the-withdrawal) on Optimistic Ethereum
+1. [Initiate the withdrawal](#initiate-the-withdrawal) on Optimism
 1. [Wait the verification challenge period](#while-waiting), which 
    is *seven days* from the time the transaction is published on L1. 
    
@@ -88,7 +88,7 @@ Withdrawals through the Optimism Gateway is a multi-step process:
      <img src="../../assets/docs/users/withdraw/withdraw-form-a.png" alt="Withdrawal form" width="40%" style="float:left">
      </div>
 
-   * From **OPTIMISTIC ETHEREUM**
+   * From **OPTIMISM**
 
      <div style="display:inline-block">
      <img src="../../assets/docs/users/withdraw/withdraw-form-b.png" alt="Withdrawal form" width="40%" style="float:left">
@@ -135,7 +135,7 @@ There are several ways to see if your withdrawal is ready to be claimed:
   enabled.
 
 *  You can search for the transaction hash on 
-  [Optimistic Etherscan](https://optimistic.etherscan.io/). Click the L1
+  [Etherscan](https://optimistic.etherscan.io/). Click the L1
   State Root Submission Tx. 
 
   <div style="display:inline-block">
