@@ -14,19 +14,18 @@ Every Optimism transaction has two costs:
 
    This is cost is accessible via the normal Ethereum mechanisms, you can estimate it using ethers' [`estimateGas`](https://docs.ethers.io/v5/api/contract/contract/#contract-estimateGas), for example.
 
-1. The **L1 security fee** pays for the cost of publishing the transaction on L1 (the cost of Ethereum equivalent security). It is deducted automatically from the user's ETH balance on Optimism. It is based on two factors:
+2. The **L1 security fee** pays for the cost of publishing the transaction on L1 (the cost of Ethereum equivalent security). It is deducted automatically from the user's ETH balance on Optimism. It is based on three factors:
 
-   - `l1GasPrice` is the gas price for L1 transactions (when the transaction was processed). You can see the current value [here](https://public-grafana.optimism.io/d/9hkhMxn7z/public-dashboard?orgId=1&refresh=5m).
+   - The gas price for L1 transactions (when the transaction was processed). You can see the current value [here](https://public-grafana.optimism.io/d/9hkhMxn7z/public-dashboard?orgId=1&refresh=5m).
 
-   - The transaction's call data, because that call data has to be written on L1 as part of publishing the transaction. [Call data costs four gas for bytes containing zero, sixteen gas for bytes containing any other value](https://eips.ethereum.org/EIPS/eip-2028).
+   - The gas used on L1 to publish the transaction. This is based on the transaction length, as well as the byte type (whether it is zero or a different value) for each byte.
 
-   The exact function is `l1GasPrice * 1.5 * (2750 + 16*nonzeroBytes + 4*zeroBytes)`. 
+   - The L1 fee scalar, which is at writing 1.5. This value covers the change in L1 gas price between the time the transaction is submitted and when it is published, as well as the income we need to keep our system running.
 
+For example, lets look at [this transaction](https://optimistic.etherscan.io/tx/0x3ba996515abd898cd7e939aad4bd086b0d5159d14b4bc639e00d47a3aa68fd09). The **L2 execution fee** is the gas used, `108,207`, times the l2 gas price at the time, which was 0.001 gwei. In other words, approximately 108 gwei. The **L1 security fee**, on the other hand, is 4,862 (a fairly typical value, although longer transactions naturally cost more). At the L1 gas price at the time, about 75 gwei, this gives us an L1 security fee of `75*4,862*1.5 = 546,975 gwei`. So the L1 security fee is about five thousand times the L2 execution fee.
 
-For example, lets look at [this transaction](https://kovan-optimistic.etherscan.io/tx/0xcf2e2f7f7088e4332a2b5369f85b1bafa8a8a007122e228d90778a1d14c41286). The **L2 execution fee** is the gas used, `195,057`, times the l2 gas price at the time, which was 0.001 gwei. In other words, approximately 195 gwei. The **L1 security fee**, on the other hand, is based on a gas usage of of `1.5 * (2750 + 16*11 + 4*25)`, or 4539 gas. At the L1 gas price at the time, 150 gwei, this costs 680,850 gwei, about 3500 times the **L2 execution fee**.
-
-::: tip 
-This transaction is typical. In almost all cases **L2 execution fee** is negligible compared to the **L1 security fee**. 
+::: tip
+This transaction is typical. In almost all cases **L2 execution fee** is negligible compared to the **L1 security fee**.
 :::
 
 
@@ -62,7 +61,7 @@ This transaction is typical. In almost all cases **L2 execution fee** is negligi
 
 - You should *not* allow users to change their `tx.gasPrice`
    - If they lower it, their transaction will get reverted
-   - If they increase it, they will get their transaction included immediately (same as with the  
+   - If they increase it, they will get their transaction included immediately (same as with the
      correct price) but at a higher cost
 - Users are welcome to change their `tx.gasLimit` as it functions exactly like on L1
 - You can show the math :
