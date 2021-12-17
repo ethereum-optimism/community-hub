@@ -28,7 +28,7 @@ You will also need to look at our [networks page](./docs/infra/networks.md) for 
 ### Learn about Retroactive Public Goods Funding
 
 [Optimism](https://optimism.io) is experimenting with a new model for funding public goods called Retroactive Public Goods Funding (aka RetroPGF).
-If you're interested in learning more, check out our [retroPGF talks page](./docs/pub-goods/talks.md).
+If you're interested in learning more, check out our [retroPGF resources page](./docs/retro-pgf/resources.md).
 
 ## Contributing
 
