@@ -16,7 +16,7 @@ A development node is a local installation of Optimism.
 Having such an installation lets you debug your optimistic 
 application with the performance of a local server before you 
 "graduate" to 
-[our testnet](../../infra/networks.md#optimistic-kovan-testnet) prior
+[our testnet](../../infra/networks.md#optimism-kovan-testnet) prior
 to a mainnet deployment.
 
 ### What does it include?
@@ -157,7 +157,7 @@ You can interact with both of these nodes at the following ports:
 | L1 ([hardhat](https://hardhat.org) dev node) | 9545 |
 
 
-[Click here to see the differences between the L1 Ethereum RPC interface and the Optimism RPC interface](/docs/developers/l2/rpc.html)
+[Click here to see the differences between the L1 Ethereum RPC interface and the Optimism RPC interface](./json-rpc.md)
 
 ### Getting ETH on your dev node
 
