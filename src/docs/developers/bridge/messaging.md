@@ -39,7 +39,7 @@ For the sake of learning, let's take a look at how we can duplicate the same cod
 
 ```solidity
 contract MyContract {
-    doSomething() public {
+    doSomething(uint256 myFunctionParam) public {
         // ... some sort of code goes here
     }
 }
@@ -97,7 +97,7 @@ It's dead simple:
 ```solidity
 // Pretend this is on L2
 contract MyOptimisticContract {
-    doSomething() public {
+    doSomething(uint256 myFunctionParam) public {
         // ... some sort of code goes here
     }
 }
