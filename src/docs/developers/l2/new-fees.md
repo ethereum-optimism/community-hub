@@ -18,7 +18,7 @@ Every Optimism transaction has two costs:
 
    - The gas price for L1 transactions (when the transaction was processed). You can see the current value [here](https://public-grafana.optimism.io/d/9hkhMxn7z/public-dashboard?orgId=1&refresh=5m).
 
-   - The gas used on L1 to publish the transaction. This is based on the transaction length, as well as the byte type (whether it is zero or a different value) for each byte.
+   - The gas used on L1 to publish the transaction. This is based on the transaction length, as well as the byte type (whether it is zero or a different value) for each byte. It scales, roughly speaking, with the size of your calldata.
 
    - The L1 fee scalar, which is at writing 1.5. This value covers the change in L1 gas price between the time the transaction is submitted and when it is published, as well as the income we need to keep our system running.
 
