@@ -101,4 +101,4 @@ Therefore, if the value of `tx.origin` is impacted by the rules defined above, t
 
 Optimistic Ethereum uses the same [JSON-RPC API](https://eth.wiki/json-rpc/API) as Ethereum.
 Some additional Optimistic Ethereum specific methods have been introduced.
-See the full list of [custom JSON-RPC methods](./json-rpc.html) for more information.
+See the full list of [custom JSON-RPC methods](./json-rpc.md) for more information.
