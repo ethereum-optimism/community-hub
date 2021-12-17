@@ -22,8 +22,8 @@ You'll find links to all of our documentation in the sidebar to the left 👈.
 
 ### Build your own app on Optimistic Ethereum
 
-If you want to build and deploy your own decentralized app on Optimistic Ethereum, read through the [deployment doc](./docs/developers/l2/deploy.md) section.
-You might also find value in our [networks page](./docs/infra/networks.md).
+If you want to build and deploy your own decentralized app on Optimistic Ethereum, it is almost identical to building on Ethereum! You just need to keep in mind some [differences](/docs/developers/l2/differences.md), and a [known issue about gas pricing discrepancy](/docs/developers/known-issues.md). 
+You will also need to look at our [networks page](./docs/infra/networks.md) for all the RPC endpoints and network settings you'll need.
 
 ### Learn about Retroactive Public Goods Funding
 
