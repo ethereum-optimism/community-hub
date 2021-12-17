@@ -14,11 +14,6 @@ Think we don't have enough information about a certain topic?
 Hop on the [discord](https://discord.optimism.io) and make a post in `#resources` or [open an issue](https://github.com/ethereum-optimism/community-hub/issues) in the GitHub repo for this site. ✨
 :::
 
-::: danger OVM 1.0 Page
-This page refers to the **current** state of the Optimistic Ethereum
-network. Some of the information may be relevant to OVM 2.0, which will
-be deployed in October, but some of it may change.
-:::
 
 ## [*OVM Deep Dive*](https://medium.com/ethereum-optimism/ovm-deep-dive-a300d1085f52)
 

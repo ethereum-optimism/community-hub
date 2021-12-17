@@ -40,7 +40,7 @@ This is our **test** network.
 ## Optimistic Ethereum
 
 ::: tip Purpose
-This is our production network, our equivalent of mainnet. It *used* to require whitelisting, but that is no longer the case.
+This is our production network, our equivalent of mainnet. It *used* to require whitelisting, but that is no longer the case. You can now deploy any contract you'd like. [If you would like additional support, you can apply for it here]((https://optimismpbc.typeform.com/get-in-touch).
 :::
 
 | Parameter | Value |
