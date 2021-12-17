@@ -36,7 +36,7 @@ We also support and maintain the following public RPC endpoints. However, we _hi
 ## Optimistic Kovan (testnet)
 
 ::: tip Purpose
-This is our **test** network. You're welcome to deploy whatever contracts to wish to test here, no whitelist required
+This is our **test** network.
 :::
 
 | Parameter | Value |
@@ -57,12 +57,10 @@ Please set up a private RPC endpoint with any of the following providers:
 - [Infura](https://blog.infura.io/what-is-optimistic-ethereum/)
 - [QuickNode](https://www.quicknode.com/chains/optimism)
 
-
 ## Development Node (local)
 
 ::: tip Purpose
-This is the information for a 
-[local development node](../developers/l2/dev-node.md).
+This is the information for a [local development node](../developers/l2/dev-node.md).
 :::
 
 | Parameter | Value |

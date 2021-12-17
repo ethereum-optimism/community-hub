@@ -156,10 +156,6 @@ Looking up predeploys is available in the Solidity library [`Lib_PredeployAddres
 
 The following concrete contracts are predeployed:
 
-### [`OVM_DeployerWhitelist`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/L2/predeploys/OVM_DeployerWhitelist.sol)
-The Deployer Whitelist is a temporary predeploy used to provide additional safety during the initial phases of our mainnet roll out. It is owned by the Optimism team, and defines accounts which are allowed to deploy contracts on Layer 2. The Execution Manager will only allow a `CREATE` or `CREATE2` operation to proceed if the deployer's address whitelisted.
-
-
 ### [`OVM_L1MessageSender`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/L2/predeploys/iOVM_L1MessageSender.sol)
 
 The L1MessageSender is a predeployed contract running on L2.
