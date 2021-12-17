@@ -57,16 +57,10 @@ If you want to download the images, perform these steps:
 1. Clone the [Optimism monorepo](https://github.com/ethereum-optimism/optimism).
    The branch to clone depends on the OVM version you need.
 
-   - For OVM 1.0, use the `main` branch.
+   - For OVM 2.0, use the `develop` branch.
 
      ```sh
-     git clone https://github.com/ethereum-optimism/optimism.git
-     ```
-
-   - For OVM 2.0, use the `regenesis/0.5` branch.
-
-     ```sh
-     git clone https://github.com/ethereum-optimism/optimism.git -b regenesis/0.5
+     git clone https://github.com/ethereum-optimism/optimism.git -b develop
      ```
 
 2. Download the images from [the Docker 
