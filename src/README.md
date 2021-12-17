@@ -36,8 +36,8 @@ Interested in contributing to this website? We'd love to have you. We've always 
 
 For example, you can:
 
-- [Contribute to the OE protocol specification](https://github.com/ethereum-optimism/optimistic-specs/labels/good%20first%20issue)
-- [Contribute to the docs](https://github.com/ethereum-optimism/community-hub/labels/good%20first%20issue)
+- [Contribute to the OE protocol specification](https://github.com/ethereum-optimism/optimism/contribute)
+- [Contribute to the docs](https://github.com/ethereum-optimism/community-hub/contribute)
 - [Join the discord and support the community](https://discord.com/invite/optimism)
 
 ## Can't find what you're looking for?
