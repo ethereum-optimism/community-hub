@@ -22,7 +22,7 @@ For the moment, contracts are **only** allowed to use the explicit `depositETHTo
 
 ETH deposits into L2 can be triggered via either `depositETH` or `depositETHTo`.
 You can alternatively also simply send ETH directly to the bridge contract.
-OE has a built-in ERC20 compatible Wrapped Ether (WETH) token which is issued once your deposit is finalized on L2.
+Optimism has a built-in ERC20 compatible Wrapped Ether (WETH) token which is issued once your deposit is finalized on L2.
 Any ETH you deposited on L1 will remain locked into the deposit contract until you withdraw it.
 
 ### Depositing ERC20 Tokens
@@ -55,6 +55,6 @@ If the `L2StandardERC20` implementation does not satisfy your requirements, you 
 
 ## The Optimism token list
 
-The Standard bridge allows a one-to-many mapping between L1 and L2 tokens, meaning that there can be many OE implementations of an L1 token.
+The Standard bridge allows a one-to-many mapping between L1 and L2 tokens, meaning that there can be many Optimism implementations of an L1 token.
 However there is always a one-to-one mapping between L1 and L2 tokens in the [Optimism token list](https://github.com/ethereum-optimism/ethereum-optimism.github.io/blob/master/optimism.tokenlist.json).
 The token list is used as the source of truth for the [Optimism Gateway](https://gateway.optimism.io) which is the main portal for moving assets between Layer 1 and Layer 2.

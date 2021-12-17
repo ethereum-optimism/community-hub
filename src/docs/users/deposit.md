@@ -1,5 +1,5 @@
 ---
-title: Depositing into Optimistic Ethereum
+title: Depositing into Optimism
 lang: en-US
 ---
 
@@ -9,9 +9,9 @@ lang: en-US
 
 ### Ether
 
-Optimistic Ethereum transactions require ETH, just as do L1 Ethereum
+Optimism transactions require ETH, just as do L1 Ethereum
 transactions (except a lot less of it). Here are some ways to get 
-your Ether to Optimistic Ethereum.
+your Ether to Optimism.
 
 * [The teleporter](https://portr.xyz/), a custodial gateway that
   allows you transfer up to 0.05 ETH. It is a cheap gateway, but a
@@ -19,7 +19,7 @@ your Ether to Optimistic Ethereum.
   honest)
 * [The Optimism Gateway](https://gateway.optimism.io/), 
   which costs more but allows for larger transfers and uses the same
-  underlying trust mechanisms as Optimistic Ethereum itself.
+  underlying trust mechanisms as Optimism itself.
 * [Hop](https://app.hop.exchange/send?token=ETH&sourceNetwork=ethereum&destNetwork=optimism)
   which also allows large transfers, but may have a different exchange 
   rate than 1:1. 
@@ -33,7 +33,7 @@ your Ether to Optimistic Ethereum.
 
   ::: tip
   Do **not** attempt to transfer a token that isn't in the user interface unless
-  you are sure of the Optimistic Ethereum address of the equivalent ERC-20 token.
+  you are sure of the Optimism address of the equivalent ERC-20 token.
   :::
 
 * [Third-party bridges](https://www.optimism.io/apps/bridges). Those bridges are
@@ -75,9 +75,9 @@ your Ether to Optimistic Ethereum.
 1. Click **DEPOSIT**.
 1. Click **DEPOSIT** again to confirm.
 1. Confirm the transaction in the wallet, wait until the transaction is confirmed and the ETH
-   deposited to Optimistic Ethereum.
+   deposited to Optimism.
 1. [Browse here](https://chainid.link/?network=optimism) and click
-   **connect** to add the Optimistic Ethereum network to your wallet. 
+   **connect** to add the Optimism network to your wallet. 
    You will need to approve this addition in your wallet. The network
    notification in MetaMask is shown below, other wallets are likely
    to be similar

@@ -27,15 +27,15 @@ msg.sender.transfer(wad);
 [Solidity passes along a stipend of 2300 gas when you use the `msg.sender.transfer` and `msg.sender.send` functions to transfer someone ETH](https://docs.soliditylang.org/en/v0.8.10/security-considerations.html?highlight=transfer#sending-and-receiving-ether).
 This transfer triggers a call to the proxy's fallback function, which then triggers a call to the implementation.
 Normally these calls will both fit under the 2300 gas stipend because of the "warm" cost mechanism.
-However, because Optimistic Ethereum is charging the "cold" cost in all cases, this call fails and the proxy is unable to withdraw from the WETH contract.
+However, because Optimism is charging the "cold" cost in all cases, this call fails and the proxy is unable to withdraw from the WETH contract.
 
 ### Impact
 
-Certain contract interactions that work on Ethereum may not work as expected on Optimistic Ethereum until this issue is fixed.
+Certain contract interactions that work on Ethereum may not work as expected on Optimism until this issue is fixed.
 The most common failure case is a `msg.sender.transfer` to a proxy contract, as shown above.
 You may find similar failures when making function calls to other contracts with a fixed amount of gas.
 
-For instance, the following call that provides a fixed amount of gas could succeed on Ethereum but fail on Optimistic Ethereum because the target uses slightly more gas than expected:
+For instance, the following call that provides a fixed amount of gas could succeed on Ethereum but fail on Optimism because the target uses slightly more gas than expected:
 
 ```solidity
 target.call{gas: 5000}("<your input data here>");
@@ -43,8 +43,8 @@ target.call{gas: 5000}("<your input data here>");
 
 You should not be impacted if you do not provide a fixed amount of gas, as [Solidity will by default pass all available gas into the function call](https://docs.soliditylang.org/en/v0.8.10/units-and-global-variables.html#members-of-address-types).
 
-You will be able to catch this failure by testing your contracts on Optimistic Kovan.
-We highly recommend testing all contracts on Optimistic Kovan before deploying to the Optimistic Ethereum mainnet in order to catch this issue.
+You will be able to catch this failure by testing your contracts on Optimism Kovan.
+We highly recommend testing all contracts on Optimism Kovan before deploying to the Optimism mainnet in order to catch this issue.
 
 ### Workarounds
 

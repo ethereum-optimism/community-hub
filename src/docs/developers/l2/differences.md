@@ -5,8 +5,8 @@ lang: en-US
 
 # {{ $frontmatter.title }}
 
-It's important to note that there are various minor discrepancies between the behavior of Optimistic Ethereum and Ethereum.
-You should be aware of these descrepancies when building apps on top of Optimistic Ethereum.
+It's important to note that there are various minor discrepancies between the behavior of Optimism and Ethereum.
+You should be aware of these descrepancies when building apps on top of Optimism.
 
 ## Opcode Differences
 
@@ -30,8 +30,8 @@ You should be aware of these descrepancies when building apps on top of Optimist
 ### Block production is not constant
 
 On Ethereum, the `NUMBER` opcode (`block.number` in Solidity) corresponds to the current Ethereum block number.
-Similarly, in Optimistic Ethereum, `block.number` corresponds to the current L2 block number.
-However, as of the OVM 2.0 release of Optimistic Ethereum (Nov. 2021), **each transaction on L2 is placed in a separate block and blocks are NOT produced at a constant rate.**
+Similarly, in Optimism, `block.number` corresponds to the current L2 block number.
+However, as of the OVM 2.0 release of Optimism (Nov. 2021), **each transaction on L2 is placed in a separate block and blocks are NOT produced at a constant rate.**
 
 This is important because it means that `block.number` is currently NOT a reliable source of timing information.
 If you want access to the current time, you should use `block.timestamp` (the `TIMESTAMP` opcode) instead.
@@ -99,6 +99,6 @@ Therefore, if the value of `tx.origin` is impacted by the rules defined above, t
 
 ## JSON-RPC Differences
 
-Optimistic Ethereum uses the same [JSON-RPC API](https://eth.wiki/json-rpc/API) as Ethereum.
-Some additional Optimistic Ethereum specific methods have been introduced.
+Optimism uses the same [JSON-RPC API](https://eth.wiki/json-rpc/API) as Ethereum.
+Some additional Optimism specific methods have been introduced.
 See the full list of [custom JSON-RPC methods](./json-rpc.md) for more information.

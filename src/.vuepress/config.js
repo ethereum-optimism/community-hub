@@ -1,7 +1,7 @@
 const { description } = require('../../package')
 
 module.exports = {
-  title: 'Optimistic Ethereum Docs',
+  title: 'Optimism Docs',
   description: description,
 
   head: [
@@ -50,7 +50,7 @@ module.exports = {
             '/docs/users/withdrawal.md',
             [
               'https://www.optimism.io/apps/all',
-              'Apps on Optimistic Ethereum'
+              'Apps on Optimism'
             ],   
             '/docs/users/fees-2.0.md'          
           ],
@@ -63,7 +63,7 @@ module.exports = {
             // Moved to a separate page that's linkable from the homepage
             '/docs/developers/tutorials.md',
             {
-              title: 'Working on Optimistic Ethereum',
+              title: 'Building on Optimism',
               // Reordered to follow the order in which I
               // expect people will do things, followed by
               // more advanced topics such as RPC and Block Time

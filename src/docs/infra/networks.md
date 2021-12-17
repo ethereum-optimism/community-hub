@@ -5,15 +5,15 @@ lang: en-US
 
 # {{ $frontmatter.title }}
 
-## Optimistic Ethereum (OE mainnet)
+## Optimism (mainnet)
 
 ::: tip Point and deploy
-We recently removed our whitelist! This means that anyone can deploy onto Optimistic Ethereum. However, if you want support getting live on OE, or if you want some PR hype you can apply [here](https://optimismpbc.typeform.com/get-in-touch.)
+We recently removed our whitelist! This means that anyone can deploy onto Optimism. However, if you want support getting live on Optimism, or if you want some PR hype you can apply [here](https://optimismpbc.typeform.com/get-in-touch.)
 :::
 
 | Parameter | Value |
 | --------- | ----- |
-| Network Name | **`Optimistic Ethereum`** |
+| Network Name | **`Optimism`** |
 | Description | **`Mainnet`** |
 | Chain ID | **`10`** |
 | Explorer | **`https://optimistic.etherscan.io`** |
@@ -33,7 +33,7 @@ We also support and maintain the following public RPC endpoints. However, we _hi
 - HTTP endpoint: [https://mainnet.optimism.io](https://mainnet.optimism.io)
 - WebSocket endpoint: [wss://ws-mainnet.optimism.io](wss://ws-mainnet.optimism.io)
 
-## Optimistic Kovan (testnet)
+## Optimism Kovan (testnet)
 
 ::: tip Purpose
 This is our **test** network.
@@ -41,7 +41,7 @@ This is our **test** network.
 
 | Parameter | Value |
 | --------- | ----- |
-| Network Name | **`Optimistic Kovan`** |
+| Network Name | **`Optimism Kovan`** |
 | Description | **`Testnet (public)`** |
 | Chain ID | **`69`** |
 | Explorer | **`https://kovan-optimistic.etherscan.io`** |
