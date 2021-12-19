@@ -66,7 +66,7 @@ If you want to download the images, perform these steps:
    - For OVM 2.0, use the `regenesis/0.5` branch.
 
      ```sh
-     git clone https://github.com/ethereum-optimism/optimism.git -b regenesis/0.5
+     git clone https://github.com/ethereum-optimism/optimism.git -b develop
      ```
 
 2. Download the images from [the Docker 
