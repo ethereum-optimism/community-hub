@@ -27,10 +27,10 @@ module.exports = {
       {
         text: 'optimism',
         link: 'https://www.optimism.io',
-      },      
+      },
       {
         text: 'faqs',
-        link: 'https://www.optimism.io/faqs',
+        link: 'https://optimismhelp.zendesk.com/hc/en-us/categories/4411903430427-FAQ',
       },
       {
         text: 'discord',
@@ -38,25 +38,11 @@ module.exports = {
       },
     ],
     sidebar: [
-        {
-          title: 'User Docs',
-
-          //  When updating here, update also users/README.md
-
-          children: [
-            '/docs/users/getting-started.md',
-            '/docs/users/metamask.md',
-            '/docs/users/deposit.md',
-            '/docs/users/withdrawal.md',
-            [
-              'https://www.optimism.io/apps/all',
-              'Apps on Optimism'
-            ],   
-            '/docs/users/fees-2.0.md'          
-          ],
-          collapsable: false,
-          sidebarDepth: 0,
-        },
+        [
+          // In the sidebar for now because that is where people expect it
+          'https://help.optimism.io',
+          'User Docs & Help Center'
+        ],
         {
           title: 'Developer Docs',
           children: [
@@ -90,7 +76,7 @@ module.exports = {
             },
             '/docs/developers/util.md',
             '/docs/developers/known-issues.md',
-            '/docs/developers/contact-us.md'            
+            '/docs/developers/contact-us.md'
           ],
           collapsable: false,
           sidebarDepth: 0,
@@ -106,7 +92,7 @@ module.exports = {
             [
               'https://www.optimism.io/apps/tools',
               'Third Party Tools'
-            ],            
+            ],
             '/docs/infra/monitoring.md',
           ],
           collapsable: false,

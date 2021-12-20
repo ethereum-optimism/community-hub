@@ -5,8 +5,7 @@ lang: en-US
 
 # {{ $frontmatter.title }}
 
-## The logic of Optimism fees
-You can see how the fee is calculated and deducted [here](../../users/fees-2.0.md).
+You can see how the fee is calculated and deducted [here](https://optimismhelp.zendesk.com/hc/en-us/articles/4411895794715-Transaction-Fees).
 
 Every Optimism transaction has two costs:
 
