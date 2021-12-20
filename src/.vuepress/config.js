@@ -74,7 +74,6 @@ module.exports = {
               collapsable: false,
               sidebarDepth: 0,
             },
-            '/docs/developers/util.md',
             '/docs/developers/known-issues.md',
             '/docs/developers/contact-us.md'
           ],
