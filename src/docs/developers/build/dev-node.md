@@ -1,5 +1,5 @@
 ---
-title: Running a Development Node
+title: Running a local development node
 lang: en-US
 ---
 

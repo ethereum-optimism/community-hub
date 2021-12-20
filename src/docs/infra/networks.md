@@ -61,7 +61,7 @@ Please set up a private RPC endpoint with any of the following providers:
 ## Development Node (local)
 
 ::: tip Purpose
-This is the information for a [local development node](../developers/l2/dev-node.md).
+This is the information for a [local development node](../developers/build/dev-node.md).
 :::
 
 | Parameter | Value |
