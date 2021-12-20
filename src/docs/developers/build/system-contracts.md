@@ -1,5 +1,5 @@
 ---
-title: Using the Protocol Contracts
+title: Interacting with L2 system contracts
 lang: en-US
 ---
 

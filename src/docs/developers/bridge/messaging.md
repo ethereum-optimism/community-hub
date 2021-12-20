@@ -1,5 +1,5 @@
 ---
-title: Sending Messages Between L1 and L2
+title: Sending messages between L1 and L2
 lang: en-US
 ---
 

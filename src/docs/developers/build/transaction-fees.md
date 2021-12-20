@@ -1,5 +1,5 @@
 ---
-title: Transaction Fees on L2
+title: Transaction fees on L2
 lang: en-US
 ---
 
