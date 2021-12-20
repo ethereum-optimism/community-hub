@@ -30,7 +30,7 @@ module.exports = {
       },      
       {
         text: 'faqs',
-        link: 'https://www.optimism.io/faqs',
+        link: 'https://optimismhelp.zendesk.com/hc/en-us/categories/4413025594011-Frequently-asked-questions',
       },
       {
         text: 'discord',
@@ -39,8 +39,8 @@ module.exports = {
     ],
     sidebar: [
         [
-          'https://optimismhelp.zendesk.com/',
-          'User Docs'
+          "https://optimismhelp.zendesk.com/hc",
+          "User Docs"
         ],
         {
           title: 'Developer Docs',
