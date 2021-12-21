@@ -8,7 +8,6 @@ body {
 h1 {
   font-family: "Rubik";
   font-size: 48px;
-  text-decoration: $accentColor underline;
 }
 
 h2 {
@@ -26,7 +25,20 @@ h3 {
 .sidebar > .sidebar-links > li > a.sidebar-link {
   color: $textColor;
   font-family: "Rubik";
-  text-decoration: $accentColor underline;
+}
+
+
+.sidebar .sidebar-group .sidebar-heading {
+  font-weight: bold !important;
+}
+
+.sidebar > .sidebar-links > li > a.sidebar-link:hover {
+  color: $accentColor;
+}
+
+.sidebar svg.icon.outbound {
+  position: relative;
+  left: 3px;
 }
 
 .sidebar .sidebar-heading {
