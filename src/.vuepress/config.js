@@ -102,6 +102,7 @@ module.exports = {
     searchPlaceholder: 'Search the docs',
     sidebar: {
       '/docs/guides/': [
+        '/docs/guides/wallet-dev.md',
         '/docs/guides/cex-dev.md',
         '/docs/guides/token-dev.md',
         '/docs/guides/smart-contract-devs.md'
