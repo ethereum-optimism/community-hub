@@ -15,7 +15,7 @@ There are two ways for a wallet to handle being connected to multiple chains:
 
 ### Switching chains
 
-A user can add or swithc into a chain using either the wallet's user interface or a dapp's user interface. To enable switching on a dapp, the wallet needs to handle these requests:
+A user can add or switch into a chain using either the wallet or a dapp.To enable switching on a dapp, the wallet needs to handle these requests:
 
 - [`wallet_addEthereumChain`](https://eips.ethereum.org/EIPS/eip-3085)
 - [`wallet_switchEthereumChain`](https://eips.ethereum.org/EIPS/eip-3326)
