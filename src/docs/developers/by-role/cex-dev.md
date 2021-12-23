@@ -47,7 +47,7 @@ The ERC-20 contracts on Optimism function the same way they do on Ethereum, so y
 
 Most of the cost of an Optimism transaction is not the gas consumed by the transaction itself (which is priced in most cases at 0.001 gwei), but the cost of writing the transaction in Ethereum. That cost is deducted automatically from the user's balance on Optimism. If you charge your users the cost of withdrawals, you have to account for it.
 
-[You can read more about this subject here](/docs/developers/l2/new-fees.md). The relevant code sample is [here](/docs/developers/l2/new-fees.md#for-frontend-and-wallet-developers).
+[You can read more about this subject here](../l2/new-fees.md). The relevant code sample is [here](../l2/new-fees.md#for-frontend-and-wallet-developers).
 
 
 
