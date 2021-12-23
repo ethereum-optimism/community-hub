@@ -11,7 +11,12 @@ lang: en-US
 There are two ways for a wallet to handle being connected to multiple chains:
 
 1. Connect to one chain at a time, the way MetaMask does it. Let the user switch chains either from your user interface, or through a dapp.
-1. Connect to all chains all the time, the way Rainbow does it. Display ETH and token balances on all chains, and ask which chain to use when connecting to a dapp.
+
+   ![Metamask with the chain menu](../../../assets/docs/developers/by-role/wallet-dev/chains-metamask.png)
+
+1. Connect to all chains all the time, the way Coinbase Wallet does it. Display ETH and token balances on all chains, and ask which chain to use when connecting to a dapp.
+
+   ![Coinbase Wallet shows all the chains at the same time](../../../assets/docs/developers/by-role/wallet-dev/chains-coinbase.png)
 
 ### Switching chains
 
