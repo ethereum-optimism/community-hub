@@ -58,14 +58,14 @@ A transaction in Optimism can be in one of three states:
 
 ## Differences from Ethereum
 
-We aim to be [EVM equivalent](https://medium.com/ethereum-optimism/introducing-evm-equivalence-5c2021deb306), meaning we aim to minimize the differences between Optimism and Ethereum. You can see a summary of the few differences between Optimism and Ethereum [here](../l2/differences.md). These are the differences that are most relevant to wallet developers:
+We aim to be [EVM equivalent](https://medium.com/ethereum-optimism/introducing-evm-equivalence-5c2021deb306), meaning we aim to minimize the differences between Optimism and Ethereum. You can see a summary of the few differences between Optimism and Ethereum [here](/docs/developers/l2/differences.md). These are the differences that are most relevant to wallet developers:
 
 ### Transaction fees
 
 Most of the cost of an Optimism transaction is not the gas consumed by the transaction itself (which is priced at 0.001 gwei when the chain is not congested), but the cost of writing the transaction in Ethereum. That cost is deducted automatically from the user's balance on Optimism.
 
-[You can read more about this subject here](../l2/new-fees.md). The relevant code sample is [here](../l2/new-fees.md#for-frontend-and-wallet-developers).
+[You can read more about this subject here](/docs/developers/l2/new-fees.md). The relevant code sample is [here](/docs/developers/l2/new-fees.md#for-frontend-and-wallet-developers).
 
 ### JSON RPC differences
 
-[See here](../l2/json-rpc.md).
+[See here](/docs/developers/l2/json-rpc.md).
