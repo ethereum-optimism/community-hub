@@ -58,7 +58,7 @@ A transaction in Optimism can be in one of three states:
 
 ## Differences from Ethereum
 
-You can see a summary of the differences [here](../l2/differences.md). These are the differences that are most relevant to wallet developers:
+We aim to be [EVM equivalent](https://medium.com/ethereum-optimism/introducing-evm-equivalence-5c2021deb306), meaning we aim to minimize the differences between Optimism and Ethereum. You can see a summary of the few differences between Optimism and Ethereum [here](../l2/differences.md). These are the differences that are most relevant to wallet developers:
 
 ### Transaction fees
 
