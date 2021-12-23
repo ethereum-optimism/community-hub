@@ -57,4 +57,4 @@ As a centralized exchange, there will be times that withdrawals of a token on a 
 
 There are [multiple bridges](https://www.optimism.io/apps/bridges) across chains, with differenet levels of security, token selection, etc. If you want to use [our gateway](https://gateway.optimism.io/), which is decentralized and secured with the same mechanisms as Optimism itself, [follow this tutorial](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/l1-l2-deposit-withdrawal).
 
-Note that while L1 to L2 transactions are very quick, L2 to L1 transaction require (a seven day challenge period)[https://help.optimism.io/hc/en-us/articles/4411895558171-Why-do-I-need-to-wait-a-week-when-moving-assets-out-of-Optimism-].
+Note that while L1 to L2 transactions are very quick, L2 to L1 transaction require [a seven day challenge period](https://help.optimism.io/hc/en-us/articles/4411895558171-Why-do-I-need-to-wait-a-week-when-moving-assets-out-of-Optimism-).
