@@ -62,7 +62,7 @@ You can see a summary of the differences [here](../l2/differences.md). These are
 
 ### Transaction fees
 
-Most of the cost of an Optimism transaction is not the gas consumed by the transaction itself (which is priced in most cases at 0.001 gwei), but the cost of writing the transaction in Ethereum. That cost is deducted automatically from the user's balance on Optimism.
+Most of the cost of an Optimism transaction is not the gas consumed by the transaction itself (which is priced at 0.001 gwei when the chain is not congested), but the cost of writing the transaction in Ethereum. That cost is deducted automatically from the user's balance on Optimism.
 
 [You can read more about this subject here](../l2/new-fees.md). The relevant code sample is [here](../l2/new-fees.md#for-frontend-and-wallet-developers).
 
