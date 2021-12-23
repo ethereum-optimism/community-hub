@@ -36,7 +36,7 @@ You connect to Optimism the same way you do to Ethereum, by connecting to a JSON
 
 ### Token addresses
 
-The ERC-20 contract address for a token on Optimism may be different from the address for the same token on Ethereum. [The list of tokens and their addresses is here](https://static.optimism.io/optimism.tokenlist.json).
+The ERC-20 contract address for a token on Optimism may be different from the address for the same token on Ethereum. [The list of tokens and their addresses is here](https://static.optimism.io/optimism.tokenlist.json). You can see the same list with a user interface [here](https://tokenlists.org/token-list?url=https://static.optimism.io/optimism.tokenlist.json).
 
 For example, looking at the **SNX** token, we get these addresses:
 
