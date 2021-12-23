@@ -41,11 +41,6 @@ To get the total SNX balance of a user that uses Optimism you need to:
 
 A transaction in Optimism can be in one of three states:
 
-- **Sequencer Confirmed**: The transaction has been accepted by the Optimism sequencer on L2
-- **Confirmed On-Chain**: The transaction has been written to Ethereum (L1). In that case of an L2->L1 transaction, this starts the seven day period until it can be finalized
-- **Finalized On-Chain**: This status is only application for L2->L1 transactions, and means that the transaction was finalized on L1 after the verification period has passed.
-
-
 ## Deposits and withdrawals
 
 The ERC-20 contracts on Optimism function the same way they do on Ethereum, so you can use your existing code for withdrawals and deposits. Just connect to an Optimism endpoint.
@@ -53,7 +48,7 @@ The ERC-20 contracts on Optimism function the same way they do on Ethereum, so y
 
 ### Transaction fees
 
-Most of the cost of an Optimism transaction is not the gas consumed by the transaction itself (which is priced in most cases at 0.001 gwei), but the cost of writing the transaction in Ethereum. That cost is deducted automatically from the user's balance on Optimism.
+Most of the cost of an Optimism transaction is not the gas consumed by the transaction itself (which is priced in most cases at 0.001 gwei), but the cost of writing the transaction in Ethereum. That cost is deducted automatically from the user's balance on Optimism. If you charge your users the cost of withdrawals, you have to account for it.
 
 [You can read more about this subject here](/docs/developers/l2/new-fees.md). The relevant code sample is [here](/docs/developers/l2/new-fees.md#for-frontend-and-wallet-developers).
 
@@ -63,4 +58,6 @@ Most of the cost of an Optimism transaction is not the gas consumed by the trans
 
 As a centralized exchange, there will be times that withdrawals of a token on a specific chain exceed deposits and you need to transfer assets. 
 
-There are [multiple bridges]() between chains, 
+There are [multiple bridges](https://www.optimism.io/apps/bridges) across chains, with differenet levels of security, token selection, etc. If you want to use [our gateway](https://gateway.optimism.io/), which is decentralized and secured with the same mechanisms as Optimism itself, [follow this tutorial](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/l1-l2-deposit-withdrawal).
+
+Note that while L1 to L2 transactions are very quick, L2 to L1 transaction require (a seven day challenge period)[https://help.optimism.io/hc/en-us/articles/4411895558171-Why-do-I-need-to-wait-a-week-when-moving-assets-out-of-Optimism-].
