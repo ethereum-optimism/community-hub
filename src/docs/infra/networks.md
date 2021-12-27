@@ -29,7 +29,6 @@ Please set up a private RPC endpoint with any of the following providers:
 - [Infura](https://blog.infura.io/what-is-optimistic-ethereum/)
 - [QuickNode](https://www.quicknode.com/chains/optimism)
 
-
 The public endpoints are provided as a convenience in order to make it easier to develop dApps on Optimism. **These public endpoints are strictly rate limited and should not be used in production systems**.
 
 - HTTP endpoint: [https://mainnet.optimism.io](https://mainnet.optimism.io)
