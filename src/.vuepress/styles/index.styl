@@ -1,105 +1,66 @@
-@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap);
-@import url(https://fonts.googleapis.com/css2?family=Rubik&display=swap);
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Rubik:ital,wght@1,700&display=swap');
 
-body {
-  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Roboto, sans-serif;
+main, body, html {
+  font-family: 'Open Sans', sans-serif;
+}
+
+p {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+aside.sidebar {
+  background-color: #F1F4F9;
+  border-right: none;
+}
+
+p.sidebar-heading {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  font-size: 14px !important;
+  line-height: 24px !important;
+  height: 36px;
+  margin-left: 10px;
+  padding: 5px 8px !important;
+  width: auto !important;
+  border-radius: 8px;
+}
+
+a.sidebar-link {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  font-size: 14px !important;
+  line-height: 24px !important;
+  height: 36px;
+  margin-left: 10px;
+  padding: 5px 8px !important;
+  width: auto !important;
+  border-radius: 8px;
+}
+
+section.sidebar-group a.sidebar-link  {
+  margin-left: 20px;
+}
+
+a.sidebar-link.active {
+  border-left-color: #F1F4F9 !important;
+  background-color: #FFDBDF;
+  color: #FF0420 !important;
 }
 
 h1 {
-  font-family: "Rubik";
-  font-size: 48px;
-}
-
-h2 {
-  border-bottom: none;
-  font-family: "Rubik";
   font-size: 36px;
 }
 
-h3 {
-  font-family: "Rubik";
+h2 {
+  font-size: 24px;
 }
 
-.navbar .home-link span,
-.sidebar .sidebar-group .sidebar-heading,
-.sidebar > .sidebar-links > li > a.sidebar-link {
-  color: $textColor;
-  font-family: "Rubik";
-}
-
-
-.sidebar .sidebar-group .sidebar-heading {
-  font-weight: bold !important;
-}
-
-.sidebar > .sidebar-links > li > a.sidebar-link:hover {
-  color: $accentColor;
-}
-
-.sidebar svg.icon.outbound {
-  position: relative;
-  left: 3px;
-}
-
-.sidebar .sidebar-heading {
-  opacity: 1 !important;
-}
-
-.sidebar .sidebar-link.active {
-  font-weight: normal;
-}
-
-.home .hero {
-  text-align: center;
-}
-
-.home .hero .action-button {
-  color: black !important;
-  background-color: white !important;
-  border: 1px solid black !important;
-  font-family: "Roboto";
-  margin: 15px auto;
-  cursor: pointer;
-  width: 250px;
-  display: block !important;
-}
-
-.home .hero .action-button u {
-  text-decoration: $accentColor underline;
-  text-decoration-thickness: 2px;
-}
-
-.home .hero .action-button:hover {
-  -webkit-box-shadow: 5px 5px 0px -1px $accentColor; 
-  box-shadow: 5px 5px 0px -1px $accentColor;
-}
-
-.tag-info-block {
-  padding: 0.5rem 1.5rem;
-  color: $textColor;
-  background-color: $lightBackgroundColor;
-  border-left: 8px solid $textColor;
-}
-
-a > code {
-  color: $accentColor !important;
-}
-
-#tagline {
-  position: relative;
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0% {
-    left: -10px;
-  }
-  50% {
-    left: 10px;
-  }
-  100% {
-    left: -10px;
-  }
+h1, h2, h3 {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 700;
+  font-style: italic;
+  border-bottom: none;
 }
 
 .search-box {
@@ -111,38 +72,33 @@ a > code {
     left: auto !important;
     right: 0 !important;
   }
+
+  input {
+    border-color: #CBD5E0 !important;
+    border-radius: 100px !important;
+    background-color: #FFFFFF !important;
+  }
 }
 
-.chainid-link-iframe {
-  width: 100%;
-  height: 500px;
-  overflow: hidden;
+header.navbar {
+  border-bottom: none;
+  box-shadow: 0px 6px 8px -6px rgba(20, 23, 26, 0.06), 0px 8px 16px -6px rgba(20, 23, 26, 0.04);
 }
 
-div.custom-block {
-  border-left-color: #ff0420 !important;
+span.site-name {
+  display: none !important;
 }
 
-h4 {
-  font-size: 18px;
+a.nav-link,
+div.nav-item span.title {
+  font-weight: 600;
 }
 
-.theme-default-content img {
-  display: block;
-  margin: 0 auto;
+a.nav-link:not(.router-link-active),
+div.nav-item span.title {
+  color: #68778D;
 }
 
-.logo {
-  max-height: 50px;
-}
-.custom-block.warning {
-  color: black;
-}
-
-.custom-block.warning .custom-block-title {
-  color: red;
-}
-
-.page-edit .edit-link a:hover {
-  color: $accentColor;
+.theme-default-content:not(.custom) {
+  padding-top: 0px;
 }

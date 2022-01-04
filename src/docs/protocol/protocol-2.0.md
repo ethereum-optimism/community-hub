@@ -1,9 +1,6 @@
 ---
 title: Contract Overview
 lang: en-US
-tags:
-    - contracts
-    - high-level
 ---
 
 # {{ $frontmatter.title }}

@@ -1,9 +1,6 @@
 ---
 title: Protocol Readings
 lang: en-US
-tags:
-    - contracts
-    - high-level
 ---
 
 # {{ $frontmatter.title }}
