@@ -1,9 +1,6 @@
 ---
 title: Optimism Docs
 lang: en-US
-tags:
-    - contracts
-    - high-level
 sidebar: true
 class: page
 ---

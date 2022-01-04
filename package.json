@@ -11,7 +11,8 @@
   "devDependencies": {
     "@vuepress/plugin-medium-zoom": "^1.8.2",
     "vuepress": "^1.8.2",
-    "vuepress-plugin-plausible-analytics": "^0.2.1"
+    "vuepress-plugin-plausible-analytics": "^0.2.1",
+    "vuepress-theme-hope": "^1.22.0"
   },
   "dependencies": {
     "check-md": "^1.0.2"
