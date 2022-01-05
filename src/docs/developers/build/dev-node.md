@@ -35,7 +35,7 @@ Everything you need to test your Optimistic application:
 
 ## Prerequisites
 
-You'll need have the following installed:
+You'll need to have the following installed:
 
 1. [Docker](https://www.docker.com/)
 1. [Docker compose](https://docs.docker.com/compose/install/)
