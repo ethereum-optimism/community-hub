@@ -20,7 +20,6 @@ You can view information about both the Optimistic Ethereum mainnet and the Opti
 
 Etherscan provides a lot of detailed information about what's happening on Optimistic Ethereum.
 Check out the [mainnet explorer](https://optimistic.etherscan.io/) or the [testnet explorer](https://kovan-optimistic.etherscan.io/) to get a look for yourself.
-<!-- TODO For a complete list of OE-specific features, check out our section on [Etherscan's custom OE features](TODO). -->
 
 ## Dashboards on Dune Analytics
 
