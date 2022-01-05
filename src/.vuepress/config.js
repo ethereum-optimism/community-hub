@@ -70,7 +70,7 @@ module.exports = {
                 // rare (messaging)
                 '/docs/developers/bridge/standard-bridge.md',
                 '/docs/developers/bridge/messaging.md',
-                '/docs/developers/bridge/fees.md'
+                '/docs/developers/bridge/cross-domain-fees.md'
               ],
               collapsable: false,
               sidebarDepth: 0,
