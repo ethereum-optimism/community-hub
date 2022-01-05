@@ -1,12 +1,12 @@
 ---
-title: Sending messages between L1 and L2
+title: Sending data between L1 and L2
 lang: en-US
 ---
 
 # {{ $frontmatter.title }}
 
 Apps on Optimism can be made to interact with apps on Ethereum via a process called "bridging".
-In a nutshell, **contracts on Optimism can send messages to contracts on Ethereum, and vice versa**.
+In a nutshell, **contracts on Optimism can trigger contracts functions on Ethereum, and vice versa**.
 With just a little bit of elbow grease, you too can create contracts that bridge the gap between Layer 1 and Layer 2!
 
 ## Understanding contract calls
@@ -118,18 +118,16 @@ contract MyOtherContract {
 ```
 
 ::: tip Using the messenger contracts
-These messenger contracts, the [`OVM_L1CrossDomainMessenger`](https://github.com/ethereum-optimism/optimism/blob/ef5343d61708f2d15f51dca981f03ee4ac447c21/packages/contracts/contracts/optimistic-ethereum/OVM/bridge/messaging/OVM_L1CrossDomainMessenger.sol) and [`OVM_L2CrossDomainMessenger`](https://github.com/ethereum-optimism/optimism/blob/ef5343d61708f2d15f51dca981f03ee4ac447c21/packages/contracts/contracts/optimistic-ethereum/OVM/bridge/messaging/OVM_L2CrossDomainMessenger.sol), always come pre-deployed to each of our networks.
-You can find the exact addresses of these contracts on our various deployments [inside of the Optimism monorepo](https://github.com/ethereum-optimism/optimism/blob/ef5343d61708f2d15f51dca981f03ee4ac447c21/packages/contracts/deployments/README.md).
+Our messenger contracts, the [`L1CrossDomainMessenger`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/L1/messaging/L1CrossDomainMessenger.sol) and [`L2CrossDomainMessenger`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/L2/messaging/L2CrossDomainMessenger.sol), always come pre-deployed to each of our networks.
+You can find the exact addresses of these contracts on our various deployments [inside of the Optimism monorepo](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/deployments).
 :::
 
-<!-- TODO: add this page to our docs too -->
-
-### Caveats
+## Stuff to keep in mind
 
 Of course, all the best things in life come with asterisks.
 Let's take a look at the things you should keep in mind when you use these contracts.
 
-#### Communication is *not* instantaneous
+### Communication is *not* instantaneous
 
 Calls between two contracts on Ethereum happen synchronously and atomically within the same transaction.
 That is, you'll be told about the result of the call right away.
@@ -138,7 +136,7 @@ If you want to know about the result of the call, you'll have to wait for the ot
 
 <!-- TODO: do we need an example here? -->
 
-#### Accessing `msg.sender`
+### Accessing `msg.sender`
 
 Contracts frequently make use of `msg.sender` to make decisions based on the calling account.
 For example, many contracts will use the [Ownable](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/access/Ownable.sol) pattern to selectively restrict access to certain functions.
