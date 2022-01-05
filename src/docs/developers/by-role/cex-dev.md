@@ -38,9 +38,9 @@ To get the total SNX balance of a user that uses Optimism you need to:
 1. Connect to an Optimism endpoint and send a `balanceOf` query to address `0x8700daec35af8ff88c16bdf0418774cb3d7599b4`.
 
 
-## Deposits and withdrawals
+## Deposits and withdrawals within Optimism
 
-The ERC-20 contracts on Optimism function the same way they do on Ethereum, so you can use your existing code for withdrawals and deposits. Just connect to an Optimism endpoint.
+The ERC-20 contracts on Optimism function the same way they do on Ethereum, so you can use your existing code for withdrawals and deposits. Just connect to an Optimism endpoint. 
 
 
 ### Transaction fees
@@ -50,11 +50,17 @@ Most of the cost of an Optimism transaction is not the gas consumed by the trans
 [You can read more about this subject here](../l2/new-fees.md). The relevant code sample is [here](../l2/new-fees.md#for-frontend-and-wallet-developers).
 
 
+## Deposits and withdrawals across chains
 
-## Rebalancing assets across chains
+As a centralized exchange, there will be times that withdrawals of ETH or an ERC-20 token on a specific chain exceed deposits and you need to transfer assets. To do that you use a bridge or a gateway. We have a [master gateway](https://gateway.optimism.io/) that receives assets on L1 (Ethereum mainnet), and mints the equivalent asset on L2 (which can be Optimism or a different solution). Eventually, when a user (possibly a different one) wants to withdraw the assets back to L1, the bridge burns the asset on L2 and releases it to the user on L1. If you want to use this gateway directly, follow these tutorials:
 
-As a centralized exchange, there will be times that withdrawals of a token on a specific chain exceed deposits and you need to transfer assets. 
+* [For ETH](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/eth-deposit)
+* [For ERC-20 tokens](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/l1-l2-deposit-withdrawal)
 
-There are [multiple bridges](https://www.optimism.io/apps/bridges) across chains, with differenet levels of security, token selection, etc. If you want to use [our gateway](https://gateway.optimism.io/), which is decentralized and secured with the same mechanisms as Optimism itself, [follow this tutorial](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/l1-l2-deposit-withdrawal).
+Note that while L1 to L2 transactions typically take minutes, L2 to L1 transaction on the gateway require [a seven day challenge period](https://help.optimism.io/hc/en-us/articles/4411895558171-Why-do-I-need-to-wait-a-week-when-moving-assets-out-of-Optimism-).
 
-Note that while L1 to L2 transactions are very quick, L2 to L1 transaction require [a seven day challenge period](https://help.optimism.io/hc/en-us/articles/4411895558171-Why-do-I-need-to-wait-a-week-when-moving-assets-out-of-Optimism-).
+Alternatively, you can use a [third party bridge](https://www.optimism.io/apps/bridges). These bridges usually rely on liquidity pools to allow for faster withdrawals and support multiple L2 chains. However, their token selection might be more limited and they may not be as decentralized as our gateway. 
+
+## Audit reports
+
+* [OpenZeppelin on OVM 1.0](https://blog.openzeppelin.com/optimism-smart-contracts-audit/), for the code as it was in April 11th, 2021.
