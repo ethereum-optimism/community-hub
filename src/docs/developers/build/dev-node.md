@@ -1,181 +1,237 @@
 ---
-title: Running a local development node
+title: Running a local development environment
 lang: en-US
 ---
 
 # {{ $frontmatter.title }}
 
-::: tip
-You can [check out one of the getting started tutorials](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/hardhat) for a step-by-step guide to creating and using a development node.
-You can also find some more detailed information about working with the development node on the [Optimism monorepo](https://github.com/ethereum-optimism/optimism#development-quick-start).
-:::
-
 ## What is this?
 
-A development node is a local installation of Optimism.
-Having such an installation lets you debug your optimistic 
-application with the performance of a local server before you 
-"graduate" to 
-[our testnet](../../infra/networks.md#optimism-kovan-testnet) prior
-to a mainnet deployment.
+A development environment is a local installation of the entire Optimism system.
+Our default development environment includes both L1 and L2 development nodes.
+Running the Optimism environment locally is a great way to test your code and see how your contracts will behave on Optimism before you graduate to a testnet deployment (and eventually a mainnet deployment).
 
-### What does it include?
+## Do I need this?
 
-Hopefully, everything you need to test an optimistic application:
+We generally recommend using the local development environment if your application falls into one of the following categories:
 
-1. An L1 network available at https://localhost:9545.
-1. An L2 network available at https://localhost:8545.
-1. An account with 10k ETH to spend on testing (the account
-   mnemonic is 
-   `test test test test test test test test test test test junk`).
-1. All the Optimism contracts and servers for cross
-   domain communications, except that the challenge period is
-   a few seconds instead of a week.   
+1. **You're building contracts on both Optimism and Ethereum that need to interact with one another.** The local development environment is a great way to quickly test interactions between L1 and L2. The Optimism testnet and mainnet environments both have a communication delay between L1 and L2 that can make testing slow during the early stages of development.
+2. **You're building an application that might be subject to one of the few [differences between Ethereum and Optimism](./differences.md).** Although Optimism is EVM equivalent, it's not exactly the same as Ethereum. If you're building an application that might be subject to one of these differences, you should use the local development environment to double check that everything is running as expected. You might otherwise have unexpected issues when you move to testnet. We strongly recommend reviewing these differences carefully to see if you might fall into this category.
 
+However, not everyone will need to use the local development environment.
+Optimism is EVM equivalent, which means that Optimism looks almost exactly like Ethereum under the hood.
+If you don't fall into one of the above categories, you can probably get away with simply relying on existing testing tools like Truffle or Hardhat.
+If you don't know whether or not you should be using the development environment, feel free to hop into the [Optimism discord](https://discord.optimism.io).
+Someone nice will help you out!
+
+## What does it include?
+
+Everything you need to test your Optimistic application:
+
+1. An L1 (Ethereum) node available at [http://localhost:9545](http://localhost:9545).
+1. An L2 (Optimism) node available at [http://localhost:8545](http://localhost:8545).
+1. All of the Optimism contracts and services that make L1 ⇔ L2 communication possible.
+1. Accounts with lots of ETH on both L1 and L2.
 
 ## Prerequisites
 
-You'll need to install the following before you can continue:
+You'll need have the following installed:
 
 1. [Docker](https://www.docker.com/)
 1. [Docker compose](https://docs.docker.com/compose/install/)
 1. [Node.js](https://nodejs.org/en/), version 12 or later
 1. [Classic Yarn](https://classic.yarnpkg.com/lang/en/)
 
+## Setting up the environment
 
-## Creating a node
+We use [Docker](https://www.docker.com) to run our development environment.
+You can set up your development environment either by downloading the required software from [Docker Hub](https://hub.docker.com/u/ethereumoptimism) or by building the software from the [source code](https://github.com/ethereum-optimism/optimism).
+Downloading images from Docker Hub is easier and more reliable, but we'll cover both approaches in this guide.
 
-You can either download the docker images from [Docker 
-Hub](https://hub.docker.com/u/ethereumoptimism) or build the software from the [source code](https://github.com/ethereum-optimism/optimism).
+### Option 1: Downloading from Docker Hub
 
-
-### Downloading the docker images
-
-If you want to download the images, perform these steps:
-
-
-1. Clone the [Optimism monorepo](https://github.com/ethereum-optimism/optimism) and use the `develop` branch.
-
-     ```sh
-     git clone https://github.com/ethereum-optimism/optimism.git -b develop
-     ```
-
-2. Download the images from [the Docker 
-   hub](https://hub.docker.com/u/ethereumoptimism). Depending on the hardware
-   and network connection, this process can take up to ten minutes.
-
-   ```sh
-   cd optimism/ops
-   docker-compose -f docker-compose-nobuild.yml up -t 600 --no-start
-   ``` 
-
-   If you want to start the development node as soon as 
-   it is downloaded, remove the `--no-start` argument.
-
-   You might get a timeout at first. If that is the case, just 
-   run the `docker-compose` command again.
-
-
-### Building from source
-
-If you want to build from the source code, perform these steps:
-
-1. Clone the [Optimism monorepo](https://github.com/ethereum-optimism/optimism).
+1. Clone and enter the [Optimism monorepo](https://github.com/ethereum-optimism/optimism):
 
    ```sh
    git clone https://github.com/ethereum-optimism/optimism.git
    cd optimism
    ```
 
-2. Install all of the dependencies.   
+2. Move into the `ops` directory:
+
+   ```sh
+   cd ops
+   ```
+
+3. Download the required software:
+
+   ```sh
+   docker-compose -f docker-compose-nobuild.yml up -t 600 --no-start
+   ``` 
+
+4. Wait for the download to complete. This can take a while.
+
+### Option 2: Building from source
+
+1. Clone and enter the [Optimism monorepo](https://github.com/ethereum-optimism/optimism):
+
+   ```sh
+   git clone https://github.com/ethereum-optimism/optimism.git
+   cd optimism
+   ```
+
+2. Install all of the dependencies:
 
    ```sh
    yarn install
    ```
 
-3. Build the packages.
+3. Build the packages:
    ```sh
    yarn build
    ```
 
-4. Build the Docker containers
+4. Build the Docker containers:
 
    ```sh
    cd ops
    export COMPOSE_DOCKER_CLI_BUILD=1
    export DOCKER_BUILDKIT=1
-   docker-compose build && echo "Build complete"
+   docker-compose build
    ```
 
-5. Wait for the "Build complete" message to appear.
+4. Wait for the build to complete. This can take a while.
 
-## Using the node
+## Starting the environment
 
-### Starting the node
-
-- To start a node for which you downloaded the images use:
+You'll always need to be inside the `ops` directory of the Optimism monorepo to start or restart the development environment:
 
 ```sh
-cd optimism/ops
-docker-compose -f docker-compose-nobuild.yml up
+cd ops
 ```
 
-- To start a node which you compiled and build yourself, use:
+Once you're inside the `ops` directory, run one of the following two commands depending on how you installed the environment:
+
+1. If you downloaded from Docker Hub:
+
+   ```sh
+   docker-compose -f docker-compose-nobuild.yml up
+   ```
+
+2. If you built from source:
+
+   ```sh
+   docker-compose up
+   ```
+
+Depending on your machine, this startup process may take some time and it can be unclear when the system is fully ready.
+You can run the following command in another terminal to check if the system is ready to accept transactions (make sure you're in the `ops` folder):
 
 ```sh
-cd optimism/ops
-docker-compose up
+scripts/wait-for-sequencer.sh && echo "System is ready to accept transactions"
 ```
 
+## Accessing the environment
 
-The startup process may take some time.
-For the impatient, you can run the following script to know when your node is ready.
-The script will exit once the system has fully started up.
+The local development environment consists of both an L1 node and an L2 node.
+You can interact with these nodes at the following ports:
 
-```sh
-cd optimism/ops
-scripts/wait-for-sequencer.sh
-```
+- L1 (Ethereum) node: [http://localhost:9545](http://localhost:9545)
+- L2 (Optimism) node: [http://localhost:8545](http://localhost:8545)
 
-### Accessing the node
+## Getting ETH for transactions
 
-`docker-compose up` creates both an L1 node and an L2 node.
-You can interact with both of these nodes at the following ports:
+::: warning WARNING
+The private keys for the accounts used within the local development environment are **PUBLICLY KNOWN**.
+Any funds sent to these accounts on a live network (Ethereum, Optimism, or any other public network) **WILL BE LOST**.
+:::
 
-| Node                                         | Port | 
-| -------------------------------------------- | ---- |
-| L2 (Optimism dev node)            | 8545 |
-| L1 ([hardhat](https://hardhat.org) dev node) | 9545 |
-
-
-[Click here to see the differences between the L1 Ethereum RPC interface and the Optimism RPC interface](./json-rpc.md)
-
-### Getting ETH on your dev node
-
-All of the default hardhat accounts are funded with ETH on both L1 and L2.
+All accounts that are funded by default within [Hardhat](https://hardhat.org) are funded with 5000 ETH on both L1 and L2.
 These accounts are derived from the following mnemonic:
 
 ```
 test test test test test test test test test test test junk
 ```
 
-You can also generate the complete list of accounts and private keys by running:
+Here's the full list of accounts and their corresponding private keys:
 
 ```
-npx hardhat node
+Account #0: 0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266
+Private Key: 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80
+
+Account #1: 0x70997970c51812dc3a010c7d01b50e0d17dc79c8
+Private Key: 0x59c6995e998f97a5a0044966f0945389dc9e86dae88c7a8412f4603b6b78690d
+
+Account #2: 0x3c44cdddb6a900fa2b585dd299e03d12fa4293bc
+Private Key: 0x5de4111afa1a4b94908f83103eb1f1706367c2e68ca870fc3fb9a804cdab365a
+
+Account #3: 0x90f79bf6eb2c4f870365e785982e1f101e93b906
+Private Key: 0x7c852118294e51e653712a81e05800f419141751be58f605c371e15141b007a6
+
+Account #4: 0x15d34aaf54267db7d7c367839aaf71a00a2c6a65
+Private Key: 0x47e179ec197488593b187f80a00eb0da91f1b9d0b13f8733639f19c30a34926a
+
+Account #5: 0x9965507d1a55bcc2695c58ba16fb37d819b0a4dc
+Private Key: 0x8b3a350cf5c34c9194ca85829a2df0ec3153be0318b5e2d3348e872092edffba
+
+Account #6: 0x976ea74026e726554db657fa54763abd0c3a0aa9
+Private Key: 0x92db14e403b83dfe3df233f83dfa3a0d7096f21ca9b0d6d6b8d88b2b4ec1564e
+
+Account #7: 0x14dc79964da2c08b23698b3d3cc7ca32193d9955
+Private Key: 0x4bbbf85ce3377467afe5d46f804f221813b2bb87f24d81f60f1fcdbf7cbf4356
+
+Account #8: 0x23618e81e3f5cdf7f54c3d65f7fbc0abf5b21e8f
+Private Key: 0xdbda1821b80551c9d65939329250298aa3472ba22feea921c0cf5d620ea67b97
+
+Account #9: 0xa0ee7a142d267c1f36714e4a8f75612f20a79720
+Private Key: 0x2a871d0798f97d79848a013d4936a73bf4cc922c825d33c1cf7073dff6d409c6
+
+Account #10: 0xbcd4042de499d14e55001ccbb24a551f3b954096
+Private Key: 0xf214f2b2cd398c806f84e317254e0f0b801d0643303237d97a22a48e01628897
+
+Account #11: 0x71be63f3384f5fb98995898a86b02fb2426c5788
+Private Key: 0x701b615bbdfb9de65240bc28bd21bbc0d996645a3dd57e7b12bc2bdf6f192c82
+
+Account #12: 0xfabb0ac9d68b0b445fb7357272ff202c5651694a
+Private Key: 0xa267530f49f8280200edf313ee7af6b827f2a8bce2897751d06a843f644967b1
+
+Account #13: 0x1cbd3b2770909d4e10f157cabc84c7264073c9ec
+Private Key: 0x47c99abed3324a2707c28affff1267e45918ec8c3f20b8aa892e8b065d2942dd
+
+Account #14: 0xdf3e18d64bc6a983f673ab319ccae4f1a57c7097
+Private Key: 0xc526ee95bf44d8fc405a158bb884d9d1238d99f0612e9f33d006bb0789009aaa
+
+Account #15: 0xcd3b766ccdd6ae721141f452c550ca635964ce71
+Private Key: 0x8166f546bab6da521a8369cab06c5d2b9e46670292d85c875ee9ec20e84ffb61
+
+Account #16: 0x2546bcd3c84621e976d8185a91a922ae77ecec30
+Private Key: 0xea6c44ac03bff858b476bba40716402b03e41b8e97e276d1baec7c37d42484a0
+
+Account #17: 0xbda5747bfd65f08deb54cb465eb87d40e51b197e
+Private Key: 0x689af8efa8c651a91ad287602527f3af2fe9f6501a7ac4b061667b5a93e037fd
+
+Account #18: 0xdd2fd4581271e230360230f9337d5c0430bf44c0
+Private Key: 0xde9be858da4a475276426320d5e9262ecfc3ba460bfac56360bfa6c4c28b4ee0
+
+Account #19: 0x8626f6940e2eb28930efb4cef49b2d1f2c9c1199
+Private Key: 0xdf57089febbacf7ba0bc227dafbffa9fc08a93fdc68e1e42411a14efcf23656e
 ```
 
-### Accessing logs
+## Accessing logs
 
-The logs appear on the command-line window used for the `docker-compose up` command, but they scroll too quickly to be of much use.
+The logs produced by the L1 and L2 nodes can sometimes be useful for debugging particularly hairy bugs.
+Logs will appear in the terminal you used to start the development environment, but they often scroll too quickly to be of much use.
 If you'd like to look at the logs for a specific container, you'll first need to know the name of the container you want to inspect.
+
 Run the following command to get the name of all running containers:
 
 ```sh
-docker ps -a --format '{{.Image}}\t\t\t{{.Names}}'
+docker ps -a --format '{{.Image}}\t\t\t{{.Names}}' | grep ethereumoptimism
 ```
 
-The output includes two columns. The first is the name of the image, and the second the name of the container.
+The output includes two columns.
+The first is the name of the **image**, and the second the name of the **container** based on that image.
+Each container is essentially an instance of a particular image and you're looking for the name of the *container* that you want to inspect.
 
 ```
 IMAGE                                     NAMES
@@ -191,8 +247,13 @@ ethereumoptimism/hardhat                  ops_l1_chain_1
 ethereumoptimism/integration-tests        ops_integration_tests_1
 ```
 
-Next, run `docker logs <name of container>`.
-For example, to see the L1 logs, run:
+You can then dump the logs for a given container as follows:
+
+```sh
+docker logs <container name>
+```
+
+For example, to see the logs produced by the L1 node:
 
 ```sh
 docker logs ops_l1_chain_1
@@ -204,17 +265,43 @@ If you'd like to follow these logs as they're being generated, run:
 docker logs --follow <name of container>
 ```
 
+## Getting Optimism system contract addresses
 
-### Getting contract addresses
+If you want to [interact with Optimism system contracts](./system-contracts.md), you'll need to know the addresses of the contracts that are deployed on the network.
 
-The [Optimism contracts](../../protocol/protocol-2.0.md#chain-contracts) 
-are already deployed on the development nodes. The contracts on L2 always have the 
-same addresses, so you can 
-[get them from the repository](https://github.com/ethereum-optimism/optimism/tree/ef5343d61708f2d15f51dca981f03ee4ac447c21/packages/contracts/deployments#predeploy-contracts). But the L1 addresses can vary, and
-you need to get them from the logs.
+### Getting L2 contract addresses
 
-For example, use this command to get the addresses for contracts that are used to relay data:
+L2 contracts are always deployed to the same addresses on every Optimism network.
+You can simply look at [the L2 contract addresses for the mainnet Optimism network](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/deployments/mainnet#layer-2-contracts) and you'll have the addresses for your local environment.
 
-  ```sh
-  docker logs ops_relayer_1 |& grep 'Connected to OVM_' | tail -4 
-  ```
+### Getting L1 contract addresses
+
+Optimism's L1 contracts are deployed to different addresses on different networks.
+However, the addresses for your local environment will always be the same, even if you reset the environment.
+You can get the addresses for your environment with the following command:
+
+```sh
+curl http://localhost:8080/addresses.json
+```
+
+You should get back a JSON object that contains a mapping of contract names to contract addresses.
+These addresses should not change, even if you restart your environment.
+Here's a sample of what the response might look like:
+
+```json
+{
+   "BondManager": "0x5FC8d32690cc91D4c39d9d3abcBD16989F875707",
+   "L1StandardBridge_for_verification_only": "0x3Aa5ebB10DC797CAC828524e59A333d0A371443c",
+   "ChugSplashDictator": "0x959922bE3CAee4b8Cd9a407cc3ac1C251C2007B1",
+   "Proxy__OVM_L1StandardBridge": "0x610178dA211FEF7D417bC0e6FeD39F05609AD788",
+   "StateCommitmentChain": "0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9",
+   "ChainStorageContainer-CTC-batches": "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512",
+   "OVM_L1CrossDomainMessenger": "0x0165878A594ca255338adfa4d48449f69242Eb8F",
+   "CanonicalTransactionChain": "0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9",
+   "Proxy__OVM_L1CrossDomainMessenger": "0x8A791620dd6260079BF849Dc5567aDC3F2FdC318",
+   "AddressDictator": "0xB7f8BC63BbcaD18155201308C8f3540b07f84F5e",
+   "Lib_AddressManager": "0x5FbDB2315678afecb367f032d93F642f64180aa3",
+   "ChainStorageContainer-SCC-batches": "0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0",
+   "AddressManager": "0x5FbDB2315678afecb367f032d93F642f64180aa3"
+}
+```
