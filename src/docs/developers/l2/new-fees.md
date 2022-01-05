@@ -27,9 +27,6 @@ For example, lets look at [this transaction](https://optimistic.etherscan.io/tx/
 This transaction is typical. In almost all cases **L2 execution fee** is negligible compared to the **L1 security fee**.
 :::
 
-
-
-
 ## For backend developers
 - You must send your transaction with a tx.gasPrice that is greater than or equal to the sequencer's l2 gas price. You can read this value from the Sequencer by querying the `OVM_GasPriceOracle` contract  (`OVM_GasPriceOracle.gasPrice`) or by simply making an RPC query to `eth_gasPrice`.  If you don't specify your `gasPrice` as an override when sending a transaction , `ethers` by default queries `eth_gasPrice` which will return the lowest acceptable L2 gas price.
 - You can set your `tx.gasLimit` however you might normally set it (e.g. via `eth_estimateGas`). You can expect that gas usage for transactions on Optimism Ethereum will be identical to gas usage on Ethereum.
@@ -39,23 +36,47 @@ This transaction is typical. In almost all cases **L2 execution fee** is negligi
 - We recommend displaying an estimated fee to users via the following math:
    1. To estimate the L1 (security) fee that the user should expect to pay. For example, calculating the L1 fee for sending a WETH transfer:
 
-      ```jsx
-      import { getContractFactory, predeploys }from '@eth-optimism/contracts'
-      import { serialize } from '@ethersproject/transactions'
-      import { Contract } from 'ethers'
-      const OVM_GasPriceOracle = getContractFactory('OVM_GasPriceOracle')
+      ```ts
+      import { getContractFactory, predeploys } from '@eth-optimism/contracts'
+      import { ethers } from 'ethers'
+
+      const main = async () => {
+         // Create an ethers provider connected to the public mainnet endpoint.
+         const provider = new ethers.providers.JsonRpcProvider(
+            'https://mainnet.optimism.io'
+         )
+
+         // Create contract instances connected to the GPO and WETH contracts.
+         const GasPriceOracle = getContractFactory('OVM_GasPriceOracle')
             .attach(predeploys.OVM_GasPriceOracle)
-      const WETH = new Contract(...) //Contract with no signer
-      const unsignedTx = WETH.populateTransaction.transfer(to, amount)
-      const serializedTx = serialize({
-            nonce: parseInt(unsignedTx.nonce.toString(10), 10),
-            value: unsignedTx.value,
-            gasPrice: unsignedTx.gasPrice,
-            gasLimit: unsignedTx.gasLimit,
-            to: unsignedTx.to,
-            data: unsignedTx.data,
-          })
-      const l1FeeInWei = await OVM_GasPriceOracle.getL1Fee(serializedTx)
+            .connect(provider)
+         const WETH = getContractFactory('WETH9')
+            .attach(predeploys.WETH9)
+            .connect(provider)
+
+         // An account with a small amount of WETH in it on mainnet
+         const from = '0xbeefbeefbeefbeefbeefbeefbeefbeefbeefbeef'
+         // Arbitrary recipient address.
+         const to = '0x1111111111111111111111111111111111111111'
+         // Small amount of WETH to send (in wei).
+         const amount = 1234
+
+         // Compute the estimated fee in wei
+         const l1FeeInWei = await GasPriceOracle.getL1Fee(
+            ethers.utils.serializeTransaction({
+               ...(await WETH.populateTransaction.transfer(to, amount)),
+               gasPrice: await provider.getGasPrice(),
+               gasLimit: await WETH.estimateGas.transfer(to, amount, {
+               from,
+               }),
+            })
+         )
+
+         console.log(`Estimated L1 fee (in wei): ${l1FeeInWei.toString()}`)
+      }
+
+      main()
+
       ```
 
 - You should *not* allow users to change their `tx.gasPrice`
