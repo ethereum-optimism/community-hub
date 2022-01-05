@@ -5,6 +5,7 @@ lang: en-US
 
 # {{ $frontmatter.title }}
 
+This guide teaches you how to connect your wallet to Optimism. Overall Optimism behaves like any over EVM chain, with the exception of [transaction fees](#transaction-fees). Those are different and you have to write custom code for them.
 
 ## Handling multiple chains
 
@@ -60,6 +61,7 @@ A transaction in Optimism can be in one of three states:
 - **Confirmed On-Chain**: The transaction has been written to Ethereum (L1). In that case of an L2->L1 transaction, this starts the seven day period until it can be finalized
 - **Finalized On-Chain**: This status is only application for L2->L1 transactions, and means that the transaction was finalized on L1 after the seven day verification period has passed.
 
+For now, we recommend wallets consider transactions final after they are Sequencer confirmed as there are no reorgs on the chain and there is currently not standard tooling for tracking when transactions are confirmed on chain. We have a JS SDK coming soon that will contain standard tooling to track these three states of each transaction 
 
 ## Differences from Ethereum
 
@@ -67,9 +69,11 @@ We aim to be [EVM equivalent](https://medium.com/ethereum-optimism/introducing-e
 
 ### Transaction fees
 
-Most of the cost of an Optimism transaction is not the gas consumed by the transaction itself (which is priced at 0.001 gwei when the chain is not congested), but the cost of writing the transaction in Ethereum. That cost is deducted automatically from the user's balance on Optimism.
+**Most of the transaction fee of an Optimism transaction is not the gas consumed by the transaction itself (which is priced at 0.001 gwei when the chain is not congested), but the transaction fee writing the transaction in Ethereum. That fee is deducted automatically from the user's ETH balance on Optimism.**
 
-[You can read more about this subject here](../l2/new-fees.md). The relevant code sample is [here](../l2/new-fees.md#for-frontend-and-wallet-developers).
+[You can read more about this subject here](../l2/new-fees.md). The relevant code sample is [here](../l2/new-fees.md#for-frontend-and-wallet-developers). Typically, 95% of the work to integrate Optimism to a wallet is to make sure that users get the correct transaction fee.
+
+
 
 ### JSON RPC differences
 
