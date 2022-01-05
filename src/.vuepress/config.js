@@ -1,13 +1,16 @@
-const { description } = require('../../package')
+const { description } = require("../../package");
 
 module.exports = {
   title: 'Optimism Docs',
   description: description,
 
   head: [
-    ['meta', { name: 'theme-color', content: '#3eaf7c' }],
-    ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
-    ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }]
+    ["meta", { name: "theme-color", content: "#3eaf7c" }],
+    ["meta", { name: "apple-mobile-web-app-capable", content: "yes" }],
+    [
+      "meta",
+      { name: "apple-mobile-web-app-status-bar-style", content: "black" },
+    ],
   ],
 
   theme: 'vuepress-theme-hope',
@@ -23,8 +26,8 @@ module.exports = {
     themeColor: false,
     blog: false,
     algolia: {
-      apiKey: '47d21d4ea72ed7cb504b1c6c0a46b5a0',
-      indexName: 'optimism'
+      apiKey: "47d21d4ea72ed7cb504b1c6c0a46b5a0",
+      indexName: "optimism",
     },
     nav: [
       {
@@ -68,25 +71,22 @@ module.exports = {
           ]
         },
         {
-          title: 'Useful Tools for Developers',
+          title: "Useful Tools for Developers",
           children: [
-            '/docs/useful-tools/networks.md',
-            '/docs/useful-tools/debugging.md',
-            '/docs/useful-tools/faucets.md',
-            '/docs/useful-tools/monitoring.md',
-            '/docs/useful-tools/explorers.md',
-            '/docs/useful-tools/providers.md',
+            "/docs/build/networks.md",
+            "/docs/build/debugging.md",
+            "/docs/build/faucets.md",
+            "/docs/build/monitoring.md",
+            "/docs/build/explorers.md",
+            "/docs/build/providers.md",
             [
-              'https://github.com/optimisticben/op-replica/blob/main/README.md',
-              'Running a Network Node'
+              "https://github.com/optimisticben/op-replica/blob/main/README.md",
+              "Running a Network Node",
             ],
-            [
-              'https://www.optimism.io/apps/tools',
-              'Third Party Tools on OE'
-            ],
-            '/docs/useful-tools/monitoring.md',
+            ["https://www.optimism.io/apps/tools", "Third Party Tools on OE"],
           ],
-          collapsable: true,
+          collapsable: false,
+          sidebarDepth: 0,
         },
         {
           title: 'Bridging L1 and L2',
@@ -135,13 +135,13 @@ module.exports = {
 
   plugins: [
     [
-      '@vuepress/plugin-medium-zoom',
+      "@vuepress/plugin-medium-zoom",
       {
         // When an image is inside a link, it means we don't to expand it
         // when clicked
-        selector: ':not(a) > img'
-      }
+        selector: ":not(a) > img",
+      },
     ],
-    "plausible-analytics"
-  ]
-}
+    "plausible-analytics",
+  ],
+};
