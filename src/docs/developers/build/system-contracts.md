@@ -1,75 +1,101 @@
 ---
-title: Interacting with L2 system contracts
+title: Interacting with Optimism contracts
 lang: en-US
 ---
 
 # {{ $frontmatter.title }}
 
+Optimism is composed, in part, of a series of smart contracts on both L1 (Ethereum) and L2 (Optimism).
+You may want to interact with these contracts for any number of reasons, including:
+
+- Sending messages between L1 and L2
+- Sending tokens between L1 and L2
+- Querying information about the current [L1 data fee](./transaction-fees.md#the-l1-data-fee)
+- And lots more!
+
+On this page we'll show you how to work with these contracts directly from other contracts and how to work with them from the client side.
+
 ## Finding contract addresses
 
+You'll need to find the address of the particular contract that you want to interact with before you can actually interact with it.
 Check out the [Networks and Connection Details page](../../infra/networks.md) for links to the contract addresses for each network.
 You can also find the addresses for all networks in the [`deployments` folder](https://github.com/ethereum-optimism/optimism/tree/master/packages/contracts/deployments) of the [`contracts` package](https://github.com/ethereum-optimism/optimism/tree/master/packages/contracts).
-Take a look at the [Contract Overview](../../protocol/protocol-2.0.md) for a list of all protocol contracts and their purpose within the system.
 
-## [@eth-optimism/contracts](https://github.com/ethereum-optimism/optimism/tree/master/packages/contracts)
+## Interacting from another contract
 
-The easiest way to interact with the Optimism protocol contracts is to use the [@eth-optimism/contracts](https://github.com/ethereum-optimism/optimism/tree/master/packages/contracts) npm package.
-You can use this package to get an interface or factory instance for any of the Optimism contracts.
+All you need to interact with the Optimism system contracts from another contract is an address and an interface.
+You can follow [the instructions above](#finding-contract-addresses) to find the address of the contract you want to interact with.
+Now you simply need to import the appropriate contracts.
 
-### Installation
+### Installing via NPM or Yarn
 
-Install via `npm` or `yarn`:
+We export a package [`@eth-optimism/contracts`](https://www.npmjs.com/package/@eth-optimism/contracts?activeTab=readme) that makes it easy to use the Optimism contracts within NPM or Yarn based projects.
+Install the package as follows: 
 
-```sh
+```
 npm install @eth-optimism/contracts
 ```
 
-### Usage
+### Importing contracts
 
-`@eth-optimism/contracts` exports various useful tools.
-Here are some of the most useful tools exported by the package:
+Simply import the desired contract or interface from the `@eth-optimism/contracts` package:
 
-#### `getContractInterface`
-
-```js
-const { getContractInterface } = require("@eth-optimism/contracts");
-
-// Returns an ethers.utils.Interface object
-const iface = getContractInterface("CanonicalTransactionChain"); // or whatever contract
+```solidity
+import { SomeOptimismContract } from "@eth-optimism/contracts/path/to/SomeOptimismContract.sol";
 ```
 
-#### `getContractFactory`
+Please note that `path/to/SomeOptimismContract` is the path to the contract [within this folder](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/contracts).
+For example, if you wanted to import the [`L1CrossDomainMessenger`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/L1/messaging/L1CrossDomainMessenger.sol) contract, you would use the following import:
 
-```js
-const { getContractFactory } = require("@eth-optimism/contracts");
-
-// Returns an ethers.ContractFactory object
-const factory = getContractFactory("CanonicalTransactionChain"); // or whatever contract
+```solidity
+import { L1CrossDomainMessenger } from "@eth-optimism/contracts/L1/messaging/L1CrossDomainMessenger.sol";
 ```
 
-#### `getL1ContractData`
+### Getting L2 contract addresses
 
-```js
-const { getL1ContractData } = require("@eth-optimism/contracts");
+Addresses of system contracts on the L2 side of the network are the same on every network.
+We provide these addresses as constants within the [`Lib_PredeployAddresses`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/libraries/constants/Lib_PredeployAddresses.sol) contract.
 
-// Returns an ethers.Contract object at the correct address
-const contract = getL1ContractData("mainnet").CanonicalTransactionChain; // or whatever contract
+## Interacting from the client side
+
+Just like when interacting from another contract, we've created a few packages that make it easy to interact with the Optimism system contracts from the client side.
+
+### Installing via NPM or Yarn
+
+You can use the [`@eth-optimism/contracts`](https://www.npmjs.com/package/@eth-optimism/contracts?activeTab=readme) package to interact with the Optimism system contracts from a JavaScript or TypeScript based project.
+Install the package as follows:
+
+```
+npm install @eth-optimism/contracts
 ```
 
-#### `getL2ContractData`
+### Getting contract artifacts, interfaces, and ABIs
 
-```js
-const { getL2ContractData } = require("@eth-optimism/contracts");
+You can get the compiler artifact, bytecode, and ABI for any Optimism contract as follows:
 
-// Returns an ethers.Contract object at the correct address
-const contract = getL2ContractData().Lib_AddressManager; // or whatever contract
+```ts
+import { getContractDefinition } from '@eth-optimism/contracts'
+
+const artifact = getContractDefinition('SomeOptimismContract')
+const abi = artifact.abi
+const bytecode = artifact.bytecode
+const deployedBytecode = artifact.deployedBytecode
 ```
 
-#### `predeploys`
+Similarly, you can also get [ethers Interface objects](https://docs.ethers.io/v5/api/utils/abi/interface/) for any contract:
 
-```js
-const { predeploys } = require("@eth-optimism/contracts");
+```ts
+import { getContractInterface } from '@eth-optimism/contracts'
 
-// Returns an address (string)
-const ovmETHAddress = predeploys.OVM_GasPriceOracle; // or whatever contract
+const iface = getContractInterface('SomeOptimismContract')
+```
+
+### Getting L2 contract addresses
+
+You can get the address of any L2 contract as follows:
+
+```ts
+import { predeploys } from '@eth-optimism/contracts'
+
+const address = predeploys.CONTRACT_NAME_GOES_HERE
 ```
