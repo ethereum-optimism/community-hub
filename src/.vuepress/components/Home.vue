@@ -30,13 +30,8 @@
 </template>
 
 <script>
-import NavLink from "@theme/components/NavLink.vue";
-import Sidebar from "@theme/components/Sidebar.vue";
-
 export default {
   name: "Home",
-
-  components: { NavLink, Sidebar },
 
   computed: {
     data() {
