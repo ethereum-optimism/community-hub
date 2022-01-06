@@ -49,7 +49,6 @@ module.exports = {
       }
     ],
     searchPlaceholder: 'Search the docs',
-    sidebarDepth: 0,
     sidebar: {
       '/docs/developers/': [
         // Moved to a separate page that's linkable from the homepage
@@ -67,7 +66,6 @@ module.exports = {
             '/docs/developers/l2/differences.md',
           ],
           collapsable: true,
-          sidebarDepth: 0,
         },
         {
           title: 'Bridging L1 and L2',
@@ -78,7 +76,6 @@ module.exports = {
             '/docs/developers/bridge/messaging.md'
           ],
           collapsable: true,
-          sidebarDepth: 0,
         },
         '/docs/developers/util.md',
         '/docs/developers/known-issues.md',
