@@ -22,4 +22,4 @@ It's also got some Optimism-specific features:
 - [A tool for finalizing L2-to-L1 transactions](https://optimistic.etherscan.io/messagerelayer)
 - And more! Just check it out and click around to find all of the available features.
 
-Etherscan currently provides the most advanced block explorers for Optimistic Ethereum networks.
+Etherscan currently provides the most advanced block explorers for all Optimism Ethereum networks.
