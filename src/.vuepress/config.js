@@ -79,10 +79,6 @@ module.exports = {
             "/docs/build/monitoring.md",
             "/docs/build/explorers.md",
             "/docs/build/providers.md",
-            [
-              "https://github.com/optimisticben/op-replica/blob/main/README.md",
-              "Running a Network Node",
-            ],
             ["https://www.optimism.io/apps/tools", "Third Party Tools on OE"],
           ],
           collapsable: false,
