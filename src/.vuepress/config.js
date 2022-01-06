@@ -14,41 +14,29 @@ module.exports = {
   themeConfig: {
     contributor: false,
     hostname: 'https://community.optimism.io',
-    logo: '/assets/logos/docs-logo.png',
+    logo: '/assets/logos/logo.png',
     docsDir: 'src',
     docsRepo: 'https://github.com/ethereum-optimism/community-hub',
     docsBranch: 'main',
     lastUpdated: false,
-    breadcrumb: false,
     darkmode: 'disable',
+    themeColor: false,
     algolia: {
       apiKey: '47d21d4ea72ed7cb504b1c6c0a46b5a0',
       indexName: 'optimism'
     },
     nav: [
       {
-        text: 'How Optimism Works',
-        link: '/',
-      },
-      {
-        text: 'Guides',
-        link: '/',
-      },
-      {
-        text: 'Dev Docs',
+        text: 'Developer Docs',
         link: '/docs/developers/',
       },
       {
-        text: 'Tools for Devs',
+        text: 'Tools for Developers',
         link: '/docs/infra/',
       },
       {
         text: 'Protocol',
         link: '/docs/protocol/',
-      },
-      {
-        text: 'Contribute',
-        link: '/',
       },
       {
         text: 'Community',
