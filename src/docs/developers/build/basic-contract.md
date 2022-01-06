@@ -5,7 +5,7 @@ lang: en-US
 
 # {{ $frontmatter.title }}
 
-Optimism is the first EVM equivalent L2 system, which means that it's almost 100% identical to Ethereum.
+Optimism is the first [EVM equivalent](https://medium.com/ethereum-optimism/introducing-evm-equivalence-5c2021deb306) L2 system, which means that it's almost 100% identical to Ethereum.
 The process of deploying a contract to Optimism is exactly the same as deploying a contract to Ethereum.
 We'll demonstrate how easy it is to get started by deploying a basic contract to the Optimism Kovan testnet using [Remix](https://remix.ethereum.org/).
 
@@ -74,7 +74,7 @@ Deploying contracts with Remix is as easy as 1-2-3!
 Accept the popup in MetaMask and you're all done!
 Your contract deployment should take less than a second (Optimism is *fast*).
 If you've used Remix to deploy contracts to Ethereum before, you'll notice that the process of deploying to Optimism has been 100% identical.
-That's the power of EVM equivalence!
+That's the power of [EVM equivalence](https://medium.com/ethereum-optimism/introducing-evm-equivalence-5c2021deb306)!
 
 ## Interacting with your contract
 

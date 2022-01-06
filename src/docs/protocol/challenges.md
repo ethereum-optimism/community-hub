@@ -7,7 +7,7 @@ lang: en-US
 
 ::: tip NOTICE
 Optimism is still in beta.
-**As of the [OVM 2.0 upgrade](https://medium.com/ethereum-optimism/introducing-evm-equivalence-5c2021deb306), the Transaction Challenge process described in this article has been temporarily disabled as we rebuild the mechanism for the new EVM equivalent version of the Optimism protocol.**
+**As of the [OVM 2.0 upgrade](https://medium.com/ethereum-optimism/introducing-evm-equivalence-5c2021deb306), the Transaction Challenge process described in this article has been temporarily disabled as we rebuild the mechanism for the new [EVM equivalent](https://medium.com/ethereum-optimism/introducing-evm-equivalence-5c2021deb306) version of the Optimism protocol.**
 You can check out an up-to-date analysis of the current security model [here](https://l2beat.com/projects/optimism/).
 :::
 

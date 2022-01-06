@@ -9,7 +9,7 @@ lang: en-US
 
 Transaction fees on Optimism work a lot like fees on Ethereum.
 However, Layer 2 introduces some new paradigms that means it can never be exactly like Ethereum.
-Luckily, Optimism's EVM equivalence makes these differences easy to understand and even easier to handle within your app.
+Luckily, Optimism's [EVM equivalence](https://medium.com/ethereum-optimism/introducing-evm-equivalence-5c2021deb306) makes these differences easy to understand and even easier to handle within your app.
 Let's take a look at the two sources of cost in a transaction on Optimism: the L2 execution fee and the L1 data/security fee.
 
 ### The L2 execution fee
@@ -25,7 +25,7 @@ l2_execution_fee = transaction_gas_price * l2_gas_used
 ```
 
 The amount of L2 gas used depends on the particular transaction that you're trying to send.
-Thanks to EVM equivalence, transactions typically use approximately the same amount of gas on Optimism as they do on Ethereum.
+Thanks to [EVM equivalence](https://medium.com/ethereum-optimism/introducing-evm-equivalence-5c2021deb306), transactions typically use approximately the same amount of gas on Optimism as they do on Ethereum.
 Gas prices fluctuate with time and congestion, but you can always check the current estimated L2 gas price on the [public Optimism dashboard](https://public-grafana.optimism.io/d/9hkhMxn7z/public-dashboard?orgId=1&refresh=5m).
 
 ### The L1 data fee
