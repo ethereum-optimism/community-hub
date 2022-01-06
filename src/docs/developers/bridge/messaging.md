@@ -122,21 +122,24 @@ Our messenger contracts, the [`L1CrossDomainMessenger`](https://github.com/ether
 You can find the exact addresses of these contracts on our various deployments [inside of the Optimism monorepo](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/deployments).
 :::
 
-## Stuff to keep in mind
+## Communication speed
 
-Of course, all the best things in life come with asterisks.
-Let's take a look at the things you should keep in mind when you use these contracts.
+Unlike calls between contracts on the same blockchain, calls between Ethereum and Optimism are *not* instantaneous.
+The exact speed of a cross-chain transaction depends on the direction in which the transaction is sent.
 
-### Communication is *not* instantaneous
+### For L1 ⇒ L2 transactions
 
-Calls between two contracts on Ethereum happen synchronously and atomically within the same transaction.
-That is, you'll be told about the result of the call right away.
-Calls between contracts on Optimism and Ethereum happen *asynchronously*.
-If you want to know about the result of the call, you'll have to wait for the other contract send a message back to you.
+Transactions sent from L1 to L2 take up to approximately 15 minutes on mainnet and 5 minutes on the Optimism Kovan testnet to reach the target L2 contract.
+This is because L2 nodes will wait for a certain number of block confirmations on Ethereum before executing an L1 to L2 transaction.
 
-<!-- TODO: do we need an example here? -->
+### For L2 ⇒ L1 transactions
 
-### Accessing `msg.sender`
+L2 to L1 transactions must wait 7 days on mainnet and 60 seconds on the Optimism Kovan testnet before they *can* be executed on Ethereum.
+After this waiting period, any user can "finalize" the transaction by triggering a second transaction on Ethereum that sends the message to the target L1 contract.
+This waiting period is a core part of the security mechanism designed to keep funds on Optimism secure and cannot be circumvented.
+See the below section on [Understanding the challenge period](#understanding-the-challenge-period) for more information.
+
+## Accessing `msg.sender`
 
 Contracts frequently make use of `msg.sender` to make decisions based on the calling account.
 For example, many contracts will use the [Ownable](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/access/Ownable.sol) pattern to selectively restrict access to certain functions.
@@ -160,6 +163,31 @@ modifier onlyOwner() {
     _;
 }
 ```
+
+## Fees for sending data between L1 and L2
+
+### For L1 ⇒ L2 transactions
+
+The majority of the cost of an L1 to L2 transaction comes from sending a transaction on Ethereum.
+You send a transaction to the [`L1CrossDomainMessenger`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/L1/messaging/L1CrossDomainMessenger.sol)
+contract, which then sends a call to the [`CanonicalTransactionChain`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/L1/rollup/CanonicalTransactionChain.sol).
+This cost is ultimately determined by gas prices on Ethereum when you're sending the cross-chain transaction.
+
+An L1 to L2 message can trigger contract execution on L2.
+The gas limit for that transaction is provided as part of the message.
+If the gas limit is below a certain "free L2 gas" amount (1.92 million at the time of writing), the L2 gas is free.
+If you need to provide more than this amount of gas, the `CanonicalTransactionChain` will burn some amount of L1 gas in proportion to the amount of requested L2 gas (currently 1 unit of L1 gas for every 32 units of L2 gas).
+This gas burn mechanism acts as a way to rate-limit L1 to L2 transactions and prevent certain classes of denial-of-service attacks on Optimism.
+
+### Fees for L2 ⇒ L1 transactions
+
+Each message from L2 to L1 requires two transactions:
+
+1. An L2 transaction that *initiates* the transaction, which is priced the same as any other transaction made on Optimism.
+1. An L1 transaction that *finalizes* the transaction. This transaction can only be submitted after the [transaction challenge period](../../protocol/challenges.md) (7 days on mainnet) has passed. This transaction is expensive because it includes verifying a [Merkle trie](https://eth.wiki/fundamentals/patricia-tree) inclusion proof.
+
+The total cost of an L2 to L1 transaction is therefore the combined cost of the L2 initialization transaction and the L1 finalization transaction.
+The L1 finalization transaction is typically significantly more expensive than the L2 initialization transaction.
 
 ## Understanding the challenge period
 
