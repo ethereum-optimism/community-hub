@@ -11,7 +11,11 @@ As Optimism is [EVM Equivalent](https://medium.com/ethereum-optimism/introducing
 
 ## Tenderly 
 
-[Tenderly](https://tenderly.co/) lets you inspect any transaction execution, both for Optimistic Ethereum (mainnet) and Optimistic Kovan (testnet). You can inspect the state of your verified contract in any step of the transactions execution, as well as step into or over function calls. 
+[Tenderly](https://tenderly.co/) lets you inspect any transaction execution, both for Optimism (mainnet) and Optimism Kovan (testnet). You can inspect the state of your verified contract in any step of the transactions execution, as well as step into or over function calls. 
+
+## Etherscan 
+
+[Etherscan](https://optimistic.etherscan.io) allows you to see events as well as revert messages for transactions that have been mind on Optimism (mainnet) as well as Optimism Kovan (testnet). You can see more information about all the L2 features Etherscan offers in our [Explorers page](./explorers.md).
 
 ## Know other good tools?
 
