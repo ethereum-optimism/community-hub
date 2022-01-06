@@ -15,6 +15,7 @@ aside.sidebar {
 }
 
 p.sidebar-heading {
+  color: #323A43 !important;
   font-family: 'Open Sans', sans-serif;
   font-weight: 600;
   font-size: 14px !important;
@@ -28,7 +29,6 @@ p.sidebar-heading {
 
 a.sidebar-link {
   font-family: 'Open Sans', sans-serif;
-  font-weight: 600;
   font-size: 14px !important;
   line-height: 24px !important;
   height: 36px;
@@ -36,6 +36,11 @@ a.sidebar-link {
   padding: 5px 8px !important;
   width: auto !important;
   border-radius: 8px;
+}
+
+.sidebar-links:not(.sidebar-group-items) > li > a.sidebar-link {  
+  font-weight: 600 !important;
+  color: #323A43 !important;
 }
 
 section.sidebar-group a.sidebar-link  {
@@ -83,6 +88,7 @@ h1, h2, h3 {
 header.navbar {
   border-bottom: none;
   box-shadow: 0px 6px 8px -6px rgba(20, 23, 26, 0.06), 0px 8px 16px -6px rgba(20, 23, 26, 0.04);
+  --bgcolor-blur: hsla(0,0%,100%,0.9);
 }
 
 span.site-name {
@@ -101,4 +107,8 @@ div.nav-item span.title {
 
 .theme-default-content:not(.custom) {
   padding-top: 0px;
+}
+
+.sidebar {
+  box-shadow: none !important;
 }
