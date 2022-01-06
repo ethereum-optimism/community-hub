@@ -60,18 +60,3 @@ Please set up a private RPC endpoint with any of the following providers:
 We also have the following public endpoints. However if you expect to be sending a high volume of requests, please use one of the other available providers above.
 - HTTP endpoint: [https://kovan.optimism.io](https://kovan.optimism.io)
 - WebSocket endpoint: [wss://ws-kovan.optimism.io](wss://ws-kovan.optimism.io)
-
-## Development Node (local)
-
-::: tip Purpose
-This is the information for a
-[local development node](../developers/l2/dev-node.md).
-:::
-
-| Parameter | Value |
-| --------- | ----- |
-| Currency | **`Ether (ETH)`**
-| Chain ID | **`420`** |
-| HTTP Endpoint | **`https://localhost:8545`** |
-| HTTP Endpoint for L1 | **`https://localhost:9545`** |
-| Mnemonic for rich account | **`test test test test test test test test test test test junk`** |
