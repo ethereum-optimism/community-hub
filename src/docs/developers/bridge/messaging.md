@@ -6,7 +6,7 @@ lang: en-US
 # {{ $frontmatter.title }}
 
 Apps on Optimism can be made to interact with apps on Ethereum via a process called "bridging".
-In a nutshell, **contracts on Optimism can trigger contracts functions on Ethereum, and vice versa**.
+In a nutshell, **contracts on Optimism can trigger contract functions on Ethereum, and vice versa**.
 With just a little bit of elbow grease, you too can create contracts that bridge the gap between Layer 1 and Layer 2!
 
 ## Understanding contract calls

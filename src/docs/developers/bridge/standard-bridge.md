@@ -19,27 +19,26 @@ If you want to deposit using a smart contract wallet and you know what you're do
 
 ### Depositing ERC20s
 
-ERC20 deposits into L2 can triggered via the [`depositERC20`](https://github.com/ethereum-optimism/optimism/blob/a21cec6d3d00c9d7ed100c0257d4b966b034620f/packages/contracts/contracts/L1/messaging/L1StandardBridge.sol#L136-L144) and [`depositERC20To`](https://github.com/ethereum-optimism/optimism/blob/a21cec6d3d00c9d7ed100c0257d4b966b034620f/packages/contracts/contracts/L1/messaging/L1StandardBridge.sol#L149-L158) functions.
+ERC20 deposits into L2 can triggered via the `depositERC20` and `depositERC20To` functions on the [`L1StandardBridge`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/L1/messaging/L1StandardBridge.sol).
 You **must** approve the Standard Token Bridge to use the amount of tokens that you want to deposit or the deposit will fail.
 
 ### Depositing ETH
 
-ETH deposits into L2 can be triggered via [`depositETH`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/L1/messaging/L1StandardBridge.sol#L83-L85), [`depositETHTo`](https://github.com/ethereum-optimism/optimism/blob/a21cec6d3d00c9d7ed100c0257d4b966b034620f/packages/contracts/contracts/L1/messaging/L1StandardBridge.sol#L90-L96), or by [sending ETH directly to the Standard Token Bridge contract](https://github.com/ethereum-optimism/optimism/blob/a21cec6d3d00c9d7ed100c0257d4b966b034620f/packages/contracts/contracts/L1/messaging/L1StandardBridge.sol#L76-L78).
+ETH deposits into L2 can be triggered via the `depositETH` and `depositETHTo` functions on the [`L1StandardBridge`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/L1/messaging/L1StandardBridge.sol).
+ETH deposits can alternatively be triggered by sending ETH directly to the `L1StandardBridge`.
 Once your deposit is detected and finalized on Optimism, your account will be funded with the corresponding amount of ETH on L2.
-The ETH that you deposited will be put into a single global pool of ETH.
-If you want to withdraw ETH back to Ethereum, your funds will come out of this global pool.
 
 ## Withdrawals
 
 ### Withdrawing ERC20s
 
-ERC20 withdrawals can be triggered via the [`withdraw`](https://github.com/ethereum-optimism/optimism/blob/a21cec6d3d00c9d7ed100c0257d4b966b034620f/packages/contracts/contracts/L2/messaging/L2StandardBridge.sol#L54-L61) or [`withdrawTo`](https://github.com/ethereum-optimism/optimism/blob/a21cec6d3d00c9d7ed100c0257d4b966b034620f/packages/contracts/contracts/L2/messaging/L2StandardBridge.sol#L66-L74) functions on the [`L2StandardBridge`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/L2/messaging/L2StandardBridge.sol).
+ERC20 withdrawals can be triggered via the `withdraw` or `withdrawTo` functions on the [`L2StandardBridge`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/L2/messaging/L2StandardBridge.sol).
 If you'd like to see this contracts in action, you should check out the [L1 ⇔ L2 deposit-and-withdraw example](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/l1-l2-deposit-withdrawal).
 
 ### Withdrawing ETH
 
 Unlike on L1, we do not have a separate function on L2 for withdrawing ETH.
-Instead, you can use the [`withdraw`](https://github.com/ethereum-optimism/optimism/blob/a21cec6d3d00c9d7ed100c0257d4b966b034620f/packages/contracts/contracts/L2/messaging/L2StandardBridge.sol#L54-L61) or [`withdrawTo`](https://github.com/ethereum-optimism/optimism/blob/a21cec6d3d00c9d7ed100c0257d4b966b034620f/packages/contracts/contracts/L2/messaging/L2StandardBridge.sol#L66-L74) functions on the [`L2StandardBridge`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/L2/messaging/L2StandardBridge.sol) and use the address `0xDeadDeAddeAddEAddeadDEaDDEAdDeaDDeAD0000` as the L2 token address.
+Instead, you can use the `withdraw` or `withdrawTo` functions on the [`L2StandardBridge`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/L2/messaging/L2StandardBridge.sol) and use the address `0xDeadDeAddeAddEAddeadDEaDDEAdDeaDDeAD0000` as the L2 token address.
 
 ## Adding an ERC20 token to the Standard Bridge
 
