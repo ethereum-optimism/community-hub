@@ -13,7 +13,7 @@ We recently removed our whitelist! This means that anyone can deploy onto Optimi
 
 | Parameter | Value |
 | --------- | ----- |
-| Network Name | **`Optimistic Ethereum`** |
+| Network Name | **`Optimism`** |
 | Description | **`Mainnet`** |
 | Chain ID | **`10`** |
 | Explorer | **`https://optimistic.etherscan.io`** |
@@ -33,7 +33,7 @@ We also support and maintain the following public RPC endpoints. However, we _hi
 - HTTP endpoint: [https://mainnet.optimism.io](https://mainnet.optimism.io)
 - WebSocket endpoint: [wss://ws-mainnet.optimism.io](wss://ws-mainnet.optimism.io)
 
-## Optimistic Kovan (testnet)
+## Optimism Kovan (testnet)
 
 ::: tip Purpose
 This is our **test** network. To get test Kovan ETH as well as OETH, check out our [faucets page](./faucets.md).
