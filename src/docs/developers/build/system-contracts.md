@@ -19,7 +19,7 @@ On this page we'll show you how to work with these contracts directly from other
 
 You'll need to find the address of the particular contract that you want to interact with before you can actually interact with it.
 Check out the [Networks and Connection Details page](../../infra/networks.md) for links to the contract addresses for each network.
-You can also find the addresses for all networks in the [`deployments` folder](https://github.com/ethereum-optimism/optimism/tree/master/packages/contracts/deployments) of the [`contracts` package](https://github.com/ethereum-optimism/optimism/tree/master/packages/contracts).
+You can also find the addresses for all networks in the [deployments folder](https://github.com/ethereum-optimism/optimism/tree/master/packages/contracts/deployments) of the [`contracts` package](https://github.com/ethereum-optimism/optimism/tree/master/packages/contracts).
 
 ## Interacting from another contract
 

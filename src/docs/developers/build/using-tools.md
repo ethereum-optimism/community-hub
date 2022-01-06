@@ -29,17 +29,17 @@ module.exports = {
   networks: {
     ...
     // for mainnet
-    optimism: {
+    'optimism': {
       url: "https://mainnet.optimism.io",
       accounts: [privateKey1, privateKey2, ...]
     },
     // for testnet
-    opkovan: {
+    'optimism-kovan': {
       url: "https://kovan.optimism.io",
       accounts: [privateKey1, privateKey2, ...]
     },
     // for the local dev environment
-    oplocal: {
+    'optimism-local': {
       url: "http://localhost:8545",
       accounts: [privateKey1, privateKey2, ...]
     },
@@ -60,21 +60,21 @@ module.exports = {
   networks: {
     ...
     // for mainnet
-    optimism: {
+    'optimism': {
       provider: () => {
         return new HDWalletProvider(YOUR_MAINNET_MNEMONIC_GOES_HERE, 'https://mainnet.optimism.io')
       }
       network_id: "10"
     },
     // for testnet
-    opkovan: {
+    'optimism-kovan': {
       provider: () => {
         return new HDWalletProvider(YOUR_KOVAN_MNEMONIC_GOES_HERE, 'https://kovan.optimism.io')
       }
       network_id: "69"
     },
     // for the local dev environment
-    oplocal: {
+    'optimism-local': {
       provider: () => {
         return new HDWalletProvider('test test test test test test test test test test test junk', 'http://localhost:8545')
       }
