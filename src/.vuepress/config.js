@@ -46,8 +46,51 @@ module.exports = {
         text: 'Community',
         items: [
           {
+            icon: 'discord',
+            iconPrefix: 'fab fa-',
+            iconClass: 'color-discord',
             text: 'Discord',
             link: 'https://discord.optimism.io',
+          },
+          {
+            icon: 'github',
+            iconPrefix: 'fab fa-',
+            iconClass: 'color-github',
+            text: 'GitHub',
+            link: 'https://github.com/ethereum-optimism/optimism',
+          },
+          {
+            icon: 'twitter',
+            iconPrefix: 'fab fa-',
+            iconClass: 'color-twitter',
+            text: 'Twitter',
+            link: 'https://twitter.com/optimismPBC',
+          },
+          {
+            icon: 'twitch',
+            iconPrefix: 'fab fa-',
+            iconClass: 'color-twitch',
+            text: 'Twitch',
+            link: 'https://www.twitch.tv/optimismpbc'
+          },
+          {
+            icon: 'medium',
+            iconPrefix: 'fab fa-',
+            iconClass: 'color-medium',
+            text: 'Blog',
+            link: 'https://optimismpbc.medium.com/'
+          },
+          {
+            icon: 'computer-classic',
+            iconClass: 'color-ecosystem',
+            text: 'Ecosystem',
+            link: 'https://www.optimism.io/apps/all',
+          },
+          {
+            icon: 'globe',
+            iconClass: 'color-optimism',
+            text: 'optimism.io',
+            link: 'https://www.optimism.io/',
           }
         ]
       }
