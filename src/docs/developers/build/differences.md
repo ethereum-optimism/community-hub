@@ -1,5 +1,5 @@
 ---
-title: Ethereum Differences
+title: Differences between Ethereum and Optimism
 lang: en-US
 ---
 
