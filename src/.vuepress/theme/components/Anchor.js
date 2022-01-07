@@ -33,6 +33,11 @@ export default Vue.extend({
     render(h, { props, parent: { $page, $route } }) {
         return h("div", { attrs: { class: "anchor-place-holder" } }, [
             h("aside", { attrs: { id: "anchor" } }, [
+                ($page.headers && $page.headers.length)
+                    ? h("div", { class: "anchor-header" }, [
+                        "On this page"
+                    ])
+                    : null,
                 h("div", { class: "anchor-wrapper" }, [
                     props.items.length
                         ? renderChildren(h, {
@@ -46,6 +51,33 @@ export default Vue.extend({
                             })
                             : null,
                 ]),
+                ($page.headers && $page.headers.length)
+                    ? h("div", [
+                        h("div", { class: "anchor-header anchor-support" }, [
+                            "Support"
+                        ]),
+                        h("div", { class: "anchor-support-links" }, [
+                            h("a", { attrs: { href: "https://discord.optimism.io" } }, [
+                                h("div", [
+                                    h("i", { attrs: { class: "fab fa-discord" } }),
+                                    " Get support on Discord"
+                                ])
+                            ]),
+                            h("a", { attrs: { href: "https://help.optimism.io/hc/en-us" } }, [
+                                h("div", [
+                                    h("i", { attrs: { class: "fas fa-question-circle" } }),
+                                    " Check the Help Center"
+                                ])
+                            ]),
+                            h("a", { attrs: { href: "https://github.com/ethereum-optimism/optimism/issues" } }, [
+                                h("div", [
+                                    h("i", { attrs: { class: "fab fa-github" } }),
+                                    " Make an issue on GitHub"
+                                ])
+                            ]),
+                        ])
+                    ])
+                    : null
             ]),
         ]);
     },
