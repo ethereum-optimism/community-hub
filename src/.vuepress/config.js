@@ -120,6 +120,7 @@ module.exports = {
         {
           title: 'Bridging L1 and L2',
           children: [
+            '/docs/developers/bridge/basics.md',
             '/docs/developers/bridge/standard-bridge.md',
             '/docs/developers/bridge/messaging.md',
           ],
