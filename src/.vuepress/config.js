@@ -114,14 +114,45 @@ module.exports = {
           // expect people will do things, followed by
           // more advanced topics such as RPC and Block Time
           children: [
-            '/docs/developers/build/basic-contract.md',
-            '/docs/developers/build/using-tools.md',
-            '/docs/developers/build/transaction-fees.md',
-            '/docs/developers/build/system-contracts.md',
-            '/docs/developers/build/dev-node.md',
-            '/docs/developers/build/run-a-node.md',
-            '/docs/developers/build/differences.md',
-            '/docs/developers/build/json-rpc.md',
+            // Moved to a separate page that's linkable from the homepage
+            '/docs/developers/tutorials.md',
+            {
+              title: 'Building on Optimism',
+              // Reordered to follow the order in which I
+              // expect people will do things, followed by
+              // more advanced topics such as RPC and Block Time
+              children: [
+                '/docs/developers/l2/dev-node.md',
+                '/docs/developers/l2/new-fees.md',
+                '/docs/developers/l2/contracts-2.0.md',
+                '/docs/developers/l2/json-rpc.md',
+                '/docs/developers/l2/differences.md',
+              ],
+              collapsable: false,
+              sidebarDepth: 0,
+            },
+            {
+              title: 'Bridging L1 and L2',
+              children: [
+                // Common (standard bridge) before
+                // rare (messaging)
+                '/docs/developers/bridge/standard-bridge.md',
+                '/docs/developers/bridge/messaging.md'
+              ],
+              collapsable: false,
+              sidebarDepth: 0,
+            },
+            {
+              title: 'Guides by Role',
+              children: [
+                '/docs/developers/by-role/wallet-dev.md'
+              ],
+              collapsable: false,
+              sidebarDepth: 0
+            },
+            '/docs/developers/util.md',
+            '/docs/developers/known-issues.md',
+            '/docs/developers/contact-us.md'
           ],
         },
         {
