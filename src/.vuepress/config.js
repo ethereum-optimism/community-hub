@@ -33,7 +33,7 @@ module.exports = {
       },
       {
         text: 'Tools for Developers',
-        link: '/docs/infra/',
+        link: '/docs/useful-tools/',
       },
       {
         text: 'Protocol',
@@ -66,7 +66,6 @@ module.exports = {
             '/docs/developers/build/run-a-node.md',
             '/docs/developers/build/differences.md',
           ],
-          collapsable: true,
         },
         {
           title: 'Bridging L1 and L2',
@@ -80,17 +79,14 @@ module.exports = {
         '/docs/developers/known-issues.md',
         '/docs/developers/contact-us.md'
       ],
-      '/docs/infra/': [
-        '/docs/infra/networks.md',
-        [
-          'https://github.com/optimisticben/op-replica/blob/main/README.md',
-          'Running a Node'
-        ],
-        [
-          'https://www.optimism.io/apps/tools',
-          'Third Party Tools'
-        ],
-        '/docs/infra/monitoring.md',
+      '/docs/useful-tools/': [
+        '/docs/useful-tools/networks.md',
+        '/docs/useful-tools/debugging.md',
+        '/docs/useful-tools/faucets.md',
+        '/docs/useful-tools/monitoring.md',
+        '/docs/useful-tools/explorers.md',
+        '/docs/useful-tools/providers.md',
+        ['https://www.optimism.io/apps/tools', 'Third Party Tools'],
       ],
       '/docs/protocol/': [
         '/docs/protocol/protocol-2.0.md',

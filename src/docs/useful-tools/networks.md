@@ -29,15 +29,14 @@ Please set up a private RPC endpoint with any of the following providers:
 - [Infura](https://blog.infura.io/what-is-optimistic-ethereum/)
 - [QuickNode](https://www.quicknode.com/chains/optimism)
 
-The public endpoints are provided as a convenience in order to make it easier to develop dApps on Optimism. **These public endpoints are strictly rate limited and should not be used in production systems**.
-
+We also support and maintain the following public RPC endpoints. However, we _highly_ encourage you to set up a private RPC endpoint with any of the above mentioned providers instead. **These public endpoints should not be used in production systems.**
 - HTTP endpoint: [https://mainnet.optimism.io](https://mainnet.optimism.io)
 - WebSocket endpoint: [wss://ws-mainnet.optimism.io](wss://ws-mainnet.optimism.io)
 
 ## Optimism Kovan (testnet)
 
 ::: tip Purpose
-This is our **test** network.
+This is our **test** network. To get ETH on Kovan as well as Optimism Kovan, checkout our [faucets page](./faucets.md).
 :::
 
 | Parameter | Value |
@@ -47,7 +46,7 @@ This is our **test** network.
 | Chain ID | **`69`** |
 | Explorer | **`https://kovan-optimistic.etherscan.io`** |
 | HTTP Endpoint | **`https://kovan.optimism.io`** If you are going to be sending a lot of requests please set up your own private RPC endpoint |
-| WebSocket Endpoint | **`wss://ws-kovan.optimism.io`** |
+| WebSocket Endpoint | **`wss://ws-kovan.optimism.io`** If you are going to be sending a lot of requests please set up your own private RPC endpoint |
 | L1 Contract Addresses | [link](https://github.com/ethereum-optimism/optimism/tree/ef5343d61708f2d15f51dca981f03ee4ac447c21/packages/contracts/deployments#kovan) |
 | L2 Contract Addresses | [link](https://github.com/ethereum-optimism/optimism/tree/ef5343d61708f2d15f51dca981f03ee4ac447c21/packages/contracts/deployments#layer-2) |
 
@@ -58,16 +57,6 @@ Please set up a private RPC endpoint with any of the following providers:
 - [Infura](https://blog.infura.io/what-is-optimistic-ethereum/)
 - [QuickNode](https://www.quicknode.com/chains/optimism)
 
-## Development Node (local)
-
-::: tip Purpose
-This is the information for a [local development node](../developers/build/dev-node.md).
-:::
-
-| Parameter | Value |
-| --------- | ----- |
-| Currency | **`Ether (ETH)`**
-| Chain ID | **`420`** |
-| HTTP Endpoint | **`https://localhost:8545`** |
-| HTTP Endpoint for L1 | **`https://localhost:9545`** |
-| Mnemonic for rich account | **`test test test test test test test test test test test junk`** |
+We also have the following public endpoints. However if you expect to be sending a high volume of requests, please use one of the other available providers above.
+- HTTP endpoint: [https://kovan.optimism.io](https://kovan.optimism.io)
+- WebSocket endpoint: [wss://ws-kovan.optimism.io](wss://ws-kovan.optimism.io)
