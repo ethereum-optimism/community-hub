@@ -86,7 +86,7 @@ module.exports = {
         '/docs/useful-tools/monitoring.md',
         '/docs/useful-tools/explorers.md',
         '/docs/useful-tools/providers.md',
-        ['https://www.optimism.io/apps/tools', 'Third Party Tools on OE'],
+        ['https://www.optimism.io/apps/tools', 'Third Party Tools'],
       ],
       '/docs/protocol/': [
         '/docs/protocol/protocol-2.0.md',
