@@ -33,7 +33,7 @@ module.exports = {
       },
       {
         text: 'Tools for Developers',
-        link: '/docs/infra/',
+        link: '/docs/useful-tools/',
       },
       {
         text: 'Protocol',
@@ -68,20 +68,6 @@ module.exports = {
           ],
         },
         {
-          title: "Useful Tools for Developers",
-          children: [
-            "/docs/useful-tools/networks.md",
-            "/docs/useful-tools/debugging.md",
-            "/docs/useful-tools/faucets.md",
-            "/docs/useful-tools/monitoring.md",
-            "/docs/useful-tools/explorers.md",
-            "/docs/useful-tools/providers.md",
-            ["https://www.optimism.io/apps/tools", "Third Party Tools on OE"],
-          ],
-          collapsable: true,
-          sidebarDepth: 0,
-        },
-        {
           title: 'Bridging L1 and L2',
           children: [
             '/docs/developers/bridge/standard-bridge.md',
@@ -92,6 +78,15 @@ module.exports = {
         '/docs/developers/tutorials.md',
         '/docs/developers/known-issues.md',
         '/docs/developers/contact-us.md'
+      ],
+      '/docs/useful-tools/': [
+        '/docs/useful-tools/networks.md',
+        '/docs/useful-tools/debugging.md',
+        '/docs/useful-tools/faucets.md',
+        '/docs/useful-tools/monitoring.md',
+        '/docs/useful-tools/explorers.md',
+        '/docs/useful-tools/providers.md',
+        ['https://www.optimism.io/apps/tools', 'Third Party Tools on OE'],
       ],
       '/docs/protocol/': [
         '/docs/protocol/protocol-2.0.md',
