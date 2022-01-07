@@ -8,7 +8,7 @@ lang: en-US
 ## Optimism (Optimism mainnet)
 
 ::: tip Point and deploy
-We recently removed our whitelist! This means that anyone can deploy onto Optimism. However, if you want support getting live on Optimism, or if you want some PR hype you can apply [here](https://optimismpbc.typeform.com/get-in-touch.)
+We recently removed our whitelist! This means that anyone can deploy onto Optimism. However, if you want support getting live on Optimism, or if you want some PR hype you can apply [here](https://optimismpbc.typeform.com/get-in-touch).
 :::
 
 | Parameter | Value |
@@ -36,7 +36,7 @@ We also support and maintain the following public RPC endpoints. However, we _hi
 ## Optimism Kovan (testnet)
 
 ::: tip Purpose
-This is our **test** network. To get test Kovan ETH as well as OETH, check out our [faucets page](./faucets.md).
+This is our **test** network. To get ETH on Kovan as well as Optimism Kovan, checkout our [faucets page](./faucets.md).
 :::
 
 | Parameter | Value |
