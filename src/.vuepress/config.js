@@ -23,7 +23,7 @@ module.exports = {
     darkmode: 'disable',
     themeColor: false,
     blog: false,
-    iconPrefix: 'fas fa-',
+    iconPrefix: 'far fa-',
     algolia: {
       apiKey: '47d21d4ea72ed7cb504b1c6c0a46b5a0',
       indexName: 'optimism'
