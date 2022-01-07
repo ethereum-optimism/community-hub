@@ -1,56 +1,24 @@
 <template>
   <main class="page">
-    <MyTransition>
-      <BreadCrumb :key="$route.path" />
-    </MyTransition>
+    <BreadCrumb :key="$route.path" />
 
     <slot name="top" />
 
-    <MyTransition :delay="0.04">
-      <PageInfo :key="$route.path" />
-    </MyTransition>
+    <PageInfo :key="$route.path" />
 
-    <MyTransition v-if="pagePassword && !pageDescrypted" :delay="0.08">
-      <Password
-        :key="$route.path"
-        :page="true"
-        @password-verify="password = $event"
-      />
-    </MyTransition>
+    <Anchor :key="$route.path" />
 
-    <MyTransition v-else-if="isPathEncrypted" :delay="0.08">
-      <Password
-        :key="$route.path"
-        :page="true"
-        @password-verify="checkPathPassword"
-      />
-    </MyTransition>
+    <slot v-if="!pagePassword || pageDescrypted" name="content-top" />
 
-    <template v-else>
-      <MyTransition :delay="0.12">
-        <Anchor :key="$route.path" />
-      </MyTransition>
+    <Content :key="$route.path" class="theme-default-content" />
 
-      <slot v-if="!pagePassword || pageDescrypted" name="content-top" />
+    <slot v-if="!pagePassword || pageDescrypted" name="content-bottom" />
 
-      <MyTransition v-show="!pagePassword || pageDescrypted" :delay="0.08">
-        <Content :key="$route.path" class="theme-default-content" />
-      </MyTransition>
+    <PageMeta :key="$route.path" />
 
-      <slot v-if="!pagePassword || pageDescrypted" name="content-bottom" />
+    <PageNav :key="$route.path" v-bind="{ sidebarItems }" />
 
-      <MyTransition :delay="0.12">
-        <PageMeta :key="$route.path" />
-      </MyTransition>
-
-      <MyTransition :delay="0.14">
-        <PageNav :key="$route.path" v-bind="{ sidebarItems }" />
-      </MyTransition>
-
-      <MyTransition :delay="0.16">
-        <Comment :key="$route.path" />
-      </MyTransition>
-    </template>
+    <Comment :key="$route.path" />
 
     <slot name="bottom" />
   </main>
