@@ -155,14 +155,6 @@ module.exports = {
           'https://github.com/ethereum-optimism/optimistic-specs',
           'Protocol Specs'
         ]
-      ],
-      '/docs/retro-pgf/': [
-        [
-          'https://medium.com/ethereum-optimism/retroactive-public-goods-funding-33c9b7d00f0c',
-          'What is RetroPGF?'
-        ],
-        '/docs/retro-pgf/rounds.md',
-        '/docs/retro-pgf/resources.md',
       ]
     }
   },
