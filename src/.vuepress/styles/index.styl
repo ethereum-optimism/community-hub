@@ -22,9 +22,9 @@ p.sidebar-heading {
   font-size: 14px !important;
   line-height: 24px !important;
   min-height: 36px;
-  margin-left: 10px;
-  padding: 5px 8px !important;
-  width: calc(100% - 20px) !important;
+  margin-left: 32px;
+  padding: 8px 16px !important;
+  width: calc(100% - 64px) !important;
   border-radius: 8px;
 }
 
@@ -33,10 +33,15 @@ a.sidebar-link {
   font-size: 14px !important;
   line-height: 24px !important;
   min-height: 36px;
-  margin-left: 10px;
-  padding: 5px 8px !important;
-  width: calc(100% - 20px) !important;
+  margin-left: 32px;
+  padding: 8px 16px !important;
+  width: calc(100% - 64px) !important;
   border-radius: 8px;
+}
+
+section.sidebar-group a.sidebar-link  {
+  margin-left: 44px;
+  width: calc(100% - 64px) !important;
 }
 
 .sidebar-links:not(.sidebar-group-items) > li > a.sidebar-link {  
@@ -44,14 +49,15 @@ a.sidebar-link {
   color: #323A43 !important;
 }
 
-section.sidebar-group a.sidebar-link  {
-  margin-left: 20px;
-  width: calc(100% - 40px) !important;
+.sidebar-links:not(.sidebar-group-items) > li > a.sidebar-link.active {
+  border-left-color: #F1F4F9 !important;
+  background-color: #FFDBDF !important;
+  color: #FF0420 !important;
 }
 
 a.sidebar-link.active {
   border-left-color: #F1F4F9 !important;
-  background-color: #FFDBDF;
+  background-color: #FFDBDF !important;
   color: #FF0420 !important;
 }
 
