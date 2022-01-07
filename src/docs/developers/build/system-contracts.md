@@ -18,7 +18,7 @@ On this page we'll show you how to work with these contracts directly from other
 ## Finding contract addresses
 
 You'll need to find the address of the particular contract that you want to interact with before you can actually interact with it.
-Check out the [Networks and Connection Details page](../../infra/networks.md) for links to the contract addresses for each network.
+Check out the [Networks and Connection Details page](../../useful-tools/networks.md) for links to the contract addresses for each network.
 You can also find the addresses for all networks in the [deployments folder](https://github.com/ethereum-optimism/optimism/tree/master/packages/contracts/deployments) of the [`contracts` package](https://github.com/ethereum-optimism/optimism/tree/master/packages/contracts).
 
 ## Interacting from another contract
@@ -30,7 +30,7 @@ Now you simply need to import the appropriate contracts.
 ### Installing via NPM or Yarn
 
 We export a package [`@eth-optimism/contracts`](https://www.npmjs.com/package/@eth-optimism/contracts?activeTab=readme) that makes it easy to use the Optimism contracts within NPM or Yarn based projects.
-Install the package as follows: 
+Install the package as follows:
 
 ```
 npm install @eth-optimism/contracts
