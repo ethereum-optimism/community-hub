@@ -1,24 +1,56 @@
 <template>
   <main class="page">
-    <BreadCrumb :key="$route.path" />
+    <MyTransition :disable="true">
+      <BreadCrumb :key="$route.path" />
+    </MyTransition>
 
     <slot name="top" />
 
-    <PageInfo :key="$route.path" />
+    <MyTransition :delay="0.04" :disable="true">
+      <PageInfo :key="$route.path" />
+    </MyTransition>
 
-    <Anchor :key="$route.path" />
+    <MyTransition v-if="pagePassword && !pageDescrypted" :delay="0.08" :disable="true">
+      <Password
+        :key="$route.path"
+        :page="true"
+        @password-verify="password = $event"
+      />
+    </MyTransition>
 
-    <slot v-if="!pagePassword || pageDescrypted" name="content-top" />
+    <MyTransition v-else-if="isPathEncrypted" :delay="0.08" :disable="true">
+      <Password
+        :key="$route.path"
+        :page="true"
+        @password-verify="checkPathPassword"
+      />
+    </MyTransition>
 
-    <Content :key="$route.path" class="theme-default-content" />
+    <template v-else>
+      <MyTransition :delay="0.12" :disable="true">
+        <Anchor :key="$route.path" />
+      </MyTransition>
 
-    <slot v-if="!pagePassword || pageDescrypted" name="content-bottom" />
+      <slot v-if="!pagePassword || pageDescrypted" name="content-top" />
 
-    <PageMeta :key="$route.path" />
+      <MyTransition v-show="!pagePassword || pageDescrypted" :delay="0.08" :disable="true">
+        <Content :key="$route.path" class="theme-default-content" />
+      </MyTransition>
 
-    <PageNav :key="$route.path" v-bind="{ sidebarItems }" />
+      <slot v-if="!pagePassword || pageDescrypted" name="content-bottom" />
 
-    <Comment :key="$route.path" />
+      <MyTransition :delay="0.12" :disable="true">
+        <PageMeta :key="$route.path" />
+      </MyTransition>
+
+      <MyTransition :delay="0.14" :disable="true">
+        <PageNav :key="$route.path" v-bind="{ sidebarItems }" />
+      </MyTransition>
+
+      <MyTransition :delay="0.16" :disable="true">
+        <Comment :key="$route.path" />
+      </MyTransition>
+    </template>
 
     <slot name="bottom" />
   </main>
