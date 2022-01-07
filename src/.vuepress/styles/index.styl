@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Rubik:ital,wght@1,700&display=swap');
+@import 'https://pro.fontawesome.com/releases/v5.15.4/css/all.css';
 
 main, body, html {
   font-family: 'Open Sans', sans-serif;
@@ -135,23 +136,60 @@ div.hero-info .description {
 
 header.hero > img {
   border-radius: 16px;
+  max-height: none !important;
 }
 
 header.hero {
   margin-top: 20px;
   position: relative;
+  justify-content: space-between !important;
 }
 
 .home .features {
   border-top: none !important;
+  justify-content: space-between !important;
+  margin: 0 !important;
+  padding-top: 0.5rem !important;
+}
+
+.home .features h2 {
+  font-family: 'Open Sans', sans-serif;
+  font-style: normal;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  color: #202327 !important;
+}
+
+.home .features p {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px !important;
+  color: #68778D !important;
+}
+
+.home .features .icon-container {
+  height: 44px;
+  width: 44px;
+  background-color: #FFF0F1;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #FF0420;
 }
 
 .home .features .feature {
   background-color: #FFFFFF !important;
   box-shadow: 0px 6px 8px -6px rgba(20, 23, 26, 0.12), 0px 8px 16px -6px rgba(20, 23, 26, 0.08);
-  border-radius: 16px;
+  border-radius: 16px !important;
+  margin: 0 !important;
+  margin-bottom: 2rem !important;
+  padding: 1.5rem !important;
 }
 
+.features-header {
+  margin-top: 30px;
+  margin-bottom: 0px;
+}
 
 div.theme-container:not(.has-sidebar) {
   background-color: #F1F4F9;
