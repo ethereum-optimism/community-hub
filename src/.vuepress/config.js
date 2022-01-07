@@ -31,8 +31,8 @@ module.exports = {
     },
     nav: [
       {
-        text: 'How it works',
-        link: '/docs/guides/',
+        text: 'How Optimism works',
+        link: '/docs/how-optimism-works/',
       },
       {
         text: 'Guides',
