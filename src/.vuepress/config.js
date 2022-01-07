@@ -128,6 +128,10 @@ module.exports = {
         },
         '/docs/developers/tutorials.md',
         '/docs/developers/known-issues.md',
+        [
+          'https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/docs',
+          'Contracts API'
+        ],
         '/docs/developers/contact-us.md'
       ],
       '/docs/useful-tools/': [
