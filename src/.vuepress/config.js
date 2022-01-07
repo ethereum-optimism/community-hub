@@ -31,6 +31,10 @@ module.exports = {
     },
     nav: [
       {
+        text: 'Guides',
+        link: '/docs/guides/',
+      },
+      {
         text: 'Developer Docs',
         link: '/docs/developers/',
       },
