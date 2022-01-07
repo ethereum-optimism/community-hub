@@ -13,11 +13,11 @@ There are two ways for a wallet to handle being connected to multiple chains:
 
 1. Connect to one chain at a time, the way MetaMask does it. Let the user switch chains either from your user interface, or through a dapp.
 
-   ![Metamask with the chain menu](../../../assets/docs/developers/by-role/wallet-dev/chains-metamask.png)
+   ![Metamask with the chain menu](../../assets/docs/developers/by-role/wallet-dev/chains-metamask.png)
 
 1. Connect to all chains all the time, the way Coinbase Wallet does it. Display ETH and token balances on all chains, and ask which chain to use when connecting to a dapp.
 
-   ![Coinbase Wallet shows all the chains at the same time](../../../assets/docs/developers/by-role/wallet-dev/chains-coinbase.png)
+   ![Coinbase Wallet shows all the chains at the same time](../../assets/docs/developers/by-role/wallet-dev/chains-coinbase.png)
 
 ### Switching chains
 
@@ -33,7 +33,7 @@ You connect to Optimism the same way you do to Ethereum, by connecting to a JSON
 
 ### Endpoints
 
-[Click here for the Optimism endpoints](../../infra/networks.md). You can choose between our public endpoints, which are rate limited, and [endpoints from infrastructure providers](../../infra/networks.md#rpc-endpoints).
+[Click here for the Optimism endpoints](../infra/networks.md). You can choose between our public endpoints, which are rate limited, and [endpoints from infrastructure providers](../infra/networks.md#rpc-endpoints).
 
 ### Token addresses
 
@@ -65,16 +65,16 @@ For now, we recommend wallets consider transactions final after they are Sequenc
 
 ## Differences from Ethereum
 
-We aim to be [EVM equivalent](https://medium.com/ethereum-optimism/introducing-evm-equivalence-5c2021deb306), meaning we aim to minimize the differences between Optimism and Ethereum. You can see a summary of the few differences between Optimism and Ethereum [here](../l2/differences.md). These are the differences that are most relevant to wallet developers:
+We aim to be [EVM equivalent](https://medium.com/ethereum-optimism/introducing-evm-equivalence-5c2021deb306), meaning we aim to minimize the differences between Optimism and Ethereum. You can see a summary of the few differences between Optimism and Ethereum [here](../developers/build/differences.md). These are the differences that are most relevant to wallet developers:
 
 ### Transaction fees
 
 **Most of the transaction fee of an Optimism transaction is not the gas consumed by the transaction itself (which is priced at 0.001 gwei when the chain is not congested), but the transaction fee writing the transaction in Ethereum. That fee is deducted automatically from the user's ETH balance on Optimism.**
 
-[You can read more about this subject here](../l2/new-fees.md). The relevant code sample is [here](../l2/new-fees.md#for-frontend-and-wallet-developers). Typically, 95% of the work to integrate Optimism to a wallet is to make sure that users get the correct transaction fee.
+[You can read more about this subject here](../developers/build/transaction-fees.md). The relevant code sample is [here](../developers/build/transaction-fees.md#displaying-fees-to-users). Typically, 95% of the work to integrate Optimism to a wallet is to make sure that users get the correct transaction fee.
 
 
 
 ### JSON RPC differences
 
-[See here](../l2/json-rpc.md).
+[See here](../developers/build/json-rpc.md).
