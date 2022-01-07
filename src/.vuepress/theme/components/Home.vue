@@ -55,33 +55,39 @@
     </header>
 
     <MyTransition :delay="0.16">
-      <div
-        v-if="$frontmatter.features && $frontmatter.features.length"
-        class="features"
-      >
-        <template v-for="(feature, index) in $frontmatter.features">
-          <div
-            v-if="feature.link"
-            :key="index"
-            class="feature link"
-            :class="`feature${index % 9}`"
-            tabindex="0"
-            role="navigation"
-            @click="navigate(feature.link)"
-          >
-            <h2>{{ feature.title }}</h2>
-            <p>{{ feature.details }}</p>
-          </div>
-          <div
-            v-else
-            :key="index"
-            class="feature"
-            :class="`feature${index % 9}`"
-          >
-            <h2>{{ feature.title }}</h2>
-            <p>{{ feature.details }}</p>
-          </div>
-        </template>
+      <div>
+        <h2 class="features-header">Resources</h2>
+        <div
+          v-if="$frontmatter.features && $frontmatter.features.length"
+          class="features"
+        >
+          <template v-for="(feature, index) in $frontmatter.features">
+            <div
+              v-if="feature.link"
+              :key="index"
+              class="feature link"
+              :class="`feature${index % 9}`"
+              tabindex="0"
+              role="navigation"
+              @click="navigate(feature.link)"
+            >
+              <div class="icon-container">
+                <i :class="`fas fa-${feature.icon}`"></i>
+              </div>
+              <h2>{{ feature.title }}</h2>
+              <p>{{ feature.details }}</p>
+            </div>
+            <div
+              v-else
+              :key="index"
+              class="feature"
+              :class="`feature${index % 9}`"
+            >
+              <h2>{{ feature.title }}</h2>
+              <p>{{ feature.details }}</p>
+            </div>
+          </template>
+        </div>
       </div>
     </MyTransition>
 
@@ -256,7 +262,6 @@
         cursor pointer
 
       &:hover
-        transform scale(1.05)
         box-shadow 0 2px 12px 0 var(--card-shadow-color)
 
       h2

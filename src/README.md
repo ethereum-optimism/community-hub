@@ -7,26 +7,32 @@ heroText: The Optimism Docs
 
 features:
   - title: How it works
+    icon: info-square
     details: General explanation of what makes Optimism tick.
     link: /TODO/
 
   - title: Guides
+    icon: book
     details: How-to guides and tutorials for users and developers.
     link: /TODO/
 
   - title: Protocol specs
+    icon: ruler-triangle
     details: More detailed information about how Optimism works under the hood.
     link: /docs/protocol/
 
   - title: Developer docs
+    icon: code
     details: Resources for building a decentralized application on Optimism.
     link: /docs/developers/
 
   - title: Tools for developers
+    icon: hammer
     details: Useful third-party tools for easier development and deployment.
     link: /docs/infra/
 
   - title: Getting involved
+    icon: hands-helping
     details: Check out the Optimism community and join the conversation.
     link: /TODO/
 ---
