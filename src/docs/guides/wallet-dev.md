@@ -33,7 +33,7 @@ You connect to Optimism the same way you do to Ethereum, by connecting to a JSON
 
 ### Endpoints
 
-[Click here for the Optimism endpoints](../infra/networks.md). You can choose between our public endpoints, which are rate limited, and [endpoints from infrastructure providers](../infra/networks.md#rpc-endpoints).
+[Click here for the Optimism endpoints](../useful-tools/networks.md). You can choose between our public endpoints, which are rate limited, and [endpoints from infrastructure providers](../useful-tools/networks.md#rpc-endpoints).
 
 ### Token addresses
 
