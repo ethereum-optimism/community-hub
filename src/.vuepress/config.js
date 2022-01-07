@@ -142,14 +142,6 @@ module.exports = {
               collapsable: false,
               sidebarDepth: 0,
             },
-            {
-              title: 'Guides by Role',
-              children: [
-                '/docs/developers/by-role/wallet-dev.md'
-              ],
-              collapsable: false,
-              sidebarDepth: 0
-            },
             '/docs/developers/util.md',
             '/docs/developers/known-issues.md',
             '/docs/developers/contact-us.md'
