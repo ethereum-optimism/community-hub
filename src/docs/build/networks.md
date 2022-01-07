@@ -5,7 +5,7 @@ lang: en-US
 
 # {{ $frontmatter.title }}
 
-## Optimism (Optimism mainnet)
+## Optimism (mainnet)
 
 ::: tip Point and deploy
 We recently removed our whitelist! This means that anyone can deploy onto Optimism. However, if you want support getting live on Optimism, or if you want some PR hype you can apply [here](https://optimismpbc.typeform.com/get-in-touch).
