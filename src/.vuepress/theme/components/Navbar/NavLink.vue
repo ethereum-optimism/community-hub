@@ -7,7 +7,7 @@
     :to="link"
     @focusout.native="focusoutAction"
   >
-    <i v-if="item.icon" :class="`iconfont ${iconPrefix}${item.icon}`" />
+    <i v-if="item.icon" :class="`iconfont ${item.iconPrefix || iconPrefix}${item.icon} ${item.iconClass}`" />
     {{ item.text }}
   </RouterLink>
   <a
@@ -18,7 +18,7 @@
     :rel="rel"
     @focusout="focusoutAction"
   >
-    <i v-if="item.icon" :class="`iconfont ${iconPrefix}${item.icon}`" />
+    <i v-if="item.icon" :class="`iconfont ${item.iconPrefix || iconPrefix}${item.icon} ${item.iconClass}`" />
     {{ item.text }}
     <OutboundLink v-if="isBlankTarget" />
   </a>
