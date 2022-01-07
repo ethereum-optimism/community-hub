@@ -70,12 +70,12 @@ module.exports = {
         {
           title: "Useful Tools for Developers",
           children: [
-            "/docs/build/networks.md",
-            "/docs/build/debugging.md",
-            "/docs/build/faucets.md",
-            "/docs/build/monitoring.md",
-            "/docs/build/explorers.md",
-            "/docs/build/providers.md",
+            "/docs/useful-tools/networks.md",
+            "/docs/useful-tools/debugging.md",
+            "/docs/useful-tools/faucets.md",
+            "/docs/useful-tools/monitoring.md",
+            "/docs/useful-tools/explorers.md",
+            "/docs/useful-tools/providers.md",
             ["https://www.optimism.io/apps/tools", "Third Party Tools on OE"],
           ],
           collapsable: true,
