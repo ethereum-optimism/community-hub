@@ -111,6 +111,7 @@ module.exports = {
             '/docs/developers/build/dev-node.md',
             '/docs/developers/build/run-a-node.md',
             '/docs/developers/build/differences.md',
+            '/docs/developers/build/json-rpc.md',
           ],
         },
         {
@@ -127,8 +128,7 @@ module.exports = {
         [
           'https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/docs',
           'Contracts API'
-        ],
-        '/docs/developers/contact-us.md'
+        ]
       ],
       '/docs/useful-tools/': [
         '/docs/useful-tools/networks.md',
