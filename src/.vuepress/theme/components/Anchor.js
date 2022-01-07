@@ -65,7 +65,7 @@ export default Vue.extend({
                             ]),
                             h("a", { attrs: { href: "https://help.optimism.io/hc/en-us" } }, [
                                 h("div", [
-                                    h("i", { attrs: { class: "fas fa-question-circle" } }),
+                                    h("i", { attrs: { class: "far fa-question-circle" } }),
                                     " Check the Help Center"
                                 ])
                             ]),

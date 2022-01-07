@@ -72,7 +72,7 @@
               @click="navigate(feature.link)"
             >
               <div class="icon-container">
-                <i :class="`fas fa-${feature.icon}`"></i>
+                <i :class="`far fa-${feature.icon}`"></i>
               </div>
               <h2>{{ feature.title }}</h2>
               <p>{{ feature.details }}</p>
