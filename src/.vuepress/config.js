@@ -1,4 +1,5 @@
 const { description } = require('../../package')
+const path = require('path')
 
 module.exports = {
   title: 'Optimism Docs',
@@ -10,7 +11,7 @@ module.exports = {
     ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }]
   ],
 
-  theme: 'vuepress-theme-hope',
+  theme: path.resolve(__dirname, './theme'),
   themeConfig: {
     contributor: false,
     hostname: 'https://community.optimism.io',
@@ -22,6 +23,8 @@ module.exports = {
     darkmode: 'disable',
     themeColor: false,
     blog: false,
+    iconPrefix: 'far fa-',
+    pageInfo: false,
     algolia: {
       apiKey: '47d21d4ea72ed7cb504b1c6c0a46b5a0',
       indexName: 'optimism'
@@ -43,8 +46,51 @@ module.exports = {
         text: 'Community',
         items: [
           {
+            icon: 'discord',
+            iconPrefix: 'fab fa-',
+            iconClass: 'color-discord',
             text: 'Discord',
             link: 'https://discord.optimism.io',
+          },
+          {
+            icon: 'github',
+            iconPrefix: 'fab fa-',
+            iconClass: 'color-github',
+            text: 'GitHub',
+            link: 'https://github.com/ethereum-optimism/optimism',
+          },
+          {
+            icon: 'twitter',
+            iconPrefix: 'fab fa-',
+            iconClass: 'color-twitter',
+            text: 'Twitter',
+            link: 'https://twitter.com/optimismPBC',
+          },
+          {
+            icon: 'twitch',
+            iconPrefix: 'fab fa-',
+            iconClass: 'color-twitch',
+            text: 'Twitch',
+            link: 'https://www.twitch.tv/optimismpbc'
+          },
+          {
+            icon: 'medium',
+            iconPrefix: 'fab fa-',
+            iconClass: 'color-medium',
+            text: 'Blog',
+            link: 'https://optimismpbc.medium.com/'
+          },
+          {
+            icon: 'computer-classic',
+            iconClass: 'color-ecosystem',
+            text: 'Ecosystem',
+            link: 'https://www.optimism.io/apps/all',
+          },
+          {
+            icon: 'globe',
+            iconClass: 'color-optimism',
+            text: 'optimism.io',
+            link: 'https://www.optimism.io/',
           }
         ]
       }
