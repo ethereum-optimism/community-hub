@@ -184,7 +184,7 @@ This gas burn mechanism acts as a way to rate-limit L1 to L2 transactions and pr
 Each message from L2 to L1 requires two transactions:
 
 1. An L2 transaction that *initiates* the transaction, which is priced the same as any other transaction made on Optimism.
-1. An L1 transaction that *finalizes* the transaction. This transaction can only be submitted after the [transaction challenge period](../../protocol/challenges.md) (7 days on mainnet) has passed. This transaction is expensive because it includes verifying a [Merkle trie](https://eth.wiki/fundamentals/patricia-tree) inclusion proof.
+1. An L1 transaction that *finalizes* the transaction. This transaction can only be submitted after the transaction challenge period (7 days on mainnet) has passed. This transaction is expensive because it includes verifying a [Merkle trie](https://eth.wiki/fundamentals/patricia-tree) inclusion proof.
 
 The total cost of an L2 to L1 transaction is therefore the combined cost of the L2 initialization transaction and the L1 finalization transaction.
 The L1 finalization transaction is typically significantly more expensive than the L2 initialization transaction.
