@@ -1,4 +1,5 @@
 const { description } = require('../../package')
+const path = require('path')
 
 module.exports = {
   title: 'Optimism Docs',
@@ -10,7 +11,7 @@ module.exports = {
     ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }]
   ],
 
-  theme: 'vuepress-theme-hope',
+  theme: path.resolve(__dirname, './theme'),
   themeConfig: {
     contributor: false,
     hostname: 'https://community.optimism.io',
