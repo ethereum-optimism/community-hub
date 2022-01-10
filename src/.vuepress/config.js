@@ -105,6 +105,9 @@ module.exports = {
     ],
     searchPlaceholder: 'Search the docs',
     sidebar: {
+      '/docs/guides/': [
+        '/docs/guides/cex-dev.md'
+      ],
       '/docs/developers/': [
         {
           title: 'Building on Optimism',
