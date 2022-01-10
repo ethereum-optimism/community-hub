@@ -106,11 +106,11 @@
     padding 32px
     border-radius 16px
 
-    @media (max-width $MQMobile)
+    @media (max-width $MQNarrow)
       flex-direction column
 
     .footer-box-area
-      @media (max-width $MQMobile)
+      @media (max-width $MQNarrow)
         margin-bottom 32px
 
       span.footer-section-header
