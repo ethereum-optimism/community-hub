@@ -75,6 +75,12 @@ export default Vue.extend({
                                     " Make an issue on GitHub"
                                 ])
                             ]),
+                            h("a", { attrs: { href: "https://optimismpbc.typeform.com/get-in-touch" } }, [
+                                h("div", [
+                                    h("i", { attrs: { class: "far fa-comment-dots" } }),
+                                    " Fill out the support form"
+                                ])
+                            ]),
                         ])
                     ])
                     : null

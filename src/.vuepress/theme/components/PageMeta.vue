@@ -1,35 +1,44 @@
 <template>
   <footer class="page-meta">
-    <div v-if="editLink" class="edit-link">
-      <EditIcon />
-      <a :href="editLink" target="_blank" rel="noopener noreferrer">{{
-        editLinkText
-      }}</a>
-    </div>
+    <div class="footer-box">
+      <div class="footer-box-area">
+        <span class="footer-section-header">About this page</span>
+        <ul>
+          <li>Updated: {{ updateTime.slice(0, updateTime.length - 6) }}</li>
+        </ul>
+      </div>
 
-    <div v-if="updateTime" class="meta-item update-time">
-      <span class="label">{{ updateTimeText }}:</span>
-      <span class="info">{{ updateTime }}</span>
-    </div>
+      <div class="footer-box-area">
+        <span class="footer-section-header">Contribute</span>
+        <ul>
+          <li>
+            <a :href="editLink" target="_blank" rel="noopener noreferrer">
+              <i class="far fa-pencil"></i> Edit this page
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/ethereum-optimism/optimism" target="_blank" rel="noopener noreferrer">
+              <i class="far fa-hands-helping"></i> Contribute to Optimism
+            </a>
+          </li>
+        </ul>
+      </div>
 
-    <div
-      v-if="contributors && contributors.length"
-      class="meta-item contributors"
-    >
-      <span class="label">{{ contributorsText }}: </span>
-      <span class="info">
-        <template v-for="(contributor, index) in contributors">
-          <!-- eslint-disable vue/no-v-for-template-key-on-child -->
-          <span
-            :key="index"
-            class="contributor"
-            :title="`email: ${contributor.email}`"
-          >
-            {{ contributor.name }}
-          </span>
-          <template v-if="index !== contributors.length - 1">, </template>
-        </template>
-      </span>
+      <div class="footer-box-area">
+        <span class="footer-section-header">Still need help?</span>
+        <ul>
+          <li>
+            <a href="https://discord.optimism.io" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-discord"></i> Discord community
+            </a>
+          </li>
+          <li>
+            <a href="https://optimismpbc.typeform.com/get-in-touch" target="_blank" rel="noopener noreferrer">
+              <i class="far fa-comment-dots"></i> Get support for going live
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
   </footer>
 </template>
@@ -88,4 +97,48 @@
     @media (max-width $MQMobile)
       font-size 13px
       text-align left
+  
+  .footer-box
+    display flex
+    flex-direction row
+    justify-content space-between
+    background-color #F1F4F9
+    padding 32px
+    border-radius 16px
+
+    @media (max-width $MQMobileNarrow)
+      flex-direction column
+
+    .footer-box-area
+      span.footer-section-header
+        font-family 'Open Sans', sans-serif
+        font-weight 600
+        font-size 14px
+        line-height 20px
+
+      ul
+        list-style-type none
+        padding-left 0
+        font-size 14px
+        line-height 20px
+        margin-top 10px
+        margin-bottom 0px
+        color #68778D
+
+        li
+          margin-top 15px
+          margin-bottom 5px
+
+      a
+        color #68778D
+        font-family 'Open Sans', sans-serif
+
+        &:hover
+          color #FF0420
+        
+      i
+        font-size 14px
+        width 20px
+        margin-right 3px
+        text-align center
 </style>
