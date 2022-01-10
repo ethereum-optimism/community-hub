@@ -14,7 +14,7 @@ features:
   - title: Guides
     icon: book
     details: How-to guides and tutorials for users and developers.
-    link: /TODO/
+    link: /docs/guides
 
   - title: Protocol specs
     icon: ruler-triangle
@@ -29,7 +29,7 @@ features:
   - title: Tools for developers
     icon: hammer
     details: Useful third-party tools for easier development and deployment.
-    link: /docs/infra/
+    link: /docs/useful-tools/
 
   - title: Getting involved
     icon: hands-helping
