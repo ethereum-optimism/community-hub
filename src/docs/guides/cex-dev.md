@@ -12,7 +12,7 @@ You connect to Optimism the same way you do to Ethereum, by connecting to a JSON
 
 ### Endpoints
 
-[Click here for the Optimism endpoints](../../infra/networks.md). You can choose between our public endpoints, which are rate limited, and [endpoints from infrastructure providers](../../infra/networks.md#rpc-endpoints).
+[Click here for the Optimism endpoints](../useful-tools/networks.md). You can choose between our public endpoints, which are rate limited, and [endpoints from infrastructure providers](../useful-tools/networks.md#rpc-endpoints).
 
 ### ETH balance
 
@@ -40,14 +40,14 @@ To get the total SNX balance of a user that uses Optimism you need to:
 
 ## Deposits and withdrawals within Optimism
 
-The ERC-20 contracts on Optimism function the same way they do on Ethereum, so you can use your existing code for withdrawals and deposits. Just connect to an Optimism endpoint. 
+The ERC-20 contracts on Optimism function the same way they do on Ethereum, so you can use your existing code for withdrawals and deposits. Just connect to an Optimism endpoint.
 
 
 ### Transaction fees
 
 Most of the cost of an Optimism transaction is not the gas consumed by the transaction itself (which is priced in most cases at 0.001 gwei), but the cost of writing the transaction in Ethereum. That cost is deducted automatically from the user's balance on Optimism. If you charge your users the cost of withdrawals, you have to account for it.
 
-[You can read more about this subject here](../l2/new-fees.md). The relevant code sample is [here](../l2/new-fees.md#for-frontend-and-wallet-developers).
+[You can read more about this subject here](../developers/build/transaction-fees.md). The relevant code sample is [here](../developers/build/transaction-fees/#displaying-fees-to-users).
 
 
 ## Deposits and withdrawals across chains
@@ -59,7 +59,7 @@ As a centralized exchange, there will be times that withdrawals of ETH or an ERC
 
 Note that while L1 to L2 transactions typically take minutes, L2 to L1 transaction on the gateway require [a seven day challenge period](https://help.optimism.io/hc/en-us/articles/4411895558171-Why-do-I-need-to-wait-a-week-when-moving-assets-out-of-Optimism-).
 
-Alternatively, you can use a [third party bridge](https://www.optimism.io/apps/bridges). These bridges usually rely on liquidity pools to allow for faster withdrawals and support multiple L2 chains. However, their token selection might be more limited and they may not be as decentralized as our gateway. 
+Alternatively, you can use a [third party bridge](https://www.optimism.io/apps/bridges). These bridges usually rely on liquidity pools to allow for faster withdrawals and support multiple L2 chains. However, their token selection might be more limited and they may not be as decentralized as our gateway.
 
 ## Audit reports
 
