@@ -31,6 +31,10 @@ module.exports = {
     },
     nav: [
       {
+        text: 'Guides',
+        link: '/docs/guides/',
+      },
+      {
         text: 'Developer Docs',
         link: '/docs/developers/',
       },
@@ -111,11 +115,13 @@ module.exports = {
             '/docs/developers/build/dev-node.md',
             '/docs/developers/build/run-a-node.md',
             '/docs/developers/build/differences.md',
+            '/docs/developers/build/json-rpc.md',
           ],
         },
         {
           title: 'Bridging L1 and L2',
           children: [
+            '/docs/developers/bridge/basics.md',
             '/docs/developers/bridge/standard-bridge.md',
             '/docs/developers/bridge/messaging.md',
           ],
@@ -123,7 +129,10 @@ module.exports = {
         },
         '/docs/developers/tutorials.md',
         '/docs/developers/known-issues.md',
-        '/docs/developers/contact-us.md'
+        [
+          'https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/docs',
+          'Contracts API'
+        ]
       ],
       '/docs/useful-tools/': [
         '/docs/useful-tools/networks.md',
@@ -143,14 +152,6 @@ module.exports = {
           'https://github.com/ethereum-optimism/optimistic-specs',
           'Protocol Specs'
         ]
-      ],
-      '/docs/retro-pgf/': [
-        [
-          'https://medium.com/ethereum-optimism/retroactive-public-goods-funding-33c9b7d00f0c',
-          'What is RetroPGF?'
-        ],
-        '/docs/retro-pgf/rounds.md',
-        '/docs/retro-pgf/resources.md',
       ]
     }
   },
