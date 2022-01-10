@@ -57,28 +57,28 @@ export default Vue.extend({
                             "Support"
                         ]),
                         h("div", { class: "anchor-support-links" }, [
-                            h("a", { attrs: { href: "https://discord.optimism.io" } }, [
+                            h("a", { attrs: { href: "https://discord.optimism.io", target: "_blank" } }, [
                                 h("div", [
                                     h("i", { attrs: { class: "fab fa-discord" } }),
-                                    " Get support on Discord"
+                                    " Discord community"
                                 ])
                             ]),
-                            h("a", { attrs: { href: "https://help.optimism.io/hc/en-us" } }, [
+                            h("a", { attrs: { href: "https://optimismpbc.typeform.com/get-in-touch", target: "_blank" } }, [
                                 h("div", [
-                                    h("i", { attrs: { class: "far fa-question-circle" } }),
-                                    " Check the Help Center"
+                                    h("i", { attrs: { class: "far fa-comment-dots" } }),
+                                    " Get support for going live"
                                 ])
                             ]),
-                            h("a", { attrs: { href: "https://github.com/ethereum-optimism/optimism/issues" } }, [
+                            h("a", { attrs: { href: "https://github.com/ethereum-optimism/optimism/issues", target: "_blank" } }, [
                                 h("div", [
                                     h("i", { attrs: { class: "fab fa-github" } }),
                                     " Make an issue on GitHub"
                                 ])
                             ]),
-                            h("a", { attrs: { href: "https://optimismpbc.typeform.com/get-in-touch" } }, [
+                            h("a", { attrs: { href: "https://github.com/ethereum-optimism/optimism/contribute", target: "_blank" } }, [
                                 h("div", [
-                                    h("i", { attrs: { class: "far fa-comment-dots" } }),
-                                    " Fill out the support form"
+                                    h("i", { attrs: { class: "far fa-hands-helping" } }),
+                                    " Contribute to Optimism"
                                 ])
                             ]),
                         ])
