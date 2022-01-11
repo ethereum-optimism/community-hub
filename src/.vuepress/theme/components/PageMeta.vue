@@ -104,6 +104,8 @@
     justify-content space-between
     background-color #F1F4F9
     padding 32px
+    padding-left: 40px;
+    padding-right: 40px;
     border-radius 16px
 
     @media (max-width $MQNarrow)
