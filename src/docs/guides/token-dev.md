@@ -53,7 +53,7 @@ We have a dedicated Factory predeploy at address `0x4200000000000000000000000000
 
 4. Select `createStandardL2Token` method and complete the required data for token properties:
 - `_l1Token` address of the token on L1
-- `_name` and `_symbol` are the string properties of the L1 token from the address above. There are rare instances where these need to be different to L1, please contact us if that's the case to validate whether we can support this.
+- `_name` and `_symbol` are the string properties of the L1 token from the address above. There are rare instances where these need to be different from L1, please contact us if that's the case to validate whether we can support this.
 
 In this example we are using the ENS kovan token from [https://kovan.etherscan.io/address/0x6B7420E3D9115CB1D2A593bD7f6BD15a06506Caf](https://kovan.etherscan.io/address/0x6B7420E3D9115CB1D2A593bD7f6BD15a06506Caf) and creating an Optimism `L2StandardERC20` token instance this can be bridged to.
 <div align="center"><img src="../../assets/docs/guides/token-dev/3.png" /></div>
