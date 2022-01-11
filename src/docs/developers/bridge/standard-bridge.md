@@ -43,14 +43,8 @@ Instead, you can use the `withdraw` or `withdrawTo` functions on the [`L2Standar
 ## Adding an ERC20 token to the Standard Bridge
 
 ::: tip
-See detailed tutorial on [bridging your standard ERC20 token to Optimism](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/standard-bridge-standard-token) using the Standard Bridge.
+To add your token to the standard bridge, see the guide [Adding an ERC20 token to the Standard Bridge](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/standard-bridge-standard-token).
 :::
-
-Anyone can add a new ERC20 token to the Standard Bridge.
-You must have a token contract on both L1 and L2.
-Your L2 token contract must also implement the [`IL2StandardERC20`]( https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/standards/IL2StandardERC20.sol) interface.
-Optimism provides a standard implementation of that interface as the [`L2StandardERC20`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/standards/L2StandardERC20.sol) contract.
-If the `L2StandardERC20` implementation does not satisfy your requirements, you can deploy an alternative implementation as long as it's compliant with the `IL2StandardERC20` interface.
 
 ## The Optimism token list
 
@@ -58,6 +52,6 @@ The Standard bridge allows a one-to-many mapping between L1 and L2 tokens, meani
 However there is always a one-to-one mapping between L1 and L2 tokens in the [Optimism token list](https://github.com/ethereum-optimism/ethereum-optimism.github.io/blob/master/optimism.tokenlist.json).
 The token list is used as the source of truth for the [Optimism Gateway](https://gateway.optimism.io) which is the main portal for moving assets between Layer 1 and Layer 2.
 
-If you want to have your token added to the token list, you must make a pull request against the [Optimism token list repository](https://github.com/ethereum-optimism/ethereum-optimism.github.io/pulls).
+If you want to have your token added to the token list, you must make a pull request against the [Optimism token list repository](https://github.com/ethereum-optimism/ethereum-optimism.github.io#adding-a-token-to-the-list).
 You'll need the addresses for both the L1 and L2 tokens, as well as a logo for the token.
 If you're looking for an example to follow, take a look at [this simple pull request that adds a token to the token list](https://github.com/ethereum-optimism/ethereum-optimism.github.io/pull/43/files).
