@@ -9,6 +9,10 @@ For an ERC20 to work with the Standard Bridge it needs to implement the [`IL2Sta
 
 We'll demonstrate the process for deploying an instance of a sample token on Optimism Kovan testnet using [Etherscan](https://kovan-optimistic.etherscan.io/). The same process is applicable to Optimism Mainnet.
 
+::: tip
+If the `L2StandardERC20` implementation does not satisfy your requirements, you can deploy an alternative implementation as long as it's compliant with the `IL2StandardERC20` interface. See the detailed tutorial on deploying a custom token at [https://github.com/ethereum-optimism/optimism-tutorial/tree/main/standard-bridge-custom-token](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/standard-bridge-custom-token)
+:::
+
 ## Requirements
 
 Just like with Ethereum, you'll need a wallet to use to interact with Optimism.
@@ -69,3 +73,7 @@ For example for us this is [https://kovan-optimistic.etherscan.io/tx/0x0f71c0c2a
 9. Go to the newly created address, which should be auto-verified in Etherscan, to validate the token properties.
 
 [https://kovan-optimistic.etherscan.io/address/0x3390108e913824b8ead638444cc52b9abdf63798#code](https://kovan-optimistic.etherscan.io/address/0x3390108e913824b8ead638444cc52b9abdf63798#code)
+
+::: tip
+To list your token on the [Optimism token list](http://localhost:8080/docs/developers/bridge/standard-bridge/#the-optimism-token-list), you must make a pull request against the [Optimism token list repository](https://github.com/ethereum-optimism/ethereum-optimism.github.io#adding-a-token-to-the-list).
+:::
