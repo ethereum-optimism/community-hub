@@ -36,11 +36,9 @@ However, as of the OVM 2.0 release of Optimism (Nov. 2021), **each transaction o
 This is important because it means that `block.number` is currently NOT a reliable source of timing information.
 If you want access to the current time, you should use `block.timestamp` (the `TIMESTAMP` opcode) instead.
 
-### Timestamp lags by up to 15 minutes
+### Timestamps
 
-Note that `block.timestamp` is pulled automatically from the latest L1 block seen by the L2 system.
-L2 currently waits for about 15 minutes (~50 confirmations) before the L1 block is accepted.
-As a result, the timestamp may lag behind the current time by up to 15 minutes.
+The `TIMESTAMP` opcode uses the timestamp of the transaction itself where `time.Now` is used.
 
 ### Accessing the latest L1 block number
 
