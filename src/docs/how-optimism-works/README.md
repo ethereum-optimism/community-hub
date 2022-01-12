@@ -5,14 +5,6 @@ lang: en-US
 
 # {{ $frontmatter.title }}
 
-Audience:
-- CEO/BizDev-types
-- Plain English, but assuming some technical understanding
-
-Goals:
-- Explain how it will scale long term
-- Explain the security assumptions, benefits, tradeoffs, and goals of Optimism
-
 ## Introduction
 
 Welcome to *How Optimism Works*.
@@ -26,7 +18,9 @@ Readers interested in a low-level look into Optimism under the hood should refer
 
 Without further ado, let's learn *How Optimism Works*!
 
-## Rollups 101
+## Optimistic Rollups 101
+
+Optimism is 
 
 Optimism is a blockchain system that's almost identical to Ethereum under the hood.
 However, Optimism doesn't use a separate consensus mechanism like Proof-of-Work or Proof-of-Stake to maintain its security.
