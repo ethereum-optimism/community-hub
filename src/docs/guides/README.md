@@ -5,10 +5,18 @@ lang: en-US
 
 # {{ $frontmatter.title }}
 
-Guides are collections of important links and resources that are needed to do specific tasks on Optimism. As such, we have guides for Smart Contract developers, Token developers (ERC20 tokens, as well as how to bridge), CEX developers and wallet developers. 
+Welcome to the Optimism Guides! 
 
-These guides are intended to be one stop shops of all the information you would need. 
+These guides are developer docs focused on a single topic. These guides are intended as one stop shops, and should have all the relevant information you need for getting the job done, from network information and tutorials to tips and tricks.
 
-If you found missing information in a guide that you think is essential for what it is trying to cover, please make an issue in GitHub or raise it as an issue in discord. 
+We have guides for getting your [token onto the bridge](./token-dev.md), developing [smart contracts on Optimism](./smart-contract-devs.md), and adding [Optimism to your CEX](./cex-dev.md).
 
-Happy coding! 
+## Want a specific guide added?
+
+Do you think we are missing an important use cases? We'd love to hear from you in a [GitHub issue](https://github.com/ethereum-optimism/community-hub/issues) or on [Discord](https://discord.optimism.io). 
+
+## Think something is missing?
+
+If you found missing information in a guide that you think is essential for what it is trying to cover, please make an [issue in GitHub](https://github.com/ethereum-optimism/community-hub/issues) or on [Discord](https://discord.optimism.io). 
+
+We love hearing from y'all, and the more feedback we get the better the guides will be! 
