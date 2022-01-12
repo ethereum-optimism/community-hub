@@ -1,5 +1,5 @@
 ---
-title: Adding an ERC20 token to the Standard Bridge
+title: Adding an ERC20 token to the standard bridge
 lang: en-US
 ---
 
