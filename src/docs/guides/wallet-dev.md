@@ -71,7 +71,7 @@ We aim to be [EVM equivalent](https://medium.com/ethereum-optimism/introducing-e
 
 **Most of the transaction fee of an Optimism transaction is not the gas consumed by the transaction itself (which is priced at 0.001 gwei when the chain is not congested), but the transaction fee writing the transaction in Ethereum. That fee is deducted automatically from the user's ETH balance on Optimism.**
 
-[You can read more about this subject here](../developers/build/transaction-fees.md). The relevant code sample is [here](../developers/build/transaction-fees.md#displaying-fees-to-users). Typically, 95% of the work to integrate Optimism to a wallet is to make sure that users get the correct transaction fee.
+[You can read more about this subject here](../developers/build/transaction-fees.md). The relevant code sample is [here](../developers/build/transaction-fees.md#displaying-fees-to-users). Typically, 95% of the work to integrate Optimism to a wallet is to make sure that users are displayed the correct transaction fee.
 
 
 
