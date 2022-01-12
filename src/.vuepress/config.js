@@ -103,7 +103,8 @@ module.exports = {
     sidebar: {
       '/docs/guides/': [
         '/docs/guides/cex-dev.md',
-        '/docs/guides/token-dev.md'
+        '/docs/guides/token-dev.md',
+        '/docs/guides/smart-contract-devs.md'
       ],
       '/docs/developers/': [
         {
