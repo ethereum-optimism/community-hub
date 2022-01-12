@@ -43,10 +43,6 @@ module.exports = {
         link: '/docs/useful-tools/',
       },
       {
-        text: 'Guides',
-        link: '/docs/guides/',
-      },
-      {
         text: 'Protocol',
         link: '/docs/protocol/',
       },
@@ -107,7 +103,8 @@ module.exports = {
     sidebar: {
       '/docs/guides/': [
         '/docs/guides/cex-dev.md',
-        '/docs/guides/token-dev.md'
+        '/docs/guides/token-dev.md',
+        '/docs/guides/smart-contract-devs.md'
       ],
       '/docs/developers/': [
         {
@@ -150,9 +147,6 @@ module.exports = {
         '/docs/useful-tools/explorers.md',
         '/docs/useful-tools/providers.md',
         ['https://www.optimism.io/apps/tools', 'Third Party Tools'],
-      ],
-      '/docs/guides/': [
-        '/docs/guides/smart-contract-devs.md',
       ],
       '/docs/protocol/': [
         '/docs/protocol/protocol-2.0.md',
