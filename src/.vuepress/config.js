@@ -25,6 +25,9 @@ module.exports = {
     blog: false,
     iconPrefix: 'far fa-',
     pageInfo: false,
+    activeHash: {
+      offset: -200,
+    },
     algolia: {
       apiKey: '47d21d4ea72ed7cb504b1c6c0a46b5a0',
       indexName: 'optimism'
