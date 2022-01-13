@@ -8,7 +8,7 @@ lang: en-US
 ## Introduction
 
 Hello!
-By the time you're finished reading this page you should have a foundational understanding of how Optimism makes Ethereum transactions cheaper and faster, the approach that Optimism is taking to scaling both Ethereum and Ethereum's values, and why Optimism is the best place to build your next Ethereum-native app.
+By the time you've finished reading this page you should have a foundational understanding of how Optimism makes Ethereum transactions cheaper and faster, the approach that Optimism is taking to scaling both Ethereum and Ethereum's values, and why Optimism is the best place to build your next Ethereum-native app.
 
 We've tried to make this guide as comprehensive as possible while still keeping the content accessible to most readers.
 Some content on this page is geared towards readers with a technical background but should still be legible to those with a basic understanding of how blockchains work.
@@ -20,7 +20,7 @@ Without further ado, let's find out *How Optimism Works*!
 ## Design philosophy
 
 Optimism is built according to a strong design philosophy that stands on four main pillars: simplicity, pragmatism, sustainability, and, of course, optimism.
-It's important to understand these pillars as they heavily influences the design of Optimism as a whole.
+It's important to understand these pillars as they heavily influence the design of Optimism as a whole.
 
 ### Simplicity
 
@@ -39,7 +39,7 @@ A clean and minimal codebase is also more accessible to external contributors an
 All of this serves to maximize the security and correctness of the Optimism protocol.
 
 Simplicity is also important for the long-term vision of Optimism.
-By limiting the amount of code that we write on top of existing Ethereum tooling, we're able to spend most of our time working directly with existing Ethereum codebases.
+By limiting the amount of code that we write on top of Ethereum tooling, we're able to spend most of our time working directly with existing codebases.
 Engineering effort that goes into Optimism can also directly benefit Ethereum, and vice versa.
 This will only become more pronounced as the Optimism protocol solidifies and existing resources can be redirected towards core Ethereum infrastructure.
 
@@ -50,8 +50,8 @@ The core Optimism team has real-world constraints, the projects that build on Op
 Optimism's design philosophy prioritizes user and developer needs over theoretical perfection.
 Sometimes the best solution isn't the prettiest one.
 
-Optimism is also developed with the understanding that a small core development team will always have limited expertise.
-Optimism is developed iteratively and strives to continously pull feedback from Optimism users.
+Optimism is also developed with the understanding that any core team will have limited areas of expertise.
+Optimism is developed iteratively and strives to continously pull feedback from users.
 Many core Optimism features today (like EVM equivalence) were only made possible by this iterative approach to protocol development.
 
 ### Sustainability
@@ -76,14 +76,112 @@ We keep this in mind whenever we're creating new features or trying to simplify 
 Optimism is as close to Ethereum as possible not only for pragmatic reasons, but because Optimism exists so that Ethereum can succeed.
 We hope that you can see the influence of this philosophy when looking at Optimism's design.
 
-## Optimistic Rollups
+## System overview
 
 We've covered most of the "why" behind Optimism.
 Now it's time to explain the big idea that makes Optimism possible: the Optimistic Rollup.
-Here we'll explain why Optimism is built as an Optimistic Rollup and why we believe it's the best option for a system that addresses all of our design goals.
-We'll also go through a brief explainer of what an Optimistic Rollup is at a high level before diving into how Optimism's specific implementation of this concept actually works.
+We'll go through a brief explainer of *how* Optimistic Rollups work at a high level.
+Then we'll explain *why* Optimism is built as an Optimistic Rollup and why we believe it's the best option for a system that addresses all of our design goals.
 
-### Why an Optimistic Rollup?
+### Optimistic Rollups TL;DR
+
+Optimism is an "Optimistic Rollup," which is basically just a fancy way of describing a blockchain that piggy-backs off of the security of another "parent" blockchain.
+Specifically, Optimistic Rollups take advantage of the consensus mechanism (like PoW or PoS) of their parent chain instead of providing their own.
+In Optimism's case this parent blockchain is Ethereum.
+
+![op loves eth](../../assets/docs/how-optimism-works/1.png)
+
+### Block storage
+
+Optimism blocks are published by sending a transaction to a special smart contract on Ethereum called the [`CanonicalTransactionChain`](https://etherscan.io/address/0x5E4e65926BA27467555EB562121fac00D24E9dD2) (or CTC for short).
+When this contract is triggered, a block is added to an immutable list of blocks held within the smart contract's storage.
+This list of blocks forms the Optimism blockchain.
+As long as blocks can't be easily reordered on Ethereum, blocks also can't be easily reordered on Optimism.
+It's through this relationship that Optimism derives its security from Ethereum.
+
+![op loves eth](../../assets/docs/how-optimism-works/2.png)
+
+### Block production
+
+Users can have their transactions added to the chain in one of two ways: by sending the transaction to a block producer (also called a "Sequencer") or by submitting their transactions directly to the `CanonicalTransactionChain`.
+
+Block producers combine lots of transactions together and publish them all at once as a batch.
+This significantly reduces overall transaction fees by spreading fixed costs over all of the transactions in a given batch.
+Block producers also apply some basic compression techniques to minimize the amount of data published to Ethereum.
+Only one block producer is active at any given time.
+For the moment, [Optimism PBC](https://www.optimism.io/) runs the only block producer.
+Refer to the below section about [Sequencer decentralization](#sequencer-decentralization) for more information.
+
+![op loves eth](../../assets/docs/how-optimism-works/3.png)
+
+Alternatively, users can skip block producers entirely and submit their transactions directly to the `CanonicalTransactionChain`.
+This is typically more expensive but has the advantage of being resistant to censorship by block producers.
+
+(diagram)
+
+### Block execution
+
+Optimism, like Ethereum, is a network of nodes.
+Ethereum nodes download blocks from Ethereum's p2p network.
+Optimism nodes instead download blocks directly from the `CanonicalTransactionChain` contract.
+These blocks are then executed deterministically, just like any other blockchain.
+
+(image)
+
+Optimism nodes are made up of two primary components, the Ethereum data indexer and the Optimism client software.
+The Ethereum data indexer, also called the ["data transport layer"](https://github.com/ethereum-optimism/optimism/tree/develop/packages/data-transport-layer) (or DTL), pieces together the Optimism blockchain from blocks published to the `CanonicalTransactionChain` contract.
+
+(image)
+
+Once a block is indexed, the Optimism client software will pull this block in and execute it.
+Optimism's client software is an *almost* completely vanilla version of [Geth](https://github.com/ethereum/go-ethereum), which means Optimism is close to identical to Ethereum under the hood.
+We refer to this architecture as ["EVM Equivalence"](https://medium.com/ethereum-optimism/introducing-evm-equivalence-5c2021deb306).
+
+(insert node diagram)
+
+### Deposits
+
+Since users can create blocks on Optimism by triggering the `CanonicalTransactionChain` on Ethereum, it's very easy to send data from Ethereum to Optimism.
+User-created blocks can include arbitrary transaction data and will appear to originate from the address that generated the block.
+Contracts on Ethereum can use this feature to, for example, deposit some assets from Ethereum into Optimism.
+
+(diagram)
+
+### Withdrawals
+
+The process of sending data from Optimism back to Ethereum is somewhat more involved.
+In this direction, we need to be able to make provable statements about the state of Optimism to contracts sitting on Ethereum.
+
+Making provable statements about the state of Optimism starts with a [cryptographic commitment](https://en.wikipedia.org/wiki/Commitment_scheme) in the form of the root of the Optimism's [state trie](https://medium.com/@eiki1212/ethereum-state-trie-architecture-explained-a30237009d4e).
+Optimism's state is updated after each block, so this commitment will also change after every block.
+Using these commitments, users can generate [Merkle tree proofs](https://en.wikipedia.org/wiki/Merkle_tree) about the state of Optimism after a given block.
+Commitments are regularly published to smart contract on Ethereum called the [`StateCommitmentChain`](https://etherscan.io/address/0xBe5dAb4A2e9cd0F27300dB4aB94BeE3A233AEB19).
+
+(diagram)
+
+In a zero-knowledge (ZK) Rollup system, each commitment comes with a cryptographic proof that the commitment represents the true state of the L2 system.
+In an Optimistic Rollup, commitments are published *without* any proof of validity.
+Instead, commitments are considered "pending" for a period of 7 days.
+Commitments that do not represent the actual state of Optimism can be invalidated at any point within this 7 day period through a process called the [fault proof](#fault-proof).
+During this process, the user who published the commitment go through a series of back-and-forth actions on Ethereum with the "challenger" to determine whether or not the commitment was valid.
+See the [below dedicated fault proof section](#fault-proof) for more information about this process.
+
+(diagram)
+
+The fault proof system guarantees that the commitments published to Ethereum will be accurate after the 7 day waiting period has elapsed.
+Users can then generate [Merkle tree proofs](https://en.wikipedia.org/wiki/Merkle_tree) about the state of Optimism to be validated by applications on Ethereum.
+These proofs can be used to prove that some `ContractA` on Optimism is trying to send a message to a `ContractB` on Ethereum.
+With a little fancy footwork, we can use this basic building block to support the withdrawal of assets from Optimism back onto Ethereum.
+
+### Fault proofs
+
+## Roadmap
+
+### Next gen fault proofs
+
+### Sequencer decentralization
+
+<!-- ## Why Optimistic Rollups?
 
 Before any code was written, Optimism was just a goal: *make Ethereum mainstream*.
 
@@ -92,128 +190,32 @@ Constructing a new L1 system was out of the question.
 Optimism was designed to scale Ethereum, not create a new chain that competes with it.
 This left only two serious options: Optimistic Rollups or ZK Rollups.
 
+### Simple
+
 ZK Rollups are extremely cool.
 They're also extremely complicated.
 The most advanced ZK Rollups are built on top of fields of mathematics still being established at this very moment.
 In the pursuit of simplicity and sustainability, Optimistic Rollups really can't be beat.
 Perhaps most the most critical advantage is that an Optimistic Rollup can be audited without a PhD.
 
+### Flexible
+
 Optimistic Rollups are also more flexible than their ZK counterparts.
 For Optimistic Rollups, EVM compatibility is the expectation rather than a theoretical future outcome.
 Existing Ethereum applications can easily be ported to most Optimistic Rollups, a requirement that we felt absolutely necessary for a system designed to scale *Ethereum*.
 
+### Mature
 Furthermore, we know from experience that an initial protocol release is just the beginning.
 Optimistic Rollup infrastructure is far more mature than the equivalent ZK Rollup infrastructure.
 This is mostly a result of the minimal additional code required to transform an Ethereum node into an Optimistic Rollup node.
 The relative simplicity of building and maintaining Optimistic Rollups will only serve to widen this maturity gap as time goes on.
 
 At the end of the day, we feel that there are a number of clear advantages to the Optimistic Rollup design for the particular needs and goals of Optimism.
-We hope you'll find these advantages to be just as clear once you start using Optimism!
+We hope you'll find these advantages to be just as clear once you start using Optimism! -->
 
-### Optimistic Rollups 101
-
-That's enough background.
-Let's start diving into the technical details.
-What exactly *is* an Optimistic Rollup?
-
-The term "Rollup" is basically just a fancy way of saying that the blockchain in question is piggy-backing off of the security of another blockchain.
-In particular, a Rollup system does this by publishing all of its blocks and transaction data to the "parent" blockchain.
-This makes it possible to avoid the need for a complex consensus mechanism (like PoW or PoS) to determine the canonical ordering of transactions.
-In Optimism's case this parent blockchain is Ethereum.
-
-(image)
-
-For most Ethereum-based Rollups, blocks are published when transactions are sent to special smart contracts.
-Transactions can be added to the chain in one of two ways, either by sending the transaction to a block producer (or "Sequencer") or by sending transactions directly to Ethereum.
-Block producers combine lots of transactions together and publishes them all at once.
-This usually saves a lot of money because block producers can spread fixed costs over many transactions and can even apply advanced techniques like calldata compression.
-Alternatively, users can skip block producers entirely and send their transaction directly to Ethereum.
-This is typically more expensive but has the advantage of being censorship resistant.
-
-(diagram)
-
-The smart contract on Ethereum then holds the list of blocks that make up the L2 blockchain.
-This list is usually made immutable within the contract, a property which is guaranteed to hold as long as the parent chain's immutability holds.
-It's through this relationship that an L2 derives its security from the parent chain.
-Nodes download these blocks from the smart contract and execute them deterministically, just like any other blockchain.
-At this point we've got a fully functional blockchain without its own consensus mechanism.
-
-(diagram)
-
-Since the L2 trusts the parent chain by design, it's usually very easy to send data from the parent chain into the L2.
-L2s are typically designed so that a contract on L1 can trigger the special smart contract function to create a block on L2.
-Contracts on L1 can use this approach to, for example, move some assets from the parent chain into the L2 chain.
-
-(diagram)
-
-Unfortunately this relationship between the L1 and the L2 doesn't hold in reverse.
-The parent chain doesn't know anything about the L2, so any communication from the L2 back to the parent chain has to come with some sort of proof that the communication is valid.
-After all, the whole point of L2 is that the parent chain isn't actually executing the transactions on L2.
-
-(diagram)
-
-The approach to this proof process is what differentiates an Optimistic Rollup from a ZK Rollup.
-In both Rollup models, commitments to the state of the L2 (usually in the form of the root of a Merkle tree) are regularly published to the parent chain.
-Applications can then use these commitments to make prove things about the state of L2.
-In a ZK Rollup, each commitment comes with a cryptographic proof that the commitment does, in fact, represent the true state of the L2.
-
-(diagram)
-
-In an Optimistic Rollup, commitments are published *without* any direct proof.
-Instead, commitments are required to go through a "challenge period" during which other users can "challenge" the commitment and make the assertion that the commitment is not valid.
-The original submitter of the commitment and the challenger duke it out in a fancy "fault proof" process which will eventually determine whether or not the commitment was valid.
-
-(diagram)
-
-As long as someone is willing to do these challenges and keep an eye on the system, an Optimistic Rollup is guaranteed to always have the correct commitments on L1 after the challenge period is over.
-This means that the major difference between a ZK rollup and an Optimistic Rollup is that there's a waiting period when sending data from the L2 back to the parent chain.
-
-## System overview
+<!-- ## System overview
 
 Now that we've covered the philosophy behind Optimism, let's take a look at how it currently works at a high level.
-
-### Node software
-
-Optimism, like Ethereum, is a network of nodes.
-Every node has two primary component.
-Firt there's the L2 client software which in Optimism's case is literally an almost-vanilla Geth node.
-This is what executes blocks, just like how Geth executes blocks for Ethereum.
-But in order to get these blocks, we have to look at an Ethereum node.
-We use a piece of software called the indexer to read data from the Ethereum node and deterministically construct the Layer 2 chain.
-
-(insert node diagram)
-- Optimism node software
-  - Node software is the core of Optimism
-  - We use Geth with only minor modifications - the main modification is the introduction of a new transaction type for "deposits".
-  - Use this section to really hammer home the fact that this is JUST GETH and it doesn't get any simpler than that, it's the same battle-tested software that gets used for Ethereum
-  - We use JUST GETH for multiple reasons, but mainly it's for the stability and because we believe in the future of Etheruem and we want to put ourselves in a position where we can actively contribute back to the Geth codebase and contribute back to Ethereum.
-  - Nodes get their data from the indexer, which uses an L1 node and a connection to the Sequencer to get the blocks.
-
-### Block production
-
-There's a special node call the Sequencer which can create blocks and publish them to Ethereum.
-Users can send transactions to a node, which will then forward the transactions to teh Sequencer.
-The sequencer combines these transactions into batches and then publishes all the transactions/blocks at the same time.
-
-(insert sequencer diagram)
-
-Users can also create blocks without going through a Sequencer by publishing them directly to Ethereum.
-This is more costly, but is censorship resistant.
-
-(insert bypass diagram)
-
-Transaction results are published (by any node) to another contract on L1.
-This ties Optimism back into Ethereum and allows apps on L1 to make decisions based on L2.
-For example, this is how a withdrawal contract can give users withdrawals if they want to leave L2.
-
-(insert diagram)
-
-- How blocks get made
-  - Users can send transactions either to an L2 node or post them directly to L1 themselves
-  - When sent to an L2 node, the transaction gets sent to the Sequencer to be bundled into a block
-  - When sent to L1 directly, a block is created on L1 and pushed into the chain
-  - Combination of blocks created on L1 and blocks published by Sequencer creates some canonical list of blocks
-  - And this list of blocks is what verifier nodes pull down to execute
 
 ### Fault proofs
 
@@ -262,7 +264,7 @@ The process is relatively cheap and you only need one of them, and the one party
   - Contact form if you want to deploy and you want assistance in getting there
   - Docs, help center, discord, github
   - Or just bring your existing Etheruem expertise
-  - To Optimism!
+  - To Optimism! -->
 
 
 
