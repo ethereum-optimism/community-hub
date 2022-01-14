@@ -91,7 +91,7 @@ we come to trust them.
 
 In brief: If a proposed state root is not the correct result of executing a transaction, then a Verifier (which is anyone running an Optimism 'full node') can initiate a transaction result challenge. If the transaction result is successfully proven to be incorrect, the Verifier will receive a reward taken from funds which a Sequencer must put up as a bond.
 
-::: Notice
+::: tip Notice
 This system is still being written, so these details are likely to
 change
 :::
@@ -128,9 +128,9 @@ The L2 Cross Domain Messenger (L2xDM) contract sends messages from L2 to L1, and
 ## The Standard Bridge
 
 One common case of message passing is "transferring" either ERC-20
-tokens or ETH between L1 and Optimism. To deposit tokens 
+tokens or ETH between L1 and Optimism. To deposit tokens
 into Optimism, the bridge locks them on L1 and mints equivalent
-tokens in Optimism. To withdraw tokens, the bridge burns the 
+tokens in Optimism. To withdraw tokens, the bridge burns the
 Optimism tokens and releases the locked L1 tokens. [More details
 are here](/docs/developers/bridge/standard-bridge.html)
 
@@ -144,7 +144,7 @@ The L2 part of the Standard Bridge. Responsible for finalising deposits from L1 
 
 ### [`L2StandardTokenFactory`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/L2/messaging/L2StandardTokenFactory.sol)
 
-Factory contract for creating standard L2 token representations of L1 ERC20s compatible with and working on the standard bridge. 
+Factory contract for creating standard L2 token representations of L1 ERC20s compatible with and working on the standard bridge.
 [See here for more information](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/standard-bridge-standard-token).
 
 
@@ -161,7 +161,7 @@ The following concrete contracts are predeployed:
 The L1MessageSender is a predeployed contract running on L2.
 During the execution of cross domain transaction from L1 to L2, it returns the address of the L1 account (either an EOA or contract) which sent the message to L2 via the Canonical Transaction Chain's `enqueue()` function.
 
-Note that this contract is not written in Solidity. However, 
+Note that this contract is not written in Solidity. However,
 the interface linked above still works as if it were. In this way
 it is similar to the EVM's predeploys.
 
@@ -172,10 +172,10 @@ The L2 to L1 Message Passer is a utility contract which facilitate an L1 proof o
 <!--
 ### [`OVM_SequencerEntrypoint`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/OVM/predeploys/OVM_SequencerEntrypoint.sol)
 The Sequencer Entrypoint is a predeploy which, despite its name, can in fact be called by  any account. It accepts a more efficient compressed calldata format, which it decompresses and  encodes to the standard EIP155 transaction format. This contract is the implementation referenced by the Proxy Sequencer Entrypoint, thus enabling the Optimism team to upgrade the decompression of calldata from the Sequencer.
---> 
+-->
 
 ### [`OVM_SequencerFeeVault`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/L2/predeploys/OVM_SequencerFeeVault.sol)
-This contract holds fees paid to the sequencer until there is enough to 
+This contract holds fees paid to the sequencer until there is enough to
 justify the transaction cost of sending them to L1 where they are used to
 pay for L1 transaction costs (mostly the cost of publishing all L2 transaction
 data as CALLDATA on L1).
@@ -190,15 +190,15 @@ See [Standard Bridge](../developers/bridge/standard-bridge.md) for details.
 <!--
 ### [`OVM_ExecutionManagerWrapper`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/OVM/predeploys/OVM_ExecutionManagerWrapper.sol)
 This is the one contract on L2 that can call another contract without having to
-go through virtualization. It is used to call 
+go through virtualization. It is used to call
 OVM_ExecutionManager  ovm-executionmanager.
 -->
 
 <!--
 ### [`ERC1820Registry`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/OVM/predeploys/ERC1820Registry.sol)
 [ERC1820](https://eips.ethereum.org/EIPS/eip-1820) specifies a registry
-service that lets addresses report what interfaces they support and ask 
-about other addresses. 
+service that lets addresses report what interfaces they support and ask
+about other addresses.
 -->
 
 ### [`Lib_AddressManager`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/libraries/resolver/Lib_AddressManager.sol)
@@ -211,14 +211,14 @@ It is used by `L1CrossDomainMessenger`.
 <!--
 ### [`OVM_ExecutionManagerWrapper`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/OVM/predeploys/OVM_ExecutionManagerWrapper.sol)
 This is the one contract on L2 that can call another contract without having to
-go through virtualization. It is used to call 
+go through virtualization. It is used to call
  OVM_ExecutionManager  ovm-executionmanager .
 
 
 ### [`ERC1820Registry`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/OVM/predeploys/ERC1820Registry.sol)
 [ERC1820](https://eips.ethereum.org/EIPS/eip-1820) specifies a registry
-service that lets addresses report what interfaces they support and ask 
-about other addresses. 
+service that lets addresses report what interfaces they support and ask
+about other addresses.
 
 
 -->
