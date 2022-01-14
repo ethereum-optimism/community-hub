@@ -101,7 +101,7 @@ module.exports = {
         {
           title: 'Protocol Docs',
           children: [
-            '/docs/protocol/protocol-2.0.md',
+            '/docs/protocol/contracts.md',
             '/docs/protocol/sequencing.md',
             '/docs/protocol/fault-proofs.md',
             '/docs/protocol/protocol-readings.md',
