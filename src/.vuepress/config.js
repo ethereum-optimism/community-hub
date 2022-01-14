@@ -104,7 +104,6 @@ module.exports = {
             '/docs/protocol/contracts.md',
             '/docs/protocol/sequencing.md',
             '/docs/protocol/fault-proofs.md',
-            '/docs/protocol/protocol-readings.md',
             [
               'https://github.com/ethereum-optimism/optimistic-specs',
               'Protocol Specs'
