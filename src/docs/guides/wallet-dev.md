@@ -1,5 +1,5 @@
 ---
-title: Supporting Optimism in Your Wallet
+title: Supporting Optimism in your wallet
 lang: en-US
 ---
 
@@ -61,7 +61,7 @@ A transaction in Optimism can be in one of three states:
 - **Confirmed On-Chain**: The transaction has been written to Ethereum (L1). In that case of an L2->L1 transaction, this starts the seven day period until it can be finalized
 - **Finalized On-Chain**: This status is only application for L2->L1 transactions, and means that the transaction was finalized on L1 after the seven day verification period has passed.
 
-For now, we recommend wallets consider transactions final after they are Sequencer confirmed as there are no reorgs on the chain and there is currently not standard tooling for tracking when transactions are confirmed on chain. We have a JS SDK coming soon that will contain standard tooling to track these three states of each transaction 
+For now, we recommend wallets consider transactions final after they are Sequencer confirmed as there are no reorgs on the chain and there is currently not standard tooling for tracking when transactions are confirmed on chain. We have a JS SDK coming soon that will contain standard tooling to track these three states of each transaction
 
 ## Differences from Ethereum
 

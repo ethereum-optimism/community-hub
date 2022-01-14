@@ -1,5 +1,5 @@
 ---
-title: Adding an ERC20 token to the Standard Bridge
+title: Adding an ERC20 token to the standard bridge
 lang: en-US
 ---
 
@@ -75,5 +75,5 @@ For example for us this is [https://kovan-optimistic.etherscan.io/tx/0x0f71c0c2a
 [https://kovan-optimistic.etherscan.io/address/0x3390108e913824b8ead638444cc52b9abdf63798#code](https://kovan-optimistic.etherscan.io/address/0x3390108e913824b8ead638444cc52b9abdf63798#code)
 
 ::: tip
-To list your token on the [Optimism token list](http://localhost:8080/docs/developers/bridge/standard-bridge/#the-optimism-token-list), you must make a pull request against the [Optimism token list repository](https://github.com/ethereum-optimism/ethereum-optimism.github.io#adding-a-token-to-the-list).
+To list your token on the [Optimism token list](../developers/bridge/standard-bridge/#the-optimism-token-list), you must make a pull request against the [Optimism token list repository](https://github.com/ethereum-optimism/ethereum-optimism.github.io#adding-a-token-to-the-list).
 :::
