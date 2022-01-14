@@ -152,34 +152,67 @@ Contracts on Ethereum can use this feature to, for example, deposit some assets 
 The process of sending data from Optimism back to Ethereum is somewhat more involved.
 In this direction, we need to be able to make provable statements about the state of Optimism to contracts sitting on Ethereum.
 
-Making provable statements about the state of Optimism starts with a [cryptographic commitment](https://en.wikipedia.org/wiki/Commitment_scheme) in the form of the root of the Optimism's [state trie](https://medium.com/@eiki1212/ethereum-state-trie-architecture-explained-a30237009d4e).
+Making provable statements about the state of Optimism requires a [cryptographic commitment](https://en.wikipedia.org/wiki/Commitment_scheme) in the form of the root of the Optimism's [state trie](https://medium.com/@eiki1212/ethereum-state-trie-architecture-explained-a30237009d4e).
 Optimism's state is updated after each block, so this commitment will also change after every block.
-Using these commitments, users can generate [Merkle tree proofs](https://en.wikipedia.org/wiki/Merkle_tree) about the state of Optimism after a given block.
 Commitments are regularly published to smart contract on Ethereum called the [`StateCommitmentChain`](https://etherscan.io/address/0xBe5dAb4A2e9cd0F27300dB4aB94BeE3A233AEB19).
 
 (diagram)
 
-In a zero-knowledge (ZK) Rollup system, each commitment comes with a cryptographic proof that the commitment represents the true state of the L2 system.
-In an Optimistic Rollup, commitments are published *without* any proof of validity.
-Instead, commitments are considered "pending" for a period of 7 days.
-Commitments that do not represent the actual state of Optimism can be invalidated at any point within this 7 day period through a process called the [fault proof](#fault-proof).
-During this process, the user who published the commitment go through a series of back-and-forth actions on Ethereum with the "challenger" to determine whether or not the commitment was valid.
-See the [below dedicated fault proof section](#fault-proof) for more information about this process.
-
-(diagram)
-
-The fault proof system guarantees that the commitments published to Ethereum will be accurate after the 7 day waiting period has elapsed.
-Users can then generate [Merkle tree proofs](https://en.wikipedia.org/wiki/Merkle_tree) about the state of Optimism to be validated by applications on Ethereum.
+Users can use these commitments to generate [Merkle tree proofs](https://en.wikipedia.org/wiki/Merkle_tree) about the state of Optimism to be validated by applications on Ethereum.
 These proofs can be used to prove that some `ContractA` on Optimism is trying to send a message to a `ContractB` on Ethereum.
 With a little fancy footwork, we can use this basic building block to support the withdrawal of assets from Optimism back onto Ethereum.
 
+(diagram)
+
 ### Fault proofs
+
+Withdrawals from Optimism back to Ethereum require the regular publication of [cryptographic commitments](https://en.wikipedia.org/wiki/Commitment_scheme) to Optimism's state (we call these "state roots").
+We have to be able to guarantee that these state roots do actually represent the state of Optimism.
+A "bad" state root could be used to lie about the state of Optimism and, as a result, potentially incorrectly withdraw funds from the system.
+
+In a zero-knowledge (ZK) Rollup system, each commitment comes with a cryptographic proof that the commitment represents the true state of the L2 system.
+This zero-knowledge proof is checked at the time of publication and prevents users from being able to submit bad state roots.
+In an Optimistic Rollup, commitments are published *without* any proof of validity.
+Instead, commitments are considered pending for some period of time during which they can be invalidated by a special challenge process called the "fault proof" process.
+
+(diagram)
+
+Optimism users can challenge published state roots at any time during their "challenge window" (currently set to 7 days).
+This triggers a multi-round process in which the challenger and the original publisher walk down a Merkle tree of the execution trace of the block that generated the resulting state root.
+Eventually the two parties find the first execution step where both parties agree on the input but disagree on the output.
+This single execution step is executed on Ethereum and the winner of the challenge is determined.
+
+(diagram)
+
+This process is guaranteed to always correctly determine whether or not the published state root is valid.
+Bad state roots will always be invalidated as long as at least one user is willing to perform this challenge process.
+Under the assumption that at least one such user exists, we can be certain that any state root that has passed its 7 day waiting period without being invalidated by a challenge must be valid.
+Once we can be sure that a state root is valid, users can begin to use that state root to create Merkle proofs about the current state of Optimism.
 
 ## Roadmap
 
 ### Next gen fault proofs
 
+On November 11th, 2021, the Optimism protocol went through its biggest upgrade to date.
+The primary focus of this update was [EVM Equivalence](https://medium.com/ethereum-optimism/introducing-evm-equivalence-5c2021deb306), a new design for Optimism's client software that brought it close to 1:1 parity with Ethereum's Geth.
+As part of this upgrade, the Optimism fault proof mechanism had to be redesigned from the ground up.
+
+For a number of pragmatic reasons, we made the decision to launch the EVM Equivalence upgrade before the new fault proof mechanism was fully productionized.
+The EVM Equivalence upgrade significantly reduced development and support overhead required to get new projects onboarded to the Optimism network.
+By launching early, we were able to speed up the timeline of the new fault proof and ultimately bring a better experience to users and developers, faster.
+
+This means that users of the Optimism network currently need to trust the Sequencer node (run by Optimism PBC) to publish valid state roots to Ethereum.
+We're making fast progress on the upgrade fault proof mechanism and we expect to productionize our work within the first few months of 2022.
+You can keep up with our progress on the [Cannon repository](https://github.com/ethereum-optimism/cannon/).
+
 ### Sequencer decentralization
+
+Optimism PBC currently runs the only Optimism Sequencer node.
+We're working hard to completely decentralize the Sequencer selection process so that anyone can participate in the network as a block producer.
+Getting to full Sequencer decentralization is a challenging process that requires careful consideration.
+In particular, we need to manage the impact of [Miner Extractable Value](https://ethereum.org/en/developers/docs/mev/) that Sequencer nodes have access to.
+
+TODO: expand this section
 
 <!-- ## Why Optimistic Rollups?
 
