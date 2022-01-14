@@ -6,6 +6,7 @@ lang: en-US
 # {{ $frontmatter.title }}
 
 Welcome to the Optimism developer docs!
+
 Whether you're just looking to [deploy a basic contract](./build/basic-contract.md) or you're ready to [build a cross-chain app](./bridge/messaging.md), you'll be able to find everything you need to start building on Optimism within this section.
 
 If you're looking for third-party tools that make building on Optimism easier, check out the [Tools for Developers](../useful-tools) section instead.
