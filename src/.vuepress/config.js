@@ -31,20 +31,28 @@ module.exports = {
     },
     nav: [
       {
+        text: 'How it works',
+        link: '/docs/guides/',
+      },
+      {
         text: 'Guides',
         link: '/docs/guides/',
       },
       {
-        text: 'Developer Docs',
+        text: 'Protocol',
+        link: '/docs/protocol/',
+      },
+      {
+        text: 'Dev Docs',
         link: '/docs/developers/',
       },
       {
-        text: 'Tools for Developers',
+        text: 'Tools',
         link: '/docs/useful-tools/',
       },
       {
-        text: 'Protocol',
-        link: '/docs/protocol/',
+        text: 'Contribute',
+        link: '/docs/contribute/',
       },
       {
         text: 'Community',
