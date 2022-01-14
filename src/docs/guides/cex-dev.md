@@ -52,7 +52,7 @@ Most of the cost of an Optimism transaction is not the gas consumed by the trans
 
 ## Deposits and withdrawals across chains
 
-As a centralized exchange, there will be times that withdrawals of ETH or an ERC-20 token on a specific chain exceed deposits and you need to transfer assets. To do that you use a bridge or a gateway. We have a [master gateway](https://gateway.optimism.io/) that receives assets on L1 (Ethereum mainnet), and mints the equivalent asset on L2 (which can be Optimism or a different solution). Eventually, when a user (possibly a different one) wants to withdraw the assets back to L1, the bridge burns the asset on L2 and releases it to the user on L1. If you want to use this gateway directly, follow these tutorials:
+As a centralized exchange, there will be times that withdrawals of ETH or an ERC-20 token on a specific chain exceed deposits and you need to transfer assets. To do that you use a bridge or a gateway. We have a [standard gateway](https://gateway.optimism.io/) that receives assets on L1 (Ethereum mainnet), and mints the equivalent asset on L2 (which can be Optimism or a different solution). Eventually, when a user (possibly a different one) wants to withdraw the assets back to L1, the bridge burns the asset on L2 and releases it to the user on L1. If you want to use this gateway directly, follow these tutorials:
 
 * [For ETH](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/eth-deposit)
 * [For ERC-20 tokens](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/l1-l2-deposit-withdrawal)

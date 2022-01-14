@@ -15,7 +15,7 @@ Optimism is secured by a set of dispute contracts which live on Layer 1. Bonded 
 
 ## Does this mean I have to wait a week to withdraw my funds?
 
-Because the challenge period must elapse before L1 can know the finalized state of the system, the default token bridging mechanism (as accessible via the Optimism [gateway](http://gateway.optimism.io)) does indeed introduce a delay of 1 week before withdrawn funds are unlocked on L1.
+Because the challenge period must elapse before L1 can know the finalized state of the system, the default token bridging mechanism (as accessible via the [Optimism Gateway](http://gateway.optimism.io)) does indeed introduce a delay of 1 week before withdrawn funds are unlocked on L1.
 
 While the base protocol has this restriction, it is possible to leverage third-party liquidity providers to enable fast withdrawals. As a user, you may want to move funds via these bridges instead of the standard gateway—you can find a list of fast bridges [here](https://www.optimism.io/apps/bridges) on our website.
 
