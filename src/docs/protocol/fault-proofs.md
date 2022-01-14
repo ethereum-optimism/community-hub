@@ -1,13 +1,16 @@
 ---
-title: Transaction Challenges
+title: Fault Proofs
 lang: en-US
 ---
 
 # {{ $frontmatter.title }}
 
+This pages provides information about fault proofs
+([formerly known as 'fraud proofs'](https://github.com/ethereum-optimism/optimistic-specs/discussions/53)).
+
 ::: tip NOTICE
 Optimism is still in beta.
-**As of the [OVM 2.0 upgrade](https://medium.com/ethereum-optimism/introducing-evm-equivalence-5c2021deb306), the Transaction Challenge process described in this article has been temporarily disabled as we rebuild the mechanism for the new [EVM equivalent](https://medium.com/ethereum-optimism/introducing-evm-equivalence-5c2021deb306) version of the Optimism protocol.**
+**As of the [OVM 2.0 upgrade](https://medium.com/ethereum-optimism/introducing-evm-equivalence-5c2021deb306), the fault proof process described in this article has been temporarily disabled as we improve the mechanism for the new EVM equivalent version of the Optimism protocol.**
 You can check out an up-to-date analysis of the current security model [here](https://l2beat.com/projects/optimism/).
 :::
 
@@ -17,8 +20,8 @@ Optimism is secured by a set of dispute contracts which live on Layer 1. Bonded 
 
 Because the challenge period must elapse before L1 can know the finalized state of the system, the default token bridging mechanism (as accessible via the [Optimism Gateway](http://gateway.optimism.io)) does indeed introduce a delay of 1 week before withdrawn funds are unlocked on L1.
 
-While the base protocol has this restriction, it is possible to leverage third-party liquidity providers to enable fast withdrawals. As a user, you may want to move funds via these bridges instead of the standard gateway—you can find a list of fast bridges [here](https://www.optimism.io/apps/bridges) on our website.
+However, while the base protocol has this restriction, **it is possible to leverage third-party liquidity providers to enable fast withdrawals**. As a user, you may want to move funds via these bridges instead of the standard gateway — you can find a list of fast bridges [here](https://www.optimism.io/apps/bridges).
 
 ## Does this mean I have to wait a week to know my transaction is secured?
 
-One of the most common questions we get about fraud proofs is: *"what happens to my transaction if there is a fraudulent proposal? Will my transaction be reverted?"* The answer is: **no.** When a proposal is challenged on L1, it only removes the claim about what the outcome of some transactions were — NOT the transactions themselves. A successful challenge just means that the correct proposal can be finalized in its place which correctly reflects what the recent transactions did. This means that any verifier can achieve "subjective finality" as fast as the transactions are rolled up to L1. You only have to wait one week for L1 to know that your transaction is finalized; but you can know what the outcome *will be* right away.
+One of the most common questions we get about fault proofs is: *"what happens to my transaction if there is a faulty proposal? Will my transaction be reverted?"* The answer is: **no.** When a proposal is challenged on L1, it only removes the claim about what the outcome of some transactions were — NOT the transactions themselves. A successful challenge just means that the correct proposal can be finalized in its place which correctly reflects what the recent transactions did. This means that any verifier can achieve "subjective finality" as fast as the transactions are rolled up to L1. You only have to wait one week for L1 to know that your transaction is finalized; but you can know what the outcome *will be* right away.
