@@ -1,118 +1,176 @@
 ---
-title: Transaction Fees for Developers
+title: Transaction fees on L2
 lang: en-US
 ---
 
 # {{ $frontmatter.title }}
 
-You can see how the fee is calculated and deducted [here](https://optimismhelp.zendesk.com/hc/en-us/articles/4411895794715-Transaction-Fees).
+## Understanding the basics
 
-Every Optimism transaction has two costs:
+Transaction fees on Optimism work a lot like fees on Ethereum.
+However, Layer 2 introduces some new paradigms that means it can never be exactly like Ethereum.
+Luckily, Optimism's [EVM equivalence](https://medium.com/ethereum-optimism/introducing-evm-equivalence-5c2021deb306) makes these differences easy to understand and even easier to handle within your app.
+Let's take a look at the two sources of cost in a transaction on Optimism: the L2 execution fee and the L1 data/security fee.
 
-1. The **L2 execution fee** pays for the costs incurred in running the transaction. It is calculated the same way as in L1 Ethereum: `tx.gasPrice * l2GasUsed`. Typically `tx.gasPrice` is 0.001 gwei ([You can check the current L2 gas price here](https://public-grafana.optimism.io/d/9hkhMxn7z/public-dashboard?orgId=1&refresh=5m)), but in time of congestion it can rise.
+### The L2 execution fee
 
-   This is cost is accessible via the normal Ethereum mechanisms, you can estimate it using ethers' [`estimateGas`](https://docs.ethers.io/v5/api/contract/contract/#contract-estimateGas), for example.
+Just like on Ethereum, transactions on Optimism have to pay **gas** for the amount of computation and storage that they use.
+Every L2 transaction will pay some **execution fee**, equal to the amount of gas used by the transaction multiplied by the gas price attached to the transaction.
+This is exactly how fees work on Ethereum with the added bonus that gas prices on Optimism are seriously low.
 
-2. The **L1 security fee** pays for the cost of publishing the transaction on L1 (the cost of Ethereum equivalent security). It is deducted automatically from the user's ETH balance on Optimism. It is based on three factors:
+Here's the (simple) math:
 
-   - The gas price for L1 transactions (when the transaction was processed). You can see the current value [here](https://public-grafana.optimism.io/d/9hkhMxn7z/public-dashboard?orgId=1&refresh=5m).
+```
+l2_execution_fee = transaction_gas_price * l2_gas_used
+```
 
-   - The gas used on L1 to publish the transaction. This is based on the transaction length, as well as the byte type (whether it is zero or a different value) for each byte. It scales, roughly speaking, with the size of your calldata.
+The amount of L2 gas used depends on the particular transaction that you're trying to send.
+Thanks to [EVM equivalence](https://medium.com/ethereum-optimism/introducing-evm-equivalence-5c2021deb306), transactions typically use approximately the same amount of gas on Optimism as they do on Ethereum.
+Gas prices fluctuate with time and congestion, but you can always check the current estimated L2 gas price on the [public Optimism dashboard](https://public-grafana.optimism.io/d/9hkhMxn7z/public-dashboard?orgId=1&refresh=5m).
 
-   - The L1 fee scalar, which is at writing 1.5. This value covers the change in L1 gas price between the time the transaction is submitted and when it is published, as well as the income we need to keep our system running.
+### The L1 data fee
 
-For example, lets look at [this transaction](https://optimistic.etherscan.io/tx/0x3ba996515abd898cd7e939aad4bd086b0d5159d14b4bc639e00d47a3aa68fd09). The **L2 execution fee** is the gas used, `108,207`, times the l2 gas price at the time, which was 0.001 gwei. In other words, approximately 108 gwei. The **L1 security fee**, on the other hand, is 4,862 (a fairly typical value, although longer transactions naturally cost more). At the L1 gas price at the time, about 75 gwei, this gives us an L1 security fee of `75*4,862*1.5 = 546,975 gwei`. So the L1 security fee is about five thousand times the L2 execution fee.
+Optimism differs from Ethereum because all transactions on Optimism are also published to Ethereum.
+This step is crucial to the security properties of Optimism because it means that all of the data you need to sync an Optimism node is always publicly available on Ethereum.
+It's what makes Optimism an L2.
 
-::: tip
-This transaction is typical. In almost all cases **L2 execution fee** is negligible compared to the **L1 security fee**.
+Users on Optimism have to pay for the cost of submitting their transactions to Ethereum.
+We call this the **L1 data fee**, and it's the primary discrepancy between Optimism (and other L2s) and Ethereum.
+Because the cost of gas is so expensive on Ethereum, the L1 data fee typically dominates the total cost of a transaction on Optimism.
+This fee is based on four factors:
+
+1. The current gas price on Ethereum.
+2. The gas cost to publish the transaction to Ethereum. This scales roughly with the size of the transaction (in bytes).
+3. A fixed overhead cost denominated in gas. This is currently set to 2100.
+4. A dynamic overhead cost which scales the L1 fee paid by a fixed number. This is currently set to 1.24.
+
+Here's the math:
+
+```
+l1_data_fee = l1_gas_price * (tx_data_gas + fixed_overhead) * dynamic_overhead
+```
+
+Where `tx_data_gas` is:
+
+```
+tx_data_gas = count_zero_bytes(tx_data) * 4 + count_non_zero_bytes(tx_data) * 16
+```
+
+::: warning NOTE
+Ethereum has limited support for adding custom transaction types.
+As a result, unlike the L2 execution fee, **users are not able to set limits for the L1 data fee that they may be charged**.
+The L1 gas price used to charge the data fee is automatically updated when new data is received from Ethereum.
+**Spikes in Ethereum gas prices may result in users paying a higher or lower than estimated L1 data fee, by up to 25%.**
 :::
 
-## For backend developers
-- You must send your transaction with a tx.gasPrice that is greater than or equal to the sequencer's l2 gas price. You can read this value from the Sequencer by querying the `OVM_GasPriceOracle` contract  (`OVM_GasPriceOracle.gasPrice`) or by simply making an RPC query to `eth_gasPrice`.  If you don't specify your `gasPrice` as an override when sending a transaction , `ethers` by default queries `eth_gasPrice` which will return the lowest acceptable L2 gas price.
-- You can set your `tx.gasLimit` however you might normally set it (e.g. via `eth_estimateGas`). You can expect that gas usage for transactions on Optimism Ethereum will be identical to gas usage on Ethereum.
-- We recommend building error handling around the `Fee too Low` error detailed below, to allow users to re-calculate their `tx.gasPrice` and resend their transaction if fees spike.
+## Stuff to keep in mind
 
-## For Frontend and Wallet developers
-- We recommend displaying an estimated fee to users via the following math:
-   1. To estimate the L1 (security) fee that the user should expect to pay. For example, calculating the L1 fee for sending a WETH transfer:
+### Sending transactions
 
-      ```ts
-      import { getContractFactory, predeploys } from '@eth-optimism/contracts'
-      import { ethers } from 'ethers'
+The process of sending a transaction on Optimism is identical to the process of sending a transaction on Ethereum.
+When sending a transaction, you should provide a gas price greater than or equal to the current L2 gas price.
+Like on Ethereum, you can query this gas price with the `eth_gasPrice` RPC method.
+Similarly, you should set your transaction gas limit in the same way that you would set your transaction gas limit on Ethereum (e.g. via `eth_estimateGas`).
 
-      const main = async () => {
-         // Create an ethers provider connected to the public mainnet endpoint.
-         const provider = new ethers.providers.JsonRpcProvider(
-            'https://mainnet.optimism.io'
-         )
+### Responding to gas price updates
 
-         // Create contract instances connected to the GPO and WETH contracts.
-         const GasPriceOracle = getContractFactory('OVM_GasPriceOracle')
-            .attach(predeploys.OVM_GasPriceOracle)
-            .connect(provider)
-         const WETH = getContractFactory('WETH9')
-            .attach(predeploys.WETH9)
-            .connect(provider)
+Gas prices on L2 default to 0.001 Gwei but can increase dynamically if the network is congested.
+When this happens, the lowest fee that the network will accept increases.
+Unlike Ethereum, Optimism currently does not have a mempool to hold transactions with too low a fee.
+Instead, Optimism nodes will reject the transaction with the message `Fee too low`.
+You may need to handle this case explicitly and retry the transaction with a new gas price when this happens.
 
-         // An account with a small amount of WETH in it on mainnet
-         const from = '0xbeefbeefbeefbeefbeefbeefbeefbeefbeefbeef'
-         // Arbitrary recipient address.
-         const to = '0x1111111111111111111111111111111111111111'
-         // Small amount of WETH to send (in wei).
-         const amount = 1234
+### Displaying fees to users
 
-         // Compute the estimated fee in wei
-         const l1FeeInWei = await GasPriceOracle.getL1Fee(
-            ethers.utils.serializeTransaction({
-               ...(await WETH.populateTransaction.transfer(to, amount)),
-               gasPrice: await provider.getGasPrice(),
-               gasLimit: await WETH.estimateGas.transfer(to, amount, {
-               from,
-               }),
-            })
-         )
+Many Ethereum applications display estimated fees to users by multiplying the gas price by the gas limit.
+However, as discussed earlier, users on Optimism are charged both an L2 execution fee and an L1 data fee.
+As a result, you should display the sum of both of these fees to give users the most accurate estimate of the total cost of a transaction.
 
-         console.log(`Estimated L1 fee (in wei): ${l1FeeInWei.toString()}`)
-      }
+#### Estimating the L2 execution fee
 
-      main()
+You can estimate the L2 execution fee by multiplying the gas price by the gas limit, just like on Ethereum.
 
-      ```
+#### Estimating the L1 data fee
 
-- You should *not* allow users to change their `tx.gasPrice`
-   - If they lower it, their transaction will get reverted
-   - If they increase it, they will get their transaction included immediately (same as with the
-     correct price) but at a higher cost
-- Users are welcome to change their `tx.gasLimit` as it functions exactly like on L1
-- You can show the math :
+Estimating the L1 data fee is most easily done by using the `GasPriceOracle` predeployed smart contract located at [`0x420000000000000000000000000000000000000F`](https://optimistic.etherscan.io/address/0x420000000000000000000000000000000000000F).
+The `GasPriceOracle` contract is located at the same address on every Optimism network (mainnet and testnet).
 
-   ```jsx
-   L1 Fee:    0.000,680,850 ETH ($3.25)
-   L2 Fee:    0.000,000,195 ETH (~zero)
-   ____________________________________
-   Total Fee: 0.000,681,045 ETH ($3.25)
-   ```
+Here's an example of using the `GasPriceOracle` contract to estimate the L1 data fee for a WETH transfer:
 
-- Or you can hide the formula behind a tooltip or an "Advanced" section and just display the estimated fee to users
-   - For MVP: don't *need* to display the L1 or L2 fee
-- Might need to regularly refresh the L1 Fee and L2 Fee estimate to ensure it is accurate at the time the user sends it (e.g. they get the fee quote and leave for 12 hours then come back)
-   - Ideas: If the L1 fee quoted is > Xminutes old, could display a warning next to it
+```ts
+import { getContractFactory, predeploys } from '@eth-optimism/contracts'
+import { ethers } from 'ethers'
 
+const main = async () => {
+   // Create an ethers provider connected to the public mainnet endpoint.
+   const provider = new ethers.providers.JsonRpcProvider(
+      'https://mainnet.optimism.io'
+   )
+
+   // Create contract instances connected to the GPO and WETH contracts.
+   const GasPriceOracle = getContractFactory('OVM_GasPriceOracle')
+      .attach(predeploys.OVM_GasPriceOracle)
+      .connect(provider)
+   const WETH = getContractFactory('WETH9')
+      .attach(predeploys.WETH9)
+      .connect(provider)
+
+   // An account with a small amount of WETH in it on mainnet
+   const from = '0xbeefbeefbeefbeefbeefbeefbeefbeefbeefbeef'
+   // Arbitrary recipient address.
+   const to = '0x1111111111111111111111111111111111111111'
+   // Small amount of WETH to send (in wei).
+   const amount = 1234
+
+   // Compute the estimated fee in wei
+   const l1FeeInWei = await GasPriceOracle.getL1Fee(
+      ethers.utils.serializeTransaction({
+         ...(await WETH.populateTransaction.transfer(to, amount)),
+         gasPrice: await provider.getGasPrice(),
+         gasLimit: await WETH.estimateGas.transfer(to, amount, {
+         from,
+         }),
+      })
+   )
+
+   console.log(`Estimated L1 fee (in wei): ${l1FeeInWei.toString()}`)
+}
+
+main()
+```
+
+#### Estimating the total fee
+
+You can estimate the total fee by combining your estimates for the L2 execution fee and L1 data fee.
+
+### Sending max ETH
+
+Sending the maximum amount of ETH that a user has in their wallet is a relatively common use case.
+When doing this, you will need to subtract the estimated L2 execution fee and the estimated L1 data fee from the amount of ETH you want the user to send.
+Use the logic described above for estimating the total fee.
 
 ## Common RPC Errors
 
-There are three common errors that would cause your transaction to be rejected at the RPC level
+### Insufficient funds
 
-1. **Insufficient funds**
-   - If you are trying to send a transaction and you do not have enough ETH to pay for that L2 fee + the L1 Fee charged, your transaction will be rejected.
-   - Error code: `-32000`
-   - Error message: `invalid transaction: insufficient funds for l1Fee + l2Fee + value`
-2. **Gas Price to low**
-   - Error code: `-32000`
-   - Error message: `gas price too low: 1000 wei, use at least tx.gasPrice = X wei`  where `x` is l2GasPrice.
-      - Note: values in this error message vary based on the tx sent and current L2 gas prices
-   - It is recommended to build in error handling for this. If a user's transaction is rejected at this level, just set a new `tx.gasPrice` via RPC query at `eth_gasPrice` or by calling `OVM_GasPriceOracle.gasPrice`
-3. **Fee too large**
-   - Error code: `-32000`
-   - Error message: `gas price too high: 1000000000000000 wei, use at most tx.gasPrice = Y wei`  where `x` is 3*l2GasPrice.
-   - When the `tx.gasPrice` provided is ≥3x the expected `tx.gasPrice`, you will get this error^, note this is a runtime config option and is subject to change
+- Error code: `-32000`
+- Error message: `invalid transaction: insufficient funds for l1Fee + l2Fee + value`
+
+You'll get this error when attempting to send a transaction and you don't have enough ETH to pay for the value of the transaction, the L2 execution fee, and the L1 data fee.
+You might get this error when attempting to send max ETH if you aren't properly accounting for both the L2 execution fee and the L1 data fee.
+
+### Gas price too low
+
+- Error code: `-32000`
+- Error message: `gas price too low: X wei, use at least tx.gasPrice = Y wei`
+
+This is a custom RPC error that Optimism returns when a transaction is rejected because the gas price is too low.
+See the section on [Responding to gas price updates](#responding-to-gas-price-updates) for more information.
+
+### Gas price too high
+- Error code: `-32000`
+- Error message: `gas price too high: X wei, use at most tx.gasPrice = Y wei`
+
+This is a custom RPC error that Optimism returns when a transaction is rejected because the gas price is too high.
+We include this as a safety measure to prevent users from accidentally sending a transaction with an extremely high L2 gas price.
+See the section on [Responding to gas price updates](#responding-to-gas-price-updates) for more information.
