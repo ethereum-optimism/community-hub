@@ -13,7 +13,7 @@ Optimism block production is primarily managed by a single party, called the "se
 - Constructing and executing L2 blocks.
 - Submitting user transactions to L1.
 
-When a user sends their transaction to the sequencer, the sequencer checks that the transaction is valid (i.e. pays a sufficient fee) and then applies the transaction to its local state as a pending block.  These pending blocks are periodically submitted to the layer 1 chain for finalization. 
+When a user sends their transaction to the sequencer, the sequencer checks that the transaction is valid (i.e. pays a sufficient fee) and then applies the transaction to its local state as a pending block.  These pending blocks are periodically submitted to the layer 1 chain for finalization.
 
 Because the sequencer is given priority write access to the L2 chain, the sequencer can provide a strong guarantee of what state will be finalized as soon as it decides on a new pending block. In other words, it is precisely known what will be the impact
 of the transaction. As a result, the L2 state can be reliably updated extremely quickly. Benefits of this include a snappy, instant user experience, with things like near-real-time Uniswap price updates.
@@ -22,7 +22,7 @@ of the transaction. As a result, the L2 state can be reliably updated extremely 
 
 Since there is only one sequencer at a time, we must consider the case in which the sequencer starts censoring transactions, or just goes offline, and stops submitting pending blocks to L1 for finalization. Critically, **this does not mean that users can no longer create L2 transactions.** Instead, there is a mechanism by which users may submit their transactions to L1 directly, bypassing the sequencer entirely.
 
-The rules of the chain require that these "forced transactions" be placed into a block within a window called the "force inclusion period." If the sequencer does not include the forced transactions within this window, then its submissions are invalidated, and the next canonical L2 block will contain only the forced transactions and nothing else. This is enforced by the protocol via fraud proofs, meaning that the sequencer truly has no say in the matter.
+The rules of the chain require that these "forced transactions" be placed into a block within a window called the "force inclusion period." If the sequencer does not include the forced transactions within this window, then its submissions are invalidated, and the next canonical L2 block will contain only the forced transactions and nothing else. This is enforced by the protocol via fault proofs, meaning that the sequencer truly has no say in the matter.
 
 ## How will the sequencer be decentralized over time?
 

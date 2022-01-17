@@ -193,18 +193,18 @@ The L1 finalization transaction is typically significantly more expensive than t
 
 One of the most important things to understand about L1 ⇔ L2 interaction is that **messages sent from Layer 2 to Layer 1 cannot be relayed for at least one week**.
 This means that any messages you send from Layer 2 will only be received on Layer 1 after this one week period has elapsed.
-We call this period of time the "challenge period" because it's a result of one of the core security mechanisms of the Optimistic Rollup: the transaction result challenge.
+We call this period of time the "challenge period" because it is the time during which a transaction can be challenged with a [fault proof](../../protocol/fault-proofs.md).
 
 Optimistic Rollups are "optimistic" because they're based around the idea of publishing the *result* of a transaction to Ethereum without actually executing the transaction on Ethereum.
 In the "optimistic" case, this transaction result is correct and we can completely avoid the need to perform complicated (and expensive) logic on Ethereum.
 Cheap transactions, yay!
 
 However, we still need some way to prevent incorrect transaction results from being published in place of correct ones.
-Here's where the "transaction result challenge" comes into play.
+Here's where the "fault proof" comes into play.
 Whenever a transaction result is published, it's considered "pending" for a period of time known as the challenge period.
 During this period of time, anyone may re-execute the transaction *on Ethereum* in an attempt to demonstrate that the published result was incorrect.
 
-If someone succesfully executes this challenge, then the result is scrubbed from existence and anyone can publish another result in its place (hopefully the correct one this time, financial punishments make incorrect results *very* costly for their publishers).
+If someone is able prove that a transaction result is faulty, then the result is scrubbed from existence and anyone can publish another result in its place (hopefully the correct one this time, financial punishments make faulty results *very* costly for their publishers).
 Once the window for a given transaction result has fully passed without a challenge the result can be considered fully valid (or else someone would've challenged it).
 
 Anyway, the point here is that **you don't want to be making decisions about Layer 2 transaction results from inside a smart contract on Layer 1 until this challenge period has elapsed**.

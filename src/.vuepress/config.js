@@ -161,7 +161,7 @@ module.exports = {
       '/docs/protocol/': [
         '/docs/protocol/protocol-2.0.md',
         '/docs/protocol/sequencing.md',
-        '/docs/protocol/challenges.md',
+        '/docs/protocol/fault-proofs.md',
         '/docs/protocol/protocol-readings.md',
         [
           'https://github.com/ethereum-optimism/optimistic-specs',
