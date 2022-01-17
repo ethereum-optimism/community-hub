@@ -17,7 +17,7 @@
             </a>
           </li>
           <li>
-            <a href="https://github.com/ethereum-optimism/optimism" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/ethereum-optimism/optimism/contribute" target="_blank" rel="noopener noreferrer">
               <i class="far fa-hands-helping"></i> Contribute to Optimism
             </a>
           </li>
@@ -97,7 +97,7 @@
     @media (max-width $MQMobile)
       font-size 13px
       text-align left
-  
+
   .footer-box
     display flex
     flex-direction row
@@ -138,7 +138,7 @@
 
         &:hover
           color #FF0420
-        
+
       i
         font-size 14px
         width 20px
