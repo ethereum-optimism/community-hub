@@ -152,36 +152,56 @@ It then inspects the transactions that emitted these events to reconstruct the p
 The second part of the Optimism node, the Optimism client software, is an almost completely vanilla version of [Geth](https://github.com/ethereum/go-ethereum).
 This means Optimism is close to identical to Ethereum under the hood.
 In particular, Optimism shares the same [Ethereum Virtual Machine](https://ethereum.org/en/developers/docs/evm/), the same [account and state structure](https://ethereum.org/en/developers/docs/accounts/), and the same [gas metering mechanism and fee schedule](https://ethereum.org/en/developers/docs/gas/).
-We refer to this architecture as ["EVM Equivalence"](https://medium.com/ethereum-optimism/introducing-evm-equivalence-5c2021deb306).
+We refer to this architecture as ["EVM Equivalence"](https://medium.com/ethereum-optimism/introducing-evm-equivalence-5c2021deb306) and it means that most Ethereum tools (even the most complex ones) "just work" with Optimism.
 
 The Optimism client software continuously monitors the DTL for newly indexed blocks.
 When a new block is indexed, the client software will download it and execute the transactions included within it.
 The process of executing a transaction on Optimism is the same as on Ethereum: we load the Optimism state, apply the transaction against that state, and then record the resulting state changes.
+This process is then repeated for each new block indexed by the DTL.
 
 (insert node diagram)
 
-### Deposits
+### Moving assets between layers
 
-Since users can create blocks on Optimism by triggering the `CanonicalTransactionChain` on Ethereum, it's very easy to send data from Ethereum to Optimism.
+Optimism is designed so that users can send arbitrary messages between smart contracts on Optimism and Ethereum.
+This makes it possible to transfer assets, including ERC20 tokens, between the two networks.
+The exact mechanism by which this communication differs depending on the direction in which the communication occurs.
+
+#### Moving from Ethereum to Optimism
+
+To send messages from Ethereum from Optimism, users simply need to trigger the `CanonicalTransactionChain` contract on Ethereum to create a new block on Optimism block.
+See the above section on [block production](#block-production) for additional context.
 User-created blocks can include transactions that will appear to originate from the address that generated the block.
-Contracts on Ethereum can use this feature to, for example, deposit some assets from Ethereum into Optimism.
+
+Contracts on Ethereum can use this functionality to send assets from Ethereum to Optimism.
+For instance, Optimism maintains a contract called the [`L1StandardBridge`](https://etherscan.io/address/0x99C9fc46f92E8a1c0deC1b1747d010903E884bE1) which uses this feature to allow users to move ERC20 tokens from Ethereum to Optimism in a standardized manner.
+When making a deposit, users transfer tokens to the `L1StandardBridge` which in turn instructs the corresponding [`L2StandardBridge`](https://optimistic.etherscan.io/address/0x4200000000000000000000000000000000000010) contract to mint an equivalent number of tokens on Optimism.
 
 (diagram)
 
-### Withdrawals
+#### Moving from Optimism to Ethereum
 
-The process of sending data from Optimism back to Ethereum is somewhat more involved.
-In this direction, we need to be able to make provable statements about the state of Optimism to contracts sitting on Ethereum.
+It's not possible for contracts on Optimism to easily generate transactions on Ethereum in the same way as Ethereum contracts can generate transactions on Optimism.
+As a result, the process of sending data from Optimism back to Ethereum is somewhat more involved.
+Instead of automatically generating authenticated transactions, we must instead be able to make provable statements about the state of Optimism to contracts sitting on Ethereum.
 
 Making provable statements about the state of Optimism requires a [cryptographic commitment](https://en.wikipedia.org/wiki/Commitment_scheme) in the form of the root of the Optimism's [state trie](https://medium.com/@eiki1212/ethereum-state-trie-architecture-explained-a30237009d4e).
 Optimism's state is updated after each block, so this commitment will also change after every block.
-Commitments are regularly published to a smart contract on Ethereum called the [`StateCommitmentChain`](https://etherscan.io/address/0xBe5dAb4A2e9cd0F27300dB4aB94BeE3A233AEB19).
+Commitments are regularly published (approximately once or twice per hour) to a smart contract on Ethereum called the [`StateCommitmentChain`](https://etherscan.io/address/0xBe5dAb4A2e9cd0F27300dB4aB94BeE3A233AEB19).
 
 (diagram)
 
-Users can use these commitments to generate [Merkle tree proofs](https://en.wikipedia.org/wiki/Merkle_tree) about the state of Optimism to be validated by applications on Ethereum.
-These proofs can be used to prove that some `ContractA` on Optimism is trying to send a message to a `ContractB` on Ethereum.
-With a little fancy footwork, we can use this basic building block to support the withdrawal of assets from Optimism back onto Ethereum.
+Users can use these commitments to generate [Merkle tree proofs](https://en.wikipedia.org/wiki/Merkle_tree) about the state of Optimism.
+These proofs can be verified by smart contracts on Ethereum.
+Optimism maintains a convenient cross-chain communication contract, the [`L1CrossDomainMessenger`](https://etherscan.io/address/0x25ace71c97B33Cc4729CF772ae268934F7ab5fA1), which can verify these proofs on behalf of other contracts.
+
+These proofs can be used to make verifiable statements about the data within the storage of any contract on Optimism at a specific block height.
+This basic functionality can then be used to enable contracts on Optimism to send messages to contracts on Ethereum.
+The [`L2ToL1MessagePasser`](https://optimistic.etherscan.io/address/0x4200000000000000000000000000000000000000) contract (predeployed to the Optimism network) can be used by contracts on Optimism to store a message in the Optimism state.
+Users can then prove to contracts on Ethereum that a given contract on Optimism did, in fact, mean to send some given message by showing that the hash of this message has been stored within the `L2ToL1MessagePasser` contract.
+
+Optimism uses this functionality to allow users to withdraw ERC20 tokens back to Ethereum.
+When a user wishes to withdraw assets, the [`L2StandardBridge`](https://optimistic.etherscan.io/address/0x4200000000000000000000000000000000000010) contract will burn the assets on Optimism and send a message to the [`L1StandardBridge`](https://etherscan.io/address/0x99C9fc46f92E8a1c0deC1b1747d010903E884bE1) contract to release the corresponding asset back to the user on Ethereum.
 
 (diagram)
 
