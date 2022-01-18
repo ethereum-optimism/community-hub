@@ -95,11 +95,18 @@ In Optimism's case this parent blockchain is Ethereum.
 
 ### Block storage
 
-Optimism blocks are published by sending a transaction to a special smart contract on Ethereum called the [`CanonicalTransactionChain`](https://etherscan.io/address/0x5E4e65926BA27467555EB562121fac00D24E9dD2) (or CTC for short).
-When this contract is triggered, a block is added to an immutable list of blocks held within the smart contract's storage.
-This list of blocks forms the Optimism blockchain.
-As long as blocks can't be easily reordered on Ethereum, blocks also can't be easily reordered on Optimism.
-It's through this relationship that Optimism derives its security from Ethereum.
+All Optimism blocks are stored within a special smart contract on Ethereum called the [`CanonicalTransactionChain`](https://etherscan.io/address/0x5E4e65926BA27467555EB562121fac00D24E9dD2) (or CTC for short).
+Optimism blocks are held within an append-only list inside of the CTC (we'll explain exactly how blocks are added to this list in the next section).
+This append-only list forms the Optimism blockchain.
+
+The `CanonicalTransactionChain` includes code that guarantees that the existing list of blocks cannot be modified by new Ethereum transactions.
+However, this guarantee can be broken if the Ethereum blockchain itself is reorganized and the ordering of past Ethereum transactions is changed.
+The Optimism mainnet is configured to be robust against block reorganizations of up to 50 Ethereum blocks.
+If Ethereum experiences a reorg larger than this, Optimism will reorg as well.
+
+Of course, it's a key security goal of Ethereum to not experience these sort of significant block reorganizations.
+Optimism is therefore secure against large block reorganizations as long as the Ethereum consensus mechanism is too.
+It's through this relationship (in part, at least) that Optimism derives its security properties from Ethereum.
 
 <div align="center">
 <img width="400" src="../../assets/docs/how-optimism-works/2.png">
