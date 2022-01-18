@@ -13,7 +13,7 @@ By the time you've finished reading this page you should have a foundational und
 We've tried to make this guide as comprehensive as possible while still keeping the content accessible to most readers.
 Some content on this page is geared towards readers with a technical background but should still be legible to those with a basic understanding of how blockchains work.
 Generally speaking, we err on the side of simplicity and approachability.
-Readers interested in a low-level look into Optimism under the hood should refer to the [Protocol](http://localhost:8080/docs/protocol/) section of this website.
+Readers interested in a low-level look into Optimism under the hood should refer to the [Protocol](../protocol/) section of this website.
 
 Without further ado, let's find out *How Optimism Works*!
 
@@ -89,7 +89,9 @@ Optimism is an "Optimistic Rollup," which is basically just a fancy way of descr
 Specifically, Optimistic Rollups take advantage of the consensus mechanism (like PoW or PoS) of their parent chain instead of providing their own.
 In Optimism's case this parent blockchain is Ethereum.
 
-![op loves eth](../../assets/docs/how-optimism-works/1.png)
+<div align="center">
+<img width="400" src="../../assets/docs/how-optimism-works/1.png">
+</div>
 
 ### Block storage
 
@@ -99,7 +101,9 @@ This list of blocks forms the Optimism blockchain.
 As long as blocks can't be easily reordered on Ethereum, blocks also can't be easily reordered on Optimism.
 It's through this relationship that Optimism derives its security from Ethereum.
 
-![op loves eth](../../assets/docs/how-optimism-works/2.png)
+<div align="center">
+<img width="400" src="../../assets/docs/how-optimism-works/2.png">
+</div>
 
 ### Block production
 
@@ -112,7 +116,9 @@ Only one block producer is active at any given time.
 For the moment, [Optimism PBC](https://www.optimism.io/) runs the only block producer.
 Refer to the below section about [Sequencer decentralization](#sequencer-decentralization) for more information.
 
-![op loves eth](../../assets/docs/how-optimism-works/3.png)
+<div align="center">
+<img width="400" src="../../assets/docs/how-optimism-works/3.png">
+</div>
 
 Alternatively, users can skip block producers entirely and submit their transactions directly to the `CanonicalTransactionChain`.
 This is typically more expensive but has the advantage of being resistant to censorship by block producers.
@@ -142,7 +148,7 @@ We refer to this architecture as ["EVM Equivalence"](https://medium.com/ethereum
 ### Deposits
 
 Since users can create blocks on Optimism by triggering the `CanonicalTransactionChain` on Ethereum, it's very easy to send data from Ethereum to Optimism.
-User-created blocks can include arbitrary transaction data and will appear to originate from the address that generated the block.
+User-created blocks can include transactions that will appear to originate from the address that generated the block.
 Contracts on Ethereum can use this feature to, for example, deposit some assets from Ethereum into Optimism.
 
 (diagram)
@@ -154,7 +160,7 @@ In this direction, we need to be able to make provable statements about the stat
 
 Making provable statements about the state of Optimism requires a [cryptographic commitment](https://en.wikipedia.org/wiki/Commitment_scheme) in the form of the root of the Optimism's [state trie](https://medium.com/@eiki1212/ethereum-state-trie-architecture-explained-a30237009d4e).
 Optimism's state is updated after each block, so this commitment will also change after every block.
-Commitments are regularly published to smart contract on Ethereum called the [`StateCommitmentChain`](https://etherscan.io/address/0xBe5dAb4A2e9cd0F27300dB4aB94BeE3A233AEB19).
+Commitments are regularly published to a smart contract on Ethereum called the [`StateCommitmentChain`](https://etherscan.io/address/0xBe5dAb4A2e9cd0F27300dB4aB94BeE3A233AEB19).
 
 (diagram)
 
