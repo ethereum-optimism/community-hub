@@ -136,21 +136,27 @@ Even if the Sequencer is actively censoring a user, the user can always continue
 
 ### Block execution
 
-Optimism, like Ethereum, is a network of nodes.
 Ethereum nodes download blocks from Ethereum's p2p network.
-Optimism nodes instead download blocks directly from the `CanonicalTransactionChain` contract.
-These blocks are then executed deterministically, just like any other blockchain.
+Optimism nodes instead download blocks directly from the append-only list of blocks held within the `CanonicalTransactionChain` contract.
+See the above section regarding [block storage](#block-storage) for more information about how blocks are stored within this contract.
 
 (image)
 
 Optimism nodes are made up of two primary components, the Ethereum data indexer and the Optimism client software.
 The Ethereum data indexer, also called the ["data transport layer"](https://github.com/ethereum-optimism/optimism/tree/develop/packages/data-transport-layer) (or DTL), pieces together the Optimism blockchain from blocks published to the `CanonicalTransactionChain` contract.
+The DTL searches for events emitted by the `CanonicalTransactionChain` that signal that new Optimism blocks have been published.
+It then inspects the transactions that emitted these events to reconstruct the published blocks in the [standard Ethereum block format](https://ethereum.org/en/developers/docs/blocks/#block-anatomy).
 
 (image)
 
-Once a block is indexed, the Optimism client software will pull this block in and execute it.
-Optimism's client software is an *almost* completely vanilla version of [Geth](https://github.com/ethereum/go-ethereum), which means Optimism is close to identical to Ethereum under the hood.
+The second part of the Optimism node, the Optimism client software, is an almost completely vanilla version of [Geth](https://github.com/ethereum/go-ethereum).
+This means Optimism is close to identical to Ethereum under the hood.
+In particular, Optimism shares the same [Ethereum Virtual Machine](https://ethereum.org/en/developers/docs/evm/), the same [account and state structure](https://ethereum.org/en/developers/docs/accounts/), and the same [gas metering mechanism and fee schedule](https://ethereum.org/en/developers/docs/gas/).
 We refer to this architecture as ["EVM Equivalence"](https://medium.com/ethereum-optimism/introducing-evm-equivalence-5c2021deb306).
+
+The Optimism client software continuously monitors the DTL for newly indexed blocks.
+When a new block is indexed, the client software will download it and execute the transactions included within it.
+The process of executing a transaction on Optimism is the same as on Ethereum: we load the Optimism state, apply the transaction against that state, and then record the resulting state changes.
 
 (insert node diagram)
 
