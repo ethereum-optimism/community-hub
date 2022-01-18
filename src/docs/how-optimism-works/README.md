@@ -114,21 +114,23 @@ It's through this relationship (in part, at least) that Optimism derives its sec
 
 ### Block production
 
-Users can have their transactions added to the chain in one of two ways: by sending the transaction to a block producer (also called a "Sequencer") or by submitting their transactions directly to the `CanonicalTransactionChain`.
+Users can have their transactions added to the Optimism chain in one of two ways: by sending the transaction to a block producer (which we call a "Sequencer") or by submitting their transactions directly to the `CanonicalTransactionChain`.
 
-Block producers combine lots of transactions together and publish them all at once as a batch.
+Only one Sequencer is active at any given time.
+Sequencers combine lots of transactions together and publish them all at once as a batch.
 This significantly reduces overall transaction fees by spreading fixed costs over all of the transactions in a given batch.
-Block producers also apply some basic compression techniques to minimize the amount of data published to Ethereum.
-Only one block producer is active at any given time.
+Sequencers also apply some basic compression techniques to minimize the amount of data published to Ethereum.
 For the moment, [Optimism PBC](https://www.optimism.io/) runs the only block producer.
-Refer to the below section about [Sequencer decentralization](#sequencer-decentralization) for more information.
+Refer to the below section about [Sequencer decentralization](#sequencer-decentralization) for more information about how we plan to decentralize the Sequencer role in the future.
 
 <div align="center">
 <img width="400" src="../../assets/docs/how-optimism-works/3.png">
 </div>
 
-Alternatively, users can skip block producers entirely and submit their transactions directly to the `CanonicalTransactionChain`.
-This is typically more expensive but has the advantage of being resistant to censorship by block producers.
+Alternatively, users can skip the Sequencer entirely and submit their transactions directly to the `CanonicalTransactionChain` via an Ethereum transaction.
+This is typically more expensive because the fixed cost of submitting this transaction is paid entirely by the user and is not amortized over many different transactions.
+However, this alternative submission method has the advantage of being resistant to censorship by the Sequencer.
+Even if the Sequencer is actively censoring a user, the user can always continue to use Optimism and recover any funds through this mechanism.
 
 (diagram)
 
