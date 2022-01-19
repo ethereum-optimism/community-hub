@@ -207,28 +207,9 @@ When a user wishes to withdraw assets, the [`L2StandardBridge`](https://optimist
 
 ### Fault proofs
 
-Withdrawals from Optimism back to Ethereum require the regular publication of [cryptographic commitments](https://en.wikipedia.org/wiki/Commitment_scheme) to Optimism's state (we call these "state roots").
-We have to be able to guarantee that these state roots do actually represent the state of Optimism.
-A "bad" state root could be used to lie about the state of Optimism and, as a result, potentially incorrectly withdraw funds from the system.
+In Optimistic rollups state transitions are considered pending for a period of time, called the "challenge window" (currently set to 7 days). If a proposed state transition goes unchallenged, then it is considered final. This allows the system to enforce that only correct proposals are finalized, and the rest are rejected, so long as 1 honest verifier responds before the 7 days are up.
 
-In a zero-knowledge (ZK) Rollup system, each commitment comes with a cryptographic proof that the commitment represents the true state of the L2 system.
-This zero-knowledge proof is checked at the time of publication and prevents users from being able to submit bad state roots.
-In an Optimistic Rollup, commitments are published *without* any proof of validity.
-Instead, commitments are considered pending for some period of time during which they can be invalidated by a special challenge process called the "fault proof" process.
-
-(diagram)
-
-Optimism users can challenge published state roots at any time during their "challenge window" (currently set to 7 days).
-This triggers a multi-round process in which the challenger and the original publisher walk down a Merkle tree of the execution trace of the block that generated the resulting state root.
-Eventually the two parties find the first execution step where both parties agree on the input but disagree on the output.
-This single execution step is executed on Ethereum and the winner of the challenge is determined.
-
-(diagram)
-
-This process is guaranteed to always correctly determine whether or not the published state root is valid.
-Bad state roots will always be invalidated as long as at least one user is willing to perform this challenge process.
-Under the assumption that at least one such user exists, we can be certain that any state root that has passed its 7 day waiting period without being invalidated by a challenge must be valid.
-Once we can be sure that a state root is valid, users can begin to use that state root to create Merkle proofs about the current state of Optimism.
+When a state transition is challenged it can be invalidated through a "fault proof" ([formerly known as a 'fraud proof'](https://github.com/ethereum-optimism/optimistic-specs/discussions/53)) process. This process is currently undergoing major redevelopment and you can read about it in [Protocol specs](../protocol/README.md) section.
 
 ## Roadmap
 
@@ -319,7 +300,7 @@ The process is relatively cheap and you only need one of them, and the one party
   - Transactions can be published by any node that puts up a bond
   - Transaction results are unchecked, they could be correct or they could be bogus (this is "optimistic")
   - Transaction results can be challenged by any other party
-  - Can be detected immediately by any honest node because we have 
+  - Can be detected immediately by any honest node because we have
   - This kicks off a challenge process
 - Challenge process TL;DR
   (NOTE: Currently disabled until further notice)
