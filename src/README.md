@@ -6,15 +6,15 @@ heroImage: /assets/logos/header.png
 heroText: The Optimism Docs
 
 features:
-  - title: How it works
+  - title: How Optimism works
     icon: info-square
     details: General explanation of what makes Optimism tick.
-    link: /TODO/
+    link: /docs/how-optimism-works/
 
   - title: Guides
     icon: book
     details: How-to guides and tutorials for users and developers.
-    link: /docs/guides
+    link: /docs/guides/
 
   - title: Protocol specs
     icon: ruler-triangle
@@ -31,8 +31,8 @@ features:
     details: Useful third-party tools for easier development and deployment.
     link: /docs/useful-tools/
 
-  - title: Getting involved
+  - title: Contribute
     icon: hands-helping
     details: Check out the Optimism community and join the conversation.
-    link: /TODO/
+    link: /docs/contribute/
 ---
