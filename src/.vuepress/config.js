@@ -39,7 +39,7 @@ module.exports = {
         link: '/docs/guides/',
       },
       {
-        text: 'Protocol',
+        text: 'Protocol Specs',
         link: '/docs/protocol/',
       },
       {
@@ -157,16 +157,6 @@ module.exports = {
         '/docs/useful-tools/explorers.md',
         '/docs/useful-tools/providers.md',
         ['https://www.optimism.io/apps/tools', 'Third Party Tools'],
-      ],
-      '/docs/protocol/': [
-        '/docs/protocol/protocol-2.0.md',
-        '/docs/protocol/sequencing.md',
-        '/docs/protocol/fault-proofs.md',
-        '/docs/protocol/protocol-readings.md',
-        [
-          'https://github.com/ethereum-optimism/optimistic-specs',
-          'Protocol Specs'
-        ]
       ]
     }
   },
