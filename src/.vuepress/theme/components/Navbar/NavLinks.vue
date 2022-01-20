@@ -18,7 +18,7 @@
     position relative
     display inline-block
     line-height 2rem
-    margin-left 1rem
+    margin-left 1.5rem
 
     &:first-child
       margin-left 0
