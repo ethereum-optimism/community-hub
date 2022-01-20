@@ -76,7 +76,7 @@ We keep this in mind whenever we're creating new features or trying to simplify 
 Optimism is as close to Ethereum as possible not only for pragmatic reasons, but because Optimism exists so that Ethereum can succeed.
 We hope that you can see the influence of this philosophy when looking at Optimism's design.
 
-## System overview
+## Rollup Protocol
 
 We've covered most of the "why" behind Optimism.
 Now it's time to explain the big idea that makes Optimism possible: the Optimistic Rollup.
@@ -92,6 +92,12 @@ In Optimism's case this parent blockchain is Ethereum.
 <div align="center">
 <img width="400" src="../../assets/docs/how-optimism-works/1.png">
 </div>
+
+### Fault proofs
+
+In Optimistic rollups state transitions are considered pending for a period of time, called the "challenge window" (currently set to 7 days). If a proposed state transition goes unchallenged, then it is considered final. This allows the system to enforce that only correct proposals are finalized, and the rest are rejected, so long as 1 honest verifier responds before the 7 days are up.
+
+When a state transition is challenged it can be invalidated through a "fault proof" ([formerly known as a 'fraud proof'](https://github.com/ethereum-optimism/optimistic-specs/discussions/53)) process. This process is currently undergoing major redevelopment and you can read about it in [Protocol specs](../protocol/README.md) section.
 
 ### Block storage
 
@@ -131,7 +137,7 @@ Optimism nodes instead download blocks directly from the append-only list of blo
 See the above section regarding [block storage](#block-storage) for more information about how blocks are stored within this contract.
 
 Optimism nodes are made up of two primary components, the Ethereum data indexer and the Optimism client software.
-The Ethereum data indexer, also called the ["data transport layer"](https://github.com/ethereum-optimism/optimism/tree/develop/packages/data-transport-layer) (or DTL), pieces together the Optimism blockchain from blocks published to the `CanonicalTransactionChain` contract.
+The Ethereum data indexer, also called the ["data transport layer"](https://github.com/ethereum-optimism/optimism/tree/develop/packages/data-transport-layer) (or DTL), reconstructs the Optimism blockchain from blocks published to the `CanonicalTransactionChain` contract.
 The DTL searches for events emitted by the `CanonicalTransactionChain` that signal that new Optimism blocks have been published.
 It then inspects the transactions that emitted these events to reconstruct the published blocks in the [standard Ethereum block format](https://ethereum.org/en/developers/docs/blocks/#block-anatomy).
 
@@ -145,7 +151,7 @@ When a new block is indexed, the client software will download it and execute th
 The process of executing a transaction on Optimism is the same as on Ethereum: we load the Optimism state, apply the transaction against that state, and then record the resulting state changes.
 This process is then repeated for each new block indexed by the DTL.
 
-### Moving assets between layers
+## Bridging assets between layers
 
 Optimism is designed so that users can send arbitrary messages between smart contracts on Optimism and Ethereum.
 This makes it possible to transfer assets, including ERC20 tokens, between the two networks.
@@ -182,12 +188,6 @@ Users can then prove to contracts on Ethereum that a given contract on Optimism 
 
 Optimism uses this functionality to allow users to withdraw ERC20 tokens back to Ethereum.
 When a user wishes to withdraw assets, the [`L2StandardBridge`](https://optimistic.etherscan.io/address/0x4200000000000000000000000000000000000010) contract will burn the assets on Optimism and send a message to the [`L1StandardBridge`](https://etherscan.io/address/0x99C9fc46f92E8a1c0deC1b1747d010903E884bE1) contract to release the corresponding asset back to the user on Ethereum.
-
-### Fault proofs
-
-In Optimistic rollups state transitions are considered pending for a period of time, called the "challenge window" (currently set to 7 days). If a proposed state transition goes unchallenged, then it is considered final. This allows the system to enforce that only correct proposals are finalized, and the rest are rejected, so long as 1 honest verifier responds before the 7 days are up.
-
-When a state transition is challenged it can be invalidated through a "fault proof" ([formerly known as a 'fraud proof'](https://github.com/ethereum-optimism/optimistic-specs/discussions/53)) process. This process is currently undergoing major redevelopment and you can read about it in [Protocol specs](../protocol/README.md) section.
 
 <!-- ## Why Optimistic Rollups?
 
