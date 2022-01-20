@@ -108,10 +108,6 @@ Of course, it's a key security goal of Ethereum to not experience these sort of 
 Optimism is therefore secure against large block reorganizations as long as the Ethereum consensus mechanism is too.
 It's through this relationship (in part, at least) that Optimism derives its security properties from Ethereum.
 
-<div align="center">
-<img width="400" src="../../assets/docs/how-optimism-works/2.png">
-</div>
-
 ### Block production
 
 Users can have their transactions added to the Optimism chain in one of two ways: by sending the transaction to a block producer (which we call a "Sequencer") or by submitting their transactions directly to the `CanonicalTransactionChain`.
@@ -123,16 +119,10 @@ Sequencers also apply some basic compression techniques to minimize the amount o
 For the moment, [Optimism PBC](https://www.optimism.io/) runs the only block producer.
 Refer to the below section about [Sequencer decentralization](#sequencer-decentralization) for more information about how we plan to decentralize the Sequencer role in the future.
 
-<div align="center">
-<img width="400" src="../../assets/docs/how-optimism-works/3.png">
-</div>
-
 Alternatively, users can skip the Sequencer entirely and submit their transactions directly to the `CanonicalTransactionChain` via an Ethereum transaction.
 This is typically more expensive because the fixed cost of submitting this transaction is paid entirely by the user and is not amortized over many different transactions.
 However, this alternative submission method has the advantage of being resistant to censorship by the Sequencer.
 Even if the Sequencer is actively censoring a user, the user can always continue to use Optimism and recover any funds through this mechanism.
-
-(diagram)
 
 ### Block execution
 
@@ -140,14 +130,10 @@ Ethereum nodes download blocks from Ethereum's p2p network.
 Optimism nodes instead download blocks directly from the append-only list of blocks held within the `CanonicalTransactionChain` contract.
 See the above section regarding [block storage](#block-storage) for more information about how blocks are stored within this contract.
 
-(image)
-
 Optimism nodes are made up of two primary components, the Ethereum data indexer and the Optimism client software.
 The Ethereum data indexer, also called the ["data transport layer"](https://github.com/ethereum-optimism/optimism/tree/develop/packages/data-transport-layer) (or DTL), pieces together the Optimism blockchain from blocks published to the `CanonicalTransactionChain` contract.
 The DTL searches for events emitted by the `CanonicalTransactionChain` that signal that new Optimism blocks have been published.
 It then inspects the transactions that emitted these events to reconstruct the published blocks in the [standard Ethereum block format](https://ethereum.org/en/developers/docs/blocks/#block-anatomy).
-
-(image)
 
 The second part of the Optimism node, the Optimism client software, is an almost completely vanilla version of [Geth](https://github.com/ethereum/go-ethereum).
 This means Optimism is close to identical to Ethereum under the hood.
@@ -158,8 +144,6 @@ The Optimism client software continuously monitors the DTL for newly indexed blo
 When a new block is indexed, the client software will download it and execute the transactions included within it.
 The process of executing a transaction on Optimism is the same as on Ethereum: we load the Optimism state, apply the transaction against that state, and then record the resulting state changes.
 This process is then repeated for each new block indexed by the DTL.
-
-(insert node diagram)
 
 ### Moving assets between layers
 
@@ -177,8 +161,6 @@ Contracts on Ethereum can use this functionality to send assets from Ethereum to
 For instance, Optimism maintains a contract called the [`L1StandardBridge`](https://etherscan.io/address/0x99C9fc46f92E8a1c0deC1b1747d010903E884bE1) which uses this feature to allow users to move ERC20 tokens from Ethereum to Optimism in a standardized manner.
 When making a deposit, users transfer tokens to the `L1StandardBridge` which in turn instructs the corresponding [`L2StandardBridge`](https://optimistic.etherscan.io/address/0x4200000000000000000000000000000000000010) contract to mint an equivalent number of tokens on Optimism.
 
-(diagram)
-
 #### Moving from Optimism to Ethereum
 
 It's not possible for contracts on Optimism to easily generate transactions on Ethereum in the same way as Ethereum contracts can generate transactions on Optimism.
@@ -188,8 +170,6 @@ Instead of automatically generating authenticated transactions, we must instead 
 Making provable statements about the state of Optimism requires a [cryptographic commitment](https://en.wikipedia.org/wiki/Commitment_scheme) in the form of the root of the Optimism's [state trie](https://medium.com/@eiki1212/ethereum-state-trie-architecture-explained-a30237009d4e).
 Optimism's state is updated after each block, so this commitment will also change after every block.
 Commitments are regularly published (approximately once or twice per hour) to a smart contract on Ethereum called the [`StateCommitmentChain`](https://etherscan.io/address/0xBe5dAb4A2e9cd0F27300dB4aB94BeE3A233AEB19).
-
-(diagram)
 
 Users can use these commitments to generate [Merkle tree proofs](https://en.wikipedia.org/wiki/Merkle_tree) about the state of Optimism.
 These proofs can be verified by smart contracts on Ethereum.
@@ -202,8 +182,6 @@ Users can then prove to contracts on Ethereum that a given contract on Optimism 
 
 Optimism uses this functionality to allow users to withdraw ERC20 tokens back to Ethereum.
 When a user wishes to withdraw assets, the [`L2StandardBridge`](https://optimistic.etherscan.io/address/0x4200000000000000000000000000000000000010) contract will burn the assets on Optimism and send a message to the [`L1StandardBridge`](https://etherscan.io/address/0x99C9fc46f92E8a1c0deC1b1747d010903E884bE1) contract to release the corresponding asset back to the user on Ethereum.
-
-(diagram)
 
 ### Fault proofs
 
