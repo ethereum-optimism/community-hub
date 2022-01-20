@@ -189,31 +189,6 @@ In Optimistic rollups state transitions are considered pending for a period of t
 
 When a state transition is challenged it can be invalidated through a "fault proof" ([formerly known as a 'fraud proof'](https://github.com/ethereum-optimism/optimistic-specs/discussions/53)) process. This process is currently undergoing major redevelopment and you can read about it in [Protocol specs](../protocol/README.md) section.
 
-## Roadmap
-
-### Next gen fault proofs
-
-On November 11th, 2021, the Optimism protocol went through its biggest upgrade to date.
-The primary focus of this update was [EVM Equivalence](https://medium.com/ethereum-optimism/introducing-evm-equivalence-5c2021deb306), a new design for Optimism's client software that brought it close to 1:1 parity with Ethereum's Geth.
-As part of this upgrade, the Optimism fault proof mechanism had to be redesigned from the ground up.
-
-For a number of pragmatic reasons, we made the decision to launch the EVM Equivalence upgrade before the new fault proof mechanism was fully productionized.
-The EVM Equivalence upgrade significantly reduced development and support overhead required to get new projects onboarded to the Optimism network.
-By launching early, we were able to speed up the timeline of the new fault proof and ultimately bring a better experience to users and developers, faster.
-
-This means that users of the Optimism network currently need to trust the Sequencer node (run by Optimism PBC) to publish valid state roots to Ethereum.
-We're making fast progress on the upgrade fault proof mechanism and we expect to productionize our work within the first few months of 2022.
-You can keep up with our progress on the [Cannon repository](https://github.com/ethereum-optimism/cannon/).
-
-### Sequencer decentralization
-
-Optimism PBC currently runs the only Optimism Sequencer node.
-We're working hard to completely decentralize the Sequencer selection process so that anyone can participate in the network as a block producer.
-Getting to full Sequencer decentralization is a challenging process that requires careful consideration.
-In particular, we need to manage the impact of [Miner Extractable Value](https://ethereum.org/en/developers/docs/mev/) that Sequencer nodes have access to.
-
-TODO: expand this section
-
 <!-- ## Why Optimistic Rollups?
 
 Before any code was written, Optimism was just a goal: *make Ethereum mainstream*.
