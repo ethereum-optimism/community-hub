@@ -52,7 +52,7 @@ Sometimes the best solution isn't the prettiest one.
 
 Optimism is also developed with the understanding that any core team will have limited areas of expertise.
 Optimism is developed iteratively and strives to continously pull feedback from users.
-Many core Optimism features today (like EVM equivalence) were only made possible by this iterative approach to protocol development.
+Many core Optimism features today (like [EVM Equivalence](https://medium.com/ethereum-optimism/introducing-evm-equivalence-5c2021deb306)) were only made possible by this iterative approach to protocol development.
 
 ### Sustainability
 
@@ -93,12 +93,6 @@ In Optimism's case this parent blockchain is Ethereum.
 <img width="400" src="../../assets/docs/how-optimism-works/1.png">
 </div>
 
-### Fault proofs
-
-In Optimistic rollups state changes are considered pending for a period of time, called the "challenge window".  If a proposed state change goes unchallenged for the duration of the challenge window (currently set to 7 days), then it is considered final.
-
-When a state change is challenged, it can be invalidated through a "fault proof" ([formerly known as a 'fraud proof'](https://github.com/ethereum-optimism/optimistic-specs/discussions/53)) process. This process is currently undergoing major redevelopment and you can read about it in [Protocol specs](../protocol/README.md) section.
-
 ### Block storage
 
 All Optimism blocks are stored within a special smart contract on Ethereum called the [`CanonicalTransactionChain`](https://etherscan.io/address/0x5E4e65926BA27467555EB562121fac00D24E9dD2) (or CTC for short).
@@ -122,11 +116,21 @@ Optimism block production is primarily managed by a single party, called the "se
 - Constructing and executing L2 blocks.
 - Submitting user transactions to L1.
 
-When a user sends their transaction to the sequencer, the sequencer checks that the transaction is valid (i.e. pays a sufficient fee) and then applies the transaction to its local state as a pending block. These pending blocks are periodically submitted to the layer 1 chain for finalization. The sequencers combines lots of transactions together and publishes them all at once as a batch. This significantly reduces overall transaction fees by spreading fixed costs over all of the transactions in a given batch. The sequencer also applies some basic compression techniques to minimize the amount of data published to Ethereum.
+When a user sends their transaction to the sequencer, the sequencer checks that the transaction is valid (i.e. pays a sufficient fee) and then applies the transaction to its local state as a pending block.
+These pending blocks are periodically submitted to the layer 1 chain for finalization.
+The sequencers combines lots of transactions together and publishes them all at once as a batch.
+This significantly reduces overall transaction fees by spreading fixed costs over all of the transactions in a given batch.
+The sequencer also applies some basic compression techniques to minimize the amount of data published to Ethereum.
 
-Because the sequencer is given priority write access to the L2 chain, the sequencer can provide a strong guarantee of what state will be finalized as soon as it decides on a new pending block. In other words, it is precisely known what will be the impact of the transaction. As a result, the L2 state can be reliably updated extremely quickly. Benefits of this include a snappy, instant user experience, with things like near-real-time Uniswap price updates.
+Because the sequencer is given priority write access to the L2 chain, the sequencer can provide a strong guarantee of what state will be finalized as soon as it decides on a new pending block.
+In other words, it is precisely known what will be the impact of the transaction.
+As a result, the L2 state can be reliably updated extremely quickly.
+Benefits of this include a snappy, instant user experience, with things like near-real-time Uniswap price updates.
 
-Alternatively, users can skip the sequencer entirely and submit their transactions directly to the `CanonicalTransactionChain` via an Ethereum transaction. This is typically more expensive because the fixed cost of submitting this transaction is paid entirely by the user and is not amortized over many different transactions. However, this alternative submission method has the advantage of being resistant to censorship by the sequencer. Even if the sequencer is actively censoring a user, the user can always continue to use Optimism and recover any funds through this mechanism.
+Alternatively, users can skip the sequencer entirely and submit their transactions directly to the `CanonicalTransactionChain` via an Ethereum transaction.
+This is typically more expensive because the fixed cost of submitting this transaction is paid entirely by the user and is not amortized over many different transactions.
+However, this alternative submission method has the advantage of being resistant to censorship by the sequencer.
+Even if the sequencer is actively censoring a user, the user can always continue to use Optimism and recover any funds through this mechanism.
 
 For the moment, [Optimism PBC](https://www.optimism.io/) runs the only block producer. Refer to [Protocol specs](../protocol/README.md) section for more information about how we plan to decentralize the Sequencer role in the future.
 
@@ -151,7 +155,7 @@ When a new block is indexed, the client software will download it and execute th
 The process of executing a transaction on Optimism is the same as on Ethereum: we load the Optimism state, apply the transaction against that state, and then record the resulting state changes.
 This process is then repeated for each new block indexed by the DTL.
 
-## Bridging assets between layers
+### Bridging assets between layers
 
 Optimism is designed so that users can send arbitrary messages between smart contracts on Optimism and Ethereum.
 This makes it possible to transfer assets, including ERC20 tokens, between the two networks.
@@ -188,6 +192,21 @@ Users can then prove to contracts on Ethereum that a given contract on Optimism 
 
 Optimism uses this functionality to allow users to withdraw ERC20 tokens back to Ethereum.
 When a user wishes to withdraw assets, the [`L2StandardBridge`](https://optimistic.etherscan.io/address/0x4200000000000000000000000000000000000010) contract will burn the assets on Optimism and send a message to the [`L1StandardBridge`](https://etherscan.io/address/0x99C9fc46f92E8a1c0deC1b1747d010903E884bE1) contract to release the corresponding asset back to the user on Ethereum.
+
+### Fault proofs
+
+In an Optimistic Rollup, state commitments are published to Ethereum without any direct proof of the validity of these commitments.
+Instead, these commitments are considered pending for a period of time (called the "challenge window").
+If a proposed state commitment goes unchallenged for the duration of the challenge window (currently set to 7 days), then it is considered final.
+Once a commitment is considered final, smart contracts on Ethereum can safely accept proofs about the state of Optimism based on that commitment.
+
+When a state commitment is challenged, it can be invalidated through a "fault proof" ([formerly known as a "fraud proof"](https://github.com/ethereum-optimism/optimistic-specs/discussions/53)) process.
+If the commitment is successfully challenged, then it is removed from the `StateCommitmentChain` to eventually be replaced by another proposed commitment.
+It's important to note that a successful challenge does not roll back Optimism itself, only the published commitments about the state of the chain.
+The ordering of transactions and the state of Optimism is unchanged by a fault proof challenge.
+
+The fault proof process is currently undergoing major redevelopment as a side-effect of the November 11th [EVM Equivalence](https://medium.com/ethereum-optimism/introducing-evm-equivalence-5c2021deb306) update.
+You can read more about this process within the [Protocol specs](../protocol/README.md) section of this website.
 
 <!-- ## Why Optimistic Rollups?
 
