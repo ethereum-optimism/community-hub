@@ -3,8 +3,6 @@ title: How Optimism Works
 lang: en-US
 ---
 
-# {{ $frontmatter.title }}
-
 ## Introduction
 
 Hello!

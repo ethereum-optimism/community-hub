@@ -3,8 +3,6 @@ title: Block Explorers
 lang: en-US
 ---
 
-# {{ $frontmatter.title }}
-
 ## Etherscan
 
 We have Etherscan explorers for the [Optimism mainnet](https://optimistic.etherscan.io) and the [Optimism Kovan testnet](https://kovan-optimistic.etherscan.io).

@@ -3,8 +3,6 @@ title: Transaction fees on L2
 lang: en-US
 ---
 
-# {{ $frontmatter.title }}
-
 ## Understanding the basics
 
 Transaction fees on Optimism work a lot like fees on Ethereum.

@@ -3,8 +3,6 @@ title: Interacting with Optimism contracts
 lang: en-US
 ---
 
-# {{ $frontmatter.title }}
-
 Optimism is composed, in part, of a series of smart contracts on both L1 (Ethereum) and L2 (Optimism).
 You may want to interact with these contracts for any number of reasons, including:
 

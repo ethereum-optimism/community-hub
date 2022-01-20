@@ -3,8 +3,6 @@ title: Developer tools
 lang: en-US
 ---
 
-# {{ $frontmatter.title }}
-
 Welcome to the Optimism developer tools!
 
 If you are already familiar with [building on Optimism](../developers/README.md) and just need the tools to get cracking, you are in the right place!
@@ -20,4 +18,3 @@ To get some ETH bridged over for deployment gas fees, use one of the available [
 ## Monitoring
 
 Your app is live in production? Watch it grow using one of the [monitoring tools](./monitoring.md). We also have a set of [troubleshooting tools](./debugging.md) and [block explorers](./explorers.md) to help you provide a stellar service to your users.
-

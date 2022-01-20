@@ -3,8 +3,6 @@ title: Optimistic Sequencing
 lang: en-US
 ---
 
-# {{ $frontmatter.title }}
-
 ## What is a sequencer?
 
 Optimism block production is primarily managed by a single party, called the "sequencer," which helps the network by providing the following services:

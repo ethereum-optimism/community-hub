@@ -3,8 +3,6 @@ title: Networks and Public RPC Endpoints
 lang: en-US
 ---
 
-# {{ $frontmatter.title }}
-
 ## Optimism (mainnet)
 
 ::: tip Point and deploy

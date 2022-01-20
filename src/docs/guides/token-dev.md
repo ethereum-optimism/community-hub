@@ -3,8 +3,6 @@ title: Adding an ERC20 token to the standard bridge
 lang: en-US
 ---
 
-# {{ $frontmatter.title }}
-
 For an ERC20 to work with the Standard Bridge it needs to implement the [`IL2StandardERC20`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/standards/IL2StandardERC20.sol) interface. Optimism provides a standard implementation of that interface as the [`L2StandardERC20`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/standards/L2StandardERC20.sol). This contract is a standard ERC20 based on the `@openzeppelin/contracts` `ERC20` implementation with added `ERC165` functionality and `mint` / `burn` logic that the Standard Bridge relies on.
 
 We'll demonstrate the process for deploying an instance of a sample token on Optimism Kovan testnet using [Etherscan](https://kovan-optimistic.etherscan.io/). The same process is applicable to Optimism Mainnet.

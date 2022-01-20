@@ -3,8 +3,6 @@ title: Known Issues
 lang: en-US
 ---
 
-# {{ $frontmatter.title }}
-
 ## Issue #1852: Gas pricing discrepancy
 
 ### Issue Tracking

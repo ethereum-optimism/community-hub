@@ -3,8 +3,6 @@ title: Using your favorite tools
 lang: en-US
 ---
 
-# {{ $frontmatter.title }}
-
 How do you use your favorite tools for building contracts when you're working with Optimism?
 Just use them!
 

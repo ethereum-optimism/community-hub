@@ -3,8 +3,6 @@ title: Protocol specs
 lang: en-US
 ---
 
-# {{ $frontmatter.title }}
-
 With the OVM 2.0 upgrade, which happened on November 11th, 2021, the Optimism protocol went through its biggest upgrade to date. The primary focus of this upgrade was [EVM Equivalence](https://medium.com/ethereum-optimism/introducing-evm-equivalence-5c2021deb306), a new design for Optimism that brought it close to 1:1 parity with Ethereum. For a high level overview of the current protocol version, see ['How Optimism works'](../how-optimism-works/) section.
 
 ## Roadmap

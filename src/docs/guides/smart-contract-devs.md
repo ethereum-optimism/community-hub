@@ -3,8 +3,6 @@ title: Developing smart contracts on Optimism
 lang: en-US
 ---
 
-# {{ $frontmatter.title }}
-
 This guide shows you the ropes of developing smart contracts for Optimism. With Optimism, all your favourite developer tools work out the box, no special set up required. They work because Optimism is [EVM Equivalent](https://medium.com/ethereum-optimism/introducing-evm-equivalence-5c2021deb306) with some [small exceptions](../developers/build/differences.md). We have made this guide to make it _that_ much easier to get started!
 
 Optimism supports [Solidity](https://docs.soliditylang.org/en/develop/) as well as [Vyper](https://vyper.readthedocs.io/en/stable/). If you have never written a smart contract before, we have a more step by step guide for [developers using Remix](../developers/build/basic-contract.md#writing-a-quick-contract) and recommend reading the [Solidity docs getting started section](https://docs.soliditylang.org/en/develop/#getting-started).

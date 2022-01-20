@@ -3,8 +3,6 @@ title: Guides
 lang: en-US
 ---
 
-# {{ $frontmatter.title }}
-
 Welcome to the Optimism Guides!
 
 These guides provide integration guidelines for specific topics. They are intended as one stop shops, and should have all the relevant information you need for completing a specific type of integration, from network information and tutorials to tips and tricks.

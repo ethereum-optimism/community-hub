@@ -3,8 +3,6 @@ title: Node Providers
 lang: en-US
 ---
 
-# {{ $frontmatter.title }}
-
 ## QuickNode
 
 ### Description and pricing
