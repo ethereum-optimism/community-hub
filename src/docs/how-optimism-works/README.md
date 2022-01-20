@@ -208,6 +208,31 @@ The ordering of transactions and the state of Optimism is unchanged by a fault p
 The fault proof process is currently undergoing major redevelopment as a side-effect of the November 11th [EVM Equivalence](https://medium.com/ethereum-optimism/introducing-evm-equivalence-5c2021deb306) update.
 You can read more about this process within the [Protocol specs](../protocol/README.md) section of this website.
 
+## Start building
+
+You've made it to the end of *How Optimism Works*.
+We hope you've learned quite a bit about Optimism under the hood.
+Of course, the end of one journey is always the beginning of another.
+Now that you're an expert in all things Optimism, it's time to start building!
+
+### Deploy an app today
+
+Building smart contracts on Optimism has never been easier.
+If you're looking for a place to get started, we recommend checking out [our developer docs](../developers).
+There you'll find everything you need to know to build and deploy your first app on Optimism.
+
+### Get involved with Optimism
+
+Excited about Optimism?
+Want to contribute directly?
+Head over to our [contributing page](../contribute) where you'll find a list of many of the ways you can actively help to build Optimism itself.
+You can also try hopping in [the Optimism discord](https://discord.optimism.io) to find additional ways to help out.
+
+### Dive deeper
+
+*How Optimism Works* is a high-level overview of how Optimism really works.
+If you're interested in diving even deeper, you should check out the [protocol specs](../protocol) section of this website.
+
 <!-- ## Why Optimistic Rollups?
 
 Before any code was written, Optimism was just a goal: *make Ethereum mainstream*.
