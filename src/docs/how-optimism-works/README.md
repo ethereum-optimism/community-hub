@@ -95,9 +95,9 @@ In Optimism's case this parent blockchain is Ethereum.
 
 ### Fault proofs
 
-In Optimistic rollups state transitions are considered pending for a period of time, called the "challenge window" (currently set to 7 days). If a proposed state transition goes unchallenged, then it is considered final. This allows the system to enforce that only correct proposals are finalized, and the rest are rejected, so long as 1 honest verifier responds before the 7 days are up.
+In Optimistic rollups state changes are considered pending for a period of time, called the "challenge window".  If a proposed state change goes unchallenged for the duration of the challenge window (currently set to 7 days), then it is considered final.
 
-When a state transition is challenged it can be invalidated through a "fault proof" ([formerly known as a 'fraud proof'](https://github.com/ethereum-optimism/optimistic-specs/discussions/53)) process. This process is currently undergoing major redevelopment and you can read about it in [Protocol specs](../protocol/README.md) section.
+When a state change is challenged, it can be invalidated through a "fault proof" ([formerly known as a 'fraud proof'](https://github.com/ethereum-optimism/optimistic-specs/discussions/53)) process. This process is currently undergoing major redevelopment and you can read about it in [Protocol specs](../protocol/README.md) section.
 
 ### Block storage
 
@@ -116,19 +116,19 @@ It's through this relationship (in part, at least) that Optimism derives its sec
 
 ### Block production
 
-Users can have their transactions added to the Optimism chain in one of two ways: by sending the transaction to a block producer (which we call a "Sequencer") or by submitting their transactions directly to the `CanonicalTransactionChain`.
+Optimism block production is primarily managed by a single party, called the "sequencer," which helps the network by providing the following services:
 
-Only one Sequencer is active at any given time.
-Sequencers combine lots of transactions together and publish them all at once as a batch.
-This significantly reduces overall transaction fees by spreading fixed costs over all of the transactions in a given batch.
-Sequencers also apply some basic compression techniques to minimize the amount of data published to Ethereum.
-For the moment, [Optimism PBC](https://www.optimism.io/) runs the only block producer.
-Refer to the below section about [Sequencer decentralization](#sequencer-decentralization) for more information about how we plan to decentralize the Sequencer role in the future.
+- Providing instant transaction confirmations and state updates.
+- Constructing and executing L2 blocks.
+- Submitting user transactions to L1.
 
-Alternatively, users can skip the Sequencer entirely and submit their transactions directly to the `CanonicalTransactionChain` via an Ethereum transaction.
-This is typically more expensive because the fixed cost of submitting this transaction is paid entirely by the user and is not amortized over many different transactions.
-However, this alternative submission method has the advantage of being resistant to censorship by the Sequencer.
-Even if the Sequencer is actively censoring a user, the user can always continue to use Optimism and recover any funds through this mechanism.
+When a user sends their transaction to the sequencer, the sequencer checks that the transaction is valid (i.e. pays a sufficient fee) and then applies the transaction to its local state as a pending block. These pending blocks are periodically submitted to the layer 1 chain for finalization. The sequencers combines lots of transactions together and publishes them all at once as a batch. This significantly reduces overall transaction fees by spreading fixed costs over all of the transactions in a given batch. The sequencer also applies some basic compression techniques to minimize the amount of data published to Ethereum.
+
+Because the sequencer is given priority write access to the L2 chain, the sequencer can provide a strong guarantee of what state will be finalized as soon as it decides on a new pending block. In other words, it is precisely known what will be the impact of the transaction. As a result, the L2 state can be reliably updated extremely quickly. Benefits of this include a snappy, instant user experience, with things like near-real-time Uniswap price updates.
+
+Alternatively, users can skip the sequencer entirely and submit their transactions directly to the `CanonicalTransactionChain` via an Ethereum transaction. This is typically more expensive because the fixed cost of submitting this transaction is paid entirely by the user and is not amortized over many different transactions. However, this alternative submission method has the advantage of being resistant to censorship by the sequencer. Even if the sequencer is actively censoring a user, the user can always continue to use Optimism and recover any funds through this mechanism.
+
+For the moment, [Optimism PBC](https://www.optimism.io/) runs the only block producer. Refer to [Protocol specs](../protocol/README.md) section for more information about how we plan to decentralize the Sequencer role in the future.
 
 ### Block execution
 
