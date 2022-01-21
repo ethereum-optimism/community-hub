@@ -114,11 +114,7 @@ Optimism block production is primarily managed by a single party, called the "se
 - Constructing and executing L2 blocks.
 - Submitting user transactions to L1.
 
-When a user sends their transaction to the sequencer, the sequencer checks that the transaction is valid (i.e. pays a sufficient fee) and then applies the transaction to its local state as a pending block.
-These pending blocks are periodically submitted to the layer 1 chain for finalization.
-The sequencers combines lots of transactions together and publishes them all at once as a batch.
-This significantly reduces overall transaction fees by spreading fixed costs over all of the transactions in a given batch.
-The sequencer also applies some basic compression techniques to minimize the amount of data published to Ethereum.
+The sequencer has no mempool and transactions are immediately accepted or rejected in the order they were received. When a user sends their transaction to the sequencer, the sequencer checks that the transaction is valid (i.e. pays a sufficient fee) and then applies the transaction to its local state as a pending block. These pending blocks are periodically submitted to the layer 1 chain for finalization. The sequencers combines lots of transactions together and publishes them all at once as a batch. This significantly reduces overall transaction fees by spreading fixed costs over all of the transactions in a given batch. The sequencer also applies some basic compression techniques to minimize the amount of data published to Ethereum.
 
 Because the sequencer is given priority write access to the L2 chain, the sequencer can provide a strong guarantee of what state will be finalized as soon as it decides on a new pending block.
 In other words, it is precisely known what will be the impact of the transaction.
