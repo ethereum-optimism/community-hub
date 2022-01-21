@@ -3,8 +3,6 @@ title: Contribute to Optimism
 lang: en-US
 ---
 
-# {{ $frontmatter.title }}
-
 🎈 Thanks for your help improving the project! We are so happy to have you!
 
 There are plenty of ways to contribute, in particular we appreciate support in the following areas:

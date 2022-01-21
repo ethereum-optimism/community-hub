@@ -3,8 +3,6 @@ title: Network Faucets
 lang: en-US
 ---
 
-# {{ $frontmatter.title }}
-
 ## Testnet Faucets
 
 ### Paradigm MultiFaucet

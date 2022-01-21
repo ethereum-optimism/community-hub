@@ -3,8 +3,6 @@ title: Bridging basics
 lang: en-US
 ---
 
-# {{ $frontmatter.title }}
-
 Although Optimism is an L2 (and therefore fundamentally connected to Ethereum), it's also a separate blockchain system.
 App developers commonly need to move data and assets between Optimism and Ethereum.
 We call the process of moving data and assets between the two networks "bridging".

@@ -1,14 +1,10 @@
 <template>
   <main class="page">
-    <MyTransition :disable="true">
-      <BreadCrumb :key="$route.path" />
-    </MyTransition>
+    <BreadCrumb :key="$route.path" />
 
     <slot name="top" />
 
-    <MyTransition :delay="0.04" :disable="true">
-      <PageInfo :key="$route.path" />
-    </MyTransition>
+    <PageInfo :key="$route.path" />
 
     <MyTransition v-if="pagePassword && !pageDescrypted" :delay="0.08" :disable="true">
       <Password

@@ -3,14 +3,10 @@ title: Monitoring
 lang: en-US
 ---
 
-# {{ $frontmatter.title }}
-
-
 ## Status Page
 
 Check out the [Optimism status page](https://optimism.instatus.com/).
 This page includes public APIs, the gateway, deposits, withdraws and transaction sequencing for both Optimism mainnet and Optimism Kovan.
-
 
 ## Public Grafana Dashboard
 

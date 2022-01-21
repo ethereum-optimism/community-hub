@@ -3,8 +3,6 @@ title: Fault Proofs
 lang: en-US
 ---
 
-# {{ $frontmatter.title }}
-
 This pages provides information about fault proofs
 ([formerly known as 'fraud proofs'](https://github.com/ethereum-optimism/optimistic-specs/discussions/53)).
 

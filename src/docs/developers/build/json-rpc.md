@@ -3,8 +3,6 @@ title: JSON-RPC API
 lang: en-US
 ---
 
-# {{ $frontmatter.title }}
-
 Optimism shares the same [JSON-RPC API](https://eth.wiki/json-rpc/API) as Ethereum.
 Some custom methods have been introduced to simplify certain Optimism specific interactions.
 

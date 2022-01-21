@@ -3,8 +3,6 @@ title: Running a local development environment
 lang: en-US
 ---
 
-# {{ $frontmatter.title }}
-
 ## What is this?
 
 A development environment is a local installation of the entire Optimism system.

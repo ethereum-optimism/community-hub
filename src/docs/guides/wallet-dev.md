@@ -3,8 +3,6 @@ title: Supporting Optimism in your wallet
 lang: en-US
 ---
 
-# {{ $frontmatter.title }}
-
 This guide teaches you how to connect your wallet to Optimism. Overall Optimism behaves like any over EVM chain, with the exception of [transaction fees](#transaction-fees). Those are different and you have to write custom code for them.
 
 ## Handling multiple chains

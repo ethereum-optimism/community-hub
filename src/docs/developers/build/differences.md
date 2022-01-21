@@ -3,8 +3,6 @@ title: Differences between Ethereum and Optimism
 lang: en-US
 ---
 
-# {{ $frontmatter.title }}
-
 It's important to note that there are various minor discrepancies between the behavior of Optimism and Ethereum.
 You should be aware of these descrepancies when building apps on top of Optimism.
 

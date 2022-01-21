@@ -3,8 +3,6 @@ title: Protocol Readings
 lang: en-US
 ---
 
-# {{ $frontmatter.title }}
-
 ::: tip Are we missing something? 🧐
 Want your content featured on this page?
 Think we don't have enough information about a certain topic?

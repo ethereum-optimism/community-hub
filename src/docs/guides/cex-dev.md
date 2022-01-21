@@ -3,9 +3,6 @@ title: Adding Optimism to your centralized exchange
 lang: en-US
 ---
 
-# {{ $frontmatter.title }}
-
-
 ## Connecting to Optimism
 
 You connect to Optimism the same way you do to Ethereum, by connecting to a JSON RPC endpoint. However, the currently supported fork for Optimism is [Berlin](https://eth.wiki/roadmap/berlin), not [London](https://eth.wiki/roadmap/london), so EIP-1559 transactions are not supported yet.

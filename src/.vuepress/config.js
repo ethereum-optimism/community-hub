@@ -8,7 +8,8 @@ module.exports = {
   head: [
     ['meta', { name: 'theme-color', content: '#3eaf7c' }],
     ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
-    ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }]
+    ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }],
+    ['link', { rel: "icon", type: "image/png", sizes: "32x32", href: "/assets/logos/favicon.png"}],
   ],
 
   theme: path.resolve(__dirname, './theme'),
@@ -25,14 +26,17 @@ module.exports = {
     blog: false,
     iconPrefix: 'far fa-',
     pageInfo: false,
+    activeHash: {
+      offset: -200,
+    },
     algolia: {
       apiKey: '47d21d4ea72ed7cb504b1c6c0a46b5a0',
       indexName: 'optimism'
     },
     nav: [
       {
-        text: 'How it works',
-        link: '/docs/guides/',
+        text: 'How Optimism Works',
+        link: '/docs/how-optimism-works/',
       },
       {
         text: 'Guides',

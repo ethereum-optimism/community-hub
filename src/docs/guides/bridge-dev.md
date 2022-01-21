@@ -3,7 +3,7 @@ title: Adding a custom bridge to Optimism
 lang: en-US
 ---
 
-# {{ $frontmatter.title }}
+# Adding a custom bridge to Optimism
 
 ## Using the Standard bridge
 ::: tip

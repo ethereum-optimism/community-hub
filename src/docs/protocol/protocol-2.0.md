@@ -3,8 +3,6 @@ title: Contract Overview
 lang: en-US
 ---
 
-# {{ $frontmatter.title }}
-
 ## Introduction
 
 <!-- - Welcome!  Give context -- "how to read these docs" -->
