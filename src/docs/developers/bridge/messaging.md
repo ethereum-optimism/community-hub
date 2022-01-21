@@ -1,12 +1,10 @@
 ---
-title: Sending Data Between L1 and L2
+title: Sending data between L1 and L2
 lang: en-US
 ---
 
-# {{ $frontmatter.title }}
-
 Apps on Optimism can be made to interact with apps on Ethereum via a process called "bridging".
-In a nutshell, **contracts on Optimism can send messages to contracts on Ethereum, and vice versa**.
+In a nutshell, **contracts on Optimism can trigger contract functions on Ethereum, and vice versa**.
 With just a little bit of elbow grease, you too can create contracts that bridge the gap between Layer 1 and Layer 2!
 
 ## Understanding contract calls
@@ -118,27 +116,28 @@ contract MyOtherContract {
 ```
 
 ::: tip Using the messenger contracts
-These messenger contracts, the [`OVM_L1CrossDomainMessenger`](https://github.com/ethereum-optimism/optimism/blob/ef5343d61708f2d15f51dca981f03ee4ac447c21/packages/contracts/contracts/optimistic-ethereum/OVM/bridge/messaging/OVM_L1CrossDomainMessenger.sol) and [`OVM_L2CrossDomainMessenger`](https://github.com/ethereum-optimism/optimism/blob/ef5343d61708f2d15f51dca981f03ee4ac447c21/packages/contracts/contracts/optimistic-ethereum/OVM/bridge/messaging/OVM_L2CrossDomainMessenger.sol), always come pre-deployed to each of our networks.
-You can find the exact addresses of these contracts on our various deployments [inside of the Optimism monorepo](https://github.com/ethereum-optimism/optimism/blob/ef5343d61708f2d15f51dca981f03ee4ac447c21/packages/contracts/deployments/README.md).
+Our messenger contracts, the [`L1CrossDomainMessenger`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/L1/messaging/L1CrossDomainMessenger.sol) and [`L2CrossDomainMessenger`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/L2/messaging/L2CrossDomainMessenger.sol), always come pre-deployed to each of our networks.
+You can find the exact addresses of these contracts on our various deployments [inside of the Optimism monorepo](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/deployments).
 :::
 
-<!-- TODO: add this page to our docs too -->
+## Communication speed
 
-### Caveats
+Unlike calls between contracts on the same blockchain, calls between Ethereum and Optimism are *not* instantaneous.
+The exact speed of a cross-chain transaction depends on the direction in which the transaction is sent.
 
-Of course, all the best things in life come with asterisks.
-Let's take a look at the things you should keep in mind when you use these contracts.
+### For L1 ⇒ L2 transactions
 
-#### Communication is *not* instantaneous
+Transactions sent from L1 to L2 take up to approximately 15 minutes on mainnet and 5 minutes on the Optimism Kovan testnet to reach the target L2 contract.
+This is because L2 nodes will wait for a certain number of block confirmations on Ethereum before executing an L1 to L2 transaction.
 
-Calls between two contracts on Ethereum happen synchronously and atomically within the same transaction.
-That is, you'll be told about the result of the call right away.
-Calls between contracts on Optimism and Ethereum happen *asynchronously*.
-If you want to know about the result of the call, you'll have to wait for the other contract send a message back to you.
+### For L2 ⇒ L1 transactions
 
-<!-- TODO: do we need an example here? -->
+L2 to L1 transactions must wait 7 days on mainnet and 60 seconds on the Optimism Kovan testnet before they *can* be executed on Ethereum.
+After this waiting period, any user can "finalize" the transaction by triggering a second transaction on Ethereum that sends the message to the target L1 contract.
+This waiting period is a core part of the security mechanism designed to keep funds on Optimism secure and cannot be circumvented.
+See the below section on [Understanding the challenge period](#understanding-the-challenge-period) for more information.
 
-#### Accessing `msg.sender`
+## Accessing `msg.sender`
 
 Contracts frequently make use of `msg.sender` to make decisions based on the calling account.
 For example, many contracts will use the [Ownable](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/access/Ownable.sol) pattern to selectively restrict access to certain functions.
@@ -163,22 +162,47 @@ modifier onlyOwner() {
 }
 ```
 
+## Fees for sending data between L1 and L2
+
+### For L1 ⇒ L2 transactions
+
+The majority of the cost of an L1 to L2 transaction comes from sending a transaction on Ethereum.
+You send a transaction to the [`L1CrossDomainMessenger`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/L1/messaging/L1CrossDomainMessenger.sol)
+contract, which then sends a call to the [`CanonicalTransactionChain`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/L1/rollup/CanonicalTransactionChain.sol).
+This cost is ultimately determined by gas prices on Ethereum when you're sending the cross-chain transaction.
+
+An L1 to L2 message can trigger contract execution on L2.
+The gas limit for that transaction is provided as part of the message.
+If the gas limit is below a certain "free L2 gas" amount (1.92 million at the time of writing), the L2 gas is free.
+If you need to provide more than this amount of gas, the `CanonicalTransactionChain` will burn some amount of L1 gas in proportion to the amount of requested L2 gas (currently 1 unit of L1 gas for every 32 units of L2 gas).
+This gas burn mechanism acts as a way to rate-limit L1 to L2 transactions and prevent certain classes of denial-of-service attacks on Optimism.
+
+### Fees for L2 ⇒ L1 transactions
+
+Each message from L2 to L1 requires two transactions:
+
+1. An L2 transaction that *initiates* the transaction, which is priced the same as any other transaction made on Optimism.
+1. An L1 transaction that *finalizes* the transaction. This transaction can only be submitted after the transaction challenge period (7 days on mainnet) has passed. This transaction is expensive because it includes verifying a [Merkle trie](https://eth.wiki/fundamentals/patricia-tree) inclusion proof.
+
+The total cost of an L2 to L1 transaction is therefore the combined cost of the L2 initialization transaction and the L1 finalization transaction.
+The L1 finalization transaction is typically significantly more expensive than the L2 initialization transaction.
+
 ## Understanding the challenge period
 
 One of the most important things to understand about L1 ⇔ L2 interaction is that **messages sent from Layer 2 to Layer 1 cannot be relayed for at least one week**.
 This means that any messages you send from Layer 2 will only be received on Layer 1 after this one week period has elapsed.
-We call this period of time the "challenge period" because it's a result of one of the core security mechanisms of the Optimistic Rollup: the transaction result challenge.
+We call this period of time the "challenge period" because it is the time during which a transaction can be challenged with a [fault proof](../../protocol/fault-proofs.md).
 
 Optimistic Rollups are "optimistic" because they're based around the idea of publishing the *result* of a transaction to Ethereum without actually executing the transaction on Ethereum.
 In the "optimistic" case, this transaction result is correct and we can completely avoid the need to perform complicated (and expensive) logic on Ethereum.
 Cheap transactions, yay!
 
 However, we still need some way to prevent incorrect transaction results from being published in place of correct ones.
-Here's where the "transaction result challenge" comes into play.
+Here's where the "fault proof" comes into play.
 Whenever a transaction result is published, it's considered "pending" for a period of time known as the challenge period.
 During this period of time, anyone may re-execute the transaction *on Ethereum* in an attempt to demonstrate that the published result was incorrect.
 
-If someone succesfully executes this challenge, then the result is scrubbed from existence and anyone can publish another result in its place (hopefully the correct one this time, financial punishments make incorrect results *very* costly for their publishers).
+If someone is able prove that a transaction result is faulty, then the result is scrubbed from existence and anyone can publish another result in its place (hopefully the correct one this time, financial punishments make faulty results *very* costly for their publishers).
 Once the window for a given transaction result has fully passed without a challenge the result can be considered fully valid (or else someone would've challenged it).
 
 Anyway, the point here is that **you don't want to be making decisions about Layer 2 transaction results from inside a smart contract on Layer 1 until this challenge period has elapsed**.

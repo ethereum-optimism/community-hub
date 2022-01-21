@@ -1,4 +1,5 @@
 const { description } = require('../../package')
+const path = require('path')
 
 module.exports = {
   title: 'Optimism Docs',
@@ -7,126 +8,161 @@ module.exports = {
   head: [
     ['meta', { name: 'theme-color', content: '#3eaf7c' }],
     ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
-    ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }]
+    ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }],
+    ['link', { rel: "icon", type: "image/png", sizes: "32x32", href: "/assets/logos/favicon.png"}],
   ],
 
+  theme: path.resolve(__dirname, './theme'),
   themeConfig: {
-    repo: 'https://github.com/ethereum-optimism/optimism',
-    repoLabel: 'github',
-    editLinks: true,
+    contributor: false,
+    hostname: 'https://community.optimism.io',
+    logo: '/assets/logos/logo.png',
     docsDir: 'src',
     docsRepo: 'https://github.com/ethereum-optimism/community-hub',
     docsBranch: 'main',
-    editLinkText: `Want to suggest a change? We'd 💖 a pull request over on GitHub`,
     lastUpdated: false,
+    darkmode: 'disable',
+    themeColor: false,
+    blog: false,
+    iconPrefix: 'far fa-',
+    pageInfo: false,
+    activeHash: {
+      offset: -200,
+    },
     algolia: {
       apiKey: '47d21d4ea72ed7cb504b1c6c0a46b5a0',
       indexName: 'optimism'
     },
     nav: [
       {
-        text: 'optimism',
-        link: 'https://www.optimism.io',
+        text: 'How Optimism Works',
+        link: '/docs/how-optimism-works/',
       },
       {
-        text: 'faqs',
-        link: 'https://optimismhelp.zendesk.com/hc/en-us/categories/4411903430427-FAQ',
+        text: 'Guides',
+        link: '/docs/guides/',
       },
       {
-        text: 'discord',
-        link: 'https://discord.optimism.io',
+        text: 'Protocol Specs',
+        link: '/docs/protocol/',
       },
+      {
+        text: 'Dev Docs',
+        link: '/docs/developers/',
+      },
+      {
+        text: 'Tools',
+        link: '/docs/useful-tools/',
+      },
+      {
+        text: 'Contribute',
+        link: '/docs/contribute/',
+      },
+      {
+        text: 'Community',
+        items: [
+          {
+            icon: 'discord',
+            iconPrefix: 'fab fa-',
+            iconClass: 'color-discord',
+            text: 'Discord',
+            link: 'https://discord.optimism.io',
+          },
+          {
+            icon: 'github',
+            iconPrefix: 'fab fa-',
+            iconClass: 'color-github',
+            text: 'GitHub',
+            link: 'https://github.com/ethereum-optimism/optimism',
+          },
+          {
+            icon: 'twitter',
+            iconPrefix: 'fab fa-',
+            iconClass: 'color-twitter',
+            text: 'Twitter',
+            link: 'https://twitter.com/optimismPBC',
+          },
+          {
+            icon: 'twitch',
+            iconPrefix: 'fab fa-',
+            iconClass: 'color-twitch',
+            text: 'Twitch',
+            link: 'https://www.twitch.tv/optimismpbc'
+          },
+          {
+            icon: 'medium',
+            iconPrefix: 'fab fa-',
+            iconClass: 'color-medium',
+            text: 'Blog',
+            link: 'https://optimismpbc.medium.com/'
+          },
+          {
+            icon: 'computer-classic',
+            iconClass: 'color-ecosystem',
+            text: 'Ecosystem',
+            link: 'https://www.optimism.io/apps/all',
+          },
+          {
+            icon: 'globe',
+            iconClass: 'color-optimism',
+            text: 'optimism.io',
+            link: 'https://www.optimism.io/',
+          }
+        ]
+      }
     ],
-    sidebar: [
+    searchPlaceholder: 'Search the docs',
+    sidebar: {
+      '/docs/guides/': [
+        '/docs/guides/wallet-dev.md',
+        '/docs/guides/cex-dev.md',
+        '/docs/guides/token-dev.md',
+        '/docs/guides/bridge-dev.md',
+        '/docs/guides/smart-contract-devs.md'
+      ],
+      '/docs/developers/': [
+        {
+          title: 'Building on Optimism',
+          // Reordered to follow the order in which I
+          // expect people will do things, followed by
+          // more advanced topics such as RPC and Block Time
+          children: [
+            '/docs/developers/build/basic-contract.md',
+            '/docs/developers/build/using-tools.md',
+            '/docs/developers/build/transaction-fees.md',
+            '/docs/developers/build/system-contracts.md',
+            '/docs/developers/build/dev-node.md',
+            '/docs/developers/build/run-a-node.md',
+            '/docs/developers/build/differences.md',
+            '/docs/developers/build/json-rpc.md'
+          ],
+        },
+        {
+          title: 'Bridging L1 and L2',
+          children: [
+            '/docs/developers/bridge/basics.md',
+            '/docs/developers/bridge/standard-bridge.md',
+            '/docs/developers/bridge/messaging.md',
+          ],
+          collapsable: true,
+        },
+        '/docs/developers/tutorials.md',
+        '/docs/developers/known-issues.md',
         [
-          // In the sidebar for now because that is where people expect it
-          'https://help.optimism.io',
-          'User Docs & Help Center'
-        ],
-        {
-          title: 'Developer Docs',
-          children: [
-            // Moved to a separate page that's linkable from the homepage
-            '/docs/developers/tutorials.md',
-            {
-              title: 'Building on Optimism',
-              // Reordered to follow the order in which I
-              // expect people will do things, followed by
-              // more advanced topics such as RPC and Block Time
-              children: [
-                '/docs/developers/l2/dev-node.md',
-                '/docs/developers/l2/new-fees.md',
-                '/docs/developers/l2/contracts-2.0.md',
-                '/docs/developers/l2/json-rpc.md',
-                '/docs/developers/l2/differences.md',
-              ],
-              collapsable: false,
-              sidebarDepth: 0,
-            },
-            {
-              title: 'Bridging L1 and L2',
-              children: [
-                // Common (standard bridge) before
-                // rare (messaging)
-                '/docs/developers/bridge/standard-bridge.md',
-                '/docs/developers/bridge/messaging.md'
-              ],
-              collapsable: false,
-              sidebarDepth: 0,
-            },
-            '/docs/developers/util.md',
-            '/docs/developers/known-issues.md',
-            '/docs/developers/contact-us.md'
-          ],
-          collapsable: false,
-          sidebarDepth: 0,
-        },
-        {
-          title: 'Infrastructure',
-          children: [
-            '/docs/infra/networks.md',
-            [
-              'https://github.com/optimisticben/op-replica/blob/main/README.md',
-              'Running a Node'
-            ],
-            [
-              'https://www.optimism.io/apps/tools',
-              'Third Party Tools'
-            ],
-            '/docs/infra/monitoring.md',
-          ],
-          collapsable: false,
-          sidebarDepth: 0,
-        },
-        {
-          title: 'Protocol Docs',
-          children: [
-            '/docs/protocol/protocol-2.0.md',
-            '/docs/protocol/sequencing.md',
-            '/docs/protocol/challenges.md',
-            '/docs/protocol/protocol-readings.md',
-            [
-              'https://github.com/ethereum-optimism/optimistic-specs',
-              'Protocol Specs'
-            ]
-          ],
-          collapsable: false,
-          sidebarDepth: 0,
-        },
-        {
-          title: 'Retroactive Public Goods Funding',
-          children: [
-            [
-              'https://medium.com/ethereum-optimism/retroactive-public-goods-funding-33c9b7d00f0c',
-              'What is RetroPGF?'
-            ],
-            '/docs/retro-pgf/rounds.md',
-            '/docs/retro-pgf/resources.md',
-          ],
-          collapsable: false,
-          sidebarDepth: 0,
-        }
-    ]
+          'https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/docs',
+          'Contracts API'
+        ]
+      ],
+      '/docs/useful-tools/': [
+        '/docs/useful-tools/networks.md',
+        '/docs/useful-tools/debugging.md',
+        '/docs/useful-tools/faucets.md',
+        '/docs/useful-tools/monitoring.md',
+        '/docs/useful-tools/explorers.md',
+        '/docs/useful-tools/providers.md',
+        ['https://www.optimism.io/apps/tools', 'Third Party Tools'],
+      ]
+    }
   },
 
   plugins: [

@@ -3,14 +3,11 @@ title: Tutorials
 lang: en-US
 ---
 
-# {{ $frontmatter.title }}
-
 ## Getting Started
 
 * [Optimism + Hardhat](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/hardhat)
 * [Optimism + Truffle](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/truffle)
 * [Optimism + Remix](https://remix-optimism-compiler-plugin.readthedocs.io/en/latest/)
-
 
 ## ERC-20 Tokens
 

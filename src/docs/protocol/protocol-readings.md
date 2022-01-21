@@ -1,12 +1,7 @@
 ---
 title: Protocol Readings
 lang: en-US
-tags:
-    - contracts
-    - high-level
 ---
-
-# {{ $frontmatter.title }}
 
 ::: tip Are we missing something? 🧐
 Want your content featured on this page?
