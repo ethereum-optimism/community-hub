@@ -155,15 +155,13 @@ Optimism is designed so that users can send arbitrary messages between smart con
 This makes it possible to transfer assets, including ERC20 tokens, between the two networks.
 The exact mechanism by which this communication differs depending on the direction in which the communication occurs.
 
+Optimism uses this functionality in the Standard bridge to allow users to deposit assets (ERC20s and ETH) from Ethereum to Optimism and on also allow withdrawals of the same from Optimism back to Ethereum. See the [developer documentation and examples](../developers/bridge/standard-bridge/) on details on the inner workings of the Standard bridge.
+
 #### Moving from Ethereum to Optimism
 
 To send messages from Ethereum from Optimism, users simply need to trigger the `CanonicalTransactionChain` contract on Ethereum to create a new block on Optimism block.
 See the above section on [block production](#block-production) for additional context.
 User-created blocks can include transactions that will appear to originate from the address that generated the block.
-
-Contracts on Ethereum can use this functionality to send assets from Ethereum to Optimism.
-For instance, Optimism maintains a contract called the [`L1StandardBridge`](https://etherscan.io/address/0x99C9fc46f92E8a1c0deC1b1747d010903E884bE1) which uses this feature to allow users to move ERC20 tokens from Ethereum to Optimism in a standardized manner.
-When making a deposit, users transfer tokens to the `L1StandardBridge` which in turn instructs the corresponding [`L2StandardBridge`](https://optimistic.etherscan.io/address/0x4200000000000000000000000000000000000010) contract to mint an equivalent number of tokens on Optimism.
 
 #### Moving from Optimism to Ethereum
 
@@ -183,9 +181,6 @@ These proofs can be used to make verifiable statements about the data within the
 This basic functionality can then be used to enable contracts on Optimism to send messages to contracts on Ethereum.
 The [`L2ToL1MessagePasser`](https://optimistic.etherscan.io/address/0x4200000000000000000000000000000000000000) contract (predeployed to the Optimism network) can be used by contracts on Optimism to store a message in the Optimism state.
 Users can then prove to contracts on Ethereum that a given contract on Optimism did, in fact, mean to send some given message by showing that the hash of this message has been stored within the `L2ToL1MessagePasser` contract.
-
-Optimism uses this functionality to allow users to withdraw ERC20 tokens back to Ethereum.
-When a user wishes to withdraw assets, the [`L2StandardBridge`](https://optimistic.etherscan.io/address/0x4200000000000000000000000000000000000010) contract will burn the assets on Optimism and send a message to the [`L1StandardBridge`](https://etherscan.io/address/0x99C9fc46f92E8a1c0deC1b1747d010903E884bE1) contract to release the corresponding asset back to the user on Ethereum.
 
 ### Fault proofs
 
