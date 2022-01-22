@@ -3,76 +3,70 @@ title: Supporting Optimism in your wallet
 lang: en-US
 ---
 
-This guide teaches you how to connect your wallet to Optimism. Overall Optimism behaves like any over EVM chain, with the exception of [transaction fees](#transaction-fees). Those are different and you have to write custom code for them.
+## Overview
 
-## Handling multiple chains
-
-There are two ways for a wallet to handle being connected to multiple chains:
-
-1. Connect to one chain at a time, the way MetaMask does it. Let the user switch chains either from your user interface, or through a dapp.
-
-   ![Metamask with the chain menu](../../assets/docs/guides/wallet-dev/chains-metamask.png)
-
-1. Connect to all chains all the time, the way Coinbase Wallet does it. Display ETH and token balances on all chains, and ask which chain to use when connecting to a dapp.
-
-   ![Coinbase Wallet shows all the chains at the same time](../../assets/docs/guides/wallet-dev/chains-coinbase.png)
-
-### Switching chains
-
-A user can add or switch into a chain using either the wallet or a dapp.To enable switching on a dapp, the wallet needs to handle these requests:
-
-- [`wallet_addEthereumChain`](https://eips.ethereum.org/EIPS/eip-3085)
-- [`wallet_switchEthereumChain`](https://eips.ethereum.org/EIPS/eip-3326)
-
+This guide is intended for wallet developers who want to give their users the ability to send transactions on the Optimism network.
+Optimism generally behaves like any other EVM-based chain with the exception of minor discrepancies related to [transaction fees](#transaction-fees).
+These fee discrepancies are an inherent result of the fact that Optimism is a Layer 2 blockchain network that must publish transaction data to Ethereum.
 
 ## Connecting to Optimism
 
-You connect to Optimism the same way you do to Ethereum, by connecting to a JSON RPC endpoint. However, the currently supported fork for Optimism is [Berlin](https://eth.wiki/roadmap/berlin), not [London](https://eth.wiki/roadmap/london), so EIP-1559 transactions are not supported yet.
+Optimism shares the [Ethereum JSON-RPC API](https://eth.wiki/json-rpc/API) with only [a few minor differences](../developers/build/json-rpc.md).
+You'll find all of the important information about each Optimism network on [our Networks page](../useful-tools/networks.md).
+You can choose to connect to Optimism via our rate-limited public endpoints, [endpoints from infrastructure providers](../useful-tools/networks.md#rpc-endpoints), or [by running your own node](../developers/build/run-a-node/).
+We highly recommend using third-party infrastructure providers or running your own node for production applications.
 
-### Endpoints
+## Canonical token addresses
 
-[Click here for the Optimism endpoints](../useful-tools/networks.md). You can choose between our public endpoints, which are rate limited, and [endpoints from infrastructure providers](../useful-tools/networks.md#rpc-endpoints).
+The ERC-20 contract address for a token on Optimism may be different from the address for the same token on Ethereum.
+Optimism maintains [a token list](https://static.optimism.io/optimism.tokenlist.json) that includes known addresses for many popular tokens.
+You can see the same list with a nicer user interface [here](https://tokenlists.org/token-list?url=https://static.optimism.io/optimism.tokenlist.json).
 
-### Token addresses
+For example, looking at the **SNX** token, the [Optimism token list](https://static.optimism.io/optimism.tokenlist.json) returns the following addresses:
 
-The ERC-20 contract address for a token on Optimism may be different from the address for the same token on Ethereum. [The list of tokens and their addresses is here](https://static.optimism.io/optimism.tokenlist.json). You can see the same list with a user interface [here](https://tokenlists.org/token-list?url=https://static.optimism.io/optimism.tokenlist.json).
-
-For example, looking at the **SNX** token, we get these addresses:
-
-| ChainID | Network | Address |
+| Chain ID | Network | Address |
 | -: | - | - |
-| 1  | Ethereum    | 0xc011a73ee8576fb46f5e1c5751ca3b9fe0af2a6f |
-| 10 | Optimism    | 0x8700daec35af8ff88c16bdf0418774cb3d7599b4
-| 42 | Kovan (test network) | 0xc011a73ee8576fb46f5e1c5751ca3b9fe0af2a6f
-| 69 | Optimistic Kovan (test network) | 0x0064A673267696049938AA47595dD0B3C2e705A1
+| 1  | Ethereum    | `0xc011a73ee8576fb46f5e1c5751ca3b9fe0af2a6f` |
+| 10 | Optimism    | `0x8700daec35af8ff88c16bdf0418774cb3d7599b4` |
+| 42 | Kovan (test network) | `0xc011a73ee8576fb46f5e1c5751ca3b9fe0af2a6f` |
+| 69 | Optimistic Kovan (test network) | `0x0064A673267696049938AA47595dD0B3C2e705A1` |
 
-To get the total SNX balance of a user that uses Optimism you need to:
+## Transaction status
 
-1. Connect to a standard Ethereum endpoint and send a `balanceOf` query to address `0xc011a73ee8576fb46f5e1c5751ca3b9fe0af2a6f`.
-1. Connect to an Optimism endpoint and send a `balanceOf` query to address `0x8700daec35af8ff88c16bdf0418774cb3d7599b4`.
+A transaction in Optimism can be in one of two states:
 
-### Transaction status
+1. **Sequencer Confirmed**: The transaction has been accepted by the sequencer on Optimism (L2)
+2. **Confirmed On-Chain**: The transaction has been written to Ethereum (L1)
 
-A transaction in Optimism can be in one of three states:
+We're still working on the tooling to easily detect when a given transaction has been published to Ethereum.
+For the moment, we recommend wallets consider transactions final after they are "Sequencer Confirmed".
+Transactions are considered "Sequencer Confirmed" as soon as their transaction receipt shows at least one confirmation.
 
-- **Sequencer Confirmed**: The transaction has been accepted by the Optimism sequencer on L2
-- **Confirmed On-Chain**: The transaction has been written to Ethereum (L1). In that case of an L2->L1 transaction, this starts the seven day period until it can be finalized
-- **Finalized On-Chain**: This status is only application for L2->L1 transactions, and means that the transaction was finalized on L1 after the seven day verification period has passed.
+## Transaction Fees
 
-For now, we recommend wallets consider transactions final after they are Sequencer confirmed as there are no reorgs on the chain and there is currently not standard tooling for tracking when transactions are confirmed on chain. We have a JS SDK coming soon that will contain standard tooling to track these three states of each transaction
+We aim to be [EVM equivalent](https://medium.com/ethereum-optimism/introducing-evm-equivalence-5c2021deb306), meaning we aim to minimize the differences between Optimism and Ethereum.
+You can see a summary of the few differences between Optimism and Ethereum [here](../developers/build/differences.md).
+One of the most important discrepancies can be found within Optimism's fee model.
+As a wallet developer, you **must** be aware of this difference.
 
-## Differences from Ethereum
+### Estimating total fees
 
-We aim to be [EVM equivalent](https://medium.com/ethereum-optimism/introducing-evm-equivalence-5c2021deb306), meaning we aim to minimize the differences between Optimism and Ethereum. You can see a summary of the few differences between Optimism and Ethereum [here](../developers/build/differences.md). These are the differences that are most relevant to wallet developers:
+Most of the cost of a transaction on Optimism comes from the cost of publishing the transaction to Ethereum.
+This publication step is what makes Optimism a Layer 2 blockchain.
+Unlike with the standard execution gas fee, users cannot specify a particular gas price or gas limit for this portion of their transaction cost.
+Instead, this fee is automatically deducted from the user's ETH balance on Optimism when the transaction is executed.
 
-### Transaction fees
+[You can read more about this subject here](../developers/build/transaction-fees.md).
+In particular, you should examine [this code sample](../developers/build/transaction-fees.md#displaying-fees-to-users) that explains how to accurately estimate the L1 portion of a transaction's fee.
+The total fee paid by a transaction will be a combination of the normal fee estimation formula (`gasPrice * gasLimit`) in addition to the estimated L1 fee.
 
-**Most of the transaction fee of an Optimism transaction is not the gas consumed by the transaction itself (which is priced at 0.001 gwei when the chain is not congested), but the transaction fee writing the transaction in Ethereum. That fee is deducted automatically from the user's ETH balance on Optimism.**
+### Displaying fees
 
-[You can read more about this subject here](../developers/build/transaction-fees.md). The relevant code sample is [here](../developers/build/transaction-fees.md#displaying-fees-to-users). Typically, 95% of the work to integrate Optimism to a wallet is to make sure that users are displayed the correct transaction fee.
+We **highly recommend** displaying fees on Optimism as one unified fee to minimize user confusion.
+You can do this by combining both portions of the fee (the L2 execution fee and the L1 data fee) into a single value presented to the end user.
 
+### Sending "max" ETH
 
-
-### JSON RPC differences
-
-[See here](../developers/build/json-rpc.md).
+Many wallets allow users to send the maximum amount of ETH available in the user's balance.
+Of course, this requires that the predicted fee for the send transaction be deducted from the ETH balance being sent.
+You **MUST** deduct both the L2 execution fee and the L1 data fee or the charged fee plus the balance sent will exceed the user's balance and the transaction will fail.
