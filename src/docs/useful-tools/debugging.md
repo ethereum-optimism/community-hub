@@ -17,4 +17,4 @@ As Optimism is [EVM Equivalent](https://medium.com/ethereum-optimism/introducing
 
 ## Know other good tools?
 
-Reach out to us in our [Discord](https://discord.com/invite/jrnFEvq) or [make a PR](https://github.com/ethereum-optimism/community-hub/pulls). We'd love your help in expanding the tools available to build Optimistically. 
+Reach out to us in our [Discord](https://discord.optimism.io) or [make a PR](https://github.com/ethereum-optimism/community-hub/pulls). We'd love your help in expanding the tools available to build Optimistically. 
