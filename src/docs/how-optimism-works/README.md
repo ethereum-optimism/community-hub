@@ -9,7 +9,7 @@ Hello!
 By the time you've finished reading this page you should have a foundational understanding of how Optimism makes Ethereum transactions cheaper and faster, the approach that Optimism is taking to scaling both Ethereum and Ethereum's values, and why Optimism is the best place to build your next Ethereum-native app.
 
 We've tried to make this guide as comprehensive as possible while still keeping the content accessible to most readers.
-Some content on this page is geared towards readers with a technical background but should still be legible to those with a basic understanding of how blockchains work.
+Some content on this page is geared towards readers with a technical background but should still be comprehensible to those with a basic understanding of how blockchains work.
 Generally speaking, we err on the side of simplicity and approachability.
 Readers interested in a low-level look into Optimism under the hood should refer to the [Protocol](../protocol/) section of this website.
 
