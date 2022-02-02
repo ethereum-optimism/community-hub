@@ -21,3 +21,13 @@ It's also got some Optimism-specific features:
 - And more! Just check it out and click around to find all of the available features.
 
 Etherscan currently provides the most advanced block explorers for all Optimism Ethereum networks.
+
+### Access to pre-regenesis history
+
+The Etherscan user interface only shows information since our final regenesis on November 11th, 2021. 
+To retrieve older transactions, run the query as you would normally, and then use the **CSV Export** tool.
+
+![CSV Export](../../assets/docs/useful-tools/explorers/etherscan_csv_export.png)
+
+
+
