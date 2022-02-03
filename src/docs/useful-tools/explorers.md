@@ -29,5 +29,5 @@ To retrieve older transactions, run the query as you would normally, and then us
 
 ![CSV Export](../../assets/docs/useful-tools/explorers/etherscan_csv_export.png)
 
-
+The **CSV Export** feature works for transaction starting at June 23rd, 2021. If you need anything older, please contact us.
 
