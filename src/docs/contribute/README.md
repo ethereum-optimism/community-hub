@@ -22,4 +22,4 @@ Following the guidelines on [Contributing](https://github.com/ethereum-optimism/
 
 ## Community contributions
 - Improving this [community site](https://community.optimism.io/) [documentation](https://github.com/ethereum-optimism/community-hub) and [tutorials](https://github.com/ethereum-optimism/optimism-tutorial).
-- Become an "Optimizer" and answer questions in the [Optimism Discord](https://discord.com/invite/jrnFEvq).
+- Become an "Optimizer" and answer questions in the [Optimism Discord](https://discord.optimism.io).
