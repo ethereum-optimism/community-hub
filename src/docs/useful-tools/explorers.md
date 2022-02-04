@@ -29,5 +29,8 @@ To retrieve older transactions, run the query as you would normally, and then us
 
 ![CSV Export](../../assets/docs/useful-tools/explorers/etherscan_csv_export.png)
 
-This CSV export feature works for transaction starting at June 23rd, 2021. If you need anything older, please contact us.
+If the Etherscan CSV file does not contain the information you need, you can use dune.xyz, similar to [this query](https://dune.xyz/queries/354886?addr=%5Cx25E1c58040f27ECF20BBd4ca83a09290326896B3), but with your own address. Note that in Dune you write addresses as **\x &lt; hex address &gt;** rather than <strong> 0x &lt; hex address &gt; </strong>.
+
+
+Both of these methods only work for transaction that happened on June 23rd, 2021 or later. If you need anything older, please contact us.
 
