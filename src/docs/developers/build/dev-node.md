@@ -95,7 +95,7 @@ Downloading images from Docker Hub is easier and more reliable, but we'll cover 
    cd ops
    export COMPOSE_DOCKER_CLI_BUILD=1
    export DOCKER_BUILDKIT=1
-   docker-compose build
+   docker-compose -f docker-compose.yml -f docker-compose.ts-batch-submitter.yml build
    ```
 
 4. Wait for the build to complete. This can take a while.
@@ -119,7 +119,7 @@ Once you're inside the `ops` directory, run one of the following two commands de
 2. If you built from source:
 
    ```sh
-   docker-compose up
+   docker-compose -f docker-compose.yml -f docker-compose.ts-batch-submitter.yml up
    ```
 
 Depending on your machine, this startup process may take some time and it can be unclear when the system is fully ready.
