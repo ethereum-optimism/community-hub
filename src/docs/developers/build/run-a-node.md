@@ -34,7 +34,7 @@ Simply follow the instructions available at [this repository](https://github.com
 ## Non-docker configuration
 
 Here are the instructions if you want to build you own replica without relying on our images.
-Note that I checked these instructions on a [GCP e2-standard-4](https://cloud.google.com/compute/docs/general-purpose-machines#e2-standard) virtual machine running [Debian 10](https://www.debian.org/News/2021/2021100902) with a 50 GB SSD drive. 
+I checked these instructions on a [GCP e2-standard-4](https://cloud.google.com/compute/docs/general-purpose-machines#e2-standard) virtual machine running [Debian 10](https://www.debian.org/News/2021/2021100902) with a 50 GB SSD drive. 
 They should work on different operating systems with minor changes, but there are no guaranrees.
 
 ### Install packages
@@ -43,7 +43,8 @@ They should work on different operating systems with minor changes, but there ar
     We need `libusb-1.0` because geth requires it to check for hardware wallets.
 
     ```sh
-    sudo apt install -y git make wget gcc pkg-config libusb-1.0
+    export DEBIAN_FRONTEND=noninteractive    
+    sudo apt install -y git make wget gcc pkg-config libusb-1.0 jq
     curl -sL https://deb.nodesource.com/setup_12.x -o nodesource_setup.sh
     sudo bash nodesource_setup.sh
     sudo apt install -y nodejs
@@ -88,6 +89,9 @@ This TypeScript program reads data from the Ethereum mainnet (layer 1) and makes
     | DATA_TRANSPORT_LAYER__NODE_ENV         | production |
     | DATA_TRANSPORT_LAYER__ETH_NETWORK_NAME | mainnet |    
     | DATA_TRANSPORT_LAYER__ADDRESS_MANAGER  | [`Lib_AddressManager` address](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/deployments/mainnet#layer-1-contracts) | 
+    
+    | DATA_TRANSPORT_LAYER__SERVER_HOSTNAME  | localhost
+    | DATA_TRANSPORT_LAYER__SERVER_PORT      | 7878
     | DATA_TRANSPORT_LAYER__SYNC_FROM_L1     | false |    
     | DATA_TRANSPORT_LAYER__L1_RPC_ENDPOINT  | Get an endpoint from [a service provider](https://ethereum.org/en/developers/docs/nodes-and-clients/nodes-as-a-service/) unless you run a node yourself |
     | DATA_TRANSPORT_LAYER__SYNC_FROM_L2     | true |
@@ -102,13 +106,25 @@ This TypeScript program reads data from the Ethereum mainnet (layer 1) and makes
     yarn start
     ```
 
+1. To verify the DTL is running correctly you can run this command:
+
+   ```sh
+   curl -s http://localhost:7878/eth/syncing?backend=l2  | jq .currentTransactionIndex
+   ```
+
+   It gives you the current transaction index, which should increase with time.
+
     The DTL now needs to download the entire transaction history since regenesis, a process that takes hours.
-    While it is running, we can get started on the client software, l2geth.
+    While it is running, we can get started on the client software.
 
 
 ### The Optimism client software
 
-The client software, called l2geth, is a minimally modified version of [`geth`](https://geth.ethereum.org/).
+The client software, called l2geth, is a minimally modified version of [`geth`](https://geth.ethereum.org/). 
+Because `geth` supports hardware wallets you might get USB errors. If you do, ignore them.
+
+These directions use `~/gethData` as the data directory. 
+You can replace it with you own directory as long as you are consistent.
 
 1. To compile l2geth, open a separate command line window and run:
 
@@ -117,18 +133,29 @@ The client software, called l2geth, is a minimally modified version of [`geth`](
     make geth
     ```
 
-1. Next, initialize l2geth with the genesis state, the state of the Optimism blockchain during the last regenesis, 11 November 2021. 
-   This process takes about eight minutes.
+1. Download and verify the genesis state, the state of the Optimism blockchain during the last regenesis, 11 November 2021. 
+
+   ```sh
+   wget -O /tmp/genesis.json https://storage.googleapis.com/optimism/mainnet/genesis-v0.5.0.json
+   sha256sum /tmp/genesis.json
+   ```
+
+   The output of the `sha256sum` command should be:
+   ```
+   361ff81fff4cc71e5f0bf43b0b982f5cfd08d068f730b9a61516fe1fa8fd914a  /tmp/genesis.json
+   ```
+
+1. Initialize l2geth with the genesis state.
+   This process takes about nine minutes.
 
     ```sh
     mkdir ~/gethData
-    wget -O /tmp/genesis.json https://storage.googleapis.com/optimism/mainnet/genesis-v0.5.0.json
     ./build/bin/geth init --datadir=~/gethData /tmp/genesis.json --nousb
     ```
 
 1. Specify the configuration in environment variables. 
     It is a good idea to write a script for this.
-    Remember to run the script using `. &lt; script name &gt; .sh` so it won't run in a separate shell, update the environment for that shell, and then exit from it.
+    Remember to run the script using `. <script name>` so it won't run in a separate shell, update the environment for that shell, and then exit from it.
 
     ```sh
     export CHAIN_ID=10
@@ -140,14 +167,8 @@ The client software, called l2geth, is a minimally modified version of [`geth`](
     export GCMODE=archive
     export BLOCK_SIGNER_ADDRESS=0x00000398232E2064F896018496b4b44b3D62751F
     export BLOCK_SIGNER_PRIVATE_KEY=6587ae678cf4fc9a33000cdbf9f35226b71dcc6a4684a31203241f9bcfd55d27
-    export BLOCK_SIGNER_PRIVATE_KEY_PASSWORD=pwd
     export ETH1_CTC_DEPLOYMENT_HEIGHT=13596466
-    export ETH1_L1_FEE_WALLET_ADDRESS=0x391716d440c151c42cdf1c95c1d83a5427bca52c
-    export ETH1_L1_CROSS_DOMAIN_MESSENGER_ADDRESS=0x25ace71c97B33Cc4729CF772ae268934F7ab5fA1
-    export ETH1_L1_STANDARD_BRIDGE_ADDRESS=0x99C9fc46f92E8a1c0deC1b1747d010903E884bE1
     export ETH1_SYNC_SERVICE_ENABLE=true
-    export L2GETH_GENESIS_URL=https://storage.googleapis.com/optimism/mainnet/genesis-v0.5.0.json
-    export L2GETH_GENESIS_URL_SHA256SUM=361ff81fff4cc71e5f0bf43b0b982f5cfd08d068f730b9a61516fe1fa8fd914a
     export ROLLUP_ADDRESS_MANAGER_OWNER_ADDRESS=0x9BA6e03D8B90dE867373Db8cF1A58d2F7F006b3A
     export ROLLUP_BACKEND=l2
     export ROLLUP_CLIENT_HTTP=http://localhost:7878
@@ -186,11 +207,29 @@ The client software, called l2geth, is a minimally modified version of [`geth`](
 
     ```sh
     build/bin/geth \
-    --datadir=$DATADIR \
-    --password=$DATADIR/password \
-    --allow-insecure-unlock \
-    --unlock=$BLOCK_SIGNER_ADDRESS \
-    --mine \
-    --miner.etherbase=$BLOCK_SIGNER_ADDRESS
+       --datadir=$DATADIR \
+       --password=$DATADIR/password \
+       --allow-insecure-unlock \
+       --unlock=$BLOCK_SIGNER_ADDRESS \
+       --mine \
+       --miner.etherbase=$BLOCK_SIGNER_ADDRESS
     ```
 
+1. To check if l2geth is running correctly, open another command line window and run these commands:
+
+   ```sh
+   cd ~/optimism/l2geth
+   build/bin/geth --datadir=~/gethData attach
+   eth.blockNumber
+   ```
+
+   Wait a few seconds and then look at the blocknumber again and exit:
+
+   ```sh
+   eth.blockNumber
+   exit
+   ```
+ 
+   If l2geth is synchronizing, the second block number is higher than the first.
+
+1. Wait a few hours until the entire history is downloaded by dtl and then propagated to l2geth.
