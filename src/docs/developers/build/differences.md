@@ -79,9 +79,9 @@ As a result, user balances will always be zero inside the state trie and the use
 
 ## Address Aliasing
 
-Because of the behavior of the `CREATE` opcode, it's possible for a user to create a contract on L1 and L2 that share the same address but have different bytecode.
-We need to be able to distinguish between these two contracts.
-As a result, the behavior of the `ORIGIN` and `CALLER` opcodes (`tx.origin` and `msg.sender`) differs slightly between L1 and L2.
+Because of the behavior of the `CREATE` opcode, it is possible for a user to create a contract on L1 and on L2 that share the same address but have different bytecode.
+This is a potential problem [as explained below](#why-is-address-aliasing-an-issue). 
+To prevent this problem the behavior of the `ORIGIN` and `CALLER` opcodes (`tx.origin` and `msg.sender`) differs slightly between L1 and L2.
 
 The value of `tx.origin` is determined as follows:
 
@@ -93,7 +93,18 @@ The value of `tx.origin` is determined as follows:
 The value of `msg.sender` at the top-level (the very first contract being called) is always equal to `tx.origin`.
 Therefore, if the value of `tx.origin` is impacted by the rules defined above, the top-level value of `msg.sender` will also be impacted.
 
-## JSON-RPC Differences
+### Why is address aliasing an issue?
+
+The problem with two identical source addresses (the L1 contract and the L2 contract) is that one of them can be trusted, and the other abusive. 
+For example, a hacker can fork [Uniswap](https://uniswap.org/) to create their own exchange (on L2), and provide it with liquidity that appears to provide profitable arbitrage opportunities (for example, spend 1 [DAI](https://www.coindesk.com/price/dai/) to buy 1.1 [USDT](https://www.coindesk.com/price/tether/) - both of those coins are supposed to be worth exactly $1). 
+A semi-naive user will verify that the contracts are identical to those used by Uniswap and, being satisfied, give the contract an allowance of 1000 DAI in the hope of receiving nearly 1100 USDT back (it depends on how much liquidity is in the DAI-USDT pool).
+
+However, if the hacker could then have a contract on L1 appear to be the same address to the DAI ERC-20 contract, the hacker could send a message from that L1 contract to transfer the DAI elsewhere. 
+The user never checked the L1 chain, because that isn't where the transaction takes place - so it can have a contract that the hacker could trigger to abuse the allowance.
+The way Optimism actually works, even though the L1 contract has the same address, the address still appears different when it sends a message to L2, so it cannot abuse rights that were given to the L2 contract in that address.
+
+
+## JSON-RPC differences
 
 Optimism uses the same [JSON-RPC API](https://eth.wiki/json-rpc/API) as Ethereum.
 Some additional Optimism specific methods have been introduced.
