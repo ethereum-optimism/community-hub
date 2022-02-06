@@ -14,7 +14,7 @@ Here we'll go over the process of running a testnet or mainnet Optimism node for
 
 Replicas need to store the transaction history of Optimism and to run Geth. 
 They need to be relatively powerful machines (real or virtual). 
-We recommend at least 16 GB RAM, and an SSD drive with at least 30 GB free.
+We recommend at least 16 GB RAM, and an SSD drive with at least 100 GB free.
 
 ## Docker configuration
 
@@ -88,8 +88,7 @@ This TypeScript program reads data from the Ethereum mainnet (layer 1) and makes
     | --------- | ----- |
     | DATA_TRANSPORT_LAYER__NODE_ENV         | production |
     | DATA_TRANSPORT_LAYER__ETH_NETWORK_NAME | mainnet |    
-    | DATA_TRANSPORT_LAYER__ADDRESS_MANAGER  | [`Lib_AddressManager` address](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/deployments/mainnet#layer-1-contracts) | 
-    
+    | DATA_TRANSPORT_LAYER__ADDRESS_MANAGER  | [`Lib_AddressManager` address](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/deployments/mainnet#layer-1-contracts) |     
     | DATA_TRANSPORT_LAYER__SERVER_HOSTNAME  | localhost
     | DATA_TRANSPORT_LAYER__SERVER_PORT      | 7878
     | DATA_TRANSPORT_LAYER__SYNC_FROM_L1     | false |    
@@ -146,16 +145,14 @@ You can replace it with you own directory as long as you are consistent.
    ```
 
 1. Initialize l2geth with the genesis state.
-   This process takes about nine minutes.
+   This process takes about nine minutes on my system.
 
     ```sh
     mkdir ~/gethData
     ./build/bin/geth init --datadir=~/gethData /tmp/genesis.json --nousb
     ```
 
-1. Specify the configuration in environment variables. 
-    It is a good idea to write a script for this.
-    Remember to run the script using `. <script name>` so it won't run in a separate shell, update the environment for that shell, and then exit from it.
+1. Create a file called `env.sh` with this content:
 
     ```sh
     export CHAIN_ID=10
@@ -193,6 +190,15 @@ You can replace it with you own directory as long as you are consistent.
     export WS_ORIGINS=*
     export WS=true
     ```
+
+1. Run the new file. 
+   This syntax (`. <name of script>`) runs the script in the context of the current shell, rather than in a new shell.
+   The reason for doing this is that we want to modify the current shell's environment variables, not start a new shell, set up the environment in it, and then exit.
+
+   ```sh
+   . env.sh
+   ```
+
 
 1. Create the geth account. 
    The private key needs to be the one specified in the configuration, otherwise the consensus algorithm fails and the node does not synchronize.
@@ -233,3 +239,4 @@ You can replace it with you own directory as long as you are consistent.
    If l2geth is synchronizing, the second block number is higher than the first.
 
 1. Wait a few hours until the entire history is downloaded by dtl and then propagated to l2geth.
+   On my system it took <n> hours to synchronize
