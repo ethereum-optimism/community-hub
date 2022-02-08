@@ -67,7 +67,7 @@ They should work on different operating systems with minor changes, but there ar
     ```
 
 
-### The data transfer layer (DTL)
+### The Data Transport Layer (DTL)
 
 This TypeScript program reads data from the Ethereum mainnet (layer 1) and makes it available for l2geth (layer 2). 
 
