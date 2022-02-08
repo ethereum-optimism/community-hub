@@ -34,7 +34,7 @@ Simply follow the instructions available at [this repository](https://github.com
 ## Non-docker configuration
 
 Here are the instructions if you want to build you own replica without relying on our images.
-I checked these instructions on a [GCP e2-standard-4](https://cloud.google.com/compute/docs/general-purpose-machines#e2-standard) virtual machine running [Debian 10](https://www.debian.org/News/2021/2021100902) with a 100 GB SSD drive. 
+These instructions were generated with a [GCP e2-standard-4](https://cloud.google.com/compute/docs/general-purpose-machines#e2-standard) virtual machine running [Debian 10](https://www.debian.org/News/2021/2021100902) with a 100 GB SSD drive. 
 They should work on different operating systems with minor changes, but there are no guaranrees.
 
 ### Install packages
@@ -63,7 +63,7 @@ They should work on different operating systems with minor changes, but there ar
     ```    
 
 1. Install [the Go programming language](https://go.dev/doc/install).
-   The instructions are written using Go version 1.17.6
+   These instructions were written using Go version 1.17.6
 
 
 <!--
