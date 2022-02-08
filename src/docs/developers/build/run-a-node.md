@@ -69,7 +69,7 @@ They should work on different operating systems with minor changes, but there ar
 
 ### The Data Transport Layer (DTL)
 
-This TypeScript program reads data from the Ethereum mainnet (layer 1) and makes it available for l2geth (layer 2). 
+This TypeScript program reads data from the Ethereum mainnet (layer 1) and passes it over to Optimism (layer 2). 
 
 1. Download [the source code](https://github.com/ethereum-optimism/optimism) and [the yarn tool](https://www.npmjs.com/package/yarn). 
     Then, compile the DTL:
