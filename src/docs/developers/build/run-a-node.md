@@ -47,15 +47,26 @@ They should work on different operating systems with minor changes, but there ar
     ```
 
 1. Install [the node.js package](https://nodejs.org/).
+   These instructions were written using the 12.x version.
+
+<!--
     ```sh
     curl -sL https://deb.nodesource.com/setup_12.x -o nodesource_setup.sh
     sudo bash nodesource_setup.sh
     sudo apt install -y nodejs
     ```
+-->
 
-1. We also need the Go programming language.
-    [See here for detailed installation instructions](https://go.dev/doc/install).
+1. Install [yarn](https://classic.yarnpkg.com/): 
+   ```sh
+    sudo npm install -g yarn 
+    ```    
 
+1. Install [the Go programming language](https://go.dev/doc/install).
+   The instructions are written using Go version 1.17.6
+
+
+<!--
     ```sh
     wget https://go.dev/dl/go1.17.6.linux-amd64.tar.gz
     sudo tar -C /usr/local -xzf go1.17.6.linux-amd64.tar.gz
@@ -65,7 +76,7 @@ They should work on different operating systems with minor changes, but there ar
     . /etc/profile
     . ~/.profile
     ```
-
+--->
 
 ### The Data Transport Layer (DTL)
 
@@ -75,8 +86,7 @@ This TypeScript program reads data from the Ethereum mainnet (layer 1) and passe
     Then, compile the DTL:
 
     ```sh
-    git clone -b master https://github.com/ethereum-optimism/optimism.git
-    sudo npm install -g yarn      
+    git clone -b master https://github.com/ethereum-optimism/optimism.git     
     cd optimism
     yarn
     yarn build
