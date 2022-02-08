@@ -34,7 +34,7 @@ Simply follow the instructions available at [this repository](https://github.com
 ## Non-docker configuration
 
 Here are the instructions if you want to build you own replica without relying on our images.
-I checked these instructions on a [GCP e2-standard-4](https://cloud.google.com/compute/docs/general-purpose-machines#e2-standard) virtual machine running [Debian 10](https://www.debian.org/News/2021/2021100902) with a 50 GB SSD drive. 
+I checked these instructions on a [GCP e2-standard-4](https://cloud.google.com/compute/docs/general-purpose-machines#e2-standard) virtual machine running [Debian 10](https://www.debian.org/News/2021/2021100902) with a 100 GB SSD drive. 
 They should work on different operating systems with minor changes, but there are no guaranrees.
 
 ### Install packages
@@ -43,12 +43,14 @@ They should work on different operating systems with minor changes, but there ar
     We need `libusb-1.0` because geth requires it to check for hardware wallets.
 
     ```sh
-    export DEBIAN_FRONTEND=noninteractive    
     sudo apt install -y git make wget gcc pkg-config libusb-1.0 jq
+    ```
+
+1. Install [the node.js package](https://nodejs.org/).
+    ```sh
     curl -sL https://deb.nodesource.com/setup_12.x -o nodesource_setup.sh
     sudo bash nodesource_setup.sh
     sudo apt install -y nodejs
-    sudo npm install -g yarn  
     ```
 
 1. We also need the Go programming language.
@@ -69,10 +71,12 @@ They should work on different operating systems with minor changes, but there ar
 
 This TypeScript program reads data from the Ethereum mainnet (layer 1) and makes it available for l2geth (layer 2). 
 
-1. Download the source code and compile the DTL:
+1. Download [the source code](https://github.com/ethereum-optimism/optimism) and [the yarn tool](https://www.npmjs.com/package/yarn). 
+    Then, compile the DTL:
 
     ```sh
     git clone -b master https://github.com/ethereum-optimism/optimism.git
+    sudo npm install -g yarn      
     cd optimism
     yarn
     yarn build
@@ -88,7 +92,7 @@ This TypeScript program reads data from the Ethereum mainnet (layer 1) and makes
     | --------- | ----- |
     | DATA_TRANSPORT_LAYER__NODE_ENV         | production |
     | DATA_TRANSPORT_LAYER__ETH_NETWORK_NAME | mainnet |    
-    | DATA_TRANSPORT_LAYER__ADDRESS_MANAGER  | [`Lib_AddressManager` address](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/deployments/mainnet#layer-1-contracts) |     
+    | DATA_TRANSPORT_LAYER__ADDRESS_MANAGER  | 0xdE1FCfB0851916CA5101820A69b13a4E276bd81F 
     | DATA_TRANSPORT_LAYER__SERVER_HOSTNAME  | localhost
     | DATA_TRANSPORT_LAYER__SERVER_PORT      | 7878
     | DATA_TRANSPORT_LAYER__SYNC_FROM_L1     | false |    
@@ -99,11 +103,13 @@ This TypeScript program reads data from the Ethereum mainnet (layer 1) and makes
 
 
 
-1. Start the DTL:
+1. Start the DTL (as a daemon, logging to `/tmp/dtl.log`):
 
     ```sh
-    yarn start
+    nohup yarn start > /tmp/dtl.log &
     ```
+
+    Note that you cannot just close the window if you want DTL to continue running, you have to exit the shell gracefully.
 
 1. To verify the DTL is running correctly you can run this command:
 
@@ -125,10 +131,11 @@ Because `geth` supports hardware wallets you might get USB errors. If you do, ig
 These directions use `~/gethData` as the data directory. 
 You can replace it with you own directory as long as you are consistent.
 
-1. To compile l2geth, open a separate command line window and run:
+1. To compile l2geth, run:
 
     ```sh
     cd ~/optimism/l2geth
+    git checkout  @eth-optimism/l2geth@0.5.8
     make geth
     ```
 
@@ -209,23 +216,23 @@ You can replace it with you own directory as long as you are consistent.
     ./build/bin/geth account import --datadir=$DATADIR --password $DATADIR/password $DATADIR/block-signer-key
     ```
 
-1. Start geth. 
+1. Start geth (logging to `/tmp/geth.log`). 
 
     ```sh
-    build/bin/geth \
+    nohup build/bin/geth \
        --datadir=$DATADIR \
        --password=$DATADIR/password \
        --allow-insecure-unlock \
        --unlock=$BLOCK_SIGNER_ADDRESS \
        --mine \
-       --miner.etherbase=$BLOCK_SIGNER_ADDRESS
+       --miner.etherbase=$BLOCK_SIGNER_ADDRESS > /tmp/geth.log &
     ```
 
 1. To check if l2geth is running correctly, open another command line window and run these commands:
 
    ```sh
    cd ~/optimism/l2geth
-   build/bin/geth --datadir=~/gethData attach
+   build/bin/geth attach --datadir=~/gethData 
    eth.blockNumber
    ```
 
@@ -239,4 +246,5 @@ You can replace it with you own directory as long as you are consistent.
    If l2geth is synchronizing, the second block number is higher than the first.
 
 1. Wait a few hours until the entire history is downloaded by dtl and then propagated to l2geth.
-   On my system it took <n> hours to synchronize
+   On my system it took 2.3 hours for the DTL to download the entire Optimism chain (1.6 GB), 
+   and about 10 hours for l2geth to process everything.
