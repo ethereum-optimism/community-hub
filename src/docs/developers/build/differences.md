@@ -68,6 +68,19 @@ contract MyContract {
 }
 ```
 
+## Gas costs
+
+Currently the gas costs for storage access are different between Optimism and L1. 
+However, we pushing a hardfork update that will fix that. 
+The update is effective February 9th on the Kovan test network, and unless we detect a problem it becomes effective on February 22nd on the production network.
+
+The hardfork will include:
+
+- [EIP 2929](https://eips.ethereum.org/EIPS/eip-2929), which increases the cost of first access to an address or a data storage cell.
+- [EIP 2565](https://eips.ethereum.org/EIPS/eip-2565), which increases the cost to call the ModExp precompile at address 5.
+- [EIP 3529](https://eips.ethereum.org/EIPS/eip-3529), which reduces refunds from freeing memory.
+
+
 ## Using ETH in Contracts
 
 As of the OVM 2.0 update (Nov. 2021), **the process of using ETH on L2 is identical to the process of using ETH in Ethereum.**
