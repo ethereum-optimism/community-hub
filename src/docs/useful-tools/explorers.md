@@ -29,10 +29,31 @@ To retrieve older transactions, run the query as you would normally, and then us
 
 ![CSV Export](../../assets/docs/useful-tools/explorers/etherscan_csv_export.png)
 
-If the Etherscan CSV file does not contain the information you need, you can use dune.xyz, similar to [this query](https://dune.xyz/queries/354886?addr=%5Cx25E1c58040f27ECF20BBd4ca83a09290326896B3), but with your own address. Note that in Dune you write addresses as **\x &lt; hex address &gt;** rather than <strong> 0x &lt; hex address &gt; 
-</strong>.
-Also, you have to have a Dune Analytics account and be logged on to it for the query to work, but their free tier is sufficient.
+#### Dune (in case you need fields missing from the CSV)
 
+If the Etherscan CSV file does not contain the information you need, you can use [dune.xyz](https://dune.xyz):
+
+
+1. Log on to a Dune Analytics account (their free tier is sufficient).
+
+1. Select the data source **4. Optimism (OVM 1.0)**.
+
+   ![Data source](../../assets/docs/useful-tools/explorers/dune-data-src.png)
+
+1. Run a query similar to [this one](https://dune.xyz/queries/354886?addr=%5Cx25E1c58040f27ECF20BBd4ca83a09290326896B3) 
+
+   ```sql
+   SELECT * FROM optimism.transactions 
+      WHERE "from"='{{addr}}' or "to"='{{addr}}' 
+      LIMIT 5
+   ```
+
+   ::: v-pre
+
+   Parameter values, such as `{{addr}}`, allows the user to choose a value without editing the query itself. 
+   Note that in Dune you write addresses as **\x &lt; hex address &gt;** rather than <strong> 0x &lt; hex address &gt; </strong> .
+
+### Even older history
 
 Both of these methods only work for transaction that happened on June 23rd, 2021 or later. If you need anything older, please contact us.
 
