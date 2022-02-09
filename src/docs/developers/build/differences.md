@@ -85,10 +85,22 @@ To prevent this problem the behavior of the `ORIGIN` and `CALLER` opcodes (`tx.o
 
 The value of `tx.origin` is determined as follows:
 
+
+| Call source                        | `tx.origin`                                |
+| ---------------------------------- | ------------------------------------------ | 
+| L2 user (Externally Owned Account) | The user's address (same as in Ethereum)   |
+| L1 user (Externally Owned Account) | The user's address (same as in Ethereum)   |
+| L1 contract (using `CanonicalTransactionChain.enqueue`) | `L1_contract_address + 0x1111000000000000000000000000000000001111` |
+
+
+<!--
+
 - If the transaction is a standard L2 transaction (sent via the Sequencer), then `tx.origin` is the real transaction origin and there is no difference in behavior from Ethereum.
 - If the transaction is an L1 ⇒ L2 transaction (sent via the `CanonicalTransactionChain.enqueue` function), then:
    - If the `enqueue` function was triggered by an Externally Owned Account, `tx.origin` is set to the address of the Externally Owned Account. There is also no difference in the behavior of `tx.origin` in this case.
    - **If the `enqueue` function was triggered by a Contract Account, `tx.origin` is set to `contract_account_address + 0x1111000000000000000000000000000000001111`.**
+
+-->
 
 The value of `msg.sender` at the top-level (the very first contract being called) is always equal to `tx.origin`.
 Therefore, if the value of `tx.origin` is impacted by the rules defined above, the top-level value of `msg.sender` will also be impacted.
@@ -108,7 +120,7 @@ It is possible that we will want to trust one of the contracts, but not the othe
    However, he checks the Hackswap contract's bytecode and verifies it is 100% identical to Uniswap.
    He decides this means the contract can be trusted to behave exactly as Uniswap does.
 
-   Note: There are actually multiple contracts in Uniswap, so this explanation is a bit simplified.
+   **Note:** There are actually multiple contracts in Uniswap, so this explanation is a bit simplified.
    [See here if you want additional details](https://ethereum.org/en/developers/tutorials/uniswap-v2-annotated-code/).
 
 1. Nimrod gives the Hackswap contract an allowance of 1000 DAI.
@@ -117,9 +129,11 @@ It is possible that we will want to trust one of the contracts, but not the othe
 1. Before Nimrod's transaction reaches the blockchain, a different transaction reaches it from the bridge, one from an L1 contract on the same address as Hackswap.
    This transaction transfers 1000 DAI from Nimrod's address to Helena Hacker's address.
    If this transaction were to come from the same address as Hackswap on L2, it would be able to transfer the 1000 DAI because of the allowance Nimrod *had* to give Hackswap in the previous step to swap tokens.
-   However, because Optimism modified the transaction's `tx.origin` to `contract_account_address + 0x1111000000000000000000000000000000001111`, the transaction comes from a *different* address, one that does not have the allowance.
+   However, because Optimism modified the transaction's `tx.origin` (which is also the initial `msg.sender`), the transaction comes from a *different* address, one that does not have the allowance.
 
-   While it is simple to create two different contracts on the same address in different chains, it is nearly impossible to create two that are different by a specific amount.
+   It is simple to create two different contracts on the same address in different chains. 
+   But it is nearly impossible to create two that are different by a specified amount.
+
 
 
 ## JSON-RPC differences
