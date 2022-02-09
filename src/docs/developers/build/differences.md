@@ -95,13 +95,31 @@ Therefore, if the value of `tx.origin` is impacted by the rules defined above, t
 
 ### Why is address aliasing an issue?
 
-The problem with two identical source addresses (the L1 contract and the L2 contract) is that one of them can be trusted, and the other abusive. 
-For example, a hacker can fork [Uniswap](https://uniswap.org/) to create their own exchange (on L2), and provide it with liquidity that appears to provide profitable arbitrage opportunities (for example, spend 1 [DAI](https://www.coindesk.com/price/dai/) to buy 1.1 [USDT](https://www.coindesk.com/price/tether/) - both of those coins are supposed to be worth exactly $1). 
-A semi-naive user will verify that the contracts are identical to those used by Uniswap and, being satisfied, give the contract an allowance of 1000 DAI in the hope of receiving nearly 1100 USDT back (it depends on how much liquidity is in the DAI-USDT pool).
+The problem with two identical source addresses (the L1 contract and the L2 contract) is that we extend trust based on the address.
+It is possible that we will want to trust one of the contracts, but not the other.
 
-However, if the hacker could then have a contract on L1 appear to be the same address to the DAI ERC-20 contract, the hacker could send a message from that L1 contract to transfer the DAI elsewhere. 
-The user never checked the L1 chain, because that isn't where the transaction takes place - so it can have a contract that the hacker could trigger to abuse the allowance.
-The way Optimism actually works, even though the L1 contract has the same address, the address still appears different when it sends a message to L2, so it cannot abuse rights that were given to the L2 contract in that address.
+1. Helena Hacker forks [Uniswap](https://uniswap.org/) to create her own exchange (on L2), called Hackswap.
+
+1. Helena Hacker provides Hackswap with liquidity that appears to provide profitable arbitrage opportunities.
+   For example, she can make it so that you can spend 1 [DAI](https://www.coindesk.com/price/dai/)to buy 1.1 [USDT](https://www.coindesk.com/price/tether/).
+   Both of those coins are supposed to be worth exactly $1. 
+
+1. Nimrod Naive knows that if something looks too good to be true it probably is.
+   However, he checks the Hackswap contract's bytecode and verifies it is 100% identical to Uniswap.
+   He decides this means the contract can be trusted to behave exactly as Uniswap does.
+
+   Note: There are actually multiple contracts in Uniswap, so this explanation is a bit simplified.
+   [See here if you want additional details](https://ethereum.org/en/developers/tutorials/uniswap-v2-annotated-code/).
+
+1. Nimrod gives the Hackswap contract an allowance of 1000 DAI.
+   Nimrod expects to call the swap function on Hackswap and receive back nearly 1100 USDT.
+
+1. Before Nimrod's transaction reaches the blockchain, a different transaction reaches it from the bridge, one from an L1 contract on the same address as Hackswap.
+   This transaction transfers 1000 DAI from Nimrod's address to Helena Hacker's address.
+   If this transaction were to come from the same address as Hackswap on L2, it would be able to transfer the 1000 DAI because of the allowance Nimrod *had* to give Hackswap in the previous step to swap tokens.
+   However, because Optimism modified the transaction's `tx.origin` to `contract_account_address + 0x1111000000000000000000000000000000001111`, the transaction comes from a *different* address, one that does not have the allowance.
+
+   While it is simple to create two different contracts on the same address in different chains, it is nearly impossible to create two that are different by a specific amount.
 
 
 ## JSON-RPC differences
