@@ -49,14 +49,6 @@ They should work on different operating systems with minor changes, but there ar
 1. Install [the node.js package](https://nodejs.org/).
    These instructions were written using the 12.x version.
 
-<!--
-    ```sh
-    curl -sL https://deb.nodesource.com/setup_12.x -o nodesource_setup.sh
-    sudo bash nodesource_setup.sh
-    sudo apt install -y nodejs
-    ```
--->
-
 1. Install [yarn](https://classic.yarnpkg.com/): 
    ```sh
     sudo npm install -g yarn 
@@ -67,6 +59,12 @@ They should work on different operating systems with minor changes, but there ar
 
 
 <!--
+    ```sh
+    curl -sL https://deb.nodesource.com/setup_12.x -o nodesource_setup.sh
+    sudo bash nodesource_setup.sh
+    sudo apt install -y nodejs
+    ```
+
     ```sh
     wget https://go.dev/dl/go1.17.6.linux-amd64.tar.gz
     sudo tar -C /usr/local -xzf go1.17.6.linux-amd64.tar.gz
@@ -80,9 +78,9 @@ They should work on different operating systems with minor changes, but there ar
 
 ### The Data Transport Layer (DTL)
 
-This TypeScript program reads data from the Ethereum mainnet (layer 1) and passes it over to Optimism (layer 2). 
+This TypeScript program reads data from an Optimism endpoint and passes it over to the local instance of l2geth ([geth](https://geth.ethereum.org/) with minor changes for layer 2 support).
 
-1. Download [the source code](https://github.com/ethereum-optimism/optimism) and [the yarn tool](https://www.npmjs.com/package/yarn). 
+1. Download [the source code](https://github.com/ethereum-optimism/optimism).
     Then, compile the DTL:
 
     ```sh
@@ -109,14 +107,14 @@ This TypeScript program reads data from the Ethereum mainnet (layer 1) and passe
     | DATA_TRANSPORT_LAYER__L1_RPC_ENDPOINT  | Get an endpoint from [a service provider](https://ethereum.org/en/developers/docs/nodes-and-clients/nodes-as-a-service/) unless you run a node yourself |
     | DATA_TRANSPORT_LAYER__SYNC_FROM_L2     | true |
     | DATA_TRANSPORT_LAYER__L2_RPC_ENDPOINT  | [See here](../../useful-tools/networks/) |
-    | DATA_TRANSPORT_LAYER__L2_CHAIN_ID      | 10 (for mainnet) |
+    | DATA_TRANSPORT_LAYER__L2_CHAIN_ID      | 10 (for a mainnet replica) |
 
 
 
-1. Start the DTL (as a daemon, logging to `/tmp/dtl.log`):
+1. Start the DTL (as a daemon, logging to `~/dtl.log`):
 
     ```sh
-    nohup yarn start > /tmp/dtl.log &
+    nohup yarn start > ~/dtl.log &
     ```
 
     Note that you cannot just close the window if you want DTL to continue running, you have to exit the shell gracefully.
@@ -128,10 +126,24 @@ This TypeScript program reads data from the Ethereum mainnet (layer 1) and passe
    ```
 
    It gives you the current transaction index, which should increase with time.
+   
+1. For debugging purposes, it is sometimes useful to get a transaction's information from the DTL:
 
-    The DTL now needs to download the entire transaction history since regenesis, a process that takes hours.
-    While it is running, we can get started on the client software.
+   ```
+   curl -s http://localhost:7878/transaction/index/<transaction number>?backend=l2 | jq .transaction
+   ```
 
+   Note that the transaction indexes are one below the number on etherscan, so for example
+
+   ```
+   curl -s http://localhost:7878/transaction/index/31337?backend=l2 | jq .transaction
+   ```
+
+   Corresponds to [Etherscan transaction 31338](https://optimistic.etherscan.io/tx/31338).
+
+
+The DTL now needs to download the entire transaction history since regenesis, a process that takes hours.
+While it is running, we can get started on the client software.
 
 ### The Optimism client software
 
@@ -145,11 +157,10 @@ You can replace it with you own directory as long as you are consistent.
 
     ```sh
     cd ~/optimism/l2geth
-    git checkout  @eth-optimism/l2geth@0.5.8
     make geth
     ```
 
-1. Download and verify the genesis state, the state of the Optimism blockchain during the last regenesis, 11 November 2021. 
+1. Download and verify the genesis state, the state of the Optimism blockchain during the final regenesis, 11 November 2021. 
 
    ```sh
    wget -O /tmp/genesis.json https://storage.googleapis.com/optimism/mainnet/genesis-v0.5.0.json
@@ -160,14 +171,6 @@ You can replace it with you own directory as long as you are consistent.
    ```
    361ff81fff4cc71e5f0bf43b0b982f5cfd08d068f730b9a61516fe1fa8fd914a  /tmp/genesis.json
    ```
-
-1. Initialize l2geth with the genesis state.
-   This process takes about nine minutes on my system.
-
-    ```sh
-    mkdir ~/gethData
-    ./build/bin/geth init --datadir=~/gethData /tmp/genesis.json --nousb
-    ```
 
 1. Create a file called `env.sh` with this content:
 
@@ -209,12 +212,22 @@ You can replace it with you own directory as long as you are consistent.
     ```
 
 1. Run the new file. 
-   This syntax (`. <name of script>`) runs the script in the context of the current shell, rather than in a new shell.
+   This syntax (dot, space, and then the name of the script) runs the script in the context of the current shell, rather than in a new shell.
    The reason for doing this is that we want to modify the current shell's environment variables, not start a new shell, set up the environment in it, and then exit.
 
    ```sh
    . env.sh
    ```
+
+
+1. Initialize l2geth with the genesis state.
+   This process takes about nine minutes on my system.
+
+    ```sh
+    mkdir ~/gethData
+    ./build/bin/geth init --datadir=$DATADIR /tmp/genesis.json --nousb
+    ```
+
 
 
 1. Create the geth account. 
@@ -226,7 +239,7 @@ You can replace it with you own directory as long as you are consistent.
     ./build/bin/geth account import --datadir=$DATADIR --password $DATADIR/password $DATADIR/block-signer-key
     ```
 
-1. Start geth (logging to `/tmp/geth.log`). 
+1. Start geth (logging to `~/geth.log`). 
 
     ```sh
     nohup build/bin/geth \
@@ -235,7 +248,7 @@ You can replace it with you own directory as long as you are consistent.
        --allow-insecure-unlock \
        --unlock=$BLOCK_SIGNER_ADDRESS \
        --mine \
-       --miner.etherbase=$BLOCK_SIGNER_ADDRESS > /tmp/geth.log &
+       --miner.etherbase=$BLOCK_SIGNER_ADDRESS > ~/geth.log &
     ```
 
 1. To check if l2geth is running correctly, open another command line window and run these commands:
