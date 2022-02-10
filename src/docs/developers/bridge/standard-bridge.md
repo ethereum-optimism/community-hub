@@ -45,7 +45,7 @@ Instead, you can use the `withdraw` or `withdrawTo` functions on the [`L2Standar
 ## Adding an ERC20 token to the Standard Bridge
 
 ::: tip
-To add your token to the standard bridge, see the guide [Adding an ERC20 token to the Standard Bridge](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/standard-bridge-standard-token).
+To add your token to the standard bridge, see the guide [Adding an ERC20 token to the Standard Bridge](../../guides/token-dev.md).
 :::
 
 ## The Optimism token list
