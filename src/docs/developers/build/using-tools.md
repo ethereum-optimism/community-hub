@@ -46,6 +46,16 @@ module.exports = {
 }
 ```
 
+## Foundry
+
+Foundry supports Optimism out of the box! Just provide an optimism rpc:
+
+```sh
+forge create ... --rpc-url=https://kovan.optimism.io/
+```
+
+Additionally, you can use [forge-optimism](https://github.com/tarrencev/forge-optimism) to simulate the optimism context and simplify testing.
+
 ## Truffle
 
 Configuring Truffle is easy too:
