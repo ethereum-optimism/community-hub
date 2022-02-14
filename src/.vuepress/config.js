@@ -147,6 +147,10 @@ module.exports = {
           collapsable: true,
         },
         '/docs/developers/tutorials.md',
+        [
+          'https://changelog.optimism.io',
+          'Changelog'
+        ],
         '/docs/developers/known-issues.md',
         [
           'https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/docs',
