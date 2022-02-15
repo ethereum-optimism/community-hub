@@ -19,6 +19,8 @@ We recently removed our whitelist! This means that anyone can deploy onto Optimi
 | WebSocket Endpoint | **`wss://ws-mainnet.optimism.io`** |
 | L1 Contract Addresses | [link](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/deployments/mainnet#layer-1-contracts) |
 | L2 Contract Addresses | [link](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/deployments/mainnet#layer-2-contracts) |
+| chainid.link | [https://chainid.link/?network=optimism](https://chainid.link/?network=optimism)
+
 
 ### RPC endpoints
 
@@ -30,6 +32,7 @@ Please set up a private RPC endpoint with any of the following providers:
 We also support and maintain the following public RPC endpoints. However, we _highly_ encourage you to set up a private RPC endpoint with any of the above mentioned providers instead. **These public endpoints should not be used in production systems.**
 - HTTP endpoint: [https://mainnet.optimism.io](https://mainnet.optimism.io)
 - WebSocket endpoint: [wss://ws-mainnet.optimism.io](wss://ws-mainnet.optimism.io)
+
 
 ## Optimism Kovan (testnet)
 
@@ -47,6 +50,7 @@ This is our **test** network. To get ETH on Kovan as well as Optimism Kovan, che
 | WebSocket Endpoint | **`wss://ws-kovan.optimism.io`** If you are going to be sending a lot of requests please set up your own private RPC endpoint |
 | L1 Contract Addresses | [link](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/deployments/kovan#layer-1-contracts) |
 | L2 Contract Addresses | [link](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/deployments/kovan#layer-2-contracts) |
+| chainid.link | [https://chainid.link/?network=optimism-kovan](https://chainid.link/?network=optimism-kovan)
 
 ### RPC endpoints
 
