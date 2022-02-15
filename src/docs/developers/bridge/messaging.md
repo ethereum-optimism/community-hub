@@ -174,8 +174,16 @@ This cost is ultimately determined by gas prices on Ethereum when you're sending
 An L1 to L2 message can trigger contract execution on L2.
 The gas limit for that transaction is provided as part of the message.
 If the gas limit is below a certain "free L2 gas" amount (1.92 million at the time of writing), the L2 gas is free.
-If you need to provide more than this amount of gas, the `CanonicalTransactionChain` will burn some amount of L1 gas in proportion to the amount of requested L2 gas (currently 1 unit of L1 gas for every 32 units of L2 gas).
+If you need to provide more than this amount of gas, the `CanonicalTransactionChain` will burn some amount of L1 gas in proportion to the amount of requested L2 gas in excess of the free allocation. 
+The exchange rate is, at writing, 1 L1 gas for every 32 L2 gas.
 This gas burn mechanism acts as a way to rate-limit L1 to L2 transactions and prevent certain classes of denial-of-service attacks on Optimism.
+
+Note that there is no refund. 
+If you specify a gas limit of two millions, for example, the excess gas is 80,000 and `CanonicalTransactionChain` will burn 80,000/32 = 2500 gas.
+This will happen even if the L2 transaction requires only a million gas to execute.
+
+To see the current values, [go to Etherscan](https://etherscan.io/address/0x5E4e65926BA27467555EB562121fac00D24E9dD2#readContract) and expand `enqueueL2GasPrepaid` for the free L2 gas amount and `l2GasDiscountDivisor` for the exchange rate at which L1 gas is burned for additional L2 gas.
+
 
 ### Fees for L2 ⇒ L1 transactions
 
