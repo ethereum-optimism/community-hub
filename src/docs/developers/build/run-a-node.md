@@ -273,3 +273,20 @@ You can replace it with you own directory as long as you are consistent.
    If l2geth is synchronizing, the second block number is higher than the first.
 
 1. Wait a few hours until the entire history is downloaded by dtl and then propagated to l2geth.
+
+
+
+<!--
+latest.sh:
+
+#! /bin/sh
+
+echo dtl:
+curl -s http://localhost:7878/eth/syncing?backend=l2  | jq .currentTransactionIndex
+
+echo
+echo l2geth:
+tail -1 ~/geth.log | awk '{print $5}'
+-->
+
+
