@@ -33,7 +33,7 @@ You'll need to have the following installed:
 
 ### Configuring and running the node
 
-Simply follow the instructions available at [this repository](https://github.com/optimisticben/op-replica/) to build and run the node.
+Follow the instructions available at [this repository](https://github.com/optimisticben/op-replica/) to build and run the node.
 
 ## Non-docker configuration
 
@@ -167,13 +167,13 @@ You can replace it with you own directory as long as you are consistent.
 1. Download and verify the genesis state, the state of the Optimism blockchain during the final regenesis, 11 November 2021. 
 
    ```sh
-   wget -O /tmp/genesis.json https://storage.googleapis.com/optimism/mainnet/genesis-v0.5.0.json
+   wget -O /tmp/genesis.json https://storage.googleapis.com/optimism/mainnet/genesis-berlin.json
    sha256sum /tmp/genesis.json
    ```
 
    The output of the `sha256sum` command should be:
    ```
-   361ff81fff4cc71e5f0bf43b0b982f5cfd08d068f730b9a61516fe1fa8fd914a  /tmp/genesis.json
+   0x106b0a3247ca54714381b1109e82cc6b7e32fd79ae56fbcc2e7b1541122f84ea  /tmp/genesis.json
    ```
 
 1. Create a file called `env.sh` with this content:
