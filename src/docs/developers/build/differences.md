@@ -71,7 +71,8 @@ contract MyContract {
 ## Gas costs
 
 Currently the gas costs for storage access are different between Optimism and L1. 
-However, we pushing a hardfork update that will fix that. 
+However, there is an upcoming a hardfork update that will fix this gas discrepancy.
+
 The update is effective February 9th on the Kovan test network, and unless we detect a problem it becomes effective on February 22nd on the production network.
 
 The hardfork will include:
