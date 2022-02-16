@@ -19,7 +19,7 @@ We recommend at least 16 GB RAM, and an SSD drive with at least 100 GB free.
 ## Updates
 
 You will need to update the replica software to keep it synchronized with our protocol implementation.
-Otherwise, as we develop the protocol, eventually your replica will be unable to synchronize, or what is worse will synchronize with incorrect results.
+Otherwise, as we develop the protocol, eventually your replica will be unable to synchronize.
 [Register here](https://groups.google.com/a/optimism.io/g/optimism-announce) to get our announcements, so you'll know when and how to upgrade your replica.
 
 ## Docker configuration
