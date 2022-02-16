@@ -80,7 +80,7 @@ As a result, user balances will always be zero inside the state trie and the use
 ## Address Aliasing
 
 Because of the behavior of the `CREATE` opcode, it is possible for a user to create a contract on L1 and on L2 that share the same address but have different bytecode.
-This is a potential problem [as explained below](#why-is-address-aliasing-an-issue). 
+This can break trust assumptions, because one contract may be trusted and another be untrusted (see below).
 To prevent this problem the behavior of the `ORIGIN` and `CALLER` opcodes (`tx.origin` and `msg.sender`) differs slightly between L1 and L2.
 
 The value of `tx.origin` is determined as follows:
@@ -93,17 +93,11 @@ The value of `tx.origin` is determined as follows:
 | L1 contract (using `CanonicalTransactionChain.enqueue`) | `L1_contract_address + 0x1111000000000000000000000000000000001111` |
 
 
-<!--
-
-- If the transaction is a standard L2 transaction (sent via the Sequencer), then `tx.origin` is the real transaction origin and there is no difference in behavior from Ethereum.
-- If the transaction is an L1 ⇒ L2 transaction (sent via the `CanonicalTransactionChain.enqueue` function), then:
-   - If the `enqueue` function was triggered by an Externally Owned Account, `tx.origin` is set to the address of the Externally Owned Account. There is also no difference in the behavior of `tx.origin` in this case.
-   - **If the `enqueue` function was triggered by a Contract Account, `tx.origin` is set to `contract_account_address + 0x1111000000000000000000000000000000001111`.**
-
--->
-
 The value of `msg.sender` at the top-level (the very first contract being called) is always equal to `tx.origin`.
-Therefore, if the value of `tx.origin` is impacted by the rules defined above, the top-level value of `msg.sender` will also be impacted.
+Therefore, if the value of `tx.origin` is affected by the rules defined above, the top-level value of `msg.sender` will also be impacted.
+
+Note that in general, [`tx.origin` should *not* be used for authorization](https://docs.soliditylang.org/en/latest/security-considerations.html#tx-origin). 
+However, that is a separate issue from address aliasing because address aliasing also affects `msg.sender`.
 
 ### Why is address aliasing an issue?
 
@@ -111,6 +105,9 @@ The problem with two identical source addresses (the L1 contract and the L2 cont
 It is possible that we will want to trust one of the contracts, but not the other.
 
 1. Helena Hacker forks [Uniswap](https://uniswap.org/) to create her own exchange (on L2), called Hackswap.
+
+   **Note:** There are actually multiple contracts in Uniswap, so this explanation is a bit simplified.
+   [See here if you want additional details](https://ethereum.org/en/developers/tutorials/uniswap-v2-annotated-code/).
 
 1. Helena Hacker provides Hackswap with liquidity that appears to provide profitable arbitrage opportunities.
    For example, she can make it so that you can spend 1 [DAI](https://www.coindesk.com/price/dai/)to buy 1.1 [USDT](https://www.coindesk.com/price/tether/).
@@ -120,19 +117,18 @@ It is possible that we will want to trust one of the contracts, but not the othe
    However, he checks the Hackswap contract's bytecode and verifies it is 100% identical to Uniswap.
    He decides this means the contract can be trusted to behave exactly as Uniswap does.
 
-   **Note:** There are actually multiple contracts in Uniswap, so this explanation is a bit simplified.
-   [See here if you want additional details](https://ethereum.org/en/developers/tutorials/uniswap-v2-annotated-code/).
-
-1. Nimrod gives the Hackswap contract an allowance of 1000 DAI.
+1. Nimrod approves an allowance of 1000 DAI for the Hackswap contract.
    Nimrod expects to call the swap function on Hackswap and receive back nearly 1100 USDT.
 
-1. Before Nimrod's transaction reaches the blockchain, a different transaction reaches it from the bridge, one from an L1 contract on the same address as Hackswap.
+1. Before Nimrod's swap transaction is sent to the blockchain, Helena Hacker sends a transaction from an L1 contract with the same address as Hackswap.
    This transaction transfers 1000 DAI from Nimrod's address to Helena Hacker's address.
    If this transaction were to come from the same address as Hackswap on L2, it would be able to transfer the 1000 DAI because of the allowance Nimrod *had* to give Hackswap in the previous step to swap tokens.
-   However, because Optimism modified the transaction's `tx.origin` (which is also the initial `msg.sender`), the transaction comes from a *different* address, one that does not have the allowance.
+   
+   Nimrod, despite his naivete, is protected because Optimism modified the transaction's `tx.origin` (which is also the initial `msg.sender`).
+   That transaction comes from a *different* address, one that does not have the allowance.
 
-   It is simple to create two different contracts on the same address in different chains. 
-   But it is nearly impossible to create two that are different by a specified amount.
+**Note:** It is simple to create two different contracts on the same address in different chains. 
+But it is nearly impossible to create two that are different by a specified amount, so Helena Hacker can't do that.
 
 
 
