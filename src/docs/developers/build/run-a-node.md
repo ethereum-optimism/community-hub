@@ -16,13 +16,18 @@ Replicas need to store the transaction history of Optimism and to run Geth.
 They need to be relatively powerful machines (real or virtual). 
 We recommend at least 16 GB RAM, and an SSD drive with at least 100 GB free.
 
-## Registration
+## Updates
 
-[Register here](https://groups.google.com/a/optimism.io/g/optimism-announce) to get announcements, such as notifications of when you're supposed to update your replica.
+You will need to update the replica software to keep it synchronized with our protocol implementation.
+Otherwise, as we develop the protocol, eventually your replica will be unable to synchronize, or what is worse will synchronize with incorrect results.
+[Register here](https://groups.google.com/a/optimism.io/g/optimism-announce) to get our announcements, so you'll know when and how to upgrade your replica.
 
 ## Docker configuration
 
-The easiest way to create a replica is to use [Docker](https://www.docker.com/) and the [Docker images we provide](https://hub.docker.com/u/ethereumoptimism). They include all the configuration settings.
+The recommended method to create a replica is to use [Docker](https://www.docker.com/) and the [Docker images we provide](https://hub.docker.com/u/ethereumoptimism). 
+They include all the configuration settings.
+This is the recommended method because it is what we for our own systems.
+As such, the docker images go through a lot more tests than any other configuration.
 
 ### Prerequisites
 
@@ -40,6 +45,10 @@ Follow the instructions available at [this repository](https://github.com/optimi
 Here are the instructions if you want to build you own replica without relying on our images.
 These instructions were generated with a [GCP e2-standard-4](https://cloud.google.com/compute/docs/general-purpose-machines#e2-standard) virtual machine running [Debian 10](https://www.debian.org/News/2021/2021100902) with a 100 GB SSD drive. 
 They should work on different operating systems with minor changes, but there are no guaranrees.
+
+**Note:** This is *not* the recommended configuration.
+While we did QA on these instructions and they work, the QA that the docker images undergo is much more extensive.
+
 
 ### Install packages
 
@@ -273,6 +282,7 @@ You can replace it with you own directory as long as you are consistent.
    If l2geth is synchronizing, the second block number is higher than the first.
 
 1. Wait a few hours until the entire history is downloaded by dtl and then propagated to l2geth.
+   If you have any problems, [contact us on our Discord](https://discord.optimism.io/).
 
 
 
