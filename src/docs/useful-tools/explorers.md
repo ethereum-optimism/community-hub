@@ -29,5 +29,32 @@ To retrieve older transactions, run the query as you would normally, and then us
 
 ![CSV Export](../../assets/docs/useful-tools/explorers/etherscan_csv_export.png)
 
-This CSV export feature works for transaction starting at June 23rd, 2021. If you need anything older, please contact us.
+#### Dune (in case you need fields missing from the CSV)
+
+[Dune.xyz](https://dune.xyz) is an analytics platform for blockchain information.
+If the Etherscan CSV file does not contain the information you need, you can use Dune's stored history:
+
+
+1. Log on to a Dune Analytics account (their free tier is sufficient).
+
+1. Select the data source **4. Optimism (OVM 1.0)**.
+
+   ![Data source](../../assets/docs/useful-tools/explorers/dune-data-src.png)
+
+1. Run a query similar to [this one](https://dune.xyz/queries/354886?addr=%5Cx25E1c58040f27ECF20BBd4ca83a09290326896B3) 
+
+   ```sql
+   SELECT * FROM optimism.transactions 
+      WHERE "from"='{{addr}}' or "to"='{{addr}}' 
+      LIMIT 5
+   ```
+
+   ::: v-pre
+
+   Parameter values, such as `{{addr}}`, allows the user to choose a value without editing the query itself. 
+   Note that in Dune you write addresses as **\x &lt; hex address &gt;** rather than <strong> 0x &lt; hex address &gt; </strong> .
+
+### Even older history
+
+Both of these methods only work for transaction that happened on June 23rd, 2021 or later. If you need anything older, please contact us.
 
