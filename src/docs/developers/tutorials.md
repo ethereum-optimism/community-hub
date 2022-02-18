@@ -8,6 +8,7 @@ lang: en-US
 * [Optimism + Hardhat](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/hardhat)
 * [Optimism + Truffle](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/truffle)
 * [Optimism + Remix](https://remix-optimism-compiler-plugin.readthedocs.io/en/latest/)
+* [Optimism + Alchemy](https://docs.alchemy.com/alchemy/introduction/getting-started)
 
 ## ERC-20 Tokens
 
