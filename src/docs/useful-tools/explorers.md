@@ -25,14 +25,15 @@ Etherscan currently provides the most advanced block explorers for all Optimism 
 ### Access to pre-regenesis history
 
 The Etherscan user interface only shows information since our final regenesis on November 11th, 2021. 
-To retrieve older transactions, run the query as you would normally, and then use the **CSV Export** tool.
+To retrieve older transactions you can use the [**CSV Export Tool**](https://optimistic.etherscan.io/exportDataMain). 
+It lets you select your address, the type of report you want, and the address range.
 
-![CSV Export](../../assets/docs/useful-tools/explorers/etherscan_csv_export.png)
+![CSV Export](../../assets/docs/useful-tools/explorers/export-data.png)
 
 #### Dune (in case you need fields missing from the CSV)
 
 [Dune.xyz](https://dune.xyz) is an analytics platform for blockchain information.
-If the Etherscan CSV file does not contain the information you need, you can use Dune's stored history:
+If none of the Etherscan CSV files contain the information you need, you can use Dune to get raw transaction data:
 
 
 1. Log on to a Dune Analytics account (their free tier is sufficient).
