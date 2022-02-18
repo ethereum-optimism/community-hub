@@ -31,7 +31,8 @@ To retrieve older transactions, run the query as you would normally, and then us
 
 #### Dune (in case you need fields missing from the CSV)
 
-If the Etherscan CSV file does not contain the information you need, you can use [dune.xyz](https://dune.xyz):
+[Dune.xyz](https://dune.xyz) is an analytics platform for blockchain information.
+If the Etherscan CSV file does not contain the information you need, you can use Dune's stored history:
 
 
 1. Log on to a Dune Analytics account (their free tier is sufficient).
