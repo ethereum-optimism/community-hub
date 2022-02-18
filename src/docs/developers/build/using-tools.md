@@ -48,7 +48,9 @@ module.exports = {
 
 ## Foundry
 
-Foundry supports Optimism out of the box! Just provide an optimism rpc:
+Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.
+Foundry supports Optimism out of the box! 
+Just provide an Optimism RPC:
 
 ```sh
 forge create ... --rpc-url=https://kovan.optimism.io/
