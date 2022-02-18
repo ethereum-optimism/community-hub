@@ -171,18 +171,28 @@ You send a transaction to the [`L1CrossDomainMessenger`](https://github.com/ethe
 contract, which then sends a call to the [`CanonicalTransactionChain`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/L1/rollup/CanonicalTransactionChain.sol).
 This cost is ultimately determined by gas prices on Ethereum when you're sending the cross-chain transaction.
 
-An L1 to L2 message can trigger contract execution on L2.
-The gas limit for that transaction is provided as part of the message.
-If the gas limit is below a certain "free L2 gas" amount (1.92 million at the time of writing), the L2 gas is free.
-If you need to provide more than this amount of gas, the `CanonicalTransactionChain` will burn some amount of L1 gas in proportion to the amount of requested L2 gas in excess of the free allocation. 
-The exchange rate is, at writing, 1 L1 gas for every 32 L2 gas.
-This gas burn mechanism acts as a way to rate-limit L1 to L2 transactions and prevent certain classes of denial-of-service attacks on Optimism.
+An L1 to L2 message is expected to trigger contract execution on L2, and that contract execution costs gas.
+The first 1.92 million gas on L2 is free.
+The vast majority of L1 to L2 calls spend less than that on L2, so nothing further is required.
 
-Note that there is no refund. 
-If you specify a gas limit of two millions, for example, the excess gas is 80,000 and `CanonicalTransactionChain` will burn 80,000/32 = 2500 gas.
-This will happen even if the L2 transaction requires only a million gas to execute.
+If you think that your call might spend more than that on L2, you can specify a higher gas limit.
+However, to prevent denial of service attacks, we have to impose a cost on higher gas limits.
+This cost is one unit of L1 gas for every 32 units of L2 gas requested beyond the free amount.
+For example, if you specify a two million gas limit in the call to `L1CrossDomainMessenger`, it will be processed this way:
 
-To see the current values, [go to Etherscan](https://etherscan.io/address/0x5E4e65926BA27467555EB562121fac00D24E9dD2#readContract) and expand `enqueueL2GasPrepaid` for the free L2 gas amount and `l2GasDiscountDivisor` for the exchange rate at which L1 gas is burned for additional L2 gas.
+| Amount | Action  |
+| -----: | ------- |
+| free gas: 1,920,000   | Nothing, gas provided on L2 for free |
+| remaining gas (2,000,000 - 1,920,000) : 80,000 | Burn 2,500 gas on L1 for the 80,000 gas on L2 (80,000/32) |
+
+This gas burn happens on L1 when the L1 contract calls `L1CrossDomainMessenger`.
+This is prior to the message being sent to L2, let alone the message being processed.
+As such, there is no way to know how much L2 gas will actually be used, the amount burned is based *only* on the gas limit specified in the L1 call.
+For example, if the call above with a gas limit of two million only takes ten thousand gas on L2, the 2,500 gas on L1 is still burned.
+There is no refund.
+
+The parameters in the explanation above were 1.92 million and 32 when I wrote it, but they may change in the future.
+To see the present values, [go to Etherscan](https://etherscan.io/address/0x5E4e65926BA27467555EB562121fac00D24E9dD2#readContract) and expand `enqueueL2GasPrepaid` for the free L2 gas amount and `l2GasDiscountDivisor` for the exchange rate at which L1 gas is burned for additional L2 gas.
 
 
 ### Fees for L2 ⇒ L1 transactions
