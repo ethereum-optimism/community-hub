@@ -36,8 +36,7 @@ If you want access to the current time, you should use `block.timestamp` (the `T
 
 ### Timestamps
 
-The `TIMESTAMP` opcode uses the timestamp of the transaction itself where `time.Now` is used.
-It gets updated every fifteen seconds.
+The `TIMESTAMP` opcode (`block.timestamp` in Solidity) uses the timestamp of the transaction itself. It gets updated every fifteen seconds.
 
 ### Accessing the latest L1 block number
 
