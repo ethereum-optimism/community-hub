@@ -15,4 +15,4 @@ Just sign in with Twitter and you'll automatically be sent 1 ETH, 1 wETH, 500 DA
 If you need to get ETH on mainnet for a contract deployment, you should [bridge ETH onto L2](https://gateway.optimism.io/).
 This process is relatively cheap and takes about 20 minutes to complete.
 
-You can also get some ETH for expenses by [bridging enough USDC](https://optifaucet.com/). 
+You can also get some ETH for expenses by [bridging enough USDC](https://optifaucet.com/) courtesy of [Perpetual Protocol](https://perp.com/).
