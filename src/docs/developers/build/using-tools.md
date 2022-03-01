@@ -48,7 +48,7 @@ module.exports = {
 
 ## Foundry
 
-Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.
+[Foundry](https://www.paradigm.xyz/2021/12/introducing-the-foundry-ethereum-development-toolbox) is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.
 Foundry supports Optimism out of the box! 
 Just provide an Optimism RPC:
 
