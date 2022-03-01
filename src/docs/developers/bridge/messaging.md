@@ -191,7 +191,7 @@ As such, there is no way to know how much L2 gas will actually be used, the amou
 For example, if the call above with a gas limit of two million only takes ten thousand gas on L2, the 2,500 gas on L1 is still burned.
 There is no refund.
 
-The parameters in the explanation above were 1.92 million and 32 when I wrote it, but they may change in the future.
+The parameters in the explanation above were 1.92 million and 32 at the time of writing, but they may change in the future.
 To see the present values, [go to Etherscan](https://etherscan.io/address/0x5E4e65926BA27467555EB562121fac00D24E9dD2#readContract) and expand `enqueueL2GasPrepaid` for the free L2 gas amount and `l2GasDiscountDivisor` for the exchange rate at which L1 gas is burned for additional L2 gas.
 
 
