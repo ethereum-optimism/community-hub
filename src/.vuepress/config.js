@@ -120,6 +120,10 @@ module.exports = {
         '/docs/guides/bridge-dev.md',
         '/docs/guides/smart-contract-devs.md'
       ],
+      '/docs/protocol/': [
+        '/docs/protocol/protocol-2.0.md',
+        '/docs/protocol/compressed-ctc.md'
+      ],
       '/docs/developers/': [
         {
           title: 'Building on Optimism',
