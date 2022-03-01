@@ -1,5 +1,5 @@
 ---
-title: The Cannonical Transaction Chain (CTC)
+title: The Cannonical Transaction Chain (CTC) Format
 lang: en-US
 ---
 
@@ -45,8 +45,16 @@ Transactions are provided as a three byte length followed by the RLP encoded tra
 
 Looking at locations 255-257, we see `0x00016e`, so the first transaction is 366 bytes long. 
 
-## Compressed batches
+## Additional batch types
 
+The initial solution did not have a batch type. 
+However, to add compression a batch type is needed.
+The solution is to set the timestamp of the first context to zero.
+This does not create ambiguity because a timestamp of zero represents January 1st, 1970 (based on the UNIX convention), which cannot happen.
+The block number then represents the transaction type.
 
+## Type zero
 
-https://www.notion.so/optimismpbc/Batch-Compression-Spec-a5aca66530124f55bf0194d1db4ee21c
+After the normal header and the first context, which has a timestamp of zero and a block number of zero, the other contexts contain the normal data. 
+The transaction lengths provided are still in three bytes, but they are the compressed sizes.
+The transaction data is compressed using [zlib](https://nodejs.org/api/zlib.html).
