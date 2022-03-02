@@ -56,5 +56,4 @@ The block number then represents the transaction type.
 ## Type zero
 
 After the normal header and the first context, which has a timestamp of zero and a block number of zero, the other contexts contain the normal data. 
-The transaction lengths provided are still in three bytes, but they are the compressed sizes.
-The transaction data is compressed using [zlib](https://nodejs.org/api/zlib.html).
+After that the list of transaction lengths and transaction data is compressed using [zlib](https://nodejs.org/api/zlib.html).
