@@ -164,6 +164,7 @@ module.exports = {
         '/docs/useful-tools/monitoring.md',
         '/docs/useful-tools/explorers.md',
         '/docs/useful-tools/providers.md',
+        '/docs/useful-tools/oracles.md',
         ['https://www.optimism.io/apps/tools', 'Third Party Tools'],
       ]
     }
