@@ -54,3 +54,22 @@ UMA is a pull Oracle, it does not get information until it is requested by a con
 This means that an decentralized application needs to issue two transactions.
 First, a transaction that causes a contract on the blockchain to ask for the information.
 Later (in the case of UMA 48 hours later if there is no dispute, longer if there is), a second transaction that causes the contract to read from the Oracle to see the response to the request. 
+
+## Uniswap
+
+Technically speaking [Uniswap](https://uniswap.io/) is not an oracle, because the information comes from on-chain sources.
+However, Uniswap pools do provide [quotes that give the relative costs of assets](https://docs.uniswap.org/protocol/concepts/V3-overview/oracle), which is often useful where you would otherwise use an oracle.
+
+To use Uniswap as an Oracle:
+
+1. See [the list of pools on Optimism](https://info.uniswap.org/#/optimism/).
+1. To find the pool address, [look at the Uniswap factory](https://optimistic.etherscan.io/address/0x1f98431c8ad98523631ae4a59f267346ea31f984#readContract).
+   Use **getPool** with these parameters:
+
+      | Parameter           | Meaning                             |
+      | ------------------- | ----------------------------------- | 
+      | One token address   | [Address of the ERC-20 contract for that token on Optimism (chainId 10)](https://static.optimism.io/optimism.tokenlist.json) |
+      | Other token address | [Address of the ERC-20 contract for that token on Optimism (chainId 10)](https://static.optimism.io/optimism.tokenlist.json) |      
+      | Pool fee            | The pool fee percentage times ten thousand. For example, for 0.3% enter `3000` |
+
+1. In your contract, use [IUniswapV3PoolState](https://github.com/Uniswap/v3-core/blob/main/contracts/interfaces/pool/IUniswapV3PoolState.sol) and [IUniswapV3PoolDerivedState](https://github.com/Uniswap/v3-core/blob/main/contracts/interfaces/pool/IUniswapV3PoolDerivedState.sol) to get the pool state.
