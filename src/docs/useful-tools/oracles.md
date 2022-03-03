@@ -22,12 +22,19 @@ This contract is a predeploy at address `0x4200000000000000000000000000000000000
 - [on the production Optimism network](https://optimistic.etherscan.io/address/0x420000000000000000000000000000000000000F#readContract)
 - [on the Optimistic Kovan test network](https://kovan-optimistic.etherscan.io/address/0x420000000000000000000000000000000000000F#readContract)
 
+This is a push Oracle, because Optimism updates it automatically whenever those parameters change (even L1 gas price, which could be more volatile, is only changed once every five minutes).
+
+
 ## Chainlink
 
 On Optimism [Chainlink](https://chain.link/) provides a number of [price feeds](https://docs.chain.link/docs/optimism-price-feeds/).
 Those feeds are available both on the production network and the Kovan test network.
 
 [See here how to use the Chainlink feeds](https://docs.chain.link/docs/get-the-latest-price/).
+
+This is a push Oracle. 
+You can always get up to date information (see, for example, [here (scroll down to **latestAnswer**)](https://optimistic.etherscan.io/address/0x13e3Ee699D1909E989722E753853AE30b17e08c5#readContract)).
+
 
 ## Universal Market Access (UMA)
 
@@ -42,3 +49,8 @@ Those that proposed the wrong answer lose their stake.
 [See here for the UMA addresses on Optimism](https://github.com/UMAprotocol/protocol/blob/master/packages/core/networks/10.json). 
 
 [See here for instructions how to use UMA](https://docs.umaproject.org/build-walkthrough/build-process).
+
+UMA is a pull Oracle, it does not get information until it is requested by a contract. 
+This means that an decentralized application needs to issue two transactions.
+First, a transaction causes a contract on the blockchain to ask for the information.
+Later (in the case of UMA 48 hours later if there is no dispute, longer if there is), a second transaction that causes the contract to read from the Oracle to see the response to the request. 
