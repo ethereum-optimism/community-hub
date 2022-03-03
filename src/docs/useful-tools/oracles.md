@@ -19,8 +19,8 @@ It can also calculate the total cost of a transaction for you before you send it
 
 This contract is a predeploy at address `0x420000000000000000000000000000000000000F`:
 
-- [on the production Optimism network](https://optimistic.etherscan.io/address/0x420000000000000000000000000000000000000F#readContract)
-- [on the Optimistic Kovan test network](https://kovan-optimistic.etherscan.io/address/0x420000000000000000000000000000000000000F#readContract)
+- [On the production Optimism network](https://optimistic.etherscan.io/address/0x420000000000000000000000000000000000000F#readContract)
+- [On the Optimistic Kovan test network](https://kovan-optimistic.etherscan.io/address/0x420000000000000000000000000000000000000F#readContract)
 
 This is a push Oracle, because Optimism updates it automatically whenever those parameters change (even L1 gas price, which could be more volatile, is only changed once every five minutes).
 
@@ -52,5 +52,5 @@ Those that proposed the wrong answer lose their stake.
 
 UMA is a pull Oracle, it does not get information until it is requested by a contract. 
 This means that an decentralized application needs to issue two transactions.
-First, a transaction causes a contract on the blockchain to ask for the information.
+First, a transaction that causes a contract on the blockchain to ask for the information.
 Later (in the case of UMA 48 hours later if there is no dispute, longer if there is), a second transaction that causes the contract to read from the Oracle to see the response to the request. 
