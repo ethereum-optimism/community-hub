@@ -16,7 +16,7 @@ To interpret a CTC transaction you need to **Click to see more** to see the call
 
 ![Transaction input data](../../assets/docs/protocol/compressed-ctc/input-data.png)
 
-For example, here are the fields and their values for this [initial solution CTC transaction]((https://etherscan.io/tx/0xf5a2dd9d0815ad4dcee00063ff8f8f3fd44b3bd8ffc1f7f6c7f7f0b4b086c5a7/advanced)):
+For example, here are the fields and their values for this [initial solution CTC transaction](https://etherscan.io/tx/0xf5a2dd9d0815ad4dcee00063ff8f8f3fd44b3bd8ffc1f7f6c7f7f0b4b086c5a7/advanced):
 
 | Bytes | Field Size | Field             | Value | Comments |
 | ---------: | ---------: | ------------------| ----- | -------- |
