@@ -119,7 +119,7 @@ Once you're inside the `ops` directory, run one of the following two commands de
 2. If you built from source:
 
    ```sh
-   docker-compose -f docker-compose.yml -f docker-compose.ts-batch-submitter.yml up
+   docker-compose up
    ```
 
 Depending on your machine, this startup process may take some time and it can be unclear when the system is fully ready.
