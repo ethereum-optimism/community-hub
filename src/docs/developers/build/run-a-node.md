@@ -16,12 +16,6 @@ Replicas need to store the transaction history of Optimism and to run Geth.
 They need to be relatively powerful machines (real or virtual). 
 We recommend at least 16 GB RAM, and an SSD drive with at least 100 GB free.
 
-## Updates
-
-You will need to update the replica software to keep it synchronized with our protocol implementation.
-Otherwise, as we develop the protocol, eventually your replica will be unable to synchronize.
-[Register here](https://groups.google.com/a/optimism.io/g/optimism-announce) to get our announcements, so you'll know when and how to upgrade your replica.
-
 ## Docker configuration
 
 The recommended method to create a replica is to use [Docker](https://www.docker.com/) and the [Docker images we provide](https://hub.docker.com/u/ethereumoptimism). 
