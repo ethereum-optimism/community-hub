@@ -8,6 +8,11 @@ Various [infrastructure providers](https://www.optimism.io/apps/tools) exist tha
 However, you might be interested in running your very own Optimism node.
 Here we'll go over the process of running a testnet or mainnet Optimism node for yourself.
 
+## Upgrades
+
+If you run a node you need to subscribe to [an update feed](../releases.md) (either [the mailing list](https://groups.google.com/a/optimism.io/g/optimism-announce) or [the RSS feed](https://changelog.optimism.io/feed.xml)) to know when to upgrade. 
+Otherwise, your node will eventually stop working.
+
 ## Prerequisites
 
 You'll need to have the following installed:
