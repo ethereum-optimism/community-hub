@@ -4,7 +4,7 @@ lang: en-US
 ---
 
 You can connect to Optimistic Kovan, our test network, [using these endpoints](../useful-tools/networks.md).
-To obtain ETH and tokens (both ERC-20 and NFT), [see here](../../useful-tools/faucets.md).
+To obtain ETH and tokens (both ERC-20 and NFT), [see here](../useful-tools/faucets.md).
 
 This page shows some additional testing utilities that you might find useful.
 
