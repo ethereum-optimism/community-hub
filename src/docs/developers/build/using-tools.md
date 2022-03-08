@@ -46,6 +46,18 @@ module.exports = {
 }
 ```
 
+## Foundry
+
+[Foundry](https://www.paradigm.xyz/2021/12/introducing-the-foundry-ethereum-development-toolbox) is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.
+Foundry supports Optimism out of the box! 
+Just provide an Optimism RPC:
+
+```sh
+forge create ... --rpc-url=https://kovan.optimism.io/
+```
+
+Additionally, you can use [forge-optimism](https://github.com/tarrencev/forge-optimism) to simulate the optimism context and simplify testing.
+
 ## Truffle
 
 Configuring Truffle is easy too:

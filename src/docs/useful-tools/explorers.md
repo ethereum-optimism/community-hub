@@ -22,12 +22,41 @@ It's also got some Optimism-specific features:
 
 Etherscan currently provides the most advanced block explorers for all Optimism Ethereum networks.
 
-### Access to pre-regenesis history
 
-The Etherscan user interface only shows information since our final regenesis on November 11th, 2021. 
-To retrieve older transactions, run the query as you would normally, and then use the **CSV Export** tool.
 
-![CSV Export](../../assets/docs/useful-tools/explorers/etherscan_csv_export.png)
+## Access to pre-regenesis history
 
-This CSV export feature works for transaction starting at June 23rd, 2021. If you need anything older, please contact us.
+Because of our final regenesis on 11 November 2021, older transactions are not part of the current blockchain. 
+As such, they do not appear, for example, on [Etherscan](https://optimistic.etherscan.io/).
+However, you **can** access transaction history between 23 June 2021 and the final regenesis using the Etherscan CSV exporting tool.
+
+### Etherscan access
+
+[Browse here](https://optimistic.etherscan.io/exportDataMain) and select your address and the type of report you want.
+
+![export data](../../assets/docs/useful-tools/explorers/export.png)
+
+
+### Dune access
+
+If none of the Etherscan CSV files contains the information you need, you can use a query on [Dune Analytics](https://dune.xyz), similar to [this query](https://dune.xyz/queries/354886?addr=%5Cx25E1c58040f27ECF20BBd4ca83a09290326896B3).
+You have to log on with a Dune account, but their free tier is sufficient.
+
+```sql
+SELECT * FROM optimism.transactions
+WHERE "from"='{{addr}}' or "to"='{{addr}}'
+LIMIT 100
+```
+
+Notes:
+- Make sure to select the data source **Optimism (OVM 1.0)**
+- This is how you specify parameters in Dune, `{{` followed by the parameter name and then `}}`. 
+- Addresses are specified as `\x<hex address>` rather than `0x<hex address>`.  
+- The limit is not required, but here to save resources
+
+
+### Pre 23 June 2021 history
+
+Please contact us if you need earlier transaction history (prior to 23 June 2021).
+
 
