@@ -182,9 +182,9 @@ This cost is one unit of L1 gas for every 32 units of L2 gas requested beyond th
 For example, if you specify a 2.0 million gas limit in the call to `L1CrossDomainMessenger`, it will be processed this way:
 
 | Amount | Action  |
-| -----: | ------- |
-| free gas: 1.92 million   | Nothing, gas provided on L2 for free |
-| excess gas requirement: 80 thousand | 2,500 gas is spent on the L1 portion of the gas fee and in return 80 thousand extra gas is provided to the L2 transaction. This is inline with the 1:32 ratio of gas. |
+| ------ | ------- |
+| free gas: 1.92 million   | Nothing, this gas is provided on L2 for free |
+| excess gas required: 80,000 | 2,500 gas is spent on the L1 portion of the gas fee and in return 80,000 extra gas is provided to the L2 transaction. This is inline with the 1:32 ratio of gas. |
 
 This gas burn happens on L1 when the L1 contract calls `L1CrossDomainMessenger`.
 This is before the message has been sent to the L2, and as such there is no way to know how much L2 gas will actually be used.
