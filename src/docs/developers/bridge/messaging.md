@@ -173,21 +173,23 @@ This cost is ultimately determined by gas prices on Ethereum when you're sending
 
 An L1 to L2 message is expected to trigger contract execution on L2, and that contract execution costs gas.
 The first 1.92 million gas on L2 is free.
-The vast majority of L1 to L2 calls spend less than that on L2, so nothing further is required.
+The vast majority of L1 to L2 calls spend less than the 1.92 million, so nothing further is required.
 
 If you think that your call might spend more than that on L2, you can specify a higher gas limit.
-However, to prevent denial of service attacks, we have to impose a cost on higher gas limits.
+However, to prevent denial of service attacks, we have to impose a cost on gas limits higher than 1.92 million.
 This cost is one unit of L1 gas for every 32 units of L2 gas requested beyond the free amount.
-For example, if you specify a two million gas limit in the call to `L1CrossDomainMessenger`, it will be processed this way:
+
+For example, if you specify a 2.0 million gas limit in the call to `L1CrossDomainMessenger`, it will be processed this way:
 
 | Amount | Action  |
 | -----: | ------- |
-| free gas: 1,920,000   | Nothing, gas provided on L2 for free |
-| remaining gas (2,000,000 - 1,920,000) : 80,000 | Burn 2,500 gas on L1 for the 80,000 gas on L2 (80,000/32) |
+| free gas: 1.92 million   | Nothing, gas provided on L2 for free |
+| excess gas requirement: 80 thousand | 2,500 gas is spent on the L1 portion of the gas fee and in return 80 thousand extra gas is provided to the L2 transaction. This is inline with the 1:32 ratio of gas. |
 
 This gas burn happens on L1 when the L1 contract calls `L1CrossDomainMessenger`.
-This is prior to the message being sent to L2, let alone the message being processed.
-As such, there is no way to know how much L2 gas will actually be used, the amount burned is based *only* on the gas limit specified in the L1 call.
+This is before the message has been sent to the L2, and as such there is no way to know how much L2 gas will actually be used.
+Therefore, the amount burned is based *only* on the gas limit specified in the L1 call.
+
 For example, if the call above with a gas limit of two million only takes ten thousand gas on L2, the 2,500 gas on L1 is still burned.
 There is no refund.
 
