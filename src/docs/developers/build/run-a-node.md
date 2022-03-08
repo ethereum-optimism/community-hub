@@ -4,7 +4,8 @@ lang: en-US
 ---
 
 If you're looking to build an app on Optimism you'll need access to an Optimism node.
-Various [infrastructure providers](https://www.optimism.io/apps/tools) exist that can give you access to hosted nodes.
+You can get a hosted one from [Alchemy](https://www.alchemy.com/layer2/optimism), [Infura](https://docs.infura.io/infura#section/Network-Add-Ons/Optimistic-Ethereum), or [QuickNode](https://www.quicknode.com/chains/optimism).
+
 However, you might be interested in running your very own Optimism node.
 Here we'll go over the process of running a testnet or mainnet Optimism node for yourself.
 
