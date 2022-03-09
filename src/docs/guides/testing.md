@@ -11,7 +11,7 @@ This page shows some additional testing utilities that you might find useful.
 
 ## Tokens
 
-We have six ERC-20 testing token contracts:
+We have several ERC-20 testing token contracts:
 
 | Address | Symbol | Decimals |
 | - | - | -: |
@@ -25,9 +25,16 @@ We have six ERC-20 testing token contracts:
 This token is an implementation of ERC-20, with the addition of `faucet`, a function that mints for the caller 1000 tokens to facilitate testing.
 
 
+## The bridge
+
+You can bridge between [this token on Kovan](https://kovan.etherscan.io/address/0x3A4a0F1FC238bb0C694A5E7535069c02622Ac5DF#readContract) and [this token on Optimistic Kovan](https://kovan-optimistic.etherscan.io/address/0xdFc18Aa448CD0cD50D2C90Ba74D59Ee001F1d3d6#readContract). 
+They both have three decimal points. 
+While `faucet` only gives you a single token, you can move token fractions.
+
+
 ## Uniswap pools
 
-We have four pools between these tokens:
+We have four pools between the tokens above:
 
 | Token 1 | Token 2 | Contract |
 | ------- | ------- | -------- |
