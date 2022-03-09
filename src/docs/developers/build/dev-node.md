@@ -84,7 +84,7 @@ On a Linux system you can get the appropriate versions using these steps:
 You can set up your development environment either by downloading the required software from [Docker Hub](https://hub.docker.com/u/ethereumoptimism) or by building the software from the [source code](https://github.com/ethereum-optimism/optimism).
 Downloading images from Docker Hub is easier and more reliable, but we'll cover both approaches in this guide.
 
-### Option 1: Downloading from Docker Hub
+### Option 1: Downloading from Docker Hub (recommended)
 
 1. Clone and enter the [Optimism monorepo](https://github.com/ethereum-optimism/optimism):
 
@@ -107,7 +107,21 @@ Downloading images from Docker Hub is easier and more reliable, but we'll cover 
 
 4. Wait for the download to complete. This can take a while.
 
-### Option 2: Building from source
+### Option 2: Building from source (slower and more error prone)
+
+1. Install [Node](https://nodejs.org).
+
+   ```sh
+   curl -sL https://deb.nodesource.com/setup_12.x -o nodesource_setup.sh
+   sudo bash nodesource_setup.sh
+   sudo apt install -y nodejs
+   ```
+
+1. Install [yarn](https://classic.yarnpkg.com/lang/en/).
+
+   ```sh
+   sudo npm install -g yarn
+   ```
 
 1. Clone and enter the [Optimism monorepo](https://github.com/ethereum-optimism/optimism):
 
@@ -116,27 +130,22 @@ Downloading images from Docker Hub is easier and more reliable, but we'll cover 
    cd optimism
    ```
 
-2. Install all of the dependencies:
+1. Install the dependencies and build the packages. This is a slow step.
 
    ```sh
-   yarn install
+   yarn install && yarn build
    ```
 
-3. Build the packages:
-   ```sh
-   yarn build
-   ```
-
-4. Build the Docker containers:
+1. Build the Docker containers:
 
    ```sh
    cd ops
    export COMPOSE_DOCKER_CLI_BUILD=1
    export DOCKER_BUILDKIT=1
-   docker-compose -f docker-compose.yml -f docker-compose.ts-batch-submitter.yml build
+   docker-compose build
    ```
 
-4. Wait for the build to complete. This can take a while.
+1. Wait for the build to complete. This can take a while.
 
 ## Starting the environment
 
@@ -144,21 +153,8 @@ You'll always need to be inside the `ops` directory of the Optimism monorepo to 
 
 ```sh
 cd ops
+docker-compose up
 ```
-
-Once you're inside the `ops` directory, run one of the following two commands depending on how you installed the environment:
-
-1. If you downloaded from Docker Hub:
-
-   ```sh
-   docker-compose -f docker-compose-nobuild.yml up
-   ```
-
-2. If you built from source:
-
-   ```sh
-   docker-compose -f docker-compose.yml -f docker-compose.ts-batch-submitter.yml up
-   ```
 
 Depending on your machine, this startup process may take some time and it can be unclear when the system is fully ready.
 You can run the following command in another terminal to check if the system is ready to accept transactions (make sure you're in the `ops` folder):
@@ -269,19 +265,15 @@ The output includes two columns.
 The first is the name of the **image**, and the second the name of the **container** based on that image.
 Each container is essentially an instance of a particular image and you're looking for the name of the *container* that you want to inspect.
 
-```
-IMAGE                                     NAMES
-ethereumoptimism/l2geth                   ops_replica_1
-ethereumoptimism/l2geth                   ops_verifier_1
-ethereumoptimism/message-relayer          ops_relayer_1
-ethereumoptimism/batch-submitter          ops_batch_submitter_1
-ethereumoptimism/data-transport-layer     ops_dtl_1
-ethereumoptimism/l2geth                   ops_l2geth_1
-ethereumoptimism/deployer                 ops_deployer_1
-ethereumoptimism/builder                  ops_builder_1
-ethereumoptimism/hardhat                  ops_l1_chain_1
-ethereumoptimism/integration-tests        ops_integration_tests_1
-```
+| Image | Container |
+| - | - |
+| ethereumoptimism/l2geth:latest | ops_verifier_1
+| ethereumoptimism/l2geth:latest | ops_replica_1
+| ethereumoptimism/data-transport-layer:latest | ops_dtl_1
+| ethereumoptimism/batch-submitter-service:latest | ops_batch_submitter_1
+| ethereumoptimism/l2geth:latest | ops_l2geth_1
+| ethereumoptimism/deployer:latest | ops_deployer_1
+| ethereumoptimism/hardhat:latest | ops_l1_chain_1
 
 You can then dump the logs for a given container as follows:
 
@@ -326,18 +318,18 @@ Here's a sample of what the response might look like:
 
 ```json
 {
-   "BondManager": "0x5FC8d32690cc91D4c39d9d3abcBD16989F875707",
-   "L1StandardBridge_for_verification_only": "0x3Aa5ebB10DC797CAC828524e59A333d0A371443c",
-   "ChugSplashDictator": "0x959922bE3CAee4b8Cd9a407cc3ac1C251C2007B1",
-   "Proxy__OVM_L1StandardBridge": "0x610178dA211FEF7D417bC0e6FeD39F05609AD788",
-   "StateCommitmentChain": "0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9",
-   "ChainStorageContainer-CTC-batches": "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512",
-   "OVM_L1CrossDomainMessenger": "0x0165878A594ca255338adfa4d48449f69242Eb8F",
-   "CanonicalTransactionChain": "0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9",
-   "Proxy__OVM_L1CrossDomainMessenger": "0x8A791620dd6260079BF849Dc5567aDC3F2FdC318",
-   "AddressDictator": "0xB7f8BC63BbcaD18155201308C8f3540b07f84F5e",
-   "Lib_AddressManager": "0x5FbDB2315678afecb367f032d93F642f64180aa3",
-   "ChainStorageContainer-SCC-batches": "0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0",
-   "AddressManager": "0x5FbDB2315678afecb367f032d93F642f64180aa3"
+"ChainStorageContainer-SCC-batches": "0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0",
+"BondManager": "0x5FC8d32690cc91D4c39d9d3abcBD16989F875707",
+"Proxy__OVM_L1StandardBridge": "0x610178dA211FEF7D417bC0e6FeD39F05609AD788",
+"CanonicalTransactionChain": "0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9",
+"L1StandardBridge_for_verification_only": "0x3Aa5ebB10DC797CAC828524e59A333d0A371443c",
+"ChainStorageContainer-CTC-batches": "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512",
+"AddressDictator": "0xB7f8BC63BbcaD18155201308C8f3540b07f84F5e",
+"Proxy__OVM_L1CrossDomainMessenger": "0x8A791620dd6260079BF849Dc5567aDC3F2FdC318",
+"ChugSplashDictator": "0x959922bE3CAee4b8Cd9a407cc3ac1C251C2007B1",
+"Lib_AddressManager": "0x5FbDB2315678afecb367f032d93F642f64180aa3",
+"OVM_L1CrossDomainMessenger": "0x0165878A594ca255338adfa4d48449f69242Eb8F",
+"StateCommitmentChain": "0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9",
+"AddressManager": "0x5FbDB2315678afecb367f032d93F642f64180aa3"
 }
 ```
