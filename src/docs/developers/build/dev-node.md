@@ -39,14 +39,48 @@ Everything you need to test your Optimistic application:
 
 You'll need to have the following installed:
 
-1. [Docker](https://www.docker.com/)
-1. [Docker compose](https://docs.docker.com/compose/install/)
+1. [Docker](https://www.docker.com/). these directions were verified with version 20.10.12
+1. [Docker compose](https://docs.docker.com/compose/install/), these directions were verified with version 1.29.2
+
+To compile the software on your own you also need:
+
 1. [Node.js](https://nodejs.org/en/), version 12 or later
 1. [Classic Yarn](https://classic.yarnpkg.com/lang/en/)
 
 ## Setting up the environment
 
 We use [Docker](https://www.docker.com) to run our development environment.
+
+On a Linux system you can get the appropriate versions using these steps:
+
+
+1. Install Docker. 
+   If you prefer not to use the convenience script shown below, there are other installation methods.
+
+   ```sh
+   curl -fsSL https://get.docker.com -o get-docker.sh
+   sudo sh get-docker.sh
+   ```
+
+1. Configure Docker permissions.
+   Note that these permissions do not take effect until you log in again, so you need to open a new command line window.
+
+   ```sh
+   sudo usermod -a -G docker `whoami`
+   ```
+
+1. Install Docker Compose.
+
+   ```sh
+   sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+   sudo chmod +x /usr/local/bin/docker-compose
+   ```
+
+
+
+
+## Getting the software
+
 You can set up your development environment either by downloading the required software from [Docker Hub](https://hub.docker.com/u/ethereumoptimism) or by building the software from the [source code](https://github.com/ethereum-optimism/optimism).
 Downloading images from Docker Hub is easier and more reliable, but we'll cover both approaches in this guide.
 
@@ -65,10 +99,10 @@ Downloading images from Docker Hub is easier and more reliable, but we'll cover 
    cd ops
    ```
 
-3. Download the required software:
+3. Download the images:
 
    ```sh
-   docker-compose -f docker-compose-nobuild.yml up -t 600 --no-start
+   docker-compose pull
    ``` 
 
 4. Wait for the download to complete. This can take a while.
