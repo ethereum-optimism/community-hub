@@ -40,6 +40,9 @@ Here are the instructions if you want to build you own replica without relying o
 These instructions were generated with a [GCP e2-standard-4](https://cloud.google.com/compute/docs/general-purpose-machines#e2-standard) virtual machine running [Debian 10](https://www.debian.org/News/2021/2021100902) with a 100 GB SSD drive. 
 They should work on different operating systems with minor changes, but there are no guaranrees.
 
+Note that these directions are for a replica of the main network. 
+You need to modify some of them if you want to create a replica of the Kovan test network.
+
 **Note:** This is *not* the recommended configuration.
 While we did QA on these instructions and they work, the QA that the docker images undergo is much more extensive.
 
@@ -100,23 +103,29 @@ This TypeScript program reads data from an Optimism endpoint and passes it over 
     ```
 
 1. Edit `.env` to specify your own configuration.
-    Modify these parameters:
+   Modify these parameters:
 
+   | Parameter | Value |
+   | --------- | ----- |
+   | DATA_TRANSPORT_LAYER__NODE_ENV         | production |
+   | DATA_TRANSPORT_LAYER__ETH_NETWORK_NAME | mainnet |    
+   | DATA_TRANSPORT_LAYER__ADDRESS_MANAGER  | 0xdE1FCfB0851916CA5101820A69b13a4E276bd81F 
+   | DATA_TRANSPORT_LAYER__SERVER_HOSTNAME  | localhost
+   | DATA_TRANSPORT_LAYER__SERVER_PORT      | 7878
+   | DATA_TRANSPORT_LAYER__SYNC_FROM_L1     | false |    
+   | DATA_TRANSPORT_LAYER__L1_RPC_ENDPOINT  | Get an endpoint from [a service provider](https://ethereum.org/en/developers/docs/nodes-and-clients/nodes-as-a-service/) unless you run a node yourself |
+   | DATA_TRANSPORT_LAYER__SYNC_FROM_L2     | true |
+   | DATA_TRANSPORT_LAYER__L2_RPC_ENDPOINT  | [See here](../../useful-tools/networks/) |
+   | DATA_TRANSPORT_LAYER__L2_CHAIN_ID      | 10 (for a mainnet replica) |
 
-    | Parameter | Value |
-    | --------- | ----- |
-    | DATA_TRANSPORT_LAYER__NODE_ENV         | production |
-    | DATA_TRANSPORT_LAYER__ETH_NETWORK_NAME | mainnet |    
-    | DATA_TRANSPORT_LAYER__ADDRESS_MANAGER  | 0xdE1FCfB0851916CA5101820A69b13a4E276bd81F 
-    | DATA_TRANSPORT_LAYER__SERVER_HOSTNAME  | localhost
-    | DATA_TRANSPORT_LAYER__SERVER_PORT      | 7878
-    | DATA_TRANSPORT_LAYER__SYNC_FROM_L1     | false |    
-    | DATA_TRANSPORT_LAYER__L1_RPC_ENDPOINT  | Get an endpoint from [a service provider](https://ethereum.org/en/developers/docs/nodes-and-clients/nodes-as-a-service/) unless you run a node yourself |
-    | DATA_TRANSPORT_LAYER__SYNC_FROM_L2     | true |
-    | DATA_TRANSPORT_LAYER__L2_RPC_ENDPOINT  | [See here](../../useful-tools/networks/) |
-    | DATA_TRANSPORT_LAYER__L2_CHAIN_ID      | 10 (for a mainnet replica) |
+   These directions are written with the assumption that you sync from L2, which is faster.
+   If you prefer, you can syncronize from L1, which is more secure but slower.
+   To use L1, keep the value of `DATA_TRANSPORT_LAYER__SYNC_FROM_L1` as `true` and 
+   `DATA_TRANSPORT_LAYER__SYNC_FROM_L2` as `false`. Also, add this line:
 
-
+   ```
+   DATA_TRANSPORT_LAYER__L1_START_HEIGHT=13596466
+   ```
 
 1. Start the DTL (as a daemon, logging to `~/dtl.log`):
 
@@ -128,11 +137,18 @@ This TypeScript program reads data from an Optimism endpoint and passes it over 
 
 1. To verify the DTL is running correctly you can run this command:
 
-   ```sh
-   curl -s http://localhost:7878/eth/syncing?backend=l2  | jq .currentTransactionIndex
-   ```
+   - If synchronizing from L2
+     ```sh
+     curl -s http://localhost:7878/eth/syncing?backend=l2  | jq .currentTransactionIndex
+     ```
+
+   - If synchronizing from L1
+     ```sh
+     curl -s http://localhost:7878/eth/syncing?backend=l1  | jq .currentTransactionIndex
+     ```
 
    It gives you the current transaction index, which should increase with time.
+
    
 1. For debugging purposes, it is sometimes useful to get a transaction's information from the DTL:
 
@@ -179,7 +195,7 @@ You can replace it with you own directory as long as you are consistent.
    0x106b0a3247ca54714381b1109e82cc6b7e32fd79ae56fbcc2e7b1541122f84ea  /tmp/genesis.json
    ```
 
-1. Create a file called `env.sh` with this content:
+1. Create a file called `env.sh` (in whatever directory is convenient) with this content:
 
     ```sh
     export CHAIN_ID=10
