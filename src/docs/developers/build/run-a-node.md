@@ -135,14 +135,14 @@ This TypeScript program reads data from an Optimism endpoint and passes it over 
 
     Note that you cannot just close the window if you want DTL to continue running, you have to exit the shell gracefully.
 
-1. To verify the DTL is running correctly you can run this command:
+1. To verify the DTL is running correctly you can run a command.
 
-   - If synchronizing from L2
+   - If synchronizing from L2:
      ```sh
      curl -s http://localhost:7878/eth/syncing?backend=l2  | jq .currentTransactionIndex
      ```
 
-   - If synchronizing from L1
+   - If synchronizing from L1:
      ```sh
      curl -s http://localhost:7878/eth/syncing?backend=l1  | jq .currentTransactionIndex
      ```
@@ -210,7 +210,6 @@ You can replace it with you own directory as long as you are consistent.
     export ETH1_CTC_DEPLOYMENT_HEIGHT=13596466
     export ETH1_SYNC_SERVICE_ENABLE=true
     export ROLLUP_ADDRESS_MANAGER_OWNER_ADDRESS=0x9BA6e03D8B90dE867373Db8cF1A58d2F7F006b3A
-    export ROLLUP_BACKEND=l2
     export ROLLUP_CLIENT_HTTP=http://localhost:7878
     export ROLLUP_DISABLE_TRANSFERS=false
     export ROLLUP_ENABLE_L2_GAS_POLLING=false
@@ -232,6 +231,12 @@ You can replace it with you own directory as long as you are consistent.
     export WS_API=eth,rollup,net,web3,debug
     export WS_ORIGINS=*
     export WS=true
+    export ROLLUP_BACKEND=l2    
+    ```
+
+    **Note**: If synchronizing from L1, replace the last line with 
+    ```sh
+    export ROLLUP_BACKEND=l1    
     ```
 
 1. Run the new file. 
@@ -273,6 +278,8 @@ You can replace it with you own directory as long as you are consistent.
        --mine \
        --miner.etherbase=$BLOCK_SIGNER_ADDRESS > ~/geth.log &
     ```
+
+    It is possible that `geth` won't listen to IPC or the TCP port (8545) until it finishes the initial synchronization.
 
 1. To check if l2geth is running correctly, open another command line window and run these commands:
 
