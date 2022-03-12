@@ -59,6 +59,8 @@ Ethereum has limited support for adding custom transaction types.
 As a result, unlike the L2 execution fee, **users are not able to set limits for the L1 data fee that they may be charged**.
 The L1 gas price used to charge the data fee is automatically updated when new data is received from Ethereum.
 **Spikes in Ethereum gas prices may result in users paying a higher or lower than estimated L1 data fee, by up to 25%.**
+
+[See here for a detailed explanation why the difference is capped at 25%](https://help.optimism.io/hc/en-us/articles/4416677738907-What-happens-if-the-L1-gas-price-spikes-while-a-transaction-is-in-process).
 :::
 
 ## Stuff to keep in mind
