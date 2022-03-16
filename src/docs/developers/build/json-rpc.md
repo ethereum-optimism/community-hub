@@ -8,20 +8,7 @@ Some custom methods have been introduced to simplify certain Optimism specific i
 
 ## Custom JSON-RPC Methods
 
-::: warning NOTICE
-Custom JSON-RPC methods are currently highly subject to change.
-**We strongly discourage relying on these JSON-RPC methods.**
-:::
-
----
-
 ### `eth_getBlockRange`
-
-::: warning DEPRECATION NOTICE
-We will likely remove this method in a future release in favor of simply using batched RPC requests.
-If your application relies on this method, please file an issue and we will provide a migration path.
-Otherwise, please use `eth_getBlockByNumber` instead.
-:::
 
 Like `eth_getBlockByNumber` but accepts a range of block numbers instead of just a single block.
 
@@ -183,7 +170,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"rollup_gasPrices","params":[],"i
 ### `eth_getAccounts`
 
 This method is used to retrieve a list of addresses owned by a user.
-Optimism nodes do not expose internal wallets for security reasons and therefore block the `eth_getAccounts` method by default.
+Optimism nodes do not expose internal wallets for security reasons and therefore block the `eth_getAccounts` method.
 You should use external wallet software as an alternative.
 
 ### `eth_sendTransaction`
