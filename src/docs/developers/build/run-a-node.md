@@ -33,7 +33,7 @@ You'll need to have the following installed:
 
 ### Configuring and running the node
 
-Follow the instructions available at [this repository](https://github.com/optimisticben/op-replica/) to build and run the node.
+Follow the instructions available at [the monorepository](https://github.com/ethereum-optimism/optimism/tree/develop/infra/op-replica/docker-compose) to build and run the node.
 
 ## Non-docker configuration
 
