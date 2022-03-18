@@ -20,9 +20,13 @@ There are two types of oracles:
 
 1. **Push oracles** are updated continously and always have up to date information. 
 1. **Pull oracles** are only updated when information is requested by a contract.
-   To use a pull oracle you typically need two transactions.
-   The first transaction is the request for information, which usually causes the oracle to emit an event that triggers some off-chain mechanism to provide the answer (through its own transaction).
-   The second transaction actually reads on-chain the result from the oracle and uses it.
+   Pull oracles are themselves divided into two types:
+   1. Double-transaction oracles, which require two transactions. 
+      The first transaction is the request for information, which usually causes the oracle to emit an event that triggers some off-chain mechanism to provide the answer (through its own transaction).
+      The second transaction actually reads on-chain the result from the oracle and uses it.
+   1. Single-transaction oracles, which only require one transaction, such as [Chainlink's random nunber generator](https://docs.chain.link/docs/get-a-random-number/#request-random-values).
+      The way this works is that the transaction that requests the information includes a callback (address and the call data to provide it). 
+      When the oracle is updated (which also happens through a transaction, but one that is not sent by the user), the oracle uses the callback to inform a contract of the result.
 
 ## Gas Oracle
 
