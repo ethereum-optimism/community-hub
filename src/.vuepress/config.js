@@ -118,7 +118,8 @@ module.exports = {
         '/docs/guides/cex-dev.md',
         '/docs/guides/token-dev.md',
         '/docs/guides/bridge-dev.md',
-        '/docs/guides/smart-contract-devs.md'
+        '/docs/guides/smart-contract-devs.md',
+        '/docs/guides/testing.md'
       ],
       '/docs/developers/': [
         {
