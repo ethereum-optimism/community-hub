@@ -126,11 +126,9 @@ module.exports = {
         '/docs/protocol/compressed-ctc.md'
       ],
       '/docs/developers/': [
+        '/docs/developers/releases.md',
         {
           title: 'Building on Optimism',
-          // Reordered to follow the order in which I
-          // expect people will do things, followed by
-          // more advanced topics such as RPC and Block Time
           children: [
             '/docs/developers/build/basic-contract.md',
             '/docs/developers/build/using-tools.md',
@@ -152,10 +150,6 @@ module.exports = {
           collapsable: true,
         },
         '/docs/developers/tutorials.md',
-        [
-          'https://changelog.optimism.io',
-          'Changelog'
-        ],
         '/docs/developers/known-issues.md',
         [
           'https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/docs',

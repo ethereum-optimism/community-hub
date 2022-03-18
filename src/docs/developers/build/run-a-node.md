@@ -9,7 +9,11 @@ You can get a hosted one from [Alchemy](https://www.alchemy.com/layer2/optimism)
 However, you might be interested in running your very own Optimism node.
 Here we'll go over the process of running a testnet or mainnet Optimism node for yourself.
 
-[You can read about the architecture of a replica node here](../../how-optimism-works/#block-execution).
+## Upgrades
+
+If you run a node you need to subscribe to [an update feed](../releases.md) (either [the mailing list](https://groups.google.com/a/optimism.io/g/optimism-announce) or [the RSS feed](https://changelog.optimism.io/feed.xml)) to know when to upgrade. 
+Otherwise, your node will eventually stop working.
+
 
 ## Hardware requirements
 
@@ -23,8 +27,6 @@ The recommended method to create a replica is to use [Docker](https://www.docker
 They include all the configuration settings.
 This is the recommended method because it is what we for our own systems.
 As such, the docker images go through a lot more tests than any other configuration.
-
-### Prerequisites
 
 You'll need to have the following installed:
 
