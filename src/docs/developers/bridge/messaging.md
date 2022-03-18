@@ -211,7 +211,7 @@ The L1 finalization transaction is typically significantly more expensive than t
 
 One of the most important things to understand about L1 ⇔ L2 interaction is that **messages sent from Layer 2 to Layer 1 cannot be relayed for at least one week**.
 This means that any messages you send from Layer 2 will only be received on Layer 1 after this one week period has elapsed.
-We call this period of time the "challenge period" because it is the time during which a transaction can be challenged with a [fault proof](../../protocol/fault-proofs.md).
+We call this period of time the "challenge period" because it is the time during which a transaction can be challenged with a [fault proof](../../how-optimism-works/#fault-proofs).
 
 Optimistic Rollups are "optimistic" because they're based around the idea of publishing the *result* of a transaction to Ethereum without actually executing the transaction on Ethereum.
 In the "optimistic" case, this transaction result is correct and we can completely avoid the need to perform complicated (and expensive) logic on Ethereum.
