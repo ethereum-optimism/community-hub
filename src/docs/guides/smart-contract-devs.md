@@ -28,7 +28,7 @@ Ready for mainnet? Fantastic! Just like with the testnet, you are going to need 
 There are three ways you can do this:
 1. Bridge ETH from mainnet to Optimism using the [Optimism Gateway](https://gateway.optimism.io/).
 2. Use a [fiat onramp](https://help.optimism.io/hc/en-us/articles/4413642522139-Is-Optimism-supported-by-fiat-onramps-or-do-I-need-to-buy-assets-and-then-bridge-them-) directly onto Optimism.
-3. Bridge ETH from another chain to Optimism using a [third part bridge](https://www.optimism.io/apps/bridges).
+3. Bridge ETH from another chain to Optimism using a [third party bridge](https://www.optimism.io/apps/bridges).
 
 Now that your deployer address has ETH, you will need to point to the right network to deploy. You can find the required network information as well as RPC provider information in our [networks page](../useful-tools/networks.md#optimism-mainnet).
 

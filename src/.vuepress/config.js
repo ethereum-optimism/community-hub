@@ -118,14 +118,17 @@ module.exports = {
         '/docs/guides/cex-dev.md',
         '/docs/guides/token-dev.md',
         '/docs/guides/bridge-dev.md',
-        '/docs/guides/smart-contract-devs.md'
+        '/docs/guides/smart-contract-devs.md',
+        '/docs/guides/testing.md'
+      ],
+      '/docs/protocol/': [
+        '/docs/protocol/protocol-2.0.md',
+        '/docs/protocol/compressed-ctc.md'
       ],
       '/docs/developers/': [
+        '/docs/developers/releases.md',
         {
           title: 'Building on Optimism',
-          // Reordered to follow the order in which I
-          // expect people will do things, followed by
-          // more advanced topics such as RPC and Block Time
           children: [
             '/docs/developers/build/basic-contract.md',
             '/docs/developers/build/using-tools.md',
@@ -147,10 +150,6 @@ module.exports = {
           collapsable: true,
         },
         '/docs/developers/tutorials.md',
-        [
-          'https://changelog.optimism.io',
-          'Changelog'
-        ],
         '/docs/developers/known-issues.md',
         [
           'https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/docs',
