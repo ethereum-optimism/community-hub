@@ -18,7 +18,8 @@ Usually they are either run by the organization that produces the information, o
 
 There are two types of oracles:
 
-1. **Push oracles** are updated continously and always have up to date information. 
+1. **Push oracles** are updated continously and always have up to date information available on chain.
+
 1. **Pull oracles** are only updated when information is requested by a contract.
    Pull oracles are themselves divided into two types:
    1. Double-transaction oracles, which require two transactions. 
