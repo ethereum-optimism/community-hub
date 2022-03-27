@@ -159,7 +159,7 @@ Optimism is designed so that users can send arbitrary messages between smart con
 This makes it possible to transfer assets, including ERC20 tokens, between the two networks.
 The exact mechanism by which this communication occurs differs depending on the direction in which messages are being sent.
 
-Optimism uses this functionality in the Standard bridge to allow users to deposit assets (ERC20s and ETH) from Ethereum to Optimism and on also allow withdrawals of the same from Optimism back to Ethereum.
+Optimism uses this functionality in the Standard bridge to allow users to deposit assets (ERC20s and ETH) from Ethereum to Optimism and also allow withdrawals of the same from Optimism back to Ethereum.
 See the [developer documentation and examples](../developers/bridge/standard-bridge/) on details on the inner workings of the Standard bridge.
 
 #### Moving from Ethereum to Optimism
