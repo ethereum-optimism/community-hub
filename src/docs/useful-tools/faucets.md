@@ -15,6 +15,10 @@ Just sign in with Twitter and you'll automatically be sent 1 ETH, 1 wETH, 500 DA
 [Optifaucet](https://kovan.optifaucet.com/) gives you a small amount of ETH, and 10,000 USDC. 
 They do this because you need USDC to [use their application](https://testnet.perp.exchange/).
 
+### Optimism Kovan Faucet
+
+[Optimism Faucet](https://optimismfaucet.xyz/) is a simple faucet for Optimism Kovan that drips ETH and DAI. Authenticate with github, enter your wallet address and you'll aumatically be sent 1 ETH and 100 DAI on the Optimism Kovan testnet.
+
 
 ## Mainnet Faucets
 
