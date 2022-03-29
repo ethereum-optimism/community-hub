@@ -314,6 +314,3 @@ curl http://localhost:8080/addresses.json
 
 You should get back a JSON object that contains a mapping of contract names to contract addresses.
 These addresses should not change, even if you restart your environment.
-Here's a sample of what the response might look like:
-
-
