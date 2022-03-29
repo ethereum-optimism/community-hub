@@ -77,6 +77,10 @@ Later (in the case of UMA 48 hours later if there is no dispute, longer if there
 Technically speaking [Uniswap](https://uniswap.io/) is not an oracle, because the information comes from on-chain sources.
 However, Uniswap pools do provide [quotes that give the relative costs of assets](https://docs.uniswap.org/protocol/concepts/V3-overview/oracle).
 
+::: Warning
+Using onchain asset prices, especially those in low liquidity pools, makes you vulnerable to price manipulation. 
+:::
+
 To use Uniswap as an Oracle:
 
 1. See [the list of pools on Optimism](https://info.uniswap.org/#/optimism/).
