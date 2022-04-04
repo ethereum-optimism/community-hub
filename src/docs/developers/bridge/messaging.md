@@ -171,7 +171,7 @@ You send a transaction to the [`L1CrossDomainMessenger`](https://github.com/ethe
 contract, which then sends a call to the [`CanonicalTransactionChain`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/L1/rollup/CanonicalTransactionChain.sol).
 This cost is ultimately determined by gas prices on Ethereum when you're sending the cross-chain transaction.
 
-An L1 to L2 message is expected to trigger contract execution on L2, and that contract execution costs gas.
+A L1 to L2 message is expected to trigger contract execution on L2, and that contract execution costs gas.
 The first 1.92 million gas on L2 is free.
 The vast majority of L1 to L2 calls spend less than the 1.92 million, so nothing further is required.
 
@@ -201,8 +201,8 @@ To see the present values, [go to Etherscan](https://etherscan.io/address/0x5E4e
 
 Each message from L2 to L1 requires two transactions:
 
-1. An L2 transaction that *initiates* the transaction, which is priced the same as any other transaction made on Optimism.
-1. An L1 transaction that *finalizes* the transaction. This transaction can only be submitted after the transaction challenge period (7 days on mainnet) has passed. This transaction is expensive because it includes verifying a [Merkle trie](https://eth.wiki/fundamentals/patricia-tree) inclusion proof.
+1. A L2 transaction that *initiates* the transaction, which is priced the same as any other transaction made on Optimism.
+1. A L1 transaction that *finalizes* the transaction. This transaction can only be submitted after the transaction challenge period (7 days on mainnet) has passed. This transaction is expensive because it includes verifying a [Merkle trie](https://eth.wiki/fundamentals/patricia-tree) inclusion proof.
 
 The total cost of an L2 to L1 transaction is therefore the combined cost of the L2 initialization transaction and the L1 finalization transaction.
 The L1 finalization transaction is typically significantly more expensive than the L2 initialization transaction.
