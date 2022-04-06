@@ -132,6 +132,7 @@ module.exports = {
           children: [
             '/docs/developers/build/basic-contract.md',
             '/docs/developers/build/using-tools.md',
+            '/docs/developers/build/sdk.md',
             '/docs/developers/build/transaction-fees.md',
             '/docs/developers/build/system-contracts.md',
             '/docs/developers/build/dev-node.md',
