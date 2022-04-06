@@ -15,17 +15,17 @@ Most Ethereum development stacks include features that make testing easier, whic
 Therefore, it is a good idea to run the majority of tests, which do not rely on Optimism-specific features, in the development stack.
 It is a lot faster.
 
-Ideally you would want to be able to run some tests on Optimism (either a [local development environment](/docs/developers/build/dev-node.md) or [a test network](/docs/useful-tools/networks.md#optimism-kovan-testnet)).
+Ideally you would want to be able to run some tests on Optimism (either a [local development environment](dev-node.md) or [a test network](../../useful-tools/networks.md#optimism-kovan-testnet)).
 This would be a much slower process, but it would let you identify cases where the equivalence between Optimism and Ethereum breaks down (or the equivalence between Ethereum itself and the development stack, for that matter).
 
 ## Multilayer integration tests
 
 Some dapps need Optimism-specific features that aren't available as part of the development stack.
-For example, if your decentralized application relies on [inter-domain communication](/docs/developers/bridge/messaging.md), the effort of developing a stub to let you debug it in a development stack is probably greater than the hassle of having the automated test go to [a local development environment](/docs/developers/build/dev-node.md) each time.
+For example, if your decentralized application relies on [inter-domain communication](../bridge/messaging.md), the effort of developing a stub to let you debug it in a development stack is probably greater than the hassle of having the automated test go to [a local development environment](dev-node.md) each time.
 
 
 ## Integration with other products
 
 In many cases a decentralized application requires the services of other contracts. 
 For example, [Perpetual v. 2](https://v2docs.perp.fi/benefits-of-v2) cannot function without [Uniswap v. 3](https://uniswap.org/blog/uniswap-v3).
-If that is the case, some tests would require you to either install the products you need as prerequisites or use a [test network](/docs/useful-tools/networks.md#optimism-kovan-testnet) that already has them.
+If that is the case, some tests would require you to either install the products you need as prerequisites or use a [test network](../../useful-tools/networks.md#optimism-kovan-testnet) that already has them.
