@@ -3,29 +3,17 @@ title: Node Providers
 lang: en-US
 ---
 
-## QuickNode
-
-### Description and pricing
-
-[QuickNode](https://www.quicknode.com/) offers access to hosted Optimism nodes for $9/month at its cheapest tier.
-You can select addons, like "Archive Mode" or "Trace Mode" for an additional cost.
-
-### Supported Networks
-
-- Optimism Ethereum
-- Optimism Kovan
-
 ## Alchemy
 
 ### Description and pricing
 
-[Alchemy](https://www.alchemy.com/) offers access to hosted Optimism nodes with archive data access for free up to a limit of 100M "compute units".
-Additional capacity can be purchased if needed.
+[Alchemy](https://docs.alchemy.com/alchemy/apis/optimism-api) offers access to hosted Optimism nodes with free archive data access up to 300M “compute units”, and unlimited capacity for paid tiers.
 
 ### Supported Networks
 
 - Optimism Ethereum
 - Optimism Kovan
+
 
 ## Infura
 
@@ -38,6 +26,20 @@ This addon is currently free but Infura seems to intend to charge $200/month for
 
 - Optimism Ethereum
 - Optimism Kovan
+
+
+## QuickNode
+
+### Description and pricing
+
+[QuickNode](https://www.quicknode.com/) offers access to hosted Optimism nodes for $9/month at its cheapest tier.
+You can select addons, like "Archive Mode" or "Trace Mode" for an additional cost.
+
+### Supported Networks
+
+- Optimism Ethereum
+- Optimism Kovan
+
 
 ## Don't see your company here?
 
