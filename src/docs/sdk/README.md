@@ -5,8 +5,8 @@ lang: en-US
 
 There are a few areas in which Optimism requires processing that is different from the Ethereum default:
 
-- [Gas costs](transaction-fees.md)
-- [Interlayer communication](../bridge/basics.md)
+- [Gas costs](../developers/build/transaction-fees.md)
+- [Interlayer communication](../developers/bridge/basics.md)
 
 ## JavaScript SDK
 
