@@ -51,6 +51,10 @@ module.exports = {
         link: '/docs/developers/',
       },
       {
+        text: 'SDK',
+        link: '/docs/sdk/'
+      },
+      {
         text: 'Tools',
         link: '/docs/useful-tools/',
       },
@@ -132,7 +136,6 @@ module.exports = {
           children: [
             '/docs/developers/build/basic-contract.md',
             '/docs/developers/build/using-tools.md',
-            '/docs/developers/build/sdk.md',
             '/docs/developers/build/transaction-fees.md',
             '/docs/developers/build/system-contracts.md',
             '/docs/developers/build/dev-node.md',
