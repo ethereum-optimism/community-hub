@@ -27,6 +27,15 @@ Additional capacity can be purchased if needed.
 - Optimism Ethereum
 - Optimism Kovan
 
+## BlockVision
+
+[BlockVision](https://blockvision.org/) is a one-stop development platform and on-chain data retrieval portal for developers that boasts impressively low-latencies and high availability.
+
+### Supported Networks
+
+- Optimism Ethereum
+- Optimism Kovan
+
 ## Infura
 
 ### Description and pricing
