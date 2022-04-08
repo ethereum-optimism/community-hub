@@ -154,11 +154,7 @@ module.exports = {
           collapsable: true,
         },
         '/docs/developers/tutorials.md',
-        '/docs/developers/known-issues.md',
-        [
-          'https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/docs',
-          'Contracts API'
-        ]
+        '/docs/developers/known-issues.md'
       ],
       '/docs/useful-tools/': [
         '/docs/useful-tools/networks.md',
@@ -168,7 +164,14 @@ module.exports = {
         '/docs/useful-tools/explorers.md',
         '/docs/useful-tools/providers.md',
         ['https://www.optimism.io/apps/tools', 'Third Party Tools'],
-      ]
+      ],
+      '/docs/sdk/': [
+        '/docs/sdk/js-client.md',
+        [
+          'https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/docs',
+          'Contracts API'
+        ]
+      ]      
     }
   },
 
