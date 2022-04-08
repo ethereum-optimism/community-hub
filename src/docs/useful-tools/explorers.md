@@ -57,6 +57,25 @@ Notes:
 
 ### Pre 23 June 2021 history
 
-Please contact us if you need earlier transaction history (prior to 23 June 2021).
+Follow these steps:
 
+1. Clone go-ethereum (the standard version) and checkout version v1.9.10:
 
+   ```sh
+   git clone https://github.com/ethereum/go-ethereum.git
+   cd go-ethereum
+   git checkout v1.9.10
+   ```
+
+1. Download the following three datadir folders:
+   - [Generation #1 (Jan to April)](https://storage.googleapis.com/sequencer-datadirs/datadir-gen1.zip) 
+   - [Generation #2 (April to May)](https://storage.googleapis.com/sequencer-datadirs/datadir-gen2.zip)
+   - [Generation #3 (May to June)](https://storage.googleapis.com/sequencer-datadirs/datadir-gen3.zip)
+
+1. Build and run the standard geth v1.9.10 with:
+
+   ```sh
+   ./build/bin/geth --datadir ./path/to/datadir --rpc
+   ```
+
+   You can then use ERC20 events filters to get the events that you want for each address. Note that you will have to repeat this process for each datadir to get the full event histor
