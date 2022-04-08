@@ -86,7 +86,7 @@ Many Ethereum applications display estimated fees to users by multiplying the ga
 However, as discussed earlier, users on Optimism are charged both an L2 execution fee and an L1 data fee.
 As a result, you should display the sum of both of these fees to give users the most accurate estimate of the total cost of a transaction.
 
-[See here for a code example using the JavaScript SDK](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/sdk-estimate-gas)
+[See here for a code sample using the JavaScript SDK](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/sdk-estimate-gas)
 
 #### Estimating the L2 execution fee
 
