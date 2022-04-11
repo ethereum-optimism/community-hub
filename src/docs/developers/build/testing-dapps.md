@@ -28,4 +28,6 @@ For example, if your decentralized application relies on [inter-domain communica
 
 In many cases a decentralized application requires the services of other contracts. 
 For example, [Perpetual v. 2](https://v2docs.perp.fi/benefits-of-v2) cannot function without [Uniswap v. 3](https://uniswap.org/blog/uniswap-v3).
-If that is the case, some tests would require you to either install the products you need as prerequisites or use a [test network](../../useful-tools/networks.md#optimism-kovan-testnet) that already has them.
+
+If that is the case you can use [mainnet forking](https://hardhat.org/hardhat-network/guides/mainnet-forking.html).
+It works with Optimism with the exception transactions that use the `L1BlockNumber` opcode, either directly or using [the predeploy at address 0x4200...0013](https://optimistic.etherscan.io/address/0x4200000000000000000000000000000000000013).
