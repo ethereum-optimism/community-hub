@@ -16,7 +16,7 @@ Therefore, it is a good idea to run the majority of tests, which do not rely on 
 It is a lot faster.
 
 Ideally you would want to be able to run some tests on Optimism (either a [local development environment](dev-node.md) or [a test network](../../useful-tools/networks.md#optimism-kovan-testnet)).
-This would be a much slower process, but it would let you identify cases where the equivalence between Optimism and Ethereum breaks down (or the equivalence between Ethereum itself and the development stack, for that matter).
+This would be a much slower process, but it would let you identify cases where [the equivalence between Optimism and Ethereum breaks down](differences.md) (or the equivalence between Ethereum itself and the development stack, for that matter).
 
 ## Multilayer integration tests
 
