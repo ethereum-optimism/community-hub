@@ -78,4 +78,5 @@ Follow these steps:
    ./build/bin/geth --datadir ./path/to/datadir --rpc
    ```
 
-   You can then use ERC20 events filters to get the events that you want for each address. Note that you will have to repeat this process for each datadir to get the full event history
+   You can then use ERC20 events filters to get the events that you want for each address. Note that you will have to repeat this process for each datadir to get the full event history.
+   If you are non-technical and need help requesting this data please reach out to us in Discord and we will be happy to help.
