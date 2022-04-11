@@ -27,6 +27,24 @@ This addon is currently free but Infura seems to intend to charge $200/month for
 - Optimism Ethereum
 - Optimism Kovan
 
+## BlockVision
+
+[BlockVision](https://blockvision.org/) is a one-stop development platform and on-chain data retrieval portal for developers that boasts impressively low-latencies and high availability.
+
+### Supported Networks
+
+- Optimism Ethereum
+- Optimism Kovan
+
+## Infura
+[Infura](https://infura.io/) offers access to hosted Optimism nodes via addon. 
+This addon is currently free but Infura seems to intend to charge $200/month for this addon in the future.
+
+### Supported Networks
+
+- Optimism Ethereum
+- Optimism Kovan
+
 
 ## QuickNode
 
