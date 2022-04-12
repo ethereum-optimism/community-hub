@@ -137,7 +137,8 @@ module.exports = {
             '/docs/developers/build/dev-node.md',
             '/docs/developers/build/run-a-node.md',
             '/docs/developers/build/differences.md',
-            '/docs/developers/build/json-rpc.md'
+            '/docs/developers/build/json-rpc.md',
+            '/docs/developers/build/testing-dapps.md'
           ],
         },
         {
