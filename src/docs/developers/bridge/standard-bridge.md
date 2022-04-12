@@ -11,6 +11,10 @@ The Standard Bridge is composed of two main contracts the [`L1StandardBridge`](h
 
 Here we'll go over the basics of using this bridge to move ERC20 assets between Layer 1 and Layer 2.
 
+::: tip 
+[See here for a step by step tutorial](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/cross-dom-bridge)
+:::
+
 ## Deposits
 
 ::: warning NOTICE
