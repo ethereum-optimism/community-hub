@@ -3,7 +3,8 @@ title: The Optimism Client SDK
 lang: en-US
 ---
 
-There are a few areas in which Optimism requires processing that is different from the Ethereum default:
+There are a few areas in which the SDK can help you navigate [the differences between Optimism and Ethereum](../developers/build/differences/):
+
 
 - [Gas costs](../developers/build/transaction-fees.md)
 - [Interlayer communication](../developers/bridge/basics.md)
