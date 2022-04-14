@@ -12,9 +12,11 @@ This difference requires us to have separate methods to provide gas estimates.
 
 There are three ways to access Optimism services:
 
-1. [Communicating with the contracts directly](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/docs)
-1. [Off chain, using RPC](../developers/build/json-rpc.md)
-1. [The JavaScript SDK](js-client.md)
+1. [On chain contract calls](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/docs). 
+   This is the way your contracts can get Optimism information or services directly.
+1. [The JavaScript SDK](js-client.md). For use when you write JavaScript or TypeScript code, either in the client or a Node.js server.
+1. [Off chain, using RPC](../developers/build/json-rpc.md). Which is more complicated but usable from any development stack (Python, Rust, etc.).
+
 
 ::: tip Improving the SDK
 If you find a bug, or if there's a feature you think we should add, there are several ways to inform us.
