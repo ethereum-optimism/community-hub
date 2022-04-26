@@ -36,16 +36,6 @@ This addon is currently free but Infura seems to intend to charge $200/month for
 - Optimism Ethereum
 - Optimism Kovan
 
-## Infura
-[Infura](https://infura.io/) offers access to hosted Optimism nodes via addon. 
-This addon is currently free but Infura seems to intend to charge $200/month for this addon in the future.
-
-### Supported Networks
-
-- Optimism Ethereum
-- Optimism Kovan
-
-
 ## QuickNode
 
 ### Description and pricing
