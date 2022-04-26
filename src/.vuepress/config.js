@@ -35,6 +35,10 @@ module.exports = {
     },
     nav: [
       {
+        text: "Governance",
+        link: "/docs/governance/"
+      },
+      {
         text: 'How Optimism Works',
         link: '/docs/how-optimism-works/',
       },
@@ -113,6 +117,11 @@ module.exports = {
     ],
     searchPlaceholder: 'Search the docs',
     sidebar: {
+      '/docs/governance/': [
+        '/docs/governance/economics.md',        
+        '/docs/governance/allocations.md',
+        '/docs/governance/airdrop-1.md'
+      ],
       '/docs/guides/': [
         '/docs/guides/wallet-dev.md',
         '/docs/guides/cex-dev.md',
