@@ -95,7 +95,7 @@ These addresses may also align with Optimism’s goal to build sustainable fundi
 - *For the time period between rounds 1 - 5, we included addresses who interacted with Gitcoin contracts, sent legacy `ExecuteSubscription` calls, or appeared in [Gitcoin’s donor API](https://docs.gitcoin.co/mk_rest_api/).*
 - *For the period between rounds 6 - 13 (present), we included donor addresses in the Gitcoin ‘BulkCheckout’ contract transaction logs.*
 
-#### Users Priced Out of Etherum
+#### Users Priced Out of Ethereum
 
 Active users of dapps on Ethereum are critical to ecosystem growth. Many of these addresses have started bridging to other chains due to high fees, and we want to help retain them in the Ethereum ecosystem while rewarding their curiosity and exploration. Optimism’s airdrop is also calibrated to reward loyalty to Ethereum, so users who have abandoned Ethereum entirely would not receive an airdrop.
 
