@@ -55,12 +55,14 @@ We sought to identify Optimism users who had actively used applications on Optim
 This group selects for addresses that have used Optimism, including both early adopters and newer users, but narrows down to a group that has used Optimism multiple times. 
 
 *Criterion: Address bridged to Optimism from L1 during the early phases of mainnet (prior to Jun 23, 2021), or used Optimism for more than 1 day (at least 24 hours between their first and last transaction) and made a transaction using an app (after to Jun 23, 2021).*
+- *These rules are only based on usage on Optimism. It does not matter which bridge, exchange, fiat on-ramp, etc you used in order to come to Optimism.*
 
 #### Repeat Optimism Users
 
 This tier selects for the most active Optimism users, who repeatedly come back to use applications in the Optimism ecosystem.
 
 *Criterion: Address is an ‘Optimism User’ and made at least 1 transaction with an Optimism application across four distinct weeks. This selects for the top 20% of ‘Optimism Users’.*
+- *"Distinct weeks" are counted based on the time of an addresses' first transaction (i.e. days 1 - 7 are considered Week 1, not the calendar week). This makes sure that there is no skew by which day of the week an address joined Optimism.*
 
 ### Active Ethereum Participants
 
