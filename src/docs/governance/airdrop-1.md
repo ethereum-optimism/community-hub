@@ -30,7 +30,7 @@ The allocations and criteria break down as follows:
 | Repeat Optimism Users* | 20,439 | 1,584.42
 | DAO Voters | 82,285 | 254.45
 | Multisig Signers | 19,543 | 1,114.23
-| Gitcoin Donors | 24,143 | 520.34
+| Gitcoin Donors (on L1) | 24,143 | 520.34
 | Users Priced Out of Ethereum | 74,296 | 383.27
 
 \* *Note that Repeat Optimism Users Receive 727.36 + 1,584.42 = 2,311.78 OP*
@@ -87,7 +87,7 @@ They are often the present (and future) DAO leaders and builders.
 *Criterion: Address is a current signer on a Multi-Sig which has executed at least 10 transactions all-time (this cohort includes 95% of all multisig transactions).*
 - *Multisig Wallets Include: Gnosis Safe v0.1.0-1.3.0, MultiSigWithDailyLimit, MultiSigWalletWithTimeLock, and addresses in Etherscan’s ‘Multisig’ label which had a function to get owner addresses.*
 
-#### Gitcoin Donors
+#### Gitcoin Donors (on L1)
 
 Gitcoin donors have chosen to behave in positive-sum ways by funding public goods. 
 These addresses may also align with Optimism’s goal to build sustainable funding source for public goods through retroactive funding ([RetroPGF](https://medium.com/ethereum-optimism/retropgf-experiment-1-1-million-dollars-for-public-goods-f7e455cbdca)).
@@ -96,7 +96,7 @@ These addresses may also align with Optimism’s goal to build sustainable fundi
 - *For the time period between rounds 1 - 5, we included addresses who interacted with Gitcoin contracts, sent legacy `ExecuteSubscription` calls, or appeared in [Gitcoin’s donor API](https://docs.gitcoin.co/mk_rest_api/).*
 - *For the period between rounds 6 - 13 (present), we included donor addresses in the Gitcoin ‘BulkCheckout’ contract transaction logs.*
 
-#### Users Priced Out of Etherum
+#### Users Priced Out of Ethereum
 
 Active users of dapps on Ethereum are critical to ecosystem growth. Many of these addresses have started bridging to other chains due to high fees, and we want to help retain them in the Ethereum ecosystem while rewarding their curiosity and exploration. Optimism’s airdrop is also calibrated to reward loyalty to Ethereum, so users who have abandoned Ethereum entirely would not receive an airdrop.
 
