@@ -61,7 +61,7 @@ This group selects for addresses that have used Optimism, including both early a
 
 This tier selects for the most active Optimism users, who repeatedly come back to use applications in the Optimism ecosystem.
 
-*Criterion: Address is an ‘Optimism User’ and made at least 1 transaction with an Optimism application across four distinct weeks. This selects for the top 20% of ‘Optimism Users’.*
+*Criterion: Address is an ‘Optimism User’ and made at least 1 transaction with an Optimism application across four or more distinct weeks. This selects for the top 20% of ‘Optimism Users’.*
 - *"Distinct weeks" are counted based on the time of an addresses' first transaction (i.e. days 1 - 7 are considered Week 1, not the calendar week). This makes sure that there is no skew by which day of the week an address joined Optimism.*
 
 ### Active Ethereum Participants
