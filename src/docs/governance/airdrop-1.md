@@ -75,7 +75,7 @@ Addresses who match this criterion have actively chosen to actively contribute b
 
 *Criterion: Address has either voted on or authored at least one proposal on-chain, or at least two on Snapshot (off-chain).*
 - *We filtered to “active DAOs” who have had at least 5 proposals with at least 5 votes.*
-- *On-Chain governance contracts included: Governor Alpha and Bravo, Aave, Maker, Curve, Aragon, DAOHaus, DAOStack, and forks.*
+- *On-Chain governance contracts included: Governor Alpha and Bravo, Aave, Curve, Aragon, DAOHaus, DAOStack, and forks.*
 - *Since Snapshot votes were off-chain, we recognized that these were more susceptible to spam/farming behavior, often driven by voters with nominal voting power. 
   To mitigate this, we filtered Snapshot votes to voters who made up the top 99.9% of total voting power in each DAO (i.e. >= 0.1% of voting power was made up by the sum of all smaller voters).*
 
