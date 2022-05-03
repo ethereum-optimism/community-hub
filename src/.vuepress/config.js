@@ -120,7 +120,8 @@ module.exports = {
       '/docs/governance/': [
         '/docs/governance/economics.md',        
         '/docs/governance/allocations.md',
-        '/docs/governance/airdrop-1.md'
+        '/docs/governance/airdrop-1.md',
+        '/docs/governance/gov-fund.md'
       ],
       '/docs/guides/': [
         '/docs/guides/wallet-dev.md',
