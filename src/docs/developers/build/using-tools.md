@@ -118,6 +118,30 @@ Local:
 brownie networks add Optimism optimism-local host=https://mainnet.optimism.io chainid=420
 ```
 
+## Moodyeth
+
+For the python integrations we can choose [Moodyeth](https://github.com/tokenchain/moodyeth) for evm based networks like Optimism. Now the new toolings are added to the Optimism by default. Call the network name out of the box and it will do the rest.
+
+Open a simple text file and start from the code below:
+```py
+# !/usr/bin/env python
+# coding: utf-8
+import os
+
+from moody.libeb import MiliDoS
+from moody import conf
+
+privatekey = "xxxxxxxx"
+# now using xDAI
+network = conf.OptimisticEthereum()
+
+ROOT = os.path.join(os.path.dirname(__file__))
+meta = MiliDoS(network).withPOA()
+meta.setWorkspace(ROOT).Auth(privatekey)
+
+```
+
+
 ## Other tools
 
 Got a favorite tool that works well with Optimism?
