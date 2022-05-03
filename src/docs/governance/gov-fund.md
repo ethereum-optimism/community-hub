@@ -3,6 +3,9 @@ title: Governance Fund Overview
 lang: en-US
 ---
 
+*[To discuss Phase 0 and Phase 1 of the Governance Fund, head to the Optimism governance forum](https://gov.optimism.io/t/governance-fund-discussion-thread/213)*.
+
+
 ::: tip Reminder: OP Airdrop #1 is not yet available to claim.
 *The official airdrop date will be announced on Twitter by [@optimismPBC](https://twitter.com/optimismPBC).*
 *Airdrop #1 will not require payment.*
@@ -10,13 +13,16 @@ lang: en-US
 *Stay safe!*
 :::
 
+
+
+
 ## Overview
 
 5.4% of the total initial token supply (231,928,234 OP) will be distributed to Optimism projects and communities via the Governance Fund. 
 The goal of the Governance Fund is to empower the OP community to proactively incentivize future growth of projects and communities in the Optimism ecosystem. 
 You can read more about the total allocation of OP in the [Allocations section](allocations.md) of our [Governance docs](README.md). 
 
-The first two phases of Governance Fund disbursement ("OP Stimpak"): 
+The first two phases of Governance Fund disbursement ("OP Stimpack"): 
 
 - **Phase 0** will run pre-Airdrop #1. 
   Project eligibility is determined by on-chain metrics.
