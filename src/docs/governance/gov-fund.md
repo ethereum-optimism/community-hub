@@ -16,7 +16,7 @@ lang: en-US
 The goal of the Governance Fund is to empower the OP community to proactively incentivize future growth of projects and communities in the Optimism ecosystem. 
 You can read more about the total allocation of OP in the [Allocations section](allocations.md) of our [Governance docs](README.md). 
 
-The first two phases of Governance Fund disbursement (”OPeration Summer Stimpak”): 
+The first two phases of Governance Fund disbursement ("OP Stimpak"): 
 
 - **Phase 0** will run pre-Airdrop #1. 
   Project eligibility is determined by on-chain metrics.
