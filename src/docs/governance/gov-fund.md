@@ -66,7 +66,7 @@ Each project must submit a proposal for how they will spend the tokens to grow u
 All Phase 0 proposals will be reviewed together as the Token House’s inaugural governance act. 
 After this vote, OP tokens will be distributed to each approved project.
 
-For details on how to submit a proposal during Phase 0, see [this overview](https://gov.optimism.io/t/governance-fund-phase-0-how-to-make-a-proposal/210).
+For details on how to submit a proposal during Phase 0, see [**this template**](https://gov.optimism.io/t/governance-fund-phase-0-how-to-create-a-proposal/215).
 
 Projects that do not put forward a clear plan for how they will spend these tokens to incentivize sustainable growth of their community and usage on Optimism will *not* have their proposals included in the Phase 0 batch approval for submission to the Token House. 
 
@@ -95,7 +95,7 @@ Proposals will be reviewed and voted on by OP token holders and their delegates.
 In these early stages, the Optimism Foundation may release guidelines to help OP governance participants develop an intuition for which proposals will genuinely benefit the Optimism ecosystem. 
 To strike the right balance between preventing spam and facilitating accessibility, the Optimism Foundation may adjust the requirements for creating and passing a proposal.
 
-For details on how to submit a proposal during Phase 1, see [**this template**](https://gov.optimism.io/t/governance-fund-phase-1-how-to-create-a-proposal/212).
+For details on how to submit a proposal during Phase 1, see [**this template**](https://gov.optimism.io/t/governance-fund-phase-1-how-to-create-a-proposal/216).
 
 When a project gets a proposal approved, they are still eligible to apply for further proposals. 
 We recommend that projects distribute their initial allocation of tokens before requesting further tokens. 
