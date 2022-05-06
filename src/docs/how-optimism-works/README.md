@@ -93,26 +93,44 @@ In Optimism's case this parent blockchain is Ethereum.
 
 ### Block storage
 
-Optimism blocks are written to Ethereum blocks as [calldata](https://ethresear.ch/t/clarification-on-how-calldata-persists-on-the-blockchain-and-how-optimistic-rollups-use-it/8136).
-The way this works is that the sequencer sends transactions from a specific externally owned address (EOA) which transfer 0 wei but has in the calldata all the necessary information.
-This way we get an append-only list that lives inside the Ethereum blockchain.
+All Optimism blocks are stored within a special smart contract on Ethereum called the [`CanonicalTransactionChain`](https://etherscan.io/address/0x5E4e65926BA27467555EB562121fac00D24E9dD2) (or CTC for short).
+Optimism blocks are held within an append-only list inside of the CTC (we'll explain exactly how blocks are added to this list in the next section).
+This append-only list forms the Optimism blockchain.
+
+The `CanonicalTransactionChain` includes code that guarantees that the existing list of blocks cannot be modified by new Ethereum transactions.
+However, this guarantee can be broken if the Ethereum blockchain itself is reorganized and the ordering of past Ethereum transactions is changed.
+The Optimism mainnet is configured to be robust against block reorganizations of up to 50 Ethereum blocks.
+If Ethereum experiences a reorg larger than this, Optimism will reorg as well.
+
+Of course, it's a key security goal of Ethereum to not experience these sort of significant block reorganizations.
+Optimism is therefore secure against large block reorganizations as long as the Ethereum consensus mechanism is too.
+It's through this relationship (in part, at least) that Optimism derives its security properties from Ethereum.
 
 ### Block production
 
-Optimism block production is managed by a single party, called the "sequencer," which helps the network by providing the following services:
+Optimism block production is primarily managed by a single party, called the "sequencer," which helps the network by providing the following services:
 
 - Providing instant transaction confirmations and state updates.
 - Constructing and executing L2 blocks.
 - Submitting user transactions to L1.
 
-The sequencer has a mempool, and uses an auction mechanism, similar to Ethereum, to decide what transactions are accepted.
+The sequencer has no mempool and transactions are immediately accepted or rejected in the order they were received.
+When a user sends their transaction to the sequencer, the sequencer checks that the transaction is valid (i.e. pays a sufficient fee) and then applies the transaction to its local state as a pending block.
+These pending blocks are periodically submitted in large batches to Ethereum for finalization.
+This batching process significantly reduces overall transaction fees by spreading fixed costs over all of the transactions within a given batch.
+The sequencer also applies some basic compression techniques to minimize the amount of data published to Ethereum.
 
-# Need to fix this on the 26th.
+Because the sequencer is given priority write access to the L2 chain, the sequencer can provide a strong guarantee of what state will be finalized as soon as it decides on a new pending block.
+In other words, it is precisely known what will be the impact of the transaction.
+As a result, the L2 state can be reliably updated extremely quickly.
+Benefits of this include a snappy, instant user experience, with things like near-real-time Uniswap price updates.
 
-For the moment, [GOON GOON GOON](https://www.optimism.io/) runs the only sequencer. 
-We are going to decentralize the sequencer in the future, after we are certain our fault proofs 
+Alternatively, users can skip the sequencer entirely and submit their transactions directly to the `CanonicalTransactionChain` via an Ethereum transaction.
+This is typically more expensive because the fixed cost of submitting this transaction is paid entirely by the user and is not amortized over many different transactions.
+However, this alternative submission method has the advantage of being resistant to censorship by the sequencer.
+Even if the sequencer is actively censoring a user, the user can always continue to use Optimism and recover any funds through this mechanism.
 
-Blocks are produced every two seconds.
+For the moment, [Optimism PBC](https://www.optimism.io/) runs the only block producer. Refer to [Protocol specs](../protocol/README.md) section for more information about how we plan to decentralize the Sequencer role in the future.
 
 ### Block execution
 
