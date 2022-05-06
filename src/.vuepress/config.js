@@ -118,6 +118,10 @@ module.exports = {
     searchPlaceholder: 'Search the docs',
     sidebar: {
       '/docs/governance/': [
+        [
+          'https://www.optimism.io/vision',
+          'The Optimistic Vision'
+        ],
         '/docs/governance/economics.md',        
         '/docs/governance/allocations.md',
         '/docs/governance/airdrop-1.md',
