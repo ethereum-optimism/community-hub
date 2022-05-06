@@ -54,10 +54,10 @@ module.exports = {
         text: 'Dev Docs',
         link: '/docs/developers/',
       },
-      {
-        text: 'Tools',
-        link: '/docs/useful-tools/',
-      },
+//      {
+//        text: 'Tools',
+//        link: '/docs/useful-tools/',
+//      },
       {
         text: 'Contribute',
         link: '/docs/contribute/',
@@ -165,21 +165,20 @@ module.exports = {
           collapsable: true,
         },
         '/docs/developers/tutorials.md',
+        {
+          title: 'Tools',
+          children: [
+            '/docs/useful-tools/networks.md',
+            '/docs/useful-tools/debugging.md',
+            '/docs/useful-tools/faucets.md',
+            '/docs/useful-tools/monitoring.md',
+            '/docs/useful-tools/explorers.md',
+            '/docs/useful-tools/providers.md',
+            '/docs/useful-tools/oracles.md',
+            ['https://www.optimism.io/apps/tools', 'Third Party Tools'],            
+          ],
+        },
         '/docs/developers/known-issues.md',
-        [
-          'https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/docs',
-          'Contracts API'
-        ]
-      ],
-      '/docs/useful-tools/': [
-        '/docs/useful-tools/networks.md',
-        '/docs/useful-tools/debugging.md',
-        '/docs/useful-tools/faucets.md',
-        '/docs/useful-tools/monitoring.md',
-        '/docs/useful-tools/explorers.md',
-        '/docs/useful-tools/providers.md',
-        '/docs/useful-tools/oracles.md',
-        ['https://www.optimism.io/apps/tools', 'Third Party Tools'],
       ]
     }
   },
@@ -196,3 +195,5 @@ module.exports = {
     "plausible-analytics"
   ]
 }
+  
+module.exports.themeConfig.sidebar["/docs/useful-tools/"] = module.exports.themeConfig.sidebar["/docs/developers/"]
