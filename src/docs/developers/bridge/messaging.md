@@ -62,7 +62,7 @@ contract MyOtherContract {
 Here we're using the [low-level "call" function](https://docs.soliditylang.org/en/v0.8.4/units-and-global-variables.html#members-of-address-types) and one of the [ABI encoding functions built into Solidity](https://docs.soliditylang.org/en/v0.8.4/units-and-global-variables.html#abi-encoding-and-decoding-functions).
 Although these two code snippets look a bit different, they're actually functionally identical.
 
-## Interlayer communication basics
+## Basics of communication between layers
 
 Cool!
 Now that you have a general idea of how contracts on Ethereum interact with one another, let's take a look at how we do the same thing *between* Optimism and Ethereum.
