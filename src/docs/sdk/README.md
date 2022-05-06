@@ -22,6 +22,6 @@ There are three ways to access Optimism services:
 ::: tip Improving the SDK
 If you find a bug, or if there's a feature you think we should add, there are several ways to inform us.
 
-- [Go on our Discord](https://discord.optimism.io), get the developer role (in the **#get-a-role** channel) and then ask in **#dev-support**.
+- [Go on our Discord](https://discord-gateway.optimism.io/), and then ask in **#dev-support**.
 - Submit an issue on [our Github](https://github.com/ethereum-optimism/optimism/issues).
 :::
