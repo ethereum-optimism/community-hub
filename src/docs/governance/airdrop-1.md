@@ -30,7 +30,7 @@ The allocations and criteria break down as follows:
 | Repeat Optimism Users* | 20,439 | 1,584.42
 | DAO Voters | 82,285 | 254.45
 | Multisig Signers | 19,543 | 1,114.23
-| Gitcoin Donors | 24,143 | 520.34
+| Gitcoin Donors (on L1) | 24,143 | 520.34
 | Users Priced Out of Ethereum | 74,296 | 383.27
 
 \* *Note that Repeat Optimism Users Receive 727.36 + 1,584.42 = 2,311.78 OP*
@@ -55,12 +55,14 @@ We sought to identify Optimism users who had actively used applications on Optim
 This group selects for addresses that have used Optimism, including both early adopters and newer users, but narrows down to a group that has used Optimism multiple times. 
 
 *Criterion: Address bridged to Optimism from L1 during the early phases of mainnet (prior to Jun 23, 2021), or used Optimism for more than 1 day (at least 24 hours between their first and last transaction) and made a transaction using an app (after to Jun 23, 2021).*
+- *These rules are only based on usage on Optimism. It does not matter which bridge, exchange, fiat on-ramp, etc you used in order to come to Optimism.*
 
 #### Repeat Optimism Users
 
 This tier selects for the most active Optimism users, who repeatedly come back to use applications in the Optimism ecosystem.
 
-*Criterion: Address is an ‘Optimism User’ and made at least 1 transaction with an Optimism application across four distinct weeks. This selects for the top 20% of ‘Optimism Users’.*
+*Criterion: Address is an ‘Optimism User’ and made at least 1 transaction with an Optimism application across four or more distinct weeks. This selects for the top 20% of ‘Optimism Users’.*
+- *"Distinct weeks" are counted based on the time of an addresses' first transaction (i.e. days 1 - 7 are considered Week 1, not the calendar week). This makes sure that there is no skew by which day of the week an address joined Optimism.*
 
 ### Active Ethereum Participants
 
@@ -73,7 +75,7 @@ Addresses who match this criterion have actively chosen to actively contribute b
 
 *Criterion: Address has either voted on or authored at least one proposal on-chain, or at least two on Snapshot (off-chain).*
 - *We filtered to “active DAOs” who have had at least 5 proposals with at least 5 votes.*
-- *On-Chain governance contracts included: Governor Alpha and Bravo, Aave, Maker, Curve, Aragon, DAOHaus, DAOStack, and forks.*
+- *On-Chain governance contracts included: Governor Alpha and Bravo, Aave, Curve, Aragon, DAOHaus, DAOStack, and forks.*
 - *Since Snapshot votes were off-chain, we recognized that these were more susceptible to spam/farming behavior, often driven by voters with nominal voting power. 
   To mitigate this, we filtered Snapshot votes to voters who made up the top 99.9% of total voting power in each DAO (i.e. >= 0.1% of voting power was made up by the sum of all smaller voters).*
 
@@ -85,16 +87,16 @@ They are often the present (and future) DAO leaders and builders.
 *Criterion: Address is a current signer on a Multi-Sig which has executed at least 10 transactions all-time (this cohort includes 95% of all multisig transactions).*
 - *Multisig Wallets Include: Gnosis Safe v0.1.0-1.3.0, MultiSigWithDailyLimit, MultiSigWalletWithTimeLock, and addresses in Etherscan’s ‘Multisig’ label which had a function to get owner addresses.*
 
-#### Gitcoin Donors
+#### Gitcoin Donors (on L1)
 
 Gitcoin donors have chosen to behave in positive-sum ways by funding public goods. 
 These addresses may also align with Optimism’s goal to build sustainable funding source for public goods through retroactive funding ([RetroPGF](https://medium.com/ethereum-optimism/retropgf-experiment-1-1-million-dollars-for-public-goods-f7e455cbdca)).
 
-*Criterion: Address has made an on-chain donation through Gitcoin. This includes any donation, regardless of if it was during a matching round.*
+*Criterion: Address has made an on-chain donation through Gitcoin on L1. This includes any donation, regardless of if it was during a matching round.*
 - *For the time period between rounds 1 - 5, we included addresses who interacted with Gitcoin contracts, sent legacy `ExecuteSubscription` calls, or appeared in [Gitcoin’s donor API](https://docs.gitcoin.co/mk_rest_api/).*
 - *For the period between rounds 6 - 13 (present), we included donor addresses in the Gitcoin ‘BulkCheckout’ contract transaction logs.*
 
-#### Users Priced Out of Etherum
+#### Users Priced Out of Ethereum
 
 Active users of dapps on Ethereum are critical to ecosystem growth. Many of these addresses have started bridging to other chains due to high fees, and we want to help retain them in the Ethereum ecosystem while rewarding their curiosity and exploration. Optimism’s airdrop is also calibrated to reward loyalty to Ethereum, so users who have abandoned Ethereum entirely would not receive an airdrop.
 
