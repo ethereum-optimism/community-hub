@@ -39,6 +39,9 @@ However, you **can** access transaction history between 23 June 2021 and the fin
 
 ### Dune access
 
+[Click here](https://dune.com/optimismpbc/OVM1.0-User-Address-Transactions).
+
+<!--
 If none of the Etherscan CSV files contains the information you need, you can use a query on [Dune Analytics](https://dune.xyz), similar to [this query](https://dune.xyz/queries/354886?addr=%5Cx25E1c58040f27ECF20BBd4ca83a09290326896B3).
 You have to log on with a Dune account, but their free tier is sufficient.
 
@@ -53,6 +56,7 @@ Notes:
 - This is how you specify parameters in Dune, `{{` followed by the parameter name and then `}}`. 
 - Addresses are specified as `\x<hex address>` rather than `0x<hex address>`.  
 - The limit is not required, but here to save resources
+-->
 
 
 ### Pre 23 June 2021 history
