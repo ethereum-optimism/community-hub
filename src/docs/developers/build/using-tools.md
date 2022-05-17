@@ -118,6 +118,48 @@ Local:
 brownie networks add Optimism optimism-local host=https://mainnet.optimism.io chainid=420
 ```
 
+## Waffle
+
+Starting from [Waffle](https://github.com/TrueFiEng/Waffle) v4.x.x you can use Waffle chai matchers to test your smart contracts on Optimism. To do so, start a local node following [this guide](./dev-node.md). Then install alpha versions of `ethereum-waffle` and `@ethereum-waffle/optimism` packages:
+```bash
+npm install --save-dev ethereum-waffle@alpha @ethereum-waffle/optimism@alpha
+```
+Create a new instance of `OptimismProvider` to connect to a local Optimism node. You're ready to use Waffle chai matchers in your tests!
+```ts
+import {expect, use} from 'chai';
+import {Wallet, Contract, ContractFactory} from 'ethers';
+import {solidity} from 'ethereum-waffle';
+import {OptimismProvider} from '@ethereum-waffle/optimism';
+import {CONTRACT_ABI, CONTRACT_BYTECODE} from './contracts';
+
+use(solidity);
+
+describe('Optimism', () => {
+  const provider = new OptimismProvider();
+
+  let wallet: Wallet;
+  let contract: Contract;
+
+  before(async () => {
+    const wallets = provider.getWallets();
+    wallet = wallets[0];
+  });
+
+  beforeEach(async () => {
+    const factory = new ContractFactory(CONTRACT_ABI, CONTRACT_BYTECODE, wallet);
+    contract = await factory.deploy();
+  });
+
+  it('Emits One', async () => {
+    await expect(events.doEmitOne()).to.emit(events, 'One');
+  });
+
+  it('Reverts', async () => {
+    await expect(matchers.doRevert()).to.be.revertedWith('Revert cause');
+  });
+});
+```
+
 ## Other tools
 
 Got a favorite tool that works well with Optimism?
