@@ -89,15 +89,23 @@ Approved proposals are routed to the Optimism Foundation for implementation, as 
 
 The different requirements for submission and approval of each Proposal Type are summarized below: 
 
-| Proposal Type	| Description | Submission Requirements | Vote Duration (# of voting periods) |	Quorum (minimum % of votable OP supply actually voted)  |Approval Threshold(minimum % of votes cast to approve relative to total votes cast) |
+| Proposal Type	| Description | Submission Requirements | Vote Duration (1) |	Quorum (2) |Approval Threshold (3) |
 | - | - | - | - | - | - |
-| Governance Fund (Phase 0 Batch) | OP distributions to proactively incentivize future growth of projects and communities in the Optimism ecosystem. [Phase 0](gov-fund.md#phase-0) specifically rewards existing projects that drove growth to Optimism before Airdrop #1 |	Eligibility requirements described [here](gov-fund.md#phase-0). The Optimism Foundation will assist eligible Phase 0 candidates to structure submissions. Snapshot proposal for batch to be initiated by the Foundation. |	1 (~2 weeks) |	0.1	| 0.51 |
-| Governance Fund (Phase 1) | OP distributions to proactively incentivize future growth of projects and communities in the Optimism ecosystem. [Phase 1](gov-fund.md#phase-0) begins after Airdrop #1 |	Forum + Snapshot | 1 (~2 weeks)	| 0.1 | 0.51 |
-| Protocol Upgrade | Scheduled changes to the on-chain smart contracts comprising the mainnet Optimism protocol	| Snapshot | 2 (~4 weeks) | 0.1 | 0.51 |
-| Inflation Adjustment | Changes to the inflation rate of newly minted OP (currently capped at 2% annually) | Snapshot | 2 (~4 weeks) | 0.1 | 0.76 |
-| Director Removal | Removal of a director of the Optimism Foundation | Snapshot | 2 (~4 weeks) | 0.1 | 0.76 |
-| Treasury Appropriations | The amount of OP the Optimism Foundation may spend or distribute annually, beginning in Year 2 of its existence (the Year 1 budget is 30% of the initial total OP supply) | Proposals to be initiated by the Foundation | 2 (~4 weeks) | 0.1 | 0.51
-| Rights Protections | OP holders must consent to any changes to the founding documents of the Optimism Foundation, if those changes would materially reduce their rights | Proposals to be initiated by the Foundation	| 2 (~4 weeks) | 0.1 | 0.51
+| Governance Fund (Phase 0 Batch) | OP distributions to proactively incentivize future growth of projects and communities in the Optimism ecosystem. [Phase 0](gov-fund.md#phase-0) specifically rewards existing projects that drove growth to Optimism before Airdrop #1 |	Eligibility requirements described [here](gov-fund.md#phase-0). The Optimism Foundation will assist eligible Phase 0 candidates to structure submissions. Snapshot proposal for batch to be initiated by the Foundation. |	1 (~2 weeks) |	10%	| 51% |
+| Governance Fund (Phase 1) | OP distributions to proactively incentivize future growth of projects and communities in the Optimism ecosystem. [Phase 1](gov-fund.md#phase-0) begins after Airdrop #1 |	Forum + Snapshot | 1 (~2 weeks)	| 10% | 51% |
+| Protocol Upgrade | Scheduled changes to the on-chain smart contracts comprising the mainnet Optimism protocol	| Snapshot | 2 (~4 weeks) | 10% | 51% |
+| Inflation Adjustment | Changes to the inflation rate of newly minted OP (currently capped at 2% annually) | Snapshot | 2 (~4 weeks) | 10% | 76% |
+| Director Removal | Removal of a director of the Optimism Foundation | Snapshot | 2 (~4 weeks) | 10% | 76% |
+| Treasury Appropriations | The amount of OP the Optimism Foundation may spend or distribute annually, beginning in Year 2 of its existence (the Year 1 budget is 30% of the initial total OP supply) | Proposals to be initiated by the Foundation | 2 (~4 weeks) | 10% | 51%
+| Rights Protections | OP holders must consent to any changes to the founding documents of the Optimism Foundation, if those changes would materially reduce their rights | Proposals to be initiated by the Foundation	| 2 (~4 weeks) | 10% | 51%
+
+Notes:
+
+(1) number of voting periods
+
+(2) minimum % of votable OP supply actually voted
+
+(3) minimum % of votes cast to approve relative to total votes cast
 
 ### Implementation and Administration
 
