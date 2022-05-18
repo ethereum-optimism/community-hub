@@ -6,9 +6,9 @@ lang: en-US
 Bedrock is the next major release of the Optimism network, planned for the second half of 2022. 
 Here are the major changes:
 
-## Services
+## Runtime (for replicas and devnodes)
 
-In bedrock processing is divided between a rollup node, which replaces some DTL functionality, and an execution engine, which does more than the current l2geth.
+In bedrock processing is divided between a rollup node, which replaces some DTL functionality, and an execution engine, which has less of a difference from upstream geth than the current l2geth has.
 
 ### The rollup node
 
@@ -17,13 +17,15 @@ It has these important differences from the existing DTL:
 
 - The DTL synchronizes from both L1 and L2.
   In bedrock the execution engine uses the standard Ethereum mechanism to synchronize with L2, and the rollup node only provides information from L1.
-- 
+- The DTL is stateful, it keeps a copy of all the L2 transactions.
+  The rollup node is stateless, it gets everything it needs from L1.
 
 
 ### The execution engine
 
 The execution engine runs a slightly modified version of geth.
-It is updated 
+In terms of EVM equivalence, it is [even closer to upstream geth](https://github.com/ethereum-optimism/reference-optimistic-geth/compare/master...optimism-prototype) than the current version.
+
 
 ## Blocks
 
