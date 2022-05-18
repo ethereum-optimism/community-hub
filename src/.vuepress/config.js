@@ -142,7 +142,6 @@ module.exports = {
       ],
       '/docs/developers/': [
         '/docs/developers/releases.md',
-        '/docs/developers/bedrock.md',        
         {
           title: 'Building on Optimism',
           children: [
