@@ -35,6 +35,10 @@ module.exports = {
     },
     nav: [
       {
+        text: "Governance",
+        link: "/docs/governance/"
+      },
+      {
         text: 'How Optimism Works',
         link: '/docs/how-optimism-works/',
       },
@@ -53,10 +57,6 @@ module.exports = {
       {
         text: 'SDK',
         link: '/docs/sdk/'
-      },
-      {
-        text: 'Tools',
-        link: '/docs/useful-tools/',
       },
       {
         text: 'Contribute',
@@ -117,6 +117,16 @@ module.exports = {
     ],
     searchPlaceholder: 'Search the docs',
     sidebar: {
+      '/docs/governance/': [
+        [
+          'https://www.optimism.io/vision',
+          'The Optimistic Vision'
+        ],
+        '/docs/governance/economics.md',        
+        '/docs/governance/allocations.md',
+        '/docs/governance/airdrop-1.md',
+        '/docs/governance/gov-fund.md'
+      ],
       '/docs/guides/': [
         '/docs/guides/wallet-dev.md',
         '/docs/guides/cex-dev.md',
@@ -141,7 +151,8 @@ module.exports = {
             '/docs/developers/build/dev-node.md',
             '/docs/developers/build/run-a-node.md',
             '/docs/developers/build/differences.md',
-            '/docs/developers/build/json-rpc.md'
+            '/docs/developers/build/json-rpc.md',
+            '/docs/developers/build/testing-dapps.md'
           ],
         },
         {
@@ -187,3 +198,5 @@ module.exports = {
     "plausible-analytics"
   ]
 }
+  
+module.exports.themeConfig.sidebar["/docs/useful-tools/"] = module.exports.themeConfig.sidebar["/docs/developers/"]

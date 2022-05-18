@@ -7,6 +7,11 @@ Apps on Optimism can be made to interact with apps on Ethereum via a process cal
 In a nutshell, **contracts on Optimism can trigger contract functions on Ethereum, and vice versa**.
 With just a little bit of elbow grease, you too can create contracts that bridge the gap between Layer 1 and Layer 2!
 
+
+::: tip 
+[See here for a step by step tutorial](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/cross-dom-comm)
+:::
+
 ## Understanding contract calls
 
 In order to understand the process of creating bridges between contracts on Layer 1 and Layer 2, you should first have a basic understanding of the way contracts on *Ethereum* communicate with one another.

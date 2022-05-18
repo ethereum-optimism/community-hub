@@ -86,58 +86,18 @@ Many Ethereum applications display estimated fees to users by multiplying the ga
 However, as discussed earlier, users on Optimism are charged both an L2 execution fee and an L1 data fee.
 As a result, you should display the sum of both of these fees to give users the most accurate estimate of the total cost of a transaction.
 
+[See here for a code sample using the JavaScript SDK](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/sdk-estimate-gas)
+
 #### Estimating the L2 execution fee
 
 You can estimate the L2 execution fee by multiplying the gas price by the gas limit, just like on Ethereum.
 
 #### Estimating the L1 data fee
 
-Estimating the L1 data fee is most easily done by using the `GasPriceOracle` predeployed smart contract located at [`0x420000000000000000000000000000000000000F`](https://optimistic.etherscan.io/address/0x420000000000000000000000000000000000000F).
-The `GasPriceOracle` contract is located at the same address on every Optimism network (mainnet and testnet).
-
-Here's an example of using the `GasPriceOracle` contract to estimate the L1 data fee for a WETH transfer:
-
-```ts
-import { getContractFactory, predeploys } from '@eth-optimism/contracts'
-import { ethers } from 'ethers'
-
-const main = async () => {
-   // Create an ethers provider connected to the public mainnet endpoint.
-   const provider = new ethers.providers.JsonRpcProvider(
-      'https://mainnet.optimism.io'
-   )
-
-   // Create contract instances connected to the GPO and WETH contracts.
-   const GasPriceOracle = getContractFactory('OVM_GasPriceOracle')
-      .attach(predeploys.OVM_GasPriceOracle)
-      .connect(provider)
-   const WETH = getContractFactory('WETH9')
-      .attach(predeploys.WETH9)
-      .connect(provider)
-
-   // An account with a small amount of WETH in it on mainnet
-   const from = '0xbeefbeefbeefbeefbeefbeefbeefbeefbeefbeef'
-   // Arbitrary recipient address.
-   const to = '0x1111111111111111111111111111111111111111'
-   // Small amount of WETH to send (in wei).
-   const amount = 1234
-
-   // Compute the estimated fee in wei
-   const l1FeeInWei = await GasPriceOracle.getL1Fee(
-      ethers.utils.serializeTransaction({
-         ...(await WETH.populateTransaction.transfer(to, amount)),
-         gasPrice: await provider.getGasPrice(),
-         gasLimit: await WETH.estimateGas.transfer(to, amount, {
-         from,
-         }),
-      })
-   )
-
-   console.log(`Estimated L1 fee (in wei): ${l1FeeInWei.toString()}`)
-}
-
-main()
-```
+You can use the SDK [(see here)](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/sdk-estimate-gas).
+Alternatively, you can estimate the L1 data fee using the `GasPriceOracle` predeployed smart contract located at [`0x420000000000000000000000000000000000000F`](https://optimistic.etherscan.io/address/0x420000000000000000000000000000000000000F).
+[The `GasPriceOracle` contract](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/L2/predeploys/OVM_GasPriceOracle.sol) is located at the same address on every Optimism network (mainnet and testnet).
+To do so, call `GasPriceOracle.getL1Fee(<unsigned RLP encoded transaction>)`.
 
 #### Estimating the total fee
 
