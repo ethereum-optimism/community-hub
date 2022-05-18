@@ -154,11 +154,11 @@ describe('Optimism', () => {
   });
 
   it('Emits One', async () => {
-    await expect(events.doEmitOne()).to.emit(events, 'One');
+    await expect(contract.doEmitOne()).to.emit(contract, 'One');
   });
 
   it('Reverts', async () => {
-    await expect(matchers.doRevert()).to.be.revertedWith('Revert cause');
+    await expect(contract.doRevert()).to.be.revertedWith('Revert cause');
   });
 });
 ```
