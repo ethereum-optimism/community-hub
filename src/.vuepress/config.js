@@ -165,16 +165,19 @@ module.exports = {
           collapsable: true,
         },
         '/docs/developers/tutorials.md',
-        '/docs/developers/known-issues.md'
-      ],
-      '/docs/useful-tools/': [
-        '/docs/useful-tools/networks.md',
-        '/docs/useful-tools/debugging.md',
-        '/docs/useful-tools/faucets.md',
-        '/docs/useful-tools/monitoring.md',
-        '/docs/useful-tools/explorers.md',
-        '/docs/useful-tools/providers.md',
-        ['https://www.optimism.io/apps/tools', 'Third Party Tools'],
+        '/docs/developers/known-issues.md',
+        { 
+          title: "Useful Tools",
+          children: [
+            '/docs/useful-tools/networks.md',
+            '/docs/useful-tools/debugging.md',
+            '/docs/useful-tools/faucets.md',
+            '/docs/useful-tools/monitoring.md',
+            '/docs/useful-tools/explorers.md',
+            '/docs/useful-tools/providers.md',
+            ['https://www.optimism.io/apps/tools', 'Third Party Tools'],
+          ],
+        }        
       ],
       '/docs/sdk/': [
         '/docs/sdk/js-client.md',
