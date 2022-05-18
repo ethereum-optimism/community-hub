@@ -45,7 +45,7 @@ To be eligible for voting, a Token House governance proposal must be validly sub
   - Treasury Appropriations
   - Rights Protections
 
-  For a more detailed description of each Proposal Type, see [Proposal Process – By Proposal Type](gov-01.md#proposal-process-by-proposal-type) below.
+  For a more detailed description of each Proposal Type, see [Proposal Process By Type](gov-01.md#proposal-process-by-type) below.
 
 - **Properly formatted to the applicable Template**. 
   Each Proposal Type will have a specific Template associated with it. 
@@ -85,7 +85,7 @@ Depending on the Proposal Type, exact quorum and approval threshold requirements
 Proposals that are rejected due to invalidity or insufficient support can be resubmitted. 
 Approved proposals are routed to the Optimism Foundation for implementation, as more fully described in the [Implementation and Administration](gov-01.md#implementation-and-administration) section below.
 
-## Proposal Process – By Proposal Type
+## Proposal Process By Type
 
 The different requirements for submission and approval of each Proposal Type are summarized below: 
 
