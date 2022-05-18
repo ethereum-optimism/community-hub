@@ -121,10 +121,13 @@ brownie networks add Optimism optimism-local host=https://mainnet.optimism.io ch
 ## Waffle
 
 Starting from [Waffle](https://github.com/TrueFiEng/Waffle) v4.x.x you can use Waffle chai matchers to test your smart contracts on Optimism. To do so, start a local node following [this guide](./dev-node.md). Then install alpha versions of `ethereum-waffle` and `@ethereum-waffle/optimism` packages:
+
 ```bash
 npm install --save-dev ethereum-waffle@alpha @ethereum-waffle/optimism@alpha
 ```
+
 Create a new instance of `OptimismProvider` to connect to a local Optimism node. You're ready to use Waffle chai matchers in your tests!
+
 ```ts
 import {expect, use} from 'chai';
 import {Wallet, Contract, ContractFactory} from 'ethers';
