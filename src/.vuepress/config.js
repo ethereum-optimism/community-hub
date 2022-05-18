@@ -54,10 +54,10 @@ module.exports = {
         text: 'Dev Docs',
         link: '/docs/developers/',
       },
-//      {
-//        text: 'Tools',
-//        link: '/docs/useful-tools/',
-//      },
+      {
+        text: 'SDK',
+        link: '/docs/sdk/'
+      },
       {
         text: 'Contribute',
         link: '/docs/contribute/',
@@ -165,8 +165,9 @@ module.exports = {
           collapsable: true,
         },
         '/docs/developers/tutorials.md',
-        {
-          title: 'Tools',
+        '/docs/developers/known-issues.md',
+        { 
+          title: "Useful Tools",
           children: [
             '/docs/useful-tools/networks.md',
             '/docs/useful-tools/debugging.md',
@@ -174,12 +175,17 @@ module.exports = {
             '/docs/useful-tools/monitoring.md',
             '/docs/useful-tools/explorers.md',
             '/docs/useful-tools/providers.md',
-            '/docs/useful-tools/oracles.md',
-            ['https://www.optimism.io/apps/tools', 'Third Party Tools'],            
+            ['https://www.optimism.io/apps/tools', 'Third Party Tools'],
           ],
-        },
-        '/docs/developers/known-issues.md',
-      ]
+        }        
+      ],
+      '/docs/sdk/': [
+        '/docs/sdk/js-client.md',
+        [
+          'https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/docs',
+          'Contracts API'
+        ]
+      ]      
     }
   },
 
