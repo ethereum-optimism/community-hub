@@ -5,7 +5,7 @@ lang: en-US
 
 If you're looking to build an app on Optimism you'll need access to an Optimism node.
 You can get a hosted one from:
-- [Alchemy](https://www.alchemy.com/layer2/optimism)
+- [Alchemy](https://docs.alchemy.com/alchemy/apis/optimism-api)
 - [BlockVision](https://docs.blockvision.org/blockvision/chain-apis/optimism-api)
 - [Infura](https://docs.infura.io/infura#section/Network-Add-Ons/Optimistic-Ethereum)
 - [QuickNode](https://www.quicknode.com/chains/optimism).
