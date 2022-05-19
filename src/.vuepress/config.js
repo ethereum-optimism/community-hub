@@ -124,6 +124,7 @@ module.exports = {
         ],
         '/docs/governance/economics.md',        
         '/docs/governance/allocations.md',
+        '/docs/governance/gov-01.md',
         '/docs/governance/airdrop-1.md',
         '/docs/governance/gov-fund.md'
       ],
