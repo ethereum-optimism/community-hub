@@ -140,6 +140,7 @@ module.exports = {
         '/docs/protocol/compressed-ctc.md'
       ],
       '/docs/developers/': [
+        '/docs/developers/bedrock.md',
         '/docs/developers/releases.md',
         {
           title: 'Building on Optimism',
