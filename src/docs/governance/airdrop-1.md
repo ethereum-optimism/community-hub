@@ -130,7 +130,7 @@ So we applied some basic filters to various criteria:
   For multisig signers, only the multisig needed to have executed a transaction after Jan 1, 2019. 
   We chose this cutoff date to narrow in on active addresses, while also providing a window before [L1 gas prices](https://etherscan.io/chart/gasprice) consistently rose and potentially priced some users out of Ethereum.
 
-### Additional sybil filtering
+### Additional Sybil Filtering
 
 Optimism is for the people, not the sybils.
 After the announcement of Airdrop #1, we received limited reports of sybil activity that was not excluded by our initial filtering.
