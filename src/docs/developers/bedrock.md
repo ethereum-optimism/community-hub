@@ -82,7 +82,7 @@ To create a deposit you can either the old API or [`OptimismPortal`](https://git
 - Address aliasing is now applied to withdrawal transactions as well as deposit ones.
 - There is a separate withdrawal root which allows withdrawal merkle proofs to be 60% cheaper (in L1 gas).
 
-TO initiate withdrawals you still use the same API, [`L2CrossDomainMessenger`](https://github.com/ethereum-optimism/optimism/blob/develop/contracts-bedrock/contracts/L2/L2CrossDomainMessenger.sol), but internally it uses [`L2ToL1MessagePasser`](https://github.com/ethereum-optimism/optimism/blob/develop/contracts-bedrock/contracts/L2/L2ToL1MessagePasser.sol).
+To initiate withdrawals you can still use the same API, [`L2CrossDomainMessenger`](https://github.com/ethereum-optimism/optimism/blob/develop/contracts-bedrock/contracts/L2/L2CrossDomainMessenger.sol), or you can use [`L2ToL1MessagePasser`](https://github.com/ethereum-optimism/optimism/blob/develop/contracts-bedrock/contracts/L2/L2ToL1MessagePasser.sol).
 
 To claim/finalize the message you can still use [`L1CrossDomainMessenger`](https://github.com/ethereum-optimism/optimism/blob/develop/contracts-bedrock/contracts/L1/L1CrossDomainMessenger.sol).
 Alternatively, you can use [`OptimismPortal`](https://github.com/ethereum-optimism/optimism/blob/develop/contracts-bedrock/contracts/L1/OptimismPortal.sol).
@@ -166,7 +166,7 @@ This section discusses some of the changes in Optimism internals.
 ### The transaction trail
 
 There is longer a CTC (cannonical transaction chain) contract.
-Instead, L2 blocks are saved to the Ethereum blockchain using a non-contract address (``), to minimize the L1 gas expense.
+Instead, L2 blocks are saved to the Ethereum blockchain using a non-contract address (`0xDeadDeAddeAddEAddeadDEaDDEAdDeaDDeAD0001`), to minimize the L1 gas expense.
 
 [The block and transaction format is also different](https://github.com/ethereum-optimism/optimism/blob/develop/specs/deposits.md#user-deposited-transactions).
 
@@ -175,6 +175,6 @@ Instead, L2 blocks are saved to the Ethereum blockchain using a non-contract add
 
 In bedrock ETH is treated *exactly* as it is in Ethereum.
 This means that ETH balances are part of the state trie.
-The`0xDeadDeAddeAddEAddeadDEaDDEAdDeaDDeAD0000` contract is dead.
+The `0xDeadDeAddeAddEAddeadDEaDDEAdDeaDDeAD0000` contract is dead.
 
 
