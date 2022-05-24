@@ -165,7 +165,7 @@ This section discusses some of the changes in Optimism internals.
 There is longer a CTC (cannonical transaction chain) contract.
 Instead, L2 blocks are saved to the Ethereum blockchain using a non-contract address (`0xDeadDeAddeAddEAddeadDEaDDEAdDeaDDeAD0001`), to minimize the L1 gas expense.
 
-[The block and transaction format is also different.(https://github.com/ethereum-optimism/optimism/blob/develop/specs/rollup-node.md#l2-chain-derivation).
+[The block and transaction format is also different](https://github.com/ethereum-optimism/optimism/blob/develop/specs/rollup-node.md#l2-chain-derivation).
 
 
 ### ETH balances
