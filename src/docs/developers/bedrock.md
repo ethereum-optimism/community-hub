@@ -18,7 +18,7 @@ Here are the major changes:
 Note that the links in this section refer to the current state of the repository.
 At some point the contracts at `.../contracts-bedrock` will move to `.../packages/contracts`.
 
-Also, contracts that are part of the system to communicate between layers [are explained here](##communication-between-layers).
+Also, contracts that are part of the system to communicate between layers [are explained here](./bedrock.md#communication-between-layers).
 
 ### L1 contracts
 
