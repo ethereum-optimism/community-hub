@@ -10,9 +10,6 @@ Here are the major changes:
 
 ## The EVM
 
-The execution environment is even closer to Ethereum.
-
-- ETH balances are no longer stored in an ERC-20 contract (`0xDeadDeAddeAddEAddeadDEaDDEAdDeaDDeAD0000` is dead).
 - There is no longer an `L1BLOCKNUMBER` opcode. 
 - Bedrock includes an upgrade to the London fork, so the `BASEFEE` opcode is now supported.
 
@@ -168,7 +165,7 @@ This section discusses some of the changes in Optimism internals.
 There is longer a CTC (cannonical transaction chain) contract.
 Instead, L2 blocks are saved to the Ethereum blockchain using a non-contract address (`0xDeadDeAddeAddEAddeadDEaDDEAdDeaDDeAD0001`), to minimize the L1 gas expense.
 
-[The block and transaction format is also different](https://github.com/ethereum-optimism/optimism/blob/develop/specs/deposits.md#user-deposited-transactions).
+[The block and transaction format is also different.(https://github.com/ethereum-optimism/optimism/blob/develop/specs/rollup-node.md#l2-chain-derivation).
 
 
 ### ETH balances
