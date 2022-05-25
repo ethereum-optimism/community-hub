@@ -15,8 +15,8 @@ We recently removed our whitelist! This means that anyone can deploy onto Optimi
 | Description | **`Mainnet`** |
 | Chain ID | **`10`** |
 | Explorer | **`https://optimistic.etherscan.io`** |
-| HTTP Endpoint | **`https://mainnet.optimism.io`** _Not for production systems._ See the list of available RPC endpoints below |
-| WebSocket Endpoint | **`wss://ws-mainnet.optimism.io`** |
+| HTTP Endpoint | **`https://mainnet.optimism.io`** **`https://optimism-mainnet.public.blastapi.io`** _Not for production systems._   See the list of available RPC endpoints below |
+| WebSocket Endpoint | **`wss://ws-mainnet.optimism.io`** **`wss://optimism-mainnet.public.blastapi.io`** | 
 | L1 Contract Addresses | [link](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/deployments/mainnet#layer-1-contracts) |
 | L2 Contract Addresses | [link](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/deployments/mainnet#layer-2-contracts) |
 | chainid.link | [https://chainid.link/?network=optimism](https://chainid.link/?network=optimism)
@@ -26,13 +26,17 @@ We recently removed our whitelist! This means that anyone can deploy onto Optimi
 
 Please set up a private RPC endpoint with any of the following providers:
 - [Alchemy](https://www.alchemy.com/layer2/optimism)
+- [Blast](https://blastapi.io/)
 - [Infura](https://blog.infura.io/what-is-optimistic-ethereum/)
 - [QuickNode](https://www.quicknode.com/chains/optimism)
 
 We also support and maintain the following public RPC endpoints. However, we _highly_ encourage you to set up a private RPC endpoint with any of the above mentioned providers instead. **These public endpoints should not be used in production systems.**
-- HTTP endpoint: [https://mainnet.optimism.io](https://mainnet.optimism.io)
-- WebSocket endpoint: [wss://ws-mainnet.optimism.io](wss://ws-mainnet.optimism.io)
-
+- HTTP endpoint: 
+[https://mainnet.optimism.io](https://mainnet.optimism.io)
+[https://optimism-mainnet.public.blastapi.io](https://optimism-mainnet.public.blastapi.io)
+- WebSocket endpoint: 
+[wss://ws-mainnet.optimism.io](wss://ws-mainnet.optimism.io)
+[wss://optimism-mainnet.public.blastapi.io](wss://optimism-mainnet.public.blastapi.io)
 
 ## Optimism Kovan (testnet)
 
