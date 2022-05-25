@@ -14,7 +14,6 @@ lang: en-US
 - Optimism Ethereum
 - Optimism Kovan
 
-
 ## Infura
 
 ### Description and pricing
@@ -26,6 +25,17 @@ This addon is currently free but Infura seems to intend to charge $200/month for
 
 - Optimism Ethereum
 - Optimism Kovan
+
+## Blast
+
+### Description and pricing
+
+[Blast](https://blastapi.io/) offers access to dedicated Optimism nodes with free data access up to 12M API calls per month and 25 req/s. Paid subscription tiers are available for all development needs.
+On the platform, there are also [Public APIs](https://blastapi.io/public-api/optimism) available that can be added easily in Metamask.
+
+### Supported Networks
+
+- Optimism Ethereum
 
 ## BlockVision
 
