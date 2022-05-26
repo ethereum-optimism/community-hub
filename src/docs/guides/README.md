@@ -5,7 +5,7 @@ lang: en-US
 
 ## Where should I start?
 
-If you're brand new to Optimism, we recommend checking out the [guide to deploying a basic contract](./build/basic-contract.md) using [Remix](https://remix.ethereum.org).
+If you're brand new to Optimism, we recommend checking out the [guide to deploying a basic contract](../developers/build/basic-contract.md) using [Remix](https://remix.ethereum.org).
 It'll get you familiar with the core steps required to get a contract deployed to the network.
 Luckily, Optimism is [EVM equivalent](https://medium.com/ethereum-optimism/introducing-evm-equivalence-5c2021deb306), so it's 100% the same as deploying a contract to Ethereum.
 
