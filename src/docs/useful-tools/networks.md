@@ -15,8 +15,8 @@ We recently removed our whitelist! This means that anyone can deploy onto Optimi
 | Description | **`Mainnet`** |
 | Chain ID | **`10`** |
 | Explorer | **`https://optimistic.etherscan.io`** |
-| HTTP Endpoint | **`https://mainnet.optimism.io`** **`https://optimism-mainnet.public.blastapi.io`** _Not for production systems._   See the list of available RPC endpoints below |
-| WebSocket Endpoint | **`wss://ws-mainnet.optimism.io`** **`wss://optimism-mainnet.public.blastapi.io`** | 
+| HTTP Endpoint | **`https://mainnet.optimism.io`** _Not for production systems._   See the list of available RPC endpoints below |
+| WebSocket Endpoint | **`wss://ws-mainnet.optimism.io`** 
 | L1 Contract Addresses | [link](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/deployments/mainnet#layer-1-contracts) |
 | L2 Contract Addresses | [link](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/deployments/mainnet#layer-2-contracts) |
 | chainid.link | [https://chainid.link/?network=optimism](https://chainid.link/?network=optimism)
