@@ -115,8 +115,9 @@ In bedrock transactions are placed in a mempool, and the transaction's L2 execut
 There are two major differences between Ethereum and Optimism in this regard:
 
 - ETH is not burned, but used for things the protocol needs.
-  Burning ETH on L2 will only lock it in the bridge forever.
+  Burning ETH on L2 would only lock it in the bridge forever.
 - For now, the mempool with pending transactions is going to be private. 
+  Therefore, replica operators continue to specify the sequencer's URL to their nodes, and those nodes continue to forward transactions to the sequencer.
 
 Note that this change only applies to the L2 execution fee. 
 
@@ -131,18 +132,25 @@ However, instead of using the latest L1 gas price ([possibly modified to avoid c
 
 The information in this section is primarily useful to people who run an Optimism network node, either as a replica or as an independent development node.
 
-In bedrock processing is divided between an rollup node, which replaces some DTL functionality, and an execution engine, which has less of a difference from upstream geth than the current l2geth has.
+The rollup node is the component responsible for deriving the L2 chain from L1 blocks (and their associated receipts). 
+
+In bedrock processing is divided between two components:
+
+* **Rollup node**: The component responsible for deriving the L2 chain from L1 blocks.
+* **Execution engine**: The component that actually executes transactions. 
+  This is a slightly modified version of geth.
+
+Note that while the execution engine is similar to the previous version's l2geth, there is no bedrock equivalent to the DTL.
 
 ### Rollup node
 
-The rollup node provides L1 information to the execution engine.
-It has these important differences from the existing DTL:
+The rollup node provides the L1 information that the execution engine uses to derive the L2 blocks.
+The rollup node always provides the L2 state root to the execution engine, because that's the root of trust that needs to come from L1.
+It can also provide all the transactions from L1 for synchronization, but that mechanism is slower than snap sync (see next section).
 
-- The DTL synchronizes from both L1 and L2.
-  In bedrock the execution engine uses the standard Ethereum mechanism to synchronize with L2, and the rollup node mostly provides information from L1.
-  The rollup node can provide unsubmitted L2 blocks to other rollup nodes as a way to reduce latency.
-- The DTL is stateful, it keeps a copy of all the L2 transactions.
-  The rollup node is stateless, it gets everything it needs from L1 and the execution engine.
+
+[You can read more about the rollup node here](https://github.com/ethereum-optimism/optimism/blob/develop/specs/rollup-node.md).
+
 
 
 ### Execution engine
@@ -150,9 +158,14 @@ It has these important differences from the existing DTL:
 The execution engine runs a slightly modified version of geth.
 In terms of EVM equivalence, it is [even closer to upstream geth](https://github.com/ethereum-optimism/reference-optimistic-geth/compare/master...optimism-prototype) than the current version.
 
-This equivalence lets us synchronize a lot faster.
-The execution engine *can* synchronize from the rollup node (such synchronization is necessary for censorship resistance), but it can also synchronize from other Optimism execution engines, which is a lot faster.
-To trust the synchronization it has to match with the state root that is always provided by the rollup node.
+One important feature that we inherit from upstream geth is their peer to peer synchronization, which allows for much faster synchronization (from other Optimism execution engine).
+Note that it is allowed, not required.
+For censorship resistance, an execution engine can synchronize purely from the rollup node that receives data from L1.
+There are two types of synchronization possible:
+
+1. **Snap sync**, which only synchronizes the state up to the point that has been submitted to L1.
+1. **Unsafe block sync**, which includes everything the sequencer created, even if it hasn't been written to L1 yet.
+
 
 
 ## Behind the scenes
@@ -162,7 +175,7 @@ This section discusses some of the changes in Optimism internals.
 
 ### The transaction trail
 
-There is longer a CTC (cannonical transaction chain) contract.
+There is no longer a CTC (cannonical transaction chain) contract.
 Instead, L2 blocks are saved to the Ethereum blockchain using a non-contract address (`0xDeadDeAddeAddEAddeadDEaDDEAdDeaDDeAD0001`), to minimize the L1 gas expense.
 
 [The block and transaction format is also different](https://github.com/ethereum-optimism/optimism/blob/develop/specs/rollup-node.md#l2-chain-derivation).
