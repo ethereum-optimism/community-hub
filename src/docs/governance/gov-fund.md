@@ -6,10 +6,8 @@ lang: en-US
 *[To discuss Phase 0 and Phase 1 of the Governance Fund, head to the Optimism governance forum](https://gov.optimism.io/t/governance-fund-discussion-thread/213)*.
 
 
-::: tip Reminder: OP Airdrop #1 is not yet available to claim.
-*The official airdrop date will be announced on Twitter by [@optimismPBC](https://twitter.com/optimismPBC).*
-*Airdrop #1 will not require payment.*
-*Anyone offering to sell you OP before the official announcement is a scam.*
+::: tip Notice: OP Airdrop #1 is now available to claim.
+*Airdrop #1 does not require payment.*
 *Stay safe!*
 :::
 
