@@ -3,10 +3,14 @@ title: OPerating Manual of the Optimism Collective (v0.1)
 lang: en-US
 ---
 
-::: tip Notice: OP Airdrop #1 is now available to claim.
+<!--
+::: tip Notice: OP Airdrop #1 is now available to claim
+[Click here to claim](https://app.optimism.io/airdrop/check)
+
 *Airdrop #1 does not require payment.*
 *Stay safe!*
 :::
+-->
 
 This document describes the current governance proposal process of the Optimism Collective. It will evolve, with the Collective, over time.
 
