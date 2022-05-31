@@ -3,10 +3,14 @@ title: OP Economics
 lang: en-US
 ---
 
-::: tip Notice: OP Airdrop #1 is now available to claim.
+<!--
+::: tip Notice: OP Airdrop #1 is now available to claim
+[Click here to claim](https://app.optimism.io/airdrop/check)
+
 *Airdrop #1 does not require payment.*
 *Stay safe!*
 :::
+-->
 
 The Optimism Collective is based on the idea that healthy public goods create a thriving and valuable ecosystem. 
 The economics of this ecosystem are designed to generate value for three constituencies:
