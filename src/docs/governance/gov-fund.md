@@ -6,14 +6,12 @@ lang: en-US
 *[To discuss Phase 0 and Phase 1 of the Governance Fund, head to the Optimism governance forum](https://gov.optimism.io/t/governance-fund-discussion-thread/213)*.
 
 
-:<!--
 ::: tip Notice: OP Airdrop #1 is now available to claim
 [Click here to claim](https://app.optimism.io/airdrop/check)
 
 *Airdrop #1 does not require payment.*
 *Stay safe!*
 :::
--->
 
 
 
