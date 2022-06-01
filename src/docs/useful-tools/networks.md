@@ -5,9 +5,6 @@ lang: en-US
 
 ## Optimism (mainnet)
 
-::: tip Point and deploy
-We recently removed our whitelist! This means that anyone can deploy onto Optimism. However, if you want support getting live on Optimism, or if you want some PR hype you can apply [here](https://optimismpbc.typeform.com/get-in-touch).
-:::
 
 | Parameter | Value |
 | --------- | ----- |
@@ -26,17 +23,23 @@ We recently removed our whitelist! This means that anyone can deploy onto Optimi
 
 Please set up a private RPC endpoint with any of the following providers:
 - [Alchemy](https://www.alchemy.com/layer2/optimism)
-- [Blast](https://blastapi.io/)
+- [Blast](https://blastapi.io/public-api/optimism)
 - [Infura](https://blog.infura.io/what-is-optimistic-ethereum/)
 - [QuickNode](https://www.quicknode.com/chains/optimism)
 
-We also support and maintain the following public RPC endpoints. However, we _highly_ encourage you to set up a private RPC endpoint with any of the above mentioned providers instead. **These public endpoints should not be used in production systems.**
-- HTTP endpoint: 
-[https://mainnet.optimism.io](https://mainnet.optimism.io)
-[https://optimism-mainnet.public.blastapi.io](https://optimism-mainnet.public.blastapi.io)
-- WebSocket endpoint: 
-[wss://ws-mainnet.optimism.io](wss://ws-mainnet.optimism.io)
-[wss://optimism-mainnet.public.blastapi.io](wss://optimism-mainnet.public.blastapi.io)
+We also support and maintain the following public RPC endpoints. 
+However, we _highly_ encourage you to set up a private RPC endpoint with any of the above mentioned providers instead. 
+**These public endpoints should not be used in production systems.**
+- HTTP endpoint: [https://mainnet.optimism.io](https://mainnet.optimism.io)
+- WebSocket endpoint: [wss://ws-mainnet.optimism.io](wss://ws-mainnet.optimism.io)
+
+
+[Blast](https://blastapi.io/public-api/optimism) also maintains public RPC endpoints.
+And important limitation is that public endpoint does not support the `eth_getLogs` method
+(you can use it with their free project-specific endpoints).
+
+- HTTP endpoint: [https://optimism-mainnet.public.blastapi.io](https://optimism-mainnet.public.blastapi.io)
+- WebSocker endpoint: [wss://optimism-mainnet.public.blastapi.io](wss://optimism-mainnet.public.blastapi.io)
 
 ## Optimism Kovan (testnet)
 
