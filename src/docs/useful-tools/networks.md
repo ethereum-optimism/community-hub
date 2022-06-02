@@ -3,6 +3,11 @@ title: Networks and Public RPC Endpoints
 lang: en-US
 ---
 
+::: warning
+Some API calls, such as the those in the [personal namespace](https://geth.ethereum.org/docs/rpc/ns-personal) make no sense in a shared environment.
+Such RPCs are either totally unsupported, or will return nonsensical values.
+:::
+
 ## Optimism (mainnet)
 
 
