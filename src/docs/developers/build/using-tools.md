@@ -126,6 +126,8 @@ Starting from [Waffle](https://github.com/TrueFiEng/Waffle) v4.x.x you can use W
 npm install --save-dev ethereum-waffle@alpha @ethereum-waffle/optimism@alpha
 ```
 
+**Note:** You'll need to have `make` installed and available on your system. You can verify if it's installed by running `which make` in a terminal. If no executable is found then install necessary build tools using the appropriate way for your system (for instance for Ubuntu it's `sudo apt-get install build-essential`).
+
 Create a new instance of `OptimismProvider` to connect to a local Optimism node. You're ready to use Waffle chai matchers in your tests!
 
 ```ts
