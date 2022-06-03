@@ -12,6 +12,8 @@ module.exports = {
     ['link', { rel: "icon", type: "image/png", sizes: "32x32", href: "/assets/logos/favicon.png"}],
   ],
 
+  cache: false,
+
   theme: path.resolve(__dirname, './theme'),
   themeConfig: {
     contributor: false,
