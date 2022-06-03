@@ -28,6 +28,9 @@ module.exports = {
     blog: false,
     iconPrefix: 'far fa-',
     pageInfo: false,
+    pwa: {
+      cacheHTML: false,
+    },
     activeHash: {
       offset: -200,
     },
