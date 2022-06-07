@@ -129,7 +129,10 @@ module.exports = {
         ],
         '/docs/governance/economics.md',        
         '/docs/governance/allocations.md',
-        '/docs/governance/gov-01.md',
+        [
+          'https://github.com/ethereum-optimism/OPerating-manual/blob/main/manual.md',
+          'OPerating Manual for the Optimism Collective'
+        ],        
         '/docs/governance/airdrop-1.md',
         '/docs/governance/gov-fund.md'
       ],
