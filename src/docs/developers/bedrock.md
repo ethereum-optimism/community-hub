@@ -13,9 +13,11 @@ If you want to jump directly to the parts relevant to your job role, here are th
 <details>
 <summary>Wallet developer</summary>
 
+::: tip &nbsp;
 - [Fees](#transaction-fees)
 - [RPC changes](#json-rpc)
 - [Block time](#block-timing)
+:::
 
 </details>
 
@@ -40,18 +42,15 @@ If you want to jump directly to the parts relevant to your job role, here are th
 </details>
 
 <details>
-<summary>
+<summary>Infrastructure provider (or anybody else running a node)</summary>
 
-# Infrastructure provider (need to do this)
+- [Executables](#executables)
+- [Transactions (we now have a mempool)](#transactions)
+- [Block time](#block-timing)
+- [Fees](#transaction-fees)
+- [RPC changes](#json-rpc)
 
-</summary>
-
-Infura/Alchemy/Quicknode/Coinbase, etc.
-Executables, mempool, block time, fees, rpc changes
-Question as Coinbase?
-I currently run two types of nodes - sequencer replica and L1-connected verifier
-What do I run in bedrock to check when a transaction has been submitted to L1 and if the sequencer diverges from L1?
-Notion doc for infra providers
+<!-- GOON add link to notion doc for infra providers when avail -->
 
 </details>
 
@@ -161,8 +160,11 @@ Similarly, "withdrawal" refers to any message going from Optimism to Ethereum.
 
 ### Gas cost changes
 
-# Should be available June 24th.
+The gas costs for communication between layers are going to change, they will probably get lower. 
+Most information will be posted here once we have more exact information after we profile a test network.
+We expect that to happen before the end of June.
 
+<!-- GOON get the figures and put them here -->
 
 ### Deposits (from Ethereum to Optimism)
 
@@ -260,10 +262,10 @@ There are some differences between Ethereum and Optimism in this regard:
   Burning ETH on L2 would only lock it in the bridge forever.
 
 - The EIP 1559 parameters have different values.
+  Once those values are finalized they will be posted here.
 
-
-# GOON: Put values here when they are finalized
-
+<!-- GOON: Put values here when they are finalized
+-->
 
 The L1 security fee, which is normally the majority of the transaction cost, uses roughly the same mechanism as before the upgrade.
 However, instead of using the latest L1 gas price ([possibly modified to avoid changes of over 25% in a five minute period](https://help.optimism.io/hc/en-us/articles/4416677738907-What-happens-if-the-L1-gas-price-spikes-while-a-transaction-is-in-process-)), bedrock uses a moving average to smooth out peaks in L1 gas price.
@@ -318,7 +320,7 @@ There are two types of synchronization possible:
 
 ### The daisychain
 
-# GOON - DO THIS
+We need to provided history from the final regenesis (November 11th) until the introduction of bedrock.
 
 
 
