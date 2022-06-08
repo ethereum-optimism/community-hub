@@ -147,8 +147,8 @@ These are contracts that are no longer relevant, but are kept as part of the sta
 
 ## JSON RPC 
 
-Bedrock supports `eth_sendMessage` and `eth_getAccounts`.
-
+- Bedrock supports `eth_sendMessage` and `eth_getAccounts`.
+- The non standard `eth_getBlockRange` is no longer supported.
 
 ## Communication between layers
 
@@ -318,9 +318,16 @@ There are two types of synchronization possible:
 1. **Unsafe block sync**, which includes everything the sequencer created, even if it hasn't been written to L1 yet.
 
 
-### The daisychain
+### Legacy requests
 
 We need to provided history from the final regenesis (November 11th) until the introduction of bedrock.
+At the same time, we do not want to put anything in our execution engine that doesn't need to be there. 
+The closer it is to upstream geth the better.
+
+The solution is to have two additional components:
+
+1. **Daisy chain**, an RPC proxy that routes read requests from before bedrock to the legacy geth, and everything else to the execution engine.
+1. **Legacy geth**, a stripped down version of the previous version's `l2geth` with a read only database containing the pre-bedrock history.
 
 
 

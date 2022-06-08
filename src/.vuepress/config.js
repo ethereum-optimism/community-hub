@@ -54,10 +54,6 @@ module.exports = {
         text: 'Dev Docs',
         link: '/docs/developers/',
       },
-//      {
-//        text: 'Tools',
-//        link: '/docs/useful-tools/',
-//      },
       {
         text: 'Contribute',
         link: '/docs/contribute/',
@@ -133,7 +129,8 @@ module.exports = {
         '/docs/guides/token-dev.md',
         '/docs/guides/bridge-dev.md',
         '/docs/guides/smart-contract-devs.md',
-        '/docs/guides/testing.md'
+        '/docs/guides/testing.md',
+        '/docs/guides/infra.md',
       ],
       '/docs/protocol/': [
         '/docs/protocol/protocol-2.0.md',
