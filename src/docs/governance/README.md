@@ -76,8 +76,7 @@ For details on the dynamics of OP and RetroPGF, see the [Economics Overview](eco
 
 ## How do I get involved?
 
-To check your eligibility for Airdrop #1, visit [the announcement page](https://app.optimism.io/governance). 
-It is not possible to claim your tokens yet – follow [@optimismPBC](https://twitter.com/optimismPBC) for official updates on the upcoming airdrop date.
+To check your eligibility for Airdrop #1 and claim your tokens visit [the airdrop app](https://app.optimism.io/airdrop/check).
 
 Remember, this is the first drop of many. 
 To improve your odds for future drops, get involved:
