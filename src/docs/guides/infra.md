@@ -74,12 +74,13 @@ To learn more about how Bedrock itself works and its motivations, please see [th
     1. It needs access to the RPC endpoints of a Legacy Geth and Bedrock Geth node.
     2. The Geth nodes the Daisy Chain routes to can be behind load balancers, as long as the load balancers only contain Geth nodes of a single type (i.e., do not mix Legacy and Bedrock Geth nodes behind the same LB).
 
-# Upgrade Plan
+## Upgrade Plan
 
-## Testnets
+### Testnets
 
 Prior to upgrading mainnet, we will be running a series of testnets. The last testnet will replace our existing Kovan testnet, and run for an entire month to give developers time to fix any integration issues they may encounter. Proposed dates are as follows:
 
+<!--
 ::: warning
 ⚠️ These dates are tentative, and subject to change!
 :::
@@ -88,12 +89,13 @@ Prior to upgrading mainnet, we will be running a series of testnets. The last te
 2. Kovan Testnet (codename “Manhattan”): June 27 - July 22
 
 We aim to have binaries/containers ready for testing approximately two weeks prior to the Memphis testnet. This will give everyone time to update their infrastructure when the testnet begins.
+-->
 
-## Upgrade Process
+### Upgrade Process
 
 The high level upgrade process looks like this:
 
-### Optimism Upgrade Steps
+#### Optimism Upgrade Steps
 
 1. At a predefined block height, we disable the sequencer and take a state snapshot.
 2. We upgrade our smart contracts.
@@ -107,7 +109,7 @@ The high level upgrade process looks like this:
 7. We wait for infrastructure providers to upgrade.
 8. We re-enable the sequencer.
 
-### Infra Provider Upgrade Steps
+#### Infra Provider Upgrade Steps
 
 Upon receipt of the `genesis.json`, state snapshot, and genesis hashes:
 
