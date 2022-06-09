@@ -39,8 +39,7 @@ Everything you need to test your Optimistic application:
 
 You'll need to have the following installed:
 
-1. [Docker](https://www.docker.com/). these directions were verified with version 20.10.12
-1. [Docker compose](https://docs.docker.com/compose/install/), these directions were verified with version 1.29.2
+1. [Docker](https://www.docker.com/). these directions were verified with version 20.10.17
 
 To compile the software on your own you also need:
 
@@ -69,22 +68,22 @@ On a Linux system you can get the appropriate versions using these steps:
    sudo usermod -a -G docker `whoami`
    ```
 
-1. Install Docker Compose.
-
-   ```sh
-   sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-   sudo chmod +x /usr/local/bin/docker-compose
-   ```
-
+::: tip There is no need to install docker-compose anymore
+It is now available on Docker itself as `docker compose`
+:::
 
 
 
 ## Getting the software
 
 You can set up your development environment either by downloading the required software from [Docker Hub](https://hub.docker.com/u/ethereumoptimism) or by building the software from the [source code](https://github.com/ethereum-optimism/optimism).
-Downloading images from Docker Hub is easier and more reliable, but we'll cover both approaches in this guide.
+Downloading images from Docker Hub is easier and more reliable and is the recommended solution.
 
-### Option 1: Downloading from Docker Hub (recommended)
+<!--
+, but we'll cover both approaches in this guide.
+-->
+
+### Downloading from Docker Hub
 
 1. Clone and enter the [Optimism monorepo](https://github.com/ethereum-optimism/optimism):
 
@@ -102,11 +101,12 @@ Downloading images from Docker Hub is easier and more reliable, but we'll cover 
 3. Download the images:
 
    ```sh
-   docker-compose pull
+   docker compose pull
    ``` 
 
 4. Wait for the download to complete. This can take a while.
 
+<!--
 ### Option 2: Building from source (slower and more error prone)
 
 1. Install [Node](https://nodejs.org).
@@ -142,7 +142,7 @@ Downloading images from Docker Hub is easier and more reliable, but we'll cover 
    cd ops
    export COMPOSE_DOCKER_CLI_BUILD=1
    export DOCKER_BUILDKIT=1
-   docker-compose build
+   docker compose build
    ```
 
 1. Wait for the build to complete. This can take a while.
@@ -153,15 +153,18 @@ You'll always need to be inside the `ops` directory of the Optimism monorepo to 
 
 ```sh
 cd ops
-docker-compose up
+docker compose up
 ```
-
+-->
 Depending on your machine, this startup process may take some time and it can be unclear when the system is fully ready.
+
+<!--
 You can run the following command in another terminal to check if the system is ready to accept transactions (make sure you're in the `ops` folder):
 
 ```sh
 scripts/wait-for-sequencer.sh && echo "System is ready to accept transactions"
 ```
+-->
 
 ## Accessing the environment
 
