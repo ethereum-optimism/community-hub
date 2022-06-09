@@ -61,7 +61,7 @@ You might also be interested in the existence of the mempool and the changes in 
 - [Fees](#transaction-fees)
 - [RPC changes](#json-rpc)
 
-[See here for a more detailed guide](../infra.md).
+[See here for a more detailed guide](../guides/infra.md).
 
 </details>
 
