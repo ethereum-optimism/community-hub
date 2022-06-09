@@ -1,6 +1,6 @@
 {
   "name": "optimism-hub",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "The Optimism Community Hub",
   "main": "index.js",
   "scripts": {

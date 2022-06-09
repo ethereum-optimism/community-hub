@@ -12,6 +12,8 @@ module.exports = {
     ['link', { rel: "icon", type: "image/png", sizes: "32x32", href: "/assets/logos/favicon.png"}],
   ],
 
+  cache: false,
+
   theme: path.resolve(__dirname, './theme'),
   themeConfig: {
     contributor: false,
@@ -26,6 +28,9 @@ module.exports = {
     blog: false,
     iconPrefix: 'far fa-',
     pageInfo: false,
+    pwa: {
+      cacheHTML: false,
+    },
     activeHash: {
       offset: -200,
     },
@@ -116,7 +121,10 @@ module.exports = {
         ],
         '/docs/governance/economics.md',        
         '/docs/governance/allocations.md',
-        '/docs/governance/gov-01.md',
+        [
+          'https://github.com/ethereum-optimism/OPerating-manual/blob/main/manual.md',
+          'OPerating Manual for the Optimism Collective'
+        ],        
         '/docs/governance/airdrop-1.md',
         '/docs/governance/gov-fund.md'
       ],

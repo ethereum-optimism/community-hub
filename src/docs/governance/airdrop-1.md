@@ -3,10 +3,10 @@ title: Airdrop 1
 lang: en-US
 ---
 
-::: tip Reminder: OP Airdrop #1 is not yet available to claim.
-*The official airdrop date will be announced on Twitter by [@optimismPBC](https://twitter.com/optimismPBC).*
-*Airdrop #1 will not require payment.*
-*Anyone offering to sell you OP before the official announcement is a scam.*
+::: tip Notice: OP Airdrop #1 is now available to claim
+[Click here to claim](https://app.optimism.io/airdrop/check)
+
+*Airdrop #1 does not require payment.*
 *Stay safe!*
 :::
 
@@ -144,8 +144,7 @@ If you have feedback about this additional sybil filtering process, please feel 
 
 ## What’s Next?
 
-To check your eligibility for Airdrop #1, visit the [announcement page](https://app.optimism.io/governance).
-It is not possible to claim your tokens yet – follow [@optimismPBC](https://twitter.com/optimismpbc?lang=en) for official updates on the upcoming airdrop date.
+To check your eligibility for Airdrop #1 and claim your tokens visit [the airdrop app](https://app.optimism.io/airdrop/check).
 
 We made our best effort to make Airdrop #1 as fair as possible.
 However, there’s always a chance some great community members may have slipped through the cracks.
