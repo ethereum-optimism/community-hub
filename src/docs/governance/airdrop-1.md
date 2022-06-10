@@ -3,10 +3,10 @@ title: Airdrop 1
 lang: en-US
 ---
 
-::: tip Reminder: OP Airdrop #1 is not yet available to claim.
-*The official airdrop date will be announced on Twitter by [@optimismPBC](https://twitter.com/optimismPBC).*
-*Airdrop #1 will not require payment.*
-*Anyone offering to sell you OP before the official announcement is a scam.*
+::: tip Notice: OP Airdrop #1 is now available to claim
+[Click here to claim](https://app.optimism.io/airdrop/check)
+
+*Airdrop #1 does not require payment.*
 *Stay safe!*
 :::
 
@@ -14,7 +14,7 @@ lang: en-US
 
 The Optimism Foundation’s Airdrop #1 rewards those who have been instrumental as early adopters and active users of projects in the Optimism ecosystem. 
 To celebrate our Ethereum roots, we also want to welcome active L1 participants who can help scale Ethereum’s innovations, culture, and values to Layer 2. 
-In total, **264,079** addresses are eligible to claim OP in this *initial* airdrop.
+In total, **248,699** addresses are eligible to claim OP in this *initial* airdrop.
 
 Our airdrop has six sets of criteria. 
 Two for Optimism users that target early adopters and active project users, and four for L1 Ethereum, which target active contribution, positive-sum behaviors, and active participation. 
@@ -26,21 +26,21 @@ The allocations and criteria break down as follows:
 
 | Name | # of Addresses Eligible | OP Allocated per Address |
 | -------- | ----------------------: | -----------------------: |
-| Optimism Users | 109,003 | 727.36
-| Repeat Optimism Users* | 20,439 | 1,584.42
-| DAO Voters | 82,285 | 254.45
-| Multisig Signers | 19,543 | 1,114.23
-| Gitcoin Donors (on L1) | 24,143 | 520.34
-| Users Priced Out of Ethereum | 74,296 | 383.27
+| Optimism Users | 92,157 | 776.86
+| Repeat Optimism Users* | 19,174 | 1,692.49
+| DAO Voters | 84,015 | 271.83
+| Multisig Signers | 19,542 | 1,190.26
+| Gitcoin Donors (on L1) | 23,925 | 555.92
+| Users Priced Out of Ethereum | 74,272 | 409.42
 
-\* *Note that Repeat Optimism Users Receive 727.36 + 1,584.42 = 2,311.78 OP*
+\* *Note that Repeat Optimism Users Receive 776.86 + 1,692.49 = 2,469.35 OP*
 
 
 | Overlap Bonuses | # of Addresses Eligible | OP Allocated per Address
 | - | -: | -:
-| 4 Categories & OP User | 2,667 |  3,913.29
-| 5 Categories & OP User |   621 | 12,449.18
-| 6 Categories & OP User |    45 | 25,769.80
+| 4 Categories & OP User | 2,707 |  4,180.54
+| 5 Categories & OP User |   627 | 13,330.16
+| 6 Categories & OP User |    45 | 27,534.98
 
 
 The amount of OP tokens that an address receives is cumulative, meaning that the sum of OP tokens allocated for each matching criteria set is the amount that an address is eligible to claim (overlap bonuses are not cumulative).
@@ -75,7 +75,7 @@ Addresses who match this criterion have actively chosen to actively contribute b
 
 *Criterion: Address has either voted on or authored at least one proposal on-chain, or at least two on Snapshot (off-chain).*
 - *We filtered to “active DAOs” who have had at least 5 proposals with at least 5 votes.*
-- *On-Chain governance contracts included: Governor Alpha and Bravo, Aave, Curve, Aragon, DAOHaus, DAOStack, and forks.*
+- *On-Chain governance contracts included: Governor Alpha and Bravo, Aave, Curve, Maker, Aragon, DAOHaus, DAOStack, and forks.*
 - *Since Snapshot votes were off-chain, we recognized that these were more susceptible to spam/farming behavior, often driven by voters with nominal voting power. 
   To mitigate this, we filtered Snapshot votes to voters who made up the top 99.9% of total voting power in each DAO (i.e. >= 0.1% of voting power was made up by the sum of all smaller voters).*
 
@@ -101,18 +101,23 @@ These addresses may also align with Optimism’s goal to build sustainable fundi
 Active users of dapps on Ethereum are critical to ecosystem growth. Many of these addresses have started bridging to other chains due to high fees, and we want to help retain them in the Ethereum ecosystem while rewarding their curiosity and exploration. Optimism’s airdrop is also calibrated to reward loyalty to Ethereum, so users who have abandoned Ethereum entirely would not receive an airdrop.
 
 *Criterion: Address bridged to another chain, but still made an app transaction on Ethereum in each month after they bridged, and transacted at an average rate of at least 2 per week since then (top 60% of matching addresses).*
+
 - *Bridges included top L1s by TVL: Terra, BSC, Fantom, Avalanche, Solana, Polygon; and general-purpose L2s: Arbtirum, Optimism, Metis, Boba.*
 - *To ensure that we gave a long enough period to sample activity, addresses had to have bridged away from Ethereum at least 90 days before the snapshot.*
 
 ### Overlap Bonus
+
 Early Optimism users who also match multiple Ethereum criteria may be most likely to become important participants in the Optimism ecosystem, so these addresses were rewarded with an extra overlap bonus.
 
 *Criterion: Address matches an ‘Optimism Early Adopter’ criterion, and matches at least 4 criteria sets in total (including Optimism criteria).*
+
 - *The overlap bonus increases as more criteria are matched (i.e. the bonus for 5 criteria is greater than the bonus for 4 criteria)*
 
 ### Global Filtering Criteria
+
 We believe that it’s best for the community for our airdrop list narrows as well as possible to real users and honest actors. 
 So we applied some basic filters to various criteria:
+
 - **Address Activity:** Addresses needed to have used Ethereum for more than 1 day (24 hours between their first and last transaction) in order to qualify for ‘Active Ethereum Participants’ criteria. 
   This applied to all Ethereum criteria except for multisig signers, since it’s common for signers to have “signing-only” addresses.
 - **Sybil Farmers:** We identified a few patterns of likely sybil attackers, who often created tens, hundreds, or more duplicate addresses. 
@@ -125,23 +130,33 @@ So we applied some basic filters to various criteria:
   For multisig signers, only the multisig needed to have executed a transaction after Jan 1, 2019. 
   We chose this cutoff date to narrow in on active addresses, while also providing a window before [L1 gas prices](https://etherscan.io/chart/gasprice) consistently rose and potentially priced some users out of Ethereum.
 
-## What’s Next?
-To check your eligibility for Airdrop #1, visit the [announcement page](https://app.optimism.io/governance). 
-It is not possible to claim your tokens yet – follow [@optimismPBC](https://twitter.com/optimismpbc?lang=en) for official updates on the upcoming airdrop date.
+### Additional Sybil Filtering
 
-We made our best effort to make Airdrop #1 as fair as possible. 
-However, there’s always a chance some great community members may have slipped through the cracks. 
-Don’t worry! 
+Optimism is for the people, not the sybils.
+After the announcement of Airdrop #1, we received limited reports of sybil activity that was not excluded by our initial filtering.
+We have since applied additional filtering to Airdrop #1 that excludes 17k addresses and recovers 14m OP.
+Recovered OP will be redistributed proportionally to remaining addresses already included in Airdrop #1.
+The [Airdrop #1 Allocations](#airdrop-1-allocations) table above has been updated accordingly to reflect this.
+For a list of excluded sybil addresses, [see this spreadsheet](https://docs.google.com/spreadsheets/d/1kUAt-vrkID0yBkic72djWRxdliK8W_5rBGxq6-Iv3cg).
+
+In the interest of maintaining the integrity of future OP Airdrops, we will not be publishing the additional filters used to remove these addresses.
+If you have feedback about this additional sybil filtering process, please feel free to [fill out this feedback form](https://optimismpbc.typeform.com/sybil-feedback).
+
+## What’s Next?
+
+To check your eligibility for Airdrop #1 and claim your tokens visit [the airdrop app](https://app.optimism.io/airdrop/check).
+
+We made our best effort to make Airdrop #1 as fair as possible.
+However, there’s always a chance some great community members may have slipped through the cracks.
+Don’t worry!
 This is Airdrop #1, and 14% of the total initial token supply is reserved for future airdrops.
 The best way to earn OP is to get involved in the Optimism Collective:
-
 
 - If you want to build on Optimism, visit our [developer documentation](https://community.optimism.io/) or jump in to [Discord](https://discord.optimism.io).
 - If your talents are non-technical, jump in to [Discord](https://discord.optimism.io) to find other builders, apply to be a Support NERD, or just make some memes 🍉
 - [Bridge your assets to Optimism here](https://app.optimism.io/bridge) and explore projects on OP
 
 As always: stay safe and stay Optimistic.
-
 
 ## References
 
@@ -150,4 +165,3 @@ As always: stay safe and stay Optimistic.
 - **OP Token Address:** [0x4200000000000000000000000000000000000042](https://optimistic.etherscan.io/address/0x4200000000000000000000000000000000000042)
 - **Optimism on Twitter:** [https://twitter.com/optimismPBC](https://twitter.com/optimismPBC)
 - **Join the Optimism Discord:** [https://discord-gateway.optimism.io/](https://discord-gateway.optimism.io/)
-
