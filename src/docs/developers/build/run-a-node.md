@@ -5,7 +5,7 @@ lang: en-US
 
 If you're looking to build an app on Optimism you'll need access to an Optimism node.
 You can get a hosted one from:
-- [Alchemy](https://www.alchemy.com/layer2/optimism)
+- [Alchemy](https://docs.alchemy.com/alchemy/apis/optimism-api)
 - [BlockVision](https://docs.blockvision.org/blockvision/chain-apis/optimism-api)
 - [Infura](https://docs.infura.io/infura#section/Network-Add-Ons/Optimistic-Ethereum)
 - [QuickNode](https://www.quicknode.com/chains/optimism).
@@ -45,7 +45,7 @@ Follow the instructions available at [the monorepo](https://github.com/ethereum-
 
 Here are the instructions if you want to build you own replica without relying on our images.
 These instructions were generated with a [GCP e2-standard-4](https://cloud.google.com/compute/docs/general-purpose-machines#e2-standard) virtual machine running [Debian 10](https://www.debian.org/News/2021/2021100902) with a 100 GB SSD drive. 
-They should work on different operating systems with minor changes, but there are no guaranrees.
+They should work on different operating systems with minor changes, but there are no guarantees.
 
 Note that these directions are for a replica of the main network. 
 You need to modify some of them if you want to create a replica of the Kovan test network.
