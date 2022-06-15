@@ -187,7 +187,6 @@ module.exports = {
             ['https://www.optimism.io/apps/tools', 'Third Party Tools'],
           ],
         },
-        '/docs/developers/known-issues.md',
         {
           title: "Bedrock (future version)",
           children: [
