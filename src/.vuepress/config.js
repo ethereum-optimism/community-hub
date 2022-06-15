@@ -60,10 +60,6 @@ module.exports = {
         link: '/docs/developers/',
       },
       {
-        text: 'Bedrock',
-        link: '/docs/bedrock/'
-      },
-      {
         text: 'SDK',
         link: '/docs/sdk/'
       },
