@@ -54,6 +54,12 @@ module.exports = {
         text: 'Dev Docs',
         link: '/docs/developers/',
       },
+/*
+      {
+        text: 'Bedrock',
+        link: '/docs/bedrock/'
+      },
+*/
       {
         text: 'Contribute',
         link: '/docs/contribute/',
@@ -112,7 +118,7 @@ module.exports = {
       }
     ],
     searchPlaceholder: 'Search the docs',
-    sidebar: {
+    sidebar: {    
       '/docs/governance/': [
         [
           'https://www.optimism.io/vision',
@@ -130,14 +136,12 @@ module.exports = {
         '/docs/guides/bridge-dev.md',
         '/docs/guides/smart-contract-devs.md',
         '/docs/guides/testing.md',
-        '/docs/guides/infra.md',
       ],
       '/docs/protocol/': [
         '/docs/protocol/protocol-2.0.md',
         '/docs/protocol/compressed-ctc.md'
       ],
       '/docs/developers/': [
-        '/docs/developers/bedrock.md',
         '/docs/developers/releases.md',
         {
           title: 'Building on Optimism',
@@ -177,7 +181,20 @@ module.exports = {
           ],
         },
         '/docs/developers/known-issues.md',
-      ]
+        {
+          title: "Bedrock (future version)",
+          children: [
+            '/docs/developers/bedrock.md',
+            '/docs/developers/bedrock-temp/infra.md',            
+          ]
+        }
+      ],
+/*
+      '/docs/bedrock/': [
+        '/docs/governance/economics.md',        
+        '/docs/governance/allocations.md'
+      ]            
+      */
     }
   },
 

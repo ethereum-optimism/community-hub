@@ -26,7 +26,7 @@ To learn more about how Bedrock itself works and its motivations, please see [th
 
 ## Components
 
-![Components-Providers.drawio.png](../../assets/docs/guides/infra/Components-Providers.drawio.png)
+![Components-Providers.drawio.png](../../../assets/docs/guides/infra/Components-Providers.drawio.png)
 
 ### Rollup Node
 
