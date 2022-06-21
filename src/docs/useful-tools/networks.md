@@ -31,6 +31,7 @@ Please set up a private RPC endpoint with any of the following providers:
 - [Blast](https://blastapi.io/public-api/optimism)
 - [Infura](https://blog.infura.io/what-is-optimistic-ethereum/)
 - [QuickNode](https://www.quicknode.com/chains/optimism)
+- [Ankr](https://www.ankr.com/protocol/public/optimism/)
 
 We also support and maintain the following public RPC endpoints. 
 However, we _highly_ encourage you to set up a private RPC endpoint with any of the above mentioned providers instead. 
