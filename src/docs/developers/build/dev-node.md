@@ -79,10 +79,6 @@ It is now available on Docker itself as `docker compose`
 You can set up your development environment either by downloading the required software from [Docker Hub](https://hub.docker.com/u/ethereumoptimism) or by building the software from the [source code](https://github.com/ethereum-optimism/optimism).
 Downloading images from Docker Hub is easier and more reliable and is the recommended solution.
 
-<!--
-, but we'll cover both approaches in this guide.
--->
-
 ### Downloading from Docker Hub
 
 1. Clone and enter the [Optimism monorepo](https://github.com/ethereum-optimism/optimism):
@@ -106,65 +102,8 @@ Downloading images from Docker Hub is easier and more reliable and is the recomm
 
 4. Wait for the download to complete. This can take a while.
 
-<!--
-### Option 2: Building from source (slower and more error prone)
-
-1. Install [Node](https://nodejs.org).
-
-   ```sh
-   curl -sL https://deb.nodesource.com/setup_12.x -o nodesource_setup.sh
-   sudo bash nodesource_setup.sh
-   sudo apt install -y nodejs
-   ```
-
-1. Install [yarn](https://classic.yarnpkg.com/lang/en/).
-
-   ```sh
-   sudo npm install -g yarn
-   ```
-
-1. Clone and enter the [Optimism monorepo](https://github.com/ethereum-optimism/optimism):
-
-   ```sh
-   git clone https://github.com/ethereum-optimism/optimism.git
-   cd optimism
-   ```
-
-1. Install the dependencies and build the packages. This is a slow step.
-
-   ```sh
-   yarn install && yarn build
-   ```
-
-1. Build the Docker containers:
-
-   ```sh
-   cd ops
-   export COMPOSE_DOCKER_CLI_BUILD=1
-   export DOCKER_BUILDKIT=1
-   docker compose build
-   ```
-
-1. Wait for the build to complete. This can take a while.
-
-## Starting the environment
-
-You'll always need to be inside the `ops` directory of the Optimism monorepo to start or restart the development environment:
-
-```sh
-cd ops
-docker compose up
-```
--->
 Depending on your machine, this startup process may take some time and it can be unclear when the system is fully ready.
 
-<!--
-You can run the following command in another terminal to check if the system is ready to accept transactions (make sure you're in the `ops` folder):
-
-```sh
-scripts/wait-for-sequencer.sh && echo "System is ready to accept transactions"
-```
--->
 
 ## Accessing the environment
 
