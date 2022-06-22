@@ -7,7 +7,7 @@ Dapps' inter-layer communication strategies are based on trade-offs between seve
 
 - Speed
 - Cost
-- Decentralization
+- Trust Assumption
 
 An issue related to both speed and decentralization is the L2 state.
 This state is vulnerable to fault challenges until the fault challenge period (currently one week) passes.
@@ -23,7 +23,7 @@ If your dapp has a centralized always on server, the easiest solution is to just
 | - | - |
 | Speed             | Fastest
 | Cost              | Cheapest
-| Decentralization  | None
+| Trust Assumption  | Centralized
 
 
 ### Using the client (please don't)
@@ -32,11 +32,13 @@ The client (typically a browser with a wallet) can also connect to both Ethereum
 You know what the code in the server is, because you wrote it.
 You know what the code in the client is *supposed to be*, but it is possible for users to run a different client that pretends to be the legitimate one. 
 The only time that you can trust the client for inter-layer communication is when it is in the best interest of the user running the client not to lie.
+And even then, you shouldn't because a hacker can cause a user to run malware.
 
 
 ## Fully decentralized
 
 If you want to keep the same decentralization promises as Optimism and Ethereum, you can [rely on our messaging infrastructure](messaging.md).
+You are already trusting Optimism to run the chain, and the messaging infrastructure goes through the same development process.
 
 ### Messages from L1 to L2
 
@@ -45,8 +47,8 @@ If you want L1 code to either tell L2 code to do something, or update L2 code wi
 | Parameter         | Evaluation |
 | - | - |
 | Speed             | ~15 minutes
-| Cost              | Pretty cheap (it's a simple transaction on L1)
-| Decentralization  | Full
+| Cost              | Cheapish (Requires an L1 transaction)
+| Trust Assumption  | Same as using Optimism
 
 ### Messages from L2 to L1
 
@@ -61,13 +63,13 @@ It requires two transactions:
 | - | - |
 | Speed             | >7 days 
 | Cost              | Expensive
-| Decentralization  | Nearly full (somebody needs to initiate the claiming transaction)
+| Trust Assumption  | Almost as good as using Optimism, however someone needs to initiate the claim transaction on L1
 
 
 ## Incentivized communication
 
-You can also use incentives, for example using a mechanism such as [Uma's](../../useful-tools/oracles/#universal-market-access-uma).
+You can also use incentives, for example using a mechanism such as [UMA's](../../useful-tools/oracles/#universal-market-access-uma).
 This is similar to the way optimistic rollups work - honest relays get paid, dishonest ones get slashed.
-However,  this mechanism is only truly decentralized if there are enough relays to make sure there will always be an honest one.
-Otherwise, it's similar to centralized communications, just with a few extra relays that can take over.
+However,  this mechanism is only truly decentralized if there are enough relayers to make sure there will always be an honest one.
+Otherwise, it's similar to centralized communications, just with a few extra relayers that can take over.
  
