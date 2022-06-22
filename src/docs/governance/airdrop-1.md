@@ -166,3 +166,4 @@ As always: stay safe and stay Optimistic.
 - **OP Token Address:** [0x4200000000000000000000000000000000000042](https://optimistic.etherscan.io/address/0x4200000000000000000000000000000000000042)
 - **Optimism on Twitter:** [https://twitter.com/optimismPBC](https://twitter.com/optimismPBC)
 - **Join the Optimism Discord:** [https://discord-gateway.optimism.io/](https://discord-gateway.optimism.io/)
+- **CSV with the list of airdropped addresses:** [publish_op_airdrop1.csv](https://drive.google.com/file/d/1VVcHGHNMLeyRQMHcfkzT4fVbU2xPeT1X/view?usp=sharing)
