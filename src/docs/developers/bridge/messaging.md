@@ -62,7 +62,7 @@ contract MyOtherContract {
 Here we're using the [low-level "call" function](https://docs.soliditylang.org/en/v0.8.4/units-and-global-variables.html#members-of-address-types) and one of the [ABI encoding functions built into Solidity](https://docs.soliditylang.org/en/v0.8.4/units-and-global-variables.html#abi-encoding-and-decoding-functions).
 Although these two code snippets look a bit different, they're actually functionally identical.
 
-## L1 ⇔ L2 communication basics
+## Basics of communication between layers
 
 Cool!
 Now that you have a general idea of how contracts on Ethereum interact with one another, let's take a look at how we do the same thing *between* Optimism and Ethereum.
@@ -130,12 +130,12 @@ You can find the exact addresses of these contracts on our various deployments [
 Unlike calls between contracts on the same blockchain, calls between Ethereum and Optimism are *not* instantaneous.
 The exact speed of a cross-chain transaction depends on the direction in which the transaction is sent.
 
-### For L1 ⇒ L2 transactions
+### For L1 to L2 transactions
 
 Transactions sent from L1 to L2 take up to approximately 15 minutes on mainnet and 5 minutes on the Optimism Kovan testnet to reach the target L2 contract.
 This is because L2 nodes will wait for a certain number of block confirmations on Ethereum before executing an L1 to L2 transaction.
 
-### For L2 ⇒ L1 transactions
+### For L2 to L1 transactions
 
 L2 to L1 transactions must wait 7 days on mainnet and 60 seconds on the Optimism Kovan testnet before they *can* be executed on Ethereum.
 After this waiting period, any user can "finalize" the transaction by triggering a second transaction on Ethereum that sends the message to the target L1 contract.
@@ -169,7 +169,7 @@ modifier onlyOwner() {
 
 ## Fees for sending data between L1 and L2
 
-### For L1 ⇒ L2 transactions
+### For L1 to L2 transactions
 
 The majority of the cost of an L1 to L2 transaction comes from sending a transaction on Ethereum.
 You send a transaction to the [`L1CrossDomainMessenger`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/L1/messaging/L1CrossDomainMessenger.sol)
@@ -202,7 +202,7 @@ The parameters in the explanation above were 1.92 million and 32 at the time of 
 To see the present values, [go to Etherscan](https://etherscan.io/address/0x5E4e65926BA27467555EB562121fac00D24E9dD2#readContract) and expand `enqueueL2GasPrepaid` for the free L2 gas amount and `l2GasDiscountDivisor` for the exchange rate at which L1 gas is burned for additional L2 gas.
 
 
-### Fees for L2 ⇒ L1 transactions
+### Fees for L2 to L1 transactions
 
 Each message from L2 to L1 requires two transactions:
 
