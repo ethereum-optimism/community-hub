@@ -81,7 +81,7 @@ As a bridge developer you are likely most interested in deposits into Optimism a
 
 - There is no longer an `L1BLOCKNUMBER` opcode. 
 - Bedrock includes an upgrade to the London fork, so the `BASEFEE` opcode is now supported.
-- `TIMESTAMP` will now be updated every two seconds (every new block)
+- `TIMESTAMP` will now be updated every two seconds (every new block).
 - `BLOCKNUMBER` will advance every two seconds because we'll create a new block every two seconds, regardless of the amount of transactions.
 
 ## Contracts
@@ -90,14 +90,14 @@ As a bridge developer you are likely most interested in deposits into Optimism a
 
 #### L2OutputOracle
 
-[This contract](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L1/L2OutputOracle.sol) contains the state root of the Optimism blockchain.
+[The `L2OutputOracle` contract](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L1/L2OutputOracle.sol) contains the state root of the Optimism blockchain.
 Once fault proofs are activated, it will be the one that receives the result of the fault proof process.
 
-In the previous version, the state root was stored in the State Commitment Chain.
+This is the contract that replaces the old State Commitment Chain.
 
 #### OptimismPortal
 
-[This contract](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L1/OptimismPortal.sol) provides [the new API for communications between layers](#deposits-from-ethereum-to-optimism). 
+[The `OptimismPortal` contract](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L1/OptimismPortal.sol) provides [the new API for communications between layers](#deposits-from-ethereum-to-optimism). 
 
 
 #### Existing interface
@@ -106,9 +106,9 @@ These contracts provide the same interface as existed pre-bedrock so dapps donâ€
 
 
 - [L1CrossDomainMessenger](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L1/L1CrossDomainMessenger.sol):
-  This contract is used for sending messages between Ethereum and Optimism. Those messages may or may not have assets attached to them.
+  The `L1CrossDomainMessenger` contract is used for sending messages between Ethereum and Optimism. Those messages may or may not have assets attached to them.
 - [L1StandardBridge](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L1/L1StandardBridge.sol):
-  This contract uses `L1CrossDomainMessenger` to transfer ETH and ERC-20 tokens between Ethereum and Optimism.
+  The `L1StandardBridge` contract uses `L1CrossDomainMessenger` to transfer ETH and ERC-20 tokens between Ethereum and Optimism.
 
 
 
@@ -118,7 +118,7 @@ These contracts provide the same interface as existed pre-bedrock so dapps donâ€
 
 #### L1Block
 
-[This contract](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L2/L1Block.sol) sits at address `0x4200000000000000000000000000000000000015`.
+[The `L1Block` contract](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L2/L1Block.sol) sits at address `0x4200000000000000000000000000000000000015`.
 You can use [the getter functions](https://docs.soliditylang.org/en/v0.8.12/contracts.html#getter-functions) to get these parameters:
 
 - `number`: The latest L1 block number known to L2 (the `L1BlockNumber` contract is still supported to avoid breaking existing applications)
@@ -133,14 +133,14 @@ This value may be reduced in the future.
 
 #### SequencerFeeVault
 
-[This contract](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L2/SequencerFeeVault.sol) handles funding the sequencer on L1 using the ETH base fee on L2.
+[The `SequencerFeeVault` contract](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L2/SequencerFeeVault.sol) handles funding the sequencer on L1 using the ETH base fee on L2.
 
 The fees are calculated using [EIP 1559](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1559.md), the same mechanism that Ethereum uses (but with different parameter values).
 
 
 #### L2ToL1MessagePasser
 
-[This contract](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L2/L2ToL1MessagePasser.sol) is used internally by `L2CrossDomainMessenger` to initiate withdrawals.
+[The `L2ToL1MessagePasser` contract](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L2/L2ToL1MessagePasser.sol) is used internally by `L2CrossDomainMessenger` to initiate withdrawals.
 
 
 #### Existing interface
@@ -149,14 +149,14 @@ These contracts provide the same interface as existed pre-bedrock so dapps donâ€
 
 
 - [L1BlockNumber](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L2/L1BlockNumber.sol): 
-  This contract provides the number of the latest L1 block. 
+  The `L1BlockNumber` contract provides the number of the latest L1 block. 
   In bedrock it is simply a proxy to [`L1Block`](#l1block). 
 - [L2CrossDomainMessenger](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L2/L2CrossDomainMessenger.sol):
-  This contract is used to send messages from Optimism to Ethereum.
+  The `L2CrossDomainMessenger` contract is used to send messages from Optimism to Ethereum.
 - [L2StandardBridge](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L2/L2StandardBridge.sol):
-  This contract is used to "attach" assets (ETH and ERC-20 tokens) to messages that are then sent by `L2CrossDomainMessenger`.
+  The `L2StandardBridge` contract is used to "attach" assets (ETH and ERC-20 tokens) to messages that are then sent by `L2CrossDomainMessenger`.
 - [WETH9](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L2/WETH9.sol): 
-  [This contract is an ERC-20 token that wraps around ETH to provide extra functionality, such as approvals](https://weth.io/).
+  [The WETH9 contract](https://weth.io/) is an ERC-20 token that wraps around ETH to provide extra functionality, such as approvals.
 
 
 #### Historical contracts
@@ -164,10 +164,10 @@ These contracts provide the same interface as existed pre-bedrock so dapps donâ€
 These are contracts that are no longer relevant, but are kept as part of the state in case there is a call in any dapp that uses them.
 
 - [DeployerWhitelist](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L2/DeployerWhitelist.sol):
-  This contract used to manage the whitelist before [we opened Optimism for anybody to deploy contracts](https://twitter.com/optimismPBC/status/1471571415774023682).
+  The `DeployerWhitelist` contract used to manage the whitelist before [Optimism moved out of beta](https://twitter.com/optimismPBC/status/1471571415774023682).
 
 - [OVM_ETH](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L2/OVM_ETH.sol):
-  This contract used to manage users ETH balances prior to bedrock.
+  The `OVM_ETH` contract used to manage users ETH balances prior to bedrock.
 
 
 ## JSON RPC 

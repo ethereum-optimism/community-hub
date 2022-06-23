@@ -5,7 +5,7 @@ lang: en-US
 
 ::: warning This guide is for bedrock
 This guide is for the *bedrock* upgrade, which is coming in the second half of 2022.
-Do not attempt to use it prior to that upgrade.
+Do not attempt to use this in production prior to that upgrade. Keep an eye on these docs or [our official Twitter](https://twitter.com/OPLabsPBC) for announcements on [the Bedrock testnet](#testnets).
 :::
 
 This document provides an overview of how the Bedrock upgrade will impact infrastructure providers. 
@@ -16,17 +16,27 @@ To learn more about how Bedrock itself works and its motivations, please see [th
 
 ### Key Differences
 
-- There is no more DTL.
+- There is no more [DTL](../../how-optimism-works/#block-execution).
+  This is one Docker container you no longer need.
 - Nodes can sync over a peer-to-peer network just like L1.
+  This means you need to allow Bedrock Geth to communicate directly with other Bedrock Geth instances to get the fastest possible state synchronization. 
 - Transactions are distributed over a peer-to-peer network just like L1.
+  This means you need to allow Rollup Node access both to and from the Internet.
 - The sequencer has a mempool now, and produces blocks on a fixed interval just like post-Merge L1.
+  As an infrastructure provider, this should not affect you.
 - There is no more `getBlockRange` RPC, since this was used primarily by the DTL.
+  As an infrastructure provider, this should not affect you, unless you have custom code that uses the `getBlockRange` RPC.
 - Historical data (pre-bedrock) is served by a read-only version of our existing Geth node. 
   RPC requests are automatically routed between historical and non-historical Geth using a new component called the Daisy Chain.
+  This means there are two more docker containers, Daisy Chain and l2geth.
 
 ## Components
 
+<center>
+
 ![Components-Providers.drawio.png](../../../assets/docs/guides/infra/Components-Providers.drawio.png)
+
+</center>
 
 ### Rollup Node
 
@@ -37,8 +47,8 @@ To learn more about how Bedrock itself works and its motivations, please see [th
 
 ### Bedrock Geth
 
-- The Bedrock Geth node is a vanilla Geth 1.10.x instance with a minimal Optimism-specific diff applied.
-- It syncs unconfirmed transactions over a peer-to-peer network using Geth’s build in transaction pool.
+- The Bedrock Geth node is a vanilla Geth 1.10.x instance with the minimal Optimism-specific diff applied.
+- It syncs unconfirmed transactions over a peer-to-peer network using Geth’s built in transaction pool.
 - It syncs state to other Bedrock Geth nodes using Geth’s build in snap sync mechanism.
 - It serves the Engine API to the Rollup Node.
 
@@ -80,17 +90,6 @@ To learn more about how Bedrock itself works and its motivations, please see [th
 
 Prior to upgrading mainnet, we will be running a series of testnets. The last testnet will replace our existing Kovan testnet, and run for an entire month to give developers time to fix any integration issues they may encounter. Proposed dates are as follows:
 
-<!--
-::: warning
-⚠️ These dates are tentative, and subject to change!
-:::
-
-1. Infra Providers Testnet (codename “Memphis”): June 6 - June 17
-2. Kovan Testnet (codename “Manhattan”): June 27 - July 22
-
-We aim to have binaries/containers ready for testing approximately two weeks prior to the Memphis testnet. This will give everyone time to update their infrastructure when the testnet begins.
--->
-
 ### Upgrade Process
 
 The high level upgrade process looks like this:
@@ -108,6 +107,7 @@ The high level upgrade process looks like this:
     3. The genesis hashes that the Rollup Node needs as part of its configuration.
 7. We wait for infrastructure providers to upgrade.
 8. We re-enable the sequencer.
+9. Now the chain is bedrock enabled!
 
 #### Infra Provider Upgrade Steps
 
