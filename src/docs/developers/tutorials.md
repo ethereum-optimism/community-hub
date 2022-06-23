@@ -13,6 +13,7 @@ lang: en-US
 ## Cross Domain
 
 * [Communication between contracts on Optimism and Ethereum](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/cross-dom-comm)
+* [Bridging Assets with the Optimism SDK](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/cross-dom-bridge)
 * [View transactions between layers](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/sdk-view-tx)
 
 ### Bridging ERC-20 Tokens
