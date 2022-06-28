@@ -32,16 +32,6 @@ The smart contracts in the Optimism protocol can be separated into a few key com
 - **[Predeploys:](#predeployed-contracts)** A set of essential contracts which are deployed and available in the genesis state of the system. These contracts are similar to Ethereum's precompiles, however they are written in Solidity, and can be found at addresses prefixed with 0x42.
 
 
-<!-- Using html instead of markdown so we can put a caption on the image. -->
-<figure>
-  <img src='../../assets/docs/protocol/oe-arch-rc0.png'>
-  <figcaption style="text-align: center; font-size: 12px;">Diagram created with <a href="https://www.diagrams.net/">draw.io</a>. <br>Editable source <a href="https://docs.google.com/document/d/1OObmIhuVyh5GEekqT4dd3bzO58ejSQb_rlnrBmxcNN0/edit#">here</a>.</figcaption>
-</figure>
-
-<!--
- - Contracts Reference Sheet (aka glossary)
-  - Deployed contracts (with addresses ie. [aave example][aave])
--->
 
 ## Chain Contracts
 
