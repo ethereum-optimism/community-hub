@@ -10,7 +10,7 @@ By the time you've finished reading this page you should have a foundational und
 
 We've tried to make this guide as comprehensive as possible while still keeping the content accessible to most readers.
 Some content on this page is geared towards readers with a technical background but should still be comprehensible to those with a basic understanding of how blockchains work.
-Generally speaking, we are on the side of simplicity and approachability.
+Generally speaking, we err on the side of simplicity and approachability.
 Readers interested in a low-level look into Optimism under the hood should refer to the [Protocol](../protocol/) section of this website.
 
 Without further to do, let's find out *How Optimism Works*!
