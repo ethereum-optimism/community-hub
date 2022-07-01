@@ -15,9 +15,9 @@ Depending on your set up you will need to set up a local testnet. All of the abo
 
 ## Deploying on Testnet
 
-So you've written your contracts and are ready to deploy them to the testnet! First things first you are going to need some test ETH on Optimism Kovan. Head to the [faucet](https://faucet.paradigm.xyz/) for some test ETH on both Kovan and Optimism Kovan.
+So you've written your contracts and are ready to deploy them to the testnet! First things first you are going to need some test ETH on Optimism Goerli. Head to the [faucet](https://faucet.paradigm.xyz/) for some test ETH on Goerli.
 
-Next you will need to connect to the Optimism Kovan network to deploy your contracts. You can find all the required network information as well as PRC endpoints in our [networks page](../useful-tools/networks.md#optimism-kovan-testnet). Additionally we have a helpful page of [debugging tools](../useful-tools/debugging.md) you can make use of while working out those final bugs.
+Next you will need to connect to the Optimism Kovan network to deploy your contracts. You can find all the required network information as well as PRC endpoints in our [networks page](../useful-tools/networks.md#optimism-goerli). Additionally we have a helpful page of [debugging tools](../useful-tools/debugging.md) you can make use of while working out those final bugs.
 
 Please read through our [known issues](../developers/known-issues.md) if you run into any unexpected behaviors _before_ you deploy to mainnet.
 

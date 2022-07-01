@@ -48,7 +48,7 @@ An important limitation is that public endpoint does not support the `eth_getLog
 - WebSocker endpoint: [wss://optimism-mainnet.public.blastapi.io](wss://optimism-mainnet.public.blastapi.io)
 
 
-## Optimism Goerli (new testnet)
+## Optimism Goerli
 
 ::: tip Purpose
 This is our new test network.
