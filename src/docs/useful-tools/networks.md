@@ -78,7 +78,7 @@ For now, use the Optimism provided endpoints in the table.
 
 You can obtain Goerli test ETH either [here](https://goerlifaucet.com/) or [here](https://faucet.paradigm.xyz/).
 
-Our gateway still doesn't support Goerli, so to transfer ETH you need to use the SDK, [as shown here](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/cross-dom-bridge).
+Our gateway still doesn't support Goerli, but if you transfer Goerli ETH to [0x636Af16bf2f682dD3109e60102b8E1A089FedAa8](https://goerli.etherscan.io/address/0x636Af16bf2f682dD3109e60102b8E1A089FedAa8), you will get it on Optimistic Goerli.
 
 
 ## Optimism Kovan (old testnet)
