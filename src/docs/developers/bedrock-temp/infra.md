@@ -41,22 +41,23 @@ To learn more about how Bedrock itself works and its motivations, please see [th
 ### Rollup Node
 
 - The Rollup Node is a Go binary that derives and distributes L2 blocks.
-- It uses Geth’s new Engine API to append the blocks it derives to the canonical chain.
+- It uses [the new Engine API](https://github.com/ethereum/execution-apis/blob/main/src/engine/specification.md#core) to append the blocks it derives to the canonical chain.
 - It communicates over a peer-to-peer network to download blocks that haven’t been submitted to L1 yet.
-- It detects and handles L1 reorgs.
+- It detects and handles [L1 reorgs](https://cointelegraph.com/explained/what-is-chain-reorganization-in-blockchain-technology).
 
 ### Bedrock Geth
 
 - The Bedrock Geth node is a vanilla Geth 1.10.x instance with the minimal Optimism-specific diff applied.
 - It syncs unconfirmed transactions over a peer-to-peer network using Geth’s built in transaction pool.
-- It syncs state to other Bedrock Geth nodes using Geth’s build in snap sync mechanism.
+- It syncs state to other Bedrock Geth nodes using Geth’s build in [snap sync mechanism](https://github.com/ethereum/devp2p/blob/master/caps/snap.md).
 - It serves the Engine API to the Rollup Node.
 
 ### Legacy Geth
 
 - A stripped-down, read-only version of the legacy (i.e., pre-Bedrock) `l2geth` node.
 - Serves historical data to the Daisy Chain.
-- The Legacy Geth instance will ship with a pre-populated database. As a result, it does not perform need to sync any state.
+- The Legacy Geth instance will ship with a pre-populated database. 
+  It does not need state synchronization, because that database is real only.
 
 ### Daisy Chain
 
