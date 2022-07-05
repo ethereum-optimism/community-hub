@@ -15,7 +15,7 @@ Most Ethereum development stacks include features that make testing easier, whic
 Therefore, it is a good idea to run the majority of tests, which do not rely on Optimism-specific features, in the development stack.
 It is a lot faster.
 
-Ideally you would want to be able to run some tests on Optimism (either a [local development environment](dev-node.md) or a test network (either [Kovan](../../useful-tools/networks.md#optimism-kovan-testnet) or [Goerli](../../useful-tools/networks.md#optimism-goerli)).
+Ideally you would want to be able to run some tests on Optimism (either a [local development environment](dev-node.md) or a test network (either [Kovan](../../useful-tools/networks.md#optimism-kovan-old-testnet) or [Goerli](../../useful-tools/networks.md#optimism-goerli)).
 This would be a much slower process, but it would let you identify cases where [the equivalence between Optimism and Ethereum breaks down](differences.md) (or the equivalence between Ethereum itself and the development stack, for that matter).
 
 ## Multilayer integration tests
