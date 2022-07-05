@@ -107,9 +107,9 @@ The high level upgrade process looks like this:
 4. We initialize the sequencer with the `genesis.json` file.
 5. We redeploy our Legacy Geth instances with the state snapshot.
 6. We give infra providers the following artifacts:
-    1. The `genesis.json` file for the sequencer.
-    2. The state snapshot for Legacy Geth.
-    3. The genesis hashes that the Rollup Node needs as part of its configuration.
+    - The `genesis.json` file for the sequencer.
+    - The state snapshot for Legacy Geth.
+    - The genesis hashes that the Rollup Node needs as part of its configuration.
 7. We wait for infrastructure providers to upgrade.
 8. We re-enable the sequencer.
 9. Now the chain is bedrock enabled!
