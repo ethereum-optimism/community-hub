@@ -1,236 +1,236 @@
 ---
-title: How Optimism Works
-lang: en-US
+title: Optimism 怎么工作
+lang: zh-CN
 ---
 
-## Introduction
+## 介绍
 
 Hello!
-By the time you've finished reading this page you should have a foundational understanding of how Optimism makes Ethereum transactions cheaper and faster, the approach that Optimism is taking to scaling both Ethereum and Ethereum's values, and why Optimism is the best place to build your next Ethereum-native app.
+当您阅读完本页时，您应该对 Optimism 如何使以太坊交易更便宜更快捷、Optimism 用于扩展以太坊和以太坊价值的方法以及为什么 Optimism 是构建您的下一个以太坊原生应用有一个基本理解。
 
-We've tried to make this guide as comprehensive as possible while still keeping the content accessible to most readers.
-Some content on this page is geared towards readers with a technical background but should still be comprehensible to those with a basic understanding of how blockchains work.
-Generally speaking, we err on the side of simplicity and approachability.
-Readers interested in a low-level look into Optimism under the hood should refer to the [Protocol](../protocol/) section of this website.
+我们努力使本指南尽可能全面，同时仍让大多数读者都能访问内容。
+此页面上的一些内容面向具有技术背景的读者，但对于那些对区块链如何工作有基本了解的人仍然应该可以理解。
+一般来说，我们在简单性和可接近性方面犯了错误。
+有兴趣深入了解 Optimism 的读者应该参考本网站的 [Protocol](../protocol/) 部分。
 
-Without further ado, let's find out *How Optimism Works*!
+事不宜迟，让我们来看看 *Optimism 是如何工作的* !
 
-## Design philosophy
+## 设计理念
 
-Optimism is built according to a strong design philosophy that stands on four main pillars: simplicity, pragmatism, sustainability, and, of course, optimism.
-It's important to understand these pillars as they heavily influence the design of Optimism as a whole.
+Optimism 是根据强大的设计理念建立的，该理念基于四大支柱：简单、实用主义、可持续性，当然还有乐观主义。
+了解这些支柱很重要，因为它们严重影响了 Optimism 的整体设计。
 
-### Simplicity
+### 简单
 
-Optimism is designed to be as simple as possible for the featureset it provides.
-Ideally, Optimism should be composed of the minimum number of moving parts required for a secure, scalable, and flexible L2 system.
-This simplicity gives Optimism's design a number of significant advantages over other more complex L2 constructions.
+Optimism 旨在使其提供的功能集尽可能简单。
+理想情况下，Optimism 应该由安全、可扩展和灵活的 L2 系统所需的最少移动部件组成。
+这种简单性使 Optimism 的设计与其他更复杂的 L2 结构相比具有许多显著优势。
 
-Simplicity reduces engineering overhead, which in turn means we can spend our time working on new features instead of re-creating existing ones.
-Optimism prefers to use existing battle-tested Ethereum code and infrastructure where possible.
-The most visible example of this philosophy in practice is the choice to use Geth as Optimism's client software.
+简单性降低了工程开销，这反过来意味着我们可以将时间花在新功能上，而不是重新创建现有功能。
+Optimism 更喜欢尽可能使用现有的经过实战考验的以太坊代码和基础设施。
+这种理念在实践中最明显的例子是选择使用 Geth 作为 Optimism 的客户端软件。
 
-When dealing with critical infrastructure, simplicity is also security.
-Every line of code we write is an opportunity to introduce unintentional bugs.
-A simple protocol means there's less code to write and, as a result, less surface area for potential mistakes.
-A clean and minimal codebase is also more accessible to external contributors and auditors.
-All of this serves to maximize the security and correctness of the Optimism protocol.
+在处理关键基础设施时，简单性也是安全性。
+我们编写的每一行代码都是引入无意错误的机会。
+一个简单的协议意味着要编写的代码更少，因此潜在错误的表面积也更少。
+外部贡献者和审计员也更容易访问干净且最小的代码库。
+所有这些都有助于最大限度地提高 Optimism 协议的安全性和正确性。
 
-Simplicity is also important for the long-term vision of Optimism.
-By limiting the amount of code that we write on top of Ethereum tooling, we're able to spend most of our time working directly with existing codebases.
-Engineering effort that goes into Optimism can also directly benefit Ethereum, and vice versa.
-This will only become more pronounced as the Optimism protocol solidifies and existing resources can be redirected towards core Ethereum infrastructure.
+简单性对于 Optimism 的长期愿景也很重要。
+通过限制我们在以太坊工具之上编写的代码量，我们能够将大部分时间用于直接使用现有代码库。
+Optimism 的工程努力也可以直接使以太坊受益，反之亦然。
+随着 Optimism 协议的巩固和现有资源可以重新定向到核心以太坊基础设施，这只会变得更加明显。
 
-### Pragmatism
+### 实用主义
 
-For all its idealism, the design process behind Optimism is ultimately driven by pragmatism.
-The core Optimism team has real-world constraints, the projects that build on Optimism have real-world needs, and the users that engage with Optimism have real-world problems.
-Optimism's design philosophy prioritizes user and developer needs over theoretical perfection.
-Sometimes the best solution isn't the prettiest one.
+尽管有理想主义，但 Optimism 背后的设计过程最终是由实用主义驱动的。
+Optimism 核心团队有现实世界的限制，建立在 Optimism 之上的项目有现实世界的需求，而参与 Optimism 的用户有现实世界的问题。
+Optimism 的设计理念优先考虑用户和开发人员的需求，而不是理论的完美。
+有时最好的解决方案并不是最漂亮的。
 
-Optimism is also developed with the understanding that any core team will have limited areas of expertise.
-Optimism is developed iteratively and strives to continously pull feedback from users.
-Many core Optimism features today (like [EVM Equivalence](https://medium.com/ethereum-optimism/introducing-evm-equivalence-5c2021deb306)) were only made possible by this iterative approach to protocol development.
+乐观主义也是在理解任何核心团队的专业领域有限的情况下发展起来的。
+Optimism 是迭代开发的，并努力不断地从用户那里获取反馈。
+今天的许多核心 Optimism 功能（如 [EVM 等效性](https://medium.com/ethereum-optimism/introducing-evm-equivalence-5c2021deb306)）只有通过这种迭代的协议开发方法才成为可能。
 
-### Sustainability
+### 可持续性
 
-Optimism is in it for the long haul.
-Application developers need assurance that the platform they're building on will remain not only operational but competitive over long periods of time.
-Optimism's design process is built around the idea of long-term sustainability and not taking shortcuts to scalability.
-At the end of the day, a scalable system means nothing without the ecosystem that sustains it.
+从长远来看，乐观是存在的。
+应用程序开发人员需要确保他们所构建的平台在很长一段时间内不仅可以运行而且具有竞争力。
+Optimism 的设计过程是围绕长期可持续性的理念构建的，而不是走捷径来实现可扩展性。
+归根结底，如果没有维持它的生态系统，可扩展系统就毫无意义。
 
-Sustainability actively influences Optimism's protocol design in ways that go hand-in-hand with our philosophy of simplicity.
-The more complex a codebase, the more difficult it is for people outside of the core development team to actively contribute.
-By keeping our codebase simple we're able to build a bigger community of contributors who can help maintain the protocol long-term.
+可持续性以与我们的简约理念相辅相成的方式积极影响 Optimism 的协议设计。
+代码库越复杂，核心开发团队之外的人就越难以积极做出贡献。
+通过保持我们的代码库简单，我们能够建立一个更大的贡献者社区，他们可以帮助长期维护协议。
 
-### Optimism
+### 乐观
 
-Of course, none of this would be possible without a sense of optimism.
-Our optimism about the Ethereum vision keeps this project moving forward.
-We believe in an optimistic future for Ethereum, a future where we get to redesign our relationships to the institutions that coordinate our lives.
+当然，如果没有乐观情绪，这一切都是不可能的。
+我们对以太坊愿景的乐观态度使这个项目不断向前发展。
+我们相信以太坊有一个乐观的未来，一个我们可以重新设计我们与协调我们生活的机构的关系的未来。
 
-Although Optimism looks like a standalone blockchain, it's ultimately designed as an extension to Ethereum.
-We keep this in mind whenever we're creating new features or trying to simplify existing ones.
-Optimism is as close to Ethereum as possible not only for pragmatic reasons, but because Optimism exists so that Ethereum can succeed.
-We hope that you can see the influence of this philosophy when looking at Optimism's design.
+尽管 Optimism 看起来像一个独立的区块链，但它最终被设计为以太坊的扩展。
+每当我们创建新功能或尝试简化现有功能时，我们都会牢记这一点。
+Optimism 尽可能接近以太坊，不仅是出于务实的原因，还因为 Optimism 的存在使以太坊能够成功。
+我们希望您在看 Optimism 的设计时能看到这种理念的影响。
 
-## Rollup Protocol
+## Rollup 协议
 
-We've covered most of the "why" behind Optimism.
-Now it's time to explain the big idea that makes Optimism possible: the Optimistic Rollup.
-We'll go through a brief explainer of *how* Optimistic Rollups work at a high level.
-Then we'll explain *why* Optimism is built as an Optimistic Rollup and why we believe it's the best option for a system that addresses all of our design goals.
+我们已经涵盖了 Optimism 背后的大部分“why”。
+现在是时候解释使 Optimism 成为可能的重要思想了：Optimistic Rollup。
+我们将简要解释 *how* Optimistic Rollups 在高层次上工作。
+然后我们将解释 *why* Optimism 是作为 Optimistic Rollup 构建的，以及为什么我们认为它是解决我们所有设计目标的系统的最佳选择。
 
-### Optimistic Rollups TL;DR
+### Optimistic Rollups (太长不看)
 
-Optimism is an "Optimistic Rollup," which is basically just a fancy way of describing a blockchain that piggy-backs off of the security of another "parent" blockchain.
-Specifically, Optimistic Rollups take advantage of the consensus mechanism (like PoW or PoS) of their parent chain instead of providing their own.
-In Optimism's case this parent blockchain is Ethereum.
+Optimism 是一种“Optimistic Rollup”，它基本上只是描述区块链的一种奇特方式，它捎带了另一个“父”区块链的安全性。
+具体来说，Optimistic Rollups 利用其父链的共识机制（如 PoW 或 PoS），而不是提供自己的。
+在 Optimism 的案例中，这个父区块链是以太坊。
 
 <div align="center">
 <img width="400" src="../../assets/docs/how-optimism-works/1.png">
 </div>
 
-### Block storage
+### 块存储
 
-All Optimism blocks are stored within a special smart contract on Ethereum called the [`CanonicalTransactionChain`](https://etherscan.io/address/0x5E4e65926BA27467555EB562121fac00D24E9dD2) (or CTC for short).
-Optimism blocks are held within an append-only list inside of the CTC (we'll explain exactly how blocks are added to this list in the next section).
-This append-only list forms the Optimism blockchain.
+所有 Optimism 区块都存储在以太坊上一个名为 [`CanonicalTransactionChain`]（https://etherscan.io/address/0x5E4e65926BA27467555EB562121fac00D24E9dD2）（或简称 CTC）的特殊智能合约中。
+乐观块保存在 CTC 内的仅附加列表中（我们将在下一节中准确解释如何将块添加到此列表中）。
+这个仅附加列表形成了 Optimism 区块链。
 
-The `CanonicalTransactionChain` includes code that guarantees that the existing list of blocks cannot be modified by new Ethereum transactions.
-However, this guarantee can be broken if the Ethereum blockchain itself is reorganized and the ordering of past Ethereum transactions is changed.
-The Optimism mainnet is configured to be robust against block reorganizations of up to 50 Ethereum blocks.
-If Ethereum experiences a reorg larger than this, Optimism will reorg as well.
+`CanonicalTransactionChain` 包含保证现有区块列表不能被新的以太坊交易修改的代码。
+然而，如果以太坊区块链本身被重组并且过去以太坊交易的顺序被改变，那么这个保证就可能被打破。
+Optimism 主网被配置为能够抵抗多达 50 个以太坊区块的区块重组。
+如果以太坊经历了比这更大的重组，Optimism 也会重组。
 
-Of course, it's a key security goal of Ethereum to not experience these sort of significant block reorganizations.
-Optimism is therefore secure against large block reorganizations as long as the Ethereum consensus mechanism is too.
-It's through this relationship (in part, at least) that Optimism derives its security properties from Ethereum.
+当然，不经历这种重大的区块重组是以太坊的一个关键安全目标。
+因此，只要以太坊共识机制也是如此， Optimism 就可以抵御大型区块重组。
+正是通过这种关系（至少部分地），Optimism 从以太坊中获得了它的安全属性。
 
-### Block production
+### 块生产
 
-Optimism block production is primarily managed by a single party, called the "sequencer," which helps the network by providing the following services:
+Optimism 区块生产主要由单一方管理，称为“定序器”，它通过提供以下服务来帮助网络：
 
-- Providing instant transaction confirmations and state updates.
-- Constructing and executing L2 blocks.
-- Submitting user transactions to L1.
+- 提供即时交易确认和状态更新。
+- 构建和执行 L2 块。
+- 向 L1 提交用户交易。
 
-The sequencer has no mempool and transactions are immediately accepted or rejected in the order they were received.
-When a user sends their transaction to the sequencer, the sequencer checks that the transaction is valid (i.e. pays a sufficient fee) and then applies the transaction to its local state as a pending block.
-These pending blocks are periodically submitted in large batches to Ethereum for finalization.
-This batching process significantly reduces overall transaction fees by spreading fixed costs over all of the transactions within a given batch.
-The sequencer also applies some basic compression techniques to minimize the amount of data published to Ethereum.
+定序器没有内存池，交易会按照收到的顺序立即被接受或拒绝。
+当用户将他们的交易发送给定序器时，定序器会检查交易是否有效（即支付足够的费用），然后将交易作为待处理块应用到其本地状态。
+这些待处理的区块会定期大批量提交给以太坊进行最终确定。
+这种批处理过程通过将固定成本分散到给定批次内的所有交易中来显着降低整体交易费用。
+定序器还应用了一些基本的压缩技术，以尽量减少发布到以太坊的数据量。
 
-Because the sequencer is given priority write access to the L2 chain, the sequencer can provide a strong guarantee of what state will be finalized as soon as it decides on a new pending block.
-In other words, it is precisely known what will be the impact of the transaction.
-As a result, the L2 state can be reliably updated extremely quickly.
-Benefits of this include a snappy, instant user experience, with things like near-real-time Uniswap price updates.
+因为定序器被赋予了对 L2 链的优先写访问权限，所以定序器可以提供强有力的保证，一旦它决定一个新的待处理块，它将最终确定什么状态。
+换句话说，确切地知道交易的影响是什么。
+结果，L2状态可以非常迅速地可靠地更新。
+这样做的好处包括快速、即时的用户体验，例如近乎实时的 Uniswap 价格更新。
 
-Alternatively, users can skip the sequencer entirely and submit their transactions directly to the `CanonicalTransactionChain` via an Ethereum transaction.
-This is typically more expensive because the fixed cost of submitting this transaction is paid entirely by the user and is not amortized over many different transactions.
-However, this alternative submission method has the advantage of being resistant to censorship by the sequencer.
-Even if the sequencer is actively censoring a user, the user can always continue to send transactions on Optimism.
+或者，用户可以完全跳过排序器，并通过以太坊交易直接将他们的交易提交到“CanonicalTransactionChain”。
+这通常更昂贵，因为提交此交易的固定成本完全由用户支付，并且不会分摊到许多不同的交易中。
+但是，这种替代提交方法的优点是可以抵抗测序仪的审查。
+即使定序器正在积极审查用户，用户也始终可以继续在 Optimism 上发送交易。
 
-For the moment, [OP Labs PBC](https://www.optimism.io/) runs the only block producer on the Optimism network.
-Refer to [Protocol specs](../protocol/README.md) section for more information about how we plan to decentralize the Sequencer role in the future.
+目前，[OP Labs PBC](https://www.optimism.io/) 运行 Optimism 网络上唯一的区块生产者。
+请参阅 [Protocol specs](../protocol/README.md) 部分，了解有关我们计划在未来如何分散 Sequencer 角色的更多信息。
 
-::: tip NOTE
-For users to be able to execute *withdrawals* in a censorship-resistant manner, a rollup must allow participants to trustlessly publish transaction *results* to Ethereum.
-Currently, [OP Labs PBC](https://www.optimism.io/) is the only entity able to publish transaction results while we work to decentralize the "result proposal" role.
-Although not unique to Optimism, it's worth understanding these security properties when using the system.
-Permissionless result publication should be introduced alongside the production release of our [Cannon](https://github.com/ethereum-optimism/cannon/) fault proving system.
+::: 提示 注意
+为了让用户能够以抗审查的方式执行 *withdrawals*，rollup 必须允许参与者以不信任的方式将交易 *results* 发布到 Ethereum。
+目前，[OP Labs PBC](https://www.optimism.io/) 是唯一能够发布交易结果的实体，同时我们努力去中心化“结果提案”角色。
+虽然不是 Optimism 独有的，但在使用系统时了解这些安全属性是值得的。
+应该在我们的 [Cannon](https://github.com/ethereum-optimism/cannon/) 故障证明系统的生产版本中引入无许可结果发布。
 :::
 
-### Block execution
+### 块执行
 
-Ethereum nodes download blocks from Ethereum's p2p network.
-Optimism nodes instead download blocks directly from the append-only list of blocks held within the `CanonicalTransactionChain` contract.
-See the above section regarding [block storage](#block-storage) for more information about how blocks are stored within this contract.
+以太坊节点从以太坊的 p2p 网络下载块。
+Optimism 节点直接从“CanonicalTransactionChain”合约中仅附加的块列表中下载块。
+有关如何在本合约中存储块的更多信息，请参阅上面关于 [块存储](#block-storage) 的部分。
 
-Optimism nodes are made up of two primary components, the Ethereum data indexer and the Optimism client software.
-The Ethereum data indexer, also called the ["data transport layer"](https://github.com/ethereum-optimism/optimism/tree/develop/packages/data-transport-layer) (or DTL), reconstructs the Optimism blockchain from blocks published to the `CanonicalTransactionChain` contract.
-The DTL searches for events emitted by the `CanonicalTransactionChain` that signal that new Optimism blocks have been published.
-It then inspects the transactions that emitted these events to reconstruct the published blocks in the [standard Ethereum block format](https://ethereum.org/en/developers/docs/blocks/#block-anatomy).
+Optimism 节点由两个主要组件组成，即以太坊数据索引器和 Optimism 客户端软件。
+以太坊数据索引器，也称为 [“数据传输层”](https://github.com/ethereum-optimism/optimism/tree/develop/packages/data-transport-layer)（或 DTL），重构了 Optimism 发布到“CanonicalTransactionChain”合约的区块链。
+DTL 搜索由“CanonicalTransactionChain”发出的事件，这些事件表明新的 Optimism 块已发布。
+然后，它检查发出这些事件的交易，以 [标准以太坊区块格式](https://ethereum.org/en/developers/docs/blocks/#block-anatomy) 重建已发布的区块。
 
-The second part of the Optimism node, the Optimism client software, is an almost completely vanilla version of [Geth](https://github.com/ethereum/go-ethereum).
-This means Optimism is close to identical to Ethereum under the hood.
-In particular, Optimism shares the same [Ethereum Virtual Machine](https://ethereum.org/en/developers/docs/evm/), the same [account and state structure](https://ethereum.org/en/developers/docs/accounts/), and the same [gas metering mechanism and fee schedule](https://ethereum.org/en/developers/docs/gas/).
-We refer to this architecture as ["EVM Equivalence"](https://medium.com/ethereum-optimism/introducing-evm-equivalence-5c2021deb306) and it means that most Ethereum tools (even the most complex ones) "just work" with Optimism.
+Optimism 节点的第二部分，Optimism 客户端软件，是 [Geth](https://github.com/ethereum/go-ethereum) 的几乎完全原版的版本。
+这意味着 Optimism 在本质上与以太坊几乎相同。
+特别是，Optimism 共享相同的[以太坊虚拟机]（https://ethereum.org/en/developers/docs/evm/），相同的[帐户和状态结构]（https://ethereum.org/en/ developer/docs/accounts/)，以及相同的 [gas 计量机制和费用表](https://ethereum.org/en/developers/docs/gas/)。
+我们将此架构称为 ["EVM Equivalence"](https://medium.com/ethereum-optimism/introducing-evm-equivalence-5c2021deb306)，这意味着大多数以太坊工具（甚至是最复杂的工具）也适用于 Optimism 。
 
-The Optimism client software continuously monitors the DTL for newly indexed blocks.
-When a new block is indexed, the client software will download it and execute the transactions included within it.
-The process of executing a transaction on Optimism is the same as on Ethereum: we load the Optimism state, apply the transaction against that state, and then record the resulting state changes.
-This process is then repeated for each new block indexed by the DTL.
+Optimism 客户端软件持续监控新索引块的 DTL。
+当一个新块被索引时，客户端软件将下载它并执行其中包含的交易。
+在 Optimism 上执行交易的过程与在以太坊上相同：我们加载 Optimism 状态，针对该状态应用交易，然后记录结果状态变化。
+然后对 DTL 索引的每个新块重复此过程。
 
-### Bridging assets between layers
+### 在层之间桥接资产
 
-Optimism is designed so that users can send arbitrary messages between smart contracts on Optimism and Ethereum.
-This makes it possible to transfer assets, including ERC20 tokens, between the two networks.
-The exact mechanism by which this communication occurs differs depending on the direction in which messages are being sent.
+Optimism 旨在让用户可以在 Optimism 和以太坊上的智能合约之间发送任意消息。
+这使得在两个网络之间转移资产（包括 ERC20 代币）成为可能。
+发生这种通信的确切机制因消息发送的方向而异。
 
-Optimism uses this functionality in the Standard bridge to allow users to deposit assets (ERC20s and ETH) from Ethereum to Optimism and also allow withdrawals of the same from Optimism back to Ethereum.
-See the [developer documentation and examples](../developers/bridge/standard-bridge/) on details on the inner workings of the Standard bridge.
+Optimism 在标准桥中使用此功能允许用户将资产（ERC20 和 ETH）从以太坊存入 Optimism，并允许将相同的资产从 Optimism 提取回以太坊。
+请参阅 [开发者文档和示例](../developers/bridge/standard-bridge/)，了解有关标准桥的内部工作原理的详细信息。
 
-#### Moving from Ethereum to Optimism
+#### 从以太坊转向 Optimism
 
-To send messages from Ethereum to Optimism, users simply need to trigger the `CanonicalTransactionChain` contract on Ethereum to create a new block on Optimism block.
-See the above section on [block production](#block-production) for additional context.
-User-created blocks can include transactions that will appear to originate from the address that generated the block.
+要将消息从以太坊发送到 Optimism，用户只需触发以太坊上的“CanonicalTransactionChain”合约，即可在 Optimism 区块上创建一个新区块。
+有关其他上下文，请参阅上面关于 [block production](#block-production) 的部分。
+用户创建的区块可以包括看似源自生成区块的地址的交易。
 
-#### Moving from Optimism to Ethereum
+#### 从 Optimism 转向以太坊
 
-It's not possible for contracts on Optimism to easily generate transactions on Ethereum in the same way as Ethereum contracts can generate transactions on Optimism.
-As a result, the process of sending data from Optimism back to Ethereum is somewhat more involved.
-Instead of automatically generating authenticated transactions, we must instead be able to make provable statements about the state of Optimism to contracts sitting on Ethereum.
+Optimism 上的合约不可能像以太坊合约可以在 Optimism 上产生交易一样轻松地在以太坊上生成交易。
+因此，将数据从 Optimism 发送回以太坊的过程更加复杂。
+我们必须能够对以太坊上的合约的乐观状态做出可证明的陈述，而不是自动生成经过身份验证的交易。
 
-Making provable statements about the state of Optimism requires a [cryptographic commitment](https://en.wikipedia.org/wiki/Commitment_scheme) in the form of the root of the Optimism's [state trie](https://medium.com/@eiki1212/ethereum-state-trie-architecture-explained-a30237009d4e).
-Optimism's state is updated after each block, so this commitment will also change after every block.
-Commitments are regularly published (approximately once or twice per hour) to a smart contract on Ethereum called the [`StateCommitmentChain`](https://etherscan.io/address/0xBe5dAb4A2e9cd0F27300dB4aB94BeE3A233AEB19).
+对 Optimism 的状态做出可证明的陈述需要以 Optimism 的 [状态树](https://medium.com/@eiki1212/ethereum-state-trie-architecture-explained-a30237009d4e) 根的形式进行[加密承诺](https://en.wikipedia.org/wiki/Commitment_scheme)。
+Optimism 的状态在每个区块之后都会更新，因此这个承诺也会在每个区块之后发生变化。
+承诺会定期发布（大约每小时一次或两次）到以太坊上称为 [`StateCommitmentChain`](https://etherscan.io/address/0xBe5dAb4A2e9cd0F27300dB4aB94BeE3A233AEB19) 的智能合约。
 
-Users can use these commitments to generate [Merkle tree proofs](https://en.wikipedia.org/wiki/Merkle_tree) about the state of Optimism.
-These proofs can be verified by smart contracts on Ethereum.
-Optimism maintains a convenient cross-chain communication contract, the [`L1CrossDomainMessenger`](https://etherscan.io/address/0x25ace71c97B33Cc4729CF772ae268934F7ab5fA1), which can verify these proofs on behalf of other contracts.
+用户可以使用这些承诺来生成关于 Optimism 状态的 [Merkle 树证明](https://en.wikipedia.org/wiki/Merkle_tree)。
+这些证明可以通过以太坊上的智能合约进行验证。
+Optimism 维护了一个方便的跨链通信合约，[`L1CrossDomainMessenger`](https://etherscan.io/address/0x25ace71c97B33Cc4729CF772ae268934F7ab5fA1)，它可以代表其他合约验证这些证明。
 
-These proofs can be used to make verifiable statements about the data within the storage of any contract on Optimism at a specific block height.
-This basic functionality can then be used to enable contracts on Optimism to send messages to contracts on Ethereum.
-The [`L2ToL1MessagePasser`](https://optimistic.etherscan.io/address/0x4200000000000000000000000000000000000000) contract (predeployed to the Optimism network) can be used by contracts on Optimism to store a message in the Optimism state.
-Users can then prove to contracts on Ethereum that a given contract on Optimism did, in fact, mean to send some given message by showing that the hash of this message has been stored within the `L2ToL1MessagePasser` contract.
+这些证明可用于对 Optimism 上特定区块高度的任何合约存储中的数据做出可验证的陈述。
+然后可以使用此基本功能使 Optimism 上的合约能够向以太坊上的合约发送消息。
+Optimism 上的合约可以使用 [`L2ToL1MessagePasser`](https://optimistic.etherscan.io/address/0x4200000000000000000000000000000000000000) 合约（预部署到 Optimism 网络）将消息存储在 Optimism 状态。
+然后，用户可以向以太坊上的合约证明 Optimism 上的给定合约实际上意味着通过显示该消息的哈希已存储在“L2ToL1MessagePasser”合约中来发送某些给定消息。
 
-### Fault proofs
+### 故障证明
 
-In an Optimistic Rollup, state commitments are published to Ethereum without any direct proof of the validity of these commitments.
-Instead, these commitments are considered pending for a period of time (called the "challenge window").
-If a proposed state commitment goes unchallenged for the duration of the challenge window (currently set to 7 days), then it is considered final.
-Once a commitment is considered final, smart contracts on Ethereum can safely accept proofs about the state of Optimism based on that commitment.
+在 Optimistic Rollup 中，状态承诺会在没有任何直接证明这些承诺有效性的情况下发布到以太坊。
+相反，这些承诺在一段时间内被视为未决（称为“挑战窗口”）。
+如果提议的状态承诺在挑战窗口期间（当前设置为 7 天）未受到挑战，则将其视为最终承诺。
+一旦一个承诺被认为是最终的，以太坊上的智能合约可以安全地接受基于该承诺的 Optimism 状态的证明。
 
-When a state commitment is challenged, it can be invalidated through a "fault proof" ([formerly known as a "fraud proof"](https://github.com/ethereum-optimism/optimistic-specs/discussions/53)) process.
-If the commitment is successfully challenged, then it is removed from the `StateCommitmentChain` to eventually be replaced by another proposed commitment.
-It's important to note that a successful challenge does not roll back Optimism itself, only the published commitments about the state of the chain.
-The ordering of transactions and the state of Optimism is unchanged by a fault proof challenge.
+当状态承诺受到挑战时，可以通过“故障证明”（[以前称为“欺诈证明”]（https://github.com/ethereum-optimism/optimistic-specs/discussions/53））过程使其无效。
+如果该承诺被成功挑战，那么它将从“StateCommitmentChain”中删除，最终被另一个提议的承诺所取代。
+重要的是要注意，成功的挑战不会回滚 Optimism 本身，只会回滚有关链状态的已发布承诺。
+交易的顺序和 Optimism 状态不会因故障证明挑战而改变。
 
-The fault proof process is currently undergoing major redevelopment as a side-effect of the November 11th [EVM Equivalence](https://medium.com/ethereum-optimism/introducing-evm-equivalence-5c2021deb306) update.
-You can read more about this process within the [Protocol specs](../protocol/README.md) section of this website.
+作为 11 月 11 日 [EVM 等效性](https://medium.com/ethereum-optimism/introducing-evm-equivalence-5c2021deb306) 更新的副作用，故障证明过程目前正在进行重大重新开发。
+您可以在本网站的 [协议规范](../protocol/README.md) 部分中阅读有关此过程的更多信息。
 
-## Start building
+## 开始构建
 
-You've made it to the end of *How Optimism Works*.
-We hope you've learned quite a bit about Optimism under the hood.
-Of course, the end of one journey is always the beginning of another.
-Now that you're an expert in all things Optimism, it's time to start building!
+您已经完成了*Optimism 的工作原理*。
+我们希望您已经对 Optimism 有所了解。
+当然，一段旅程的结束总是另一段旅程的开始。
+既然您是 Optimism 方面的专家，是时候开始构建了！
 
-### Deploy an app today
+### 立即部署应用程序
 
-Building smart contracts on Optimism has never been easier.
-If you're looking for a place to get started, we recommend checking out [our developer docs](../developers).
-There you'll find everything you need to know to build and deploy your first app on Optimism.
+在 Optimism 上构建智能合约从未如此简单。
+如果您正在寻找入门的地方，我们建议您查看 [我们的开发者文档](../developers)。
+在那里，您将找到在 Optimism 上构建和部署您的第一个应用程序所需了解的一切。
 
-### Get involved with Optimism
+### 参与 Optimism
 
-Excited about Optimism?
-Want to contribute directly?
-Head over to our [contributing page](../contribute) where you'll find a list of many of the ways you can actively help to build Optimism itself.
-You can also try hopping in [the Optimism discord](https://discord.optimism.io) to find additional ways to help out.
+对 Optimism 感到兴奋?
+想直接贡献？
+前往我们的 [贡献页面](../contribute)，您会在其中找到许多可以积极帮助构建 Optimism 本身的方法的列表。
+你也可以尝试加入 [the Optimism discord](https://discord.optimism.io) 来寻找更多的帮助方式。
 
-### Dive deeper
+### 更深了解
 
-*How Optimism Works* is a high-level overview of how Optimism really works.
-If you're interested in diving even deeper, you should check out the [protocol specs](../protocol) section of this website.
+*Optimism 工作原理*是Optimism 如何真正运作的高级概述。
+如果您有兴趣更深入地研究，您应该查看本网站的 [protocol specs](../protocol) 部分。
