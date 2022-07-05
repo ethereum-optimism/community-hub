@@ -67,29 +67,33 @@ To learn more about how Bedrock itself works and its motivations, please see [th
 ## Guidelines
 
 1. The Bedrock Geth node is deployed identically to an L1 Geth node:
-    1. It needs access to Ethereum’s peer-to-peer network.
-    2. It needs a large attached disk to store its state.
-    3. Its RPC ports need to be accessible in order for users to submit transactions and read chain data.
-    4. The Bedrock Geth node needs to be accessible by the Rollup Node in order for the Engine API to function correctly.
+    - It needs access to Ethereum’s peer-to-peer network.
+    - It needs a large attached disk to store its state.
+    - Its RPC ports need to be accessible in order for users to submit transactions and read chain data.
+    - The Bedrock Geth node needs to be accessible by the Rollup Node in order for the Engine API to function correctly.
 2. The Rollup Node can be deployed as a single container.
-    1. It needs access to an L1 RPC endpoint.
-    2. It needs access to the Bedrock Geth node, preferably over a WebSocket connection.
-    3. It needs access to the Rollup Node’s peer-to-peer network.
-    4. The Rollup Node is stateless, so it does not need a writable disk.
+    - It needs access to an L1 RPC endpoint.
+    - It needs access to the Bedrock Geth node, preferably over a WebSocket connection.
+    - It needs access to the Rollup Node’s peer-to-peer network.
+    - The Rollup Node is stateless, so it does not need a writable disk.
 3. Don’t try to run multiple Bedrock Geth nodes per Rollup Node or vice versa. Always deploy them in pairs.
-    1. In a Kubernetes deployment, the Rollup Node might be deployed as a sidecar to the Bedrock Geth node.
+    - In a Kubernetes deployment, the Rollup Node might be deployed as a sidecar to the Bedrock Geth node.
 4. The Legacy Geth node is deployed similarly to an L1 Geth node, except:
-    1. The node is read-only, so it will not run any transaction pooling or sync logic.
-    2. Since the state of the Legacy Geth node is immutable, it is safe to run unlimited Legacy Geth nodes behind a load balancer without worrying about consistency problems.
+    - The node is read-only, so it will not run any transaction pooling or sync logic.
+    - Since the state of the Legacy Geth node is immutable, it is safe to run unlimited Legacy Geth nodes behind a load balancer without worrying about consistency problems.
 5. The Daisy Chain is deployed similarly to any proxy container:
-    1. It needs access to the RPC endpoints of a Legacy Geth and Bedrock Geth node.
-    2. The Geth nodes the Daisy Chain routes to can be behind load balancers, as long as the load balancers only contain Geth nodes of a single type (i.e., do not mix Legacy and Bedrock Geth nodes behind the same LB).
+    - It needs access to the RPC endpoints of a Legacy Geth and Bedrock Geth node.
+    - The Geth nodes the Daisy Chain routes to can be behind load balancers, as long as the load balancers only contain Geth nodes of a single type (i.e., do not mix Legacy and Bedrock Geth nodes behind the same LB).
 
 ## Upgrade Plan
 
 ### Testnets
 
-Prior to upgrading mainnet, we will be running a series of testnets. The last testnet will replace our existing Kovan testnet, and run for an entire month to give developers time to fix any integration issues they may encounter. Proposed dates are as follows:
+Prior to upgrading mainnet, we will be running a series of testnets. 
+The last testnet will replace either our existing Kovan testnet or the new Goerli testnet, and run for an entire month to give developers time to fix any integration issues they may encounter.
+
+Dates for the testnet have not been determined yet. 
+Please keep an eye on this documentation or our [official Twitter](https://twitter.com/OPLabsPBC) for date announcements.
 
 ### Upgrade Process
 
