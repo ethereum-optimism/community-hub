@@ -32,14 +32,10 @@ They include all the configuration settings.
 This is the recommended method because it is what we for our own systems.
 As such, the docker images go through a lot more tests than any other configuration.
 
-You'll need to have the following installed:
-
-1. [Docker](https://www.docker.com/)
-1. [Docker compose](https://docs.docker.com/compose/install/)
-
 ### Configuring and running the node
 
-Follow the instructions available at [the monorepo](https://github.com/ethereum-optimism/optimism/tree/develop/infra/op-replica/docker-compose) to build and run the node.
+Follow [these instructions](https://github.com/smartcontracts/simple-optimism-node) to build and run the node.
+
 
 ## Non-docker configuration
 
