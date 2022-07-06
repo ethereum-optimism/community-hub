@@ -58,6 +58,15 @@ You can select addons, like "Archive Mode" or "Trace Mode" for an additional cos
 - Optimism Ethereum
 - Optimism Kovan
 
+## Pocket Network
+
+### Description and pricing
+
+[Pocket](https://www.portal.pokt.network/) offers access to a highly-available dedicated pool of Optimism nodes coordinated autonomously by the Pocket Network protocol. Through the Pocket Portal, developers may mint Optimism RPC endpoints with a generous free tier of 1M requests per day (per endpoint, max 2 per account).
+
+### Supported Networks
+
+- Optimism Ethereum
 
 ## Don't see your company here?
 

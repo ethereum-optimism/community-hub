@@ -113,7 +113,7 @@ module.exports = {
       }
     ],
     searchPlaceholder: 'Search the docs',
-    sidebar: {
+    sidebar: {    
       '/docs/governance/': [
         [
           'https://www.optimism.io/vision',
@@ -136,7 +136,7 @@ module.exports = {
         '/docs/guides/token-dev.md',
         '/docs/guides/bridge-dev.md',
         '/docs/guides/smart-contract-devs.md',
-        '/docs/guides/testing.md'
+        '/docs/guides/testing.md',
       ],
       '/docs/protocol/': [
         {
@@ -201,7 +201,14 @@ module.exports = {
               'Contracts API'
             ]            
           ]
-        }        
+        },
+        {
+        title: "Bedrock (future version)",
+          children: [
+            '/docs/developers/bedrock.md',
+            '/docs/developers/bedrock-temp/infra.md',            
+          ]
+        }
       ],
     }
   },

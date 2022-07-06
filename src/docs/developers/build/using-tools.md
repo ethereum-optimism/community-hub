@@ -118,6 +118,16 @@ Local:
 brownie networks add Optimism optimism-local host=https://mainnet.optimism.io chainid=420
 ```
 
+## Waffle
+
+Starting from [Waffle](https://github.com/TrueFiEng/Waffle) v4.x.x you can use Waffle chai matchers to test your smart contracts on Optimism. We recommend following [this guide](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/getting-started)(scroll down to `Waffle` section) to get to know [Waffle](https://github.com/TrueFiEng/Waffle).
+
+If you want to add [Waffle](https://github.com/TrueFiEng/Waffle) to an already existing project, you can install it with (replace `npm install` with the package manager's you're using relevant command):
+
+```bash
+npm install --save-dev ethereum-waffle@alpha @ethereum-waffle/optimism@alpha
+```
+
 ## Other tools
 
 Got a favorite tool that works well with Optimism?
