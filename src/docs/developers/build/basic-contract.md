@@ -1,5 +1,5 @@
 ---
-title: Deploying a basic contract
+title: Deploying a basic contract on Remix
 lang: en-US
 ---
 
