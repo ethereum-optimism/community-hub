@@ -170,6 +170,7 @@ module.exports = {
             '/docs/developers/bridge/basics.md',
             '/docs/developers/bridge/standard-bridge.md',
             '/docs/developers/bridge/messaging.md',
+            '/docs/developers/bridge/comm-strategies.md'
           ],
           collapsable: true,
         },
