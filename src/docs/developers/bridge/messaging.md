@@ -62,7 +62,7 @@ contract MyOtherContract {
 Here we're using the [low-level "call" function](https://docs.soliditylang.org/en/v0.8.4/units-and-global-variables.html#members-of-address-types) and one of the [ABI encoding functions built into Solidity](https://docs.soliditylang.org/en/v0.8.4/units-and-global-variables.html#abi-encoding-and-decoding-functions).
 Although these two code snippets look a bit different, they're actually functionally identical.
 
-## L1 ⇔ L2 communication basics
+## Communication basics between layers
 
 Cool!
 Now that you have a general idea of how contracts on Ethereum interact with one another, let's take a look at how we do the same thing *between* Optimism and Ethereum.
@@ -130,12 +130,12 @@ You can find the exact addresses of these contracts on our various deployments [
 Unlike calls between contracts on the same blockchain, calls between Ethereum and Optimism are *not* instantaneous.
 The exact speed of a cross-chain transaction depends on the direction in which the transaction is sent.
 
-### For L1 ⇒ L2 transactions
+### For Ethereum (L1) to Optimism (L2) transactions
 
 Transactions sent from L1 to L2 take up to approximately 15 minutes on mainnet and 5 minutes on the Optimism Kovan testnet to reach the target L2 contract.
 This is because L2 nodes will wait for a certain number of block confirmations on Ethereum before executing an L1 to L2 transaction.
 
-### For L2 ⇒ L1 transactions
+### For Optimism (L2) to Ethereum (L1) transactions
 
 L2 to L1 transactions must wait 7 days on mainnet and 60 seconds on the Optimism Kovan testnet before they *can* be executed on Ethereum.
 After this waiting period, any user can "finalize" the transaction by triggering a second transaction on Ethereum that sends the message to the target L1 contract.
