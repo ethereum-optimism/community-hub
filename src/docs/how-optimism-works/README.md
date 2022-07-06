@@ -228,7 +228,7 @@ There you'll find everything you need to know to build and deploy your first app
 Excited about Optimism?
 Want to contribute directly?
 Head over to our [contributing page](../contribute) where you'll find a list of many of the ways you can actively help to build Optimism itself.
-You can also try hopping in [the Optimism discord](https://discord.optimism.io) to find additional ways to help out.
+You can also try hopping in [the Optimism discord](https://discord-gateway.optimism.io) to find additional ways to help out.
 
 ### Dive deeper
 

@@ -32,4 +32,4 @@ There are three ways you can do this:
 
 Now that your deployer address has ETH, you will need to point to the right network to deploy. You can find the required network information as well as RPC provider information in our [networks page](../useful-tools/networks.md#optimism-mainnet).
 
-If you run into any trouble don't hesitate to ask for help on our [Discord](https://discord.optimism.io/)!
+If you run into any trouble don't hesitate to ask for help on our [Discord](https://discord-gateway.optimism.io/)!

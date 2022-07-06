@@ -7,7 +7,7 @@ lang: en-US
 
 Each of these faucets can be used to get testnet funds on Optimism Kovan. 
 If one of them does not work, please try another one. 
-If you need more help, head over to **#dev-support** [on our Discord](https://discord.optimism.io).
+If you need more help, head over to **#dev-support** [on our Discord](https://discord--gateway.optimism.io).
 
 
 ### Paradigm MultiFaucet

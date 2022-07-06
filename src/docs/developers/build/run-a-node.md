@@ -302,7 +302,7 @@ You can replace it with you own directory as long as you are consistent.
    If l2geth is synchronizing, the second block number is higher than the first.
 
 1. Wait a few hours until the entire history is downloaded by dtl and then propagated to l2geth.
-   If you have any problems, [contact us on our Discord](https://discord.optimism.io/).
+   If you have any problems, [contact us on our Discord](https://discord-gateway.optimism.io/).
 
 
 

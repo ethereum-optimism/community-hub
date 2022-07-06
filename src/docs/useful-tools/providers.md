@@ -71,4 +71,4 @@ You can select addons, like "Archive Mode" or "Trace Mode" for an additional cos
 ## Don't see your company here?
 
 We try to keep this list up to date as we find out about more infrastructure providers who maintain Optimism nodes.
-If you're a node provider and you'd like to be included in this list, please message us in our [Discord](https://discord.optimism.io) or [make a PR](https://github.com/ethereum-optimism/community-hub/pulls). 
+If you're a node provider and you'd like to be included in this list, please message us in our [Discord](https://discord-gateway.optimism.io) or [make a PR](https://github.com/ethereum-optimism/community-hub/pulls). 
