@@ -38,19 +38,19 @@ This means that the optimization tradeoffs are very different in Optimism than t
 
 Transaction call data is *expensive*.
 The cost of writing a byte to L1 is approximately 16 gas.
-As I'm writing this, this means 720 gwei, or 720,000 units of L2 gas.
+At a cost of 45 gwei per L1 gas unit, writing one byte to L1 on Optimism costs 720 gwei, or 720,000 units of L2 gas (at the non-congested price of 0.001 gwei per L2 gas unit).
 
 In comparison, on-chain processing and storage are cheap.
-The worst case for writing to storage (previously uninitialized storage) is a cost of [22100 gas per 32 byte word](https://www.evm.codes/#55), which averages out to less than 700 gas / byte.
-At writing, this means it is cheaper to write a whole kilobyte to storage, rather than add one byte to the transaction call data. 
+The worst case for writing to storage (previously uninitialized storage) is a cost of [22100 L2 gas per EVM word, which contains 32 bytes of data](https://www.evm.codes/#55), which averages out to less than 700 L2 gas / byte.
+At a cost of 45 gwei per L1 gas unit, this means it is cheaper to write a whole kilobyte to storage, rather than add one byte to the transaction call data. 
 
-## Modify the ABI (application binary interface)
+## Modify the [ABI (application binary interface)](https://docs.soliditylang.org/en/latest/abi-spec.html)
 
 [The standard ABI](https://docs.soliditylang.org/en/latest/abi-spec.html) was designed with L1 tradeoffs in mind. 
-It uses four byte function selectors and pads values into 32 byte words. 
+It uses four byte function selectors and pads values to a 32 byte size. 
 Neither is optimal when using Optimism.
 
-[It is much more efficient to create a shorter ABI with just the required bytes, and decode it onchain](https://ethereum.org/en/developers/tutorials/short-abi/).
+It is much more efficient to [create a shorter ABI with just the required bytes, and decode it onchain](https://ethereum.org/en/developers/tutorials/short-abi/).
 All of your [`view`](https://docs.soliditylang.org/en/latest/contracts.html#view-functions) and [`pure`](https://docs.soliditylang.org/en/latest/contracts.html#pure-functions) functions can use the standard ABI at no cost.
 
 
