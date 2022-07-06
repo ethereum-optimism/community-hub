@@ -12,7 +12,7 @@ Optimism supports [Solidity](https://docs.soliditylang.org/en/develop/) as well 
 To get started we need to [get a local environment set up for testing and development](../developers/build/dev-node.md).
 Then you can follow [the getting started tutorial](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/getting-started).
 After that we have [lots of tutorials for you to follow](https://github.com/ethereum-optimism/optimism-tutorial).
-If you think we need more, you can ask for a specific topic on our [Discord](https://discord.optimism.io/) in the **#doc-requests** channel.
+If you think we need more, you can ask for a specific topic on our [Discord](https://discord-gateway.optimism.io/) in the **#doc-requests** channel.
 
 ## Deploying on Testnet
 
