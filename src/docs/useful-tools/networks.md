@@ -16,7 +16,7 @@ Such RPCs are either totally unsupported, or will return nonsensical values.
 | Network Name | **`Optimism`** |
 | Description | **`Mainnet`** |
 | Chain ID | **`10`** |
-| Explorer | **`https://optimistic.etherscan.io`** |
+| Explorer | **[https://optimistic.etherscan.io](https://optimistic.etherscan.io)** |
 | HTTP Endpoint | **`https://mainnet.optimism.io`** _Not for production systems._   See the list of available RPC endpoints below |
 | WebSocket Endpoint | **`wss://ws-mainnet.optimism.io`** 
 | L1 Contract Addresses | [link](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/deployments/mainnet#layer-1-contracts) |
@@ -62,7 +62,7 @@ It is still very much work in progress.
 | Network Name | **`Optimism Goerli`** |
 | Description | **`Testnet (public)`** |
 | Chain ID | **`420`** |
-| Explorer | **`https://l2-explorer.surge.sh/`** |
+| Explorer | **[https://blockscout.com/optimism/goerli](https://blockscout.com/optimism/goerli)** |
 | HTTP Endpoint | **`https://goerli.optimism.io`** |
 | WebSocket Endpoint | **`wss://ws-goerli.optimism.io`** |
 | L1 Contract Addresses | [link](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/deployments/goerli#layer-1-contracts) |
@@ -95,7 +95,7 @@ We expect Optimistic Kovan to exist until August 15th, 2022.
 | Network Name | **`Optimism Kovan`** |
 | Description | **`Testnet (public)`** |
 | Chain ID | **`69`** |
-| Explorer | **`https://kovan-optimistic.etherscan.io`** |
+| Explorer | **[https://kovan-optimistic.etherscan.io](https://kovan-optimistic.etherscan.io)** |
 | HTTP Endpoint | **`https://kovan.optimism.io`** If you are going to be sending a lot of requests please set up your own private RPC endpoint |
 | WebSocket Endpoint | **`wss://ws-kovan.optimism.io`** If you are going to be sending a lot of requests please set up your own private RPC endpoint |
 | L1 Contract Addresses | [link](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/deployments/kovan#layer-1-contracts) |
