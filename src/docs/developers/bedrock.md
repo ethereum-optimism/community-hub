@@ -164,7 +164,7 @@ These contracts provide the same interface as existed pre-bedrock so dapps donâ€
 These are contracts that are no longer relevant, but are kept as part of the state in case there is a call in any dapp that uses them.
 
 - [DeployerWhitelist](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L2/DeployerWhitelist.sol):
-  The `DeployerWhitelist` contract used to manage the whitelist before [Optimism moved out of beta](https://twitter.com/optimismPBC/status/1471571415774023682).
+  The `DeployerWhitelist` contract used to manage the whitelist before [Optimism moved out of beta](https://twitter.com/optimismFND/status/1471571415774023682).
 
 - [OVM_ETH](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L2/OVM_ETH.sol):
   The `OVM_ETH` contract used to manage users ETH balances prior to bedrock.
