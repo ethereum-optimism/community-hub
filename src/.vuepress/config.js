@@ -48,13 +48,13 @@ module.exports = {
         link: '/docs/protocol/',
       },      
       {
-        text: "Governance",
-        link: "/docs/governance/"
-      },
-      {
         text: 'Dev Docs',
         link: '/docs/developers/',
       },
+      {
+        text: "Governance",
+        link: "/docs/governance/"
+      },      
       {
         text: 'Contribute',
         link: '/docs/contribute/',
@@ -81,7 +81,7 @@ module.exports = {
             iconPrefix: 'fab fa-',
             iconClass: 'color-twitter',
             text: 'Twitter',
-            link: 'https://twitter.com/optimismPBC',
+            link: 'https://twitter.com/optimismFND',
           },
           {
             icon: 'twitch',
