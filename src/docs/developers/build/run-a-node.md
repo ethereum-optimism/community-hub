@@ -32,14 +32,10 @@ They include all the configuration settings.
 This is the recommended method because it is what we for our own systems.
 As such, the docker images go through a lot more tests than any other configuration.
 
-You'll need to have the following installed:
-
-1. [Docker](https://www.docker.com/)
-1. [Docker compose](https://docs.docker.com/compose/install/)
-
 ### Configuring and running the node
 
-Follow the instructions available at [the monorepo](https://github.com/ethereum-optimism/optimism/tree/develop/infra/op-replica/docker-compose) to build and run the node.
+Follow [these instructions](https://github.com/smartcontracts/simple-optimism-node) to build and run the node.
+
 
 ## Non-docker configuration
 
@@ -306,7 +302,7 @@ You can replace it with you own directory as long as you are consistent.
    If l2geth is synchronizing, the second block number is higher than the first.
 
 1. Wait a few hours until the entire history is downloaded by dtl and then propagated to l2geth.
-   If you have any problems, [contact us on our Discord](https://discord.optimism.io/).
+   If you have any problems, [contact us on our Discord](https://discord-gateway.optimism.io/).
 
 
 

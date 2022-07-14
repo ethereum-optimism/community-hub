@@ -81,8 +81,8 @@ To check your eligibility for Airdrop #1 and claim your tokens visit [the airdro
 Remember, this is the first drop of many. 
 To improve your odds for future drops, get involved:
 
-- If you want to build on Optimism, visit our [developer documentation](https://community.optimism.io/) or jump in to [Discord](https://discord.optimism.io).
-- If your talents are non-technical, jump in to [Discord](https://discord.optimism.io) to find other builders, apply to be a Support NERD, or just make some memes 🍉.
+- If you want to build on Optimism, visit our [developer documentation](https://community.optimism.io/) or jump in to [Discord](https://discord-gateway.optimism.io).
+- If your talents are non-technical, jump in to [Discord](https://discord-gateway.optimism.io) to find other builders, apply to be a Support NERD, or just make some memes 🍉.
 - [Discuss governance proposals and help create the best possible Optimism Collective](https://gov.optimism.io/).
 - [Bridge your assets to Optimism](https://app.optimism.io/bridge) and [explore projects on OP](https://www.optimism.io/apps/all).
 

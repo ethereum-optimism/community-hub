@@ -5,6 +5,11 @@ lang: en-US
 
 ## Testnet Faucets
 
+Each of these faucets can be used to get testnet funds on Optimism Kovan. 
+If one of them does not work, please try another one. 
+If you need more help, head over to **#dev-support** [on our Discord](https://discord--gateway.optimism.io).
+
+
 ### Paradigm MultiFaucet
 
 [Paradigm's MultiFaucet](https://faucet.paradigm.xyz/) is an easy way to get ETH on many different testnets at the same time.
