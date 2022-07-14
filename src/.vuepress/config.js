@@ -40,29 +40,21 @@ module.exports = {
     },
     nav: [
       {
-        text: "Governance",
-        link: "/docs/governance/"
+        text: "Getting Started",
+        link: '/docs/guides/'
       },
       {
         text: 'How Optimism Works',
-        link: '/docs/how-optimism-works/',
-      },
-      {
-        text: 'Guides',
-        link: '/docs/guides/',
-      },
-      {
-        text: 'Protocol Specs',
         link: '/docs/protocol/',
-      },
+      },      
       {
         text: 'Dev Docs',
         link: '/docs/developers/',
       },
       {
-        text: 'SDK',
-        link: '/docs/sdk/'
-      },
+        text: "Governance",
+        link: "/docs/governance/"
+      },      
       {
         text: 'Contribute',
         link: '/docs/contribute/',
@@ -137,6 +129,8 @@ module.exports = {
         '/docs/governance/gov-fund.md'
       ],
       '/docs/guides/': [
+        '/docs/developers/build/basic-contract.md',
+        '/docs/developers/tutorials.md',        
         '/docs/guides/wallet-dev.md',
         '/docs/guides/cex-dev.md',
         '/docs/guides/token-dev.md',
@@ -145,15 +139,27 @@ module.exports = {
         '/docs/guides/testing.md',
       ],
       '/docs/protocol/': [
-        '/docs/protocol/protocol-2.0.md',
-        '/docs/protocol/compressed-ctc.md'
+        {
+          title: 'How Optimism Works',
+          children: [
+            '/docs/protocol/1-design-philosophy.md',
+            '/docs/protocol/2-rollup-protocol.md',
+          ],
+          collapsable: false,          
+        },
+        {
+          title: 'Protocol Specs',
+          children: [
+            '/docs/protocol/protocol-2.0.md',
+            '/docs/protocol/compressed-ctc.md'
+          ]
+        }
       ],
       '/docs/developers/': [
         '/docs/developers/releases.md',
         {
           title: 'Building on Optimism',
           children: [
-            '/docs/developers/build/basic-contract.md',
             '/docs/developers/build/using-tools.md',
             '/docs/developers/build/transaction-fees.md',
             '/docs/developers/build/system-contracts.md',
@@ -174,7 +180,6 @@ module.exports = {
           ],
           collapsable: true,
         },
-        '/docs/developers/tutorials.md',
         '/docs/developers/known-issues.md',
         { 
           title: "Useful Tools",
@@ -189,20 +194,23 @@ module.exports = {
           ],
         },
         {
-          title: "Bedrock (future version)",
+          title: "SDK",
+          children: [
+            '/docs/sdk/js-client.md',
+            [
+              'https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/docs',
+              'Contracts API'
+            ]            
+          ]
+        },
+        {
+        title: "Bedrock (future version)",
           children: [
             '/docs/developers/bedrock.md',
             '/docs/developers/bedrock-temp/infra.md',            
           ]
         }
       ],
-      '/docs/sdk/': [
-        '/docs/sdk/js-client.md',
-        [
-          'https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/docs',
-          'Contracts API'
-        ]
-      ]      
     }
   },
 
