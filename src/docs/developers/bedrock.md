@@ -164,7 +164,7 @@ These contracts provide the same interface as existed pre-bedrock so dapps donâ€
 These are contracts that are no longer relevant, but are kept as part of the state in case there is a call in any dapp that uses them.
 
 - [DeployerWhitelist](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L2/DeployerWhitelist.sol):
-  The `DeployerWhitelist` contract used to manage the whitelist before [Optimism moved out of beta](https://twitter.com/optimismPBC/status/1471571415774023682).
+  The `DeployerWhitelist` contract used to manage the whitelist before [Optimism moved out of beta](https://twitter.com/optimismFND/status/1471571415774023682).
 
 - [OVM_ETH](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L2/OVM_ETH.sol):
   The `OVM_ETH` contract used to manage users ETH balances prior to bedrock.
@@ -194,7 +194,7 @@ We expect that to happen before the end of June.
 ### Deposits (from Ethereum to Optimism)
 
 To create a deposit we recommend that you use the pre-bedrock contracts [`L1StandardBridge`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L1/L1StandardBridge.sol) and [`L1CrossDomainMessenger`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L1/L1CrossDomainMessenger.sol).
-[`OptimismPortal`](https://github.com/ethereum-optimism/optimism/blob/develop/contracts-bedrock/contracts/L1/OptimismPortal.sol) also has deposit functionality.
+[`OptimismPortal`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L1/OptimismPortal.sol) also has deposit functionality.
 
 With the portalâ€™s `depositTransaction` function you can do from L1 anything you can do by contacting L2 directly: send transactions, send payments, create contracts, etc.
 This provides an uncensorable alternative in case the sequencer is down. 

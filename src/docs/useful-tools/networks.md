@@ -16,7 +16,7 @@ Such RPCs are either totally unsupported, or will return nonsensical values.
 | Network Name | **`Optimism`** |
 | Description | **`Mainnet`** |
 | Chain ID | **`10`** |
-| Explorer | **`https://optimistic.etherscan.io`** |
+| Explorer | **[https://optimistic.etherscan.io](https://optimistic.etherscan.io)** |
 | HTTP Endpoint | **`https://mainnet.optimism.io`** _Not for production systems._   See the list of available RPC endpoints below |
 | WebSocket Endpoint<sup>1</sup> | **`wss://ws-mainnet.optimism.io`** 
 | L1 Contract Addresses | [link](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/deployments/mainnet#layer-1-contracts) |
@@ -45,24 +45,61 @@ However, we _highly_ encourage you to set up a private RPC endpoint with any of 
 
 
 [Blast](https://blastapi.io/public-api/optimism) also maintains public RPC endpoints.
-And important limitation is that public endpoint does not support the `eth_getLogs` method
+An important limitation is that public endpoint does not support the `eth_getLogs` method
 (you can use it with their free project-specific endpoints).
 
 - HTTP endpoint: [https://optimism-mainnet.public.blastapi.io](https://optimism-mainnet.public.blastapi.io)
 - WebSocker endpoint: [wss://optimism-mainnet.public.blastapi.io](wss://optimism-mainnet.public.blastapi.io)
 
-## Optimism Kovan (testnet)
+
+## Optimism Goerli
 
 ::: tip Purpose
-This is our **test** network. To get ETH on Kovan as well as Optimism Kovan, checkout our [faucets page](./faucets.md).
+This is our new test network.
+It is still very much work in progress.
 :::
+
+
+
+| Parameter | Value |
+| --------- | ----- |
+| Network Name | **`Optimism Goerli`** |
+| Description | **`Testnet (public)`** |
+| Chain ID | **`420`** |
+| Explorer | **[https://blockscout.com/optimism/goerli](https://blockscout.com/optimism/goerli)** |
+| HTTP Endpoint | **`https://goerli.optimism.io`** |
+| WebSocket Endpoint | **`wss://ws-goerli.optimism.io`** |
+| L1 Contract Addresses | [link](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/deployments/goerli#layer-1-contracts) |
+| L2 Contract Addresses | [link](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/deployments/goerli#layer-2-contracts) |
+| Chainlist link | [https://chainlist.org/chain/420](https://chainlist.org/chain/420)
+
+### RPC endpoints
+
+Our providers are working on adding support for Optimism Goerli.
+For now, use the Optimism provided endpoints in the table.
+
+### Test ETH
+
+You can obtain Goerli test ETH either [here](https://goerlifaucet.com/) or [here](https://faucet.paradigm.xyz/).
+
+Our gateway still doesn't support Goerli, but if you transfer Goerli ETH to [0x636Af16bf2f682dD3109e60102b8E1A089FedAa8](https://goerli.etherscan.io/address/0x636Af16bf2f682dD3109e60102b8E1A089FedAa8), you will get it on Optimistic Goerli.
+
+
+## Optimism Kovan (old testnet)
+
+
+::: warning Deprecation notice
+We are transitioning our test network to Goerli. 
+We expect Optimistic Kovan to exist until August 15th, 2022.
+:::
+
 
 | Parameter | Value |
 | --------- | ----- |
 | Network Name | **`Optimism Kovan`** |
 | Description | **`Testnet (public)`** |
 | Chain ID | **`69`** |
-| Explorer | **`https://kovan-optimistic.etherscan.io`** |
+| Explorer | **[https://kovan-optimistic.etherscan.io](https://kovan-optimistic.etherscan.io)** |
 | HTTP Endpoint | **`https://kovan.optimism.io`** If you are going to be sending a lot of requests please set up your own private RPC endpoint |
 | WebSocket Endpoint<sup>1</sup> | **`wss://ws-kovan.optimism.io`** If you are going to be sending a lot of requests please set up your own private RPC endpoint |
 | L1 Contract Addresses | [link](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/deployments/kovan#layer-1-contracts) |
