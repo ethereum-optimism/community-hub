@@ -17,4 +17,4 @@ Take a look at the list on the left for a complete list of the guides we've crea
 ## Want a specific guide added?
 
 Are we missing an important use case?
-We'd love to hear from you in a [GitHub issue](https://github.com/ethereum-optimism/community-hub/issues) or on [Discord](https://discord.optimism.io).
+We'd love to hear from you in a [GitHub issue](https://github.com/ethereum-optimism/community-hub/issues) or on [Discord](https://discord-gateway.optimism.io).

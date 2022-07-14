@@ -42,4 +42,4 @@ We even dogfood the same infrastructure and use it under the hood of the Standar
 
 If you can't find the content you're looking for you've got a few options to get extra help.
 We recommend first searching through this documentation (search bar at the top right).
-If you've already done this and come up short, you can try [asking us a question in Discord](https://discord.optimism.io), [checking the Help Center](https://help.optimism.io/hc/en-us), or [making an issue on GitHub](https://github.com/ethereum-optimism/community-hub/issues).
+If you've already done this and come up short, you can try [asking us a question in Discord](https://discord-gateway.optimism.io), [checking the Help Center](https://help.optimism.io/hc/en-us), or [making an issue on GitHub](https://github.com/ethereum-optimism/community-hub/issues).

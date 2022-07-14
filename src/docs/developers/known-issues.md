@@ -47,7 +47,7 @@ We highly recommend testing all contracts on Optimism Kovan before deploying to 
 ### Workarounds
 
 Workarounds usually exist for this issue, but the exact workaround is typically dependent on the specifics of your contract.
-Please feel free to hop into the `#dev-support` channel on the [Optimism discord](https://discord.optimism.io) for assistance if you run into this issue.
+Please feel free to hop into the `#dev-support` channel on the [Optimism discord](https://discord-gateway.optimism.io) for assistance if you run into this issue.
 
 ### Resolution
 
