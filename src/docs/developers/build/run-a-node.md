@@ -4,7 +4,7 @@ lang: en-US
 ---
 
 If you're looking to build an app on Optimism you'll need access to an Optimism node.
-You can get a hosted one from [any of these providers](../useful-tools/providers.md).
+You can get a hosted one from [any of these providers](../../useful-tools/providers.md).
 
 However, you might be interested in running your very own Optimism node.
 Here we'll go over the process of running a testnet or mainnet Optimism node for yourself.
