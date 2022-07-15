@@ -79,7 +79,7 @@ module.exports = {
     // for testnet
     'optimism-goerli': {
       provider: () => {
-        return new HDWalletProvider(YOUR_KOVAN_MNEMONIC_GOES_HERE, 'https://goerli.optimism.io')
+        return new HDWalletProvider(YOUR_GOERLI_MNEMONIC_GOES_HERE, 'https://goerli.optimism.io')
       }
       network_id: "420"
     },
