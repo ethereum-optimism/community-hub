@@ -14,18 +14,6 @@ lang: en-US
 - Optimism Ethereum
 - Optimism Kovan
 
-## Infura
-
-### Description and pricing
-
-[Infura](https://infura.io) offers access to hosted Optimism nodes via addon.
-This addon is currently free but Infura seems to intend to charge $200/month for this addon in the future.
-
-### Supported Networks
-
-- Optimism Ethereum
-- Optimism Kovan
-
 ## Blast
 
 ### Description and pricing
@@ -44,14 +32,15 @@ On the platform, there are also [Public APIs](https://blastapi.io/public-api/opt
 ### Supported Networks
 
 - Optimism Ethereum
-- Optimism Kovan
+- Optimism Kovans
 
-## QuickNode
+
+## Infura
 
 ### Description and pricing
 
-[QuickNode](https://www.quicknode.com/) offers access to hosted Optimism nodes for $9/month at its cheapest tier.
-You can select addons, like "Archive Mode" or "Trace Mode" for an additional cost.
+[Infura](https://infura.io) offers access to hosted Optimism nodes via addon.
+This addon is currently free but Infura seems to intend to charge $200/month for this addon in the future.
 
 ### Supported Networks
 
@@ -67,6 +56,21 @@ You can select addons, like "Archive Mode" or "Trace Mode" for an additional cos
 ### Supported Networks
 
 - Optimism Ethereum
+
+
+## QuickNode
+
+### Description and pricing
+
+[QuickNode](https://www.quicknode.com/) offers access to hosted Optimism nodes for $9/month at its cheapest tier.
+You can select addons, like "Archive Mode" or "Trace Mode" for an additional cost.
+
+### Supported Networks
+
+- Optimism Ethereum
+- Optimism Kovan
+
+
 
 ## Don't see your company here?
 
