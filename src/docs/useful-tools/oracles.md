@@ -37,7 +37,14 @@ It can also calculate the total cost of a transaction for you before you send it
 This contract is a predeploy at address `0x420000000000000000000000000000000000000F`:
 
 - [On the production Optimism network](https://optimistic.etherscan.io/address/0x420000000000000000000000000000000000000F#readContract)
-- [On the Optimistic Kovan test network](https://kovan-optimistic.etherscan.io/address/0x420000000000000000000000000000000000000F#readContract)
+- [On the deprecated Optimism Kovan test network](https://kovan-optimistic.etherscan.io/address/0x420000000000000000000000000000000000000F#readContract)
+- On the Optimism Goerli test network
+
+<!--
+
+Add blockscout link to Goerli network when available
+
+-->
 
 This is a push Oracle. 
 Optimism updates the gas price parameters on chain whenever those parameters change. 
