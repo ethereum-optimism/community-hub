@@ -6,7 +6,8 @@ lang: en-US
 ## Our release cycle
 
 Optimism releases new software every Tuesday and Thursday at 7PM UTC. 
-Software is released on Kovan first, followed by mainnet a week later.
+For now software is released on Kovan first, followed by mainnet a week later.
+Once the Kovan testnet is decommissioned, software will be released on Goerli first, followed by mainnet a week later.
 
 
 ## Up to date information
