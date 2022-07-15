@@ -40,7 +40,7 @@ These instructions were generated with a [GCP e2-standard-4](https://cloud.googl
 They should work on different operating systems with minor changes, but there are no guarantees.
 
 Note that these directions are for a replica of the main network. 
-You need to modify some of them if you want to create a replica of the Kovan test network.
+You need to modify some of them if you want to create a replica of the test network.
 
 **Note:** This is *not* the recommended configuration.
 While we did QA on these instructions and they work, the QA that the docker images undergo is much more extensive.
