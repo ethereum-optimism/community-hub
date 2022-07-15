@@ -3,15 +3,24 @@ title: Block Explorers
 lang: en-US
 ---
 
+## Blockscout
+
+We have a Blockscout explorer for the [Goerli testnet](https://blockscout.com/optimism/goerli/). It includes:
+
+- [Verified contract source code, along with the ability to interact with it](https://blockscout.com/optimism/goerli/address/0x106941459A8768f5A92b770e280555FAF817576f/contracts#address-tabs)
+- [Detailed transaction information](https://blockscout.com/optimism/goerli/tx/0xeb98c8279983cfee472c6067d2405acc130dca37e7536d6c83930e29aaa40e3e)
+
+
+
 ## Etherscan
 
-We have Etherscan explorers for the [Optimism mainnet](https://optimistic.etherscan.io) and the [Optimism Kovan testnet](https://kovan-optimistic.etherscan.io).
+We have Etherscan explorers for the [Optimism mainnet](https://optimistic.etherscan.io) and the deprecated [Optimism Kovan testnet](https://kovan-optimistic.etherscan.io).
 Etherscan has lots of tools to help you debug transactions.
 
 Optimistic Etherscan has all the tools you expect from Etherscan, such as:
+- [Verified contract source code, along with the ability to interact with it](https://optimistic.etherscan.io/address/0x420000000000000000000000000000000000000F#code)
 - [Detailed transaction information](https://optimistic.etherscan.io/tx/0x292423266d6da24126dc4e0e81890c22a67295cc8b1a987e71ad84748511452f)
 - [List of events emitted by a transaction](https://optimistic.etherscan.io/tx/0x292423266d6da24126dc4e0e81890c22a67295cc8b1a987e71ad84748511452f#eventlog)
-- [Contract source code and verification](https://optimistic.etherscan.io/address/0x420000000000000000000000000000000000000F#code)
 - And everything else you might find on Etherscan!
 
 It's also got some Optimism-specific features:
@@ -84,3 +93,6 @@ Follow these steps:
 
    You can then use ERC20 events filters to get the events that you want for each address. Note that you will have to repeat this process for each datadir to get the full event history.
    If you are non-technical and need help requesting this data please reach out to us in Discord and we will be happy to help.
+
+
+
