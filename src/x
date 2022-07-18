@@ -1,0 +1,55 @@
+
+
+
+Each of these faucets can be used to get testnet funds on Optimism Kovan. 
+Just sign in with Twitter and you'll automatically be sent 1 ETH, 1 wETH, 500 DAI, and 5 NFTs on the Optimism Kovan testnet.
+[Optifaucet](https://kovan.optifaucet.com/) gives you a small amount of ETH, and 10,000 USDC. 
+### Optimism Kovan Faucet
+[Optimism Faucet](https://optimismfaucet.xyz/) is a simple faucet for Optimism Kovan that drips ETH and DAI. Authenticate with github, enter your wallet address and you'll aumatically be sent 1 ETH and 100 DAI on the Optimism Kovan testnet.
+./docs/useful-tools/faucets.md
+
+
+
+We'll demonstrate the process for deploying an instance of a sample token on Optimism Kovan testnet using [Etherscan](https://kovan-optimistic.etherscan.io/). The same process is applicable to Optimism Mainnet.
+Here we'll be using the [MetaMask](https://metamask.io/) Chrome extension to interact with the Optimism Kovan testnet.
+For now, simply [head to this link](https://chainid.link/?network=optimism-kovan) and click "Connect".
+Accept the popup that shows up in MetaMask and you'll be connected to the Optimism Kovan testnet.
+You'll need some ETH on the Optimism Kovan testnet to deploy a contract.
+The [Paradigm Multifaucet](https://faucet.paradigm.xyz/) is a quick and easy way to get ETH on a whole bunch of testnets, including the Optimism Kovan testnet.
+[https://kovan-optimistic.etherscan.io/address/0x4200000000000000000000000000000000000012](https://kovan-optimistic.etherscan.io/address/0x4200000000000000000000000000000000000012)
+3. Select "Connect to Web3" to connect to Metamask on Optimism Kovan.
+In this example we are using the ENS kovan token from [https://kovan.etherscan.io/address/0x6B7420E3D9115CB1D2A593bD7f6BD15a06506Caf](https://kovan.etherscan.io/address/0x6B7420E3D9115CB1D2A593bD7f6BD15a06506Caf) and creating an Optimism `L2StandardERC20` token instance this can be bridged to.
+For example for us this is [https://kovan-optimistic.etherscan.io/tx/0x0f71c0c2af9308260f7d5d89782064c28d32b52ea2b5c8fdaff8922185dde79a](https://kovan-optimistic.etherscan.io/tx/0x0f71c0c2af9308260f7d5d89782064c28d32b52ea2b5c8fdaff8922185dde79a)
+[https://kovan-optimistic.etherscan.io/address/0x3390108e913824b8ead638444cc52b9abdf63798#code](https://kovan-optimistic.etherscan.io/address/0x3390108e913824b8ead638444cc52b9abdf63798#code)
+./docs/guides/token-dev.md
+
+
+
+
+
+
+To add your bridge and token to the token list, you must make a pull request against the [Optimism token list repository](https://github.com/ethereum-optimism/ethereum-optimism.github.io#adding-a-token-to-the-list). Due to the complexity of reviewing a custom bridge, you will need to deploy to Optimism kovan first, before going to production. This is an example of a custom bridge [deployed on kovan](https://github.com/ethereum-optimism/ethereum-optimism.github.io/pull/46/files) for testing, before being [deployed to mainnet](https://github.com/ethereum-optimism/ethereum-optimism.github.io/pull/45/files).
+./docs/guides/bridge-dev.md
+
+
+
+
+
+Transactions sent from L1 to L2 take up to approximately 15 minutes on mainnet and 5 minutes on the Optimism Kovan testnet to reach the target L2 contract.
+L2 to L1 transactions must wait 7 days on mainnet and 60 seconds on the Optimism Kovan testnet before they *can* be executed on Ethereum.
+./docs/developers/bridge/messaging.md
+
+
+
+You will be able to catch this failure by testing your contracts on Optimism Kovan.
+We highly recommend testing all contracts on Optimism Kovan before deploying to the Optimism mainnet in order to catch this issue.
+./docs/developers/known-issues.md
+
+
+
+We'll demonstrate how easy it is to get started by deploying a basic contract to the Optimism Kovan testnet using [Remix](https://remix.ethereum.org/).
+Here we'll be using the [MetaMask](https://metamask.io/) Chrome extension to interact with the Optimism Kovan testnet.
+For now, simply [head to this link](https://chainid.link/?network=optimism-kovan) and click "Connect".
+Accept the popup that shows up in MetaMask and you'll be connected to the Optimism Kovan testnet.
+You might want to see more information about your contract by visiting [Optimistic Etherscan](https://kovan-optimistic.etherscan.io).
+./docs/developers/build/basic-contract.md
