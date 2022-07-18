@@ -9,18 +9,28 @@ Each of these faucets can be used to get testnet funds on Optimism Kovan.
 If one of them does not work, please try another one. 
 If you need more help, head over to **#dev-support** [on our Discord](https://discord--gateway.optimism.io).
 
+Once you have the test ETH on Goerli, send it to [0x636Af16bf2f682dD3109e60102b8E1A089FedAa8](https://goerli.etherscan.io/address/0x636Af16bf2f682dD3109e60102b8E1A089FedAa8), you will get it on Optimism Goerli.
 
 ### Paradigm MultiFaucet
 
 [Paradigm's MultiFaucet](https://faucet.paradigm.xyz/) is an easy way to get ETH on many different testnets at the same time.
-Just sign in with Twitter and you'll automatically be sent 1 ETH, 1 wETH, 500 DAI, and 5 NFTs on the Optimism Kovan testnet.
+One of those networks is Goerli.
 
-### Perpetual Protocol Testnet Faucet
+### Goerli Faucet
+
+You can also get Goerli ETH [here](https://goerlifaucet.com/).
+
+
+### Kovan specific faucets
+
+These faucets are for the deprecated Kovan test network.
+
+#### Perpetual Protocol Testnet Faucet
 
 [Optifaucet](https://kovan.optifaucet.com/) gives you a small amount of ETH, and 10,000 USDC. 
 They do this because you need USDC to [use their application](https://testnet.perp.exchange/).
 
-### Optimism Kovan Faucet
+#### Optimism Kovan Faucet
 
 [Optimism Faucet](https://optimismfaucet.xyz/) is a simple faucet for Optimism Kovan that drips ETH and DAI. Authenticate with github, enter your wallet address and you'll aumatically be sent 1 ETH and 100 DAI on the Optimism Kovan testnet.
 
