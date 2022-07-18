@@ -31,6 +31,11 @@ For example, looking at the **SNX** token, the [Optimism token list](https://sta
 | 42 | Kovan (test network) | `0xc011a73ee8576fb46f5e1c5751ca3b9fe0af2a6f` |
 | 69 | Optimistic Kovan (test network) | `0x0064A673267696049938AA47595dD0B3C2e705A1` |
 
+
+<!--
+GOON: Add a Georli example when we have a token listing with that chainId
+-->
+
 ## Transaction status
 
 A transaction in Optimism can be in one of two states:

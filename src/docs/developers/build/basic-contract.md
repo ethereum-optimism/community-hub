@@ -25,9 +25,8 @@ Accept the popup that shows up in MetaMask and you'll be connected to the Optimi
 ## Getting some testnet ETH
 
 Like on Ethereum, transaction fees on Optimism are paid in ETH.
-You'll need some ETH on the Optimism Kovan testnet to deploy a contract.
-The [Paradigm Multifaucet](https://faucet.paradigm.xyz/) is a quick and easy way to get ETH on a whole bunch of testnets, including the Optimism Kovan testnet.
-You'll also be sent some other tokens and assets that you can use to play around even more once you're done with this guide.
+You'll need some ETH on the Optimism Goerli testnet to deploy a contract.
+[See here for directions on how get that ETH](../../useful-tools/networks/#test-eth).
 
 ## Writing a quick contract
 
