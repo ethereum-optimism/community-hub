@@ -28,6 +28,10 @@ It's also got some Optimism-specific features:
 - [A tool for finalizing L2-to-L1 transactions](https://optimistic.etherscan.io/messagerelayer)
 - And more! Just check it out and click around to find all of the available features.
 
+::: tip Testnet migration
+We expect to have Etherscan for the Kovan testnet until August 1st, 2022.
+A few weeks after that it will be available for the new Goerli testnet.
+:::
 
 ## Access to pre-regenesis history
 
