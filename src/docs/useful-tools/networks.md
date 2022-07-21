@@ -75,8 +75,7 @@ It is still very much work in progress.
 
 ### RPC endpoints
 
-Our providers are working on adding support for Optimism Goerli.
-For now, use the Optimism provided endpoints in the table.
+We have [several providers](./providers.md) that support Optimism Goerli. 
 
 ### Test ETH
 
