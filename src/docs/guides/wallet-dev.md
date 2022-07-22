@@ -33,7 +33,7 @@ For example, looking at the **SNX** token, the [Optimism token list](https://sta
 
 
 <!--
-GOON: Add a Georli example when we have a token listing with that chainId
+TODO: Add a Georli example when we have a token listing with that chainId
 -->
 
 ## Transaction status
