@@ -15,8 +15,12 @@ You can view information about both the Optimism mainnet and the Optimism Kovan 
 
 ## Block explorers
 
+### Etherscan
+
 Etherscan provides a lot of detailed information about what's happening on Optimism.
 Check out the [mainnet explorer](https://optimistic.etherscan.io/) or the [deprecated Kovan testnet explorer](https://kovan-optimistic.etherscan.io/) to get a look for yourself.
+
+### Blockscout
 
 The current block explorer for the Georli test network is [Blockscout](https://blockscout.com/optimism/goerli/).
 
