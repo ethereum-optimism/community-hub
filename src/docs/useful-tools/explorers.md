@@ -31,6 +31,8 @@ It's also got some Optimism-specific features:
 ::: tip Testnet migration
 We expect to have Etherscan for the Kovan testnet until August 1st, 2022.
 A few weeks after that it will be available for the new Goerli testnet.
+
+During the transition period you can use [BlockScout](./explorers.md#blockscout).
 :::
 
 ## Access to pre-regenesis history
