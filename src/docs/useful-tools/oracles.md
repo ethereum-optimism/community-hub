@@ -38,7 +38,7 @@ This contract is a predeploy at address `0x4200000000000000000000000000000000000
 
 - [On the production Optimism network](https://optimistic.etherscan.io/address/0x420000000000000000000000000000000000000F#readContract)
 - [On the deprecated Optimism Kovan test network](https://kovan-optimistic.etherscan.io/address/0x420000000000000000000000000000000000000F#readContract)
-- On the Optimism Goerli test network
+- [On the Optimism Goerli test network](https://blockscout.com/optimism/goerli/address/0x420000000000000000000000000000000000000F)
 
 <!--
 
