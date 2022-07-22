@@ -26,7 +26,7 @@ Accept the popup that shows up in MetaMask and you'll be connected to the Optimi
 
 Like on Ethereum, transaction fees on Optimism are paid in ETH.
 You'll need some ETH on the Optimism Goerli testnet to deploy a contract.
-[See here for directions on how get that ETH](../../useful-tools/networks/#test-eth).
+See how to get testnet ETH [here](../../useful-tools/networks/#test-eth).
 
 ## Writing a quick contract
 
