@@ -34,6 +34,10 @@ To get the total SNX balance of a user that uses Optimism you need to:
 1. Connect to a standard Ethereum endpoint and send a `balanceOf` query to address `0xc011a73ee8576fb46f5e1c5751ca3b9fe0af2a6f`.
 1. Connect to an Optimism endpoint and send a `balanceOf` query to address `0x8700daec35af8ff88c16bdf0418774cb3d7599b4`.
 
+<!--
+TODO: Add a Georli example when we have a token listing with that chainId
+-->
+
 
 ## Deposits and withdrawals within Optimism
 

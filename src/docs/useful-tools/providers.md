@@ -12,19 +12,7 @@ lang: en-US
 ### Supported Networks
 
 - Optimism Ethereum
-- Optimism Kovan
-
-## Infura
-
-### Description and pricing
-
-[Infura](https://infura.io) offers access to hosted Optimism nodes via addon.
-This addon is currently free but Infura seems to intend to charge $200/month for this addon in the future.
-
-### Supported Networks
-
-- Optimism Ethereum
-- Optimism Kovan
+- Optimism Goerli
 
 ## Blast
 
@@ -46,6 +34,31 @@ On the platform, there are also [Public APIs](https://blastapi.io/public-api/opt
 - Optimism Ethereum
 - Optimism Kovan
 
+## Infura
+
+### Description and pricing
+
+[Infura](https://infura.io) offers access to hosted Optimism nodes via addon.
+This addon is currently free but Infura seems to intend to charge $200/month for this addon in the future.
+
+### Supported Networks
+
+- Optimism Ethereum
+- Optimism Goerli
+- Optimism Kovan
+
+
+## Pocket Network
+
+### Description and pricing
+
+[Pocket](https://www.portal.pokt.network/) offers access to a highly-available dedicated pool of Optimism nodes coordinated autonomously by the Pocket Network protocol. Through the Pocket Portal, developers may mint Optimism RPC endpoints with a generous free tier of 1M requests per day (per endpoint, max 2 per account).
+
+### Supported Networks
+
+- Optimism Ethereum
+
+
 ## QuickNode
 
 ### Description and pricing
@@ -57,16 +70,9 @@ You can select addons, like "Archive Mode" or "Trace Mode" for an additional cos
 
 - Optimism Ethereum
 - Optimism Kovan
+- Optimism Goerli
 
-## Pocket Network
 
-### Description and pricing
-
-[Pocket](https://www.portal.pokt.network/) offers access to a highly-available dedicated pool of Optimism nodes coordinated autonomously by the Pocket Network protocol. Through the Pocket Portal, developers may mint Optimism RPC endpoints with a generous free tier of 1M requests per day (per endpoint, max 2 per account).
-
-### Supported Networks
-
-- Optimism Ethereum
 
 ## Don't see your company here?
 

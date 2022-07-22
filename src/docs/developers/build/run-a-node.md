@@ -4,11 +4,7 @@ lang: en-US
 ---
 
 If you're looking to build an app on Optimism you'll need access to an Optimism node.
-You can get a hosted one from:
-- [Alchemy](https://docs.alchemy.com/alchemy/apis/optimism-api)
-- [BlockVision](https://docs.blockvision.org/blockvision/chain-apis/optimism-api)
-- [Infura](https://docs.infura.io/infura#section/Network-Add-Ons/Optimistic-Ethereum)
-- [QuickNode](https://www.quicknode.com/chains/optimism).
+You can get a hosted one from [any of these providers](../../useful-tools/providers.md).
 
 However, you might be interested in running your very own Optimism node.
 Here we'll go over the process of running a testnet or mainnet Optimism node for yourself.
@@ -44,7 +40,7 @@ These instructions were generated with a [GCP e2-standard-4](https://cloud.googl
 They should work on different operating systems with minor changes, but there are no guarantees.
 
 Note that these directions are for a replica of the main network. 
-You need to modify some of them if you want to create a replica of the Kovan test network.
+You need to modify some of them if you want to create a replica of the test network.
 
 **Note:** This is *not* the recommended configuration.
 While we did QA on these instructions and they work, the QA that the docker images undergo is much more extensive.

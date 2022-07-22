@@ -1,9 +1,9 @@
 ---
-title: Testing on Optimistic Kovan
+title: Testing on Optimistic Test Networks
 lang: en-US
 ---
 
-You can connect to Optimistic Kovan, our test network, [using these endpoints](../useful-tools/networks.md).
+You can connect to Optimism Goerli (or the deprecated Optimism Kovan), our test network, [using these endpoints](../useful-tools/networks.md).
 To obtain ETH and tokens (both ERC-20 and NFT), [see here](../useful-tools/faucets.md).
 
 This page shows some additional testing utilities that you might find useful.
@@ -14,8 +14,17 @@ This page shows some additional testing utilities that you might find useful.
 We have several ERC-20 testing token contracts.
 This token is an implementation of ERC-20, with the addition of `faucet`, a function that mints for the caller 1000 tokens to facilitate testing.
 
-### Kovan ERC-20 testing contracts
 
+### Goerli ERC-20 testing contracts
+
+| Address | Symbol | Decimals | 
+| - | - | -: | 
+| [`0xeff05792d6cae56fd01fbd0fd87c25b423f4d96e`](https://l2-explorer.surge.sh/account/0xeff05792d6cae56fd01fbd0fd87c25b423f4d96e) | OUT | 0 |
+
+
+
+
+### Kovan ERC-20 testing contracts
 
 | Address | Symbol | Decimals | 
 | - | - | -: | 
@@ -28,15 +37,6 @@ This token is an implementation of ERC-20, with the addition of `faucet`, a func
 
 
 
-### Goerli ERC-20 testing contracts
-
-| Address | Symbol | Decimals | 
-| - | - | -: | 
-| [`0xeff05792d6cae56fd01fbd0fd87c25b423f4d96e`](https://l2-explorer.surge.sh/account/0xeff05792d6cae56fd01fbd0fd87c25b423f4d96e) | OUT | 0 |
-
-
-
-
 ## The bridge
 
 You can bridge between [this token on Kovan](https://kovan.etherscan.io/address/0x3A4a0F1FC238bb0C694A5E7535069c02622Ac5DF#readContract) and [this token on Optimistic Kovan](https://kovan-optimistic.etherscan.io/address/0xdFc18Aa448CD0cD50D2C90Ba74D59Ee001F1d3d6#readContract). 
@@ -45,6 +45,11 @@ While `faucet` only gives you a single token, you can move token fractions.
 
 
 ## Uniswap pools
+
+### Goerli uniswap pools
+
+Not supported yet.
+
 
 ### Kovan uniswap pools
 
@@ -58,6 +63,3 @@ We have four pools between the tokens above:
 | OUT-4   | OUT-5   | [`0xda11e21eca45840b253d02b7868f82f458740dd3`](https://kovan-optimistic.etherscan.io/address/0xda11e21eca45840b253d02b7868f82f458740dd3#tokentxns) |
 
 
-### Goerli uniswap pools
-
-Not supported yet.

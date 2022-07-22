@@ -13,10 +13,17 @@ This page includes public APIs, the gateway, deposits, withdraws and transaction
 [Optimism](https://optimism.io) maintains a [public Grafana dashboard](https://public-grafana.optimism.io/d/9hkhMxn7z/public-dashboard?orgId=1&refresh=5m) that tracks gas prices, transaction volume, and network uptime in one place.
 You can view information about both the Optimism mainnet and the Optimism Kovan testnet on this dashboard.
 
-## Etherscan
+## Block explorers
+
+### Etherscan
 
 Etherscan provides a lot of detailed information about what's happening on Optimism.
-Check out the [mainnet explorer](https://optimistic.etherscan.io/) or the [testnet explorer](https://kovan-optimistic.etherscan.io/) to get a look for yourself.
+Check out the [mainnet explorer](https://optimistic.etherscan.io/) or the [deprecated Kovan testnet explorer](https://kovan-optimistic.etherscan.io/) to get a look for yourself.
+
+### Blockscout
+
+The current block explorer for the Georli test network is [Blockscout](https://blockscout.com/optimism/goerli/).
+
 
 ## Dashboards on Dune Analytics
 

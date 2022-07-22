@@ -32,8 +32,8 @@ module.exports = {
       accounts: [privateKey1, privateKey2, ...]
     },
     // for testnet
-    'optimism-kovan': {
-      url: "https://kovan.optimism.io",
+    'optimism-georli': {
+      url: "https://georli.optimism.io",
       accounts: [privateKey1, privateKey2, ...]
     },
     // for the local dev environment
@@ -53,7 +53,7 @@ Foundry supports Optimism out of the box!
 Just provide an Optimism RPC:
 
 ```sh
-forge create ... --rpc-url=https://kovan.optimism.io/
+forge create ... --rpc-url=https://goerli.optimism.io/
 ```
 
 Additionally, you can use [forge-optimism](https://github.com/tarrencev/forge-optimism) to simulate the optimism context and simplify testing.
@@ -77,11 +77,11 @@ module.exports = {
       network_id: "10"
     },
     // for testnet
-    'optimism-kovan': {
+    'optimism-goerli': {
       provider: () => {
-        return new HDWalletProvider(YOUR_KOVAN_MNEMONIC_GOES_HERE, 'https://kovan.optimism.io')
+        return new HDWalletProvider(YOUR_GOERLI_MNEMONIC_GOES_HERE, 'https://goerli.optimism.io')
       }
-      network_id: "69"
+      network_id: "420"
     },
     // for the local dev environment
     'optimism-local': {
@@ -109,7 +109,7 @@ brownie networks add Optimism optimism-main host=https://mainnet.optimism.io cha
 Testnet:
 
 ```sh
-brownie networks add Optimism optimism-test host=https://kovan.optimism.io chainid=69 explorer=https://api-kovan-optimistic.etherscan.io/api multicall2=0x2DC0E2aa608532Da689e89e237dF582B783E552C
+brownie networks add Optimism optimism-test host=https://goerli.optimism.io chainid=420 multicall2=0x2DC0E2aa608532Da689e89e237dF582B783E552C
 ```
 
 Local:
