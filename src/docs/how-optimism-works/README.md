@@ -1,4 +1,3 @@
-
 ---
 title: How Optimism Works
 lang: en-US
