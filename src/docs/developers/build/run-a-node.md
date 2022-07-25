@@ -4,12 +4,7 @@ lang: en-US
 ---
 
 If you're looking to build an app on Optimism you'll need access to an Optimism node.
-You can get a hosted one from:
-- [Alchemy](https://docs.alchemy.com/alchemy/apis/optimism-api)
-- [BlockVision](https://docs.blockvision.org/blockvision/chain-apis/optimism-api)
-- [Infura](https://docs.infura.io/infura#section/Network-Add-Ons/Optimistic-Ethereum)
-- [QuickNode](https://www.quicknode.com/chains/optimism)
-- [Blast](https://blastapi.io/public-api/optimism)
+You can get a hosted one from [any of these providers](../../useful-tools/providers.md).
 
 However, you might be interested in running your very own Optimism node.
 Here we'll go over the process of running a testnet or mainnet Optimism node for yourself.
@@ -33,14 +28,10 @@ They include all the configuration settings.
 This is the recommended method because it is what we for our own systems.
 As such, the docker images go through a lot more tests than any other configuration.
 
-You'll need to have the following installed:
-
-1. [Docker](https://www.docker.com/)
-1. [Docker compose](https://docs.docker.com/compose/install/)
-
 ### Configuring and running the node
 
-Follow the instructions available at [the monorepo](https://github.com/ethereum-optimism/optimism/tree/develop/infra/op-replica/docker-compose) to build and run the node.
+Follow [these instructions](https://github.com/smartcontracts/simple-optimism-node) to build and run the node.
+
 
 ## Non-docker configuration
 
@@ -49,7 +40,7 @@ These instructions were generated with a [GCP e2-standard-4](https://cloud.googl
 They should work on different operating systems with minor changes, but there are no guarantees.
 
 Note that these directions are for a replica of the main network. 
-You need to modify some of them if you want to create a replica of the Kovan test network.
+You need to modify some of them if you want to create a replica of the test network.
 
 **Note:** This is *not* the recommended configuration.
 While we did QA on these instructions and they work, the QA that the docker images undergo is much more extensive.
@@ -307,7 +298,7 @@ You can replace it with you own directory as long as you are consistent.
    If l2geth is synchronizing, the second block number is higher than the first.
 
 1. Wait a few hours until the entire history is downloaded by dtl and then propagated to l2geth.
-   If you have any problems, [contact us on our Discord](https://discord.optimism.io/).
+   If you have any problems, [contact us on our Discord](https://discord-gateway.optimism.io/).
 
 
 

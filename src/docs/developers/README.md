@@ -7,7 +7,7 @@ Welcome to the Optimism developer docs!
 
 Whether you're just looking to [deploy a basic contract](./build/basic-contract.md) or you're ready to [build a cross-chain app](./bridge/messaging.md), you'll be able to find everything you need to start building on Optimism within this section.
 
-If you're looking for third-party tools that make building on Optimism easier, check out the [Tools for Developers](../useful-tools) section instead.
+If you're looking for third-party tools that make building on Optimism easier, check out the [Tools for Developers](../useful-tools) section.
 
 ## Where should I start?
 
@@ -22,7 +22,7 @@ They'll help you get a headstart when building your first Optimistic project.
 
 ### Ready to deploy a contract?
 
-If you're looking to deploy your contracts to the Optimism mainnet or the Optimism Kovan testnet, take a look at our page on [using your favorite tools](./build/using-tools.md).
+If you're looking to deploy your contracts to the Optimism mainnet or the Optimism Goerli testnet, take a look at our page on [using your favorite tools](./build/using-tools.md).
 It contains sample configuration files for deploying your contracts from common frameworks like Hardhat, Truffle, and Brownie.
 
 You might also want to check out our guides for [running a local development environment](./build/dev-node.md) or [running your own Optimism node](./build/run-a-node.md).
@@ -42,4 +42,4 @@ We even dogfood the same infrastructure and use it under the hood of the Standar
 
 If you can't find the content you're looking for you've got a few options to get extra help.
 We recommend first searching through this documentation (search bar at the top right).
-If you've already done this and come up short, you can try [asking us a question in Discord](https://discord.optimism.io), [checking the Help Center](https://help.optimism.io/hc/en-us), or [making an issue on GitHub](https://github.com/ethereum-optimism/community-hub/issues).
+If you've already done this and come up short, you can try [asking us a question in Discord](https://discord-gateway.optimism.io), [checking the Help Center](https://help.optimism.io/hc/en-us), or [making an issue on GitHub](https://github.com/ethereum-optimism/community-hub/issues).

@@ -23,7 +23,7 @@ We generally recommend using the local development environment if your applicati
 However, not everyone will need to use the local development environment.
 Optimism is [EVM equivalent](https://medium.com/ethereum-optimism/introducing-evm-equivalence-5c2021deb306), which means that Optimism looks almost exactly like Ethereum under the hood.
 If you don't fall into one of the above categories, you can probably get away with simply relying on existing testing tools like Truffle or Hardhat.
-If you don't know whether or not you should be using the development environment, feel free to hop into the [Optimism discord](https://discord.optimism.io).
+If you don't know whether or not you should be using the development environment, feel free to hop into the [Optimism discord](https://discord-gateway.optimism.io).
 Someone nice will help you out!
 
 ## What does it include?
