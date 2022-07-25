@@ -29,12 +29,7 @@ If you need a general purpose WebSocket endpoint, get one from a service provide
 
 ### RPC endpoints
 
-Please set up a private RPC endpoint with any of the following providers:
-- [Alchemy](https://www.alchemy.com/layer2/optimism)
-- [Ankr](https://www.ankr.com/protocol/public/optimism/)
-- [Blast](https://blastapi.io/public-api/optimism)
-- [Infura](https://blog.infura.io/what-is-optimistic-ethereum/)
-- [QuickNode](https://www.quicknode.com/chains/optimism)
+Please set up a private RPC endpoint with [any of these poviders](providers.md):
 
 
 We also support and maintain the following public RPC endpoints. 
@@ -110,10 +105,7 @@ If you need a general purpose WebSocket endpoint, get one from a service provide
 
 ### RPC endpoints
 
-Please set up a private RPC endpoint with any of the following providers:
-- [Alchemy](https://www.alchemy.com/layer2/optimism)
-- [Infura](https://blog.infura.io/what-is-optimistic-ethereum/)
-- [QuickNode](https://www.quicknode.com/chains/optimism)
+We have [several providers](./providers.md) that support Optimism Goerli. 
 
 We also have the following public endpoints. However if you expect to be sending a high volume of requests, please use one of the other available providers above.
 - HTTP endpoint: [https://kovan.optimism.io](https://kovan.optimism.io)
