@@ -34,6 +34,17 @@ On the platform, there are also [Public APIs](https://blastapi.io/public-api/opt
 - Optimism Ethereum
 - Optimism Kovan
 
+## GetBlock
+
+[GetBlock developer](https://getblock.io/en/nodes/optimism/) tools and valuable insights guarantee a simple and reliable API access to multiple blockchains.
+
+
+### Supported Networks
+
+- Optimism Ethereum
+- Optimism Kovan
+
+
 ## Infura
 
 ### Description and pricing
