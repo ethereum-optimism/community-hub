@@ -132,15 +132,19 @@ The exact speed of a cross-chain transaction depends on the direction in which t
 
 ### For Ethereum (L1) to Optimism (L2) transactions
 
-Transactions sent from L1 to L2 take up to approximately 15 minutes on mainnet and 5 minutes on the Optimism Kovan testnet to reach the target L2 contract.
+Transactions sent from L1 to L2 take up to approximately 15 minutes on mainnet and 5 minutes on the Optimism Goerli testnet to reach the target L2 contract.
 This is because L2 nodes will wait for a certain number of block confirmations on Ethereum before executing an L1 to L2 transaction.
 
 ### For Optimism (L2) to Ethereum (L1) transactions
 
-L2 to L1 transactions must wait 7 days on mainnet and 60 seconds on the Optimism Kovan testnet before they *can* be executed on Ethereum.
-After this waiting period, any user can "finalize" the transaction by triggering a second transaction on Ethereum that sends the message to the target L1 contract.
-This waiting period is a core part of the security mechanism designed to keep funds on Optimism secure and cannot be circumvented.
-See the below section on [Understanding the challenge period](#understanding-the-challenge-period) for more information.
+L2 to L1 transactions have to wait two periods:
+
+1. The time until the state root is written to L1.
+   You can estimate this time by looking at how often transactions happen to the State Commitment Chain (on both [mainnet](https://etherscan.io/address/0xBe5dAb4A2e9cd0F27300dB4aB94BeE3A233AEB19) and [goerli](https://goerli.etherscan.io/address/0x9c945ac97baf48cb784abbb61399beb71af7a378)).
+
+1. The [fault challenge period](#understanding-the-challenge-period), which is a few seconds on goerli and seven days on mainnet.
+   This waiting period is a core part of the security mechanism designed to keep funds on Optimism secure and cannot be circumvented.
+   After this waiting period, any user can "finalize" the transaction by triggering a second transaction on Ethereum that sends the message to the target L1 contract.
 
 ## Accessing `msg.sender`
 
