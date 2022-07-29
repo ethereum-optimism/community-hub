@@ -49,7 +49,7 @@ Optimism's design philosophy prioritizes user and developer needs over theoretic
 Sometimes the best solution isn't the prettiest one.
 
 Optimism is also developed with the understanding that any core team will have limited areas of expertise.
-Optimism is developed iteratively and strives to continously pull feedback from users.
+Optimism is developed iteratively and strives to continuously pull feedback from users.
 Many core Optimism features today (like [EVM Equivalence](https://medium.com/ethereum-optimism/introducing-evm-equivalence-5c2021deb306)) were only made possible by this iterative approach to protocol development.
 
 ### Sustainability
