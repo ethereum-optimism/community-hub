@@ -297,9 +297,14 @@ There are some differences between Ethereum and Optimism in this regard:
 <!-- GOON: Put values here when they are finalized
 -->
 
-The L1 security fee, which is normally the majority of the transaction cost, uses roughly the same mechanism as before the upgrade.
+The L1 security fee, which is normally the majority of the transaction cost, uses the same mechanism as before the upgrade.
+
+
+<!-- 
+
 However, instead of using the latest L1 gas price ([possibly modified to avoid changes of over 25% in a five minute period](https://help.optimism.io/hc/en-us/articles/4416677738907-What-happens-if-the-L1-gas-price-spikes-while-a-transaction-is-in-process-)), bedrock uses a moving average to smooth out peaks in L1 gas price.
 
+-->
 
 ::: tip Estimating L1 gas prices
 The `OVM_GasPrice` interface is likely to change, so for estimating transaction prices we recommend [using the SDK](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/sdk-estimate-gas).
