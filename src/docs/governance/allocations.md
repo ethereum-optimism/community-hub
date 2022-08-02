@@ -76,9 +76,7 @@ Each fund can be thought of as a parallel experiment in OP allocation, enabling 
 ### Governance Fund
 
 An allocation of **5.4%** of the OP token supply will be dedicated to the first Governance Fund. 
-All projects demonstrating usage on Optimism will be able to request tokens from this fund.
-
-More info on this fund will be published on May 3.
+All projects demonstrating usage on Optimism can request tokens from this fund at gov.optimism.io
 
 ### Partner Fund
 
