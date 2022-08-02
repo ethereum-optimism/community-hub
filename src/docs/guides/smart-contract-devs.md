@@ -9,10 +9,11 @@ Optimism supports [Solidity](https://docs.soliditylang.org/en/develop/) as well 
 
 ## Local Development
 
-To get started we need to get a local environment set up for testing and development. 
-We have a [Hardhat tutorial](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/hardhat), [dapptools tutorial](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/dapptools), as well as a [Truffle tutorial](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/truffle). If you prefer doing things in your browser, we also have a [Remix tutorial](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/remix).
+To get started we need to [get a local environment set up for testing and development](../developers/build/dev-node.md).
+Then you can follow [the getting started tutorial](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/getting-started).
+After that we have [lots of tutorials for you to follow](https://github.com/ethereum-optimism/optimism-tutorial).
+If you think we need more, you can ask for a specific topic on our [Discord](https://discord-gateway.optimism.io/) in the **#doc-requests** channel.
 
-Depending on your set up you will need to set up a local testnet. All of the above tutorials have instructions on how to set up an appropriate testing environment.
 
 ## Deploying on Testnet
 
