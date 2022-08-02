@@ -63,10 +63,3 @@ When storing ETH balances, for example, using `uint256` is overkill as there are
 
 Go through your contracts and identify any values that will never reach 32 bytes and reduce them to logical sizes. You can do this same process for ints, bytes and [other Solidity data types](https://docs.soliditylang.org/en/develop/types.html#types).
 
-## Store anything you can
-
-Call data is expensive on Optimism (relatively speaking), but storage is very cheap ([see above](#optimization-tradeoffs)).
-So any value that is likely to be used multiple times should be stored on chain if possible.
-If you are writing your own ABI, you can use variable length fields for those references.
-
-For example, when specifying an address in a call from your client to your contract, you can specify that if the value starts with 0x00 the rest of the value is the twenty bytes of an uncached address. If the value starts ix 0x1 then the next 12 bits (the last four bitys of the first value followed by one byte) are a storage key. If you need to store more information, 0x2 can mark a 20 bit cache key (the last four bits followed by two bytes), etc.
