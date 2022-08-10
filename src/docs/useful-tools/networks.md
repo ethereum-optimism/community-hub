@@ -56,7 +56,6 @@ An important limitation is that public endpoint does not support the `eth_getLog
 
 ::: tip Purpose
 This is our new test network.
-It is still very much work in progress.
 :::
 
 
