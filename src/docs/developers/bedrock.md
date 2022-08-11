@@ -3,7 +3,7 @@ title: How is Bedrock Different?
 lang: en-US
 ---
 
-Bedrock is the next major release of the Optimism network, planned for the second half of 2022. 
+Bedrock is the next major release of the Optimism network, planned for the last quarter of 2022. 
 Here are the major changes:
 
 ## Guide by persona
@@ -82,7 +82,7 @@ As a bridge developer you are likely most interested in deposits into Optimism a
 - There is no longer an `L1BLOCKNUMBER` opcode. 
 - Bedrock includes an upgrade to the London fork, so the `BASEFEE` opcode is now supported.
 - `TIMESTAMP` will now be updated every two seconds (every new block).
-- `BLOCKNUMBER` will advance every two seconds because we'll create a new block every two seconds, regardless of the amount of transactions.
+- `BLOCKNUMBER` will advance every two seconds because we'll create a new block every two seconds, regardless of the number of transactions.
 
 ## Contracts
 
@@ -187,9 +187,8 @@ Similarly, "withdrawal" refers to any message going from Optimism to Ethereum.
 
 The gas costs for communication between layers are going to change, they will probably get lower. 
 More information will be posted here once we have more exact information after we profile a test network.
-We expect that to happen before the end of June.
 
-<!-- GOON get the figures and put them here -->
+<!-- TODO get the figures and put them here -->
 
 ### Deposits (from Ethereum to Optimism)
 
@@ -202,6 +201,8 @@ Even though the sequencer is down, verifiers (nodes that synchronize the Optimis
 When the sequencer is back up it has to process the transactions in the same order to have a valid state.
 
 Deposits that come from contracts still use [address aliasing](build/differences/#address-aliasing).
+
+Deposits will also be faster, probably about 2.5 minutes or less, rather than the 10-20 minutes they take now.
 
 <!--
 Deposits are implemented using [a new transaction type](https://github.com/ethereum-optimism/optimism/blob/develop/specs/deposits.md#the-deposited-transaction-type), 0x7E.
@@ -288,7 +289,7 @@ In EIP-1559 the cost of a unit of gas is composed of two components:
 
 There are some differences between Ethereum and Optimism in this regard:
 
-- ETH is not burned, but used for things the protocol needs.
+- ETH is not burned, but used to pay protocol expenses.
   Burning ETH on L2 would only lock it in the bridge forever.
 
 - The EIP 1559 parameters have different values.
@@ -297,7 +298,9 @@ There are some differences between Ethereum and Optimism in this regard:
 <!-- GOON: Put values here when they are finalized
 -->
 
-The L1 security fee, which is normally the majority of the transaction cost, uses the same mechanism as before the upgrade.
+The L1 security fee, which is normally the majority of the transaction cost, uses the same mechanism as before the upgrade. 
+However, we are going to submit the transactions to L1 on a [non-contract address](#the-transaction-trail). 
+Between that and improved compression, we hope to reduce the L1 security fee by about 20%.
 
 
 <!-- 
