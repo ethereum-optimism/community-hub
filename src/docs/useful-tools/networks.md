@@ -78,9 +78,8 @@ We have [several providers](./providers.md) that support Optimism Goerli.
 
 ### Test ETH
 
-You can obtain Goerli test ETH either [here](https://goerlifaucet.com/) or [here](https://faucet.paradigm.xyz/).
-
-Transfer Goerli ETH to [0x636Af16bf2f682dD3109e60102b8E1A089FedAa8](https://goerli.etherscan.io/address/0x636Af16bf2f682dD3109e60102b8E1A089FedAa8), and you will get it on Optimism Goerli.
+[The Optimism Faucet](https://optimismfaucet.xyz/) now provides Optimism Goerli ETH.
+Alternatively, if you already have Goerli ETH, you can [bridge it](https://app.optimism.io/bridge).
 
 
 ## Optimism Kovan (old testnet)
