@@ -38,6 +38,9 @@ However, we _highly_ encourage you to set up a private RPC endpoint with any of 
 - HTTP endpoint: [https://mainnet.optimism.io](https://mainnet.optimism.io)
 - WebSocket endpoint (limited usage, see footnote below the table): [wss://ws-mainnet.optimism.io](wss://ws-mainnet.optimism.io)
 
+[Pocket Network](https://docs.pokt.network/home/) also maintains a decentralized public RPC endpoint.
+
+- HTTP endpoint: https://optimism-mainnet.gateway.pokt.network/v1/lb/62eb567f0fd618003965da18
 
 [Blast](https://blastapi.io/public-api/optimism) also maintains public RPC endpoints.
 An important limitation is that public endpoint does not support the `eth_getLogs` method
