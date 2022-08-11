@@ -8,7 +8,7 @@ lang: en-US
 ### Optimism Goerli Faucet
 
 [Optimism Faucet](https://optimismfaucet.xyz/) is a simple faucet for Optimism Goerli that drips ETH and OP. 
-Authenticate with github, enter your wallet address and you'll automatically be sent 1 ETH and 100 OP on the Optimism Goerli testnet.
+Authenticate with github, enter your wallet address and you'll automatically be sent 0.1 ETH and 100 OP (if available) on the Optimism Goerli testnet.
 
 You need to be following at least five people or organizations on github to be considered a real account. If you don't, follow more, log out of the faucet, and log back in.
 
