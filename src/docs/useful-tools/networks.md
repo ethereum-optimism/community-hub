@@ -85,7 +85,7 @@ Alternatively, if you already have Goerli ETH, you can [bridge it](https://app.o
 
 ::: warning Deprecation notice
 We are transitioning our test network to Goerli. 
-We expect Optimistic Kovan to exist until August 15th, 2022.
+Optimism Kovan end of life is October 5th, 2022, be sure to migrate everything you need before then.
 :::
 
 
