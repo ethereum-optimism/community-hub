@@ -19,8 +19,9 @@ This token is an implementation of ERC-20, with the addition of `faucet`, a func
 
 | Address | Symbol | Decimals | 
 | - | - | -: | 
-| [`0xeff05792d6cae56fd01fbd0fd87c25b423f4d96e`](https://l2-explorer.surge.sh/account/0xeff05792d6cae56fd01fbd0fd87c25b423f4d96e) | OUT | 0 |
-
+| [`0x32307adfFE088e383AFAa721b06436aDaBA47DBE`](https://blockscout.com/optimism/goerli/address/0x32307adfFE088e383AFAa721b06436aDaBA47DBE) | OUT-1 | 18 |
+| [`0xb378ed8647d67b5db6fd41817fd7a0949627d87a`](https://blockscout.com/optimism/goerli/address/0xb378eD8647D67b5dB6fD41817fd7a0949627D87a/) | OUT-2 | 18 |
+| [`0x4e6597062c7dc988fbcfe77293d833bad770c19b`](https://blockscout.com/optimism/goerli/address/0x4E6597062c7DC988FBcFE77293D833bAD770C19b) | OUT-3 | 18 |
 
 
 
