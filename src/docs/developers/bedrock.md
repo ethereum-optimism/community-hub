@@ -295,7 +295,7 @@ There are some differences between Ethereum and Optimism in this regard:
 - The EIP 1559 parameters have different values.
   Once those values are finalized they will be posted here.
 
-<!-- GOON: Put values here when they are finalized
+<!-- TODO: Put values here when they are finalized
 -->
 
 The L1 security fee, which is normally the majority of the transaction cost, uses the same mechanism as before the upgrade. 
