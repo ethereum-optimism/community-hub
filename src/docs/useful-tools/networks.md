@@ -87,7 +87,7 @@ Transfer Goerli ETH to [0x636Af16bf2f682dD3109e60102b8E1A089FedAa8](https://goer
 
 ::: warning Deprecation notice
 We are transitioning our test network to Goerli. 
-We expect Optimistic Kovan to exist until August 15th, 2022.
+We expect Optimistic Kovan to exist until October 5th, 2022.
 :::
 
 
