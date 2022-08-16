@@ -9,7 +9,7 @@ To obtain ETH and tokens (both ERC-20 and NFT), [see here](../useful-tools/fauce
 This page shows some additional testing utilities that you might find useful.
 
 
-## ERC-20 Tokens
+## ERC-20 tokens
 
 We have several ERC-20 testing token contracts.
 This token is an implementation of ERC-20, with the addition of `faucet`, a function that mints for the caller 1000 tokens to facilitate testing.
