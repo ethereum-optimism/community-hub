@@ -47,7 +47,7 @@ While `faucet` only gives you a single token, you can move token fractions.
 
 ## ERC-721 tokens
 
-We have an ERC-721 token on Optimism Goerli at address [`0xC0836cCc8FBa87637e782Dde6e6572aD624fb984`](https://blockscout.com/optimism/goerli/address/0xC0836cCc8FBa87637e782Dde6e6572aD624fb984).
+We have an ERC-721 token on Optimism Goerli at address [`0x38abA480f2bA7A17bC01EE5E1AD64fCedd93EfE7`](https://blockscout.com/optimism/goerli/address/0x38abA480f2bA7A17bC01EE5E1AD64fCedd93EfE7).
 It is the OpenZeppelin ERC-721 token contract with the addition of `faucet`.
 Just call the `faucet` function to get as many NFT tokens as you need.
 
