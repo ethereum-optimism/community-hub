@@ -5,9 +5,17 @@ lang: en-US
 
 ## Alchemy
 
+::: tip
+Alchemy is our preferred node provider, and is used to power our public endpoint.
+:::
+
 ### Description and pricing
 
-[Alchemy](https://docs.alchemy.com/alchemy/apis/optimism-api) offers access to hosted Optimism nodes with free archive data access up to 300M “compute units”, and unlimited capacity for paid tiers.
+[Alchemy](https://docs.alchemy.com/alchemy/apis/optimism-api) is a comprehensive Optimism development and infrastructure platform. 
+It offers free access to hosted Optimism nodes up to roughly 12 million requests a month. 
+
+Additionally, it provides a suite of custom tools for free, including access to Optimism archive nodes, push notifications (Alchemy Notify) for transactions and address activity, Enhanced APIs such as asset transfers, and a custom built Web3 SDK for Optimism (Alchemy SDK) that supercharges developer's workflows.
+
 
 ### Supported Networks
 
