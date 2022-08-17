@@ -32,8 +32,8 @@ module.exports = {
       accounts: [privateKey1, privateKey2, ...]
     },
     // for testnet
-    'optimism-georli': {
-      url: "https://georli.optimism.io",
+    'optimism-goerli': {
+      url: "https://goerli.optimism.io",
       accounts: [privateKey1, privateKey2, ...]
     },
     // for the local dev environment
