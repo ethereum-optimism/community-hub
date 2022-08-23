@@ -115,6 +115,7 @@ module.exports = {
     searchPlaceholder: 'Search the docs',
     sidebar: {    
       '/docs/governance/': [
+        '/docs/governance/what-is-this.md',
         [
           'https://www.optimism.io/vision',
           'The Optimistic Vision'
