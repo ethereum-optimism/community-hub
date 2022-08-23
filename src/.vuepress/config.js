@@ -12,7 +12,7 @@ module.exports = {
     ['link', { rel: "icon", type: "image/png", sizes: "32x32", href: "/assets/logos/favicon.png"}],
   ],
 
-  cache: false,
+//  cache: false,
 
   theme: path.resolve(__dirname, './theme'),
   themeConfig: {
@@ -115,19 +115,25 @@ module.exports = {
     searchPlaceholder: 'Search the docs',
     sidebar: {    
       '/docs/governance/': [
-        '/docs/governance/what-is-this.md',
+        [
+          '/docs/governance/',
+          'What is the Optimism Collective?'
+        ],
         [
           'https://www.optimism.io/vision',
           'The Optimistic Vision'
-        ],
-        '/docs/governance/economics.md',        
-        '/docs/governance/allocations.md',
-        [
-          'https://github.com/ethereum-optimism/OPerating-manual/blob/main/manual.md',
-          'OPerating Manual for the Optimism Collective'
         ],        
+        '/docs/governance/token-house.md',
+        '/docs/governance/delegate.md',
+        '/docs/governance/allocations.md',
+        '/docs/governance/gov-fund.md',        
+//        [
+//          'https://github.com/ethereum-optimism/OPerating-manual/blob/main/manual.md',
+//          'OPerating Manual for the Optimism Collective'
+//        ],        
+        '/docs/governance/proposals.md',
+        '/docs/governance/economics.md',        
         '/docs/governance/airdrop-1.md',
-        '/docs/governance/gov-fund.md'
       ],
       '/docs/guides/': [
         '/docs/developers/build/basic-contract.md',

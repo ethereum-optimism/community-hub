@@ -1,14 +1,7 @@
 ---
-title: Governance Overview
+title: What is the Optimism Collective?
 lang: en-US
 ---
-
-::: tip Notice: OP Airdrop #1 is now available to claim
-[Click here to claim](https://app.optimism.io/airdrop/check)
-
-*Airdrop #1 does not require payment.*
-*Stay safe!*
-:::
 
 The Optimism Collective is a large-scale experiment in decentralized governance. 
 Our [Vision](https://optimism.io/vision) is to sustainably fund public goods that improve upon the well-being of the Collective and beyond.
