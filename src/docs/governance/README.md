@@ -32,49 +32,46 @@ Initially we are using a new model of digital democratic governance that consis
 Governance of the Optimism Collective has begun with the launch of OP and the Token House. 
 OP was distributed to hundreds of thousands of addresses that have engaged in positive-sum, community-oriented behavior with [Airdrop #1](https://community.optimism.io/docs/governance/airdrop-1/). 
 You can read more about the [distribution criteria here](https://community.optimism.io/docs/governance/airdrop-1/#). 
-The Token House is governed by its members, OP token holders, which are now able to vote on the distribution of project incentives from the Governance Fund. 
-Members of the Token House will also be able to vote on protocol upgrades and more in the future.
 
 As Token House members, OP holders are responsible for submitting, deliberating, and voting on various types of governance proposals. 
 In carrying out these functions, OP holders may either vote directly, or [delegate their OP voting power to an eligible third party](delegate.md).
 
+The Token House votes on these proposal types:
 
-- The Token House will vote on a variety of proposals types and has begun voting on the deployment of the Collective’s [Governance Fund](https://community.optimism.io/docs/governance/gov-fund/). The Governance Fund will distribute 5.4% of the OP token supply via grants aimed at empowering the OP community to proactively incentivize future growth of projects and communities in the Optimism ecosystem.
-- The purpose of the Governance Fund is to incentivize sustainable growth of projects and communities in the Optimism ecosystem. This does not mean that all grants must be incentive programs. The Token House is welcome to consider any and all proposals which would drive growth or address a gap in the Optimism ecosystem, including public goods projects.
-    
-    However, funding should come with an expectation of growth-related deliverables. It is not the intended purpose of the governance fund to retroactively fund public goods without an expectation of future work—there is a distinct OP allocation dedicated to this, which will be distributed via the Citizens House at a later date.  
-    
-- The Token House may also vote on the below proposal types:
-    - Governance Fund (Phase 1 grants)
-    - Protocol Upgrade
-    - Inflation Adjustment
-    - Director Removal
-    - Treasury Appropriations
-    - Rights Protections
+- [Governance fund](gov-fund.md) grants.
 
-     Read more about [OP Allocation](https://community.optimism.io/docs/governance/allocations/)
+  The purpose of the Governance Fund is to incentivize sustainable growth of projects and communities in the Optimism ecosystem. 
+  This does not mean that all grants must be incentive programs. 
+  The Token House is welcome to consider any and all proposals which would drive growth or address a gap in the Optimism ecosystem, including public goods projects.
 
-Read more about the [Governance Fund](https://community.optimism.io/docs/governance/gov-fund/) 
+  Governance funds should come with an expectation of growth-related deliverables. 
+  It is *not* the intended purpose of the governance fund to retroactively fund public goods without an expectation of future work.
+  There is [a distinct OP allocation](allocations.md#retroactive-public-goods-funding) dedicated to this, which will be distributed via the Citizens House at a later date. 
 
-Learn how to apply for a grant [below](https://www.notion.so/Intro-to-Optimism-Governance-a199e50277c64e75b7d1f1bc93e3e4a2)   
+- Protocol upgrades
+- Inflation adjustment
+- Director removal
+- Treasury appropriations
+- The rights of token holders
+ 
+    
+## Citizens' House
 
-### 🏞️ What is the [Citizens’ House](https://community.optimism.io/docs/governance/#how-is-optimism-governed)?
+The Citizens House is a large-scale experiment in [non-plutocratic governance](https://vitalik.ca/general/2021/08/16/voting3.html) and retroactive funding of public goods. 
+Citizenship will be conferred by [**"soulbound"**](https://vitalik.ca/general/2022/01/26/soulbound.html) non-transferrable NFTs, and the set of Citizens will grow over time. The exact mechanism for distributing Citizenships will be determined by the Foundation with input from the Token House.
 
-- The Citizens House will be a large-scale experiment in non-plutocratic governance and retroactive funding of public goods. Citizenship will be conferred by “**[soulbound](https://vitalik.ca/general/2022/01/26/soulbound.html)**” non-transferrable NFTs, and the set of Citizens will grow over time. The exact mechanism for distributing Citizenships will be determined by the Foundation with input from the Token House.
-    
-         Read more about bicameral governance in the [Governance Overview](https://community.optimism.io/docs/governance/#how-is-optimism-governed)
-    
-    Read [Beyond Coin Voting](https://vitalik.ca/general/2021/08/16/voting3.html) to learn about non-plutocratic governance  
-    
-- When launched, the Citizens House will be governed by a select group of OP Citizens, who are responsible for overseeing retroactive public goods funding (retroPGF). 20% of the OP supply is dedicated to retroPGF. retroPGF will also be funded via the productive re-deployment of sequencer revenue generated on Optimism.
-    
-         Read more about [OP Allocation](https://community.optimism.io/docs/governance/allocations/) 
-    
-    Read more about [Retroactive Public Goods Funding](https://medium.com/ethereum-optimism/retroactive-public-goods-funding-33c9b7d00f0c) 
-    
-    Learn more about how Optimism’s revenue will fund public goods in [OP Economics](https://community.optimism.io/docs/governance/economics/#value-from-public-goods-drives-demand-for-blockspace)
-    
-- If you want to contribute to retroPGF, you can send ETH, ERC-20 tokens, or NFTs to the ENS address **retroPGF.eth**. It is supported on [Optimism](https://optimistic.etherscan.io/address/0x15dda60616ffca20371ed1659dbb78e888f65556) as well as [Ethereum mainnet](https://etherscan.io/address/0x15dda60616ffca20371ed1659dbb78e888f65556). Anything donated will be allocated to the next RetroPFG round. These funds do not go to OP Labs or the Optimism Foundation. The Foundation will help distribute funds according to the Citizens’ House governance process.
+The Citizens' House is responsible for [retroactive public goods funding (RPGF)](https://medium.com/ethereum-optimism/retroactive-public-goods-funding-33c9b7d00f0c). 
+The funds for RPGF will come from several sources:
+
+- [20% of the initial OP supply is dedicated to RPGF](allocations.md#retroactive-public-goods-funding)
+- Redeployment of some of the sequencer revenue generated on Optimism
+- The creation of new OP tokens through [inflation](allocations.md#token-distribution-details)
+- Donations from other sources.
+  If you want to contribute to retroPGF, you can send ETH, ERC-20 tokens, or NFTs to the ENS address **retroPGF.eth**. 
+  It is supported on [Optimism](https://optimistic.etherscan.io/address/0x15dda60616ffca20371ed1659dbb78e888f65556) as well as [Ethereum mainnet](https://etherscan.io/address/0x15dda60616ffca20371ed1659dbb78e888f65556). 
+  Anything donated will be allocated to the next RetroPFG round. 
+  These funds do not go to OP Labs or the Optimism Foundation. 
+  The Foundation will help distribute funds according to the Citizens’ House governance process.
 
 
 
