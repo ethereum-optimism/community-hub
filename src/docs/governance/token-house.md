@@ -33,8 +33,12 @@ It doesn’t cost anything to claim the airdrop, except for gas fees.
 You will need to make sure you have some ETH on the Optimism network to pay for gas (0.003 is usually enough).
 [See here](https://help.optimism.io/hc/en-us/sections/4413033248795-Deposit) to learn how to deposit ETH to Optimism.
 
-             [Bridge](https://app.optimism.io/bridge) ETH from mainnet to Optimism   
+Didn’t qualify or just want more OP? OP is available to buy on all major exchanges deployed on Optimism.
+
+### Step 2: Delegate your tokens (to someone else or yourself)
+
+Participating in governance of the Optimism Token House will require a serious time commitment. 
+For this reason, we strongly encourage people to delegate the voting power of their OP tokens to a community member who has explicitly volunteered to play an active role in Token House governance. 
+If you do not wish to delegate your voting power to a representative, you will still need to delegate to yourself in order to vote.
         
-        View analytics on Airdrop #1 on [Dune](https://dune.com/springzhang/optimism-airdrop-1-all-in-one)
-        
-    - Didn’t qualify or just want more OP? OP is available to buy on all major exchanges deployed on Optimism!
+[See here](delegate.md) for the delegate guide.

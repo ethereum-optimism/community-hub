@@ -10,7 +10,7 @@ lang: en-US
 
 ## Reflection period 1
 
-[See here](https://gov.optimism.io/t/governance-update-2/3056))
+[See here](https://gov.optimism.io/t/governance-update-2/3056)
 
 * Voting cycle #5
 
