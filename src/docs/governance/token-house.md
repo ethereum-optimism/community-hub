@@ -41,4 +41,21 @@ Participating in governance of the Optimism Token House will require a serious t
 For this reason, we strongly encourage people to delegate the voting power of their OP tokens to a community member who has explicitly volunteered to play an active role in Token House governance. 
 If you do not wish to delegate your voting power to a representative, you will still need to delegate to yourself in order to vote.
         
-[See here](delegate.md) for the delegate guide.
+* [See here](delegate.md) for the delegate guide.
+* [See here](https://help.optimism.io/hc/en-us/articles/6389519530779-How-do-I-see-how-my-delegate-voted-) to get a delegate's voting record.
+
+### Step 3: Join the conversation
+Comment in the [Proposal Discussion](proposals.md) section of the [Forum](https://gov.optimism.io/) and provide feedback on draft proposals.
+
+::: tip        
+             
+Make sure you understand and follow the Forum's [code of conduct](https://gov.optimism.io/t/code-of-conduct/5/4)
+
+:::
+
+
+### Step 4: Vote (if you are a delegate)
+
+Go to [Snapshot](https://snapshot.org/#/opcollective.eth), connect your wallet, and vote.
+There is no minimum OP holding voting requirement, but you will need to have the OP tokens you wish to delegate or vote with in your wallet when the voting snapshot is taken. 
+Tokens that are staked or LP’d when the snapshot is taken do not carry voting power.
