@@ -53,6 +53,8 @@ The Token House votes on these proposal types:
 - Director removal
 - Treasury appropriations
 - The rights of token holders
+
+[Read here for more details.](token-house.md)
  
     
 ## Citizens' House
@@ -73,7 +75,7 @@ The funds for RPGF will come from several sources:
   These funds do not go to OP Labs or the Optimism Foundation. 
   The Foundation will help distribute funds according to the Citizens’ House governance process.
 
-
+[Read here for more details.](citizens-house.md)
 
 <!--
 

@@ -127,16 +127,21 @@ module.exports = {
           title: 'The Token House',
           children: [
             '/docs/governance/token-house.md',
-            '/docs/governance/gov-fund.md',            
+            '/docs/governance/token-house-history.md',            
+            '/docs/governance/gov-fund.md', 
+            [
+              'https://docs.google.com/spreadsheets/d/1eaHOlWB34ij1KGsXdaNyTQg4tt1Pu2JurJsElBb6a8k/edit#gid=0',
+              "Governance fund tracker"
+            ],                       
             '/docs/governance/delegate.md',
             '/docs/governance/proposals.md',            
           ],
           collapsable: true,          
         },
         {
-          title: 'The Citizen House',
+          title: "The Citizens' House",
           children: [
-            '/docs/governance/citizen-house.md',
+            '/docs/governance/citizens-house.md',
           ],
           collapsable: true, 
         },
