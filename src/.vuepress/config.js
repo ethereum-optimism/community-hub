@@ -150,7 +150,11 @@ module.exports = {
           children: [
             '/docs/governance/economics.md',
             '/docs/governance/allocations.md',  
-            '/docs/governance/airdrop-1.md',            
+            '/docs/governance/airdrop-1.md',  
+            [
+              'https://dune.com/springzhang/optimism-airdrop-1-all-in-one',
+              "Analytics about Airdrop #1"
+            ]          
           ],
           collapsable: true,
         }
