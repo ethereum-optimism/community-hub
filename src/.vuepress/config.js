@@ -123,17 +123,32 @@ module.exports = {
           'https://www.optimism.io/vision',
           'The Optimistic Vision'
         ],        
-        '/docs/governance/token-house.md',
-        '/docs/governance/delegate.md',
-        '/docs/governance/allocations.md',
-        '/docs/governance/gov-fund.md',        
-//        [
-//          'https://github.com/ethereum-optimism/OPerating-manual/blob/main/manual.md',
-//          'OPerating Manual for the Optimism Collective'
-//        ],        
-        '/docs/governance/proposals.md',
-        '/docs/governance/economics.md',        
-        '/docs/governance/airdrop-1.md',
+        {
+          title: 'The Token House',
+          children: [
+            '/docs/governance/token-house.md',
+            '/docs/governance/gov-fund.md',            
+            '/docs/governance/delegate.md',
+            '/docs/governance/proposals.md',            
+          ],
+          collapsable: true,          
+        },
+        {
+          title: 'The Citizen House',
+          children: [
+            '/docs/governance/citizen-house.md',
+          ],
+          collapsable: true, 
+        },
+        {
+          title: "OP Token Economics",
+          children: [
+            '/docs/governance/economics.md',
+            '/docs/governance/allocations.md',  
+            '/docs/governance/airdrop-1.md',            
+          ],
+          collapsable: true,
+        }
       ],
       '/docs/guides/': [
         '/docs/developers/build/basic-contract.md',
