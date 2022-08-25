@@ -68,10 +68,3 @@ As a delegate, you should:
   [The governance calendar](https://calendar.google.com/calendar/u/0/r?cid=Y180aHVpNzBpdG0wODllN3Q4cTUwaGVoMWtub0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t) shows which Tuesdays, and how to join the call.
 
 - Stay up to date with voting cycles and general governance updates in the Governance section of the [Forum](https://gov.optimism.io/)
-
-
-Analyze delegate activity [here](https://dune.com/optimismpbc/optimism-op-token-house) and [here](https://app.flipsidecrypto.com/dashboard/optimism-governance-l5WXpo)  
-
-Track grant distributions in the [Public Distribution Tracker](https://docs.google.com/spreadsheets/d/1eaHOlWB34ij1KGsXdaNyTQg4tt1Pu2JurJsElBb6a8k/edit#gid=0)
-
-See which projects are currently deploying token grants via incentive programs [**WIP**]

@@ -3,15 +3,8 @@ title: Governance fund overview
 lang: en-US
 ---
 
-*[To discuss Phase 0 and Phase 1 of the Governance Fund, head to the Optimism governance forum](https://gov.optimism.io/t/governance-fund-discussion-thread/213)*.
+*[To discuss the Governance Fund, head to the Optimism governance forum](https://gov.optimism.io/t/governance-fund-discussion-thread/213)*.
 
-
-::: tip Notice: OP Airdrop #1 is now available to claim
-[Click here to claim](https://app.optimism.io/airdrop/check)
-
-*Airdrop #1 does not require payment.*
-*Stay safe!*
-:::
 
 
 
@@ -22,29 +15,33 @@ lang: en-US
 The goal of the Governance Fund is to empower the OP community to proactively incentivize future growth of projects and communities in the Optimism ecosystem. 
 You can read more about the total allocation of OP in the [Allocations section](allocations.md) of our [Governance docs](README.md). 
 
-The first two phases of Governance Fund disbursement ("OP Stimpack"): 
 
-- **Phase 0** will run pre-Airdrop #1. 
-  Project eligibility is determined by on-chain metrics.
-  The Optimism Foundation will work with eligible projects to construct applications before review and approval by the Token House (OP Holders and their delegates).
 
-- **Phase 1** will start post-Airdrop #1. 
-  Any project on Optimism is eligible to submit a proposal. 
-  Proposals are reviewed and approved by the Token House (OP holders and their delegates).
+## Phase 1
 
-Approved OP allocations will be sent to the wallet address in the proposal. 
-A claims process may be required.
+Phase 1 had begun after Airdrop #1 and distributes the remainder of the Governance Fund (approx. 196,128,233 OP) to projects in the Optimism ecosystem. 
+Phase 1 will continue until the Governance Fund is exhausted. 
 
-All OP tokens received by projects in both Phase 0 and Phase 1 will be allocated at the discretion of that project to incentivize future sustainable growth of their community on Optimism.
+Any project on Optimism can submit a forum proposal to request any amount of OP tokens. 
+The proposal must include a plan for how the tokens will incentivize growth on Optimism. 
+Proposals are reviewed and voted on by the [Token House](token-house.md).
+
+When a project gets a proposal approved, they are still eligible to apply for further proposals. 
+We recommend that projects distribute their initial allocation of tokens before requesting further tokens. 
+Projects are also encouraged to reference data from the success of their initial distribution to strengthen their case in future proposals.
+
+### Matching
+
+Although not a strict requirement, the Optimism Foundation recommends that each project submitting a Governance Fund proposal include a commitment to match OP token incentives with their own project incentives (when the project has the capital and capacity to do so).
 
 
 ## Phase 0
 
-Phase 0 is designed to reward existing projects that have driven growth of the Optimism ecosystem. 
-This phase begins May 3 and stays open for proposals until May 24.
+Phase 0 was designed to reward existing projects that have driven growth of the Optimism ecosystem. 
 
-The amount of funding for each project is determined by a set of on-chain metrics, calculated via a snapshot of the Optimism chain on April 1, 2022 at 12:00am UTC.
+The amount of funding for each project was determined by a set of on-chain metrics, calculated via a snapshot of the Optimism chain on April 1, 2022 at 12:00am UTC.
 
+<!--
 Below is our initial set of guidelines for Phase 0 token distribution.
 
 ![](../../assets/docs/governance/gov-fund/table.png)
@@ -82,25 +79,4 @@ The majority of the Governance Fund will be distributed as part of **Phase 1**.
 - *We calculated average transactions per day over the last 30 days.*
   *If a project deployed less than 30 days before April 1, we averaged transactions per day over the period it was live.*
 
-
-## Phase 1
-
-Phase 1 will begin after Airdrop #1 and will distribute the remainder of the Governance Fund (approx. 196,128,233 OP) to projects in the Optimism ecosystem. 
-Phase 1 will run from Airdrop #1 until the Governance Fund is exhausted. 
-
-During Phase 1, any project on Optimism can submit a forum proposal to request any amount of OP tokens. 
-The proposal must include a plan for how the tokens will incentivize growth on Optimism. 
-Proposals will be reviewed and voted on by OP token holders and their delegates. 
-
-In these early stages, the Optimism Foundation may release guidelines to help OP governance participants develop an intuition for which proposals will genuinely benefit the Optimism ecosystem. 
-To strike the right balance between preventing spam and facilitating accessibility, the Optimism Foundation may adjust the requirements for creating and passing a proposal.
-
-For details on how to submit a proposal during Phase 1, see [**this template**](https://gov.optimism.io/t/governance-fund-phase-1-how-to-create-a-proposal/216).
-
-When a project gets a proposal approved, they are still eligible to apply for further proposals. 
-We recommend that projects distribute their initial allocation of tokens before requesting further tokens. 
-Projects are also encouraged to reference data from the success of their initial distribution to strengthen their case in future proposals.
-
-### Matching
-
-Although not a strict requirement, the Optimism Foundation recommends that each project submitting a Governance Fund proposal include a commitment to match OP token incentives with their own project incentives (when the project has the capital and capacity to do so).
+-->

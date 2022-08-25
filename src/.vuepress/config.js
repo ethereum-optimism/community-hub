@@ -127,12 +127,23 @@ module.exports = {
           title: 'The Token House',
           children: [
             '/docs/governance/token-house.md',
-            '/docs/governance/token-house-history.md',            
-            '/docs/governance/gov-fund.md', 
-            [
-              'https://docs.google.com/spreadsheets/d/1eaHOlWB34ij1KGsXdaNyTQg4tt1Pu2JurJsElBb6a8k/edit#gid=0',
-              "Governance fund tracker"
-            ],     
+            '/docs/governance/token-house-history.md',  
+            {
+              title: "The Governance Fund",
+              collapsable: true,
+              children: [          
+                '/docs/governance/gov-fund.md', 
+                [
+                  'https://docs.google.com/spreadsheets/d/1eaHOlWB34ij1KGsXdaNyTQg4tt1Pu2JurJsElBb6a8k/edit#gid=0',
+                  "Governance fund tracker"
+                ],
+                '/docs/governance/proposals.md',
+                [
+                  'https://gov.optimism.io/c/proposals/38',
+                  'Previous proposals'
+                ]
+              ]
+            },     
             {
               title: "Delegates",
               collapsable: true,
@@ -156,7 +167,6 @@ module.exports = {
                 ]
               ]
             },                  
-            '/docs/governance/proposals.md',            
           ],
           collapsable: true,          
         },
