@@ -1,5 +1,5 @@
 ---
-title: Submitting proposals
+title: Submitting Proposals
 lang: en-US
 ---
 

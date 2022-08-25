@@ -1,5 +1,5 @@
 ---
-title: Token House history
+title: Token House History
 lang: en-US
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: Governance fund overview
+title: Governance Fund Overview
 lang: en-US
 ---
 

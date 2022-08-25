@@ -144,31 +144,9 @@ module.exports = {
                 ]
               ]
             },     
-            {
-              title: "Delegates",
-              collapsable: true,
-              children: [
-                [
-                  "https://app.optimism.io/delegates",
-                  "Delegate your tokens' voting power"
-                ],
-                '/docs/governance/delegate.md',
-                [
-                  "https://dune.com/optimismfnd/optimism-op-token-house",
-                  "Dune delegate dashboard"
-                ],
-                [
-                  "https://app.flipsidecrypto.com/dashboard/optimism-governance-l5WXpo",
-                  "Flipside delegate dashboard"
-                ],
-                [
-                  "https://help.optimism.io/hc/en-us/articles/6389519530779-How-do-I-see-how-my-delegate-voted-",
-                  "Get a delegate's voting record"
-                ]
-              ]
-            },                  
-          ],
-          collapsable: true,          
+            '/docs/governance/delegate.md',
+            '/docs/governance/delegate-info.md',  
+          ]          
         },
         {
           title: "The Citizens' House",
