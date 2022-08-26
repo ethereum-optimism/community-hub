@@ -40,7 +40,21 @@ This token is an implementation of ERC-20, with the addition of `faucet`, a func
 
 ## The bridge
 
-You can bridge between [this token on Kovan](https://kovan.etherscan.io/address/0x3A4a0F1FC238bb0C694A5E7535069c02622Ac5DF#readContract) and [this token on Optimistic Kovan](https://kovan-optimistic.etherscan.io/address/0xdFc18Aa448CD0cD50D2C90Ba74D59Ee001F1d3d6#readContract). 
+The `OUTb` token is supported by the bridge. 
+
+1. Call `faucet` on [Goerli `0x32B3b2281717dA83463414af4E8CfB1970E56287`](https://goerli.etherscan.io/address/0x32b3b2281717da83463414af4e8cfb1970e56287#readContract) to obtain tokens.
+
+1. Go to the [Optimism Bridge](https://app.optimism.io/bridge) and select to deposit **OUTb** from **Goerli**.
+
+  <img src="../../assets/docs/guides/testing/bridge-outb.png" width="300px">
+
+1. The address on Optimism Goerli is `0x3e7eF8f50246f725885102E8238CBba33F276747`.
+   Add it to your wallet to see your balance.
+
+1. You can also use the same [Optimism Bridge](https://app.optimism.io/bridge) to withdraw **OUTb** from **Optimism Goerli**.
+
+
+If you are still using Optimism Kovan, you can bridge between [this token on Kovan](https://kovan.etherscan.io/address/0x3A4a0F1FC238bb0C694A5E7535069c02622Ac5DF#readContract) and [this token on Optimistic Kovan](https://kovan-optimistic.etherscan.io/address/0xdFc18Aa448CD0cD50D2C90Ba74D59Ee001F1d3d6#readContract). 
 They both have three decimal points. 
 While `faucet` only gives you a single token, you can move token fractions.
 
