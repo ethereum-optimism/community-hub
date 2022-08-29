@@ -9,7 +9,7 @@ lang: en-US
 **Alchemy is our preferred node provider, and is used to power our public endpoint.** In production systems, we _strongly_ recommend using the Alchemy private endpoint (it's free) - [sign up here](https://www.alchemy.com/layer2/optimism/?a=818c11a8da).
 :::
 
-### Alchemy's Description and pricing
+### Alchemy's Description and Pricing
 
 [Alchemy](https://docs.alchemy.com/reference/optimism-api-quickstart/?a=818c11a8da) is a comprehensive Optimism development and infrastructure platform. 
 Its robust free tier offers access to (1) enhanced features like SDKs and enhanced APIs, (2) hosted Optimism nodes, and (3) 300M CUs per month (aka ~12M requests per month).
@@ -38,7 +38,7 @@ Its large, free tier has a throughput of ~20k CUs / min per dapp, which is much 
 
 ## Blast
 
-### Description and pricing
+### Description and Pricing
 
 [Blast](https://blastapi.io/) offers access to dedicated Optimism nodes with free data access up to 12M API calls per month and 25 req/s. Paid subscription tiers are available for all development needs.
 On the platform, there are also [Public APIs](https://blastapi.io/public-api/optimism) available that can be added easily in Metamask.
@@ -69,7 +69,7 @@ On the platform, there are also [Public APIs](https://blastapi.io/public-api/opt
 
 ## Infura
 
-### Description and pricing
+### Description and Pricing
 
 [Infura](https://infura.io) offers access to hosted Optimism nodes via addon.
 This addon is currently free but Infura seems to intend to charge $200/month for this addon in the future.
@@ -94,7 +94,7 @@ This addon is currently free but Infura seems to intend to charge $200/month for
 
 ## QuickNode
 
-### Description and pricing
+### Description and Pricing
 
 [QuickNode](https://www.quicknode.com/) offers access to hosted Optimism nodes for $9/month at its cheapest tier.
 You can select addons, like "Archive Mode" or "Trace Mode" for an additional cost.
