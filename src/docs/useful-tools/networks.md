@@ -17,7 +17,7 @@ Such RPCs are either totally unsupported, or will return nonsensical values.
 | Description | **`Mainnet`** |
 | Chain ID | **`10`** |
 | Explorer | **[https://optimistic.etherscan.io](https://optimistic.etherscan.io)** |
-| HTTP Endpoint | **`https://mainnet.optimism.io`** _Not for production systems._   See the list of available RPC endpoints below, we recommend [Alchemy](https://docs.alchemy.com/reference/optimism-api-quickstart) |
+| HTTP Endpoint | **`https://mainnet.optimism.io`** _Not for production systems._   See the list of available RPC endpoints below. We recommend [Alchemy](https://docs.alchemy.com/reference/optimism-api-quickstart) |
 | WebSocket Endpoint<sup>1</sup> | **`wss://ws-mainnet.optimism.io`** 
 | L1 Contract Addresses | [link](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/deployments/mainnet#layer-1-contracts) |
 | L2 Contract Addresses | [link](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/deployments/mainnet#layer-2-contracts) |
@@ -29,10 +29,10 @@ If you need a general purpose WebSocket endpoint, get one from a service provide
 
 ### RPC endpoints
 
-Private RPC endpoints - 
-**for production systems, we encourage you set up [a private RPC endpoint.](providers.md) We recommend [Alchemy](https://docs.alchemy.com/reference/optimism-api-quickstart).**
+(A) Private RPC endpoints - 
+**for production systems, we encourage you set up [a private RPC endpoint](providers.md), particularly [Alchemy](https://docs.alchemy.com/reference/optimism-api-quickstart).**
 
-Public RPC endpoints -
+(B) Public RPC endpoints -
 we support and maintain the following public RPC endpoints: 
 
 - HTTP endpoint: [https://mainnet.optimism.io](https://mainnet.optimism.io)
