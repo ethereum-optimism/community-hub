@@ -17,7 +17,7 @@ Such RPCs are either totally unsupported, or will return nonsensical values.
 | Description | **`Mainnet`** |
 | Chain ID | **`10`** |
 | Explorer | **[https://optimistic.etherscan.io](https://optimistic.etherscan.io)** |
-| HTTP Endpoint | **`https://mainnet.optimism.io`** _Not for production systems._   See the list of available RPC endpoints below |
+| HTTP Endpoint | **`https://mainnet.optimism.io`** _Not for production systems._   See the list of available RPC endpoints below, we recommend [Alchemy](https://docs.alchemy.com/reference/optimism-api-quickstart) |
 | WebSocket Endpoint<sup>1</sup> | **`wss://ws-mainnet.optimism.io`** 
 | L1 Contract Addresses | [link](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/deployments/mainnet#layer-1-contracts) |
 | L2 Contract Addresses | [link](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/deployments/mainnet#layer-2-contracts) |
@@ -29,26 +29,16 @@ If you need a general purpose WebSocket endpoint, get one from a service provide
 
 ### RPC endpoints
 
-Please set up a private RPC endpoint with [any of these poviders](providers.md):
+Private RPC endpoints - 
+**for production systems, we encourage you set up [a private RPC endpoint.](providers.md) We recommend [Alchemy](https://docs.alchemy.com/reference/optimism-api-quickstart).**
 
+Public RPC endpoints -
+we support and maintain the following public RPC endpoints: 
 
-We also support and maintain the following public RPC endpoints. 
-However, we _highly_ encourage you to set up a private RPC endpoint with any of the above mentioned providers instead. 
-**These public endpoints should not be used in production systems.**
 - HTTP endpoint: [https://mainnet.optimism.io](https://mainnet.optimism.io)
 - WebSocket endpoint (limited usage, see footnote below the table): [wss://ws-mainnet.optimism.io](wss://ws-mainnet.optimism.io)
 
-[Pocket Network](https://docs.pokt.network/home/) also maintains a decentralized public RPC endpoint.
-
-- HTTP endpoint: https://optimism-mainnet.gateway.pokt.network/v1/lb/62eb567f0fd618003965da18
-
-[Blast](https://blastapi.io/public-api/optimism) also maintains public RPC endpoints.
-An important limitation is that public endpoint does not support the `eth_getLogs` method
-(you can use it with their free project-specific endpoints).
-
-- HTTP endpoint: [https://optimism-mainnet.public.blastapi.io](https://optimism-mainnet.public.blastapi.io)
-- WebSocker endpoint: [wss://optimism-mainnet.public.blastapi.io](wss://optimism-mainnet.public.blastapi.io)
-
+Note, we _highly_ encourage you to set up a private RPC endpoint like Alchemy instead. Using a public endpoint in production systems will often run into rate limits because of shared throughput.
 
 ## Optimism Goerli
 
@@ -72,7 +62,7 @@ This is our new test network.
 
 ### RPC endpoints
 
-We have [several providers](./providers.md) that support Optimism Goerli. 
+We have [several providers](./providers.md) that support Optimism Goerli, including [Alchemy](https://docs.alchemy.com/reference/optimism-api-quickstart).
 
 ### Test ETH
 
@@ -95,19 +85,11 @@ Optimism Kovan end of life is October 5th, 2022, be sure to migrate everything y
 | Description | **`Testnet (public)`** |
 | Chain ID | **`69`** |
 | Explorer | **[https://kovan-optimistic.etherscan.io](https://kovan-optimistic.etherscan.io)** |
-| HTTP Endpoint | **`https://kovan.optimism.io`** If you are going to be sending a lot of requests please set up your own private RPC endpoint |
-| WebSocket Endpoint<sup>1</sup> | **`wss://ws-kovan.optimism.io`** If you are going to be sending a lot of requests please set up your own private RPC endpoint |
+| HTTP Endpoint | **`https://kovan.optimism.io`** If you are going to be sending a lot of requests especially in a production system, please set up your own private RPC endpoint via Alchemy |
+| WebSocket Endpoint<sup>1</sup> | **`wss://ws-kovan.optimism.io`** If you are going to be sending a lot of requests especially in a production system, please set up your own private RPC endpoint via Alchemy |
 | L1 Contract Addresses | [link](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/deployments/kovan#layer-1-contracts) |
 | L2 Contract Addresses | [link](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/deployments/kovan#layer-2-contracts) |
 | chainid.link | [https://chainid.link/?network=optimism-kovan](https://chainid.link/?network=optimism-kovan)
 
 (1) The WebSocket endpoint is only supported for the two operations that cannot be provided on an HTTP endpoint: `eth_subscribe` and `eth_unsubscribe`. 
 If you need a general purpose WebSocket endpoint, get one from a service provider.
-
-### RPC endpoints
-
-We have [several providers](./providers.md) that support Optimism Goerli. 
-
-We also have the following public endpoints. However if you expect to be sending a high volume of requests, please use one of the other available providers above.
-- HTTP endpoint: [https://kovan.optimism.io](https://kovan.optimism.io)
-- WebSocket endpoint (limited usage, see footnote below the table): [wss://ws-kovan.optimism.io](wss://ws-kovan.optimism.io)
