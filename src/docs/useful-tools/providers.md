@@ -16,7 +16,7 @@ It offers free access to (1) enhanced features like SDKs and enhanced APIs, and 
 
 (1) Alchemy's enhanced features
 
-Alchemy's free private RPC endpoint provides a complimentary suite of custom tools. These include a custom-built Ethers.js SDK (which is a superset of the Ethers.js Provider library) and enhanced APIs such as NFT, Transfers, and Notify APIs.
+Alchemy's free private RPC endpoint provides a complimentary suite of proprietary tools. These include a custom-built Ethers.js SDK (which is a superset of the Ethers.js Provider library) and enhanced APIs such as NFT, Transfers, and Notify APIs.
 
 
 (2) Alchemy's hosted Optimism nodes
