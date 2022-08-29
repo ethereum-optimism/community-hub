@@ -6,28 +6,35 @@ lang: en-US
 ## Alchemy
 
 ::: tip
-**Alchemy is our preferred node provider, and is used to power our public endpoint.** In production systems, we _strongly_ recommend the Alchemy private endpoint - it's free, sign up [here](https://www.alchemy.com/layer2/optimism/?a=818c11a8da).
+**Alchemy is our preferred node provider, and is used to power our public endpoint.** In production systems, we _strongly_ recommend using the Alchemy private endpoint (it's free) - [sign up here](https://www.alchemy.com/layer2/optimism/?a=818c11a8da).
 :::
 
 ### Alchemy's Description and pricing
 
 [Alchemy](https://docs.alchemy.com/reference/optimism-api-quickstart/?a=818c11a8da) is a comprehensive Optimism development and infrastructure platform. 
-It offers free access to (1) enhanced features like SDKs and enhanced APIs, and (2) its hosted Optimism nodes. 
+Its robust free tier offers access to (1) enhanced features like SDKs and enhanced APIs, (2) hosted Optimism nodes, and (3) 300M CUs per month (aka ~12M requests per month).
 
-(1) Alchemy's enhanced features
+_(1) Alchemy's enhanced features_
 
 Alchemy's free private RPC endpoint provides a complimentary suite of proprietary tools. These include a custom-built Ethers.js SDK (which is a superset of the Ethers.js Provider library) and enhanced APIs such as NFT, Transfers, and Notify APIs.
 
 
-(2) Alchemy's hosted Optimism nodes
+_(2) Alchemy's hosted Optimism nodes_
 
-Alchemy is industry-leading for its data accuracy, reliability, and scalability. Its large, free tier has a throughput of ~20k CUs / min, which is higher than that our public endpoint. This free tier also allows for 300M CUs per month. These CUs translates to about 12 million requests a month. The higher throughput is why we recommend using Alchemy to set up a private RPC endpoint (sign up [here](https://www.alchemy.com/layer2/optimism/?a=818c11a8da), it's free to use). 
+Alchemy hosts our public endpoint because of its data accuracy, reliability, and scalability. It counts companies like OpenSea and dYdX among its customers. Its private endpoint takes only a few lines of codes to get up and running.
+ 
+
+_(3) Alchemy's CU and rate limits_
+
+Its large, free tier has a throughput of ~20k CUs / min per dapp, which is much higher than that our public endpoint. This free tier also allows for 300M CUs per month, which translates to about 12 million requests a month. 
 
 
 ### Alchemy's Supported Networks
 
 - Optimism Ethereum
 - Optimism Goerli
+
+[Sign up for a free Alchemy account here](https://www.alchemy.com/layer2/optimism/?a=818c11a8da).
 
 ## Blast
 
