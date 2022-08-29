@@ -17,7 +17,7 @@ Such RPCs are either totally unsupported, or will return nonsensical values.
 | Description | **`Mainnet`** |
 | Chain ID | **`10`** |
 | Explorer | **[https://optimistic.etherscan.io](https://optimistic.etherscan.io)** |
-| HTTP Endpoint | **`https://mainnet.optimism.io`** _Not for production systems._   See the list of available RPC endpoints below. We recommend [Alchemy](https://docs.alchemy.com/reference/optimism-api-quickstart) |
+| HTTP Endpoint | **`https://mainnet.optimism.io`** _Not for production systems._   See the list of available RPC endpoints below. We recommend [Alchemy](https://docs.alchemy.com/reference/optimism-api-quickstart/?a=818c11a8da) |
 | WebSocket Endpoint<sup>1</sup> | **`wss://ws-mainnet.optimism.io`** 
 | L1 Contract Addresses | [link](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/deployments/mainnet#layer-1-contracts) |
 | L2 Contract Addresses | [link](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/deployments/mainnet#layer-2-contracts) |
@@ -30,7 +30,7 @@ If you need a general purpose WebSocket endpoint, get one from a service provide
 ### RPC endpoints
 
 (A) Private RPC endpoints - 
-**for production systems, we encourage you set up [a private RPC endpoint](providers.md), particularly [Alchemy](https://docs.alchemy.com/reference/optimism-api-quickstart).**
+**for production systems, we encourage you set up a private RPC endpoint, particularly [Alchemy](https://docs.alchemy.com/reference/optimism-api-quickstart/?a=818c11a8da).** Sign up [here](https://www.alchemy.com/layer2/optimism/?a=818c11a8da).
 
 (B) Public RPC endpoints -
 we support and maintain the following public RPC endpoints: 
@@ -62,7 +62,7 @@ This is our new test network.
 
 ### RPC endpoints
 
-We have [several providers](./providers.md) that support Optimism Goerli, including [Alchemy](https://docs.alchemy.com/reference/optimism-api-quickstart).
+We have [several providers](./providers.md) that support Optimism Goerli, including [Alchemy](https://www.alchemy.com/layer2/optimism/?a=818c11a8da)
 
 ### Test ETH
 
