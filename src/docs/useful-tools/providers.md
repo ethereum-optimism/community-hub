@@ -6,18 +6,25 @@ lang: en-US
 ## Alchemy
 
 ::: tip
-Alchemy is our preferred node provider, and is used to power our public endpoint.
+**Alchemy is our preferred node provider, and is used to power our public endpoint.** In production systems, we _strongly_ recommend the Alchemy private endpoint - it's free, sign up [here](https://www.alchemy.com/layer2/optimism/?a=818c11a8da).
 :::
 
-### Description and pricing
+### Alchemy's Description and pricing
 
-[Alchemy](https://docs.alchemy.com/alchemy/apis/optimism-api) is a comprehensive Optimism development and infrastructure platform. 
-It offers free access to hosted Optimism nodes up to roughly 12 million requests a month. 
+[Alchemy](https://docs.alchemy.com/reference/optimism-api-quickstart/?a=818c11a8da) is a comprehensive Optimism development and infrastructure platform. 
+It offers free access to (1) enhanced features like SDKs and enhanced APIs, and (2) its hosted Optimism nodes. 
 
-Additionally, it provides a suite of custom tools for free, including access to Optimism archive nodes, push notifications (Alchemy Notify) for transactions and address activity, Enhanced APIs such as asset transfers, and a custom built Web3 SDK for Optimism (Alchemy SDK) that supercharges developer's workflows.
+(1) Alchemy's enhanced features
+
+Alchemy's free private RPC endpoint provides a complimentary suite of custom tools. These include a custom-built Ethers.js SDK (which is a superset of the Ethers.js Provider library) and enhanced APIs such as NFT, Transfers, and Notify APIs.
 
 
-### Supported Networks
+(2) Alchemy's hosted Optimism nodes
+
+Alchemy is industry-leading for its data accuracy, reliability, and scalability. Its large, free tier has a throughput of ~20k CUs / min, which is higher than that our public endpoint. This free tier also allows for 300M CUs per month. These CUs translates to about 12 million requests a month. The higher throughput is why we recommend using Alchemy to set up a private RPC endpoint (sign up [here](https://www.alchemy.com/layer2/optimism/?a=818c11a8da), it's free to use). 
+
+
+### Alchemy's Supported Networks
 
 - Optimism Ethereum
 - Optimism Goerli
