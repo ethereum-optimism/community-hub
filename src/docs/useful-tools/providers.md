@@ -6,7 +6,7 @@ lang: en-US
 ## Alchemy
 
 ::: tip
-**Alchemy is our preferred node provider, and is used to power our public endpoint.** In production systems, we _strongly_ recommend using the Alchemy private endpoint (it's free) - [sign up here](https://www.alchemy.com/layer2/optimism/?a=818c11a8da).
+**Alchemy is our preferred node provider, and is used to power our public endpoint.** In production systems, we _strongly_ recommend using the Alchemy private endpoint for faster throughput (it's free) - [sign up here](https://www.alchemy.com/layer2/optimism/?a=818c11a8da).
 :::
 
 ### Alchemy's Description and Pricing
