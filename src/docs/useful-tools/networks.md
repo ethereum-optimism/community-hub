@@ -30,7 +30,7 @@ If you need a general purpose WebSocket endpoint, get one from a service provide
 ### RPC endpoints
 
 (A) Private RPC endpoints - 
-**for production systems, we encourage you set up a private RPC endpoint, particularly [Alchemy](https://docs.alchemy.com/reference/optimism-api-quickstart/?a=818c11a8da).** Sign up [here](https://www.alchemy.com/layer2/optimism/?a=818c11a8da).
+**for production systems, we encourage you set up a private RPC endpoint, particularly Alchemy.** Sign up [here](https://www.alchemy.com/layer2/optimism/?a=818c11a8da).
 
 (B) Public RPC endpoints -
 we support and maintain the following public RPC endpoints: 
@@ -62,10 +62,10 @@ This is our new test network.
 
 ### RPC endpoints
 
-We have [several providers](./providers.md) that support Optimism Goerli, and prefer [Alchemy](https://www.alchemy.com/layer2/optimism/?a=818c11a8da)
+We have [several providers](./providers.md) that support Optimism Goerli, and prefer [Alchemy](https://www.alchemy.com/layer2/optimism/?a=818c11a8da).
 
 (A) Private RPC endpoints - 
-**for production systems, we encourage you set up a private RPC endpoint, particularly [Alchemy](https://docs.alchemy.com/reference/optimism-api-quickstart/?a=818c11a8da).** Sign up [here](https://www.alchemy.com/layer2/optimism/?a=818c11a8da).
+**for production systems even in testnet, we encourage you set up a private RPC endpoint, particularly Alchemy.** Sign up [here](https://www.alchemy.com/layer2/optimism/?a=818c11a8da).
 
 (B) Public RPC endpoints -
 we support and maintain the following public RPC endpoints: 
