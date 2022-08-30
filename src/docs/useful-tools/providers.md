@@ -12,7 +12,7 @@ lang: en-US
 ### Alchemy's Description and Pricing
 
 [Alchemy](https://docs.alchemy.com/reference/optimism-api-quickstart/?a=818c11a8da) is a comprehensive Optimism development and infrastructure platform. 
-Its robust free tier offers access to (1) enhanced features like SDKs and enhanced APIs, (2) hosted Optimism nodes, and (3) 300M CUs per month (aka ~12M requests per month).
+Its robust free tier offers access to (1) enhanced features like SDKs and enhanced APIs, (2) hosted Optimism nodes, and (3) millions of CUs per month.
 
 _(1) Alchemy's enhanced features_
 
@@ -26,7 +26,7 @@ Alchemy hosts our public endpoint because of its data accuracy, reliability, and
 
 _(3) Alchemy's CU and rate limits_
 
-Its large, free tier has a throughput of ~20k CUs / min per dapp, which is much higher than that our public endpoint. This free tier also allows for 300M CUs per month, which translates to about 12 million requests a month. 
+Its large, free tier has a throughput of ~20k CUs / min per dapp, which is much higher than that of our public endpoint. This free tier also allows for 300M CUs per month, which translates to about 12 million requests a month. 
 
 
 ### Alchemy's Supported Networks
