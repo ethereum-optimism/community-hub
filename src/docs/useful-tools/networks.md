@@ -62,7 +62,19 @@ This is our new test network.
 
 ### RPC endpoints
 
-We have [several providers](./providers.md) that support Optimism Goerli, including [Alchemy](https://www.alchemy.com/layer2/optimism/?a=818c11a8da)
+We have [several providers](./providers.md) that support Optimism Goerli, and prefer [Alchemy](https://www.alchemy.com/layer2/optimism/?a=818c11a8da)
+
+(A) Private RPC endpoints - 
+**for production systems, we encourage you set up a private RPC endpoint, particularly [Alchemy](https://docs.alchemy.com/reference/optimism-api-quickstart/?a=818c11a8da).** Sign up [here](https://www.alchemy.com/layer2/optimism/?a=818c11a8da).
+
+(B) Public RPC endpoints -
+we support and maintain the following public RPC endpoints: 
+
+- HTTP endpoint: [https://goerli.optimism.io](https://goerli.optimism.io)
+- WebSocket endpoint (limited usage, see footnote below the table): [wss://ws-goerli.optimism.io](wss://ws-goerli.optimism.io)
+
+Note, just like we mentioned for mainnet, we _highly_ encourage you to set up a private RPC endpoint like Alchemy instead. Using a public endpoint in production systems will often run into rate limits because of shared throughput.
+
 
 ### Test ETH
 
