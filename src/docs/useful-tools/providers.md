@@ -12,7 +12,7 @@ lang: en-US
 ### Alchemy's Description and Pricing
 
 [Alchemy](https://docs.alchemy.com/reference/optimism-api-quickstart/?a=818c11a8da) is a comprehensive Optimism development and infrastructure platform. 
-Its robust free tier offers access to (1) enhanced features like SDKs and enhanced APIs, (2) hosted Optimism nodes, and (3) millions of CUs per month.
+Its robust, free tier offers access to (1) enhanced features like SDKs and enhanced APIs, (2) hosted Optimism nodes, and (3) millions of CUs per month.
 
 _(1) Alchemy's enhanced features_
 
