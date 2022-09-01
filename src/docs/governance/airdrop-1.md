@@ -3,12 +3,6 @@ title: Airdrop 1
 lang: en-US
 ---
 
-::: tip Notice: OP Airdrop #1 is now available to claim
-[Click here to claim](https://app.optimism.io/airdrop/check)
-
-*Airdrop #1 does not require payment.*
-*Stay safe!*
-:::
 
 ## Background
 
@@ -90,7 +84,7 @@ They are often the present (and future) DAO leaders and builders.
 #### Gitcoin Donors (on L1)
 
 Gitcoin donors have chosen to behave in positive-sum ways by funding public goods. 
-These addresses may also align with Optimism’s goal to build sustainable funding source for public goods through retroactive funding ([RetroPGF](https://medium.com/ethereum-optimism/retropgf-experiment-1-1-million-dollars-for-public-goods-f7e455cbdca)).
+These addresses may also align with Optimism’s goal to build sustainable funding source for public goods through [retroactive funding (RetroPGF](https://medium.com/ethereum-optimism/retropgf-experiment-1-1-million-dollars-for-public-goods-f7e455cbdca)).
 
 *Criterion: Address has made an on-chain donation through Gitcoin on L1. This includes any donation, regardless of if it was during a matching round.*
 - *For the time period between rounds 1 - 5, we included addresses who interacted with Gitcoin contracts, sent legacy `ExecuteSubscription` calls, or appeared in [Gitcoin’s donor API](https://docs.gitcoin.co/mk_rest_api/).*

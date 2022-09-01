@@ -1,10 +1,8 @@
 ---
-title: Being a Token House delegate
+title: How to be a delegate
 lang: en-US
 ---
     
-
-## Do you want to be a Delegate?
 
 Participating in Token House governance requires a serious time commitment and, for this reason, we’ve strongly encouraged people to delegate their OP to delegates. 
 Delegates are community members who have explicitly volunteered to play an active role in Token House governance. 
@@ -17,7 +15,7 @@ Before deciding to become a delegate you should be familiar with:
 * The delegate code of conduct, once it is released    
     
 
-## Ready to become a delegate?
+## Ready to be a delegate?
 
 This is the process to become a delegate:
 
@@ -26,6 +24,7 @@ This is the process to become a delegate:
 * Read the delegate responsibilities
 * Post a completed [delegate commitment form](https://gov.optimism.io/t/delegate-commitments/235). 
   If you have any questions about the form, ask in the [delegation questions feedback thread](https://gov.optimism.io/t/delegation-questions-feedback-thread/236)
+* It is not required, but you probably also want to [delegate your OP tokens' voting power to yourself](https://app.optimism.io/delegates).
 
 ### Step 2: Set up your profile  
 
@@ -34,13 +33,11 @@ This is the process to become a delegate:
   Please note that delegate avatars are taken from ENS. 
   [If you want to change your avatar, you’ll need to do it via ENS](https://medium.com/the-ethereum-name-service/step-by-step-guide-to-setting-an-nft-as-your-ens-profile-avatar-3562d39567fc).
 
-
-### Step 3: Wait
-
-The Optimism Foundation will add new profiles to the [delegate site](https://app.optimism.io/delegates) once per Season. 
+  The Optimism Foundation will add new profiles to the [delegate site](https://app.optimism.io/delegates) once per Season. 
 
 
-## Already a delegate?
+
+## How to be a delegates
 
 Thank you for being active in Optimism Token House Governance. 
 

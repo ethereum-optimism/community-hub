@@ -122,52 +122,63 @@ module.exports = {
         [
           'https://www.optimism.io/vision',
           'The Optimistic Vision'
-        ],        
+        ],
         {
-          title: 'The Token House',
+          title: "OP Holders",
           children: [
             '/docs/governance/token-house.md',
-            '/docs/governance/token-house-history.md',  
-            {
-              title: "The Governance Fund",
-              collapsable: true,
-              children: [          
-                '/docs/governance/gov-fund.md', 
-                [
-                  'https://docs.google.com/spreadsheets/d/1eaHOlWB34ij1KGsXdaNyTQg4tt1Pu2JurJsElBb6a8k/edit#gid=0',
-                  "Governance fund tracker"
-                ],
-                '/docs/governance/proposals.md',
-                [
-                  'https://gov.optimism.io/c/proposals/38',
-                  'Previous proposals'
-                ]
-              ]
-            },     
-            '/docs/governance/delegate.md',
-            '/docs/governance/delegate-info.md',  
-          ]          
-        },
-        {
-          title: "The Citizens' House",
-          children: [
-            '/docs/governance/citizens-house.md',
-          ],
-          collapsable: true, 
-        },
-        {
-          title: "OP Token Economics",
-          children: [
+            '/docs/governance/token-house-history.md',
+            [
+              'https://app.optimism.io/delegates',
+              "How to delegate you tokens' voting power"
+            ],
+            [
+              'https://help.optimism.io/hc/en-us/articles/6389519530779-How-do-I-see-how-my-delegate-voted-',
+              "How to get a delegate's voting record"
+            ],
+            [
+              'https://dune.com/optimismfnd/optimism-op-token-house',
+              "Dune delegate dashboard"
+            ],
+            [
+              'https://app.flipsidecrypto.com/dashboard/optimism-governance-l5WXpo',
+              "Flipside delegate dashboard"
+            ],
             '/docs/governance/economics.md',
             '/docs/governance/allocations.md',  
             '/docs/governance/airdrop-1.md',  
             [
               'https://dune.com/springzhang/optimism-airdrop-1-all-in-one',
               "Analytics about Airdrop #1"
-            ]          
+            ]       
           ],
           collapsable: true,
-        }
+        },                
+        {
+          title: "Delegates",
+          children: [
+                '/docs/governance/delegate.md',
+                '/docs/governance/delegate-info.md',               
+                '/docs/governance/gov-fund.md', 
+                [
+                  'https://docs.google.com/spreadsheets/d/1eaHOlWB34ij1KGsXdaNyTQg4tt1Pu2JurJsElBb6a8k/edit#gid=0',
+                  "Governance fund tracker"
+                ],
+          ],
+          collapsable: true,
+        },
+        {
+          title: "Proposal Submitters",
+          children: [
+            '/docs/governance/proposals.md',
+            [
+              'https://gov.optimism.io/c/proposals/38',
+              'Previous proposals'
+            ]
+          ],
+          collapsable: true,
+        },
+        '/docs/governance/citizens-house.md',        
       ],
       '/docs/guides/': [
         '/docs/developers/build/basic-contract.md',

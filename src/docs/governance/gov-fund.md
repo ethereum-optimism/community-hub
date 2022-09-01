@@ -13,9 +13,15 @@ lang: en-US
 
 5.4% of the total initial token supply (231,928,234 OP) will be distributed to Optimism projects and communities via the Governance Fund. 
 The goal of the Governance Fund is to empower the OP community to proactively incentivize future growth of projects and communities in the Optimism ecosystem. 
-You can read more about the total allocation of OP in the [Allocations section](allocations.md) of our [Governance docs](README.md). 
+You can read more about the total allocation of OP in the [Allocations section](./allocations.md) of our [Governance docs](./README.md). 
 
+The purpose of the Governance Fund is to incentivize sustainable growth of projects and communities in the Optimism ecosystem. 
+This does not mean that all grants must be incentive programs. 
+The Token House is welcome to consider any and all proposals which would drive growth or address a gap in the Optimism ecosystem, including public goods projects.
 
+Governance funds should come with an expectation of growth-related deliverables. 
+It is not the intended purpose of the governance fund to retroactively fund public goods without an expectation of future work. 
+There is [a distinct OP allocation](./allocations.md#retroactive-public-goods-funding) dedicated to this, which will be distributed via the Citizens House at a later date.
 
 ## Phase 1
 
