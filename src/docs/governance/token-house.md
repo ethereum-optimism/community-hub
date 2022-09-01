@@ -18,7 +18,7 @@ The version linked here, from [the Optimism Foundation's github repository](http
 ###  Step 1: Claim or purchase OP tokens
 
 To check your eligibility for Airdrop #1, scroll to the bottom of [this page](https://app.optimism.io/announcement). 
-If you didn’t qualify for Airdrop #1, don’t worry, [there will be more](./allocations.md#future-airdrops-2-3).
+If you didn’t qualify for Airdrop #1, don’t worry, [there will be more](./allocations/#future-airdrops-2-3).
       
 Claim your tokens by visiting **[the airdrop app](https://app.optimism.io/airdrop/check).** 
 It doesn’t cost anything to claim the airdrop, except for gas fees. 
