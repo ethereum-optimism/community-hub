@@ -130,27 +130,12 @@ module.exports = {
             '/docs/governance/token-house-history.md',
             [
               'https://app.optimism.io/delegates',
-              "How to delegate you tokens' voting power"
+              "How to Delegate your Tokens' Voting Power"
             ],
-            [
-              'https://help.optimism.io/hc/en-us/articles/6389519530779-How-do-I-see-how-my-delegate-voted-',
-              "How to get a delegate's voting record"
-            ],
-            [
-              'https://dune.com/optimismfnd/optimism-op-token-house',
-              "Dune delegate dashboard"
-            ],
-            [
-              'https://app.flipsidecrypto.com/dashboard/optimism-governance-l5WXpo',
-              "Flipside delegate dashboard"
-            ],
+            '/docs/governance/delegate-info.md',            
             '/docs/governance/economics.md',
             '/docs/governance/allocations.md',  
-            '/docs/governance/airdrop-1.md',  
-            [
-              'https://dune.com/springzhang/optimism-airdrop-1-all-in-one',
-              "Analytics about Airdrop #1"
-            ]       
+            '/docs/governance/airdrop-1.md'    
           ],
           collapsable: true,
         },                
@@ -162,7 +147,7 @@ module.exports = {
                 '/docs/governance/gov-fund.md', 
                 [
                   'https://docs.google.com/spreadsheets/d/1eaHOlWB34ij1KGsXdaNyTQg4tt1Pu2JurJsElBb6a8k/edit#gid=0',
-                  "Governance fund tracker"
+                  "Governance Fund Tracker"
                 ],
           ],
           collapsable: true,
@@ -172,8 +157,8 @@ module.exports = {
           children: [
             '/docs/governance/proposals.md',
             [
-              'https://gov.optimism.io/c/proposals/38',
-              'Previous proposals'
+              'https://gov.optimism.io/tags/c/proposals/38/passed',
+              'Passed Proposals'
             ]
           ],
           collapsable: true,

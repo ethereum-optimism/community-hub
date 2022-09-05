@@ -40,6 +40,10 @@ The allocations and criteria break down as follows:
 The amount of OP tokens that an address receives is cumulative, meaning that the sum of OP tokens allocated for each matching criteria set is the amount that an address is eligible to claim (overlap bonuses are not cumulative).
 
 
+### Airdrop analytics
+
+See the [Dune analytics dashboard](https://dune.com/springzhang/optimism-airdrop-1-all-in-one).
+
 ### Optimism Early Adopters
 
 We sought to identify Optimism users who had actively used applications on Optimism as a part of their crypto experience. 
