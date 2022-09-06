@@ -182,7 +182,7 @@ module.exports = {
       ],
       '/docs/guides/': [
         '/docs/developers/build/basic-contract.md',
-        '/docs/developers/tutorials.md',        
+        '/docs/developers/tutorials.md',       
         '/docs/guides/wallet-dev.md',
         '/docs/guides/cex-dev.md',
         '/docs/guides/token-dev.md',
