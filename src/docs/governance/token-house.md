@@ -1,5 +1,5 @@
 ---
-title: Token House Governance
+title: Governing Documents
 lang: en-US
 ---
 

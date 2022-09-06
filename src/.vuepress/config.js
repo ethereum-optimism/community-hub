@@ -135,11 +135,7 @@ module.exports = {
         },                
         {
           title: "Delegates",
-          children: [
-                [
-                  'https://app.optimism.io/delegates',
-                  "How to Delegate your Tokens' Voting Power"
-                ],            
+          children: [          
                 '/docs/governance/delegate.md',
                 '/docs/governance/existing-delegate.md',                
                 '/docs/governance/delegate-info.md',
@@ -158,7 +154,7 @@ module.exports = {
           collapsable: true,
         },
         {
-          title: "Token House",
+          title: "Token House Governance",
           children: [
             '/docs/governance/token-house.md',
             '/docs/governance/token-house-history.md',
