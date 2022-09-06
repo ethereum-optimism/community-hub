@@ -55,7 +55,7 @@ Projects are also encouraged to reference data from the success of their initial
 
 ## Other proposal types
 
-Other than grants, there are [four types of proposals](https://github.com/ethereum-optimism/OPerating-manual/blob/main/manual.md#valid-proposal-types) that you can submit:
+There are [other types of proposals](https://github.com/ethereum-optimism/OPerating-manual/blob/main/manual.md#valid-proposal-types) that you can submit:
 
 - Protocol Upgrade
 - Inflation Adjustment
