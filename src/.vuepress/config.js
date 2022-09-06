@@ -126,15 +126,9 @@ module.exports = {
         {
           title: "OP Holders",
           children: [
-            '/docs/governance/token-house.md',
-            '/docs/governance/token-house-history.md',
-            [
-              'https://app.optimism.io/delegates',
-              "How to Delegate your Tokens' Voting Power"
-            ],
-            '/docs/governance/delegate-info.md',            
+            '/docs/governance/howto-delegate.md',
             '/docs/governance/economics.md',
-            '/docs/governance/allocations.md',  
+            '/docs/governance/allocations.md',             
             '/docs/governance/airdrop-1.md'    
           ],
           collapsable: true,
@@ -142,13 +136,13 @@ module.exports = {
         {
           title: "Delegates",
           children: [
-                '/docs/governance/delegate.md',
-                '/docs/governance/delegate-info.md',               
-                '/docs/governance/gov-fund.md', 
                 [
-                  'https://docs.google.com/spreadsheets/d/1eaHOlWB34ij1KGsXdaNyTQg4tt1Pu2JurJsElBb6a8k/edit#gid=0',
-                  "Governance Fund Tracker"
-                ],
+                  'https://app.optimism.io/delegates',
+                  "How to Delegate your Tokens' Voting Power"
+                ],            
+                '/docs/governance/delegate.md',
+                '/docs/governance/existing-delegate.md',                
+                '/docs/governance/delegate-info.md',
           ],
           collapsable: true,
         },
@@ -163,6 +157,27 @@ module.exports = {
           ],
           collapsable: true,
         },
+        {
+          title: "Token House",
+          children: [
+            '/docs/governance/token-house.md',
+            '/docs/governance/token-house-history.md',
+            '/docs/governance/gov-fund.md', 
+            [
+              'https://docs.google.com/spreadsheets/d/1eaHOlWB34ij1KGsXdaNyTQg4tt1Pu2JurJsElBb6a8k/edit#gid=0',
+              "Governance Fund Tracker"
+            ],            
+            [
+              'https://gov.optimism.io/t/working-constitution-of-the-optimism-collective/55',
+              "Working Constitution"
+            ],
+            [
+              'https://github.com/ethereum-optimism/OPerating-manual/blob/main/manual.md',
+              'Operating Manual'
+            ]
+          ],
+          collapsable: true,
+        },                        
         '/docs/governance/citizens-house.md',        
       ],
       '/docs/guides/': [
