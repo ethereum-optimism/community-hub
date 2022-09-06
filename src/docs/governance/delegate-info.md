@@ -7,4 +7,8 @@ lang: en-US
 
 - [View information about specific delegates (their share of the votes, etc.)](https://dune.com/optimismfnd/optimism-op-token-house)
 
+<!--
+
 - [Delegate aggregate information (GINI coefficient, etc.)](https://app.flipsidecrypto.com/dashboard/optimism-governance-l5WXpo)
+
+-->
