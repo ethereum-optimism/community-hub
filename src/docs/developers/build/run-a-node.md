@@ -3,8 +3,11 @@ title: Running a testnet or mainnet node
 lang: en-US
 ---
 
-If you're looking to build an app on Optimism you'll need access to an Optimism node.
-You can get a hosted one from [any of these providers](../../useful-tools/providers.md).
+If you're looking to build an app on Optimism you'll need access to an Optimism node. You have two options - use a hosted node from providers like Alchemy or run your own. 
+
+## Hosted node providers
+
+You can get a free, hosted one from [any of these providers](../../useful-tools/providers.md) to get up and building quickly. Of them, [Alchemy](https://www.alchemy.com/layer2/optimism/?a=818c11a8da) is our preferred node provider, and is used to power our [public endpoint](https://community.optimism.io/docs/useful-tools/networks/). 
 
 However, you might be interested in running your very own Optimism node.
 Here we'll go over the process of running a testnet or mainnet Optimism node for yourself.
