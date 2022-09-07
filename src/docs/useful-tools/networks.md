@@ -4,7 +4,7 @@ lang: en-US
 ---
 
 ::: tip Developer Tip
-We encourage you to use a private RPC endpoint to not run into rate limits, even for testnet systems. We recommend [Alchemy] (https://www.alchemy.com/layer2/optimism/?a=818c11a8da).
+We encourage you to use a private RPC endpoint to not run into rate limits, even for testnet environments. We recommend [Alchemy] (https://www.alchemy.com/layer2/optimism/?a=818c11a8da).
 :::
 
 
@@ -17,19 +17,20 @@ We encourage you to use a private RPC endpoint to not run into rate limits, even
 | Description | **`Mainnet`** |
 | Chain ID | **`10`** |
 | Explorer | **[https://optimistic.etherscan.io](https://optimistic.etherscan.io)** |
-| HTTP Endpoint | **`https://mainnet.optimism.io`** _Not for production systems._   See the list of available RPC endpoints below. We recommend [Alchemy](https://docs.alchemy.com/reference/optimism-api-quickstart/?a=818c11a8da) |
-| WebSocket Endpoint<sup>1</sup> | **`wss://ws-mainnet.optimism.io`** 
+| HTTP Endpoint<sup>1</sup> | **`https://mainnet.optimism.io`** _Not for production systems._   See the list of available RPC endpoints below. We recommend [Alchemy](https://docs.alchemy.com/reference/optimism-api-quickstart/?a=818c11a8da) |
+| WebSocket Endpoint<sup>2</sup> | **`wss://ws-mainnet.optimism.io`** 
 | L1 Contract Addresses | [link](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/deployments/mainnet#layer-1-contracts) |
 | L2 Contract Addresses | [link](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/deployments/mainnet#layer-2-contracts) |
 | chainid.link | [https://chainid.link/?network=optimism](https://chainid.link/?network=optimism)
 
-(1) The WebSocket endpoint is only supported for the two operations that cannot be provided on an HTTP endpoint: `eth_subscribe` and `eth_unsubscribe`. 
+(1) Some API calls, such as those in the [personal namespace](https://geth.ethereum.org/docs/rpc/ns-personal) make no sense in a shared environment.
+Such RPCs are either not supported, or will return nonsensical values.
+
+(2) The WebSocket endpoint is only supported for the two operations that cannot be provided on an HTTP endpoint: `eth_subscribe` and `eth_unsubscribe`. 
 If you need a general purpose WebSocket endpoint, get one from a service provider.
 
-::: warning
-Some API calls, such as the those in the [personal namespace](https://geth.ethereum.org/docs/rpc/ns-personal) make no sense in a shared environment.
-Such RPCs are either totally unsupported, or will return nonsensical values.
-:::
+
+
 
 ### RPC endpoints
 
@@ -101,8 +102,8 @@ Optimism Kovan end of life is October 5th, 2022. Be sure to [migrate from Kovan 
 | Description | **`Testnet (public)`** |
 | Chain ID | **`69`** |
 | Explorer | **[https://kovan-optimistic.etherscan.io](https://kovan-optimistic.etherscan.io)** |
-| HTTP Endpoint | **`https://kovan.optimism.io`** If you are going to be sending a lot of requests especially in a production system, please set up your own private RPC endpoint via Alchemy |
-| WebSocket Endpoint<sup>1</sup> | **`wss://ws-kovan.optimism.io`** If you are going to be sending a lot of requests especially in a production system, please set up your own private RPC endpoint via Alchemy |
+| HTTP Endpoint | **`https://kovan.optimism.io`** If you are going to be sending a lot of requests especially in a production system, please set up your own private RPC endpoint |
+| WebSocket Endpoint<sup>1</sup> | **`wss://ws-kovan.optimism.io`** If you are going to be sending a lot of requests especially in a production system, please set up your own private RPC endpoint |
 | L1 Contract Addresses | [link](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/deployments/kovan#layer-1-contracts) |
 | L2 Contract Addresses | [link](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/deployments/kovan#layer-2-contracts) |
 | chainid.link | [https://chainid.link/?network=optimism-kovan](https://chainid.link/?network=optimism-kovan)
