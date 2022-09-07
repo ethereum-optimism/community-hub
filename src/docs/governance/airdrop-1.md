@@ -150,7 +150,7 @@ Don’t worry!
 This is Airdrop #1, and 14% of the total initial token supply is reserved for future airdrops.
 The best way to earn OP is to get involved in the Optimism Collective:
 
-- If you want to build on Optimism, visit our [developer documentation](../../developers) or jump in to [Discord](https://discord-gateway.optimism.io).
+- If you want to build on Optimism, visit our [developer documentation](../developers/README.md) or jump in to [Discord](https://discord-gateway.optimism.io).
 - If your talents are non-technical, jump in to [Discord](https://discord-gateway.optimism.io) to find other builders, apply to be a Support NERD, or just make some memes 🍉
 - [Bridge your assets to Optimism here](https://app.optimism.io/bridge) and explore projects on OP
 
