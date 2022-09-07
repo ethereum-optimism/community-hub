@@ -43,13 +43,25 @@ Followed by:
 
 ### Season #2: Sep 8th - Nov 9th, 2022
 
+<!--
 * Voting cycle #8 (Oct 20th - Nov 9th)
 * Voting cycle #7 (Sep 29th - Oct 19th)
+-->
 * Voting cycle #6 (Sep 8th - Sep 28th)
 
 ### Voting Cycle #5
 
+Changes made during the Reflection Period are voted on during two-week Special Voting Cycles.
+
 ### Reflection Period #1 
+
+Document changes:
+
+- [Operating Manual v2](https://gov.optimism.io/t/operating-manual-of-the-optimism-collective-v0-2-0/3370/8)
+- [Grant Proposal Template v2](https://gov.optimism.io/t/grant-proposal-template/3233/15)
+- [Introducing Governance Committees](https://gov.optimism.io/t/introducing-governance-committees/3238/60)
+- [Committee Formation Proposal Template](https://gov.optimism.io/t/phase-1-committee-formation-proposal-template/3281/9)
+
 
 ### Season 1
 * [Voting cycle #4](https://gov.optimism.io/t/voting-cycle-4-roundup/3055)
