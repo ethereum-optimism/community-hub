@@ -6,26 +6,52 @@ lang: en-US
 ## Seasons and voting cycles
 
 Token House governance operates on a seasonal schedule.
-Season two begins on September 7th, 2022, with voting cycle six.
-Seasons are separated with a three-week Reflection Period, during which time iterative improvements to the governance process are proposed and voted on via a two-week Special Voting Cycles. 
+Season two begins on September 8th, 2022, with Voting Cycle Six.
+Seasons are separated with a three-week Reflection Period.
+
 During each Season, Token House voting occurs via three-week voting cycles. 
-Voting Cycles begin on Wednesdays at 19:00p GMT (12p PST) and end on Tuesdays at 19:00 GMT (12p PST).
+Voting Cycles begin on Thursday at 19:00p GMT (12p PST) and end on Wednesday at 19:00 GMT (12p PST).
+
+During Reflection Periods, the Optimism Foundation will publish a proposed changelog to the Operating Manual and a set of governance proposals aimed at addressing the feedback received in the previous season. 
+There will be no active votes during Reflection Periods, so that delegates and the broader community have time to provide critical feedback to improve the next season.
+Reflection periods are expected to be followed byt wo-week Special Voting Cycles during which we 
 
 You can see up to date information about the seasons and voting cycles in [the governance calendar](https://calendar.google.com/calendar/u/0/r?cid=Y180aHVpNzBpdG0wODllN3Q4cTUwaGVoMWtub0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t).
 
 
-<!-- 
-### Season 2
+::: tip At the time of writing we in Season #2: Sep 8th - Nov 9th, 2022
+Followed by: 
+- Reflection Period #2: Nov 10th - Nov 30th, 2022
+- Special Voting Cycle #2: Dec 1st - Dec 14th, 2022
+- Season #3: Dec 15th, 2022 - Feb 15th, 2023
+:::
+
+## History
+
+<!--
+### Season #3: Dec 15th, 2022 - Feb 15th, 2023
+
+* Voting system #11 (Jan 26th - Feb 15th)
+* Voting system #10 (Jan 5th - Jan 25th)
+* Voting system #9 (Dec 15th, 2022 - Jan 4th, 2023)
+
+### Special Voting Cycle #2: Dec 1st - Dec 14th, 2022
+
+### Reflection Period #2: Nov 10th - Nov 30th, 2022
 
 -->
 
-## Reflection period 1
+### Season #2: Sep 8th - Nov 9th, 2022
 
-[See here](https://gov.optimism.io/t/governance-update-2/3056)
+* Voting cycle #8 (Oct 20th - Nov 9th)
+* Voting cycle #7 (Sep 29th - Oct 19th)
+* Voting cycle #6 (Sep 8th - Sep 28th)
 
-* Voting cycle #5
+### Voting Cycle #5
 
-## Season 1
+### Reflection Period #1 
+
+### Season 1
 * [Voting cycle #4](https://gov.optimism.io/t/voting-cycle-4-roundup/3055)
 * [Voting cycle #3](https://gov.optimism.io/t/voting-cycle-3-roundup/2923)
 * [Voting cycle #2](https://gov.optimism.io/t/voting-cycle-2-roundup/2754)

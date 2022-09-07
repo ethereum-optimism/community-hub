@@ -10,10 +10,10 @@ Delegates are community members who have explicitly volunteered to play an activ
 Being a delegate is an important job that comes with a lot of responsibility.
 Before deciding to become a delegate you should be familiar with:
 
-* The [working constitution](https://gov.optimism.io/t/working-constitution-of-the-optimism-collective/55)
-* The [Operating Manual](https://github.com/ethereum-optimism/OPerating-manual/blob/main/manual.md)  
-* The delegate code of conduct, once it is released    
-    
+* The [Working Constitution](https://gov.optimism.io/t/working-constitution-of-the-optimism-collective/55).
+* The [Operating Manual](https://github.com/ethereum-optimism/OPerating-manual/blob/main/manual.md).
+* The delegate code of conduct, once it is released.
+
 
 ## Ready to be a delegate?
 
@@ -25,6 +25,7 @@ This is the process to become a delegate:
 * Post a completed [delegate commitment form](https://gov.optimism.io/t/delegate-commitments/235). 
   If you have any questions about the form, ask in the [delegation questions feedback thread](https://gov.optimism.io/t/delegation-questions-feedback-thread/236)
 * It is not required, but you probably also want to [delegate your OP tokens' voting power to yourself](https://app.optimism.io/delegates).
+  Please note that the expectation is that token grants **will not be** self-delegated to grant recipients.
 
 ### Step 2: Set up your profile  
 

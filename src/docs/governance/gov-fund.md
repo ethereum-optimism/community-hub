@@ -21,24 +21,21 @@ The Token House is welcome to consider any and all proposals which would drive g
 
 Governance funds should come with an expectation of growth-related deliverables. 
 It is not the intended purpose of the governance fund to retroactively fund public goods without an expectation of future work. 
-There is [a distinct OP allocation](./allocations.md#retroactive-public-goods-funding) dedicated to this, which will be distributed via the Citizens House at a later date.
+There is [a distinct OP allocation](./allocations.md#retroactive-public-goods-funding) dedicated to this, which will be distributed via the Citizens' House at a later date.
 
 ## Phase 1
 
 Phase 1 had begun after Airdrop #1 and distributes the remainder of the Governance Fund (approx. 196,128,233 OP) to projects in the Optimism ecosystem. 
-Phase 1 will continue until the Governance Fund is exhausted. 
+Phase 1 will continue until the Governance Fund is exhausted.
+You can see how the Governance Fund has been distributed to date in [the Governance Tracker](https://docs.google.com/spreadsheets/d/1eaHOlWB34ij1KGsXdaNyTQg4tt1Pu2JurJsElBb6a8k/edit#gid=0). 
 
-Any project on Optimism can submit a forum proposal to request any amount of OP tokens. 
+Any project on Optimism can [submit a forum proposal](proposals.md) to request any amount of OP tokens. 
 The proposal must include a plan for how the tokens will incentivize growth on Optimism. 
 Proposals are reviewed and voted on by the [Token House](token-house.md).
 
 When a project gets a proposal approved, they are still eligible to apply for further proposals. 
 The Optimism Foundation recommends that projects distribute their initial allocation of tokens before requesting further tokens. 
 Projects are also encouraged to reference data from the success of their initial distribution to strengthen their case in future proposals.
-
-### Matching
-
-Although not a strict requirement, The Optimism Foundation recommends that each project submitting a Governance Fund proposal include a commitment to match OP token incentives with their own project incentives (when the project has the capital and capacity to do so).
 
 
 ## Phase 0

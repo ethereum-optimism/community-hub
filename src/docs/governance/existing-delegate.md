@@ -29,4 +29,4 @@ As a delegate, you should:
 - Join the community calls, which occur every other Tuesday at 1pm ET. 
   [The governance calendar](https://calendar.google.com/calendar/u/0/r?cid=Y180aHVpNzBpdG0wODllN3Q4cTUwaGVoMWtub0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t) shows which Tuesdays, and how to join the call.
 
-- Stay up to date with voting cycles and general governance updates in the Governance section of the [Forum](https://gov.optimism.io/)
+- Stay up to date with voting cycles and general governance updates in the Governance section of the [Forum](https://gov.optimism.io/c/governance/41).
