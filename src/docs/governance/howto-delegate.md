@@ -19,7 +19,7 @@ Didn’t qualify or just want more OP? OP is available to buy on all major excha
 ## Step 2: Delegate your tokens (to someone else or yourself)
 
 Participating in governance of the Optimism Token House will require a serious time commitment. 
-For this reason, we strongly encourage people to delegate the voting power of their OP tokens to a community member who has explicitly volunteered to play an active role in Token House governance. 
+For this reason, The Optimism Foundation strongly encourages people to delegate the voting power of their OP tokens to a community member who has explicitly volunteered to play an active role in Token House governance. 
 If you do not wish to delegate your voting power to a representative, you will still need to delegate to yourself in order to vote.
         
 * [Delegate your tokens](https://app.optimism.io/delegates)

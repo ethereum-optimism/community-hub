@@ -9,5 +9,5 @@ After that, authority over governance will be ceded to a permanent Bedrock Const
 
 The Collective’s [Operating Manual](https://github.com/ethereum-optimism/OPerating-manual/blob/main/manual.md) describes current governance processes for the Token House. 
 It will evolve, with the Collective, over time. 
-The version linked here, from [the Optimism Foundation's github repository](https://github.com/ethereum-optimism/OPerating-manual), is the authoritative one.
+The version linked here, from [The Optimism Foundation's github repository](https://github.com/ethereum-optimism/OPerating-manual), is the authoritative one.
 

@@ -34,7 +34,7 @@ This airdrop is targeted towards people who:
 - Have been priced out of Ethereum.
 
 The addresses and amounts were chosen to reward Optimism users, as well as attract core Ethereum users to the OP family. 
-We cast a wide net to distribute OP to more than 250k addresses. See the [Airdrop #1 documentation](airdrop-1.md) for a detailed breakdown of eligibility criteria.  
+Airdrop #1 cast a wide net to distribute OP to more than 250k addresses. See the [Airdrop #1 documentation](airdrop-1.md) for a detailed breakdown of eligibility criteria.  
 
 ### Future airdrops (#2, 3, …)
 
@@ -58,7 +58,7 @@ The allocation dedicated to the Ecosystem Fund is to be further split into the f
 4. Unallocated **(8.8%)**
 
 The Ecosystem Fund is intended to be a kick-starting mechanism that will be phased out entirely once the OP in the fund has been depleted. 
-We expect the function served by the Ecosystem Fund (proactive funding) to eventually be replaced by private third-party investors who can expect to be paid out by the [Retroactive Public Goods Funding](https://medium.com/ethereum-optimism/retroactive-public-goods-funding-33c9b7d00f0c) mechanism.
+The Optimism Foundation expects the function served by the Ecosystem Fund (proactive funding) to eventually be replaced by private third-party investors who can expect to be paid out by the [Retroactive Public Goods Funding](https://medium.com/ethereum-optimism/retroactive-public-goods-funding-33c9b7d00f0c) mechanism.
 
 ![](../../assets/docs/governance/allocations/ecosystem_fund_process.jpeg)
 
@@ -134,7 +134,7 @@ The Foundation expects to seek the following annual allocations:
 
 If the Foundation’s authorized OP expenditures ever reaches below 10% of the initial token supply, it is expected to request an additional allocation.
 
-Together, we expect the total supply of unlocked OP tokens to approximate the graph below.
+Taken together, the Foundation expects the total supply of unlocked OP tokens to approximate the graph below.
 
 Note this graph is for illustration only, and actual unlocked supply will depend on governance and the rate that OP is allocated across user airdrops, the Ecosystem Fund, and RetroPGF.
 

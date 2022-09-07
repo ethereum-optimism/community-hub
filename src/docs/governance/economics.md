@@ -28,7 +28,7 @@ Let’s break it down ⤵️
 ## Demand for OP blockspace generates revenue
 
 Funding for the OP economy comes from ownership of the Optimism network and the value of its blockspace. 
-Today, funding comes directly from the centralized sequencer, accruing to the Optimism Foundation for redistribution. 
+Today, funding comes directly from the centralized sequencer, accruing to The Optimism Foundation for redistribution. 
 In the future, funding can accrue directly to the protocol by selling the right to participate in Optimism’s decentralized sequencing network.
 
 Simply put: the right to blockspace is the sustainable source of revenue that drives OP’s economic model and grows with the network itself.
@@ -51,7 +51,7 @@ This means builders can:
 - Be compensated for their positive contributions without generating direct revenue.
 - Raise capital to bootstrap based on the early potential and promise of their project.
 
-In the long-term, we expect this mechanism to drive a wide range of pro-social downstream effects, which the Collective can capture and expand upon through frequent experimentation and iteration.
+In the long-term, the Foundation expects this mechanism to drive a wide range of pro-social downstream effects, which the Collective can capture and expand upon through frequent experimentation and iteration.
 
 ## Value from public goods drives demand for blockspace
 
@@ -62,8 +62,8 @@ The aggregate effect is an ecosystem that is easier to build on, learn about, an
 But what value do these public goods provide, and for whom is it valuable? 
 This is a rich design space. 
 Optimism’s governance is designed to create conditions for experimentation around this questions. 
-We draw heavily on the work of Ostrom, Vitalik, and others to make sure funding for public goods is maximally efficient, effective, and safe. 
+The Foundation draws heavily on the work of Ostrom, Vitalik, and others to make sure funding for public goods is maximally efficient, effective, and safe. 
 
-To start, we both share and divide governance through a two-house system, where network parameters for the amount of funding are controlled by both houses, but the governance of RetroPGF allocation is determined by a set of Citizens with local knowledge and skin in the game.
+To start, Foundation governance is shared and divided through a two-house system, where network parameters for the amount of funding are controlled by both houses, but the governance of RetroPGF allocation is determined by a set of Citizens with local knowledge and skin in the game.
 
 Thoughtful allocation of public goods funding will create longterm value for builders, users, tokenholders, citizens and the entire Optimism Collective.

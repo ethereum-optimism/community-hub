@@ -18,7 +18,7 @@ There is a distinct OP allocation dedicated to this, which will be distributed v
 ### Step 1: Write your proposal
 
 For now just look at [successful proposals](https://gov.optimism.io/tags/c/proposals/38/passed) and follow the same general structure. 
-We are working on a proposal template, but it is not ready yet.
+Work on a formal proposal template is in progress.
 
 
 ### Step 2: Submit your proposal for feedback
@@ -42,14 +42,14 @@ After you receive this approval, your proposal will be included in the next voti
 
 ### Step 4: Voting
     
-If your proposal is approved, you will be contacted by the Optimism Foundation for distribution of your tokens!
+If your proposal is approved, you will be contacted by The Optimism Foundation for distribution of your tokens!
 
 ### Step 5: Stay Optimistic!
 
 If your proposal doesn’t pass, you can resubmit an updated proposal, but you’ll need to create a new proposal and link to the proposal that previously failed
 
 If your project has already had a proposal approved, you are still eligible to apply for further funding. 
-However, we recommend that projects distribute their initial allocation of tokens before requesting further tokens. 
+However, the Foundation recommend that projects distribute their initial allocation of tokens before requesting further tokens. 
 Projects are also encouraged to reference data from the success of their initial distribution to strengthen their case in future proposals.
 
 

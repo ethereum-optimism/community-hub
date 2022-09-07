@@ -7,7 +7,7 @@ lang: en-US
 ## Background
 
 The Optimism Foundation’s Airdrop #1 rewards those who have been instrumental as early adopters and active users of projects in the Optimism ecosystem. 
-To celebrate our Ethereum roots, we also want to welcome active L1 participants who can help scale Ethereum’s innovations, culture, and values to Layer 2. 
+To celebrate our Ethereum roots, The Optimism Foundation also want to welcome active L1 participants who can help scale Ethereum’s innovations, culture, and values to Layer 2. 
 In total, **248,699** addresses are eligible to claim OP in this *initial* airdrop.
 
 Our airdrop has six sets of criteria. 
@@ -46,7 +46,7 @@ See the [Dune analytics dashboard](https://dune.com/springzhang/optimism-airdrop
 
 ### Optimism Early Adopters
 
-We sought to identify Optimism users who had actively used applications on Optimism as a part of their crypto experience. 
+The Foundation sought to identify Optimism users who had actively used applications on Optimism as a part of their crypto experience. 
 
 #### Optimism Users
 
@@ -68,13 +68,13 @@ These rules aim to target behaviors that match Ethereum and Optimism’s values 
 
 #### DAO Voters
 
-We believe that active and engaged governance is crucial to scaling decentralized systems. 
+The Foudation believes that active and engaged governance is crucial to scaling decentralized systems. 
 Addresses who match this criterion have actively chosen to actively contribute by participating in governance.
 
 *Criterion: Address has either voted on or authored at least one proposal on-chain, or at least two on Snapshot (off-chain).*
 - *We filtered to “active DAOs” who have had at least 5 proposals with at least 5 votes.*
 - *On-Chain governance contracts included: Governor Alpha and Bravo, Aave, Curve, Maker, Aragon, DAOHaus, DAOStack, and forks.*
-- *Since Snapshot votes were off-chain, we recognized that these were more susceptible to spam/farming behavior, often driven by voters with nominal voting power. 
+- *Since Snapshot votes were off-chain, the Foundation recognized that these were more susceptible to spam/farming behavior, often driven by voters with nominal voting power. 
   To mitigate this, we filtered Snapshot votes to voters who made up the top 99.9% of total voting power in each DAO (i.e. >= 0.1% of voting power was made up by the sum of all smaller voters).*
 
 #### Multi-Sig Signers
