@@ -3,10 +3,10 @@ title: Networks and Public RPC Endpoints
 lang: en-US
 ---
 
-::: warning
-Some API calls, such as the those in the [personal namespace](https://geth.ethereum.org/docs/rpc/ns-personal) make no sense in a shared environment.
-Such RPCs are either totally unsupported, or will return nonsensical values.
+::: tip Developer Tip
+We encourage you to use a private RPC endpoint to not run into rate limits, even for testnet systems. We recommend [Alchemy] (https://www.alchemy.com/layer2/optimism/?a=818c11a8da).
 :::
+
 
 ## Optimism (mainnet)
 
@@ -26,6 +26,10 @@ Such RPCs are either totally unsupported, or will return nonsensical values.
 (1) The WebSocket endpoint is only supported for the two operations that cannot be provided on an HTTP endpoint: `eth_subscribe` and `eth_unsubscribe`. 
 If you need a general purpose WebSocket endpoint, get one from a service provider.
 
+::: warning
+Some API calls, such as the those in the [personal namespace](https://geth.ethereum.org/docs/rpc/ns-personal) make no sense in a shared environment.
+Such RPCs are either totally unsupported, or will return nonsensical values.
+:::
 
 ### RPC endpoints
 
@@ -38,7 +42,7 @@ we support and maintain the following public RPC endpoints:
 - HTTP endpoint: [https://mainnet.optimism.io](https://mainnet.optimism.io)
 - WebSocket endpoint (limited usage, see footnote below the table): [wss://ws-mainnet.optimism.io](wss://ws-mainnet.optimism.io)
 
-Note, we _highly_ encourage you to set up a private RPC endpoint like Alchemy instead. Using a public endpoint in production systems will often run into rate limits because of shared throughput and rate limits.
+Note, we _highly_ encourage you to set up a private RPC endpoint like Alchemy instead. Using a public endpoint in production systems will often run into rate limits because of shared throughput.
 
 ## Optimism Goerli
 
@@ -62,7 +66,7 @@ This is our new test network.
 
 ### RPC endpoints
 
-We have [several providers](./providers.md) that support Optimism Goerli, and prefer [Alchemy](https://www.alchemy.com/layer2/optimism/?a=818c11a8da).
+We have [several providers](./providers.md) that support Optimism Goerli. Out of them, we recommend using [Alchemy](https://www.alchemy.com/layer2/optimism/?a=818c11a8da).
 
 (A) Private RPC endpoints - 
 **for production systems even in testnet, we encourage you set up a private RPC endpoint, particularly Alchemy.** Sign up [here](https://www.alchemy.com/layer2/optimism/?a=818c11a8da).
@@ -87,7 +91,7 @@ Alternatively, if you already have Goerli ETH, you can [bridge it](https://app.o
 
 ::: warning Deprecation notice
 We are transitioning our test network to Goerli. 
-Optimism Kovan end of life is October 5th, 2022, be sure to migrate everything you need before then.
+Optimism Kovan end of life is October 5th, 2022. Be sure to [migrate from Kovan to Goerli](https://www.alchemy.com/overviews/migrate-from-kovan-to-goerli-on-optimism/?a=818c11a8da) well before then. 
 :::
 
 
