@@ -102,7 +102,7 @@ Optimism Kovan end of life is October 5th, 2022. Be sure to [migrate from Kovan 
 | Description | **`Testnet (public)`** |
 | Chain ID | **`69`** |
 | Explorer | **[https://kovan-optimistic.etherscan.io](https://kovan-optimistic.etherscan.io)** |
-| HTTP Endpoint | **`https://kovan.optimism.io`** If you are going to be sending a lot of requests especially in a production system, please set up your own private RPC endpoint |
+| HTTP Endpoint | **`https://kovan.optimism.io`** If you are going to be sending a lot of requests especially in a production system, please set up your own private RPC endpoint with a provider like Alchemy |
 | WebSocket Endpoint<sup>1</sup> | **`wss://ws-kovan.optimism.io`** If you are going to be sending a lot of requests especially in a production system, please set up your own private RPC endpoint |
 | L1 Contract Addresses | [link](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/deployments/kovan#layer-1-contracts) |
 | L2 Contract Addresses | [link](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/deployments/kovan#layer-2-contracts) |
