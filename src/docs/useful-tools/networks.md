@@ -4,7 +4,7 @@ lang: en-US
 ---
 
 ::: tip Developer Tip
-We encourage you to use a private RPC endpoint to not run into rate limits, even for testnet environments. We recommend [Alchemy] (https://www.alchemy.com/layer2/optimism/?a=818c11a8da).
+We encourage you to use a private RPC endpoint to not run into rate limits, including in production systems. We recommend [Alchemy] (https://www.alchemy.com/layer2/optimism/?a=818c11a8da).
 :::
 
 
