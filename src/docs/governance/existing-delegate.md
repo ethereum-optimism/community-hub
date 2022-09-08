@@ -24,7 +24,7 @@ As a delegate, you should:
 - Vote on proposals via [Snapshot](https://snapshot.org/#/opcollective.eth). 
   Multi-sig support for votes coming soon.
 
-- Post your voting rational in a [Delegate Communications Thread](https://gov.optimism.io/c/governance/41)
+- Post your voting rationale in a [Delegate Communications Thread](https://gov.optimism.io/c/governance/41)
 
 - Join the community calls, which occur every other Tuesday at 1pm ET. 
   [The governance calendar](https://calendar.google.com/calendar/u/0/r?cid=Y180aHVpNzBpdG0wODllN3Q4cTUwaGVoMWtub0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t) shows which Tuesdays, and how to join the call.

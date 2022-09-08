@@ -1,8 +1,53 @@
 ---
-title: How to Delegate
+title: How to Delegate Your Tokens
 lang: en-US
 ---
 
+
+### Why Delegate?
+
+Participating in governance of the Optimism Token House will require a serious time commitment. 
+For this reason, we will strongly encourage people to delegate the voting power of their OP tokens to a community member who has explicitly volunteered to play an active role in Token House governance. 
+These volunteers are called delegates.
+
+### How do I delegate my votes to a representative?
+
+1. [Choose a delegate](https://app.optimism.io/delegates). 
+   
+   Take the time to read through delegate statements of interest, choosing your delegate is an important decision! 
+   A healthy governance system is good for Optimism and for all OP holders. Choosing a good delegate is in each OP token holder's best interest.
+
+   This delegate will vote on your behalf. 
+   You will not hold any voting power or execute your own votes but you will retain 100% ownership of your tokens, and can use them however you want.
+
+   View top delegates by voting weight on [Dune](https://dune.com/optimismpbc/optimism-op-token-house).
+
+1. [Go to the delegates app](https://app.optimism.io/delegates) to see that you’ve delegated your tokens as intended.
+
+   Please note that delegation only becomes effective the next time [Snapshot](https://snapshot.org/#/opcollective.eth) measures how many votes each delegate has. 
+   This happens at the start of every voting cycle, which is every three weeks.
+
+1. Monitor how your delegate [has been voting on Snapshot](https://help.optimism.io/hc/en-us/articles/6389519530779-How-do-I-see-how-my-delegate-voted-).
+   Your delegate should also write up the reasoning behind their votes in a [Delegate Communications Thread](https://gov.optimism.io/c/governance/41).
+
+Delegation is always in your control. You can return to the [delegation page](https://app.optimism.io/delegates) at any time to change your delegate selection, or to re-delegate voting power to yourself (more below).
+
+### How do I delegate to myself?
+
+Would you rather vote yourself? 
+No problem, but you’ll have to delegate to yourself first! 
+If you try to vote with your tokens but have not delegated to yourself, you will not be able to vote. 
+
+1. [Delegate to yourself](https://help.optimism.io/hc/en-us/articles/6296720540955-How-do-I-delegate-to-myself-).
+
+1. [Go to the delegates app](https://app.optimism.io/delegates) to see that you’ve delegated your tokens to your own address.
+
+   Please note that delegation only becomes effective the next time [Snapshot](https://snapshot.org/#/opcollective.eth) measures how many votes each delegate has. 
+   This happens at the start of every voting cycle, which is every three weeks.
+
+1. Once you’ve been added as a delegate in the next voting cycle, you can start [voting](https://snapshot.org/#/opcollective.eth)!
+
+<!--
 
 ##  Step 1: Claim or purchase OP tokens
 
@@ -42,3 +87,5 @@ Make sure you understand and follow the Forum's [code of conduct](https://gov.op
 Go to [Snapshot](https://snapshot.org/#/opcollective.eth), connect your wallet, and vote.
 There is no minimum OP holding voting requirement, but you will need to have the OP tokens you wish to delegate or vote with in your wallet when the voting snapshot is taken. 
 Tokens that are staked or LP’d when the snapshot is taken do not carry voting power.
+
+-->
