@@ -1,10 +1,10 @@
 ---
-title: Networks and Public RPC Endpoints
+title: Optimism APIs
 lang: en-US
 ---
 
 ::: tip Developer Tip
-We encourage you to use a private RPC endpoint to not run into rate limits, including in production systems. We recommend [Alchemy] (https://www.alchemy.com/layer2/optimism/?a=818c11a8da).
+We recommend using [Alchemy](https://www.alchemy.com/layer2/optimism/?a=818c11a8da) for its scalablity, reliability, and data accuracy. 
 :::
 
 
@@ -17,7 +17,7 @@ We encourage you to use a private RPC endpoint to not run into rate limits, incl
 | Description | **`Mainnet`** |
 | Chain ID | **`10`** |
 | Explorer | **[https://optimistic.etherscan.io](https://optimistic.etherscan.io)** |
-| HTTP Endpoint<sup>1</sup> | **`https://mainnet.optimism.io`** _Not for production systems._   See the list of available RPC endpoints below. We recommend [Alchemy](https://docs.alchemy.com/reference/optimism-api-quickstart/?a=818c11a8da) |
+| HTTP Endpoint<sup>1</sup> | **`https://mainnet.optimism.io`** _Not for production systems._  We recommend [Alchemy](https://docs.alchemy.com/reference/optimism-api-quickstart/?a=818c11a8da) |
 | WebSocket Endpoint<sup>2</sup> | **`wss://ws-mainnet.optimism.io`** 
 | L1 Contract Addresses | [link](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/deployments/mainnet#layer-1-contracts) |
 | L2 Contract Addresses | [link](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/deployments/mainnet#layer-2-contracts) |
@@ -27,23 +27,18 @@ We encourage you to use a private RPC endpoint to not run into rate limits, incl
 Such RPCs are either not supported, or will return nonsensical values.
 
 (2) The WebSocket endpoint is only supported for the two operations that cannot be provided on an HTTP endpoint: `eth_subscribe` and `eth_unsubscribe`. 
-If you need a general purpose WebSocket endpoint, get one from a service provider.
+If you need a general purpose WebSocket endpoint, get one from a service provider._
 
+### API Options:
 
+1. Get free access to Optimism through [Alchemy](https://www.alchemy.com/layer2/optimism/?a=818c11a8da)
 
-
-### RPC endpoints
-
-(A) Private RPC endpoints - 
-**for production systems, we encourage you set up a private RPC endpoint, particularly Alchemy.** Sign up [here](https://www.alchemy.com/layer2/optimism/?a=818c11a8da).
-
-(B) Public RPC endpoints -
-we support and maintain the following public RPC endpoints: 
-
-- HTTP endpoint: [https://mainnet.optimism.io](https://mainnet.optimism.io)
+2. For small scale tests, you can use our public API:
+- HTTP endpoint: [https://mainnet.optimism.io](https://mainnet.optimism.io) (note, this is for testing. For production, use Alchemy) 
 - WebSocket endpoint (limited usage, see footnote below the table): [wss://ws-mainnet.optimism.io](wss://ws-mainnet.optimism.io)
 
-Note, we _highly_ encourage you to set up a private RPC endpoint like Alchemy instead. Using a public endpoint in production systems will often run into rate limits because of shared throughput.
+
+You can run a large application for free using [Alchemy](https://www.alchemy.com/layer2/optimism/?a=818c11a8da). We’ve done extensive diligence and Alchemy is our recommendation due to reliability, scalability, and data correctness. They're the default API provider and developer platform for top projects like OpenSea and Facebook. 
 
 ## Optimism Goerli
 
@@ -65,20 +60,17 @@ This is our new test network.
 | L2 Contract Addresses | [link](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/deployments/goerli#layer-2-contracts) |
 | Chainlist link | [https://chainlist.org/chain/420](https://chainlist.org/chain/420)
 
-### RPC endpoints
+### API Options
 
-We have [several providers](./providers.md) that support Optimism Goerli. Out of them, we recommend using [Alchemy](https://www.alchemy.com/layer2/optimism/?a=818c11a8da).
 
-(A) Private RPC endpoints - 
-**for production systems even in testnet, we encourage you set up a private RPC endpoint, particularly Alchemy.** Sign up [here](https://www.alchemy.com/layer2/optimism/?a=818c11a8da).
+1. Get free access to Optimism through [Alchemy](https://www.alchemy.com/layer2/optimism/?a=818c11a8da)
 
-(B) Public RPC endpoints -
-we support and maintain the following public RPC endpoints: 
-
-- HTTP endpoint: [https://goerli.optimism.io](https://goerli.optimism.io)
+2. For small scale tests, you can use our public API:
+- HTTP endpoint: [https://goerli.optimism.io](https://goerli.optimism.io) (note, this is for testing. For production, use Alchemy) 
 - WebSocket endpoint (limited usage, see footnote below the table): [wss://ws-goerli.optimism.io](wss://ws-goerli.optimism.io)
 
-Note, just like we mentioned for mainnet, we _highly_ encourage you to set up a private RPC endpoint like Alchemy instead. Using a public endpoint in production systems will often run into rate limits because of shared throughput.
+You can run a large application for free using [Alchemy](https://www.alchemy.com/layer2/optimism/?a=818c11a8da). We’ve done extensive diligence and Alchemy is our recommendation due to reliability, scalability, and data correctness. They're the default API provider and developer platform for top projects like OpenSea and Facebook. 
+
 
 
 ### Test ETH
@@ -102,8 +94,8 @@ Optimism Kovan end of life is October 5th, 2022. Be sure to [migrate from Kovan 
 | Description | **`Testnet (public)`** |
 | Chain ID | **`69`** |
 | Explorer | **[https://kovan-optimistic.etherscan.io](https://kovan-optimistic.etherscan.io)** |
-| HTTP Endpoint | **`https://kovan.optimism.io`** If you are going to be sending a lot of requests especially in a production system, please set up your own private RPC endpoint with a provider like Alchemy |
-| WebSocket Endpoint<sup>1</sup> | **`wss://ws-kovan.optimism.io`** If you are going to be sending a lot of requests especially in a production system, please set up your own private RPC endpoint |
+| HTTP Endpoint | **`https://kovan.optimism.io`** If you are going to be sending a lot of requests, please set up a free account with Alchemy |
+| WebSocket Endpoint<sup>1</sup> | **`wss://ws-kovan.optimism.io`** If you are going to be sending a lot of requests, please set up a free account with Alchemy |
 | L1 Contract Addresses | [link](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/deployments/kovan#layer-1-contracts) |
 | L2 Contract Addresses | [link](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/deployments/kovan#layer-2-contracts) |
 | chainid.link | [https://chainid.link/?network=optimism-kovan](https://chainid.link/?network=optimism-kovan)
