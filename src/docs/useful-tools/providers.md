@@ -1,5 +1,5 @@
 ---
-title: Node Providers
+title: API Providers
 lang: en-US
 ---
 
@@ -21,7 +21,7 @@ Alchemy's free private RPC endpoint provides a complimentary suite of proprietar
 
 _(2) Alchemy's hosted Optimism nodes_
 
-Alchemy hosts our public API because of its data accuracy, reliability, and scalability. It counts companies like OpenSea, dYdX, and Facebook among its customers. Its API takes only a few lines of codes to get up and running.
+Alchemy hosts our public API because of its data accuracy, reliability, and scalability. It counts companies like OpenSea, dYdX, and Facebook among its customers. Its API takes only a few lines of codes to get up and running. Alchemy isn't just a node provider, but also a developer platform and API provider.
 
 
 ### Alchemy's Supported Networks
@@ -30,6 +30,8 @@ Alchemy hosts our public API because of its data accuracy, reliability, and scal
 - Optimism Goerli
 
 [Sign up for a free Alchemy account here](https://www.alchemy.com/layer2/optimism/?a=818c11a8da).
+
+## Node Provider List
 
 ## Blast
 
