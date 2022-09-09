@@ -31,7 +31,6 @@ Alchemy hosts our public API because of its data accuracy, reliability, and scal
 
 [Sign up for a free Alchemy account here](https://www.alchemy.com/layer2/optimism/?a=818c11a8da).
 
-## Node Provider List
 
 ## Blast
 
