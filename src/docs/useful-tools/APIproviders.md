@@ -6,27 +6,22 @@ lang: en-US
 ## Alchemy
 
 ::: tip
-**Alchemy is our preferred node provider, and is used to power our public endpoint.** In production systems, we _strongly_ recommend using the Alchemy private endpoint for faster throughput (it's free) - [sign up here](https://www.alchemy.com/layer2/optimism/?a=818c11a8da).
-:::
+**We strongly recommend all developers use [Alchemy](https://www.alchemy.com/layer2/optimism/?a=818c11a8da). We’ve done extensive diligence and Alchemy powers our public API. ** 
 
-### Alchemy's Description and Pricing
+We recommend Alchemy due to (a) the reliability, scalability and data correctness of its developer platform and (b) the comprehensive set of tooling and APIs they provide. You can run large applications on their massive free tier. 
 
-[Alchemy](https://docs.alchemy.com/reference/optimism-api-quickstart/?a=818c11a8da) is a comprehensive Optimism development and infrastructure platform. 
-Its robust, free tier offers access to (1) enhanced features like SDKs and enhanced APIs, (2) hosted Optimism nodes, and (3) millions of CUs per month.
+### Alchemy's Description & Pricing
+
+[Alchemy](https://docs.alchemy.com/reference/optimism-api-quickstart/?a=818c11a8da) is our recommended Optimism API provider and developer platform. Its robust, free tier offers access to (1) enhanced features like SDKs and enhanced APIs and (2) hosted Optimism nodes.
 
 _(1) Alchemy's enhanced features_
 
-Alchemy's free private RPC endpoint provides a complimentary suite of proprietary tools. These include a custom-built Ethers.js SDK (which is a superset of the Ethers.js Provider library) and enhanced APIs such as NFT, Transfers, and Notify APIs.
+Alchemy's free private RPC endpoint provides a complimentary suite of proprietary tools. These include a custom-built [Ethers.js SDK](https://www.alchemy.com/sdk/?a=818c11a8da) (which are supersets of the Ethers.js Provider and Wallet libraries) and [enhanced APIs](https://www.alchemy.com/enhanced-apis/?a=818c11a8da) such as NFT, Transfers, and Notify APIs.
 
 
 _(2) Alchemy's hosted Optimism nodes_
 
-Alchemy hosts our public endpoint because of its data accuracy, reliability, and scalability. It counts companies like OpenSea and dYdX among its customers. Its private endpoint takes only a few lines of codes to get up and running.
- 
-
-_(3) Alchemy's CU and rate limits_
-
-Its large, free tier has a throughput of ~20k CUs / min per dapp, which is much higher than that of our public endpoint. This free tier also allows for 300M CUs per month, which translates to about 12 million requests a month. 
+Alchemy hosts our public API because of its data accuracy, reliability, and scalability. It counts companies like OpenSea, dYdX, and Facebook among its customers. Its API takes only a few lines of codes to get up and running.
 
 
 ### Alchemy's Supported Networks
