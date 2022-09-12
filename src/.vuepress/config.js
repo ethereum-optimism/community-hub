@@ -209,7 +209,19 @@ module.exports = {
         title: "Bedrock (future version)",
           children: [
             '/docs/developers/bedrock.md',
-            '/docs/developers/bedrock-temp/infra.md',            
+            '/docs/developers/bedrock-temp/infra.md', 
+            [
+              'https://oplabs.notion.site/Usage-Guide-3667cfd2b180475894201f4a69089419',
+              'Bedrock alpha - user guide',
+            ],
+            [
+              'https://oplabs.notion.site/Contract-Addresses-8669ef7d6f124accb0220a5e0f24be0d',
+              'Bedrock alpha - contract addresses'
+            ],
+            [
+              'https://oplabs.notion.site/Running-a-Node-eda545c730e64b44b762ab12e93296aa',
+              'Bedrock alpha - running a node'
+            ]        
           ]
         }
       ],
