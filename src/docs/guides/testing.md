@@ -14,6 +14,7 @@ This page shows some additional testing utilities that you might find useful.
 We have several ERC-20 testing token contracts.
 This token is an implementation of ERC-20, with the addition of `faucet`, a function that mints for the caller 1000 tokens to facilitate testing.
 
+Additionally, all Optimism networks have [WETH at address `0x4200000000000000000000000000000000000006`](https://help.optimism.io/hc/en-us/articles/4417948883611-What-is-ETH-WETH-How-do-they-interact-).
 
 ### Goerli ERC-20 testing contracts
 
@@ -22,7 +23,6 @@ This token is an implementation of ERC-20, with the addition of `faucet`, a func
 | [`0x32307adfFE088e383AFAa721b06436aDaBA47DBE`](https://blockscout.com/optimism/goerli/address/0x32307adfFE088e383AFAa721b06436aDaBA47DBE) | OUT-1 | 18 |
 | [`0xb378ed8647d67b5db6fd41817fd7a0949627d87a`](https://blockscout.com/optimism/goerli/address/0xb378eD8647D67b5dB6fD41817fd7a0949627D87a/) | OUT-2 | 18 |
 | [`0x4e6597062c7dc988fbcfe77293d833bad770c19b`](https://blockscout.com/optimism/goerli/address/0x4E6597062c7DC988FBcFE77293D833bAD770C19b) | OUT-3 | 18 |
-
 
 
 ### Kovan ERC-20 testing contracts
@@ -40,7 +40,7 @@ This token is an implementation of ERC-20, with the addition of `faucet`, a func
 
 ## The bridge
 
-The `OUTb` token is supported by the bridge. 
+The `OUTb` token is supported by the bridge on Goerli.
 
 1. Call `faucet` on [Goerli `0x32B3b2281717dA83463414af4E8CfB1970E56287`](https://goerli.etherscan.io/address/0x32b3b2281717da83463414af4e8cfb1970e56287#readContract) to obtain tokens.
 
