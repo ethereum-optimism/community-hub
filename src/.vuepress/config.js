@@ -175,6 +175,10 @@ module.exports = {
           collapsable: true,
         },                        
         '/docs/governance/citizens-house.md',        
+        [
+          'https://calendar.google.com/calendar/u/0?cid=Y19mbm10Z3VoNm5vbzZxZ2JuaTJncGVyaWQ0a0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t',
+          'Governance Calendar'
+        ],        
       ],
       '/docs/guides/': [
         '/docs/developers/build/basic-contract.md',
