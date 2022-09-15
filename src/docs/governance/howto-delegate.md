@@ -20,7 +20,7 @@ These volunteers are called delegates.
    This delegate will vote on your behalf. 
    You will not hold any voting power or execute your own votes but you will retain 100% ownership of your tokens, and can use them however you want.
 
-   View top delegates by voting weight on [Dune](https://dune.com/optimismpbc/optimism-op-token-house).
+   View top delegates by voting weight on [Dune](https://dune.com/optimismfnd/optimism-op-token-house).
 
 1. [Go to the delegates app](https://app.optimism.io/delegates) to see that you’ve delegated your tokens as intended.
 
