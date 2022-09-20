@@ -5,6 +5,12 @@ lang: en-US
 
 ## Grant Proposals
 
+::: tip        
+             
+This information is here for your convenience. 
+The source of truth for all governance related processes is the [OPerating Manual](https://github.com/ethereum-optimism/OPerating-manual/blob/main/manual.md#proposal-process--components-of-a-valid-proposal).
+
+:::
 
 Projects can currently submit a Phase 1 proposal to request any amount of OP tokens from the Governance Fund. 
 The purpose of the Governance Fund is to incentivize sustainable growth of projects and communities in the Optimism ecosystem. 

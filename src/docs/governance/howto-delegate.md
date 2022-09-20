@@ -44,8 +44,11 @@ If you try to vote with your tokens but have not delegated to yourself, you will
 
 1. [Go to the delegates app](https://app.optimism.io/delegates) to see that you’ve delegated your tokens to your own address.
 
-   Please note that delegation only becomes effective the next time [Snapshot](https://snapshot.org/#/opcollective.eth) measures how many votes each delegate has. 
-   This happens at the start of every voting cycle, which is every three weeks.
+   Please note that delegation only becomes effective the next time [Snapshot](https://snapshot.org/#/opcollective.eth) measures how many votes each delegate has.
+   This happens at the start of the voting phase in a cycle, which is the last week of each cycle. 
+   A new cycle starts every 3 weeks.
+
+   If you want to become a delegate that others delegate to you need to [follow this process](delegate.md#ready-to-be-a-delegate).
 
 1. Once you’ve been added as a delegate in the next voting cycle, you can start [voting](https://snapshot.org/#/opcollective.eth)!
 

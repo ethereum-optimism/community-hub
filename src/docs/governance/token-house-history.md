@@ -49,11 +49,15 @@ Followed by:
 -->
 * Voting cycle #6 (Sep 8th - Sep 28th)
 
-### Voting Cycle #5
+#### Voting Cycle #5
 
 Changes made during the Reflection Period are voted on during two-week Special Voting Cycles.
 
 ### Reflection Period #1 
+
+The reflection period was a break between season 1 and season 2 where the Optimism foundation, with the help of delegates and community members, updated and improved the governance process.
+
+
 
 Document changes:
 
