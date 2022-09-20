@@ -31,11 +31,11 @@ Followed by:
 <!--
 ### Season #3: Dec 15th, 2022 - Feb 15th, 2023
 
-* Voting system #11 (Jan 26th - Feb 15th)
-* Voting system #10 (Jan 5th - Jan 25th)
-* Voting system #9 (Dec 15th, 2022 - Jan 4th, 2023)
+* Voting system #12 (Jan 26th - Feb 15th)
+* Voting system #11 (Jan 5th - Jan 25th)
+* Voting system #10 (Dec 15th, 2022 - Jan 4th, 2023)
 
-### Special Voting Cycle #2: Dec 1st - Dec 14th, 2022
+### Voting Cycle #9: Dec 1st - Dec 14th, 2022
 
 ### Reflection Period #2: Nov 10th - Nov 30th, 2022
 
@@ -56,8 +56,6 @@ Changes made during the Reflection Period are voted on during two-week Special V
 ### Reflection Period #1 
 
 The reflection period was a break between season 1 and season 2 where the Optimism foundation, with the help of delegates and community members, updated and improved the governance process.
-
-
 
 Document changes:
 
