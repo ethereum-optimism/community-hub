@@ -58,7 +58,7 @@ The funds for RPGF will come from several sources, including:
 - Donations from other sources.
   If you want to contribute to retroPGF, you can send ETH, ERC-20 tokens, or NFTs to the ENS address **retroPGF.eth**. 
   It is supported on [Optimism](https://optimistic.etherscan.io/address/0x15dda60616ffca20371ed1659dbb78e888f65556) as well as [Ethereum mainnet](https://etherscan.io/address/0x15dda60616ffca20371ed1659dbb78e888f65556). 
-  Anything donated will be allocated to in a RetroPFG round. 
+  Anything donated will be allocated to a RetroPFG round. 
   <!-- These funds do not go to OP Labs or the Optimism Foundation.  
   The Foundation will help distribute funds according to the Citizens’ House governance process. -->
 
