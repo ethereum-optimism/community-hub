@@ -55,7 +55,7 @@ The funds for RPGF will come from several sources:
 
 - [20% of the initial OP supply is dedicated to RPGF](allocations.md#retroactive-public-goods-funding)
 - Redeployment of some of the sequencer revenue generated on Optimism
-- The creation of new OP tokens through [inflation](allocations.md#token-distribution-details).
+- The creation of new OP tokens through [inflation](allocations.md#token-distribution-details)
 - Donations from other sources.
   If you want to contribute to retroPGF, you can send ETH, ERC-20 tokens, or NFTs to the ENS address **retroPGF.eth**. 
   It is supported on [Optimism](https://optimistic.etherscan.io/address/0x15dda60616ffca20371ed1659dbb78e888f65556) as well as [Ethereum mainnet](https://etherscan.io/address/0x15dda60616ffca20371ed1659dbb78e888f65556). 
