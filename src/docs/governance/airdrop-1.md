@@ -3,17 +3,11 @@ title: Airdrop 1
 lang: en-US
 ---
 
-::: tip Notice: OP Airdrop #1 is now available to claim
-[Click here to claim](https://app.optimism.io/airdrop/check)
-
-*Airdrop #1 does not require payment.*
-*Stay safe!*
-:::
 
 ## Background
 
 The Optimism Foundation’s Airdrop #1 rewards those who have been instrumental as early adopters and active users of projects in the Optimism ecosystem. 
-To celebrate our Ethereum roots, we also want to welcome active L1 participants who can help scale Ethereum’s innovations, culture, and values to Layer 2. 
+To celebrate our Ethereum roots, The Optimism Foundation also want to welcome active L1 participants who can help scale Ethereum’s innovations, culture, and values to Layer 2. 
 In total, **248,699** addresses are eligible to claim OP in this *initial* airdrop.
 
 Our airdrop has six sets of criteria. 
@@ -46,9 +40,13 @@ The allocations and criteria break down as follows:
 The amount of OP tokens that an address receives is cumulative, meaning that the sum of OP tokens allocated for each matching criteria set is the amount that an address is eligible to claim (overlap bonuses are not cumulative).
 
 
+### Airdrop analytics
+
+See the [Dune analytics dashboard](https://dune.com/springzhang/optimism-airdrop-1-all-in-one).
+
 ### Optimism Early Adopters
 
-We sought to identify Optimism users who had actively used applications on Optimism as a part of their crypto experience. 
+The Foundation sought to identify Optimism users who had actively used applications on Optimism as a part of their crypto experience. 
 
 #### Optimism Users
 
@@ -70,13 +68,13 @@ These rules aim to target behaviors that match Ethereum and Optimism’s values 
 
 #### DAO Voters
 
-We believe that active and engaged governance is crucial to scaling decentralized systems. 
+The Foudation believes that active and engaged governance is crucial to scaling decentralized systems. 
 Addresses who match this criterion have actively chosen to actively contribute by participating in governance.
 
 *Criterion: Address has either voted on or authored at least one proposal on-chain, or at least two on Snapshot (off-chain).*
 - *We filtered to “active DAOs” who have had at least 5 proposals with at least 5 votes.*
 - *On-Chain governance contracts included: Governor Alpha and Bravo, Aave, Curve, Maker, Aragon, DAOHaus, DAOStack, and forks.*
-- *Since Snapshot votes were off-chain, we recognized that these were more susceptible to spam/farming behavior, often driven by voters with nominal voting power. 
+- *Since Snapshot votes were off-chain, the Foundation recognized that these were more susceptible to spam/farming behavior, often driven by voters with nominal voting power. 
   To mitigate this, we filtered Snapshot votes to voters who made up the top 99.9% of total voting power in each DAO (i.e. >= 0.1% of voting power was made up by the sum of all smaller voters).*
 
 #### Multi-Sig Signers
@@ -90,7 +88,7 @@ They are often the present (and future) DAO leaders and builders.
 #### Gitcoin Donors (on L1)
 
 Gitcoin donors have chosen to behave in positive-sum ways by funding public goods. 
-These addresses may also align with Optimism’s goal to build sustainable funding source for public goods through retroactive funding ([RetroPGF](https://medium.com/ethereum-optimism/retropgf-experiment-1-1-million-dollars-for-public-goods-f7e455cbdca)).
+These addresses may also align with Optimism’s goal to build sustainable funding source for public goods through [retroactive funding (RetroPGF](https://medium.com/ethereum-optimism/retropgf-experiment-1-1-million-dollars-for-public-goods-f7e455cbdca)).
 
 *Criterion: Address has made an on-chain donation through Gitcoin on L1. This includes any donation, regardless of if it was during a matching round.*
 - *For the time period between rounds 1 - 5, we included addresses who interacted with Gitcoin contracts, sent legacy `ExecuteSubscription` calls, or appeared in [Gitcoin’s donor API](https://docs.gitcoin.co/mk_rest_api/).*
@@ -152,7 +150,7 @@ Don’t worry!
 This is Airdrop #1, and 14% of the total initial token supply is reserved for future airdrops.
 The best way to earn OP is to get involved in the Optimism Collective:
 
-- If you want to build on Optimism, visit our [developer documentation](https://community.optimism.io/) or jump in to [Discord](https://discord-gateway.optimism.io).
+- If you want to build on Optimism, visit our [developer documentation](../developers/README.md) or jump in to [Discord](https://discord-gateway.optimism.io).
 - If your talents are non-technical, jump in to [Discord](https://discord-gateway.optimism.io) to find other builders, apply to be a Support NERD, or just make some memes 🍉
 - [Bridge your assets to Optimism here](https://app.optimism.io/bridge) and explore projects on OP
 

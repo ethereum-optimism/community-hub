@@ -12,7 +12,7 @@ module.exports = {
     ['link', { rel: "icon", type: "image/png", sizes: "32x32", href: "/assets/logos/favicon.png"}],
   ],
 
-  cache: false,
+//  cache: false,
 
   theme: path.resolve(__dirname, './theme'),
   themeConfig: {
@@ -116,21 +116,73 @@ module.exports = {
     sidebar: {    
       '/docs/governance/': [
         [
+          '/docs/governance/',
+          'What is the Optimism Collective?'
+        ],
+        [
           'https://www.optimism.io/vision',
           'The Optimistic Vision'
         ],
-        '/docs/governance/economics.md',        
-        '/docs/governance/allocations.md',
+        {
+          title: "OP Holders",
+          children: [
+            '/docs/governance/howto-delegate.md',
+            '/docs/governance/economics.md',
+            '/docs/governance/allocations.md',             
+            '/docs/governance/airdrop-1.md'    
+          ],
+          collapsable: true,
+        },                
+        {
+          title: "Delegates",
+          children: [          
+                '/docs/governance/delegate.md',
+                '/docs/governance/existing-delegate.md',                
+                '/docs/governance/delegate-info.md',
+          ],
+          collapsable: true,
+        },
+        {
+          title: "Proposal Submitters",
+          children: [
+            '/docs/governance/proposals.md',
+            [
+              'https://gov.optimism.io/tags/c/proposals/38/passed',
+              'Passed Proposals'
+            ]
+          ],
+          collapsable: true,
+        },
+        {
+          title: "Token House Governance",
+          children: [
+            '/docs/governance/token-house.md',
+            '/docs/governance/token-house-history.md',
+            '/docs/governance/gov-fund.md', 
+            [
+              'https://docs.google.com/spreadsheets/d/1eaHOlWB34ij1KGsXdaNyTQg4tt1Pu2JurJsElBb6a8k/edit#gid=0',
+              "Governance Fund Tracker"
+            ],            
+            [
+              'https://gov.optimism.io/t/working-constitution-of-the-optimism-collective/55',
+              "Working Constitution"
+            ],
+            [
+              'https://github.com/ethereum-optimism/OPerating-manual/blob/main/manual.md',
+              'Operating Manual'
+            ]
+          ],
+          collapsable: true,
+        },                        
+        '/docs/governance/citizens-house.md',        
         [
-          'https://github.com/ethereum-optimism/OPerating-manual/blob/main/manual.md',
-          'OPerating Manual for the Optimism Collective'
+          'https://calendar.google.com/calendar/u/0?cid=Y19mbm10Z3VoNm5vbzZxZ2JuaTJncGVyaWQ0a0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t',
+          'Governance Calendar'
         ],        
-        '/docs/governance/airdrop-1.md',
-        '/docs/governance/gov-fund.md'
       ],
       '/docs/guides/': [
         '/docs/developers/build/basic-contract.md',
-        '/docs/developers/tutorials.md',        
+        '/docs/developers/tutorials.md',       
         '/docs/guides/wallet-dev.md',
         '/docs/guides/cex-dev.md',
         '/docs/guides/token-dev.md',

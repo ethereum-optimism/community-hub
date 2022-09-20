@@ -3,12 +3,6 @@ title: OP Allocations
 lang: en-US
 ---
 
-::: tip Notice: OP Airdrop #1 is now available to claim
-[Click here to claim](https://app.optimism.io/airdrop/check)
-
-*Airdrop #1 does not require payment.*
-*Stay safe!*
-:::
 
 ## Allocations at a glance
 
@@ -40,7 +34,7 @@ This airdrop is targeted towards people who:
 - Have been priced out of Ethereum.
 
 The addresses and amounts were chosen to reward Optimism users, as well as attract core Ethereum users to the OP family. 
-We cast a wide net to distribute OP to more than 250k addresses. See the [Airdrop #1 documentation](airdrop-1.md) for a detailed breakdown of eligibility criteria.  
+Airdrop #1 cast a wide net to distribute OP to more than 250k addresses. See the [Airdrop #1 documentation](airdrop-1.md) for a detailed breakdown of eligibility criteria.  
 
 ### Future airdrops (#2, 3, …)
 
@@ -64,7 +58,7 @@ The allocation dedicated to the Ecosystem Fund is to be further split into the f
 4. Unallocated **(8.8%)**
 
 The Ecosystem Fund is intended to be a kick-starting mechanism that will be phased out entirely once the OP in the fund has been depleted. 
-We expect the function served by the Ecosystem Fund (proactive funding) to eventually be replaced by private third-party investors who can expect to be paid out by the [Retroactive Public Goods Funding](https://medium.com/ethereum-optimism/retroactive-public-goods-funding-33c9b7d00f0c) mechanism.
+The Optimism Foundation expects the function served by the Ecosystem Fund (proactive funding) to eventually be replaced by private third-party investors who can expect to be paid out by the [Retroactive Public Goods Funding](https://medium.com/ethereum-optimism/retroactive-public-goods-funding-33c9b7d00f0c) mechanism.
 
 ![](../../assets/docs/governance/allocations/ecosystem_fund_process.jpeg)
 
@@ -95,7 +89,7 @@ An allocation of **8.8%** of the OP token supply will be held in reserve for fut
 
 ***Allocation: 20%***
 
-[Retroactive Public Goods Funding (RetroPGF)](https://medium.com/ethereum-optimism/retroactive-public-goods-funding-33c9b7d00f0c) will initially be distributed by the [Citizens' House](README.md). 
+[Retroactive Public Goods Funding (RetroPGF)](https://medium.com/ethereum-optimism/retroactive-public-goods-funding-33c9b7d00f0c) will initially be distributed by the [Citizens' House](citizens-house.md). 
 RetroPGF rounds are expected to occur on a quarterly basis with the objective of ensuring that all OPCOs are rewarded adequately, appropriately, and reliably based on their impact to the Collective—key to our [vision](https://optimism.io/vision).
 
 RetroPGF will be funded by several revenue sources:
@@ -140,7 +134,7 @@ The Foundation expects to seek the following annual allocations:
 
 If the Foundation’s authorized OP expenditures ever reaches below 10% of the initial token supply, it is expected to request an additional allocation.
 
-Together, we expect the total supply of unlocked OP tokens to approximate the graph below.
+Taken together, the Foundation expects the total supply of unlocked OP tokens to approximate the graph below.
 
 Note this graph is for illustration only, and actual unlocked supply will depend on governance and the rate that OP is allocated across user airdrops, the Ecosystem Fund, and RetroPGF.
 
