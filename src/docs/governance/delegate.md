@@ -4,8 +4,8 @@ lang: en-US
 ---
     
 
-Participating in Token House governance requires a serious time commitment and, for this reason, The Optimism Foundation strongly encourages people to delegate their OP to delegates. 
-Delegates are community members who have explicitly volunteered to play an active role in Token House governance. 
+Participating in Token House governance can require a serious time commitment. 
+For this reason, people are able to delegate their OP to community members who have explicitly volunteered to play an active role in Token House governance. 
 
 Being a delegate is an important job that comes with a lot of responsibility.
 Before deciding to become a delegate you should be familiar with:

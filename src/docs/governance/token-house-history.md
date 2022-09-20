@@ -14,7 +14,7 @@ Voting Cycles begin on Thursday at 19:00p GMT (12p PST) and end on Wednesday at 
 
 During Reflection Periods, the Optimism Foundation will publish a proposed changelog to the Operating Manual and a set of governance proposals aimed at addressing the feedback received in the previous season. 
 There will be no active votes during Reflection Periods, so that delegates and the broader community have time to provide critical feedback to improve the next season.
-Reflection periods are expected to be followed byt wo-week Special Voting Cycles during which we 
+Reflection periods are expected to be followed by two-week Special Voting Cycles during which we vote on proposals to modify the collective's structure.
 
 You can see up to date information about the seasons and voting cycles in [the governance calendar](https://calendar.google.com/calendar/u/0/r?cid=Y180aHVpNzBpdG0wODllN3Q4cTUwaGVoMWtub0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t).
 

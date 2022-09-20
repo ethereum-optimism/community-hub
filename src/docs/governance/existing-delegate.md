@@ -1,5 +1,5 @@
 ---
-title: Existing Delegtes
+title: Existing Delegates
 lang: en-US
 ---
     

@@ -6,9 +6,11 @@ lang: en-US
 
 ### Why Delegate?
 
-Participating in governance of the Optimism Token House will require a serious time commitment. 
-For this reason, we will strongly encourage people to delegate the voting power of their OP tokens to a community member who has explicitly volunteered to play an active role in Token House governance. 
+Participating in governance of the Optimism Token House can require a serious time commitment. 
+For this reason, people are able to delegate the voting power of their OP tokens to a community member who has explicitly volunteered to play an active role in Token House governance. 
 These volunteers are called delegates.
+
+If you do not wish to delegate your voting power to a representative, you will still need to delegate *to yourself* in order to vote. 
 
 ### How do I delegate my votes to a representative?
 
