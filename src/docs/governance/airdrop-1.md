@@ -159,7 +159,7 @@ As always: stay safe and stay Optimistic.
 ## References
 
 - **Application Transaction:** Any transaction, excluding token transfer and approval transactions. 
-- **Detailed Protocol Metrics:** [https://dune.com/optimismpbc/Optimism](https://dune.com/optimismpbc/Optimism)
+- **Detailed Protocol Metrics:** [https://dune.com/optimismfnd/Optimism](https://dune.com/optimismfnd/Optimism)
 - **OP Token Address:** [0x4200000000000000000000000000000000000042](https://optimistic.etherscan.io/address/0x4200000000000000000000000000000000000042)
 - **Optimism on Twitter:** [https://twitter.com/optimismFND](https://twitter.com/optimismFND)
 - **Join the Optimism Discord:** [https://discord-gateway.optimism.io/](https://discord-gateway.optimism.io/)
