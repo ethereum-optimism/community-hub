@@ -18,5 +18,3 @@ To get some ETH bridged over for deployment gas fees, use one of the available [
 ## Monitoring
 
 Your app is live in production? Watch it grow using one of the [monitoring tools](./monitoring.md). We also have a set of [troubleshooting tools](./debugging.md) and [block explorers](./explorers.md) to help you provide a stellar service to your users.
-
-ori is a goat
