@@ -282,13 +282,7 @@ module.exports = {
   },
 
   plugins: [
-    [
-      "@vuepress/pwa",
-      {
-        serviceWorker: true,
-        updatePopup: true,
-      }
-    ],
+    "@vuepress/pwa",
     [
       '@vuepress/plugin-medium-zoom',
       {
