@@ -22,6 +22,11 @@
       "src": "/assets/logos/icon-512x512.png",
       "sizes": "512x512",
       "type": "image/png"
+    },
+    {
+      "src": "/assets/logos/icon-1020x1020.png",
+      "sizes": "any",
+      "type": "image/png"
     }
   ],
   "start_url": "/index.html",
