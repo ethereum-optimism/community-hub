@@ -282,6 +282,13 @@ module.exports = {
 
   plugins: [
     [
+      "@vuepress/pwa",
+      {
+        serviceWorker: true,
+        updatePopup: true,
+      }
+    ],
+    [
       '@vuepress/plugin-medium-zoom',
       {
         // When an image is inside a link, it means we don't to expand it
