@@ -92,6 +92,17 @@ You can select addons, like "Archive Mode" or "Trace Mode" for an additional cos
 - Optimism Goerli
 
 
+## NOWNodes
+
+### Description and pricing
+
+[NOWNodes](https://nownodes.io/nodes/optimism) provide access to mainnet Optimism node. Shared and Dedicated nodes are Available. You can connect to the shared Optimism node for free for one month with 5 000 requests/per day or for €20 with 1 000 000 requests/per month.
+
+### Supported Networks
+
+- Optimism Ethereum
+
+
 
 ## Don't see your company here?
 
