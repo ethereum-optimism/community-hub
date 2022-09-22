@@ -9,7 +9,7 @@ You connect to Optimism the same way you do to Ethereum, by connecting to a JSON
 
 ### Endpoints
 
-[Click here for the Optimism endpoints](../useful-tools/networks.md). You can choose between our public endpoints, which are rate limited, and [endpoints from infrastructure providers](../useful-tools/networks.md#rpc-endpoints).
+[Click here for the Optimism endpoints](../useful-tools/networks.md). You can choose between our public endpoints, which are rate limited, and [endpoints from infrastructure providers](../useful-tools/networks.md#rpc-endpoints). Given rate throughput limits, we recommend using a private rpc provider like [Alchemy](https://www.alchemy.com/layer2/optimism/?a=818c11a8da) for both mainnet and testnet use cases. 
 
 ### ETH balance
 
