@@ -20,7 +20,7 @@ Once you have that Goerli, use [the Optimism Bridge](https://app.optimism.io/bri
 #### Paradigm MultiFaucet
 
 [Paradigm's MultiFaucet](https://faucet.paradigm.xyz/) is an easy way to get ETH on many different testnets at the same time.
-One of those networks is Goerli.
+One of those networks is Optimism Goerli.
 
 #### Goerli Faucet
 
