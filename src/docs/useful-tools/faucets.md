@@ -5,6 +5,8 @@ lang: en-US
 
 ## Testnet Faucets
 
+#### Optimism Faucet
+
 [Optimism Faucet](https://optimismfaucet.xyz/) is a simple faucet for Optimism Goerli that drips ETH and OP. 
 Authenticate with github, enter your wallet address and you'll automatically be sent 0.2 ETH and 100 OP (if available) on the Optimism Goerli testnet.
 
@@ -12,19 +14,22 @@ You need to be following at least five people or organizations on github to be c
 
 Note that you're also able to use it for Optimism Kovan for now.
 
-### Goerli Faucets
-
-These are faucets you can use to get test ETH on Goerli. 
-Once you have that Goerli, use [the Optimism Bridge](https://app.optimism.io/bridge) to get it on Optimism Goerli.
 
 #### Paradigm MultiFaucet
 
 [Paradigm's MultiFaucet](https://faucet.paradigm.xyz/) is an easy way to get ETH on many different testnets at the same time.
 One of those networks is Optimism Goerli.
 
+
+### Goerli Faucets
+
+These are faucets you can use to get test ETH on Goerli. 
+Once you have that Goerli, use [the Optimism Bridge](https://app.optimism.io/bridge) to get it on Optimism Goerli.
+
+
 #### Goerli Faucet
 
-You can also get Goerli ETH [here](https://goerlifaucet.com/).
+You can get Goerli ETH [here](https://goerlifaucet.com/).
 
 
 ### Kovan specific faucets
