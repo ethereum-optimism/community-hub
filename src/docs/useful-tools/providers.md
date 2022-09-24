@@ -1,9 +1,14 @@
 ---
-title: API Providers
+title: Node & API Providers
 lang: en-US
 ---
 
 ## Alchemy
+
+
+::: warning
+Some API calls, such as the those in the [personal namespace](https://geth.ethereum.org/docs/rpc/ns-personal) make no sense in a shared environment.
+Such RPCs are either totally unsupported, or will return nonsensical values.
 
 ::: tip
 **We strongly recommend all developers use [Alchemy](https://www.alchemy.com/layer2/optimism/?a=818c11a8da). We’ve done extensive diligence and Alchemy powers our public API. ** 
