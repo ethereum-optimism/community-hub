@@ -21,7 +21,7 @@ Such RPCs are either totally unsupported, or will return nonsensical values.
 | Description | **`Mainnet`** |
 | Chain ID | **`10`** |
 | Explorer | **[https://optimistic.etherscan.io](https://optimistic.etherscan.io)** |
-| HTTP Endpoint<sup>1</sup> | **`https://mainnet.optimism.io`** _Not for production systems._  We recommend [Alchemy](https://docs.alchemy.com/reference/optimism-api-quickstart/?a=818c11a8da) |
+| HTTP Endpoint<sup>1</sup> | We recommend [Alchemy](https://docs.alchemy.com/reference/optimism-api-quickstart/?a=818c11a8da) Optimism also provides this endpoint: **`https://mainnet.optimism.io`** _But it is not for production systems and is rate limited._   |
 | WebSocket Endpoint<sup>2</sup> | **`wss://ws-mainnet.optimism.io`** 
 | L1 Contract Addresses | [link](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/deployments/mainnet#layer-1-contracts) |
 | L2 Contract Addresses | [link](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/deployments/mainnet#layer-2-contracts) |
