@@ -1,5 +1,5 @@
 ---
-title: Optimism APIs
+title: Networks, Public RPC Endpoints, & APIs
 lang: en-US
 ---
 
