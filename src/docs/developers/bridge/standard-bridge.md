@@ -1,5 +1,5 @@
 ---
-title: Using the Standard Token Bridge
+title: Using the Standard Bridge
 lang: en-US
 ---
 
@@ -27,6 +27,12 @@ If you want to deposit using a smart contract wallet and you know what you're do
 
 ERC20 deposits into L2 can be triggered via the `depositERC20` and `depositERC20To` functions on the [`L1StandardBridge`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/L1/messaging/L1StandardBridge.sol).
 You **must** approve the Standard Token Bridge to use the amount of tokens that you want to deposit or the deposit will fail.
+
+<!--
+::: danger
+Blah blah blah
+:::
+-->
 
 ### Depositing ETH
 
