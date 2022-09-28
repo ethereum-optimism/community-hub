@@ -32,7 +32,8 @@ You **must** approve the Standard Token Bridge to use the amount of tokens that 
 ::: danger Use the standard bridge contract only with standard bridge tokens
 The standard bridge can only be used with tokens that have a properly configured ERC-20 version on Optimism.
 If you send any other type of token to the standard bridge programmatically, it gets stuck there and you lose that value.
-Note that if you use [the Optimism bridge UI](https://app.optimism.io/bridge), it automatically chooses the correct bridge contract, so this problem does not happen.
+
+Note that if you use the [Optimism bridge UI](https://app.optimism.io/bridge), or the [Optimism SDK](../../sdk/js-client.md) it automatically chooses the correct bridge contract, so this problem does not happen.
 
 There are two ways to check if a token can use the standard bridge:
 
@@ -70,7 +71,10 @@ There are two ways to check if a token can use the standard bridge:
    ```
 
 1. You can "ask" the L2 token contract by calling it. 
-   ERC-20 tokens that can use the standard bridge not only have a `l2Bridge` method, but that methoed returns `0x4200...0010`. 
+   ERC-20 tokens that can use the standard bridge not only if they:
+   - Have an `l2Bridge` method
+   - That method returns `0x4200...0010`. 
+
    For example, [this link](https://optimistic.etherscan.io/address/0xe0bb0d3de8c10976511e5030ca403dbf4c25165b#readContract) can be used to see that `0xBTC` uses the standard bridge.
 
    Note that you cannot query the L1 token contract the same way.
