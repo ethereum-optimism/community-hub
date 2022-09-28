@@ -97,26 +97,8 @@ module.exports = {
 
 ## Brownie
 
-We're [working on getting Optimism added to the built-in list of networks](https://github.com/eth-brownie/brownie/pull/1362) within Brownie.
-For now you can add networks to Brownie manually with the following commands.
+[Brownie](https://github.com/eth-brownie/brownie) is a Python-based development and testing framework for EVM smart contracts. Brownie supports Optimism out of the box! 
 
-Mainnet:
-
-```sh
-brownie networks add Optimism optimism-main host=https://mainnet.optimism.io chainid=10 explorer=https://api-optimistic.etherscan.io/api multicall2=0x2DC0E2aa608532Da689e89e237dF582B783E552C
-```
-
-Testnet:
-
-```sh
-brownie networks add Optimism optimism-test host=https://goerli.optimism.io chainid=420 multicall2=0x2DC0E2aa608532Da689e89e237dF582B783E552C
-```
-
-Local:
-
-```sh
-brownie networks add Optimism optimism-local host=https://mainnet.optimism.io chainid=420
-```
 
 ## Waffle
 
