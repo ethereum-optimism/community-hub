@@ -256,7 +256,7 @@ The transactions in a block are divided into either two or three transaction typ
   This transaction sets the parameters of [the `L1Block` contract](#l1block).
   One of the attributes is the sequential number of the block within the epoch.
 
-1. In the first block of an epoch (the first L2 block produced after an L1 block) there can be [user deposit transactions](https://github.com/ethereum-optimism/optimism/blob/develop/specs/deposits).
+1. In the first block of an epoch (the first L2 block produced after an L1 block) there can be [user deposit transactions](https://github.com/ethereum-optimism/optimism/blob/develop/specs/deposits.md#user-deposited-transactions).
 
 1. Finally there are the normal L2 transactions.
 
