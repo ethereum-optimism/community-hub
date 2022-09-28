@@ -31,7 +31,7 @@ You **must** approve the Standard Token Bridge to use the amount of tokens that 
 
 ::: danger Use the standard bridge contract only with standard bridge tokens
 The standard bridge can only be used with tokens that have a properly configured ERC-20 version on Optimism.
-If you send any other type of token to the standard bridge programmatically, it gets stuck there and you lose that value.
+If you send any other type of token to the standard bridge directly (not using the user interface or the API), it gets stuck there and you lose that value.
 
 Note that if you use the [Optimism bridge UI](https://app.optimism.io/bridge), or the [Optimism SDK](../../sdk/js-client.md) it automatically chooses the correct bridge contract, so this problem does not happen.
 
