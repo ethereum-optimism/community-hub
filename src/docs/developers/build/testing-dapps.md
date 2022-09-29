@@ -32,4 +32,4 @@ For example, [Perpetual v. 2](https://v2docs.perp.fi/benefits-of-v2) cannot func
 
 If that is the case you can use [mainnet forking](https://hardhat.org/hardhat-network/guides/mainnet-forking.html).
 It works with Optimism with the exception of transactions that use the `L1BlockNumber` opcode directly.
-Alternatively, you can connect to our [test network](../../useful-tools/networks/#rpc-endpoints) if those contracts are also deployed there (in many cases they are).
+Alternatively, you can connect to our [test network](../../useful-tools/networks.md##optimism-goerli) if those contracts are also deployed there (in many cases they are).
