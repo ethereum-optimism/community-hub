@@ -63,12 +63,12 @@ This is our new test network.
 | Network Name | **`Optimism Goerli`** |
 | Description | **`Testnet (public)`** |
 | Chain ID | **`420`** |
-| Explorer | **[https://blockscout.com/optimism/goerli](https://blockscout.com/optimism/goerli)** |
+| Explorer | **[https://goerli-optimism.etherscan.io/](https://goerli-optimism.etherscan.io/)** |
 | HTTP Endpoint | **`https://goerli.optimism.io`** |
 | WebSocket Endpoint | **`wss://ws-goerli.optimism.io`** |
 | L1 Contract Addresses | [link](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/deployments/goerli#layer-1-contracts) |
 | L2 Contract Addresses | [link](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/deployments/goerli#layer-2-contracts) |
-| Chainlist link | [https://chainlist.org/chain/420](https://chainlist.org/chain/420)
+| chainid.link | [https://chainid.link/?network=optimism-goerli](https://chainid.link/?network=optimism-goerli)
 
 ### RPC endpoints
 

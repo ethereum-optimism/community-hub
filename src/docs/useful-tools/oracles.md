@@ -38,13 +38,7 @@ This contract is a predeploy at address `0x4200000000000000000000000000000000000
 
 - [On the production Optimism network](https://optimistic.etherscan.io/address/0x420000000000000000000000000000000000000F#readContract)
 - [On the deprecated Optimism Kovan test network](https://kovan-optimistic.etherscan.io/address/0x420000000000000000000000000000000000000F#readContract)
-- [On the Optimism Goerli test network](https://blockscout.com/optimism/goerli/address/0x420000000000000000000000000000000000000F)
-
-<!--
-
-Add blockscout link to Goerli network when available
-
--->
+- [On the Optimism Goerli test network](https://goerli-optimism.etherscan.io/address/0x420000000000000000000000000000000000000F)
 
 This is a push Oracle. 
 Optimism updates the gas price parameters on chain whenever those parameters change. 
