@@ -10,7 +10,7 @@ We recommend using [Alchemy](https://www.alchemy.com/layer2/optimism/?a=818c11a8
 ::: warning
 Some API calls, such as the those in the [personal namespace](https://geth.ethereum.org/docs/rpc/ns-personal) make no sense in a shared environment.
 Such RPCs are either totally unsupported, or will return nonsensical values.
-:::sdew
+:::
 
 ## Optimism (mainnet)
 
