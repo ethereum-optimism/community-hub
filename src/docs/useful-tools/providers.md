@@ -1,30 +1,45 @@
 ---
-title: Node Providers
+title: Node & API Providers
 lang: en-US
 ---
 
 ## Alchemy
 
+
+::: warning
+Some API calls, such as the those in the [personal namespace](https://geth.ethereum.org/docs/rpc/ns-personal) make no sense in a shared environment.
+Such RPCs are either totally unsupported, or will return nonsensical values.
+
 ::: tip
-Alchemy is our preferred node provider, and is used to power our public endpoint.
-:::
+**We strongly recommend all developers use [Alchemy](https://www.alchemy.com/layer2/optimism/?a=818c11a8da). We’ve done extensive diligence and Alchemy powers our public API. ** 
 
-### Description and pricing
+We recommend Alchemy due to (a) the reliability, scalability and data correctness of its developer platform and (b) the comprehensive set of tooling and APIs they provide. You can run large applications on their massive free tier. 
 
-[Alchemy](https://docs.alchemy.com/alchemy/apis/optimism-api) is a comprehensive Optimism development and infrastructure platform. 
-It offers free access to hosted Optimism nodes up to roughly 12 million requests a month. 
+### Alchemy's Description & Pricing
 
-Additionally, it provides a suite of custom tools for free, including access to Optimism archive nodes, push notifications (Alchemy Notify) for transactions and address activity, Enhanced APIs such as asset transfers, and a custom built Web3 SDK for Optimism (Alchemy SDK) that supercharges developer's workflows.
+[Alchemy](https://docs.alchemy.com/reference/optimism-api-quickstart/?a=818c11a8da) is our recommended Optimism API provider and developer platform. Its robust, free tier offers access to (1) enhanced features like SDKs and enhanced APIs and (2) hosted Optimism nodes.
+
+_(1) Alchemy's enhanced features_
+
+Alchemy's free private RPC endpoint provides a complimentary suite of proprietary tools. These include a custom-built [Ethers.js SDK](https://www.alchemy.com/sdk/?a=818c11a8da) (which are supersets of the Ethers.js Provider and Wallet libraries) and [enhanced APIs](https://www.alchemy.com/enhanced-apis/?a=818c11a8da) such as NFT, Transfers, and Notify APIs.
 
 
-### Supported Networks
+_(2) Alchemy's hosted Optimism nodes_
+
+Alchemy hosts our public API because of its data accuracy, reliability, and scalability. It counts companies like OpenSea, dYdX, and Facebook among its customers. Its API takes only a few lines of codes to get up and running. Alchemy isn't just a node provider, but also a developer platform and API provider.
+
+
+### Alchemy's Supported Networks
 
 - Optimism Ethereum
 - Optimism Goerli
 
+[Sign up for a free Alchemy account here](https://www.alchemy.com/layer2/optimism/?a=818c11a8da).
+
+
 ## Blast
 
-### Description and pricing
+### Description and Pricing
 
 [Blast](https://blastapi.io/) offers access to dedicated Optimism nodes with free data access up to 12M API calls per month and 25 req/s. Paid subscription tiers are available for all development needs.
 On the platform, there are also [Public APIs](https://blastapi.io/public-api/optimism) available that can be added easily in Metamask.
@@ -55,7 +70,7 @@ On the platform, there are also [Public APIs](https://blastapi.io/public-api/opt
 
 ## Infura
 
-### Description and pricing
+### Description and Pricing
 
 [Infura](https://infura.io) offers access to hosted Optimism nodes via addon.
 This addon is currently free but Infura seems to intend to charge $200/month for this addon in the future.
@@ -80,7 +95,7 @@ This addon is currently free but Infura seems to intend to charge $200/month for
 
 ## QuickNode
 
-### Description and pricing
+### Description and Pricing
 
 [QuickNode](https://www.quicknode.com/) offers access to hosted Optimism nodes for $9/month at its cheapest tier.
 You can select addons, like "Archive Mode" or "Trace Mode" for an additional cost.
