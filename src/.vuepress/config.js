@@ -254,8 +254,9 @@ module.exports = {
             '/docs/sdk/js-client.md',
             [
               'https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/docs',
-              'Contracts API'
-            ]            
+              'Optimism Contracts'
+            ],
+            '/docs/sdk/alchemy-sdk.md'           
           ]
         },
         {
