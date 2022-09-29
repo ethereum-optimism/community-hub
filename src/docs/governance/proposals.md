@@ -8,7 +8,7 @@ lang: en-US
 ::: tip        
              
 This information is here for your convenience. 
-The source of truth for all governance related processes is the [OPerating Manual](https://github.com/ethereum-optimism/OPerating-manual/blob/main/manual.md#proposal-process--components-of-a-valid-proposal).
+The source of truth for all governance related processes is the [Operating Manual](https://github.com/ethereum-optimism/OPerating-manual/blob/main/manual.md#proposal-process--components-of-a-valid-proposal).
 
 :::
 
@@ -25,23 +25,23 @@ There is a distinct OP allocation dedicated to this, which will be distributed v
 
 Please adhere to the [grant proposal template](https://gov.optimism.io/t/grant-proposal-template/3233).
 
-### Step 2: Submit your proposal for feedback
+### Step 2: Submit your proposal for feedback and get delegate approval
 
 Post in the `#gov-temp-check` channel in [Discord](https://discord-gateway.optimism.io/) to get community feedback. 
 They will help make sure you are following the template and are not missing any important information
 
-Once you’ve incorporated the feedback received in Discord, post your proposal in the [Forum](https://gov.optimism.io/c/proposals/38) and delegates will provide feedback during the next feedback period of the cycle, as outlined in the [Operating Manual](https://github.com/ethereum-optimism/OPerating-manual/blob/main/manual.md#proposal-process--components-of-a-valid-proposal)
-
-If you do not receive delegate approval or want more time for feedback, re-post your updated proposal in the `#gov-temp-check`channel in [Discord](https://discord-gateway.optimism.io/) to receive additional feedback from the community.
-
-### Step 3: Get delegate approval
-
-You need 2 delegates with >0.5% of voting power to approve your proposal to be included in the next voting cycle.
+Once you’ve incorporated the feedback received in Discord, post your proposal in the [Forum](https://gov.optimism.io/c/proposals/38) and delegates will provide feedback. You will need to get approval from 2 delegates with >0.5% of voting power to move on to committee review in Week 2.
 Approved proposals will have the below phrase linked by 2 delegates in forum comments on Discourse:
 
 > ”I am an Optimism delegate with sufficient voting power and I believe this proposal is ready to move to a vote."
 
-After you receive this approval, your proposal will be included in the next voting cycle! Proposals marked as ready that do not have this approval will not get added to the voting cycle.
+After a proposal has received two delegate approvals, the proposal author should update the proposal title and add a link in the Voting Cycle Roundup thread as outlined in the [Operating Manual](https://github.com/ethereum-optimism/OPerating-manual/blob/main/manual.md#proposal-process--components-of-a-valid-proposal).
+
+If you do not receive delegate approval or want more time for feedback, re-post your updated proposal in the `#gov-temp-check`channel in [Discord](https://discord-gateway.optimism.io/) to receive additional feedback from the community.
+
+### Step 3: Committee review 
+
+In Week 2 of the voting cycle, committees will review all approved proposals listed on the Voting Cycle Roundup thread and publicly post their recommendations before voting starts. You can learn more about committee recommendations [here.](https://gov.optimism.io/t/introducing-governance-committees/3238/37)
 
 
 ### Step 4: Voting
