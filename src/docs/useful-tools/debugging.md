@@ -13,13 +13,15 @@ As Optimism is [EVM Equivalent](https://medium.com/ethereum-optimism/introducing
 
 ## Etherscan
 
-[Etherscan](https://optimistic.etherscan.io) allows you to see events as well as revert messages for transactions that have been mind on Optimism (mainnet) as well as Optimism Kovan (deprecated testnet). You can see more information about all the L2 features Etherscan offers in our [Explorers page](./explorers.md#etherscan).
+[Etherscan](https://optimistic.etherscan.io) allows you to see events as well as revert messages for transactions that have been mined on Optimism (mainnet) as well as [Optimism Goerli (testnet)](https://goerli-optimism.etherscan.io). 
+You can see more information about all the L2 features Etherscan offers in our [Explorers page](./explorers.md#etherscan).
 
 
-## Blockscan
+## Blockscout
 
-[Blockscan](https://blockscout.com/optimism/goerli/) allows you to see events on our Goerli testnet.
+[Blockscout](https://blockscout.com/optimism/goerli/) allows you to see events on our Goerli testnet.
 
 ## Know other good tools?
 
-Reach out to us in our [Discord](https://discord-gateway.optimism.io) or [make a PR](https://github.com/ethereum-optimism/community-hub/pulls). We'd love your help in expanding the tools available to build Optimistically. 
+Reach out to us in our [Discord](https://discord-gateway.optimism.io) or [make a PR](https://github.com/ethereum-optimism/community-hub/pulls). 
+We'd love your help in expanding the tools available to build Optimistically. 

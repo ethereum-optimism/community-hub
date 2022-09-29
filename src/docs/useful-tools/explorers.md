@@ -14,7 +14,7 @@ We have a Blockscout explorer for the [Goerli testnet](https://blockscout.com/op
 
 ## Etherscan
 
-We have Etherscan explorers for the [Optimism mainnet](https://optimistic.etherscan.io) and the deprecated [Optimism Kovan testnet](https://kovan-optimistic.etherscan.io).
+We have Etherscan explorers for the [Optimism mainnet](https://optimistic.etherscan.io) and the  [Optimism  Goerli testnet](https://goerli-optimism.etherscan.io).
 Etherscan has lots of tools to help you debug transactions.
 
 Optimistic Etherscan has all the tools you expect from Etherscan, such as:
@@ -27,13 +27,6 @@ It's also got some Optimism-specific features:
 - [A list of L2-to-L1 transactions](https://optimistic.etherscan.io/txsExit)
 - [A tool for finalizing L2-to-L1 transactions](https://optimistic.etherscan.io/messagerelayer)
 - And more! Just check it out and click around to find all of the available features.
-
-::: tip Testnet migration
-We expect to have Etherscan for the Kovan testnet until August 1st, 2022.
-A few weeks after that it will be available for the new Goerli testnet.
-
-During the transition period you can use [BlockScout](./explorers.md#blockscout).
-:::
 
 ## Access to pre-regenesis history
 
