@@ -13,7 +13,7 @@ These fee discrepancies are an inherent result of the fact that Optimism is a La
 
 Optimism shares the [Ethereum JSON-RPC API](https://eth.wiki/json-rpc/API) with only [a few minor differences](../developers/build/json-rpc.md).
 You'll find all of the important information about each Optimism network on [our Networks page](../useful-tools/networks.md).
-You can choose to connect to Optimism via our rate-limited public endpoints, [private endpoints from infrastructure providers](../useful-tools/networks.md#rpc-endpoints), or [by running your own node](../developers/build/run-a-node/).
+You can choose to connect to Optimism via our rate-limited public endpoints, [private endpoints from infrastructure providers](../useful-tools/networks.md), or [by running your own node](../developers/build/run-a-node/).
 Because of throughput limits, we recommend using private node providers (particularly [Alchemy](https://www.alchemy.com/layer2/optimism/?a=818c11a8da)) or running your own node for production applications.
 
 ## Canonical token addresses
