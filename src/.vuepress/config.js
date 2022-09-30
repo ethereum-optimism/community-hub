@@ -190,6 +190,10 @@ module.exports = {
         '/docs/guides/bridge-dev.md',
         '/docs/guides/smart-contract-devs.md',
         '/docs/guides/testing.md',
+        [
+          'https://docs.alchemy.com/reference/optimism-sdk-examples',
+          'Using Alchemy to query the Optimism blockchain'
+        ]
       ],
       '/docs/protocol/': [
         {
