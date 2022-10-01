@@ -18,7 +18,7 @@ If you think we need more, you can ask for a specific topic on our [Discord](htt
 ## Deploying on Testnet
 
 So you've written your contracts and are ready to deploy them to the testnet! 
-First things first you are going to need some test ETH on Optimism Goerli or Optimism Kovan.
+First things first you are going to need some test ETH on Optimism Goerli.
 Head to the [faucet](https://faucet.paradigm.xyz/) for some test ETH on Goerli.
 
 Next you will need to connect to the Optimism test network to deploy your contracts. 

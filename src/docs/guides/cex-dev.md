@@ -27,8 +27,8 @@ For example, looking at the **SNX** token, we get these addresses:
 | -: | - | - |
 | 1  | Ethereum    | 0xc011a73ee8576fb46f5e1c5751ca3b9fe0af2a6f |
 | 10 | Optimism    | 0x8700daec35af8ff88c16bdf0418774cb3d7599b4
-| 42 | Kovan (test network) | 0xc011a73ee8576fb46f5e1c5751ca3b9fe0af2a6f
-| 69 | Optimistic Kovan (test network) | 0x0064A673267696049938AA47595dD0B3C2e705A1
+| 5 | Goerli (test network) | 0x51f44ca59b867E005e48FA573Cb8df83FC7f7597
+| 420 | Optimistic Goerli (test network) | 0x2E5ED97596a8368EB9E44B1f3F25B2E813845303
 
 To get the total SNX balance of a user that uses Optimism you need to:
 

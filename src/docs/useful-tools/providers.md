@@ -55,7 +55,6 @@ On the platform, there are also [Public APIs](https://blastapi.io/public-api/opt
 ### Supported Networks
 
 - Optimism Ethereum
-- Optimism Kovan
 
 ## GetBlock
 
@@ -65,7 +64,6 @@ On the platform, there are also [Public APIs](https://blastapi.io/public-api/opt
 ### Supported Networks
 
 - Optimism Ethereum
-- Optimism Kovan
 
 
 ## Infura
@@ -79,7 +77,6 @@ This addon is currently free but Infura seems to intend to charge $200/month for
 
 - Optimism Ethereum
 - Optimism Goerli
-- Optimism Kovan
 
 
 ## Pocket Network
@@ -103,7 +100,6 @@ You can select addons, like "Archive Mode" or "Trace Mode" for an additional cos
 ### Supported Networks
 
 - Optimism Ethereum
-- Optimism Kovan
 - Optimism Goerli
 
 

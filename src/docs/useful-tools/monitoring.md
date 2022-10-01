@@ -5,13 +5,13 @@ lang: en-US
 
 ## Status Page
 
-Check out the [Optimism status page](https://optimism.instatus.com/).
-This page includes public APIs, the gateway, deposits, withdraws and transaction sequencing for both Optimism mainnet and Optimism Kovan.
+Check out the [Optimism status page](https://status.optimism.io/).
+This page includes public APIs, the gateway, deposits, withdraws and transaction sequencing for both Optimism mainnet and Optimism Goerli.
 
 ## Public Grafana Dashboard
 
 [Optimism](https://optimism.io) maintains a [public Grafana dashboard](https://public-grafana.optimism.io/d/9hkhMxn7z/public-dashboard?orgId=1&refresh=5m) that tracks gas prices, transaction volume, and network uptime in one place.
-You can view information about both the Optimism mainnet and the Optimism Kovan testnet on this dashboard.
+You can view information about both the Optimism mainnet and the Optimism Goerli testnet on this dashboard.
 
 ## Block explorers
 
