@@ -186,9 +186,16 @@ module.exports = {
         '/docs/developers/tutorials.md',       
         '/docs/guides/wallet-dev.md',
         '/docs/guides/cex-dev.md',
-        '/docs/guides/token-dev.md',
+        [
+          "https://github.com/ethereum-optimism/optimism-tutorial/tree/main/standard-bridge-standard-token",
+          "Adding an ERC20 token to the standard bridge"
+        ],
         '/docs/guides/bridge-dev.md',
-        '/docs/guides/smart-contract-devs.md',
+        [
+          "https://github.com/ethereum-optimism/optimism-tutorial/tree/main/getting-started",
+          "Developing smart contracts on Optimism"
+        ],
+
         '/docs/guides/testing.md',
         [
           'https://docs.alchemy.com/reference/optimism-sdk-examples',
