@@ -130,7 +130,7 @@ The L2 part of the Standard Bridge. Responsible for finalising deposits from L1 
 ### [`L2StandardTokenFactory`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/L2/messaging/L2StandardTokenFactory.sol)
 
 Factory contract for creating standard L2 token representations of L1 ERC20s compatible with and working on the standard bridge.
-[See here for more information](../guides/token-dev.md).
+[See here for more information](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/standard-bridge-standard-token).
 
 
 ## Predeployed Contracts
