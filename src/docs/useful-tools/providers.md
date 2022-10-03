@@ -67,6 +67,21 @@ This addon is currently free but Infura seems to intend to charge $200/month for
 - Optimism Kovan
 
 
+
+## NOWNodes
+
+### Description and pricing
+
+[NOWNodes](https://nownodes.io/nodes/optimism) provide access to mainnet Optimism node. Shared and Dedicated nodes are Available. You can connect to the shared Optimism node for free for one month with 5,000 requests/per day or for €20 with 1,000,000 requests/per month.
+
+The URL format is `https://optimism.nownodes.io/?API_key=<API key from NOWNodes`.
+
+### Supported Networks
+
+- Optimism Ethereum
+
+
+
 ## Pocket Network
 
 ### Description and pricing
@@ -91,16 +106,6 @@ You can select addons, like "Archive Mode" or "Trace Mode" for an additional cos
 - Optimism Kovan
 - Optimism Goerli
 
-
-## NOWNodes
-
-### Description and pricing
-
-[NOWNodes](https://nownodes.io/nodes/optimism) provide access to mainnet Optimism node. Shared and Dedicated nodes are Available. You can connect to the shared Optimism node for free for one month with 5 000 requests/per day or for €20 with 1 000 000 requests/per month.
-
-### Supported Networks
-
-- Optimism Ethereum
 
 
 
