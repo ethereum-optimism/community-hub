@@ -90,7 +90,7 @@ To learn more about how Bedrock itself works and its motivations, please see [th
 ### Testnets
 
 Prior to upgrading mainnet, we will be running a series of testnets. 
-The last testnet will replace either our existing Kovan testnet or the new Goerli testnet, and run for an entire month to give developers time to fix any integration issues they may encounter.
+The last testnet will replace our existing Goerli, and run for an entire month to give developers time to fix any integration issues they may encounter.
 
 Dates for the testnet have not been determined yet. 
 Please keep an eye on this documentation or our [official Twitter](https://twitter.com/OPLabsPBC) for date announcements.

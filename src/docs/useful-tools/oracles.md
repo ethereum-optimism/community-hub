@@ -37,7 +37,6 @@ It can also calculate the total cost of a transaction for you before you send it
 This contract is a predeploy at address `0x420000000000000000000000000000000000000F`:
 
 - [On the production Optimism network](https://optimistic.etherscan.io/address/0x420000000000000000000000000000000000000F#readContract)
-- [On the deprecated Optimism Kovan test network](https://kovan-optimistic.etherscan.io/address/0x420000000000000000000000000000000000000F#readContract)
 - [On the Optimism Goerli test network](https://goerli-optimism.etherscan.io/address/0x420000000000000000000000000000000000000F)
 
 This is a push Oracle. 
@@ -47,7 +46,7 @@ The L1 gas price, which can be volatile, is only pushed once every 5 minutes, an
 ## Chainlink
 
 On Optimism [Chainlink](https://chain.link/) provides a number of [price feeds](https://docs.chain.link/docs/optimism-price-feeds/).
-Those feeds are available both on the production network and the Kovan test network.
+Those feeds are available on the production network.
 
 This is a push Oracle. 
 You can always get up to date information (see, for example, [here (scroll down to **latestAnswer**)](https://optimistic.etherscan.io/address/0x13e3Ee699D1909E989722E753853AE30b17e08c5#readContract)).
