@@ -54,6 +54,18 @@ You can always get up to date information (see, for example, [here (scroll down 
 
 [See this guide to learn how to use the Chainlink feeds](https://docs.chain.link/docs/get-the-latest-price/).
 
+
+
+## Portal
+
+[Portal](https://portal-docs.readthedocs.io/en/latest/index.html) offers users private, scalable, and fast compute power at low costs.
+
+### Verifiable Randomness Function (VRF)
+
+Portal providers a source of randomness on chain (for now on Optimism Goerli, but eventually also on the Optimism mainnet).
+[You can learn how to use it here](https://portal-docs.readthedocs.io/en/latest/user-vrf-docs.html). 
+It is a single-transaction pull oracle.
+
 ## Universal Market Access (UMA)
 
 [UMA](https://umaproject.org/) is a generic oracle.
@@ -78,8 +90,10 @@ Later (in the case of UMA 48 hours later if there is no dispute, longer if there
 Technically speaking [Uniswap](https://uniswap.io/) is not an oracle, because the information comes from on-chain sources.
 However, Uniswap pools do provide [quotes that give the relative costs of assets](https://docs.uniswap.org/protocol/concepts/V3-overview/oracle).
 
-::: Warning
+::: warning
+
 Using onchain asset prices, especially those in low liquidity pools, makes you vulnerable to price manipulation. 
+
 :::
 
 To use Uniswap as an Oracle:
