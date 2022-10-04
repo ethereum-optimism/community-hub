@@ -190,6 +190,10 @@ module.exports = {
         '/docs/guides/bridge-dev.md',
         '/docs/guides/smart-contract-devs.md',
         '/docs/guides/testing.md',
+        [
+          'https://docs.alchemy.com/reference/optimism-sdk-examples',
+          'Using Alchemy to query the Optimism blockchain'
+        ]
       ],
       '/docs/protocol/': [
         {
@@ -245,6 +249,7 @@ module.exports = {
             '/docs/useful-tools/monitoring.md',
             '/docs/useful-tools/explorers.md',
             '/docs/useful-tools/providers.md',
+            '/docs/useful-tools/oracles.md',
             ['https://www.optimism.io/apps/tools', 'Third Party Tools'],
           ],
         },
@@ -254,8 +259,9 @@ module.exports = {
             '/docs/sdk/js-client.md',
             [
               'https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/docs',
-              'Contracts API'
-            ]            
+              'Optimism Contracts'
+            ],
+            '/docs/sdk/alchemy-sdk.md'           
           ]
         },
         {

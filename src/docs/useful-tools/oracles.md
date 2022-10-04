@@ -38,13 +38,7 @@ This contract is a predeploy at address `0x4200000000000000000000000000000000000
 
 - [On the production Optimism network](https://optimistic.etherscan.io/address/0x420000000000000000000000000000000000000F#readContract)
 - [On the deprecated Optimism Kovan test network](https://kovan-optimistic.etherscan.io/address/0x420000000000000000000000000000000000000F#readContract)
-- [On the Optimism Goerli test network](https://blockscout.com/optimism/goerli/address/0x420000000000000000000000000000000000000F)
-
-<!--
-
-Add blockscout link to Goerli network when available
-
--->
+- [On the Optimism Goerli test network](https://goerli-optimism.etherscan.io/address/0x420000000000000000000000000000000000000F)
 
 This is a push Oracle. 
 Optimism updates the gas price parameters on chain whenever those parameters change. 
@@ -59,6 +53,18 @@ This is a push Oracle.
 You can always get up to date information (see, for example, [here (scroll down to **latestAnswer**)](https://optimistic.etherscan.io/address/0x13e3Ee699D1909E989722E753853AE30b17e08c5#readContract)).
 
 [See this guide to learn how to use the Chainlink feeds](https://docs.chain.link/docs/get-the-latest-price/).
+
+
+
+## Portal
+
+[Portal](https://portal-docs.readthedocs.io/en/latest/index.html) offers users private, scalable, and fast compute power at low costs.
+
+### Verifiable Randomness Function (VRF)
+
+Portal providers a source of randomness on chain (for now on Optimism Goerli, but eventually also on the Optimism mainnet).
+[You can learn how to use it here](https://portal-docs.readthedocs.io/en/latest/user-vrf-docs.html). 
+It is a single-transaction pull oracle.
 
 ## Universal Market Access (UMA)
 
@@ -84,8 +90,10 @@ Later (in the case of UMA 48 hours later if there is no dispute, longer if there
 Technically speaking [Uniswap](https://uniswap.io/) is not an oracle, because the information comes from on-chain sources.
 However, Uniswap pools do provide [quotes that give the relative costs of assets](https://docs.uniswap.org/protocol/concepts/V3-overview/oracle).
 
-::: Warning
+::: warning
+
 Using onchain asset prices, especially those in low liquidity pools, makes you vulnerable to price manipulation. 
+
 :::
 
 To use Uniswap as an Oracle:
