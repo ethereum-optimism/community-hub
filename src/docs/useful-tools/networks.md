@@ -4,7 +4,7 @@ lang: en-US
 ---
 
 ::: tip Developer Tip
-We recommend using [Alchemy](https://www.alchemy.com/layer2/optimism/?a=818c11a8da) for its scalablity, reliability, and data accuracy. 
+We recommend using [Alchemy](https://www.alchemy.com/optimism) for its scalablity, reliability, and data accuracy. 
 :::
 
 ::: warning
@@ -35,14 +35,14 @@ If you need a general purpose WebSocket endpoint, get one from a service provide
 
 ### API Options:
 
-1. Get free access to Optimism through [Alchemy](https://www.alchemy.com/layer2/optimism/?a=818c11a8da)
+1. Get free access to Optimism through [Alchemy](https://www.alchemy.com/optimism)
 
 2. For small scale tests, you can use our public API:
 - HTTP endpoint: [https://mainnet.optimism.io](https://mainnet.optimism.io) (note, this is for testing. For production, use Alchemy) 
 - WebSocket endpoint (limited usage, see footnote below the table): [wss://ws-mainnet.optimism.io](wss://ws-mainnet.optimism.io)
 
 
-You can run a large application for free using [Alchemy](https://www.alchemy.com/layer2/optimism/?a=818c11a8da). We’ve done extensive diligence and Alchemy is our recommendation due to reliability, scalability, and data correctness. They're the default API provider and developer platform for top projects like OpenSea and Facebook. 
+You can run a large application for free using [Alchemy](https://www.alchemy.com/optimism). We’ve done extensive diligence and Alchemy is our recommendation due to reliability, scalability, and data correctness. They're the default API provider and developer platform for top projects like OpenSea and Facebook. 
 
 ## Optimism Goerli
 
@@ -67,13 +67,13 @@ This is our new test network.
 ### API Options
 
 
-1. Get free access to Optimism through [Alchemy](https://www.alchemy.com/layer2/optimism/?a=818c11a8da)
+1. Get free access to Optimism through [Alchemy](https://www.alchemy.com/optimism)
 
 2. For small scale tests, you can use our public API:
 - HTTP endpoint: [https://goerli.optimism.io](https://goerli.optimism.io) (note, this is for testing. For production, use Alchemy) 
 - WebSocket endpoint (limited usage, see footnote below the table): [wss://ws-goerli.optimism.io](wss://ws-goerli.optimism.io)
 
-You can run a large application for free using [Alchemy](https://www.alchemy.com/layer2/optimism/?a=818c11a8da). We’ve done extensive diligence and Alchemy is our recommendation due to reliability, scalability, and data correctness. They're the default API provider and developer platform for top projects like OpenSea and Facebook. 
+You can run a large application for free using [Alchemy](https://www.alchemy.com/optimism). We’ve done extensive diligence and Alchemy is our recommendation due to reliability, scalability, and data correctness. They're the default API provider and developer platform for top projects like OpenSea and Facebook. 
 
 
 
