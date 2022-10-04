@@ -264,6 +264,7 @@ module.exports = {
             '/docs/sdk/alchemy-sdk.md'           
           ]
         },
+        '/docs/developers/media.md',
         {
         title: "Bedrock (future version)",
           children: [
