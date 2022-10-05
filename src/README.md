@@ -11,6 +11,11 @@ features:
     details: General explanation of what makes Optimism tick.
     link: /docs/how-optimism-works/
 
+  - title: Optimism's Security Model
+    icon: hands-helping
+    details: Understand the safety and liveness properties of Optimism.
+    link: /docs/security-model/
+
   - title: Guides
     icon: book
     details: How-to guides and tutorials for users and developers.

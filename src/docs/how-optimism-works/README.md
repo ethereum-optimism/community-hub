@@ -207,8 +207,9 @@ If the commitment is successfully challenged, then it is removed from the `State
 It's important to note that a successful challenge does not roll back Optimism itself, only the published commitments about the state of the chain.
 The ordering of transactions and the state of Optimism is unchanged by a fault proof challenge.
 
-The fault proof process is currently undergoing major redevelopment as a side-effect of the November 11th [EVM Equivalence](https://medium.com/ethereum-optimism/introducing-evm-equivalence-5c2021deb306) update.
-You can read more about this process within the [Protocol specs](../protocol/README.md) section of this website.
+The fault proof process is currently undergoing major redevelopment as a side-effect of the November 11th [EVM Equivalence](https://medium.com/ethereum-optimism/introducing-evm-equivalence-5c2021deb306) update and is therefore **not** active on the current Optimism system.
+Please refer to [Optimism's Security Model](../security-model/README.md) for more information.
+You can also read more about the fault proof process in general within the [Protocol Specs](../protocol/README.md) section of this website.
 
 ## Start building
 
