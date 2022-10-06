@@ -31,4 +31,9 @@ September 22nd, 2022
 
 
 ### Intro to Quix - Mark Dawson
+
+The NFT ecosystem on Optimism is an exciting, growing space. 
+Mark Dawson is the co-founder of Quix, the largest NFT marketplace on Optimism. 
+He discusses early NFT communities on Optimism, the upcoming NFT bridge, composable NFTs, and how to get started in the OP NFT ecosystem.
+
 <iframe src="https://www.youtube.com/embed/Z8L8vNDgJjY?list=PLXzKMXK2aHh4vbe7GLQfOnL-QJ1O5EqMv" title="Intro to Quix - Mark Dawson" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
