@@ -6,8 +6,19 @@ lang: en-US
 
 ### Getting started with Optimism
 
-<iframe src="https://www.youtube.com/embed/_Y6CwsYgqwI" title="Getting Started with Optimism" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+In this video you learn how to use Optimism for your own development:
 
+- [Deploy a contract on Optimism (Foundry)](https://youtu.be/_Y6CwsYgqwI?t=84)
+- [Interact with an Optimism contract (Foundry)](https://youtu.be/_Y6CwsYgqwI?t=140)
+- [Use the Etherscan block explorer with Optimism](https://youtu.be/_Y6CwsYgqwI?t=173)
+- [Getting started docs, with other development stacks](https://youtu.be/_Y6CwsYgqwI?t=285)
+- [Getting test ETH](https://youtu.be/_Y6CwsYgqwI?t=360)
+- [The Optimism Bridge](https://youtu.be/_Y6CwsYgqwI?t=445)
+- [Inter-layer communication (between Ethereum and Optimism)](https://youtu.be/_Y6CwsYgqwI?t=528)
+- [Gas cost calculation](https://youtu.be/_Y6CwsYgqwI?t=620)
+
+
+<iframe src="https://www.youtube.com/embed/_Y6CwsYgqwI" title="Getting Started with Optimism" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## ETHOnline 2022 | Optimism Summit
 
@@ -29,6 +40,11 @@ September 22nd, 2022
 ### Panel: State of 4844
 <iframe src="https://www.youtube.com/embed/uxYkGdCFsjI?list=PLXzKMXK2aHh4vbe7GLQfOnL-QJ1O5EqMv" title="Panel: State of 4844" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+The end game for data availability on Ethereum - Full Sharding - and how EIP-4844 gets us closer to that goal. This video discusses:
+
+- Where we are with the implementation of EIP-4844 and what else was needed to be done before CFI.
+- How the community could help us ship EIP-4844.
+- Data Availability and the concept of a Data Availability Layer; analogous to the CL and EL. This concept helps reason about how data, i.e. the blobs, fits in Ethereum.
 
 ### Intro to Quix - Mark Dawson
 
