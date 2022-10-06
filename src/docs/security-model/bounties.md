@@ -17,4 +17,4 @@ With our upcoming launch of [Bedrock](../developers/bedrock.md) we will be launc
 
 ### Unscoped Bug
 
-If you think you have found a critical or major bug that is not covered by our existing bug bounty, please email us at **security@optimism.io** and we will get back to you. 
+If you think you have found a critical or major bug that is not covered by our existing bug bounty, please report it to us via the Immunefi program regardless. We will seriously consider the impact of any issues, and have previously rewarded security researchers for bugs not within the stated scope of the program.
