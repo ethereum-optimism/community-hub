@@ -41,17 +41,17 @@ module.exports = {
     },
     nav: [
       {
-        text: "Getting Started",
+        text: "Quick Start",
         link: '/docs/guides/'
-      },
-      {
-        text: 'Security Model',
-        link: '/docs/security-model/',
       },      
       {
         text: 'How Optimism Works',
         link: '/docs/protocol/',
       },      
+      {
+        text: 'Security',
+        link: '/docs/security-model/',
+      },
       {
         text: 'Dev Docs',
         link: '/docs/developers/',
