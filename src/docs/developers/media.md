@@ -28,6 +28,9 @@ September 22nd, 2022
 <iframe src="https://www.youtube.com/embed/jlKPjiDu_KM?list=RDCMUCfF9ZO8Ug4xk_AJd4aeT5HA" title="Modular OP Stack - Karl Floersch" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Introduction to Architecture - Joshua Gutow
+
+This talks covers bedrock’s architecture. It explains how redesigning the rollup architecture in bedrock reduces fees & increases implementation simplicity. It also covers the various components of the system & how they interact.
+
 <iframe src="https://www.youtube.com/embed/fkoTMchOFPI?list=RDCMUCfF9ZO8Ug4xk_AJd4aeT5HA" title="Introduction to Architecture - Joshua Gutow" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Modular sequencing - Norswap Laurent
@@ -44,13 +47,16 @@ In this video you learn the design space around two design choices related to se
 
 
 ### Panel: State of 4844
-<iframe src="https://www.youtube.com/embed/uxYkGdCFsjI?list=PLXzKMXK2aHh4vbe7GLQfOnL-QJ1O5EqMv" title="Panel: State of 4844" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 The end game for data availability on Ethereum - Full Sharding - and how EIP-4844 gets us closer to that goal. This video discusses:
 
 - Where we are with the implementation of EIP-4844 and what else was needed to be done before CFI.
 - How the community could help us ship EIP-4844.
 - Data Availability and the concept of a Data Availability Layer; analogous to the CL and EL. This concept helps reason about how data, i.e. the blobs, fits in Ethereum.
+
+<iframe src="https://www.youtube.com/embed/uxYkGdCFsjI?list=PLXzKMXK2aHh4vbe7GLQfOnL-QJ1O5EqMv" title="Panel: State of 4844" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
 
 ### Intro to Quix - Mark Dawson
 
