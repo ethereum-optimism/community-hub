@@ -18,7 +18,7 @@
   padding 0.5rem 0 0.75rem 0
   border-bottom 1px solid var(--border-color)
 
-  @media (max-width $MQMobile)
+  @media (max-width $MQMedium)
     display block
 
   ul

@@ -45,6 +45,10 @@ module.exports = {
         link: '/docs/guides/'
       },
       {
+        text: 'Security Model',
+        link: '/docs/security-model/',
+      },      
+      {
         text: 'How Optimism Works',
         link: '/docs/protocol/',
       },      
