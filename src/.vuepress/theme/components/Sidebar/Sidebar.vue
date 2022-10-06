@@ -37,7 +37,7 @@
   font-size 16px
   overflow-y auto
 
-  @media (max-width $MQMobile)
+  @media (max-width $MQMedium)
     top $navbarMobileHeight
 
     .theme-container.hide-navbar &
@@ -72,12 +72,12 @@
     width $mobileSidebarWidth
     font-size 15px
 
-  @media (min-width $MQMobile)
+  @media (min-width $MQMedium)
     .theme-container:not(.has-sidebar) &
       display none
 
   // wide mobile
-  @media (max-width $MQMobile)
+  @media (max-width $MQMedium)
     transform translateX(-100%)
     transition transform 0.2s ease
     box-shadow none
