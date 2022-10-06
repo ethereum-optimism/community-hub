@@ -8,7 +8,7 @@ lang: en-US
 #### Optimism Faucet
 
 [Optimism Faucet](https://optimismfaucet.xyz/) is a simple faucet for Optimism Goerli that drips ETH and OP. 
-Authenticate with github, enter your wallet address and you'll automatically be sent 0.2 ETH and 100 OP (if available) on the Optimism Goerli testnet.
+Authenticate with github, enter your wallet address, and you'll automatically be sent 0.2 ETH and 100 OP (if available) on the Optimism Goerli testnet.
 
 You need to be following at least five people or organizations on github to be considered a real account. If you don't, follow more, log out of the faucet, and log back in.
 
@@ -22,13 +22,10 @@ One of those networks is Optimism Goerli.
 ### Goerli Faucets
 
 These are faucets you can use to get test ETH on Goerli. 
-Once you have that Goerli, use [the Optimism Bridge](https://app.optimism.io/bridge) to get it on Optimism Goerli.
+We recommend getting Goerli ETH from Alchemy's faucet [here](https://goerlifaucet.com/?a=818c11a8da). 
+Alchemy's Goerli faucet provides 0.25 Goerli ETH per day.
 
-
-#### Goerli Faucet
-
-You can get Goerli ETH [here](https://goerlifaucet.com/).
-
+Once you have that Goerli ETH, use [the Optimism Bridge](https://app.optimism.io/bridge) to get it on Optimism Goerli.
 
 
 ## Mainnet Faucets
