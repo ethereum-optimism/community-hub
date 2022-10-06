@@ -92,11 +92,17 @@ module.exports = {
             link: 'https://www.twitch.tv/optimismpbc'
           },
           {
-            icon: 'medium',
+            icon: 'mirror',
             iconPrefix: 'fab fa-',
             iconClass: 'color-medium',
             text: 'Blog',
-            link: 'https://optimismpbc.medium.com/'
+            link: 'https://optimism.mirror.xyz'
+          },
+          {
+            icon: 'blog',
+            iconPrefix: 'fab fa-',
+            text: 'Developer blog',
+            link: 'https://dev.optimism.io/'
           },
           {
             icon: 'computer-classic',
