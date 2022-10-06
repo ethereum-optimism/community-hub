@@ -82,27 +82,3 @@ You can run a large application for free using [Alchemy](https://www.alchemy.com
 [The Optimism Faucet](https://optimismfaucet.xyz/) now provides Optimism Goerli ETH.
 Alternatively, if you already have Goerli ETH, you can [bridge it](https://app.optimism.io/bridge).
 
-
-## Optimism Kovan (old testnet)
-
-
-::: warning Deprecation notice
-We are transitioning our test network to Goerli. 
-Optimism Kovan end of life is October 5th, 2022. Be sure to [migrate from Kovan to Goerli](https://www.alchemy.com/overviews/migrate-from-kovan-to-goerli-on-optimism/?a=818c11a8da) well before then. 
-:::
-
-
-| Parameter | Value |
-| --------- | ----- |
-| Network Name | **`Optimism Kovan`** |
-| Description | **`Testnet (public)`** |
-| Chain ID | **`69`** |
-| Explorer | **[https://kovan-optimistic.etherscan.io](https://kovan-optimistic.etherscan.io)** |
-| HTTP Endpoint | **`https://kovan.optimism.io`** If you are going to be sending a lot of requests, please set up a free account with Alchemy |
-| WebSocket Endpoint<sup>1</sup> | **`wss://ws-kovan.optimism.io`** If you are going to be sending a lot of requests, please set up a free account with Alchemy |
-| L1 Contract Addresses | [link](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/deployments/kovan#layer-1-contracts) |
-| L2 Contract Addresses | [link](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/deployments/kovan#layer-2-contracts) |
-| chainid.link | [https://chainid.link/?network=optimism-kovan](https://chainid.link/?network=optimism-kovan)
-
-(1) The WebSocket endpoint is only supported for the two operations that cannot be provided on an HTTP endpoint: `eth_subscribe` and `eth_unsubscribe`. 
-If you need a general purpose WebSocket endpoint, get one from a service provider.

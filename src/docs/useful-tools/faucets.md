@@ -13,7 +13,6 @@ Authenticate with github, enter your wallet address, and you'll automatically be
 You need to be following at least five people or organizations on github to be considered a real account. If you don't, follow more, log out of the faucet, and log back in.
 
 
-
 #### Paradigm MultiFaucet
 
 [Paradigm's MultiFaucet](https://faucet.paradigm.xyz/) is an easy way to get ETH on many different testnets at the same time.
@@ -26,13 +25,8 @@ These are faucets you can use to get test ETH on Goerli.
 We recommend getting Goerli ETH from Alchemy's faucet [here](https://goerlifaucet.com/?a=818c11a8da). 
 Alchemy's Goerli faucet provides 0.25 Goerli ETH per day.
 
-Once you have that Goerli, use [the Optimism Bridge](https://app.optimism.io/bridge) to get it on Optimism Goerli.
+Once you have that Goerli ETH, use [the Optimism Bridge](https://app.optimism.io/bridge) to get it on Optimism Goerli.
 
-
-
-#### Next Steps
-
-Once you have that Goerli, use [the Optimism Bridge](https://app.optimism.io/bridge) to get it on Optimism Goerli.
 
 ## Mainnet Faucets
 
