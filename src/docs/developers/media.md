@@ -31,6 +31,12 @@ September 22nd, 2022
 <iframe src="https://www.youtube.com/embed/fkoTMchOFPI?list=RDCMUCfF9ZO8Ug4xk_AJd4aeT5HA" title="Introduction to Architecture - Joshua Gutow" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Modular sequencing - Norswap Laurent
+
+In this video you learn the design space around two design choices related to sequencing:
+
+- *who* sequences (decentralization)
+- *how* they sequence (MEV!)
+
 <iframe src="https://www.youtube.com/embed/aKxS16TG2jk?list=PLXzKMXK2aHh4vbe7GLQfOnL-QJ1O5EqMv" title="Modular sequencing - Norswap Laurent" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Pluggable data availability - Protolambda
