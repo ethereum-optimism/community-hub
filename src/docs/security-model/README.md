@@ -3,7 +3,7 @@ title: Optimism's Security Model
 lang: en-US
 ---
 
-Security in crypto is vital. Users, developers and infrastructure providers all need to trust that the code works, as expected. When it breaks, these same groups (rightfully) demand a fast and secure fix that is clearly communicated. 
+Security in crypto is vital. Users, developers and infrastructure providers expect the code to work as intended. When it doesn't, these same groups (rightfully) demand a fast, secure, and clearly communicated fix. 
 
 Over the years at Optimism we have learnt a great deal about this delicate balance, and the importance of transparency around security models. It is not good enough to just be transparent, it also needs to be accessible. If the average user cannot understand your security model then it does not matter how transparent it is. 
 
