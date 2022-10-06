@@ -206,6 +206,14 @@ module.exports = {
           'Using Alchemy to query the Optimism blockchain'
         ]
       ],
+      '/docs/security-model/': [
+        '/docs/security-model/optimism-security-model.md',
+        '/docs/security-model/bounties.md',
+        [
+          'https://medium.com/ethereum-optimism/our-pragmatic-path-to-decentralization-cb5805ca43c1',
+          'Decentralizing Optimism'
+        ]
+      ],
       '/docs/protocol/': [
         {
           title: 'How Optimism Works',
@@ -220,7 +228,8 @@ module.exports = {
           children: [
             '/docs/protocol/protocol-2.0.md',
             '/docs/protocol/compressed-ctc.md'
-          ]
+          ],
+          collapsable: false,  
         }
       ],
       '/docs/developers/': [
