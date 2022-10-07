@@ -47,7 +47,7 @@ You can run a large application for free using [Alchemy](https://www.alchemy.com
 ## Optimism Goerli
 
 ::: tip Purpose
-This is our new test network.
+This is our test network.
 :::
 
 
