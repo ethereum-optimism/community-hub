@@ -25,6 +25,9 @@ In this video you learn how to use Optimism for your own development:
 September 22nd, 2022
 
 ### Modular OP Stack - Karl Floersch
+
+This talk covers the OP Stack chain software, and how the Bedrock release will enable deployments of op-chains which serve new use cases, are future proof, and will all one day fit together to form the Superchain.
+
 <iframe src="https://www.youtube.com/embed/jlKPjiDu_KM?list=RDCMUCfF9ZO8Ug4xk_AJd4aeT5HA" title="Modular OP Stack - Karl Floersch" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Introduction to Architecture - Joshua Gutow
@@ -42,7 +45,12 @@ In this video you learn the design space around two design choices related to se
 
 <iframe src="https://www.youtube.com/embed/aKxS16TG2jk?list=PLXzKMXK2aHh4vbe7GLQfOnL-QJ1O5EqMv" title="Modular sequencing - Norswap Laurent" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+
 ### Pluggable data availability - Protolambda
+
+In this talk protolambda explains how the next Optimism upgrade improves the rollup with modular design, and how this can be utilized to quickly adopt future scaling improvements like EIP-4844 (a.k.a. proto-danksharding). 
+OP Labs is contributing to L1 research and development to increase the data availability used for securing all L2s.
+
 <iframe src="https://www.youtube.com/embed/-xWpalvZeEU?list=PLXzKMXK2aHh4vbe7GLQfOnL-QJ1O5EqMv" title="Pluggable data availability - Protolambda" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
