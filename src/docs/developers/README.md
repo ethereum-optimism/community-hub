@@ -5,7 +5,7 @@ lang: en-US
 
 Welcome to the Optimism developer docs!
 
-Whether you're just looking to [deploy a basic contract](./build/basic-contract.md) or you're ready to [build a cross-chain app](./bridge/messaging.md), you'll be able to find everything you need to start building on Optimism within this section.
+Whether you're just looking to [deploy a basic contract](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/getting-started) or you're ready to [build a cross-chain app](./bridge/messaging.md), you'll be able to find everything you need to start building on Optimism within this section.
 
 If you're looking for third-party tools that make building on Optimism easier, check out the [Tools for Developers](../useful-tools) section.
 
@@ -13,11 +13,11 @@ If you're looking for third-party tools that make building on Optimism easier, c
 
 ### Just getting started with Optimism?
 
-If you're brand new to Optimism, we recommend checking out the [guide to deploying a basic contract](./build/basic-contract.md) using [Remix](https://remix.ethereum.org).
+If you're brand new to Optimism, we recommend checking out the [guide to deploying a basic contract](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/getting-started).
 It'll get you familiar with the core steps required to get a contract deployed to the network.
 Luckily, Optimism is [EVM equivalent](https://medium.com/ethereum-optimism/introducing-evm-equivalence-5c2021deb306), so it's 100% the same as deploying a contract to Ethereum.
 
-If you're a bit more familiar with Optimism and Ethereum, you can try walking through one of the various [tutorials](./tutorials) put together by the Optimism community.
+If you're a bit more familiar with Optimism and Ethereum, you can try walking through one of the various [tutorials](https://github.com/ethereum-optimism/optimism-tutorial) put together by the Optimism community.
 They'll help you get a headstart when building your first Optimistic project.
 
 ### Ready to deploy a contract?
