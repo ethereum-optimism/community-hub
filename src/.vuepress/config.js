@@ -189,7 +189,6 @@ module.exports = {
         {
           title: "Beginner",
           children: [
-            '/docs/developers/build/basic-contract.md',            
             [
               "https://github.com/ethereum-optimism/optimism-tutorial/tree/main/getting-started",
               "Developing smart contracts on Optimism"
