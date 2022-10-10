@@ -186,25 +186,61 @@ module.exports = {
         ],        
       ],
       '/docs/guides/': [
-        '/docs/developers/build/basic-contract.md',
-        '/docs/developers/tutorials.md',       
-        '/docs/guides/wallet-dev.md',
-        '/docs/guides/cex-dev.md',
-        [
-          "https://github.com/ethereum-optimism/optimism-tutorial/tree/main/standard-bridge-standard-token",
-          "Adding an ERC20 token to the standard bridge"
-        ],
-        '/docs/guides/bridge-dev.md',
-        [
-          "https://github.com/ethereum-optimism/optimism-tutorial/tree/main/getting-started",
-          "Developing smart contracts on Optimism"
-        ],
+        {
+          title: "Beginner",
+          children: [
+            [
+              "https://github.com/ethereum-optimism/optimism-tutorial/tree/main/getting-started",
+              "Developing smart contracts on Optimism"
+            ],            
+            '/docs/guides/testing.md',
+            [
+              'https://docs.alchemy.com/reference/optimism-sdk-examples',
+              'Using Alchemy to query the Optimism blockchain'
+            ]            
+          ],
+          collapsable: true,
+        },
+        {
+          title: "Getting your dapp on Optimism",
+          children: [
+            [
+              "https://github.com/ethereum-optimism/optimism-tutorial/tree/main/cross-dom-bridge-eth",
+              "Bridging ETH with the Optimism SDK"
+            ],
+            [
+              "https://github.com/ethereum-optimism/optimism-tutorial/tree/main/cross-dom-bridge-erc20",
+              "Bridging ERC-20 tokens with the Optimism SDK"
+            ],
+            [
+              "https://github.com/ethereum-optimism/optimism-tutorial/tree/main/sdk-view-tx",
+              "View transactions between layers"
+            ],
+            [
+              "https://github.com/ethereum-optimism/optimism-tutorial/tree/main/standard-bridge-standard-token",
+              "Creating an ERC20 Token on L2 to represent one on L1"
+            ],
+            [
+              "https://github.com/ethereum-optimism/optimism-tutorial/tree/main/standard-bridge-custom-token",
+              "Registering a Custom ERC20 Token on L2"
+            ],
+            [
+              "https://github.com/ethereum-optimism/optimism-tutorial/tree/main/sdk-estimate-gas",
+              "Estimate the costs of an Optimistic (L2) transaction"
+            ]
+          ],
+          collapsable: true,
+        },
+        {
+          title: "Specific guides",
+          children: [
+            '/docs/guides/wallet-dev.md',
+            '/docs/guides/cex-dev.md',
+            '/docs/guides/bridge-dev.md',    
+          ],
+          collapsable: true,
+        },        
 
-        '/docs/guides/testing.md',
-        [
-          'https://docs.alchemy.com/reference/optimism-sdk-examples',
-          'Using Alchemy to query the Optimism blockchain'
-        ]
       ],
       '/docs/security-model/': [
         '/docs/security-model/optimism-security-model.md',
