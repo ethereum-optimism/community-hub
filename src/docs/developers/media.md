@@ -8,14 +8,14 @@ lang: en-US
 
 In this video you learn how to use Optimism for your own development:
 
-- [Deploy a contract on Optimism (Foundry)](https://youtu.be/_Y6CwsYgqwI?t=84)
-- [Interact with an Optimism contract (Foundry)](https://youtu.be/_Y6CwsYgqwI?t=140)
-- [Use the Etherscan block explorer with Optimism](https://youtu.be/_Y6CwsYgqwI?t=173)
-- [Getting started docs, with other development stacks](https://youtu.be/_Y6CwsYgqwI?t=285)
-- [Getting test ETH](https://youtu.be/_Y6CwsYgqwI?t=360)
-- [The Optimism Bridge](https://youtu.be/_Y6CwsYgqwI?t=445)
-- [Inter-layer communication (between Ethereum and Optimism)](https://youtu.be/_Y6CwsYgqwI?t=528)
-- [Gas cost calculation](https://youtu.be/_Y6CwsYgqwI?t=620)
+- [Deploy a contract on Optimism (Foundry) (1:24)](https://youtu.be/_Y6CwsYgqwI?t=84)
+- [Interact with an Optimism contract (Foundry) (2:20)](https://youtu.be/_Y6CwsYgqwI?t=140)
+- [Use the Etherscan block explorer with Optimism (2:53)](https://youtu.be/_Y6CwsYgqwI?t=173)
+- [Getting started docs, with other development stacks (4:45)](https://youtu.be/_Y6CwsYgqwI?t=285)
+- [Getting test ETH (6:00)](https://youtu.be/_Y6CwsYgqwI?t=360)
+- [The Optimism Bridge (7:25)](https://youtu.be/_Y6CwsYgqwI?t=445)
+- [Inter-layer communication, between Ethereum and Optimism (8:48)](https://youtu.be/_Y6CwsYgqwI?t=528)
+- [Gas cost calculation (10:20)](https://youtu.be/_Y6CwsYgqwI?t=620)
 
 
 <iframe src="https://www.youtube.com/embed/_Y6CwsYgqwI" title="Getting Started with Optimism" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
