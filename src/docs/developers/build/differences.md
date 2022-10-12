@@ -155,6 +155,17 @@ In [the Bedrock version](../bedrock.md) there are even less differences between 
 | `ORIGIN`     | `tx.origin`        | If the transaction is an L1 ⇒ L2 transaction, then `tx.origin` is set to the [aliased address](#address-aliasing) of the address that triggered the L1 ⇒ L2 transaction. Otherwise, this opcode behaves normally. |
 | `CALLER`     | `msg.sender`      | If the transaction is an L1 ⇒ L2 transaction, and this is the initial call (rather than an internal transaction from one contract to another), the same [address aliasing](#address-aliasing) behavior applies.
 
+::: tip `tx.origin == msg.sender`
+
+On L1 Ethereum `tx.origin` is equal to `msg.sender` only when the smart contract was called directly from an externally owned account (EOA).
+However, on Optimism `tx.origin` is the origin *on Optimism*.
+It could be an EOA.
+However, in the case of messages from L1, it is possible for a message from a smart contract on L1 to appear on L2 with `tx.origin == msg.origin`.
+This is unlikely to make a significant difference, because an L1 smart contract cannot directly manipulate the L2 state.
+However, there could be edge cases we did not think about where this matters.
+
+:::
+
 ### Accessing L1 information
 
 If you need the equivalent information from the latest L1 block, you can get it from [the `L1Block` contract](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L2/L1Block.sol).
@@ -258,7 +269,7 @@ See the full list of [custom JSON-RPC methods](./json-rpc.md) for more informati
 
 ## Transaction costs
 
-Transaction costs 
+[Transaction costs on Optimism](./transaction-fees.md) include an [L2 execution fee](./transaction-fees.md#the-l2-execution-fee) and an [L1 data fee](./transaction-fees.md#the-l1-data-fee). 
 
 
 ## Contract addresses
