@@ -45,10 +45,10 @@ Followed by:
 
 <!--
 * Voting cycle #8 (Oct 20th - Nov 9th)
-* Voting cycle #7 (Sep 29th - Oct 19th)
 -->
-* Voting cycle #6 (Sep 8th - Sep 28th)
-* **Voting Cycle #5 (Aug 25th - Sep 7th)**:
+* Voting cycle #7 (Sep 29th - Oct 19th)
+* [Voting cycle #6 (Sep 8th - Sep 28th)](https://gov.optimism.io/t/voting-cycle-6-roundup/3481)
+* Voting Cycle #5 (Aug 25th - Sep 7th):
   Changes made during the Reflection Period are voted on during two-week Special Voting Cycles.
 
 ### Reflection Period #1 
