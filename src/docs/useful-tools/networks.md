@@ -12,6 +12,8 @@ Some API calls, such as the those in the [personal namespace](https://geth.ether
 Such RPCs are either totally unsupported, or will return nonsensical values.
 :::
 
+
+
 ## Optimism (mainnet)
 
 
@@ -82,3 +84,37 @@ You can run a large application for free using [Alchemy](https://www.alchemy.com
 [The Optimism Faucet](https://optimismfaucet.xyz/) now provides Optimism Goerli ETH.
 Alternatively, if you already have Goerli ETH, you can [bridge it](https://app.optimism.io/bridge).
 
+## Connecting to Optimism
+
+There are four strategies to connect to an Optimism network (mainnet or testnet).
+
+1. **Public endpoint**. These are endpoints open to anybody who wants to use them.
+   Because they are a shared resource, these endpoints have rate limits that make them unusable for a production application.
+   They are supposed to be for initial exploration and development, and for use by wallets.
+
+   These public endpoints are available:
+
+   | Provider | Network | Endpoint |
+   | - | - | - |
+   | Optimism | Mainnet | https://mainnet.optimism.io |
+   | Bware Labs | Mainnet | https://optimism-mainnet.public.blastapi.io ([see docs](https://blastapi.io/public-api/optimism)) |
+   | Optimism | Testnet | https://goerli.optimism.io |
+
+1. **Free tier endpoints**. [Alchemy](https://www.alchemy.com/optimism?a=818c11a8da), as well as a number of [other providers](./providers.md), provide a free tier in their endpoint service.
+   There are several reasons to use this free tier service instead of a public endpoints: 
+
+   - Some providers give you [additional API functions](https://www.alchemy.com/enhanced-apis/?a=818c11a8da) which are not available from public endpoints.
+
+   - While a free tier endpoint is still going to be rate limited, the limit is typically a lot higher than on a public endpoint.
+
+   - Provider endpoints give you detailed logging, including logs of read-only requests that are not available on public utilities such as [Etherscan](https://etherscan.io/) and [Tenderly](https://tenderly.co/).
+
+     In the screen capture below you see a log from [Alchemy](https://www.alchemy.com/optimism?a=818c11a8da) with an `eth_getEstimate` request, which does not get propagated to the entire blockchain.
+
+    ![Log from Alchemy](../../assets/docs/useful-tools/networks/alchemy-log.png)
+
+1. **Paid endpoints**. [Alchemy](https://www.alchemy.com/optimism?a=818c11a8da) and the [other providers](./providers.md), also provide a paid tier.
+   While the free tier is usually sufficient for development, once the dapp is popular it is likely to require more requests than the free tier allows.
+
+1. **Run your own node**. If your dapp needs to support a lot of requests, it might be cheaper to [run your own node](../developers/build/run-a-node.md).
+   You will still need an upstream endpoint to synchronize from, and because our own infrastructure runs on Alchemy that would probably be the fastest provider.

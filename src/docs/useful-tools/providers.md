@@ -13,7 +13,7 @@ Such RPCs are either totally unsupported, or will return nonsensical values.
 
 ::: tip
 
-**We strongly recommend all developers use [Alchemy](https://www.alchemy.com/optimism).** 
+**We strongly recommend all developers use [Alchemy](https://www.alchemy.com/optimism?a=818c11a8da).** 
 **We’ve done extensive diligence and Alchemy powers our public API.** 
 
 We recommend Alchemy due to (a) the reliability, scalability and data correctness of its developer platform and (b) the comprehensive set of tooling and APIs they provide. You can run large applications on their massive free tier. 
@@ -28,7 +28,6 @@ _(1) Alchemy's enhanced features_
 Alchemy's free private RPC endpoint provides a complimentary suite of proprietary tools. 
 These include a custom-built [Ethers.js SDK](https://www.alchemy.com/sdk/?a=818c11a8da) (which are supersets of the Ethers.js Provider and Wallet libraries) and [enhanced APIs](https://www.alchemy.com/enhanced-apis/?a=818c11a8da) such as NFT, Transfers, and Notify APIs.
 
-https://www.alchemy.com/optimism/sdk
 
 _(2) Alchemy's hosted Optimism nodes_
 
@@ -45,11 +44,11 @@ Its API takes only a few lines of codes to get up and running. Alchemy isn't jus
 [Sign up for a free Alchemy account here](https://www.alchemy.com/optimism).
 
 
-## Blast
+## Bware Labs
 
 ### Description and Pricing
 
-[Blast](https://blastapi.io/) offers access to dedicated Optimism nodes with free data access up to 12M API calls per month and 25 req/s. Paid subscription tiers are available for all development needs.
+[Bware Labs](https://bwarelabs.com/) offers access to dedicated Optimism nodes with free data access up to 12M API calls per month and 25 req/s. Paid subscription tiers are available for all development needs.
 On the platform, there are also [Public APIs](https://blastapi.io/public-api/optimism) available that can be added easily in Metamask.
 
 ### Supported Networks
