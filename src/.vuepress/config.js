@@ -47,7 +47,11 @@ module.exports = {
       {
         text: 'How Optimism Works',
         link: '/docs/protocol/',
-      },      
+      },
+      {
+        text: 'Dapp Business',
+        link: '/docs/biz/'        
+      }, 
       {
         text: 'Security',
         link: '/docs/security-model/',
