@@ -92,13 +92,11 @@ There are four strategies to connect to an Optimism network (mainnet or testnet)
    Because they are a shared resource, these endpoints have rate limits that make them unusable for a production application.
    They are supposed to be for initial exploration and development, and for use by wallets.
 
-   These public endpoints are available:
+   The Optimism-run public endpoints are:
 
-   | Provider | Network | Endpoint |
-   | - | - | - |
-   | Optimism | Mainnet | https://mainnet.optimism.io |
-   | Bware Labs | Mainnet | https://optimism-mainnet.public.blastapi.io ([see docs](https://blastapi.io/public-api/optimism)) |
-   | Optimism | Testnet | https://goerli.optimism.io |
+   - **Mainnet**: `https://mainnet.optimism.io`
+   - **Testnet**: `https://goerli.optimism.io`
+
 
 1. **Free tier endpoints**. [Alchemy](https://www.alchemy.com/optimism?a=818c11a8da), as well as a number of [other providers](./providers.md), provide a free tier in their endpoint service.
    There are several reasons to use this free tier service instead of a public endpoints: 
