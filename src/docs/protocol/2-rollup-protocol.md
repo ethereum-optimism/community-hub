@@ -19,6 +19,9 @@ In Optimism's case this parent blockchain is Ethereum.
 
 ## Block storage
 
+<details>
+<summary><b>OVM 2.0 (current version)</b></summary>
+
 All Optimism blocks are stored within a special smart contract on Ethereum called the [`CanonicalTransactionChain`](https://etherscan.io/address/0x5E4e65926BA27467555EB562121fac00D24E9dD2) (or CTC for short).
 Optimism blocks are held within an append-only list inside of the CTC (we'll explain exactly how blocks are added to this list in the next section).
 This append-only list forms the Optimism blockchain.
@@ -32,9 +35,21 @@ Of course, it's a key security goal of Ethereum to not experience these sort of 
 Optimism is therefore secure against large block reorganizations as long as the Ethereum consensus mechanism is too.
 It's through this relationship (in part, at least) that Optimism derives its security properties from Ethereum.
 
+</details>
+
+<details>
+<summary><b>Bedrock (coming late 2022)</b></summary>
+
+
+
+</details>
+
 ## Block production
 
 Optimism block production is primarily managed by a single party, called the "sequencer," which helps the network by providing the following services:
+
+<details>
+<summary><b>OVM 2.0 (current version)</b></summary>
 
 - Providing instant transaction confirmations and state updates.
 - Constructing and executing L2 blocks.
@@ -56,9 +71,22 @@ This is typically more expensive because the fixed cost of submitting this trans
 However, this alternative submission method has the advantage of being resistant to censorship by the sequencer.
 Even if the sequencer is actively censoring a user, the user can always continue to use Optimism and recover any funds through this mechanism.
 
+</details>
+
+<details>
+<summary><b>Bedrock (coming late 2022)</b></summary>
+
+
+
+</details>
+
 For the moment, [Optimism PBC](https://www.optimism.io/) runs the only block producer. Refer to [Protocol specs](../protocol/README.md) section for more information about how we plan to decentralize the Sequencer role in the future.
 
+
 ## Block execution
+
+<details>
+<summary><b>OVM 2.0 (current version)</b></summary>
 
 Ethereum nodes download blocks from Ethereum's p2p network.
 Optimism nodes instead download blocks directly from the append-only list of blocks held within the `CanonicalTransactionChain` contract.
@@ -79,6 +107,15 @@ When a new block is indexed, the client software will download it and execute th
 The process of executing a transaction on Optimism is the same as on Ethereum: we load the Optimism state, apply the transaction against that state, and then record the resulting state changes.
 This process is then repeated for each new block indexed by the DTL.
 
+</details>
+
+<details>
+<summary><b>Bedrock (coming late 2022)</b></summary>
+
+
+
+</details>
+
 ## Bridging assets between layers
 
 Optimism is designed so that users can send arbitrary messages between smart contracts on Optimism and Ethereum.
@@ -90,11 +127,26 @@ See the [developer documentation and examples](../developers/bridge/standard-bri
 
 ### Moving from Ethereum to Optimism
 
+<details>
+<summary><b>OVM 2.0 (current version)</b></summary>
+
 To send messages from Ethereum to Optimism, users simply need to trigger the `CanonicalTransactionChain` contract on Ethereum to create a new block on Optimism block.
 See the above section on [block production](#block-production) for additional context.
 User-created blocks can include transactions that will appear to originate from the address that generated the block.
 
+</details>
+
+<details>
+<summary><b>Bedrock (coming late 2022)</b></summary>
+
+
+
+</details>
+
 ### Moving from Optimism to Ethereum
+
+<details>
+<summary><b>OVM 2.0 (current version)</b></summary>
 
 It's not possible for contracts on Optimism to easily generate transactions on Ethereum in the same way as Ethereum contracts can generate transactions on Optimism.
 As a result, the process of sending data from Optimism back to Ethereum is somewhat more involved.
@@ -112,6 +164,15 @@ These proofs can be used to make verifiable statements about the data within the
 This basic functionality can then be used to enable contracts on Optimism to send messages to contracts on Ethereum.
 The [`L2ToL1MessagePasser`](https://optimistic.etherscan.io/address/0x4200000000000000000000000000000000000000) contract (predeployed to the Optimism network) can be used by contracts on Optimism to store a message in the Optimism state.
 Users can then prove to contracts on Ethereum that a given contract on Optimism did, in fact, mean to send some given message by showing that the hash of this message has been stored within the `L2ToL1MessagePasser` contract.
+
+</details>
+
+<details>
+<summary><b>Bedrock (coming late 2022)</b></summary>
+
+
+
+</details>
 
 ## Fault proofs
 
