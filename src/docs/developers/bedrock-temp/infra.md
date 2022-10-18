@@ -16,7 +16,7 @@ To learn more about how Bedrock itself works and its motivations, please see [th
 
 ### Key Differences
 
-- There is no more [DTL](../../how-optimism-works/#block-execution).
+- There is no more [DTL](../../protocol/2-rollup-protocol.md#block-execution).
   This is one Docker container you no longer need.
 - Nodes can sync over a peer-to-peer network just like L1.
   This means you need to allow Bedrock Geth to communicate directly with other Bedrock Geth instances to get the fastest possible state synchronization. 
