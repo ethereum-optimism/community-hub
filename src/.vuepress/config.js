@@ -49,7 +49,7 @@ module.exports = {
         link: '/docs/protocol/',
       },
       {
-        text: 'Dapp Business',
+        text: 'Project Support',
         link: '/docs/biz/'        
       }, 
       {

@@ -35,15 +35,16 @@ lang: en-US
 
 
 
-## Get funded
+## Get OP tokens
 
-There are several ways in which Optimism can help with your funding.
+There are several ways in which Optimism can give you OP tokens.
+
+- **Governance grants**.
+  Public process managed by our [token house](../governance/token-house.md).
+  Typically milestone based, iterative grants.
+  [Instructions how to apply here](../governance/proposals.md).
 
 - **Partnership grants**.
   Private process managed by The Optimism Foundation.
   Better for nuanced requirements.
   [Apply using our marketing request form](https://optimismpbc.typeform.com/op-marketing).
-- **Governance grants**.
-  Public process managed by our [token house](../governance/token-house.md).
-  Typically milestone based, iterative grants.
-  [Instructions how to apply here](../governance/proposals.md).
