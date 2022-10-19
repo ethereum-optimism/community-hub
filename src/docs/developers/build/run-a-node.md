@@ -17,12 +17,37 @@ Here we'll go over the process of running a testnet or mainnet Optimism node for
 If you run a node you need to subscribe to [an update feed](../releases.md) (either [the mailing list](https://groups.google.com/a/optimism.io/g/optimism-announce) or [the RSS feed](https://changelog.optimism.io/feed.xml)) to know when to upgrade. 
 Otherwise, your node will eventually stop working.
 
+## Configuration choices
 
-## Hardware requirements
+### Hardware requirements
 
 Replicas need to store the transaction history of Optimism and to run Geth. 
 They need to be relatively powerful machines (real or virtual). 
 We recommend at least 16 GB RAM, and an SSD drive with at least 100 GB free.
+
+### Source of synchronization
+
+<details>
+<summary><b>OVM 2.0 (current version)</b></summary>
+
+In OVM 2.0 you choose one of two configurations.
+
+- **Replicas** replicate from L2 (Optimism).
+  Replicas gives you the most up to date information, at the cost of having to trust Optimism's updates.
+
+- **Verifiers** replicate from L1 (Ethereum).
+  Verifiers read and execute transactions from the cannonical block chain. 
+  As a result, the only way for them to have inaccurate information is an [Ethereum reorg](https://www.paradigm.xyz/2021/07/ethereum-reorgs-after-the-merge#post-merge-ethereum-with-proof-of-stake), an extremely rare event. 
+
+</details>
+
+<details>
+<summary><b>Bedrock (coming late 2022)</b></summary>
+
+In Bedrock the [execution engine, a.k.a. Bedrock Geth](https://community.optimism.io/docs/developers/bedrock-temp/infra/#bedrock-geth) typically synchronizes from other Optimism nodes (https://github.com/ethereum-optimism/optimism/blob/develop/specs/exec-engine.md#happy-path-sync), meaning L2, but it can [synchronize from L1](https://github.com/ethereum-optimism/optimism/blob/develop/specs/exec-engine.md#worst-case-sync) if necessary.
+
+
+</details>
 
 ## Docker configuration
 
