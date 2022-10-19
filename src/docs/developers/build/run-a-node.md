@@ -46,6 +46,15 @@ In OVM 2.0 you choose one of two configurations.
 
 In Bedrock the [execution engine, a.k.a. Bedrock Geth](https://community.optimism.io/docs/developers/bedrock-temp/infra/#bedrock-geth) typically synchronizes from other Optimism nodes (https://github.com/ethereum-optimism/optimism/blob/develop/specs/exec-engine.md#happy-path-sync), meaning L2, but it can [synchronize from L1](https://github.com/ethereum-optimism/optimism/blob/develop/specs/exec-engine.md#worst-case-sync) if necessary.
 
+To synchronize only from L1, you edit the [op-node configuration](https://github.com/ethereum-optimism/optimism/blob/develop/specs/rollup-node.md) to set `OP_NODE_P2P_DISABLE` to `true`.
+
+When you use RPC to get block information (https://github.com/ethereum-optimism/optimism/blob/develop/specs/rollup-node.md#l2-output-rpc-method), you can specify one of four options for `blockNumber`:
+
+- an actual block number
+- **pending**: Latest L2 block
+- **latest**: Latest block written to L1
+- **finalized**: Latest block fully finalized on L1 (a process that takes 12 minutes with Proof of Stake)
+
 
 </details>
 
