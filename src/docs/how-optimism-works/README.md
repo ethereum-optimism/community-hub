@@ -130,12 +130,12 @@ This is typically more expensive because the fixed cost of submitting this trans
 However, this alternative submission method has the advantage of being resistant to censorship by the sequencer.
 Even if the sequencer is actively censoring a user, the user can always continue to send transactions on Optimism.
 
-For the moment, [OP Labs PBC](https://www.optimism.io/) runs the only block producer on the Optimism network.
+For the moment, [The Optimism Foundation](https://www.optimism.io/) runs the only block producer on the Optimism network.
 Refer to [Protocol specs](../protocol/README.md) section for more information about how we plan to decentralize the Sequencer role in the future.
 
 ::: tip NOTE
 For users to be able to execute *withdrawals* in a censorship-resistant manner, a rollup must allow participants to trustlessly publish transaction *results* to Ethereum.
-Currently, [OP Labs PBC](https://www.optimism.io/) is the only entity able to publish transaction results while we work to decentralize the "result proposal" role.
+Currently, [The Optimism Foundation](https://www.optimism.io/) is the only entity able to publish transaction results while we work to decentralize the "result proposal" role.
 Although not unique to Optimism, it's worth understanding these security properties when using the system.
 Permissionless result publication should be introduced alongside the production release of our [Cannon](https://github.com/ethereum-optimism/cannon/) fault proving system.
 :::

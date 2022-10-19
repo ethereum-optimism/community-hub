@@ -56,7 +56,7 @@ This is typically more expensive because the fixed cost of submitting this trans
 However, this alternative submission method has the advantage of being resistant to censorship by the sequencer.
 Even if the sequencer is actively censoring a user, the user can always continue to use Optimism and recover any funds through this mechanism.
 
-For the moment, [Optimism PBC](https://www.optimism.io/) runs the only block producer. Refer to [Protocol specs](../protocol/README.md) section for more information about how we plan to decentralize the Sequencer role in the future.
+For the moment, [The Optimism Foundation](https://www.optimism.io/) runs the only block producer. Refer to [Protocol specs](../protocol/README.md) section for more information about how we plan to decentralize the Sequencer role in the future.
 
 ## Block execution
 
