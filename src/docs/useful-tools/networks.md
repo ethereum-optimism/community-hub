@@ -27,6 +27,9 @@ Such RPCs are either totally unsupported, or will return nonsensical values.
 | L2 Contract Addresses | [link](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/deployments/mainnet#layer-2-contracts) |
 | chainid.link | [https://chainid.link/?network=optimism](https://chainid.link/?network=optimism)
 
+::: tip Developer Tip If you are seeing rate limit issues when testing with the public end point sign up for [Alchemy's](https://www.alchemy.com/optimism) free trial 
+:::
+
 (1) Some API calls, such as those in the [personal namespace](https://geth.ethereum.org/docs/rpc/ns-personal) make no sense in a shared environment.
 Such RPCs are either not supported, or will return nonsensical values.
 
