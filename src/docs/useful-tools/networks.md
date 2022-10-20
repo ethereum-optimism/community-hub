@@ -79,6 +79,6 @@ You can run a large application for free using [Alchemy](https://www.alchemy.com
 
 ### Test ETH
 
-[The Optimism Faucet](https://optimismfaucet.xyz/) now provides Optimism Goerli ETH.
-Alternatively, if you already have Goerli ETH, you can [bridge it](https://app.optimism.io/bridge).
+[The Optimism Faucet](https://optimismfaucet.xyz/) provides Optimism Goerli ETH.
+Alternatively, if you already have Goerli ETH, you can [bridge it](https://app.optimism.io/bridge). For more faucet options see [Network Faucets](../faucets.md).
 
