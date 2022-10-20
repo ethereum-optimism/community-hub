@@ -75,10 +75,12 @@ This is our test network.
 
 You can run a large application for free using [Alchemy](https://www.alchemy.com/optimism). We’ve done extensive diligence and Alchemy is our recommendation due to reliability, scalability, and data correctness. They're the default API provider and developer platform for top projects like OpenSea and Facebook. 
 
+To see the full list of providers visit [Node & API Providers](./providers.md). 
+
 
 
 ### Test ETH
 
 [The Optimism Faucet](https://optimismfaucet.xyz/) provides Optimism Goerli ETH.
-Alternatively, if you already have Goerli ETH, you can [bridge it](https://app.optimism.io/bridge). For more faucet options see [Network Faucets](../faucets.md).
+Alternatively, if you already have Goerli ETH, you can [bridge it](https://app.optimism.io/bridge). For more faucet options see [Network Faucets](./faucets.md).
 
