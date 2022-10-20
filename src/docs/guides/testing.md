@@ -3,8 +3,8 @@ title: Testing on Optimistic Test Networks
 lang: en-US
 ---
 
-You can connect to Optimism Goerli, our test network, [using these endpoints](../useful-tools/networks.md).
-To obtain ETH and tokens (both ERC-20 and NFT), [see here](../useful-tools/faucets.md).
+You can find the chainid and supporting information for Optimism Goerli, our test network, [using these endpoints](../useful-tools/networks.md).
+To obtain ETH and tokens (both ERC-20 and NFT) from faucets, [see here](../useful-tools/faucets.md).
 
 This page shows some additional testing utilities that you might find useful.
 
