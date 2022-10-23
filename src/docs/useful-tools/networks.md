@@ -26,7 +26,7 @@ Such RPCs are either totally unsupported, or will return nonsensical values.
 | L2 Contract Addresses | [link](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/deployments/mainnet#layer-2-contracts) |
 | chainid.link | [https://chainid.link/?network=optimism](https://chainid.link/?network=optimism)
 
-::: tip Developer Tip If you are seeing rate limit issues when testing with the public end point we recommend signing up for [Alchemy's](https://www.alchemy.com/optimism) free trial 
+::: tip Developer Tip If you are seeing rate limit issues when testing with the public end point, or if you need websocket functionality, we recommend signing up for [Alchemy's](https://www.alchemy.com/optimism) free trial 
 :::
 
 (1) Some API calls, such as those in the [personal namespace](https://geth.ethereum.org/docs/rpc/ns-personal) make no sense in a shared environment.
@@ -39,7 +39,6 @@ Such RPCs are either not supported, or will return nonsensical values.
 
 2. For small scale tests, you can use our public API:
 - HTTP endpoint: [https://mainnet.optimism.io](https://mainnet.optimism.io) (note, this is for testing. For production, use Alchemy) 
-
 
 You can run a large application for free using [Alchemy](https://www.alchemy.com/optimism). We’ve done extensive diligence and Alchemy is our recommendation due to reliability, scalability, and data correctness. They're the default API provider and developer platform for top projects like OpenSea and Facebook. 
 
@@ -70,7 +69,9 @@ This is our test network.
 2. For small scale tests, you can use our public API:
 - HTTP endpoint: [https://goerli.optimism.io](https://goerli.optimism.io) (note, this is for testing. For production, use Alchemy) 
 
-You can run a large application for free using [Alchemy](https://www.alchemy.com/optimism). We’ve done extensive diligence and Alchemy is our recommendation due to reliability, scalability, and data correctness. They're the default API provider and developer platform for top projects like OpenSea and Facebook. 
+You can run a large application for free using [Alchemy](https://www.alchemy.com/optimism). We’ve done extensive diligence and Alchemy is our recommendation due to reliability, scalability, and data correctness. 
+They're the default API provider and developer platform for top projects like OpenSea and Facebook. 
+They also support websocket functionality, which our public endpoint does not.
 
 To see the full list of providers visit [Node & API Providers](./providers.md). 
 
