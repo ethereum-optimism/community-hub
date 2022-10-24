@@ -28,9 +28,9 @@ We recommend at least 16 GB RAM, and an SSD drive with at least 100 GB free.
 ### Source of synchronization
 
 <details>
-<summary><b>OVM 2.0 (current version)</b></summary>
+<summary><b>Pre-Bedrock (current version)</b></summary>
 
-In OVM 2.0 you choose one of two configurations.
+Prior to Bedrock you choose one of two configurations.
 
 - **Replicas** replicate from L2 (Optimism).
   Replicas gives you the most up to date information, at the cost of having to trust Optimism's updates.
