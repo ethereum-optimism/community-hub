@@ -35,9 +35,9 @@ lang: en-US
 
 
 
-## Get OP tokens
+## Get OP
 
-There are several ways in which Optimism can give you OP tokens.
+There are several ways to receive OP tokens from the Optimism Foundation.
 
 - **Governance grants**.
   Public process managed by our [token house](../governance/token-house.md).
