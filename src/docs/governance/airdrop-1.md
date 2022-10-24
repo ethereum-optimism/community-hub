@@ -39,11 +39,6 @@ The allocations and criteria break down as follows:
 
 The amount of OP tokens that an address receives is cumulative, meaning that the sum of OP tokens allocated for each matching criteria set is the amount that an address is eligible to claim (overlap bonuses are not cumulative).
 
-
-### Airdrop analytics
-
-See the [Dune analytics dashboard](https://dune.com/springzhang/optimism-airdrop-1-all-in-one).
-
 ### Optimism Early Adopters
 
 The Foundation sought to identify Optimism users who had actively used applications on Optimism as a part of their crypto experience. 
@@ -159,6 +154,7 @@ As always: stay safe and stay Optimistic.
 ## References
 
 - **Application Transaction:** Any transaction, excluding token transfer and approval transactions. 
+- **Airdrop #1 Dashboard:** [https://dune.com/optimismfnd/optimism-airdrop-1](https://dune.com/optimismfnd/optimism-airdrop-1)
 - **Detailed Protocol Metrics:** [https://dune.com/optimismfnd/Optimism](https://dune.com/optimismfnd/Optimism)
 - **OP Token Address:** [0x4200000000000000000000000000000000000042](https://optimistic.etherscan.io/address/0x4200000000000000000000000000000000000042)
 - **Optimism on Twitter:** [https://twitter.com/optimismFND](https://twitter.com/optimismFND)
