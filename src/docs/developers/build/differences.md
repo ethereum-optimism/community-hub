@@ -248,8 +248,8 @@ There are several differences in the way blocks are produced between L1 Ethereum
 | Parameter           | L1 Ethereum | Optimism Bedrock |
 | - | - | - |
 | Time between blocks | 12 seconds(1)  | 2 seconds |
-| Block target size   | 15,000,000 gas | 2,000,000 gas |
-| Block maximum size  | 30,000,000 gas | 8,000,000 gas | 
+| Block target size   | 15,000,000 gas | to be determined |
+| Block maximum size  | 30,000,000 gas | to be determined | 
 
 (1) This is the ideal. 
     If any blocks are missed it could be an integer multiple such as 24 seconds, 36 seconds, etc.
