@@ -59,6 +59,10 @@ module.exports = {
       {
         text: "Governance",
         link: "/docs/governance/"
+      },
+      {
+        text: 'Social Contract',
+        link: '/docs/social-contract/'
       },      
       {
         text: 'Contribute',
@@ -184,6 +188,21 @@ module.exports = {
           'https://calendar.google.com/calendar/u/0?cid=Y19mbm10Z3VoNm5vbzZxZ2JuaTJncGVyaWQ0a0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t',
           'Governance Calendar'
         ],        
+      ],
+      '/docs/social-contract/': [
+        [
+          '/docs/social-contract/',
+          'What is the Social Contract?'
+        ],              
+        {
+          title: "Developer Guides",
+          children: [          
+                '/docs/social-contract/write-to-social-contract.md',
+                '/docs/social-contract/read-from-social-contract.md',                
+                '/docs/social-contract/social-contract-technical-docs.md',
+          ],
+          collapsable: false,
+        },      
       ],
       '/docs/guides/': [
         {

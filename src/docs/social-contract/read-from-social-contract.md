@@ -2,42 +2,46 @@
 
 The Social Contract smart contract contains a public `attestations` mapping that anyone can write to and read from. Let's read our first attestation using the Social Contract and [ethers.js](https://docs.ethers.io/v5/).
 
+## Initialize project
+
 Start by creating a new directory and navigating inside:
 
 ```
-$ mkdir op-social-contract
-$ cd op-social-contract
+mkdir op-social-contract
+cd op-social-contract
 ```
 
 Generate a `package.json` with:
 
 ```
-$ npm init -y
+npm init -y
 ```
 
 or
 
 ```
-$ yarn init -y
+yarn init -y
 ```
 
 We will need a way to interact with `SocialContract.sol` deployed on Optimism. This can be accomplished with the `ethers` library, so let's install that developer dependency.
 
 ```
-$ npm install --save-dev ethers
+npm install --save-dev ethers
 ```
 
 or
 
 ```
-$ yarn add --dev ethers
+yarn add --dev ethers
 ```
 
 Now let's create a script called `read-attestation.js` with:
 
 ```
-$ touch read-attestation.js
+touch read-attestation.js
 ```
+
+## Add boilerplate
 
 Open up `read-attestation.js` with the text editor of your choice. Add the `ethers` library and `SocialContract.sol` ABI (available [here](./resources/SocialContractABI.json))
 
@@ -61,6 +65,8 @@ main().catch((error) => {
 });
 ```
 
+## Setup node provider
+
 We will now create a `provider` so we have a way to interact with the Optimism blockchain. The `provider` is a read-only abstraction of a connection to the Optimism network.
 
 _Note: This example code uses an Alchemy node provider. To use your preferred node provider, checkout the [provider](https://docs.ethers.io/v5/) documentation._
@@ -68,6 +74,8 @@ _Note: This example code uses an Alchemy node provider. To use your preferred no
 ```
 const provider = new ethers.providers.AlchemyProvider("optimism-goerli", "API_KEY");
 ```
+
+## Implement read attestation logic
 
 Next up, we will create a [contract instance](https://docs.ethers.io/v5/api/contract/contract/) of the Social Contract. To do that we need one additional piece of information, the contract address. We can feed `ethers` the address, ABI, and provider. That will spit out a contract instance we can use to write to the Social Contract:
 
@@ -115,7 +123,9 @@ const attestationValueString = ethers.utils.toUtf8String(attestationValueHex)
 console.log(attestationValueString)
 ```
 
-Good job! Now you know how to read attestations from the Optimist's Social Contract. The following is a copy of the full script:
+Good job! Now you know how to read attestations from the Optimist's Social Contract. The following is a copy of the full script.
+
+## Complete script
 
 ```
 const { ethers } = require("ethers");
