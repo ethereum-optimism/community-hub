@@ -16,6 +16,7 @@ This is the source for the [community hub](https://community.optimism.io/).
 # Usage
 ## Serve Locally
 ```shell
+yarn install
 yarn dev
 ```
 
