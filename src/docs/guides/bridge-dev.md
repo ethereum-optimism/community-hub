@@ -14,7 +14,7 @@ This implementation satisfies a wide range of requirements.
 :::
 
 ## Building a custom bridge
-When the Optimism Standard bridge does not satisfy your requirements for bridging assets or data you can deploy your custom bridge solution utilizing the same cross-domain infrastructure as the Standard bridge. For details on how cross-domain messaging works, see [Bridging basics](../developers/bridge/basics/) article and also the [tutorial on depositing and withdrawing between L1 and L2](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/cross-dom-bridge).
+When the Optimism Standard bridge does not satisfy your requirements for bridging assets or data you can deploy your custom bridge solution utilizing the same cross-domain infrastructure as the Standard bridge. For details on how cross-domain messaging works, see [Bridging basics](../developers/bridge/basics/) article and also the [tutorial on depositing and withdrawing between L1 and L2](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/cross-dom-bridge-erc20).
 
 Some of the reasons why the standard bridge might not work for you is for example when you cannot limit the L2 token `mint` and `burn` functions to the bridge alone (something we require for security). Also certain custom bridges implement their own logic for managing the token supply which requires custom logic. Another case might be when you are bridging non-ERC20 tokens for example NFTs. Yet another case is when you are pooling deposits for cheaper transfers to L2.
 
