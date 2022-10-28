@@ -3,7 +3,7 @@ title: How is Bedrock Different?
 lang: en-US
 ---
 
-Bedrock is the next major release of the Optimism network, planned for the last quarter of 2022. 
+Bedrock is the next major release of the Optimism network, planned for the first quarter of 2023. 
 Here are the major changes:
 
 ## Guide by persona
