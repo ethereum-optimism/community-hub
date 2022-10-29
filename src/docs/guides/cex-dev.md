@@ -13,7 +13,7 @@ You connect to Optimism the same way you do to Ethereum, by connecting to a JSON
 
 ### ETH balance
 
-In Optimism the ETH balance of an account is not stored as part of the account's state, but as an ERC-20 balance at address [`0xDeadDeAddeAddEAddeadDEaDDEAdDeaDDeAD0000`](https://optimistic.etherscan.io/address/0xDeadDeAddeAddEAddeadDEaDDEAdDeaDDeAD0000).
+In Optimism the ETH balance of an account is not stored as part of the account's state, but as an ERC-20 balance at address [`0xDeadDeAddeAddEAddeadDEaDDEAdDeaDDeAD0000`](https://explorer.optimism.io/address/0xDeadDeAddeAddEAddeadDEaDDEAdDeaDDeAD0000).
 You can still access it using the standard APIs.
 
 

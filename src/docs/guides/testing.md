@@ -20,9 +20,9 @@ Additionally, all Optimism networks have [WETH at address `0x4200000000000000000
 
 | Address | Symbol | Decimals | 
 | - | - | -: | 
-| [`0x32307adfFE088e383AFAa721b06436aDaBA47DBE`](https://goerli-optimism.etherscan.io/address/0x32307adfFE088e383AFAa721b06436aDaBA47DBE) | OUT-1 | 18 |
-| [`0xb378ed8647d67b5db6fd41817fd7a0949627d87a`](https://goerli-optimism.etherscan.io/address/0xb378eD8647D67b5dB6fD41817fd7a0949627D87a/) | OUT-2 | 18 |
-| [`0x4e6597062c7dc988fbcfe77293d833bad770c19b`](https://goerli-optimism.etherscan.io/address/0x4E6597062c7DC988FBcFE77293D833bAD770C19b) | OUT-3 | 18 |
+| [`0x32307adfFE088e383AFAa721b06436aDaBA47DBE`](https://goerli-explorer.optimism.io/address/0x32307adfFE088e383AFAa721b06436aDaBA47DBE) | OUT-1 | 18 |
+| [`0xb378ed8647d67b5db6fd41817fd7a0949627d87a`](https://goerli-explorer.optimism.io/address/0xb378eD8647D67b5dB6fD41817fd7a0949627D87a/) | OUT-2 | 18 |
+| [`0x4e6597062c7dc988fbcfe77293d833bad770c19b`](https://goerli-explorer.optimism.io/address/0x4E6597062c7DC988FBcFE77293D833bAD770C19b) | OUT-3 | 18 |
 
 
 
@@ -36,7 +36,7 @@ The `OUTb` token is supported by the bridge on Goerli.
 
   <img src="../../assets/docs/guides/testing/bridge-outb.png" width="300px">
 
-1. The address on Optimism Goerli is [`0x3e7eF8f50246f725885102E8238CBba33F276747`](https://goerli-optimism.etherscan.io/address/0x3e7eF8f50246f725885102E8238CBba33F276747).
+1. The address on Optimism Goerli is [`0x3e7eF8f50246f725885102E8238CBba33F276747`](https://goerli-explorer.optimism.io/address/0x3e7eF8f50246f725885102E8238CBba33F276747).
    Add it to your wallet to see your balance.
 
 1. You can also use the same [Optimism Bridge](https://app.optimism.io/bridge) to withdraw **OUTb** from **Optimism Goerli**.
@@ -44,6 +44,6 @@ The `OUTb` token is supported by the bridge on Goerli.
 
 ## ERC-721 tokens
 
-We have an ERC-721 token on Optimism Goerli at address [`0x38abA480f2bA7A17bC01EE5E1AD64fCedd93EfE7`](https://goerli-optimism.etherscan.io/address/0x38abA480f2bA7A17bC01EE5E1AD64fCedd93EfE7).
+We have an ERC-721 token on Optimism Goerli at address [`0x38abA480f2bA7A17bC01EE5E1AD64fCedd93EfE7`](https://goerli-explorer.optimism.io/address/0x38abA480f2bA7A17bC01EE5E1AD64fCedd93EfE7).
 It is the OpenZeppelin ERC-721 token contract with the addition of `faucet`.
 Just call the `faucet` function to get as many NFT tokens as you need.

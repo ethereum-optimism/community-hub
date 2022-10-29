@@ -47,7 +47,7 @@ Instead, if you want to access the latest L1 block number, please use the `OVM_L
 :::
 
 The block number of the latest L1 block seen by the L2 system can be accessed via the `L1BLOCKNUMBER` opcode.
-Solidity doesn't make it easy to use non-standard opcodes, so we've created a simple contract located at [`0x4200000000000000000000000000000000000013`](https://optimistic.etherscan.io/address/0x4200000000000000000000000000000000000013) that will allow you to trigger this opcode.
+Solidity doesn't make it easy to use non-standard opcodes, so we've created a simple contract located at [`0x4200000000000000000000000000000000000013`](https://explorer.optimism.io/address/0x4200000000000000000000000000000000000013) that will allow you to trigger this opcode.
 
 You can use this contract as follows:
 
@@ -73,7 +73,7 @@ contract MyContract {
 As of the OVM 2.0 update (Nov. 2021), **the process of using ETH on L2 is identical to the process of using ETH in Ethereum.**
 Please note that ETH was previously accessible as an ERC20 token, but this feature has been removed as part of OVM 2.0.
 
-For tooling developers and infrastructure providers, please note that ETH is still represented internally as an ERC20 token at the address [`0xDeadDeAddeAddEAddeadDEaDDEAdDeaDDeAD0000`](https://optimistic.etherscan.io/address/0xDeadDeAddeAddEAddeadDEaDDEAdDeaDDeAD0000).
+For tooling developers and infrastructure providers, please note that ETH is still represented internally as an ERC20 token at the address [`0xDeadDeAddeAddEAddeadDEaDDEAdDeaDDeAD0000`](https://explorer.optimism.io/address/0xDeadDeAddeAddEAddeadDEaDDEAdDeaDDeAD0000).
 As a result, user balances will always be zero inside the state trie and the user's actual balance will be stored in the aforementioned token's storage.
 **It is NOT possible to call this contract directly, it will throw an error.**
 

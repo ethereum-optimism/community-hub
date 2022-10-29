@@ -20,7 +20,7 @@ Such RPCs are either totally unsupported, or will return nonsensical values.
 | Network Name | **`Optimism`** |
 | Description | **`Mainnet`** |
 | Chain ID | **`10`** |
-| Explorer | **[https://optimistic.etherscan.io](https://optimistic.etherscan.io)** |
+| Explorer | **[https://explorer.optimism.io](https://explorer.optimism.io)** |
 | HTTP Endpoint<sup>1</sup> | We recommend [Alchemy](https://docs.alchemy.com/reference/optimism-api-quickstart/?a=818c11a8da). Optimism also provides this endpoint: **`https://mainnet.optimism.io`.** _But it is not for production systems and is rate limited._   |
 | L1 Contract Addresses | [link](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/deployments/mainnet#layer-1-contracts) |
 | L2 Contract Addresses | [link](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/deployments/mainnet#layer-2-contracts) |
@@ -55,7 +55,7 @@ This is our test network.
 | Network Name | **`Optimism Goerli`** |
 | Description | **`Testnet (public)`** |
 | Chain ID | **`420`** |
-| Explorer | **[https://goerli-optimism.etherscan.io/](https://goerli-optimism.etherscan.io/)** |
+| Explorer | **[https://goerli-explorer.optimism.io](https://goerli-explorer.optimism.io)** |
 | HTTP Endpoint | **`https://goerli.optimism.io`** |
 | L1 Contract Addresses | [link](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/deployments/goerli#layer-1-contracts) |
 | L2 Contract Addresses | [link](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/deployments/goerli#layer-2-contracts) |

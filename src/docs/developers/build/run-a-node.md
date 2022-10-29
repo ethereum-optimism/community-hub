@@ -164,7 +164,7 @@ This TypeScript program reads data from an Optimism endpoint and passes it over 
    curl -s http://localhost:7878/transaction/index/31337?backend=l2 | jq .transaction
    ```
 
-   Corresponds to [Etherscan transaction 31338](https://optimistic.etherscan.io/tx/31338).
+   Corresponds to [Etherscan transaction 31338](https://explorer.optimism.io/tx/31338).
 
 
 The DTL now needs to download the entire transaction history since regenesis, a process that takes hours.

@@ -75,7 +75,7 @@ There are two ways to check if a token can use the standard bridge:
    - Have an `l2Bridge` method
    - That method returns `0x4200...0010`. 
 
-   For example, [this link](https://optimistic.etherscan.io/address/0xe0bb0d3de8c10976511e5030ca403dbf4c25165b#readContract) can be used to see that `0xBTC` uses the standard bridge.
+   For example, [this link](https://explorer.optimism.io/address/0xe0bb0d3de8c10976511e5030ca403dbf4c25165b#readContract) can be used to see that `0xBTC` uses the standard bridge.
 
    Note that you cannot query the L1 token contract the same way.
    L2 contracts know the identity of their L1 counterpart, but L1 contracts only need to implement the standard ERC-20 methods.
