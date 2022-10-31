@@ -12,7 +12,7 @@ The Standard Bridge is composed of two main contracts the [`L1StandardBridge`](h
 Here we'll go over the basics of using this bridge to move ERC20 assets between Layer 1 and Layer 2.
 
 ::: tip 
-[See here for a step by step tutorial](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/cross-dom-bridge)
+[See here for a step by step tutorial](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/cross-dom-bridge-erc20)
 :::
 
 ## Deposits
@@ -94,7 +94,7 @@ Once your deposit is detected and finalized on Optimism, your account will be fu
 ### Withdrawing ERC20s
 
 ERC20 withdrawals can be triggered via the `withdraw` or `withdrawTo` functions on the [`L2StandardBridge`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/L2/messaging/L2StandardBridge.sol).
-If you'd like to see this contracts in action, you should check out the [L1 ⇔ L2 deposit-and-withdraw example](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/cross-dom-bridge).
+If you'd like to see this contracts in action, you should check out the [L1 ⇔ L2 deposit-and-withdraw example](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/cross-dom-bridge-erc20).
 
 ### Withdrawing ETH
 

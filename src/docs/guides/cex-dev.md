@@ -57,7 +57,7 @@ Most of the cost of an Optimism transaction is not the gas consumed by the trans
 As a centralized exchange, there will be times that withdrawals of ETH or an ERC-20 token on either Optimism or Ethereum exceed deposits and you need to transfer assets. 
 To do that you use a bridge or a gateway. 
 We have a [standard gateway](https://app.optimism.io/bridge) that receives assets on L1 (Ethereum mainnet), and mints the equivalent asset on Optimism. 
-When a user wants to withdraw the assets back to L1, the bridge burns the asset on L2 and releases it to the user on L1. If you want to use this gateway automatically, [follow this tutorial](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/cross-dom-bridge).
+When a user wants to withdraw the assets back to L1, the bridge burns the asset on L2 and releases it to the user on L1. If you want to use this gateway automatically, [follow this tutorial for ETH](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/cross-dom-bridge-eth) or [this one for ERC-20 tokens](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/cross-dom-bridge-erc20).
 
 Note that while L1 to L2 transactions typically take minutes, L2 to L1 transaction on the gateway require [a seven day challenge period](https://help.optimism.io/hc/en-us/articles/4411895558171-Why-do-I-need-to-wait-a-week-when-moving-assets-out-of-Optimism-).
 
