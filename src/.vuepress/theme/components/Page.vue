@@ -49,6 +49,17 @@
     </template>
 
     <slot name="bottom" />
+
+    <!-- Google tag (gtag.js) -->
+    <!-- put here because the plugin didn't work -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9KLVB8X0ME">      
+    </script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-9KLVB8X0ME');
+    </script>
   </main>
 </template>
 
