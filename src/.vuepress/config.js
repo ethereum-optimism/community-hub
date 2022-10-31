@@ -59,11 +59,7 @@ module.exports = {
       {
         text: "Governance",
         link: "/docs/governance/"
-      },
-      {
-        text: 'Social Contract',
-        link: '/docs/social-contract/'
-      },      
+      },   
       {
         text: 'Contribute',
         link: '/docs/contribute/',
@@ -187,21 +183,13 @@ module.exports = {
         [
           'https://calendar.google.com/calendar/u/0?cid=Y19mbm10Z3VoNm5vbzZxZ2JuaTJncGVyaWQ0a0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t',
           'Governance Calendar'
-        ],        
-      ],
-      '/docs/social-contract/': [
-        [
-          '/docs/social-contract/',
-          'What is the Social Contract?'
-        ],              
+        ],
         {
-          title: "Developer Guides",
-          children: [          
-                '/docs/social-contract/write-to-social-contract.md',
-                '/docs/social-contract/read-from-social-contract.md',                
-                '/docs/social-contract/social-contract-technical-docs.md',
+          title: "Retroactive Public Goods Funding",
+          children: [
+            '/docs/governance/social-contract.md' 
           ],
-          collapsable: false,
+          collapsable: true,
         },      
       ],
       '/docs/guides/': [
@@ -341,7 +329,7 @@ module.exports = {
         },
         '/docs/developers/media.md',
         {
-        title: "Bedrock (future version)",
+          title: "Bedrock (future version)",
           children: [
             '/docs/developers/bedrock.md',
             '/docs/developers/bedrock-temp/infra.md', 
@@ -358,6 +346,15 @@ module.exports = {
               'Bedrock alpha - running a node'
             ]        
           ]
+        },
+        {
+          title: "Social Contract",
+          children: [          
+            '/docs/developers/social-contract/write-to-social-contract.md',
+            '/docs/developers/social-contract/read-from-social-contract.md',                
+            '/docs/developers/social-contract/social-contract-technical-docs.md',
+          ],
+          collapsable: true,
         }
       ],
     }

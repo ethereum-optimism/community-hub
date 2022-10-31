@@ -7,11 +7,11 @@ The Social Contract is an **attestation layer** deployed on Optimism. It enables
 
 ### How do I write to the Social Contract?
 
-[How to make an attestation on the Social Contract](./write-to-social-contract.md))
+[How to make an attestation on the Social Contract](../developers/social-contract/write-to-social-contract.md)
 
 ### How do I read from the Social Contract?
 
-[How to read an attestation from the Social Contract](./read-from-social-contract.md)
+[How to read an attestation from the Social Contract](../developers/social-contract/read-from-social-contract.md)
 
 ### Where can I find the relevant contracts?
 
