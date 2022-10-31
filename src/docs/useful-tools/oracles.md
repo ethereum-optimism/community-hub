@@ -36,8 +36,8 @@ It can also calculate the total cost of a transaction for you before you send it
 
 This contract is a predeploy at address `0x420000000000000000000000000000000000000F`:
 
-- [On the production Optimism network](https://optimistic.etherscan.io/address/0x420000000000000000000000000000000000000F#readContract)
-- [On the Optimism Goerli test network](https://goerli-optimism.etherscan.io/address/0x420000000000000000000000000000000000000F)
+- [On the production Optimism network](https://explorer.optimism.io/address/0x420000000000000000000000000000000000000F#readContract)
+- [On the Optimism Goerli test network](https://goerli-explorer.optimism.io/address/0x420000000000000000000000000000000000000F)
 
 This is a push Oracle. 
 Optimism updates the gas price parameters on chain whenever those parameters change. 
@@ -49,7 +49,7 @@ On Optimism [Chainlink](https://chain.link/) provides a number of [price feeds](
 Those feeds are available on the production network.
 
 This is a push Oracle. 
-You can always get up to date information (see, for example, [here (scroll down to **latestAnswer**)](https://optimistic.etherscan.io/address/0x13e3Ee699D1909E989722E753853AE30b17e08c5#readContract)).
+You can always get up to date information (see, for example, [here (scroll down to **latestAnswer**)](https://explorer.optimism.io/address/0x13e3Ee699D1909E989722E753853AE30b17e08c5#readContract)).
 
 [See this guide to learn how to use the Chainlink feeds](https://docs.chain.link/docs/get-the-latest-price/).
 
@@ -98,7 +98,7 @@ Using onchain asset prices, especially those in low liquidity pools, makes you v
 To use Uniswap as an Oracle:
 
 1. See [the list of pools on Optimism](https://info.uniswap.org/#/optimism/).
-1. To find the pool address, [look at the Uniswap factory](https://optimistic.etherscan.io/address/0x1f98431c8ad98523631ae4a59f267346ea31f984#readContract).
+1. To find the pool address, [look at the Uniswap factory](https://explorer.optimism.io/address/0x1f98431c8ad98523631ae4a59f267346ea31f984#readContract).
    Use **getPool** with these parameters:
 
       | Parameter           | Meaning                             |

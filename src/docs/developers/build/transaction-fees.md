@@ -54,7 +54,7 @@ Where `tx_data_gas` is:
 tx_data_gas = count_zero_bytes(tx_data) * 4 + count_non_zero_bytes(tx_data) * 16
 ```
 
-You can read the parameter values from the [gas oracle contract](https://optimistic.etherscan.io/address/0x420000000000000000000000000000000000000F#readContract).
+You can read the parameter values from the [gas oracle contract](https://explorer.optimism.io/address/0x420000000000000000000000000000000000000F#readContract).
 
 ::: warning NOTE
 Ethereum has limited support for adding custom transaction types.
@@ -98,7 +98,7 @@ You can estimate the L2 execution fee by multiplying the gas price by the gas li
 #### Estimating the L1 data fee
 
 You can use the SDK [(see here)](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/sdk-estimate-gas).
-Alternatively, you can estimate the L1 data fee using the `GasPriceOracle` predeployed smart contract located at [`0x420000000000000000000000000000000000000F`](https://optimistic.etherscan.io/address/0x420000000000000000000000000000000000000F).
+Alternatively, you can estimate the L1 data fee using the `GasPriceOracle` predeployed smart contract located at [`0x420000000000000000000000000000000000000F`](https://explorer.optimism.io/address/0x420000000000000000000000000000000000000F).
 [The `GasPriceOracle` contract](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/L2/predeploys/OVM_GasPriceOracle.sol) is located at the same address on every Optimism network (mainnet and testnet).
 To do so, call `GasPriceOracle.getL1Fee(<unsigned RLP encoded transaction>)`.
 

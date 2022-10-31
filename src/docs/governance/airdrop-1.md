@@ -156,7 +156,7 @@ As always: stay safe and stay Optimistic.
 - **Application Transaction:** Any transaction, excluding token transfer and approval transactions. 
 - **Airdrop #1 Dashboard:** [https://dune.com/optimismfnd/optimism-airdrop-1](https://dune.com/optimismfnd/optimism-airdrop-1)
 - **Detailed Protocol Metrics:** [https://dune.com/optimismfnd/Optimism](https://dune.com/optimismfnd/Optimism)
-- **OP Token Address:** [0x4200000000000000000000000000000000000042](https://optimistic.etherscan.io/address/0x4200000000000000000000000000000000000042)
+- **OP Token Address:** [0x4200000000000000000000000000000000000042](https://explorer.optimism.io/address/0x4200000000000000000000000000000000000042)
 - **Optimism on Twitter:** [https://twitter.com/optimismFND](https://twitter.com/optimismFND)
 - **Join the Optimism Discord:** [https://discord-gateway.optimism.io/](https://discord-gateway.optimism.io/)
 - **CSV with the list of airdropped addresses:** [publish_op_airdrop1.csv](https://drive.google.com/file/d/1VVcHGHNMLeyRQMHcfkzT4fVbU2xPeT1X/view?usp=sharing)
