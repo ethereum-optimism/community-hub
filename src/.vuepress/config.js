@@ -36,7 +36,8 @@ module.exports = {
       offset: -200,
     },
     algolia: {
-      apiKey: '47d21d4ea72ed7cb504b1c6c0a46b5a0',
+      appId: '8LQU4WGQXA',
+      apiKey: '2c1a86142192f96dab9a5066ad0c1d50',
       indexName: 'optimism'
     },
     nav: [
