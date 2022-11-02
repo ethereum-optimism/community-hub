@@ -13,7 +13,7 @@ You should be aware of these descrepancies when building apps on top of Optimism
 | Opcode  | Solidity equivalent | Behavior |
 | - | - | - |
 | `COINBASE`	| `block.coinbase`   | Value is set by the sequencer. Currently returns the `OVM_SequencerFeeVault` address (`0x420...011`). |
-| `DIFFICULTY` | `block.difficulty` | Always returns zero. |
+| `DIFFICULTY` | `block.difficulty` | Always returns zero. [You can use an oracle for randomness](../../useful-tools/oracles.md#verifiable-randomness-function-vrf). |
 | `BASEFEE`    | `block.basefee`    | Currently unsupported. |
 | `ORIGIN`     | `tx.origin`        | If the transaction is an L1 ⇒ L2 transaction, then `tx.origin` is set to the [aliased address](#address-aliasing) of the address that triggered the L1 ⇒ L2 transaction. Otherwise, this opcode behaves normally. |
 
@@ -159,7 +159,7 @@ In [the Bedrock version](../bedrock.md) there are even less differences between 
 | Opcode  | Solidity equivalent | Behavior |
 | - | - | - |
 | `COINBASE`	| `block.coinbase`   | Undefined |
-| `DIFFICULTY` | `block.difficulty` | Random value. As this value is set by the sequencer, it is not as reliably random as the L1 equivalent. |
+| `DIFFICULTY` | `block.difficulty` | Random value. As this value is set by the sequencer, it is not as reliably random as the L1 equivalent. [You can use an oracle for randomness](../../useful-tools/oracles.md#verifiable-randomness-function-vrf). |
 | `NUMBER`     | `block.number`     | L2 block number
 | `TIMESTAMP`  | `block.timestamp`  | Timestamp of the L2 block
 | `ORIGIN`     | `tx.origin`        | If the transaction is an L1 ⇒ L2 transaction, then `tx.origin` is set to the [aliased address](#address-aliasing) of the address that triggered the L1 ⇒ L2 transaction. Otherwise, this opcode behaves normally. |
