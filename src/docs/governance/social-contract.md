@@ -3,30 +3,92 @@ title: What is the Social Contract?
 lang: en-US
 ---
 
-The Social Contract is an **attestation layer** deployed on Optimism. It enables _anyone_ to make arbitrary attestations about other addresses. Anyone is able to read, add to, or build on top of this data primitive. When multiple entities participate in providing qualitative attestations about actors within a community, an invaluable data library is created for the broader ecosystem. You can view the source code for this data primitive here (to be added).
+The Social Contract is an **attestation layer** deployed on Optimism. 
+It enables _anyone_ to make arbitrary attestations about other addresses. 
+Anyone is able to read, add to, or build on top of this data primitive. When multiple entities participate in providing qualitative attestations about actors within a community, an invaluable data library is created for the broader ecosystem. 
 
-### How do I write to the Social Contract?
+<!-- TODO: Add source code link when we have an authoritative source -->
 
-[How to make an attestation on the Social Contract](../developers/social-contract/write-to-social-contract.md)
+## How do I use Social Contract?
 
-### How do I read from the Social Contract?
+See [the tutorial](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/ecosystem/SocialContract).
 
-[How to read an attestation from the Social Contract](../developers/social-contract/read-from-social-contract.md)
 
-### Where can I find the relevant contracts?
+## Contract Addresses
 
-You can view the Social Contract on Optimism (mainnet) here (to be added).
+| Network | Address |
+| - | - |
+| Optimism Goerli | [`0x7787194CCA11131C0159c0AcFf7E127CF0B676ed`](https://goerli-optimism.etherscan.io/address/0x7787194cca11131c0159c0acff7e127cf0b676ed)  |
+| Optimism mainnet | To be determined |
 
-You can view the Social Contract on Optimism Goerli (testnet) here (to be added).
 
-### I am building on top of the Social Contract but have some questions, where can I discuss these?
+## I am building on top of the Social Contract but have some questions, where can I discuss these?
 
-The best place to ask any dev related questions is the Optimism #dev-support Discord channel [here](https://discord.com/channels/667044843901681675/887914409207414785), and a community member will be able to help you!
+The best place to ask any dev related questions is the #dev-support channel on the [the Optimism Discord](https://discord-gateway.optimism.io/).
 
-### I want to apply for a grant to build on Social Contract, how can I do this?
+## I want to apply for a grant to build on Social Contract, how can I do this?
 
-You can learn more about the variety of grants program available on Optimism [here](https://community.optimism.io/docs/governance/allocations/#ecosystem-fund).
+You can learn more about the variety of grants program available on Optimism [here](allocations/#ecosystem-fund).
 
-### What projects are using the Social Contract?
+## What projects are using the Social Contract?
 
-[Optimism's Citizen house](https://community.optimism.io/docs/governance/citizens-house/), [redacted], and [redacted] are all using the Social Contract! If your project is using the Social Contract make a PR to be added to the list 😊
+[Optimism's Citizen house](https://community.optimism.io/docs/governance/citizens-house/), [redacted], and [redacted] are all using the Social Contract! 
+If your project is using the Social Contract make a PR to be added to the list 😊
+
+## Technical specifications
+
+The following is the breakdown of Optimism's Social Contract smart contract.
+
+### State
+
+#### attestations
+
+The following is the nested mapping that stores all the attestations made.
+
+```
+mapping(address => mapping(address => mapping(bytes32 => bytes))) public attestations;
+```
+
+The following is a struct that represents a properly formatted attestation.
+
+#### AttestationData
+
+```
+struct AttestationData {
+    address about;
+    bytes32 key;
+    bytes val;
+}
+```
+
+### Events
+
+#### AttestationCreated
+
+This event is emitted when an attestation is successfully made.
+
+```
+event AttestationCreated(
+    address indexed creator,
+    address indexed about,
+    bytes32 indexed key,
+    bytes val
+);
+```
+
+### Functions
+
+#### attest
+
+```
+function attest(AttestationData[] memory _attestations) public
+```
+
+Records attestations to the SocialContract's state and emits an `AttestationCreated` event with the address of the message sender, address the attestation is about, the bytes32 key, and bytes value.
+
+Parameters:
+
+| Name           | Type              | Description                         |
+| -------------- | ----------------- | ----------------------------------- |
+| \_attestations | AttestationData[] | Array of `AttestationData` structs. |
+
