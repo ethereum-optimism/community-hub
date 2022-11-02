@@ -32,9 +32,6 @@ For example, looking at the **SNX** token, the [Optimism token list](https://sta
 | 420 | Optimistic Goerli (test network) | 0x2E5ED97596a8368EB9E44B1f3F25B2E813845303
 
 
-<!--
-TODO: Add a Georli example when we have a token listing with that chainId
--->
 
 ## Transaction status
 
@@ -75,3 +72,7 @@ You can do this by combining both portions of the fee (the L2 execution fee and 
 Many wallets allow users to send the maximum amount of ETH available in the user's balance.
 Of course, this requires that the predicted fee for the send transaction be deducted from the ETH balance being sent.
 You **MUST** deduct both the L2 execution fee and the L1 data fee or the charged fee plus the balance sent will exceed the user's balance and the transaction will fail.
+
+### Displaying the gas prices
+
+If you want to display the current gas prices, you can [use the `rollup_gasPrices` RPC method](../developers/build/json-rpc.md#rollup-gasprices)
