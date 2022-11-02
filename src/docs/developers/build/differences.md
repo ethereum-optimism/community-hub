@@ -132,11 +132,21 @@ But it is nearly impossible to create two that are different by a specified amou
 
 
 
-## JSON-RPC differences
+
+## Network specifications
+
+### JSON-RPC differences
 
 Optimism uses the same [JSON-RPC API](https://eth.wiki/json-rpc/API) as Ethereum.
 Some additional Optimism specific methods have been introduced.
 See the full list of [custom JSON-RPC methods](./json-rpc.md) for more information.
+
+
+### Pre-EIP-155 support
+
+[Pre-EIP-155](https://eips.ethereum.org/EIPS/eip-155) transactions do not have a chain ID, which means a transaction on one Ethereum blockchain can be replayed on others.
+This is a security risk.
+Starting in November 2022, pre-EIP-155 transactions are no longer supported on Optimism.
 
 
 # Bedrock
@@ -258,13 +268,20 @@ There are several differences in the way blocks are produced between L1 Ethereum
 
 
 
+## Network specifications
 
-
-## JSON-RPC differences
+### JSON-RPC differences
 
 Optimism uses the same [JSON-RPC API](https://eth.wiki/json-rpc/API) as Ethereum.
 Some additional Optimism specific methods have been introduced.
 See the full list of [custom JSON-RPC methods](./json-rpc.md) for more information.
+
+
+### Pre-EIP-155 support
+
+[Pre-EIP-155](https://eips.ethereum.org/EIPS/eip-155) transactions do not have a chain ID, which means a transaction on one Ethereum blockchain can be replayed on others.
+This is a security risk.
+Starting in November 2022, pre-EIP-155 transactions are no longer supported on Optimism.
 
 
 ## Transaction costs
