@@ -346,15 +346,6 @@ module.exports = {
               'Bedrock alpha - running a node'
             ]        
           ]
-        },
-        {
-          title: "Social Contract",
-          children: [          
-            '/docs/developers/social-contract/write-to-social-contract.md',
-            '/docs/developers/social-contract/read-from-social-contract.md',                
-            '/docs/developers/social-contract/social-contract-technical-docs.md',
-          ],
-          collapsable: true,
         }
       ],
     }
