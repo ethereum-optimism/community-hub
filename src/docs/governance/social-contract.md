@@ -11,7 +11,7 @@ Anyone is able to read, add to, or build on top of this data primitive. When mul
 
 ## How do I use Social Contract?
 
-See [the tutorial](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/ecosystem/SocialContract).
+See [the tutorial](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/ecosystem/social-contract).
 
 
 ## Contract Addresses
