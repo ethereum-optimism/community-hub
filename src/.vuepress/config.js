@@ -187,7 +187,7 @@ module.exports = {
         {
           title: "Retroactive Public Goods Funding",
           children: [
-            '/docs/governance/social-contract.md' 
+            '/docs/governance/attestation-station.md' 
           ],
           collapsable: true,
         },      
