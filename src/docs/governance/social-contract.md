@@ -1,15 +1,15 @@
 ---
-title: What is the Social Contract?
+title: What is the AttestationStation?
 lang: en-US
 ---
 
-The Social Contract is an **attestation layer** deployed on Optimism. 
+The AttestationStation is an **attestation layer** deployed on Optimism. 
 It enables _anyone_ to make arbitrary attestations about other addresses. 
 Anyone is able to read, add to, or build on top of this data primitive. When multiple entities participate in providing qualitative attestations about actors within a community, an invaluable data library is created for the broader ecosystem. 
 
 <!-- TODO: Add source code link when we have an authoritative source -->
 
-## How do I use Social Contract?
+## How do I use AttestationStation?
 
 See [the tutorial](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/ecosystem/social-contract).
 
@@ -22,22 +22,22 @@ See [the tutorial](https://github.com/ethereum-optimism/optimism-tutorial/tree/m
 | Optimism mainnet | To be determined |
 
 
-## I am building on top of the Social Contract but have some questions, where can I discuss these?
+## I am building on top of the AttestationStation but have some questions, where can I discuss these?
 
 The best place to ask any dev related questions is the #dev-support channel on the [the Optimism Discord](https://discord-gateway.optimism.io/).
 
-## I want to apply for a grant to build on Social Contract, how can I do this?
+## I want to apply for a grant to build on AttestationStation, how can I do this?
 
 You can learn more about the variety of grants program available on Optimism [here](allocations/#ecosystem-fund).
 
-## What projects are using the Social Contract?
+## What projects are using the AttestationStation?
 
-[Optimism's Citizen house](https://community.optimism.io/docs/governance/citizens-house/), [redacted], and [redacted] are all using the Social Contract! 
-If your project is using the Social Contract make a PR to be added to the list 😊
+[Optimism's Citizen house](https://community.optimism.io/docs/governance/citizens-house/), [redacted], and [redacted] are all using the AttestationStation! 
+If your project is using the AttestationStation make a PR including how you're using it to be added to the list 😊
 
 ## Technical specifications
 
-The following is the breakdown of Optimism's Social Contract smart contract.
+The following is the breakdown of Optimism's AttestationStation smart contract.
 
 ### State
 
@@ -84,7 +84,7 @@ event AttestationCreated(
 function attest(AttestationData[] memory _attestations) public
 ```
 
-Records attestations to the SocialContract's state and emits an `AttestationCreated` event with the address of the message sender, address the attestation is about, the bytes32 key, and bytes value.
+Records attestations to the AttestationStation's state and emits an `AttestationCreated` event with the address of the message sender, address the attestation is about, the bytes32 key, and bytes value.
 
 Parameters:
 
