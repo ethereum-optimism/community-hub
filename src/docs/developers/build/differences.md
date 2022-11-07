@@ -146,8 +146,15 @@ See the full list of [custom JSON-RPC methods](./json-rpc.md) for more informati
 
 [Pre-EIP-155](https://eips.ethereum.org/EIPS/eip-155) transactions do not have a chain ID, which means a transaction on one Ethereum blockchain can be replayed on others.
 This is a security risk.
-Starting in November 2022, pre-EIP-155 transactions are no longer supported on Optimism.
+Starting in November 2022, pre-EIP-155 transactions are no longer supported on Optimism through Alchemy.
 
+::: warning Pre-EIP-155 transactions are dangerous
+
+It is highly recommended not to use pre-eip-155 transaction.
+But if you absolutely must use them, [Infura](../../useful-tools/providers.md#infura) and [QuickNode](../../useful-tools/providers.md#quicknode) still support them.
+Just be careful.
+
+:::
 
 # Bedrock
 
