@@ -20,7 +20,7 @@ In Optimism's case this parent blockchain is Ethereum.
 ## Block storage
 
 <details>
-<summary><b>OVM 2.0 (current version)</b></summary>
+<summary><b>Pre-bedrock (current version)</b></summary>
 
 All Optimism blocks are stored within a special smart contract on Ethereum called the [`CanonicalTransactionChain`](https://etherscan.io/address/0x5E4e65926BA27467555EB562121fac00D24E9dD2) (or CTC for short).
 Optimism blocks are held within an append-only list inside of the CTC (we'll explain exactly how blocks are added to this list in the next section).
@@ -38,9 +38,14 @@ It's through this relationship (in part, at least) that Optimism derives its sec
 </details>
 
 <details>
-<summary><b>Bedrock (coming late 2022)</b></summary>
+<summary><b>Bedrock (coming Q1 2023)</b></summary>
 
+In Bedrock L2 blocks are saved to the Ethereum blockchain using a non-contract address ([`0xDeadDeAddeAddEAddeadDEaDDEAdDeaDDeAD0001`](https://etherscan.io/address/0xDeadDeAddeAddEAddeadDEaDDEAdDeaDDeAD0001)), to minimize the L1 gas expense. 
+As these blocks are submitted as transaction calldata on Ethereum there is no way to modify or censor them after the "transaction" is included in a block that has enough attestations.
+This is the way that Optimism inherits the availability and integrity guarantees of Ethereum.
 
+Blocks are written to L1 in [a compressed format](https://github.com/ethereum-optimism/optimism/blob/develop/specs/derivation.md#batch-submission-wire-format) to reduce costs.
+This is important because writing to L1 is [the major cost of Optimism transactions](../developers/build/transaction-fees.md).
 
 </details>
 
@@ -48,12 +53,12 @@ It's through this relationship (in part, at least) that Optimism derives its sec
 
 Optimism block production is primarily managed by a single party, called the "sequencer," which helps the network by providing the following services:
 
-<details>
-<summary><b>OVM 2.0 (current version)</b></summary>
-
 - Providing instant transaction confirmations and state updates.
 - Constructing and executing L2 blocks.
 - Submitting user transactions to L1.
+
+<details>
+<summary><b>Pre-bedrock (current version)</b></summary>
 
 The sequencer has no mempool and transactions are immediately accepted or rejected in the order they were received.
 When a user sends their transaction to the sequencer, the sequencer checks that the transaction is valid (i.e. pays a sufficient fee) and then applies the transaction to its local state as a pending block.
@@ -74,19 +79,30 @@ Even if the sequencer is actively censoring a user, the user can always continue
 </details>
 
 <details>
-<summary><b>Bedrock (coming late 2022)</b></summary>
+<summary><b>Bedrock (coming Q1 2023)</b></summary>
 
+In bedrock the sequencer does have a mempool, similar to L1 Ethereum, but the mempool is private to avoid opening opportunities for MEV.
+Blocks are produced every two seconds, regardless of whether they are empty (no transactions), filled up to the block gas limit with transactions, or anything in between.
 
+Transactions get to the sequencer in two ways:
+
+1. Transactions submitted on L1 have to be included by the sequencer in the Optimism block that starts the next epoch (in Optimism epoch is defined as the time between two L1 blocks, typically 12 seconds, six Optimism blocks).
+   If the sequencer attempts to ignore a legitimate L1 transaction it ends up with a state that is inconsistent with the verifiers, same as if the sequencer tried to fake the state by other means.
+   This provides Optimism with L1 Ethereum level censorship resistance.
+
+1. Transactions submitted directly to the sequnecer. 
+   These transactions are a lot cheaper to submit (because you do not need the expense of a separate L1 transaction), but of course they cannot be made censorship resistant, because the sequencer is the only entity that knows about them.
 
 </details>
 
-For the moment, [Optimism PBC](https://www.optimism.io/) runs the only block producer. Refer to [Protocol specs](../protocol/README.md) section for more information about how we plan to decentralize the Sequencer role in the future.
+For the moment, [The Optimism Foundation](https://www.optimism.io/) runs the only sequencer. 
+Refer to [Protocol specs](../protocol/README.md) section for more information about how we plan to decentralize the Sequencer role in the future.
 
 
 ## Block execution
 
 <details>
-<summary><b>OVM 2.0 (current version)</b></summary>
+<summary><b>Pre-bedrock (current version)</b></summary>
 
 Ethereum nodes download blocks from Ethereum's p2p network.
 Optimism nodes instead download blocks directly from the append-only list of blocks held within the `CanonicalTransactionChain` contract.
@@ -110,9 +126,9 @@ This process is then repeated for each new block indexed by the DTL.
 </details>
 
 <details>
-<summary><b>Bedrock (coming late 2022)</b></summary>
+<summary><b>Bedrock (coming Q1 2023)</b></summary>
 
-
+Optimism nodes receive blocks from 
 
 </details>
 
@@ -128,7 +144,7 @@ See the [developer documentation and examples](../developers/bridge/standard-bri
 ### Moving from Ethereum to Optimism
 
 <details>
-<summary><b>OVM 2.0 (current version)</b></summary>
+<summary><b>Pre-bedrock (current version)</b></summary>
 
 To send messages from Ethereum to Optimism, users simply need to trigger the `CanonicalTransactionChain` contract on Ethereum to create a new block on Optimism block.
 See the above section on [block production](#block-production) for additional context.
@@ -137,7 +153,7 @@ User-created blocks can include transactions that will appear to originate from 
 </details>
 
 <details>
-<summary><b>Bedrock (coming late 2022)</b></summary>
+<summary><b>Bedrock (coming Q1 2023)</b></summary>
 
 
 
@@ -146,7 +162,7 @@ User-created blocks can include transactions that will appear to originate from 
 ### Moving from Optimism to Ethereum
 
 <details>
-<summary><b>OVM 2.0 (current version)</b></summary>
+<summary><b>Pre-bedrock (current version)</b></summary>
 
 It's not possible for contracts on Optimism to easily generate transactions on Ethereum in the same way as Ethereum contracts can generate transactions on Optimism.
 As a result, the process of sending data from Optimism back to Ethereum is somewhat more involved.
@@ -168,7 +184,7 @@ Users can then prove to contracts on Ethereum that a given contract on Optimism 
 </details>
 
 <details>
-<summary><b>Bedrock (coming late 2022)</b></summary>
+<summary><b>Bedrock (coming Q1 2023)</b></summary>
 
 
 
