@@ -172,7 +172,7 @@ See the [developer documentation and examples](../developers/bridge/standard-bri
 
 #### Moving from Ethereum to Optimism
 
-To send messages from Ethereum to Optimism, users simply need to trigger the `CanonicalTransactionChain` contract on Ethereum to create a new block on Optimism block.
+To send messages from Ethereum to Optimism, users simply need to trigger the `CanonicalTransactionChain` contract on Ethereum to create a new block on Optimism.
 See the above section on [block production](#block-production) for additional context.
 User-created blocks can include transactions that will appear to originate from the address that generated the block.
 
