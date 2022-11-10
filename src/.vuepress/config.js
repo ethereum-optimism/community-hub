@@ -60,7 +60,7 @@ module.exports = {
       {
         text: "Governance",
         link: "/docs/governance/"
-      },      
+      },   
       {
         text: 'Contribute',
         link: '/docs/contribute/',
@@ -184,7 +184,14 @@ module.exports = {
         [
           'https://calendar.google.com/calendar/u/0?cid=Y19mbm10Z3VoNm5vbzZxZ2JuaTJncGVyaWQ0a0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t',
           'Governance Calendar'
-        ],        
+        ],
+        {
+          title: "Retroactive Public Goods Funding",
+          children: [
+            '/docs/governance/attestation-station.md' 
+          ],
+          collapsable: true,
+        },      
       ],
       '/docs/guides/': [
         {
@@ -323,7 +330,7 @@ module.exports = {
         },
         '/docs/developers/media.md',
         {
-        title: "Bedrock (future version)",
+          title: "Bedrock (future version)",
           children: [
             '/docs/developers/bedrock.md',
             '/docs/developers/bedrock-temp/infra.md', 
