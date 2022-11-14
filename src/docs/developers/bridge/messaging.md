@@ -19,7 +19,7 @@ If you're a smart contract developer, you might be familiar with stuff like this
 
 ```solidity
 contract MyContract {
-    doSomething(uint256 myFunctionParam) public {
+    function doSomething(uint256 myFunctionParam) public {
         // ... some sort of code goes here
     }
 }
@@ -42,7 +42,7 @@ For the sake of learning, let's take a look at how we can duplicate the same cod
 
 ```solidity
 contract MyContract {
-    doSomething(uint256 myFunctionParam) public {
+    function doSomething(uint256 myFunctionParam) public {
         // ... some sort of code goes here
     }
 }
@@ -100,7 +100,7 @@ It's dead simple:
 ```solidity
 // Pretend this is on L2
 contract MyOptimisticContract {
-    doSomething(uint256 myFunctionParam) public {
+    function doSomething(uint256 myFunctionParam) public {
         // ... some sort of code goes here
     }
 }
