@@ -7,6 +7,8 @@ The AttestationStation is an **attestation layer** deployed on Optimism.
 It enables _anyone_ to make arbitrary attestations about other addresses. 
 Anyone is able to read, add to, or build on top of this data primitive. When multiple entities participate in providing qualitative attestations about actors within a community, an invaluable data library is created for the broader ecosystem. 
 
+Attestations written to the AttestationStation form the base layer of reputation for the Citizen's House.
+
 <!-- TODO: Add source code link when we have an authoritative source -->
 
 ## How do I use AttestationStation?
