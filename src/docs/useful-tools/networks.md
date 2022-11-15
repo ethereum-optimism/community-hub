@@ -86,7 +86,9 @@ Alternatively, if you already have Goerli ETH, you can [bridge it](https://app.o
 
 ::: warning Ignore other networks
 
-Optimism mainnet and Optimism Goerli are, from Optimism's perspective, production networks.
+Optimism mainnet and Optimism Goerli are, from Optimism's perspective, production networks. This means our Goerli network is something you can rely on for consistent state and uptime. We have other testnets that we use to test our code (such as the Goerli Nightly network) that we use to test new features. These networks are for _us_ to test, and therefore might not have reliable state & uptime. 
+
+If you want to test out our new infrastructure before it is stable, or are interested in working on the latest and greatest protocols please check these networks out! If not, they are best ignored. 
 We try to make sure they work and preserve the state.
 In the months prior to a major release, such as Bedrock, we may have a different network for testing dapps on that release.
 
