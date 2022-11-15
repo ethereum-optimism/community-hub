@@ -48,7 +48,11 @@ module.exports = {
       {
         text: 'How Optimism Works',
         link: '/docs/protocol/',
-      },      
+      },
+      {
+        text: 'Project Support',
+        link: 'https://help.optimism.io/hc/en-us/articles/9762044018843-How-do-I-get-project-support-marketing-integrations-etc-'        
+      },             
       {
         text: 'Security',
         link: '/docs/security-model/',
