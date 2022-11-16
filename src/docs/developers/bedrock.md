@@ -317,38 +317,36 @@ The `OVM_GasPrice` interface is likely to change, so for estimating transaction 
 
 The information in this section is primarily useful to people who run an Optimism network node, either as a replica or as an independent development node.
 
-The rollup node is the component responsible for deriving the L2 chain from L1 blocks (and their associated receipts). 
-
 In bedrock processing is divided between two components:
 
-- **Rollup node**: 
+- **op-node**: 
   The component responsible for deriving the L2 chain from L1 blocks.
   It is somewhat similar to the consensus layer client.
 
-- **Execution engine**: 
+- **op-geth**: 
   The component that actually executes transactions. 
   This is [a slightly modified version of geth](https://github.com/ethereum-optimism/reference-optimistic-geth/compare/master...optimism-prototype).
 
-Note that while the execution engine is similar to the previous version's l2geth, there is no bedrock equivalent to the DTL.
+Note that while op-geth is similar to the previous version's l2geth, there is no bedrock equivalent to the DTL.
 
-### Rollup node
+### op-node
 
-The rollup node provides the L1 information that the execution engine uses to derive the L2 blocks. 
-The rollup node always provides the L2 state root to the execution engine, because that's the root of trust that needs to come from L1. 
+The op-node (formerly called the rollup node) provides the L1 information that op-geth uses to derive the L2 blocks. 
+The op-node always provides the L2 state root to op-geth, because that's the root of trust that needs to come from L1. 
 It can also provide all the transactions from L1 for synchronization, but that mechanism is slower than snap sync (see next section).
 
-[You can read more about the rollup node here](https://github.com/ethereum-optimism/optimism/blob/develop/specs/rollup-node.md).
+[You can read more about the op-node here](https://github.com/ethereum-optimism/optimism/blob/develop/specs/rollup-node.md).
 
 
 
-### Execution engine
+### op-geth
 
-The execution engine runs a slightly modified version of geth.
+op-geth (formerly called execution engine) runs a slightly modified version of geth.
 In terms of EVM equivalence, it is [even closer to upstream geth](https://github.com/ethereum-optimism/reference-optimistic-geth/compare/master...optimism-prototype) than the current version.
 
-One important feature that we inherit from upstream geth is their peer to peer synchronization, which allows for much faster synchronization (from other Optimism execution engines). 
-Note that peer to peer synchronization is allowed, not required. 
-For censorship resistance, an execution engine can synchronize purely from the rollup node that receives data from L1. 
+One important feature that we inherit from upstream geth is their peer to peer synchronization, which allows for much faster synchronization (from other op-geths). 
+Note that peer to peer synchronization is allowed, *not* required. 
+For censorship resistance, op-geth can synchronize purely from the op-node that receives data from L1. 
 There are two types of synchronization possible:
 
 
@@ -359,13 +357,13 @@ There are two types of synchronization possible:
 
 ### Legacy requests
 
-We need to provided history from the final regenesis (November 11th) until the introduction of bedrock.
-At the same time, we do not want to put anything in our execution engine that doesn't need to be there. 
+We need to provided history from the final regenesis (November 11th, 2021) until the introduction of bedrock.
+At the same time, we do not want to put anything in op-geth that doesn't need to be there. 
 The closer it is to upstream geth the better.
 
 The solution is to have two additional components:
 
-1. **Daisy chain**, an RPC proxy that routes read requests from before bedrock to the legacy geth, and everything else to the execution engine.
+1. **Daisy chain**, an RPC proxy that routes read requests from before bedrock to the legacy geth, and everything else to op-geth.
 1. **Legacy geth**, a stripped down version of the previous version's `l2geth` with a read only database containing the pre-bedrock history.
 
 
