@@ -331,18 +331,16 @@ Note that while op-geth is similar to the previous version's l2geth, there is no
 
 ### op-node
 
-The op-node (formerly called the rollup node) provides the L1 information that op-geth uses to derive the L2 blocks. 
+The op-node (Optimism's implementation of [a rollup node](https://github.com/ethereum-optimism/optimism/blob/develop/specs/rollup-node.md)) provides the L1 information that op-geth uses to derive the L2 blocks. 
 The op-node always provides the L2 state root to op-geth, because that's the root of trust that needs to come from L1. 
 It can also provide all the transactions from L1 for synchronization, but that mechanism is slower than snap sync (see next section).
-
-[You can read more about the op-node here](https://github.com/ethereum-optimism/optimism/blob/develop/specs/rollup-node.md).
 
 
 
 ### op-geth
 
-op-geth (formerly called execution engine) runs a slightly modified version of geth.
-In terms of EVM equivalence, it is [even closer to upstream geth](https://github.com/ethereum-optimism/reference-optimistic-geth/compare/master...optimism-prototype) than the current version.
+op-geth (Optimism's implementation of [an execution engine](https://github.com/ethereum-optimism/optimism/blob/develop/specs/rollup-node.md)) runs a slightly modified version of geth.
+In terms of EVM equivalence, it is even closer to upstream geth than the current version.
 
 One important feature that we inherit from upstream geth is their peer to peer synchronization, which allows for much faster synchronization (from other op-geths). 
 Note that peer to peer synchronization is allowed, *not* required. 
