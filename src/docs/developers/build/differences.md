@@ -146,7 +146,7 @@ See the full list of [custom JSON-RPC methods](./json-rpc.md) for more informati
 
 [Pre-EIP-155](https://eips.ethereum.org/EIPS/eip-155) transactions do not have a chain ID, which means a transaction on one Ethereum blockchain can be replayed on others.
 This is a security risk, because transactions that are legitimate on one chain could be a security risk on another.
-For example, you might agree to send me 1 ETH on Georli (chain ID 5) to help me test my contracts.
+For example, you might agree to send me 1 ETH on Goerli (chain ID 5) to help me test my contracts.
 If you submit the transaction as a pre-EIP-155 transaction, then I can wait until your address's nonce on mainnet (chain ID 1) is the same as the one you had when you submitted the Goerli transaction and send the transaction to mainnet.
 Mainnet would then interpret it as a legitimate transaction and transfer a *real* ETH from your account to mine (assuming your balance is high enough, of course)
 
