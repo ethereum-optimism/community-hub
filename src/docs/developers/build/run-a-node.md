@@ -17,12 +17,46 @@ Here we'll go over the process of running a testnet or mainnet Optimism node for
 If you run a node you need to subscribe to [an update feed](../releases.md) (either [the mailing list](https://groups.google.com/a/optimism.io/g/optimism-announce) or [the RSS feed](https://changelog.optimism.io/feed.xml)) to know when to upgrade. 
 Otherwise, your node will eventually stop working.
 
+## Configuration choices
 
-## Hardware requirements
+### Hardware requirements
 
 Replicas need to store the transaction history of Optimism and to run Geth. 
 They need to be relatively powerful machines (real or virtual). 
 We recommend at least 16 GB RAM, and an SSD drive with at least 100 GB free.
+
+### Source of synchronization
+
+<details>
+<summary><b>Pre-Bedrock (current version)</b></summary>
+
+Prior to Bedrock you choose one of two configurations.
+
+- **Replicas** replicate from L2 (Optimism).
+  Replicas gives you the most up to date information, at the cost of having to trust Optimism's updates.
+
+- **Verifiers** replicate from L1 (Ethereum).
+  Verifiers read and execute transactions from the cannonical block chain. 
+  As a result, the only way for them to have inaccurate information is an [Ethereum reorg](https://www.paradigm.xyz/2021/07/ethereum-reorgs-after-the-merge#post-merge-ethereum-with-proof-of-stake), an extremely rare event. 
+
+</details>
+
+<details>
+<summary><b>Bedrock (coming late 2022)</b></summary>
+
+In Bedrock the [execution engine, a.k.a. Bedrock Geth](https://community.optimism.io/docs/developers/bedrock-temp/infra/#bedrock-geth) typically synchronizes from other Optimism nodes (https://github.com/ethereum-optimism/optimism/blob/develop/specs/exec-engine.md#happy-path-sync), meaning L2, but it can [synchronize from L1](https://github.com/ethereum-optimism/optimism/blob/develop/specs/exec-engine.md#worst-case-sync) if necessary.
+
+To synchronize only from L1, you edit the [op-node configuration](https://github.com/ethereum-optimism/optimism/blob/develop/specs/rollup-node.md) to set `OP_NODE_P2P_DISABLE` to `true`.
+
+When you use RPC to get block information (https://github.com/ethereum-optimism/optimism/blob/develop/specs/rollup-node.md#l2-output-rpc-method), you can specify one of four options for `blockNumber`:
+
+- an actual block number
+- **pending**: Latest L2 block
+- **latest**: Latest block written to L1
+- **finalized**: Latest block fully finalized on L1 (a process that takes 12 minutes with Proof of Stake)
+
+
+</details>
 
 ## Docker configuration
 
@@ -164,7 +198,7 @@ This TypeScript program reads data from an Optimism endpoint and passes it over 
    curl -s http://localhost:7878/transaction/index/31337?backend=l2 | jq .transaction
    ```
 
-   Corresponds to [Etherscan transaction 31338](https://optimistic.etherscan.io/tx/31338).
+   Corresponds to [Etherscan transaction 31338](https://explorer.optimism.io/tx/31338).
 
 
 The DTL now needs to download the entire transaction history since regenesis, a process that takes hours.

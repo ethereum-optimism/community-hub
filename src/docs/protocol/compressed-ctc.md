@@ -21,7 +21,7 @@ For example, here are the fields and their values for this [initial solution CTC
 | Bytes | Field Size | Field             | Value | Comments |
 | ---------: | ---------: | ------------------| ----- | -------- |
 |  0-3 |  4 | Function signature | 0xd0f89344 | [appendSequencerBatch()](https://www.4byte.directory/signatures/?bytes4_signature=0xd0f89344) |
-|  4-8 |  5 | Starting tx index   | 4025992 | [this transaction](https://optimistic.etherscan.io/tx/4025992) |
+|  4-8 |  5 | Starting tx index   | 4025992 | [this transaction](https://explorer.optimism.io/tx/4025992) |
 |  9-11 |  3 | Elements to append | 89 |
 | 12-14 |  3 | Batch contexts     | 15 |
 | 15-30 | 14 | **Context 0** (multiple fields) |

@@ -75,7 +75,6 @@ Alternatively, users can skip the sequencer entirely and submit their transactio
 This is typically more expensive because the fixed cost of submitting this transaction is paid entirely by the user and is not amortized over many different transactions.
 However, this alternative submission method has the advantage of being resistant to censorship by the sequencer.
 Even if the sequencer is actively censoring a user, the user can always continue to use Optimism and recover any funds through this mechanism.
-
 </details>
 
 <details>
@@ -95,9 +94,7 @@ Transactions get to the sequencer in two ways:
 
 </details>
 
-For the moment, [The Optimism Foundation](https://www.optimism.io/) runs the only sequencer. 
-Refer to [Protocol specs](../protocol/README.md) section for more information about how we plan to decentralize the Sequencer role in the future.
-
+For the moment, [The Optimism Foundation](https://www.optimism.io/) runs the only block producer. Refer to [Protocol specs](../protocol/README.md) section for more information about how we plan to decentralize the Sequencer role in the future.
 
 ## Block execution
 
@@ -191,7 +188,7 @@ Optimism maintains a convenient cross-chain communication contract, the [`L1Cros
 
 These proofs can be used to make verifiable statements about the data within the storage of any contract on Optimism at a specific block height.
 This basic functionality can then be used to enable contracts on Optimism to send messages to contracts on Ethereum.
-The [`L2ToL1MessagePasser`](https://optimistic.etherscan.io/address/0x4200000000000000000000000000000000000000) contract (predeployed to the Optimism network) can be used by contracts on Optimism to store a message in the Optimism state.
+The [`L2ToL1MessagePasser`](https://explorer.optimism.io/address/0x4200000000000000000000000000000000000000) contract (predeployed to the Optimism network) can be used by contracts on Optimism to store a message in the Optimism state.
 Users can then prove to contracts on Ethereum that a given contract on Optimism did, in fact, mean to send some given message by showing that the hash of this message has been stored within the `L2ToL1MessagePasser` contract.
 
 </details>

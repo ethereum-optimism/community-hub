@@ -4,7 +4,7 @@ lang: en-US
 ---
 
 ::: warning This guide is for bedrock
-This guide is for the *bedrock* upgrade, which is coming in the second half of 2022.
+This guide is for the *bedrock* upgrade, which is coming in Q1, 2023.
 Do not attempt to use this in production prior to that upgrade. Keep an eye on these docs or [our official Twitter](https://twitter.com/OPLabsPBC) for announcements on [the Bedrock testnet](#testnets).
 :::
 
@@ -48,7 +48,6 @@ To learn more about how Bedrock itself works and its motivations, please see [th
 ### Bedrock Geth
 
 - The Bedrock Geth node is a vanilla Geth 1.10.x instance with the minimal Optimism-specific diff applied.
-- It syncs unconfirmed transactions over a peer-to-peer network using Geth’s built in transaction pool.
 - It syncs state to other Bedrock Geth nodes using Geth’s build in [snap sync mechanism](https://github.com/ethereum/devp2p/blob/master/caps/snap.md).
 - It serves the Engine API to the Rollup Node.
 
@@ -57,7 +56,7 @@ To learn more about how Bedrock itself works and its motivations, please see [th
 - A stripped-down, read-only version of the legacy (i.e., pre-Bedrock) `l2geth` node.
 - Serves historical data to the Daisy Chain.
 - The Legacy Geth instance will ship with a pre-populated database. 
-  It does not need state synchronization, because that database is real only.
+  It does not need state synchronization, because that database is read only.
 
 ### Daisy Chain
 

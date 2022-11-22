@@ -15,5 +15,6 @@ There are a few areas in which the SDK can help you navigate [the differences be
 
 Tutorials:
 - [Viewing transactions between layers](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/sdk-view-tx)
-- [Bridging Assets with the Optimism SDK](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/cross-dom-bridge)
+- [Bridging ETH with the Optimism SDK](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/cross-dom-bridge-eth)
+- [Bridging ERC-20 with the Optimism SDK](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/cross-dom-bridge-erc20)
 - [Estimate the costs of an Optimistic (L2) transaction](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/sdk-estimate-gas)
