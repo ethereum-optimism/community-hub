@@ -128,7 +128,16 @@ This process is then repeated for each new block indexed by the DTL.
 <details>
 <summary><b>Bedrock (coming Q1 2023)</b></summary>
 
-Optimism nodes receive blocks from 
+The execution engine (implemented as the `op-geth` component) receive blocks using two mechanisms:
+
+1. The execution engine can update itself using peer to peer network with other execution engines.
+   This operates the same way that the L1 execution clients synchronize the state across the network.
+   You can read more about it [in the specs](https://github.com/ethereum-optimism/optimism/blob/develop/specs/exec-engine.md#happy-path-sync). 
+
+1. The rollup node (implemented as the `op-node` component) retrieves the blocks from L1.
+   This mechanism is slower, but censorship resistant.
+   You can read more about it [in the specs](https://github.com/ethereum-optimism/optimism/blob/develop/specs/exec-engine.md#worst-case-sync).
+
 
 </details>
 
@@ -143,6 +152,8 @@ See the [developer documentation and examples](../developers/bridge/standard-bri
 
 ### Moving from Ethereum to Optimism
 
+In Optimism terminology, transactions going from Ethereum (L1) to Optimism (L2) are called *deposits*, even if they do not have any assets attached to them.
+
 <details>
 <summary><b>Pre-bedrock (current version)</b></summary>
 
@@ -155,7 +166,9 @@ User-created blocks can include transactions that will appear to originate from 
 <details>
 <summary><b>Bedrock (coming Q1 2023)</b></summary>
 
-
+The contract interface for deposits is the same.
+Deposit transactions become part of the canonical chain in the first L2 block that happens after the L1 block in which they are processed.
+You can read more about this [in the specs](https://github.com/ethereum-optimism/optimism/blob/develop/specs/deposits.md).
 
 </details>
 
@@ -186,7 +199,17 @@ Users can then prove to contracts on Ethereum that a given contract on Optimism 
 <details>
 <summary><b>Bedrock (coming Q1 2023)</b></summary>
 
+Withdrawals (the term is used for any Optimism to Ethereum message, regardless of whether it has attached assets or not) have three stages:
 
+1. You initialize withdrawals with an L2 transaction.
+
+1. Wait for the next output root to be submitted to L1 (up to an hour on mainnet, less than that on the test network) then submit the withdrawal proof using `proveWithdrawalTransaction`.
+   This new step makes the proof available during the challenge period, which makes it much easier to identify faulty proofs.
+   Having the proof available for off-chain testing helps us guard against a whole class of vulnerabilities based on invalid fault proofs.
+
+1. After the fault challenge period ends (a week on mainnet, less than that on the test network), finalize the withdrawal.
+
+[You can read the full withdrawal specifications here](https://github.com/ethereum-optimism/optimism/blob/develop/specs/withdrawals.md)
 
 </details>
 
