@@ -215,12 +215,22 @@ Deposits are implemented using [a new transaction type](https://github.com/ether
 
 [Address aliasing](build/differences/#address-aliasing) is now applied to withdrawal transactions as well as deposit ones.
 
-There is a separate withdrawal root which allows withdrawal merkle proofs to be 60% cheaper (in L1 gas). 
-This happens transparently, you just see less cost.
 
-The withdrawal interface is unchanged.
+The withdrawal process is similar, but not identical.
+
+1. You initialize withdrawals with an L2 transaction, the same you did prior to bedrock.
+
+1. After the new state root is submitted to L1 (about an hour on mainnet, less than that on the test network) submit the withdrawal proof using `proveMessage`.
+   This new step makes the proof available during the challenge period, which makes it much easier to identify faulty proofs.
+   Having the proof available for off-chain testing helps us guard against a whole class of vulnerabilities based on invalid fault proofs.
+
+1. After the fault challenge period ends (a week on mainnet, less than that on the test network), finalize the withdrawal.
+
+
+<!-- 
 To initiate withdrawals we recommend you use [`L2CrossDomainMessenger`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L2/L2CrossDomainMessenger.sol). 
 To claim/finalize the message continue to use [`L1CrossDomainMessenger`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L1/L1CrossDomainMessenger.sol).
+-->
 
 <!-- 
 However, each of these contracts will be deployed twice. Once in the old address, where withdrawals use the state root. The other addresses are  where withdrawals use the withdrawals root, and are therefore cheaper.  
@@ -229,8 +239,6 @@ However, each of these contracts will be deployed twice. Once in the old address
 -->
 
 [You can read the full withdrawal specifications here](https://github.com/ethereum-optimism/optimism/blob/develop/specs/withdrawals.md)
-
-
 
 ## Blockchain
 
