@@ -217,7 +217,7 @@ The withdrawal process is similar, but not identical.
 
 1. You initialize withdrawals with an L2 transaction, the same you did prior to bedrock.
 
-1. After the new state root is submitted to L1 (up to an hour on mainnet, less than that on the test network) submit the withdrawal proof using `proveMessage`.
+1. Wait for the next output root to be submitted to L1 (up to an hour on mainnet, less than that on the test network) then submit the withdrawal proof using `proveWithdrawalTransaction`.
    This new step makes the proof available during the challenge period, which makes it much easier to identify faulty proofs.
    Having the proof available for off-chain testing helps us guard against a whole class of vulnerabilities based on invalid fault proofs.
 
