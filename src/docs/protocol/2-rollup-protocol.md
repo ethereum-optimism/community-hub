@@ -17,6 +17,7 @@ In Optimism's case this parent blockchain is Ethereum.
 <img width="400" src="../../assets/docs/how-optimism-works/1.png">
 </div>
 
+
 ## Block storage
 
 <details>
@@ -37,6 +38,8 @@ It's through this relationship (in part, at least) that Optimism derives its sec
 
 </details>
 
+
+
 <details>
 <summary><b>Bedrock (coming Q1 2023)</b></summary>
 
@@ -49,6 +52,8 @@ This is important because writing to L1 is [the major cost of Optimism transacti
 
 </details>
 
+
+
 ## Block production
 
 Optimism block production is primarily managed by a single party, called the "sequencer," which helps the network by providing the following services:
@@ -57,14 +62,18 @@ Optimism block production is primarily managed by a single party, called the "se
 - Constructing and executing L2 blocks.
 - Submitting user transactions to L1.
 
+
+
 <details>
 <summary><b>Pre-bedrock (current version)</b></summary>
+
 
 The sequencer has no mempool and transactions are immediately accepted or rejected in the order they were received.
 When a user sends their transaction to the sequencer, the sequencer checks that the transaction is valid (i.e. pays a sufficient fee) and then applies the transaction to its local state as a pending block.
 These pending blocks are periodically submitted in large batches to Ethereum for finalization.
 This batching process significantly reduces overall transaction fees by spreading fixed costs over all of the transactions within a given batch.
 The sequencer also applies some basic compression techniques to minimize the amount of data published to Ethereum.
+
 
 Because the sequencer is given priority write access to the L2 chain, the sequencer can provide a strong guarantee of what state will be finalized as soon as it decides on a new pending block.
 In other words, it is precisely known what will be the impact of the transaction.
@@ -75,7 +84,13 @@ Alternatively, users can skip the sequencer entirely and submit their transactio
 This is typically more expensive because the fixed cost of submitting this transaction is paid entirely by the user and is not amortized over many different transactions.
 However, this alternative submission method has the advantage of being resistant to censorship by the sequencer.
 Even if the sequencer is actively censoring a user, the user can always continue to use Optimism and recover any funds through this mechanism.
+
+
+
 </details>
+
+
+
 
 <details>
 <summary><b>Bedrock (coming Q1 2023)</b></summary>
@@ -224,3 +239,4 @@ The ordering of transactions and the state of Optimism is unchanged by a fault p
 
 The fault proof process is currently undergoing major redevelopment as a side-effect of the November 11th [EVM Equivalence](https://medium.com/ethereum-optimism/introducing-evm-equivalence-5c2021deb306) update.
 You can read more about this process within the [Protocol specs](../protocol/README.md) section of this website.
+
