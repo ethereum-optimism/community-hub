@@ -3,7 +3,7 @@ title: What is the AttestationStation?
 lang: en-US
 ---
 
-The AttestationStation is an **attestation layer** deployed on Optimism. 
+The AttestationStation is an **attestation smart contract** deployed on Optimism. 
 It enables _anyone_ to make arbitrary attestations about other addresses. 
 Anyone is able to read, add to, or build on top of this data primitive. When multiple entities participate in providing qualitative attestations about actors within a community, an invaluable data library is created for the broader ecosystem. 
 
@@ -30,7 +30,7 @@ The best place to ask any dev related questions is the #dev-support channel on t
 
 ## I want to apply for a grant to build on AttestationStation, how can I do this?
 
-You can learn more about the variety of grants program available on Optimism [here](allocations/#ecosystem-fund).
+You can learn more about the variety of grants program available on Optimism [here](allocations/#ecosystem-fund). As a reminder, your work should be published to a public GitHub repo.
 
 ## What projects are using the AttestationStation?
 
