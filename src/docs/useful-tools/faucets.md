@@ -18,6 +18,10 @@ You need to be following at least five people or organizations on github to be c
 [Paradigm's MultiFaucet](https://faucet.paradigm.xyz/) is an easy way to get ETH on many different testnets at the same time.
 One of those networks is Optimism Goerli.
 
+#### Coinbase Wallet
+
+Users of [coinbase wallet](https://www.coinbase.com/wallet) can get test ETH on Optimism Goerli directly from the wallet.
+
 
 ### Goerli Faucets
 
