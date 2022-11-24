@@ -44,7 +44,7 @@ If your project is using the AttestationStation make a PR including how you're u
 
 ## What naming convention do you recommend?
 
-To make attestations as easy to interpret as possible we recommend making your key descriptive about what the attestation is about and including the data type (bool, string, address, etc.) as part of the key. 
+To make attestations as easy to interpret as possible we recommend making your key descriptive about what the attestation is about and including the data type (bool, string, address, etc.) at the end of the key. 
 
 ## Technical specifications
 
