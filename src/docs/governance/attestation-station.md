@@ -34,8 +34,17 @@ You can learn more about the variety of grants program available on Optimism [he
 
 ## What projects are using the AttestationStation?
 
-[Optimism's Citizen house](https://community.optimism.io/docs/governance/citizens-house/), [redacted], and [redacted] are all using the AttestationStation! 
+[Optimism's Citizen house](https://community.optimism.io/docs/governance/citizens-house/), [redacted], and more are all using the AttestationStation! 
 If your project is using the AttestationStation make a PR including how you're using it to be added to the list 😊
+
+| Author | Key                                                        | Key  | Description                              |
+| ----   | -----------------------------------------------------------|----- |----------------------------------------- |
+| tbd    | optimism-collective.citizen-house.season-2.is-citizen:bool | true | Voting badge holders of RetroPGF #2      |
+| tbd    | optimism-collective.optimist-pfp.can-mint:bool             | true | People elidible to mint the Optimist PFP |
+
+## What naming convention do you recommend?
+
+To make attestations as easy to interpret as possible we recommend making your key descriptive about what the attestation is about and including the data type (bool, string, address, etc.) as part of the key. 
 
 ## Technical specifications
 
