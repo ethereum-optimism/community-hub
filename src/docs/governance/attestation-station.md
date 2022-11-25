@@ -37,10 +37,10 @@ You can learn more about the variety of grants program available on Optimism [he
 [Optimism's Citizen house](https://community.optimism.io/docs/governance/citizens-house/), [redacted], and more are all using the AttestationStation! 
 If your project is using the AttestationStation make a PR including how you're using it to be added to the list 😊
 
-| Author              | Address | Key                                                        | Key  | Description                                  |
-| ------------------- | --------| ---------------------------------------------------------- |----- |--------------------------------------------- |
-| Optimism Foundation | tbd     | op.retropgf.szn-2.can-vote:bool                            | true | People eligible to vote in RetroPGF #2       |
-| Optimism Foundation | tbd     | op.pfp.can-mint:bool                                       | true | People eligible to mint the Optimist PFP     |
+| Author              | Address | Key                                                        | Value | Description                                  |
+| ------------------- | --------| ---------------------------------------------------------- |------ |--------------------------------------------- |
+| Optimism Foundation | tbd     | op.retropgf.szn-2.can-vote:bool                            | true  | People eligible to vote in RetroPGF #2       |
+| Optimism Foundation | tbd     | op.pfp.can-mint:bool                                       | true  | People eligible to mint the Optimist PFP     |
 
 ## What naming convention do you recommend?
 
