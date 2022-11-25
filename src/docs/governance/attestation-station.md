@@ -39,8 +39,8 @@ If your project is using the AttestationStation make a PR including how you're u
 
 | Author | Key                                                        | Key  | Description                                  |
 | ------ | ---------------------------------------------------------- |----- |--------------------------------------------- |
-| tbd    | optimism-collective.citizen-house.season-2.is-citizen:bool | true | People eligible to vote badge in RetroPGF #2 |
-| tbd    | optimism-collective.optimist-pfp.can-mint:bool             | true | People eligible to mint the Optimist PFP     |
+| tbd    | op.retropgf.szn-2.can-vote:bool                            | true | People eligible to vote badge in RetroPGF #2 |
+| tbd    | op.pfp.can-mint:bool                                       | true | People eligible to mint the Optimist PFP     |
 
 ## What naming convention do you recommend?
 
