@@ -3,6 +3,9 @@ title: JSON-RPC API
 lang: en-US
 ---
 
+<details>
+<summary><b>Pre-bedrock (current version)</b></summary>
+
 Optimism shares the same [JSON-RPC API](https://eth.wiki/json-rpc/API) as Ethereum.
 Some custom methods have been introduced to simplify certain Optimism specific interactions.
 
@@ -179,3 +182,137 @@ Optimism nodes also block the `eth_sendTransaction` method for the same reasons 
 You should use external wallet software as an alternative.
 Please note that this is not the same as the `eth_sendRawTransaction` method, which accepts a signed transaction as an input.
 `eth_sendRawTransaction` _is_ supported by Optimism.
+
+</details>
+
+<details>
+<summary><b>Bedrock (coming Q1 2023)</b></summary>
+
+There are several bedrock components with an RPC API:
+
+## Rollup node (op-node)
+
+[*Rollup node*](https://github.com/ethereum-optimism/optimism/blob/develop/specs/rollup-node.md) refers to the component in the protocol specifications. 
+The Optimism implementation is called *op-node*.
+
+The rollup node implements a single RPC method. [`optimism_outputAtBlock`](https://github.com/ethereum-optimism/optimism/blob/develop/specs/rollup-node.md#output-method-api).
+This method provides the L2 output root, which is used for withdrawals.
+It can provide it at these locations:
+
+- A requested L2 block number
+- `safe`: Latest block fully finalized on L1 (a process that takes 12 minutes)
+- `latest`: Latest block written to L1
+- `pending`: Latest L2 block
+
+Optionally, the rollup node can provide [peer to peer synchronization](https://github.com/ethereum-optimism/optimism/blob/develop/specs/rollup-node-p2p.md) to provide pending L2 blocks to other rollup nodes.
+
+
+## Execution engine (op-geth)
+
+[*Execution engine*](https://github.com/ethereum-optimism/optimism/blob/develop/specs/rollup-node.md) refers to the component in the protocol specifications. 
+The Optimism implementation is called *op-geth*.
+
+The execution engine's RPC interface is identical to [the interface used by L1 execution engines](https://playground.open-rpc.org/?schemaUrl=https://raw.githubusercontent.com/ethereum/execution-apis/assembled-spec/openrpc.json&uiSchema%5BappBar%5D%5Bui:splitView%5D=false&uiSchema%5BappBar%5D%5Bui:input%5D=false&uiSchema%5BappBar%5D%5Bui:examplesDropdown%5D=false). 
+
+The execution engine also has a secondary RPC interface, on another port, implementing the [engine API](https://github.com/ethereum/execution-apis/blob/main/src/engine/specification.md) for use by the rollup node. 
+This API has [a few changes](https://github.com/ethereum-optimism/optimism/blob/develop/specs/exec-engine.md#engine-api) for the Optimism rollup environment. 
+
+Optionally, the execution engine can provide [snap sync](https://github.com/ethereum/devp2p/blob/master/caps/snap.md) functionality to other execution engines.
+
+### Custom methods
+
+These custom methods provide rollup specific information.
+
+#### `rollup_getInfo`
+
+Returns useful L2-specific information about the current node.
+
+**Parameters**
+
+None
+
+**Returns**
+
+`Object`
+- `mode`: `STRING` - `"sequencer"` or `"verifier"` depending on the node's mode of operation
+- `syncing`: `BOOLEAN` - `true` if the node is currently syncing, `false` otherwise
+- `ethContext`: `OBJECT`
+  - `blockNumber`: `QUANTITY` - Block number of the latest known L1 block
+  - `timestamp`: `QUANTITY` - Timestamp of the latest known L1 block
+- `rollupContext`: `OBJECT`
+  - `queueIndex`: `QUANTITY` - Index within the CTC of the last L1 to L2 message ingested
+  - `index`: `QUANTITY` - Index of the last L2 tx processed
+  - `verifiedIndex`: `QUANTITY` - Index of the last tx that was ingested from a batch that was posted to L1
+
+**Example**
+
+```json
+// Request
+curl -X POST --data '{"jsonrpc":"2.0","method":"rollup_getInfo","params":[],"id":1}' <node url>
+
+// Result
+{
+  "jsonrpc":"2.0",
+  "id":1,
+  "result":{
+    "mode":"verifier",
+    "syncing":false,
+    "ethContext":{
+      "blockNumber":13679735,
+      "timestamp":1637791660
+    },
+    "rollupContext":{
+      "index":430948,
+      "queueIndex":12481,
+      "verifiedIndex":0
+    }
+  }
+}
+```
+
+---
+
+#### `rollup_gasPrices`
+
+Returns the L1 and L2 gas prices that are being used by the Sequencer to calculate fees.
+
+**Parameters**
+
+None
+
+**Returns**
+
+`Object`
+- `l1GasPrice`: `QUANTITY` - L1 gas price in wei that the Sequencer will use to estimate the L1 portion of fees (calldata costs).
+- `l2GasPrice`: `QUANTITY` - L2 gas price in wei that the Sequencer will use to estimate the L2 portion of fees (execution costs).
+
+**Example**
+
+```json
+// Request
+curl -X POST --data '{"jsonrpc":"2.0","method":"rollup_gasPrices","params":[],"id":1}' <node url>
+
+// Result
+{
+  "jsonrpc":"2.0",
+  "id":1,
+  "result":{
+    "l1GasPrice":"0x237aa50984",
+    "l2GasPrice":"0xf4240"
+  }
+}
+```
+
+
+## Daisy chain
+
+The daisy chain is a proxy that distributes requests either to the execution engine (if related to post-Bedrock blocks), or the legacy geth (if related to blocks prior to bedrock). 
+It accepts [the interface used by L1 execution engines](https://playground.open-rpc.org/?schemaUrl=https://raw.githubusercontent.com/ethereum/execution-apis/assembled-spec/openrpc.json&uiSchema%5BappBar%5D%5Bui:splitView%5D=false&uiSchema%5BappBar%5D%5Bui:input%5D=false&uiSchema%5BappBar%5D%5Bui:examplesDropdown%5D=false).
+
+## Legacy geth
+
+The legacy geth provides information about the blockchain prior to Bedrock.
+It implements the read-only methods of [the interface used by L1 execution engines](https://playground.open-rpc.org/?schemaUrl=https://raw.githubusercontent.com/ethereum/execution-apis/assembled-spec/openrpc.json&uiSchema%5BappBar%5D%5Bui:splitView%5D=false&uiSchema%5BappBar%5D%5Bui:input%5D=false&uiSchema%5BappBar%5D%5Bui:examplesDropdown%5D=false).
+It does not implement `eth_sendTransaction` and `eth_sendRawTransaction`, because they don't make sense in a read-only copy.
+
+</details>
