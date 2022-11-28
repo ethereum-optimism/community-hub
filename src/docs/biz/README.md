@@ -52,12 +52,8 @@ We also host a weekly Twitter Space in an interview/podcast format called OP Rad
 ## Governance Grants
 
 Grants are mainly handled by [The Optimism Collective](https://app.optimism.io/announcement), our open governance system/digital society. If you are interested in applying, we first recommend the following: 
-
-::: tip Tip
-Grants are a lever to support sustainable growth in the ecosystem, therefore we do not provide grants for projects' operational expenses. 
-:::
  
-
+- Check that your application falls within the possible Governance Grant categories in the [OPerating manual](https://github.com/ethereum-optimism/OPerating-manual/blob/main/manual.md#valid-proposal-types.
 - Deploy to Optimism (we are [EVM Equivalent](https://medium.com/ethereum-optimism/introducing-evm-equivalence-5c2021deb306), not just EVM compatible so it is very easy to deploy). 
   Check out our [getting started tutorial](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/getting-started) to see how to deploy. We also have [tons of more in-depth tutorials](tutorials) for bridging and other L2 specific functionality. 
 - Try gaining organic traction:
