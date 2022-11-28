@@ -59,7 +59,7 @@ Grants are a lever to support sustainable growth in the ecosystem, therefore we 
  
 
 - Deploy to Optimism (we are [EVM Equivalent](https://medium.com/ethereum-optimism/introducing-evm-equivalence-5c2021deb306), not just EVM compatible so it is very easy to deploy). 
-  Check out [our tutorial](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/getting-started) to see how to deploy.
+  Check out our [getting started tutorial](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/getting-started) to see how to deploy. We also have [tons of more in-depth tutorials](tutorials) for bridging and other L2 specific functionality. 
 - Try gaining organic traction:
   - Traction can be gained through our community.
   - Head over to [our discord](https://discord-gateway.optimism.io/) and check out [#showandtell](https://discord.com/channels/667044843901681675/819333988719263774) or [#demoday](https://discord.com/channels/667044843901681675/960493820674465883).
