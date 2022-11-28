@@ -63,7 +63,7 @@ Grants are a lever to support sustainable growth in the ecosystem, therefore we 
 - Try gaining organic traction:
   - Traction can be gained through our community.
   - Head over to [our discord](https://discord-gateway.optimism.io/) and check out [#showandtell](https://discord.com/channels/667044843901681675/819333988719263774) or [#demoday](https://discord.com/channels/667044843901681675/960493820674465883).
-  Demoday is an AMA about your product to our community.
+  Demo Day is an AMA about your product to our community. Apply in Discord. 
   - Seek synergies – look at other teams already deployed on Optimism that could work with your product and reach out to them.
 - Once you have done the above, check out our [governance grant process](https://gov.optimism.io/t/grant-proposal-template/3233).
 - To get reviews in real time from governance delegates go to discord and post about your project in [#temp-check](https://discord.com/channels/667044843901681675/1011238484373159956).
