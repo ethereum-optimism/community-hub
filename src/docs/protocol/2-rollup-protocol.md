@@ -38,8 +38,6 @@ It's through this relationship (in part, at least) that Optimism derives its sec
 
 </details>
 
-
-
 <details>
 <summary><b>Bedrock (coming Q1 2023)</b></summary>
 
@@ -63,10 +61,8 @@ Optimism block production is primarily managed by a single party, called the "se
 - Submitting user transactions to L1.
 
 
-
 <details>
 <summary><b>Pre-bedrock (current version)</b></summary>
-
 
 The sequencer has no mempool and transactions are immediately accepted or rejected in the order they were received.
 When a user sends their transaction to the sequencer, the sequencer checks that the transaction is valid (i.e. pays a sufficient fee) and then applies the transaction to its local state as a pending block.
@@ -85,11 +81,7 @@ This is typically more expensive because the fixed cost of submitting this trans
 However, this alternative submission method has the advantage of being resistant to censorship by the sequencer.
 Even if the sequencer is actively censoring a user, the user can always continue to use Optimism and recover any funds through this mechanism.
 
-
-
 </details>
-
-
 
 
 <details>
@@ -100,9 +92,10 @@ Blocks are produced every two seconds, regardless of whether they are empty (no 
 
 Transactions get to the sequencer in two ways:
 
-1. Transactions submitted on L1 have to be included by the sequencer in the Optimism block that starts the next epoch (in Optimism epoch is defined as the time between two L1 blocks, typically 12 seconds, six Optimism blocks).
+1. Transactions submitted on L1 (called *deposits* whether they have assets attached or not) have to be included by the sequencer in the Optimism block that starts the next epoch (in Optimism epoch is defined as the time between two L1 blocks, typically 12 seconds, six Optimism blocks).
    If the sequencer attempts to ignore a legitimate L1 transaction it ends up with a state that is inconsistent with the verifiers, same as if the sequencer tried to fake the state by other means.
    This provides Optimism with L1 Ethereum level censorship resistance.
+   You can read more about this mechanism [is the protocol specifications](https://github.com/ethereum-optimism/optimism/blob/develop/specs/derivation.md#deriving-the-transaction-list).
 
 1. Transactions submitted directly to the sequnecer. 
    These transactions are a lot cheaper to submit (because you do not need the expense of a separate L1 transaction), but of course they cannot be made censorship resistant, because the sequencer is the only entity that knows about them.
