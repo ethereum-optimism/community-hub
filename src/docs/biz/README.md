@@ -29,7 +29,7 @@ Steps to take if you would like developer support immediately, ranked in order o
 
 When your project is deployed on Optimism, you can be added to [our ecosystem page](https://www.optimism.io/apps/all). 
 Simply [fill out this form](https://optimismpbc.typeform.com/op-marketing) to be included. Inclusion is at our discretion. 
-We add new projects [here](https://www.optimism.io/apps/all) every week, but you need to deploy first. 
+We add new projects live on the Optimism mainnet [here](https://www.optimism.io/apps/all) once a week.
 
 
 ### Promoting Values before anything else
