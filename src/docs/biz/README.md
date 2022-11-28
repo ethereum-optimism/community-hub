@@ -51,7 +51,7 @@ We also host a weekly Twitter Space in an interview/podcast format called OP Rad
  
 ## Governance Grants
 
-Grants are mainly handled by [The Optimism Collective](https://app.optimism.io/announcement), our open governance system/digital society. If you are interested in seeking funding here, we first recommend the following: 
+Grants are mainly handled by [The Optimism Collective](https://app.optimism.io/announcement), our open governance system/digital society. If you are interested in applying, we first recommend the following: 
 
 ::: tip Tip
 Grants are a lever to support sustainable growth in the ecosystem, therefore we do not provide grants for projects' operational expenses. 
