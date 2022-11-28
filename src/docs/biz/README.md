@@ -49,7 +49,7 @@ You're welcome to submit your tweet for amplification but please keep in mind if
 We also host a weekly Twitter Space in an interview/podcast format called OP Radio. You're welcome to express interest in being featured on OP Radio, but keep in mind that we maintain the final say on whether it makes sense or not.
 
  
-## Grants Funding 🪙🪙
+## Governance Grants
 
 Grants are mainly handled by [The Optimism Collective](https://app.optimism.io/announcement), our open governance system/digital society. If you are interested in seeking funding here, we first recommend the following: 
 
