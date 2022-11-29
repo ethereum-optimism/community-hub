@@ -20,7 +20,7 @@ As an example, attestations written to the AttestationStation form the base laye
 See [the tutorial](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/ecosystem/attestation-station).
 
 
-## Contract Addresses
+## What are the contract addresses for the AttestationStation?
 
 | Network | Address |
 | - | - |
@@ -41,14 +41,19 @@ You can learn more about the variety of grants program available on Optimism [he
 [Optimism's Citizen house](https://community.optimism.io/docs/governance/citizens-house/), [redacted], and more are all using the AttestationStation! 
 If your project is using the AttestationStation make a PR including how you're using it to be added to the list 😊
 
-| Author              | Address | Key                                                        | Value | Description                                  |
-| ------------------- | --------| ---------------------------------------------------------- |------ |--------------------------------------------- |
-| Optimism Foundation | tbd     | op.retropgf.szn-2.can-vote:bool                            | true  | People eligible to vote in RetroPGF #2       |
-| Optimism Foundation | tbd     | op.pfp.can-mint:bool                                       | true  | People eligible to mint the Optimist PFP     |
+| Author              | Author Address | Key                                                        | Value | Description                                  |
+| ------------------- | ---------------| ---------------------------------------------------------- |------ |--------------------------------------------- |
+| Optimism Foundation | tbd            | op.retropgf.szn-2.can-vote:bool                            | true  | People eligible to vote in RetroPGF #2       |
+| Optimism Foundation | tbd            | op.pfp.can-mint:bool                                       | true  | People eligible to mint the Optimist PFP     |
 
-## What naming convention do you recommend?
+## What naming convention do you recommend when writing attestations?
 
 To make attestations as easy to interpret as possible we recommend making your key descriptive about what the attestation is about and including the data type (bool, string, address, etc.) at the end of the key. 
+
+## What is on the AttestationStation roadmap?
+
+In H1 2023 we will launch an SDK to enable creating, viewing, and updating attestations. 
+In late 2023 we will upgrade the contract...
 
 ## Technical specifications
 
