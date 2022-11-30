@@ -7,7 +7,7 @@ The AttestationStation is an **attestation smart contract** deployed on Optimism
 <!-- TODO: Add source code link when we have an authoritative source -->
 
 ## What can attestations be used for?
-Attestations can be used for a wide variety of applications including voting, reputations scores, reviews, and more.
+Attestations can be used for a wide variety of applications including voting, reputations / credit scores, reviews, and more.
 
 As an example, attestations written to the AttestationStation form the base layer of reputation for the [Optimism Citizen House](https://community.optimism.io/docs/governance/citizens-house/).
 
@@ -30,7 +30,7 @@ The best place to ask any dev related questions is the #dev-support channel on t
 
 ## I want to apply for a grant to build on AttestationStation, how can I do this?
 
-You can learn more about the variety of grants program available on Optimism [here](allocations/#ecosystem-fund). As a reminder, your work should be published to a public GitHub repo.
+You can learn more about the variety of grants program available at Optimism [here](allocations/#ecosystem-fund). As a reminder, your work should be published to a public GitHub repo.
 
 ## What projects are using the AttestationStation?
 
@@ -48,8 +48,9 @@ To make attestations as easy to interpret as possible we recommend making your k
 
 ## What is on the AttestationStation roadmap?
 
-In H1 2023 we will launch an SDK to enable creating, viewing, and updating attestations. 
-In late 2023 we will upgrade the contract...
+In H1 2023 we will launch an SDK to simplify creating, viewing, and updating attestations, a no-code interface used to view, create, explore, and contextualize attestations, and much more. 
+
+In H2 2023 we will start experimenting with private attestations powered by ZK proofs and aggregating attestations from various communities and using techniques like EigenTrust to derive reputation for use in Optimism’s Citizen House. 
 
 ## Technical specifications
 
