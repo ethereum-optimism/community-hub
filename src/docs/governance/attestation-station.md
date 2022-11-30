@@ -2,16 +2,12 @@
 title: What is the AttestationStation?
 lang: en-US
 ---
-
-The AttestationStation is an **attestation smart contract** deployed on Optimism. 
-It enables _anyone_ to make arbitrary attestations about other addresses. 
-Anyone is able to read, add to, or build on top of this data primitive. When multiple entities participate in providing qualitative attestations about actors within a community, an invaluable data library is created for the broader ecosystem. 
-
+The AttestationStation is an **attestation smart contract** deployed on Optimism.  It enables _anyone_ to make arbitrary attestations about other addresses. When multiple entities participate in providing qualitative attestations about actors within a community, an invaluable data library is created for the broader ecosystem. **Ultimately we hope the AttestationStation can serve as an accessible data source for builders creating reputation related apps.**
 
 <!-- TODO: Add source code link when we have an authoritative source -->
 
 ## What can attestations be used for?
-Attestations can be used for a wide variety of applications including voting, reputations scores, reviews, and more.
+Attestations can be used for a wide variety of applications including voting, reputations / credit scores, reviews, and more.
 
 As an example, attestations written to the AttestationStation form the base layer of reputation for the [Optimism Citizen House](https://community.optimism.io/docs/governance/citizens-house/).
 
@@ -20,7 +16,7 @@ As an example, attestations written to the AttestationStation form the base laye
 See [the tutorial](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/ecosystem/attestation-station).
 
 
-## Contract Addresses
+## What are the contract addresses for the AttestationStation?
 
 | Network | Address |
 | - | - |
@@ -34,21 +30,27 @@ The best place to ask any dev related questions is the #dev-support channel on t
 
 ## I want to apply for a grant to build on AttestationStation, how can I do this?
 
-You can learn more about the variety of grants program available on Optimism [here](allocations/#ecosystem-fund). As a reminder, your work should be published to a public GitHub repo.
+You can learn more about the variety of grants program available at Optimism [here](allocations/#ecosystem-fund). As a reminder, your work should be published to a public GitHub repo.
 
 ## What projects are using the AttestationStation?
 
 [Optimism's Citizen house](https://community.optimism.io/docs/governance/citizens-house/), [redacted], and more are all using the AttestationStation! 
 If your project is using the AttestationStation make a PR including how you're using it to be added to the list 😊
 
-| Author              | Address | Key                                                        | Value | Description                                  |
-| ------------------- | --------| ---------------------------------------------------------- |------ |--------------------------------------------- |
-| Optimism Foundation | tbd     | op.retropgf.szn-2.can-vote:bool                            | true  | People eligible to vote in RetroPGF #2       |
-| Optimism Foundation | tbd     | op.pfp.can-mint:bool                                       | true  | People eligible to mint the Optimist PFP     |
+| Author              | Author Address | Key                                                        | Value | Description                                  |
+| ------------------- | ---------------| ---------------------------------------------------------- |------ |--------------------------------------------- |
+| Optimism Foundation | tbd            | op.retropgf.szn-2.can-vote:bool                            | true  | People eligible to vote in RetroPGF #2       |
+| Optimism Foundation | tbd            | op.pfp.can-mint:bool                                       | true  | People eligible to mint the Optimist PFP     |
 
-## What naming convention do you recommend?
+## What naming convention do you recommend when writing attestations?
 
 To make attestations as easy to interpret as possible we recommend making your key descriptive about what the attestation is about and including the data type (bool, string, address, etc.) at the end of the key. 
+
+## What is on the AttestationStation roadmap?
+
+In H1 2023 we will launch an SDK to simplify creating, viewing, and updating attestations, a no-code interface used to view, create, explore, and contextualize attestations, and much more. 
+
+In H2 2023 we will start experimenting with private attestations powered by ZK proofs and aggregating attestations from various communities and using techniques like EigenTrust to derive reputation for use in Optimism’s Citizen House. 
 
 ## Technical specifications
 
