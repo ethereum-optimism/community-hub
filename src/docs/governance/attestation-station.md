@@ -48,9 +48,13 @@ To make attestations as easy to interpret as possible we recommend making your k
 
 ## What is on the AttestationStation roadmap?
 
-In H1 2023 we will launch an SDK to simplify creating, viewing, and updating attestations, a no-code interface used to view, create, explore, and contextualize attestations, and much more. 
+The first experiment of the AttestationStation is with public attestations. As we iterate towards a reputation system underpinning the Citizen’s house we’re excited to collaborate with other teams in the space to make it easy for anyone to use, read, write, and update attestations across the ecosystem. 
 
-In H2 2023 we will start experimenting with private attestations powered by ZK proofs and aggregating attestations from various communities and using techniques like EigenTrust to derive reputation for use in Optimism’s Citizen House. 
+Some things we’re looking forward to:
+
+* Launching an SDK to simplify creating, viewing, and updating attestations and no-code interface used to view, create, explore, and contextualize attestations.
+* Exploring a variety of on-chain and off-chain tools including using zero-knowledge proofs to make attestations as private by default
+* Aggregating attestations from various communities and using techniques like [EigenTrust](https://en.wikipedia.org/wiki/EigenTrust) to derive reputation
 
 ## Technical specifications
 
