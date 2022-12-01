@@ -21,7 +21,7 @@ In Optimism's case this parent blockchain is Ethereum.
 ## Block storage
 
 <details>
-<summary><b>Pre-bedrock (current version)</b></summary>
+<summary><b>Pre-Bedrock (current version)</b></summary>
 
 All Optimism blocks are stored within a special smart contract on Ethereum called the [`CanonicalTransactionChain`](https://etherscan.io/address/0x5E4e65926BA27467555EB562121fac00D24E9dD2) (or CTC for short).
 Optimism blocks are held within an append-only list inside of the CTC (we'll explain exactly how blocks are added to this list in the next section).
@@ -42,7 +42,7 @@ It's through this relationship (in part, at least) that Optimism derives its sec
 <summary><b>Bedrock (coming Q1 2023)</b></summary>
 
 In Bedrock L2 blocks are saved to the Ethereum blockchain using a non-contract address ([`0xDeadDeAddeAddEAddeadDEaDDEAdDeaDDeAD0001`](https://etherscan.io/address/0xDeadDeAddeAddEAddeadDEaDDEAdDeaDDeAD0001)), to minimize the L1 gas expense. 
-As these blocks are submitted as transaction calldata on Ethereum there is no way to modify or censor them after the "transaction" is included in a block that has enough attestations.
+As these blocks are submitted as transaction calldata on Ethereum, there is no way to modify or censor them after the "transaction" is included in a block that has enough attestations.
 This is the way that Optimism inherits the availability and integrity guarantees of Ethereum.
 
 Blocks are written to L1 in [a compressed format](https://github.com/ethereum-optimism/optimism/blob/develop/specs/derivation.md#batch-submission-wire-format) to reduce costs.
@@ -56,13 +56,13 @@ This is important because writing to L1 is [the major cost of Optimism transacti
 
 Optimism block production is primarily managed by a single party, called the "sequencer," which helps the network by providing the following services:
 
-- Providing instant transaction confirmations and state updates.
+- Providing transaction confirmations and state updates.
 - Constructing and executing L2 blocks.
 - Submitting user transactions to L1.
 
 
 <details>
-<summary><b>Pre-bedrock (current version)</b></summary>
+<summary><b>Pre-Bedrock (current version)</b></summary>
 
 The sequencer has no mempool and transactions are immediately accepted or rejected in the order they were received.
 When a user sends their transaction to the sequencer, the sequencer checks that the transaction is valid (i.e. pays a sufficient fee) and then applies the transaction to its local state as a pending block.
@@ -87,12 +87,14 @@ Even if the sequencer is actively censoring a user, the user can always continue
 <details>
 <summary><b>Bedrock (coming Q1 2023)</b></summary>
 
-In bedrock the sequencer does have a mempool, similar to L1 Ethereum, but the mempool is private to avoid opening opportunities for MEV.
+In Bedrock the sequencer does have a mempool, similar to L1 Ethereum, but the mempool is private to avoid opening opportunities for MEV.
 Blocks are produced every two seconds, regardless of whether they are empty (no transactions), filled up to the block gas limit with transactions, or anything in between.
 
 Transactions get to the sequencer in two ways:
 
-1. Transactions submitted on L1 (called *deposits* whether they have assets attached or not) have to be included by the sequencer in the Optimism block that starts the next epoch (in Optimism epoch is defined as the time between two L1 blocks, typically 12 seconds, six Optimism blocks).
+1. Transactions submitted on L1 (called *deposits* whether they have assets attached or not) are included in the chain in the appropriate L2 block.
+   Every L2 block is identified by the "epoch" (the L1 block to which it corresponds, notionally the last one that happened before the L2 block) and its serial number within that epoch.
+   The first block of the epoch includes all the deposits that happened in the L1 block to which it corresponds.
    If the sequencer attempts to ignore a legitimate L1 transaction it ends up with a state that is inconsistent with the verifiers, same as if the sequencer tried to fake the state by other means.
    This provides Optimism with L1 Ethereum level censorship resistance.
    You can read more about this mechanism [is the protocol specifications](https://github.com/ethereum-optimism/optimism/blob/develop/specs/derivation.md#deriving-the-transaction-list).
@@ -107,7 +109,7 @@ For the moment, [The Optimism Foundation](https://www.optimism.io/) runs the onl
 ## Block execution
 
 <details>
-<summary><b>Pre-bedrock (current version)</b></summary>
+<summary><b>Pre-Bedrock (current version)</b></summary>
 
 Ethereum nodes download blocks from Ethereum's p2p network.
 Optimism nodes instead download blocks directly from the append-only list of blocks held within the `CanonicalTransactionChain` contract.
@@ -139,7 +141,7 @@ The execution engine (implemented as the `op-geth` component) receive blocks usi
    This operates the same way that the L1 execution clients synchronize the state across the network.
    You can read more about it [in the specs](https://github.com/ethereum-optimism/optimism/blob/develop/specs/exec-engine.md#happy-path-sync). 
 
-1. The rollup node (implemented as the `op-node` component) retrieves the blocks from L1.
+1. The rollup node (implemented as the `op-node` component) derives the L2 blocks from L1.
    This mechanism is slower, but censorship resistant.
    You can read more about it [in the specs](https://github.com/ethereum-optimism/optimism/blob/develop/specs/exec-engine.md#worst-case-sync).
 
@@ -160,7 +162,7 @@ See the [developer documentation and examples](../developers/bridge/standard-bri
 In Optimism terminology, transactions going from Ethereum (L1) to Optimism (L2) are called *deposits*, even if they do not have any assets attached to them.
 
 <details>
-<summary><b>Pre-bedrock (current version)</b></summary>
+<summary><b>Pre-Bedrock (current version)</b></summary>
 
 To send messages from Ethereum to Optimism, users simply need to trigger the `CanonicalTransactionChain` contract on Ethereum to create a new block on Optimism block.
 See the above section on [block production](#block-production) for additional context.
@@ -171,8 +173,9 @@ User-created blocks can include transactions that will appear to originate from 
 <details>
 <summary><b>Bedrock (coming Q1 2023)</b></summary>
 
-The contract interface for deposits is the same.
-Deposit transactions become part of the canonical chain in the first L2 block that happens after the L1 block in which they are processed.
+The contract interface for deposits is very similar, you use [`L1CrossDomainMessenger`](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/cross-dom-comm) or [`L1StandardBridge`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L1/L1StandardBridge.sol).
+Deposit transactions become part of the canonical blockchain in the first L2 block of the "epoch", the L2 blocks that happen, notionally, while the L1 block is the head of the chain. 
+A state commitment that ignores them is faulty (and will be successfully challenged once fault challenges are finished).
 You can read more about this [in the specs](https://github.com/ethereum-optimism/optimism/blob/develop/specs/deposits.md).
 
 </details>
@@ -180,7 +183,7 @@ You can read more about this [in the specs](https://github.com/ethereum-optimism
 ### Moving from Optimism to Ethereum
 
 <details>
-<summary><b>Pre-bedrock (current version)</b></summary>
+<summary><b>Pre-Bedrock (current version)</b></summary>
 
 It's not possible for contracts on Optimism to easily generate transactions on Ethereum in the same way as Ethereum contracts can generate transactions on Optimism.
 As a result, the process of sending data from Optimism back to Ethereum is somewhat more involved.
@@ -192,7 +195,7 @@ Commitments are regularly published (approximately once or twice per hour) to a 
 
 Users can use these commitments to generate [Merkle tree proofs](https://en.wikipedia.org/wiki/Merkle_tree) about the state of Optimism.
 These proofs can be verified by smart contracts on Ethereum.
-Optimism maintains a convenient cross-chain communication contract, the [`L1CrossDomainMessenger`](https://etherscan.io/address/0x25ace71c97B33Cc4729CF772ae268934F7ab5fA1), which can verify these proofs on behalf of other contracts.
+Optimism maintains a convenient cross-chain communication contract, the [`L1CrossDomainMessenger`](https://etherscan.io/address/0x25ace71c97B33Cc4729CF772ae268934F7ab5fA1), which can verify these proofs, typically used for withdrawals, on behalf of other contracts.
 
 These proofs can be used to make verifiable statements about the data within the storage of any contract on Optimism at a specific block height.
 This basic functionality can then be used to enable contracts on Optimism to send messages to contracts on Ethereum.
@@ -209,8 +212,8 @@ Withdrawals (the term is used for any Optimism to Ethereum message, regardless o
 1. You initialize withdrawals with an L2 transaction.
 
 1. Wait for the next output root to be submitted to L1 (up to an hour on mainnet, less than that on the test network) then submit the withdrawal proof using `proveWithdrawalTransaction`.
-   This new step makes the proof available during the challenge period, which makes it much easier to identify faulty proofs.
-   Having the proof available for off-chain testing helps us guard against a whole class of vulnerabilities based on invalid fault proofs.
+   This new step enables off-chain monitoring of the withdrawals, which makes it easier to identify incorrect withdrawals or output roots.
+   This protects Optimism users against a whole class of potential bridge vulnerabilities.
 
 1. After the fault challenge period ends (a week on mainnet, less than that on the test network), finalize the withdrawal.
 
@@ -223,7 +226,7 @@ Withdrawals (the term is used for any Optimism to Ethereum message, regardless o
 In an Optimistic Rollup, state commitments are published to Ethereum without any direct proof of the validity of these commitments.
 Instead, these commitments are considered pending for a period of time (called the "challenge window").
 If a proposed state commitment goes unchallenged for the duration of the challenge window (currently set to 7 days), then it is considered final.
-Once a commitment is considered final, smart contracts on Ethereum can safely accept proofs about the state of Optimism based on that commitment.
+Once a commitment is considered final, smart contracts on Ethereum can safely accept withdrawal proofs about the state of Optimism based on that commitment.
 
 When a state commitment is challenged, it can be invalidated through a "fault proof" ([formerly known as a "fraud proof"](https://github.com/ethereum-optimism/optimistic-specs/discussions/53)) process.
 If the commitment is successfully challenged, then it is removed from the `StateCommitmentChain` to eventually be replaced by another proposed commitment.
