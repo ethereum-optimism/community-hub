@@ -32,7 +32,7 @@ The best place to ask any dev related questions is the #dev-support channel on t
 
 You can learn more about the variety of grants program available at Optimism [here](allocations/#ecosystem-fund). As a reminder, your work should be published to a public GitHub repo.
 
-## What projects are using the AttestationStation?
+## What projects are writing attestations to the AttestationStation?
 
 [Optimism's Citizen house](https://community.optimism.io/docs/governance/citizens-house/), [redacted], and more are all using the AttestationStation! 
 If your project is using the AttestationStation make a PR including how you're using it to be added to the list 😊
@@ -55,6 +55,10 @@ Some things we’re looking forward to:
 * Launching an SDK to simplify creating, viewing, and updating attestations and no-code interface used to view, create, explore, and contextualize attestations.
 * Exploring a variety of on-chain and off-chain tools including using zero-knowledge proofs to make attestations as private by default
 * Aggregating attestations from various communities and using techniques like [EigenTrust](https://en.wikipedia.org/wiki/EigenTrust) to derive reputation
+
+## What products are built on top of the AttestationStation? 
+
+* [Attestation Station Open Source Interface by sbvegan](https://github.com/sbvegan/attestation-station-interface)
 
 ## Technical specifications
 
