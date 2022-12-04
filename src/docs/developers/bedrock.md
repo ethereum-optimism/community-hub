@@ -173,7 +173,8 @@ These are contracts that are no longer relevant, but are kept as part of the sta
 ## JSON RPC 
 
 - Bedrock supports `eth_sendMessage` and `eth_getAccounts`.
-- The non standard `eth_getBlockRange` is no longer supported.
+- The calls `eth_getBlockRange`, `rollup_getInfo`, and `rollup_gasPrices` are no longer supported.
+  - You can get a lot of that information from [the rollup node](build/json-rpc.md#custom-json-rpc-methods) 
 
 ## Communication between layers
 
