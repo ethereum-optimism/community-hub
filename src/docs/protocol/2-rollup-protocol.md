@@ -93,7 +93,7 @@ Blocks are produced every two seconds, regardless of whether they are empty (no 
 Transactions get to the sequencer in two ways:
 
 1. Transactions submitted on L1 (called *deposits* whether they have assets attached or not) are included in the chain in the appropriate L2 block.
-   Every L2 block is identified by the "epoch" (the L1 block to which it corresponds, notionally the last one that happened before the L2 block) and its serial number within that epoch.
+   Every L2 block is identified by the "epoch" (the L1 block to which it corresponds, which typically has happened a few minutes before the L2 block) and its serial number within that epoch.
    The first block of the epoch includes all the deposits that happened in the L1 block to which it corresponds.
    If the sequencer attempts to ignore a legitimate L1 transaction it ends up with a state that is inconsistent with the verifiers, same as if the sequencer tried to fake the state by other means.
    This provides Optimism with L1 Ethereum level censorship resistance.
@@ -174,8 +174,8 @@ User-created blocks can include transactions that will appear to originate from 
 <summary><b>Bedrock (coming Q1 2023)</b></summary>
 
 The contract interface for deposits is very similar, you use [`L1CrossDomainMessenger`](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/cross-dom-comm) or [`L1StandardBridge`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L1/L1StandardBridge.sol).
-Deposit transactions become part of the canonical blockchain in the first L2 block of the "epoch", the L2 blocks that happen, notionally, while the L1 block is the head of the chain. 
-A state commitment that ignores them is faulty (and will be successfully challenged once fault challenges are finished).
+Deposit transactions become part of the canonical blockchain in the first L2 block of the "epoch" corresponding to the L1 block where the deposits were made. 
+This L2 block will usually be created a few minutes after the corresponding L1 block.
 You can read more about this [in the specs](https://github.com/ethereum-optimism/optimism/blob/develop/specs/deposits.md).
 
 </details>
