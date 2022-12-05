@@ -59,6 +59,7 @@ Some things we’re looking forward to:
 #### What products are built on top of the AttestationStation? 
 
 * [Attestation Station Open Source Interface by sbvegan](https://github.com/sbvegan/attestation-station-interface)
+* [redacted]
 
 ## Technical specifications
 
