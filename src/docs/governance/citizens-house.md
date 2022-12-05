@@ -9,7 +9,7 @@ The Citizens’ House will work alongside the Token House to govern the Optimism
 **In its first stage, the Citizens’ House is solely responsible for voting on retroactive public goods funding (RetroPGF)**. 
 The initial set of Citizens in this stage is determined by (a) criteria set by the Optimism Foundation and (b) a special election from the Token House. 
 During this bootstrapping phase, the Optimism Foundation will determine the scope and amount of each funding round, as well as administer the voting process. 
-Holding a voting badge in this initial set of Citizens does not guarantee permanent citizenship or voting rights in all future rounds of RetroPGF.
+Holding a voting badge in this initial set of Citizens **does not guarantee permanent citizenship** or voting rights in all future rounds of RetroPGF.
 
 In future stages, in addition to determining RetroPGF funding, the Citizens’ House will work alongside the Token House to **govern overall allocation of sequencer revenue**. 
 The two houses will also determine ongoing criteria for participation in the Citizens’ House and engage in a system of checks and balances to enforce Optimism’s Codes of Conduct.
