@@ -30,7 +30,7 @@ The best place to ask any dev related questions is the #dev-support channel on t
 
 #### I want to apply for a grant to build on AttestationStation, how can I do this?
 
-You can learn more about the variety of grants program available at Optimism [here](allocations/#ecosystem-fund). As a reminder, your work should be published to a public GitHub repo.
+Looking to get funding for an AttestationStation project? There are many ways to go about doing so! You can learn more about the variety of grants program available at Optimism [here](allocations/#ecosystem-fund). As a reminder, your work should be published to a public GitHub repo.
 
 #### What projects are writing attestations to the AttestationStation?
 
