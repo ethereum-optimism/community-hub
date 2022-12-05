@@ -53,7 +53,7 @@ The first experiment of the AttestationStation is with public attestations. As w
 Some things we’re looking forward to:
 
 * Launching an SDK to simplify creating, viewing, and updating attestations and no-code interface used to view, create, explore, and contextualize attestations.
-* Exploring a variety of on-chain and off-chain tools including using zero-knowledge proofs to make attestations as private by default
+* Exploring a variety of on-chain and off-chain tools including using zero-knowledge proofs to make attestations private by default
 * Aggregating attestations from various communities and using techniques like [EigenTrust](https://en.wikipedia.org/wiki/EigenTrust) to derive reputation
 
 #### What products are built on top of the AttestationStation? 
