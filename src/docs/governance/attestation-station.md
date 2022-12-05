@@ -40,7 +40,7 @@ If your project is using the AttestationStation make a PR including how you're u
 | Author              | Author Address | Key                                                        | Value | Description                                  |
 | ------------------- | ---------------| ---------------------------------------------------------- |------ |--------------------------------------------- |
 | Optimism Foundation | tbd            | op.retropgf.szn-2.can-vote:bool                            | true  | People eligible to vote in RetroPGF #2       |
-| Optimism Foundation | tbd            | op.pfp.can-mint:bool                                       | true  | People eligible to mint the Optimist PFP     |
+| Optimism Foundation | tbd            | op.pfp.can-mint:bool                                       | true  | People eligible to mint the Optimist NFT     |
 
 #### What naming convention do you recommend when writing attestations?
 
