@@ -26,7 +26,7 @@ See [the tutorial](https://github.com/ethereum-optimism/optimism-tutorial/tree/m
 
 #### I am building on top of the AttestationStation but have some questions, where can I discuss these?
 
-The best place to ask any dev related questions is the #dev-support channel on the [the Optimism Discord](https://discord-gateway.optimism.io/).
+The best place to ask any dev related questions is the #dev-support channel on the [the Optimism Discord](https://discord-gateway.optimism.io/). If you need additional support check out this [Help Article](https://help.optimism.io/hc/en-us/articles/9762044018843-How-do-I-get-project-support-marketing-integrations-etc-).
 
 #### I want to apply for a grant to build on AttestationStation, how can I do this?
 
