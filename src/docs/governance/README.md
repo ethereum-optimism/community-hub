@@ -48,7 +48,6 @@ The Token House votes on these proposal types:
 ## Citizens' House
 
 The Citizens' House is a large-scale experiment in [non-plutocratic governance](https://vitalik.ca/general/2021/08/16/voting3.html) and retroactive funding of public goods. 
-Citizenship will be conferred by [**"soulbound"**](https://vitalik.ca/general/2022/01/26/soulbound.html) non-transferrable NFTs, and the set of Citizens will grow over time. The exact mechanism for distributing Citizenships will be determined by the Foundation with input from the Token House.
 
 The Citizens' House is responsible for [retroactive public goods funding (RPGF)](https://medium.com/ethereum-optimism/retroactive-public-goods-funding-33c9b7d00f0c). 
 The funds for RPGF will come from several sources, including:

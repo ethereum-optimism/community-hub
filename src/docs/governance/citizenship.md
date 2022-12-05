@@ -11,7 +11,7 @@ This is distinct from the more common pattern of token-voting governance (as use
 To start, the initial set of Citizens in this stage is determined by (a) criteria set by the Optimism Foundation and (b) a special election from the Token House. 
 Citizenship is conferred by a simple entry in the AttestationStation.
 
-In future stages, the Token House and Citizens’ House together will govern distribution of voting power in the Citizens’ House. 
+In future stages, the Token House and Citizens’ House together will collaborate on ongoing criteria for participation in the Citizens’ House. 
 
 This means the criteria for Citizenship will evolve over time. 
 Holding a voting badge in RetroPGF 2 does not guarantee voting rights in all future rounds of RetroPGF, as eventually membership will be determined by governance and may change.
