@@ -185,7 +185,7 @@ module.exports = {
           children: [
             '/docs/governance/citizens-house.md',
             '/docs/governance/citizenship.md',
-            '/docs/governance/rpgf-2.md',                        
+            '/docs/governance/retropgf-2.md',                        
           ],
           collapsable: true
         },

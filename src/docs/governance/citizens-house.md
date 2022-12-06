@@ -51,7 +51,7 @@ RetroPGF is core to Optimism’s value of `impact = profit`:  the idea that that
 In 2021, Optimism ran its [first round of RetroPGF](https://medium.com/ethereum-optimism/retroactive-public-goods-funding-33c9b7d00f0c).
 Community members voted to distribute $1 million across 58 open source software projects. 
 
-RetroPGF 2 takes place in Jan 2023. Read more [here](./rpgf-2.md). 
+RetroPGF 2 takes place in Jan 2023. Read more [here](./retropgf-2.md). 
 
 ## A Commitment to Experimentation
 
