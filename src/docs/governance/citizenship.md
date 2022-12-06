@@ -29,7 +29,7 @@ For more information on Optimism's identity layer, visit the [AttestationStation
 ## Becoming a Citizen
 
 The Citizens’ House is initiated with the set of 96 voters in [RetroPGF 2](./rpgf-2.md). 
-In the long run, Citizenship is intended to be widely distributed to a large group of humans across the Optimism ecosystem with expertise in many different subcultures and industries.
+Eventually, Citizenship is intended to be widely distributed to a large group of humans across the Optimism ecosystem with expertise in many different subcultures and industries.
 
 Eventually, Optimism governance will have the power to set criteria for Citizenship. 
 This means voting eligibility may someday be subject to rules and restrictions unknown today. 
