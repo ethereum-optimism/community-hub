@@ -70,5 +70,5 @@ RetroPGF has three core components, each with substantial surface area for exper
 For the first several rounds of RetroPGF, the Optimism Foundation will decide on scope and voting mechanics with input from the community. 
 Eventually the set of variables around what to fund, how much to fund, and how to vote will be up to the Citizens’ House, with checks and balances from the Token House. 
 
-Over time, the Collective aims to expand the scope of RetroPGF to support the production of public goods beyond the immediate Optimism ecosystem. 
+Over time, the Collective aims to expand the scope of RetroPGF to support the production of public goods beyond the immediate Optimism Ecosystem. 
 To get there, we must refine the tools and processes used for RetroPGF based on regular experimentation.
