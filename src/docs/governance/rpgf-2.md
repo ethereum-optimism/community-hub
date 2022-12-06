@@ -1,5 +1,5 @@
 ---
-title: RetroPGF round 2
+title: RetroPGF Round 2
 lang: en-US
 ---
 
@@ -14,11 +14,11 @@ By funding public goods sustainably, the Collective can create a rich ecosystem 
 
 ## Timeline
 
-Nomination window: Jan 3 - Jan 17
+**Nomination window**: Jan 3 - Jan 17
 
-Signup deadline: Jan 24
+**Signup deadline**: Jan 24
 
-Voting window: Jan 31 - Feb 10
+**Voting window**: Jan 31 - Feb 10
 
 ![Timeline](../../assets/docs/governance/rpfg-2/timeline.png)
 
@@ -26,6 +26,12 @@ Voting window: Jan 31 - Feb 10
 ## Scope of RetroPGF 2
 
 **RetroPGF Round #2 will fund public goods that support development and usage of the OP Stack. This falls in four main categories:**
+
+- **Infrastructure + Dependencies**: Software used to build or deploy the OP Stack; contributions to protocols or standards the OP Stack depends on run; experiments that support future development of the core OP Stack protocol.
+
+- **Tooling + Utilities**: Work that helps builders create applications on Optimism mainnet, build on the OP Stack, interact with governance of the Collective, or use applications built on Optimism.
+
+- **Education**: Work to spread awareness and knowledge of how Optimism works, whether technically or socially.
 
 - Infrastructure + Dependencies
 - Tooling + Utilities
@@ -38,7 +44,7 @@ RetroPGF 2 focuses on a narrow, Optimism-specific scope of impact to drive the c
 
 ## Nominations
 
-Nominations will be open from Jan 3 to Jan 17. During this window, anyone can nominate a **project or person** for funding on the Optimism Governance Forum. 
+Nominations will be open from Jan 3 to Jan 17. During this window, anyone can nominate a **project or person** for funding.
 
 Nominations will take place on the [Optimism Governance Forum](https://optimism.gov.io). Any community member can nominate a person or project by supplying: 
 
@@ -47,6 +53,7 @@ Nominations will take place on the [Optimism Governance Forum](https://optimism.
 - a link to their GitHub, Twitter, Discord, or Optimism address.
 - (optional) contact info for the project or person.
 
+A full nomination template will be posted on the Forum before the nomination period begins.
 
 
 ## Funding Eligibility
@@ -65,7 +72,7 @@ Any project without a correctly verified GitHub or Twitter account, any project 
 
 ## Voting Badge distribution
 
-✨ Voting Badges for RetroPGF 2 will be distributed to a set of **96 community members.**
+✨ Voting Badges for RetroPGF 2 will be distributed to a set of **90 community members.**
 
 1. **One badge distributed to each voter from RetroPGF Round 1**, excluding full time employees of OP Labs or the Optimism Foundation. (14 badges, [list](https://docs.google.com/spreadsheets/d/1g4ilAByMNQsmlBC8cskQip7Ojd_qK6IhozJCyoVfU9k/edit#gid=0)) 
 2. **One badge given to an individual selected by each of the previous voters in RetroPGF Round 1** (14 badges) 

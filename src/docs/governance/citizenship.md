@@ -9,7 +9,7 @@ The Citizens’ House relies on the concept of identity-based governance.
 This is distinct from the more common pattern of token-voting governance (as used in [Optimism’s Token House](./token-house.md)). 
 
 To start, the initial set of Citizens in this stage is determined by (a) criteria set by the Optimism Foundation and (b) a special election from the Token House. 
-Citizenship is conferred by a simple entry in the AttestationStation.
+Citizenship is conferred by a simple entry in the [AttestationStation](./attestation-station.md).
 
 In future stages, the Token House and Citizens’ House together will collaborate on ongoing criteria for participation in the Citizens’ House. 
 
