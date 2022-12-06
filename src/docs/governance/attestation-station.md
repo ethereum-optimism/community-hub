@@ -28,7 +28,7 @@ See [the tutorial](https://github.com/ethereum-optimism/optimism-tutorial/tree/m
 | Optimism mainnet | To be determined |
 
 
-#### I am building on top of the AttestationStation but have some questions, where can I discuss these?
+#### I am building on the AttestationStation but have some questions, where can I discuss these?
 
 The best place to ask any dev related questions is the #dev-support channel on the [the Optimism Discord](https://discord-gateway.optimism.io/). If you need additional support check out this [Help Article](https://help.optimism.io/hc/en-us/articles/9762044018843-How-do-I-get-project-support-marketing-integrations-etc-).
 
@@ -58,7 +58,7 @@ Some things we’re looking forward to:
 * Exploring a variety of on-chain and off-chain tools including using zero-knowledge proofs to make attestations private by default
 * Aggregating attestations from various communities and using techniques like [EigenTrust](https://en.wikipedia.org/wiki/EigenTrust) to derive reputation
 
-#### What products are built on top of the AttestationStation? 
+#### What products are built on the AttestationStation? 
 * [Attestation Station Open Source Interface by sbvegan](https://github.com/sbvegan/attestation-station-interface)
 * [redacted]
 
