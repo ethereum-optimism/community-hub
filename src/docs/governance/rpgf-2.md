@@ -25,19 +25,15 @@ By funding public goods sustainably, the Collective can create a rich ecosystem 
 
 ## Scope of RetroPGF 2
 
-**RetroPGF Round #2 will fund public goods that support development and usage of the OP Stack. This falls in four main categories:**
+**RetroPGF Round #2 will fund public goods that support development and usage of the OP Stack. This falls in three main categories:**
 
-- **Infrastructure + Dependencies**: Software used to build or deploy the OP Stack; contributions to protocols or standards the OP Stack depends on run; experiments that support future development of the core OP Stack protocol.
+- **Infrastructure + Dependencies**: Software used to build or deploy the OP Stack; contributions to protocols or standards the OP Stack depends on run; experiments that support future development of the core OP Stack protocol
 
-- **Tooling + Utilities**: Work that helps builders create applications on Optimism mainnet, build on the OP Stack, interact with governance of the Collective, or use applications built on Optimism.
+- **Tooling + Utilities**: Work that helps builders create applications on Optimism mainnet, build on the OP Stack, interact with governance of the Collective, or use applications built on Optimism
 
-- **Education**: Work to spread awareness and knowledge of how Optimism works, whether technically or socially.
+- **Education**: Work to spread awareness and knowledge of how Optimism works, whether technically or socially
 
-- Infrastructure + Dependencies
-- Tooling + Utilities
-- Education
-
-Today, the **OP Stack** refers to the Optimism monorepo and its dependencies. 
+Today, the **OP Stack** refers to the Optimism monorepo and its dependencies.
 
 RetroPGF 2 focuses on a narrow, Optimism-specific scope of impact to drive the core engine for ecosystem growth. In future rounds, this scope will expand.
 
@@ -50,8 +46,8 @@ Nominations will take place on the [Optimism Governance Forum](https://optimism.
 
 - the project or person’s name
 - a description of how they’ve provided public good to the Collective
-- a link to their GitHub, Twitter, Discord, or Optimism address.
-- (optional) contact info for the project or person.
+- a link to their GitHub, Twitter, Discord, or Optimism address
+- (optional) contact info for the project or person
 
 A full nomination template will be posted on the Forum before the nomination period begins.
 
@@ -83,13 +79,13 @@ Any project without a correctly verified GitHub or Twitter account, any project 
 
 **Notes**
 
-- Holding a voting badge for one round does not guarantee voting rights in subsequent rounds; Citizenship criteria are subject to change going forward.
-- Voting Badges in RetroPGF 2 are recorded as a simple attestation in the AttestationStation, not as a soulbound token. This approach preserves flexibility for future iterations.
-- Badgeholders are expected to adhere to the Optimism Delegate Code of Conduct.
-- An individual does not have to accept the voting badge. If an eligible person declines, the badge will not be distributed to someone else.
-- Anyone holding a Voting Badge will be able to mint an Optimist NFT – the inception of identity on Optimism.
-- Badgeholders with any participation or ownership stake in a project up for vote in RetroPGF 2 will be expected to not vote in favor of that project. Rules around conflicts of interest will be itemized in a forthcoming Badgeholder Manual.
-- Citizens’ House adheres to “one person one vote.” If an individual falls into more than one category above or is nominated more than once, they will still receive only one voting badge.
+- Holding a voting badge for one round does not guarantee voting rights in subsequent rounds; Citizenship criteria are subject to change going forward
+- Voting Badges in RetroPGF 2 are recorded as a simple attestation in the AttestationStation, not as a soulbound token. This approach preserves flexibility for future iterations
+- Badgeholders are expected to adhere to the Optimism Delegate Code of Conduct
+- An individual does not have to accept the voting badge. If an eligible person declines, the badge will not be distributed to someone else
+- Anyone holding a Voting Badge will be able to mint an Optimist NFT – the inception of identity on Optimism
+- Badgeholders with any participation or ownership stake in a project up for vote in RetroPGF 2 will be expected to not vote in favor of that project. Rules around conflicts of interest will be itemized in a forthcoming Badgeholder Manual
+- Citizens’ House adheres to “one person one vote.” If an individual falls into more than one category above or is nominated more than once, they will still receive only one voting badge
 
 Badgeholders will be added to a public channel on Discord for announcements and discussion. 
 

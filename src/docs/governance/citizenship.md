@@ -18,8 +18,8 @@ Holding a voting badge in RetroPGF 2 does not guarantee voting rights in all fut
 
 How does this work?
 
-- Optimism has a neutral, permissionless attestation contract called the [`AttestationStation`](./attestation-station.md).
-- Optimism Governance (Token + Citizens’ House) has authority over a function that takes the AttestationStation as an argument and uses any data included to determine the set of Citizens.
+- Optimism has a neutral, permissionless attestation contract called the [`AttestationStation`](./attestation-station.md)
+- Optimism Governance (Token + Citizens’ House) has authority over a function that takes the AttestationStation as an argument and uses any data included to determine the set of Citizens
 
 Optimism governance can use any reputation data written to the AttestationStation contract to determine Citizenship in future iterations of the Citizens’ House. 
 This system is designed to be flexible and future-proof; rather than prescribe citizenship criteria at the outset, the Collective is keeping true to its principle of iterative governance. 
