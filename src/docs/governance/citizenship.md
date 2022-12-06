@@ -24,7 +24,7 @@ How does this work?
 Optimism governance can use any reputation data written to the AttestationStation contract to determine Citizenship in future iterations of the Citizens’ House. 
 This system is designed to be flexible and future-proof; rather than prescribe citizenship criteria at the outset, the Collective is keeping true to its principle of iterative governance. 
 
-[See here](./attestation-station.md) for more information on Optimism’s identity layer.
+For more information on Optimism's identity layer, visit the [AttestationStation documentation](./attestation-station.md). 
 
 ## Becoming a Citizen
 
