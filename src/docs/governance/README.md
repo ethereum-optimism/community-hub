@@ -51,7 +51,7 @@ The Citizens' House is a large-scale experiment in [non-plutocratic governance](
 
 The Citizens' House is responsible for [retroactive public goods funding (RPGF)](https://medium.com/ethereum-optimism/retroactive-public-goods-funding-33c9b7d00f0c). 
 For more information about the Citizens' House, read [the Overview](./citizens-house.md).
-For details about RetroPGF 2, visit [the RetroPGF 2 program details](./rpgf-2.md).
+For details about RetroPGF 2, visit [the RetroPGF 2 program details](./retropgf-2.md).
 For plans around identity and governance, see [the Citizenship page](./citizenship.md).  
 
 **What is described here is an initial experiment**. 
