@@ -6,6 +6,8 @@ The AttestationStation is an **attestation smart contract** deployed on Optimism
 
 <!-- TODO: Add source code link when we have an authoritative source -->
 
+## General FAQ
+
 #### What can attestations be used for?
 If multiple entities participate in providing qualitative attestations about actors within a community, an invaluable p2p network of attestations is created for the broader ecosystem.
 
