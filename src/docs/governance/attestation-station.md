@@ -45,7 +45,8 @@ If your project is using the AttestationStation, make a PR including how you're 
 | ------------------- | ---------------| ---------------------------------------------------------- |------ |--------------------------------------------- |
 | Optimism Foundation | tbd            | op.retropgf.szn-2.can-vote:bool                            | true  | People eligible to vote in RetroPGF #2       |
 | Optimism Foundation | tbd            | op.pfp.can-mint:bool                                       | true  | People eligible to mint the Optimist NFT     |
-
+| Flipside | tbd                       | tbd                                                        | 1 - 5 | People's acitivity score for on-chain activity in the last 180 days  
+|
 #### What naming convention do you recommend when writing attestations?
 
 To make attestations as easy to interpret as possible we recommend making your key descriptive about what the attestation is about and including the data type (bool, string, address, etc.) at the end of the key. 
