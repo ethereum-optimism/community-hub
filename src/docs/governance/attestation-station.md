@@ -12,7 +12,7 @@ The AttestationStation is an **attestation smart contract** deployed on Optimism
 #### What can attestations be used for?
 The AttestationStation is network of peer to peer (p2p) attestations. If multiple entities participate in providing qualitative attestations about actors within a community, an invaluable p2p network of attestations is created for the broader ecosystem.
 
-![](../../assets/docs/governance/attestationstation/attestationstation.png)
+![](../../assets/docs/governance/attestationstation/network.png)
 
 We can then take the p2p network of attestations and run computations like EigenTrust over the distributed network to derive identity sets on top of a purely subjective web of trust.
 
