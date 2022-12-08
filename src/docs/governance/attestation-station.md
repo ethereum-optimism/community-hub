@@ -58,9 +58,8 @@ To make attestations as easy to interpret as possible we recommend making your k
 
 It will take a huge community effort to realize the potential that reputation has to transform web3. That’s why we started small with the AttestationStation and an open invite to come experiment with us. We can already think of a bunch of fun projects to build today like:
 
-* **AttestationStation SDK**: Simplify creating, viewing, and updating attestations
 * **EiganTrust**: Aggregate attestations from various communities and use techniques like [EigenTrust](https://en.wikipedia.org/wiki/EigenTrust) to derive reputation
-* **Data Visualization**: Create data visualizations of the AttestationStation
+* **Data visualization**: Create data visualizations representing the different types of attestations in the AttestationStation
 * **Predictive attestations**: Instead of attesting “I trust XYZ”, try fun attestations like, “I believe XYZ will be considered trusted by a majority of node in the future”. Plus, what if we add a slashing condition to the predictive attestation?
 * **Attestation delegation**: Build a system which manages attestations automatically for users. This system should enable users to delegate some of their attestation assignment to a third party.
 * **Attestation import**: Write proxy contracts which import attestations of various formats into the standardized AttestationStation format so that they can be consumed by the standard AttestationStation tooling.
