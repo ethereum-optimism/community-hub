@@ -37,9 +37,9 @@ See [the tutorial](https://github.com/ethereum-optimism/optimism-tutorial/tree/m
 
 The best place to ask any dev related questions is the #dev-support channel on the [the Optimism Discord](https://discord-gateway.optimism.io/). If you need additional support check out this [Help Article](https://help.optimism.io/hc/en-us/articles/9762044018843-How-do-I-get-project-support-marketing-integrations-etc-).
 
-#### I want to apply for a grant to build on AttestationStation, how can I do this?
+#### I want to apply for a grant to build on the AttestationStation, how can I do this?
 
-Looking to get funding for an AttestationStation project? There are many ways to go about doing so! You can learn more about the variety of grants program available at Optimism [here](allocations/#ecosystem-fund). As a reminder, your work should be published to a public GitHub repo.
+You can learn more about the variety of grants program available at Optimism [here](allocations/#ecosystem-fund). As a reminder, your work should be published to a public GitHub repo.
 
 #### What projects are writing attestations to the AttestationStation?
 If your project is using the AttestationStation, make a PR including how you're using the relevant attestation(s) to be added to the list 😊
