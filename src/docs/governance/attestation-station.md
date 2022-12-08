@@ -17,9 +17,8 @@ The AttestationStation is network of peer to peer (p2p) attestations. If multipl
 
 We can then take the p2p network of attestations and run computations like EigenTrust over the distributed network to derive identity sets on top of a purely subjective web of trust.
 
-If these computations are run iteratively, for example start with a purely subjective web of trust, then pipe that as the starting point to derive a larger web of trust, and so on, we can begin to establish a credibly neutral reputation that is entirely peer to peer and that can be used for a wide variety of applications including voting, reputations / credit scores, reviews, and more.
+To build a robust, trustworthy network, these computations will be run iteratively. We can start with a purely subjective web of trust, then pipe that as the starting point to derive a larger web of trust, and so on — we can begin to establish a credibly neutral reputation that is entirely peer to peer. This open source primitive can then be used for a wide variety of applications including voting, reputations / credit scores, reviews, and more.
 
-As an example, attestations written to the AttestationStation form the base layer of reputation for [Optimism's Citizen House](https://community.optimism.io/docs/governance/citizens-house/). This open source and permissionless primitive can also enable developers to build applications that give people special privileges (access to credit, voting, etc).
 
 #### How do I use the AttestationStation?
 
@@ -57,13 +56,15 @@ To make attestations as easy to interpret as possible we recommend making your k
 
 #### What is on the AttestationStation roadmap?
 
-The first experiment of the AttestationStation is with public attestations. As we iterate towards a reputation system underpinning the Citizen’s house we’re excited to collaborate with other teams in the space to make it easy for anyone to use, read, write, and update attestations across the ecosystem. 
+It will take a huge community effort to realize the potential that reputation has to transform web3. That’s why we started small with the AttestationStation and an open invite to come experiment with us. We can already think of a bunch of fun projects to build today like:
 
-Some things we’re looking forward to:
-
-* Launching an SDK to simplify creating, viewing, and updating attestations as well as a no-code interface used to view, create, explore, and contextualize attestations.
-* Exploring a variety of on-chain and off-chain tools including using zero-knowledge proofs to make attestations private by default
-* Aggregating attestations from various communities and using techniques like [EigenTrust](https://en.wikipedia.org/wiki/EigenTrust) to derive reputation
+* AttestationStation SDK: Simplify creating, viewing, and updating attestations
+* EiganTrust: Aggregating attestations from various communities and using techniques like [EigenTrust](https://en.wikipedia.org/wiki/EigenTrust) to derive reputation for a subset of the AttestationStation
+* Visualization: Graph visualizations of the AttestationStation
+* Predictive attestations: Instead of attesting “I trust XYZ”, try fun attestations like, “I believe XYZ will be considered trusted by a majority of node in the future”. Plus, what if we add a slashing condition to the predictive attestation?
+* Attestation delegation: Build a system which manages attestations automatically for users. This system should enable users to delegate some of their attestation assignment to a third party.
+* Attestation import: Write proxy contracts which import attestations of various formats into the standardized AttestationStation format so that they can be consumed by the standard AttestationStation tooling.
+* Viral attestations: Create systems which make it fun and easy for users to attest useful information about each other.
 
 #### What products are built on the AttestationStation? 
 * [Attestation Station Open Source Interface by sbvegan](https://github.com/sbvegan/attestation-station-interface)
