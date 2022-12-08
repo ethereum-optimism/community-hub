@@ -32,7 +32,7 @@ See [the tutorial](https://github.com/ethereum-optimism/optimism-tutorial/tree/m
 | Network | Address |
 | - | - |
 | Optimism Goerli | [`0x7787194CCA11131C0159c0AcFf7E127CF0B676ed`](https://goerli-optimism.etherscan.io/address/0x7787194cca11131c0159c0acff7e127cf0b676ed)  |
-| Optimism mainnet | To be determined |
+| Optimism Mainnet | To be determined |
 
 
 #### I am building on the AttestationStation but have some questions, where can I discuss these?
