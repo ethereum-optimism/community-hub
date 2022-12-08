@@ -9,13 +9,13 @@ The AttestationStation is an **attestation smart contract** deployed on Optimism
 ## General FAQ
 
 #### What can attestations be used for?
-If multiple entities participate in providing qualitative attestations about actors within a community, an invaluable p2p network of attestations is created for the broader ecosystem.
+The AttestationStation is network of peer to peer (p2p) attestations. If multiple entities participate in providing qualitative attestations about actors within a community, an invaluable p2p network of attestations is created for the broader ecosystem.
 
-We can then take the p2p network of attestations and run computations over the distributed network like EigenTrust to derive identity sets on top of a purely subjective web of trust.
+We can then take the p2p network of attestations and run computations like EigenTrust over the distributed network to derive identity sets on top of a purely subjective web of trust.
 
 If these computations are run iteratively, for example start with a purely subjective web of trust, then pipe that as the starting point to derive a larger web of trust, and so on, we can begin to establish a credibly neutral reputation that is entirely peer to peer and that can be used for a wide variety of applications including voting, reputations / credit scores, reviews, and more.
 
-As an example, attestations written to the AttestationStation form the base layer of reputation for [Optimism's Citizen House](https://community.optimism.io/docs/governance/citizens-house/).
+As an example, attestations written to the AttestationStation form the base layer of reputation for [Optimism's Citizen House](https://community.optimism.io/docs/governance/citizens-house/). This open source and permissionless primitive can also enable developers to build applications that give people special privileges (access to credit, voting, etc).
 
 #### How do I use the AttestationStation?
 
