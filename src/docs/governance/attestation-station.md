@@ -13,8 +13,8 @@ The goal of the AttestationStation is to provide a permissionless and accessible
 
 ## General FAQ
 
-#### What can attestations be used for?
-As multiple entities participate in providing qualitative attestations about actors within a community to the AttestationStation, an invaluable graph of p2p attestations is created for the broader ecosystem.
+#### What can attestations in the AttestationStation be used for?
+Instead of having a single entity owning user data and identity, Optimism's reputation layer is formed by a network of peer-to-peer (p2p) attestations. 
 
 ![](../../assets/docs/governance/attestationstation/network.png)
 
@@ -22,13 +22,13 @@ We can then take the graph of p2p attestations from the AttestationStation and r
 
 ![](../../assets/docs/governance/attestationstation/eigan.png)
 
-To build a robust, trustworthy network, these computations will be run iteratively. We can start with a purely subjective web of trust, then pipe that as the starting point to derive a larger web of trust, and so on — we can then begin to establish a credibly neutral reputation that is entirely peer to peer. This open source primitive can be used for a wide variety of applications including voting, reputations / credit scores, reviews, and more.
+To build a robust, trustworthy identity network, these computations will be run iteratively. We can start with a purely subjective web of trust, and use that starting point to derive a larger web of trust, and so on — we can begin to establish a credibly neutral reputation that is entirely peer-to-peer. This open source primitive can be used for a variety of sybil-resistant applications including voting, reputations / credit scores, reviews, and more.
 
-#### Why is the AttestationStation different?
+#### How is the AttestationStation different?
 
-The AttestationStation is deliberately dead simple and an invitation to come build an open source and permissionless attestation graph together.
+The AttestationStation is deliberately dead simple and serves as an invitation to come build an open source and permissionless attestation graph together.
 
-Creating an identity system in a decentralized and open-source manner is important because it allows for greater inclusion and representation of different perspectives. This can help to ensure that the system is fair and accessible to all, and that it accurately reflects the diversity of the communities it serves.
+Creating this system in a decentralized and open-source manner is important because it allows for greater inclusion and representation of different perspectives. This can help to ensure that the system is fair and accessible to all, and that it accurately reflects the diversity of the communities it serves.
 
 
 #### How do I use the AttestationStation?
@@ -64,7 +64,7 @@ If your project is using the AttestationStation, make a PR including how you're 
 
 To make attestations as easy to interpret as possible we recommend making your key descriptive about what the attestation is about and including the data type (bool, string, address, etc.) at the end of the key. 
 
-#### What is on the AttestationStation roadmap?
+#### What are some things I should build with the AttestationStation?
 
 It will take a huge community effort to realize the potential that reputation has to transform web3. That’s why we started small with the AttestationStation and an open invite to come experiment with us. We can already think of a bunch of fun projects to build today like:
 
