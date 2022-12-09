@@ -76,8 +76,9 @@ It will take a huge community effort to realize the potential that reputation ha
 * **Viral attestations**: Create systems which make it fun and easy for users to attest useful information about each other.
 
 #### What products are built on the AttestationStation? 
-* [Attestation Station Open Source Interface by sbvegan](https://github.com/sbvegan/attestation-station-interface)
-* [redacted]
+* [Attestationstation Interface by sbvegan](https://attestationstation.xyz/)
+* [Optimist Score by Flipside](https://science.flipsidecrypto.xyz/optimist/)
+
 
 ## Technical specifications
 
