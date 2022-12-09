@@ -8,6 +8,8 @@ The AttestationStation is an **attestation smart contract** deployed on Optimism
 
 The goal of the AttestationStation is to provide a permissionless and accessible data source for builders creating reputation-based applications. By enabling anyone to make arbitrary attestations about other addresses, we can create a rich library of qualitative and quantitative data that can be used across the ecosystem.
 
+Through decentralized and open source development an identity system can be created that is more inclusive and representative of a wider range of perspectives. This can help to ensure that the system is fair and accessible to all, and that it accurately reflects the diversity of the communities it serves.
+
 <!-- TODO: Add source code link when we have an authoritative source -->
 
 ## General FAQ
@@ -25,7 +27,8 @@ To build a robust, trustworthy network, these computations will be run iterative
 
 #### Why is the AttestationStation different?
 
-The AttestationStation is deliberately dead simple and an open invitation to come build Optimism's attestation graph together.
+The AttestationStation is deliberately dead simple and an invitation to come build an open source and permissionless attestation graph together.
+
 
 #### How do I use the AttestationStation?
 
