@@ -4,18 +4,18 @@ lang: en-US
 ---
 The AttestationStation is an **attestation smart contract** deployed on Optimism.  
 
-The goal of the AttestationStation is to provide a neutral, accessible data source for builders creating reputation-based applications. By enabling anyone to make arbitrary attestations about other addresses, we can create a rich library of qualitative and quantitative data that can be used across the ecosystem.
+The goal of the AttestationStation is to provide a permissionless, accessible data source for builders creating reputation-based applications. By enabling anyone to make arbitrary attestations about other addresses, we can create a rich library of qualitative and quantitative data that can be used across the ecosystem.
 
 <!-- TODO: Add source code link when we have an authoritative source -->
 
 ## General FAQ
 
 #### What can attestations be used for?
-As multiple entities participate in providing qualitative attestations about actors within a community to the AttestationStation, an invaluable p2p network of attestations is created for the broader ecosystem.
+As multiple entities participate in providing qualitative attestations about actors within a community to the AttestationStation, an invaluable p2p graph of attestations is created for the broader ecosystem.
 
 ![](../../assets/docs/governance/attestationstation/network.png)
 
-We can then take the p2p network of attestations and run computations like EigenTrust over the distributed network to derive identity sets on top of a purely subjective web of trust.
+We can then take the graph of p2p attestations from the AttestationStation and run computations like EigenTrust over the set of data to derive identity sets on top of a purely subjective web of trust.
 
 ![](../../assets/docs/governance/attestationstation/eigan.png)
 
