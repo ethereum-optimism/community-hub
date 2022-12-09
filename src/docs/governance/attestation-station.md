@@ -13,7 +13,7 @@ The goal of the AttestationStation is to provide a permissionless, accessible da
 ## General FAQ
 
 #### What can attestations be used for?
-As multiple entities participate in providing qualitative attestations about actors within a community to the AttestationStation, an invaluable p2p graph of attestations is created for the broader ecosystem.
+As multiple entities participate in providing qualitative attestations about actors within a community to the AttestationStation, an invaluable graph of p2p attestations is created for the broader ecosystem.
 
 ![](../../assets/docs/governance/attestationstation/network.png)
 
