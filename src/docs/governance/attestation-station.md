@@ -6,7 +6,7 @@ lang: en-US
 
 The AttestationStation is an **attestation smart contract** deployed on Optimism.  
 
-The goal of the AttestationStation is to provide a permissionless, accessible data source for builders creating reputation-based applications. By enabling anyone to make arbitrary attestations about other addresses, we can create a rich library of qualitative and quantitative data that can be used across the ecosystem.
+The goal of the AttestationStation is to provide a permissionless and accessible data source for builders creating reputation-based applications. By enabling anyone to make arbitrary attestations about other addresses, we can create a rich library of qualitative and quantitative data that can be used across the ecosystem.
 
 <!-- TODO: Add source code link when we have an authoritative source -->
 
@@ -23,6 +23,9 @@ We can then take the graph of p2p attestations from the AttestationStation and r
 
 To build a robust, trustworthy network, these computations will be run iteratively. We can start with a purely subjective web of trust, then pipe that as the starting point to derive a larger web of trust, and so on — we can then begin to establish a credibly neutral reputation that is entirely peer to peer. This open source primitive can be used for a wide variety of applications including voting, reputations / credit scores, reviews, and more.
 
+#### Why is the AttestationStation different?
+
+The AttestationStation is deliberately dead simple and an open invitation to come build Optimism's attestation graph together.
 
 #### How do I use the AttestationStation?
 
@@ -52,7 +55,6 @@ If your project is using the AttestationStation, make a PR including how you're 
 | ------------------- | ---------------| ---------------------------------------------------------- |------ |--------------------------------------------- |
 | Optimism Foundation | tbd            | op.retropgf.szn-2.can-vote:bool                            | true  | People eligible to vote in RetroPGF #2       |
 | Optimism Foundation | tbd            | op.pfp.can-mint:bool                                       | true  | People eligible to mint the Optimist NFT     |
-| Flipside | tbd                       | tbd                                                        | 1 - 5 | People's acitivity score for on-chain activity in the last 180 days  
 
 #### What naming convention do you recommend when writing attestations?
 
