@@ -24,9 +24,9 @@ We can then take the graph of p2p attestations from the AttestationStation and r
 
 To build a robust, trustworthy identity network, these computations will be run iteratively. We can start with a purely subjective web of trust, and use that starting point to derive a larger web of trust, and so on — we can begin to establish a credibly neutral reputation that is entirely peer-to-peer. This open source primitive can be used for a variety of sybil-resistant applications including voting, reputations / credit scores, reviews, and more.
 
-#### How is the AttestationStation different?
+#### How is the AttestationStation different from other attestation products?
 
-The AttestationStation is deliberately dead simple and serves as an invitation to come build an open source and permissionless attestation graph together.
+The AttestationStation is deliberately dead simple and serves as an open invite to ecosystem contributors to come build an open and permissionless attestation graph together.
 
 Creating this system in a decentralized and open-source manner is important because it allows for greater inclusion and representation of different perspectives. This can help to ensure that the system is fair and accessible to all, and that it accurately reflects the diversity of the communities it serves.
 
