@@ -2,6 +2,8 @@
 title: What is the AttestationStation?
 lang: en-US
 ---
+![](../../assets/docs/governance/attestationstation/attestationstation.png)
+
 The AttestationStation is an **attestation smart contract** deployed on Optimism.  
 
 The goal of the AttestationStation is to provide a permissionless, accessible data source for builders creating reputation-based applications. By enabling anyone to make arbitrary attestations about other addresses, we can create a rich library of qualitative and quantitative data that can be used across the ecosystem.
