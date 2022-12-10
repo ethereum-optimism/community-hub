@@ -44,6 +44,19 @@ Its API takes only a few lines of codes to get up and running. Alchemy isn't jus
 
 [Sign up for a free Alchemy account here](https://www.alchemy.com/optimism).
 
+## Ankr
+
+### Description and Pricing
+
+[Ankr](https://www.ankr.com/) provides a geo-distributed and decentralized (free) public and premium (Pay-as-you-go) [Optimism RPC](https://www.ankr.com/rpc/optimism/) comprised of many independent blockchain nodes running worldwide for low-latency and incredibly reliable connections. 
+
+Moreover, Ankr offers access to developer tooling on Optimism like SDKs and [Advanced APIs](https://www.ankr.com/advanced-api/) such as NFT, Token and Query API. 
+
+### Supported Networks
+
+- Optimism Ethereum
+- Optimism Goerli
+
 
 ## Blast
 
