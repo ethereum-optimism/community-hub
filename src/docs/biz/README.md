@@ -72,9 +72,7 @@ Listen to [this OPRadio Episode](https://twitter.com/optimismFND/status/15850159
 
 What do the next 100 years have in store for crypto? [@Karl_dot_tech](https://twitter.com/karl_dot_tech) shares his vision in [this chat with Bankless](https://www.youtube.com/watch?v=60F2wtjZO5M).
 
-Want to see what we are doing with Retroactive Public Goods? 
-(Hint: We give all our sequencer revenue (~100k/day!), away to public goods so your users can rest easy knowing that when they use Optimism, they are contributing to a good cause). 
-More on Public Goods Funding [here](https://app.optimism.io/announcement), [here](https://medium.com/ethereum-optimism/retroactive-public-goods-funding-33c9b7d00f0c), and [Vitalik’s](https://twitter.com/VitalikButerin) review of our first experimental round is [here](https://vitalik.ca/general/2021/11/16/retro1.html). 
+Want to see what we are doing with Retroactive Public Goods? [See here](../governance/retropgf-2.md)
 
 Changes to the protocol coming in the near term include multi-client architecture, and the world’s next generation fault proof. 
 Check out [Bedrock](https://dev.optimism.io/introducing-optimism-bedrock/) and [Cannon](https://medium.com/ethereum-optimism/cannon-cannon-cannon-introducing-cannon-4ce0d9245a03). 
