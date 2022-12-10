@@ -89,10 +89,7 @@ To learn more about how Bedrock itself works and its motivations, please see [th
 ### Testnets
 
 Prior to upgrading mainnet, we will be running a series of testnets. 
-The last testnet will replace our existing Goerli, and run for an entire month to give developers time to fix any integration issues they may encounter.
-
-Dates for the testnet have not been determined yet. 
-Please keep an eye on this documentation or our [official Twitter](https://twitter.com/OPLabsPBC) for date announcements.
+All of our tests will culminate in migrating the Optimism Goerli network to the Bedrock release, which will run for at least a month until we upgrade Optimism Mainnet to Bedrock.
 
 ### Upgrade Process
 
