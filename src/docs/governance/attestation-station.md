@@ -57,8 +57,8 @@ If your project is using the AttestationStation, make a PR including how you're 
 
 | Author              | Author Address | Key                                                        | Value | Description                                  |
 | ------------------- | ---------------| ---------------------------------------------------------- |------ |--------------------------------------------- |
-| Optimism Foundation | tbd            | op.retropgf.szn-2.can-vote:bool                            | true  | People eligible to vote in RetroPGF #2       |
-| Optimism Foundation | tbd            | op.pfp.can-mint:bool                                       | true  | People eligible to mint the Optimist NFT     |
+| Optimism Foundation | tbd            | op.retropgf.round-2.can-vote                           | true  | People eligible to vote in RetroPGF #2       |
+| Optimism Foundation | tbd            | op.pfp.can-mint                                       | true  | People eligible to mint the Optimist NFT     |
 
 
 #### What are some things I should build with the AttestationStation?
