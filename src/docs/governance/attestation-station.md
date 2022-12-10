@@ -22,9 +22,7 @@ Attestations are statements by a creator (who attested this) about a subject (wh
 
 #### What can attestations in the AttestationStation be used for?
 
-Attestations in the AttestationStation are on-chain and be used by other smart contracts in a variety of applications.
-
-Instead of having a single entity owning user data and identity, the AttestationStation is a graph of peer-to-peer (p2p) attestations. 
+Attestations in the AttestationStation are on-chain and can be used by other smart contracts in a variety of applications. Instead of having a single entity owning user data and identity, the AttestationStation is a graph of peer-to-peer (p2p) attestations. 
 
 ![](../../assets/docs/governance/attestationstation/network.png)
 
