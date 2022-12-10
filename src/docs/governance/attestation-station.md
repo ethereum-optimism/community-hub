@@ -17,6 +17,7 @@ The goal of the AttestationStation is to provide a permissionless and accessible
 
 Attestations are statements by a creator (who attested this) about a subject (who is being attested about). Attestations could present any qualitative or quantitative statement. To paint a picture — actors might submit attestations that are contextual to their brand, ecosystem, and governance structure.
 
+![](../../assets/docs/governance/attestationstation/attestations.png)
 
 
 #### What can attestations in the AttestationStation be used for?
