@@ -50,7 +50,7 @@ See [the tutorial](https://github.com/ethereum-optimism/optimism-tutorial/tree/m
 | Optimism Mainnet | To be determined |
 
 #### What products are built on the AttestationStation? 
-If your project is using the AttestationStation, make a PR including how you're using the relevant attestation(s) to be added to the list 😊
+If your product is using the AttestationStation, make a PR including how you're using attestations to be added to the list 😊
 * [AttestationStation Interface by sbvegan](https://attestationstation.xyz/)
 * [Optimist Score by Flipside](https://science.flipsidecrypto.xyz/optimist/)
 
