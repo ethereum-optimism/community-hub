@@ -40,11 +40,9 @@ The AttestationStation is deliberately dead simple and serves as an invite to ec
 
 Creating this system in a decentralized and open-source manner is important because it allows for greater inclusion and representation of different perspectives. This can help to ensure that the system is fair and accessible to all, and that it accurately reflects the diversity of the communities it serves.
 
-
 #### How do I use the AttestationStation?
 
 See [the tutorial](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/ecosystem/attestation-station).
-
 
 #### What are the contract addresses for the AttestationStation?
 
@@ -53,6 +51,10 @@ See [the tutorial](https://github.com/ethereum-optimism/optimism-tutorial/tree/m
 | Optimism Goerli | [`0x7787194CCA11131C0159c0AcFf7E127CF0B676ed`](https://goerli-optimism.etherscan.io/address/0x7787194cca11131c0159c0acff7e127cf0b676ed)  |
 | Optimism Mainnet | To be determined |
 
+#### What products are built on the AttestationStation? 
+
+* [AttestationStation Interface by sbvegan](https://attestationstation.xyz/)
+* [Optimist Score by Flipside](https://science.flipsidecrypto.xyz/optimist/)
 
 #### I am building on the AttestationStation but have some questions, where can I discuss these?
 
@@ -81,10 +83,6 @@ It will take a huge community effort to realize the potential that reputation ha
 * **Attestation delegation**: Build a system which manages attestations automatically for users. This system should enable users to delegate some of their attestation assignment to a third party.
 * **Attestation import**: Write proxy contracts which import attestations of various formats into the standardized AttestationStation format so that they can be consumed by the standard AttestationStation tooling.
 * **Viral attestations**: Create systems which make it fun and easy for users to attest useful information about each other.
-
-#### What products are built on the AttestationStation? 
-* [Attestationstation Interface by sbvegan](https://attestationstation.xyz/)
-* [Optimist Score by Flipside](https://science.flipsidecrypto.xyz/optimist/)
 
 
 ## Technical specifications
