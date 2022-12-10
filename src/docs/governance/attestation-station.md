@@ -52,7 +52,7 @@ See [the tutorial](https://github.com/ethereum-optimism/optimism-tutorial/tree/m
 | Optimism Mainnet | To be determined |
 
 #### What products are built on the AttestationStation? 
-
+If your project is using the AttestationStation, make a PR including how you're using the relevant attestation(s) to be added to the list 😊
 * [AttestationStation Interface by sbvegan](https://attestationstation.xyz/)
 * [Optimist Score by Flipside](https://science.flipsidecrypto.xyz/optimist/)
 
@@ -63,15 +63,6 @@ The best place to ask any dev related questions is the #dev-support channel on t
 #### I want to apply for a grant to build on the AttestationStation, how can I do this?
 
 You can learn more about the variety of grants program available at Optimism [here](allocations/#ecosystem-fund). As a reminder, your work should be published to a public GitHub repo.
-
-#### What projects are writing attestations to the AttestationStation?
-If your project is using the AttestationStation, make a PR including how you're using the relevant attestation(s) to be added to the list 😊
-
-| Attester            | Attester Address | Key                                                     | Value | Description                                 |
-| ------------------- | ---------------- | ------------------------------------------------------- |------ |-------------------------------------------- |
-| Optimism Foundation | tbd              | retropgf.round-2.can-vote                               | true  | People eligible to vote in RetroPGF #2      |
-| Optimism Foundation | tbd              | optimist.can-mint                                       | true  | People eligible to mint the Optimist NFT    |
-
 
 #### What are some things I should build with the AttestationStation?
 
