@@ -67,7 +67,7 @@ You can learn more about the variety of grants program available at Optimism [he
 It will take a huge community effort to realize the potential that reputation has to transform web3. That’s why we started small with the AttestationStation and an open invite to come experiment with us. We can already think of a bunch of fun projects to build today like:
 
 * **EiganTrust**: Aggregate attestations from various communities and use techniques like [EigenTrust](https://en.wikipedia.org/wiki/EigenTrust) to derive reputation
-* **SybilRank**: Create a SybilRank calculator! (h/t Barry Whitehat for the suggestion)
+* **SybilRank**: Create a [SybilRank](https://users.cs.duke.edu/~qiangcao/sybilrank_project/index.html) calculator! (h/t Barry Whitehat for the suggestion)
 * **Data visualization**: Create data visualizations representing the different types of attestations in the AttestationStation
 * **Predictive attestations**: Instead of attesting “I trust XYZ”, try fun attestations like, “I believe XYZ will be considered trusted by a majority of node in the future”. Plus, what if we add a slashing condition to the predictive attestation?
 * **Attestation delegation**: Build a system which manages attestations automatically for users. This system should enable users to delegate some of their attestation assignment to a third party. For instance, users may opt-in to delegating their trust scores to a sybil detection court system. Another project is to build that sybil detection court system! 
