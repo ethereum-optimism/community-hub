@@ -61,7 +61,7 @@ We'll start with `op-geth`'s configuration because it is more complex. As mentio
 1. **With a Genesis File:** This is used for testnets or internal deployments that are not migrated from a legacy network. In this case, you'll download the genesis file and initialize the data directory via `geth init`.
 2. **With a Data Directory:** This is used for networks that are migrated from a legacy network. In this case, you'll download a preconfigured data directory and extract it. No further initialization is necessary in this case, because the data directory contains the network's genesis information. 
 
-Regardless of how `op-geth` is initialized, you'll need to ensure that you have sufficient disk space available to store the network's data. As of this writing, the mainnet data directory is 500GB for a full node and ~1TB for an archival node. The Goerli data directory is ~6GB for an archival node.
+Regardless of how `op-geth` is initialized, you'll need to ensure that you have sufficient disk space available to store the network's data. As of this writing, the mainnet data directory is ~100GB for a full node and ~1TB for an archival node. The Goerli data directory is ~6GB for a full node.
 
 Instructions for each initialization method are below.
 
