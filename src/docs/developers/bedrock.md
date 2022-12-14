@@ -61,7 +61,7 @@ You might also be interested in the existence of the mempool and the changes in 
 - [Fees](#transaction-fees)
 - [RPC changes](#json-rpc)
 
-[See here for a more detailed guide](bedrock-temp/infra.md).
+[See here for a more detailed guide](bedrock-temp/node-operator-guide.md).
 
 </details>
 
@@ -213,14 +213,21 @@ Deposits are implemented using [a new transaction type](https://github.com/ether
 
 ### Withdrawals (from Optimism to Ethereum)
 
-[Address aliasing](build/differences/#address-aliasing) is now applied to withdrawal transactions as well as deposit ones.
+The withdrawal process is similar, but not identical.
 
-There is a separate withdrawal root which allows withdrawal merkle proofs to be 60% cheaper (in L1 gas). 
-This happens transparently, you just see less cost.
+1. You initialize withdrawals with an L2 transaction, the same you did prior to bedrock.
 
-The withdrawal interface is unchanged.
+1. Wait for the next output root to be submitted to L1 (up to an hour on mainnet, less than that on the test network) then submit the withdrawal proof using `proveWithdrawalTransaction`.
+   This new step makes the proof available during the challenge period, which makes it much easier to identify faulty proofs.
+   Having the proof available for off-chain testing helps us guard against a whole class of vulnerabilities based on invalid fault proofs.
+
+1. After the fault challenge period ends (a week on mainnet, less than that on the test network), finalize the withdrawal.
+
+
+<!-- 
 To initiate withdrawals we recommend you use [`L2CrossDomainMessenger`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L2/L2CrossDomainMessenger.sol). 
 To claim/finalize the message continue to use [`L1CrossDomainMessenger`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L1/L1CrossDomainMessenger.sol).
+-->
 
 <!-- 
 However, each of these contracts will be deployed twice. Once in the old address, where withdrawals use the state root. The other addresses are  where withdrawals use the withdrawals root, and are therefore cheaper.  
@@ -229,8 +236,6 @@ However, each of these contracts will be deployed twice. Once in the old address
 -->
 
 [You can read the full withdrawal specifications here](https://github.com/ethereum-optimism/optimism/blob/develop/specs/withdrawals.md)
-
-
 
 ## Blockchain
 
@@ -317,38 +322,34 @@ The `OVM_GasPrice` interface is likely to change, so for estimating transaction 
 
 The information in this section is primarily useful to people who run an Optimism network node, either as a replica or as an independent development node.
 
-The rollup node is the component responsible for deriving the L2 chain from L1 blocks (and their associated receipts). 
-
 In bedrock processing is divided between two components:
 
-- **Rollup node**: 
+- **op-node**: 
   The component responsible for deriving the L2 chain from L1 blocks.
   It is somewhat similar to the consensus layer client.
 
-- **Execution engine**: 
+- **op-geth**: 
   The component that actually executes transactions. 
   This is [a slightly modified version of geth](https://github.com/ethereum-optimism/reference-optimistic-geth/compare/master...optimism-prototype).
 
-Note that while the execution engine is similar to the previous version's l2geth, there is no bedrock equivalent to the DTL.
+Note that while op-geth is similar to the previous version's l2geth, there is no bedrock equivalent to the DTL.
 
-### Rollup node
+### op-node
 
-The rollup node provides the L1 information that the execution engine uses to derive the L2 blocks. 
-The rollup node always provides the L2 state root to the execution engine, because that's the root of trust that needs to come from L1. 
+The op-node (Optimism's implementation of [a rollup node](https://github.com/ethereum-optimism/optimism/blob/develop/specs/rollup-node.md)) provides the L1 information that op-geth uses to derive the L2 blocks. 
+The op-node always provides the L2 state root to op-geth, because that's the root of trust that needs to come from L1. 
 It can also provide all the transactions from L1 for synchronization, but that mechanism is slower than snap sync (see next section).
 
-[You can read more about the rollup node here](https://github.com/ethereum-optimism/optimism/blob/develop/specs/rollup-node.md).
 
 
+### op-geth
 
-### Execution engine
+op-geth (Optimism's implementation of [an execution engine](https://github.com/ethereum-optimism/optimism/blob/develop/specs/rollup-node.md)) runs a slightly modified version of geth.
+In terms of EVM equivalence, it is even closer to upstream geth than the current version.
 
-The execution engine runs a slightly modified version of geth.
-In terms of EVM equivalence, it is [even closer to upstream geth](https://github.com/ethereum-optimism/reference-optimistic-geth/compare/master...optimism-prototype) than the current version.
-
-One important feature that we inherit from upstream geth is their peer to peer synchronization, which allows for much faster synchronization (from other Optimism execution engines). 
-Note that peer to peer synchronization is allowed, not required. 
-For censorship resistance, an execution engine can synchronize purely from the rollup node that receives data from L1. 
+One important feature that we inherit from upstream geth is their peer to peer synchronization, which allows for much faster synchronization (from other op-geths). 
+Note that peer to peer synchronization is allowed, *not* required. 
+For censorship resistance, op-geth can synchronize purely from the op-node that receives data from L1. 
 There are two types of synchronization possible:
 
 
@@ -359,13 +360,13 @@ There are two types of synchronization possible:
 
 ### Legacy requests
 
-We need to provided history from the final regenesis (November 11th) until the introduction of bedrock.
-At the same time, we do not want to put anything in our execution engine that doesn't need to be there. 
+We need to provided history from the final regenesis (November 11th, 2021) until the introduction of bedrock.
+At the same time, we do not want to put anything in op-geth that doesn't need to be there. 
 The closer it is to upstream geth the better.
 
 The solution is to have two additional components:
 
-1. **Daisy chain**, an RPC proxy that routes read requests from before bedrock to the legacy geth, and everything else to the execution engine.
+1. **Daisy chain**, an RPC proxy that routes read requests from before bedrock to the legacy geth, and everything else to op-geth.
 1. **Legacy geth**, a stripped down version of the previous version's `l2geth` with a read only database containing the pre-bedrock history.
 
 

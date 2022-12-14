@@ -48,22 +48,11 @@ The Token House votes on these proposal types:
 ## Citizens' House
 
 The Citizens' House is a large-scale experiment in [non-plutocratic governance](https://vitalik.ca/general/2021/08/16/voting3.html) and retroactive funding of public goods. 
-Citizenship will be conferred by [**"soulbound"**](https://vitalik.ca/general/2022/01/26/soulbound.html) non-transferrable NFTs, and the set of Citizens will grow over time. The exact mechanism for distributing Citizenships will be determined by the Foundation with input from the Token House.
 
 The Citizens' House is responsible for [retroactive public goods funding (RPGF)](https://medium.com/ethereum-optimism/retroactive-public-goods-funding-33c9b7d00f0c). 
-The funds for RPGF will come from several sources, including:
-
-- [20% of the initial OP supply is dedicated to RPGF](allocations.md#retroactive-public-goods-funding)
-- Redeployment of some of the sequencer revenue generated on Optimism
-- Donations from other sources.
-  If you want to contribute to retroPGF, you can send ETH, ERC-20 tokens, or NFTs to the ENS address **retroPGF.eth**. 
-  It is supported on [Optimism](https://explorer.optimism.io/address/0x15dda60616ffca20371ed1659dbb78e888f65556) as well as [Ethereum mainnet](https://etherscan.io/address/0x15dda60616ffca20371ed1659dbb78e888f65556). 
-  Everything donated will be allocated to a RetroPGF round. 
-  
-  <!-- These funds do not go to OP Labs or the Optimism Foundation.  
-  The Foundation will help distribute funds according to the Citizens’ House governance process. -->
-
-[Read here for more details](citizens-house.md).
+For more information about the Citizens' House, read [the Overview](./citizens-house.md).
+For details about RetroPGF 2, visit [the RetroPGF 2 program details](./retropgf-2.md).
+For plans around identity and governance, see [the Citizenship page](./citizenship.md).  
 
 **What is described here is an initial experiment**. 
 The specifics of this system will evolve as the Collective grows.

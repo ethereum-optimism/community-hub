@@ -179,19 +179,21 @@ module.exports = {
             ]
           ],
           collapsable: true,
-        },                        
-        '/docs/governance/citizens-house.md',        
+        },  
+        {
+          title: "Citizen House Governance",
+          children: [
+            '/docs/governance/citizens-house.md',
+            '/docs/governance/citizenship.md',
+            '/docs/governance/retropgf-2.md',                        
+          ],
+          collapsable: true
+        },
         [
           'https://calendar.google.com/calendar/u/0?cid=Y19mbm10Z3VoNm5vbzZxZ2JuaTJncGVyaWQ0a0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t',
           'Governance Calendar'
         ],
-        {
-          title: "Retroactive Public Goods Funding",
-          children: [
-            '/docs/governance/attestation-station.md' 
-          ],
-          collapsable: true,
-        },      
+        '/docs/governance/attestation-station.md' 
       ],
       '/docs/guides/': [
         {
@@ -333,19 +335,9 @@ module.exports = {
           title: "Bedrock (future version)",
           children: [
             '/docs/developers/bedrock.md',
-            '/docs/developers/bedrock-temp/infra.md', 
-            [
-              'https://oplabs.notion.site/Usage-Guide-3667cfd2b180475894201f4a69089419',
-              'Bedrock alpha - user guide',
-            ],
-            [
-              'https://oplabs.notion.site/Contract-Addresses-8669ef7d6f124accb0220a5e0f24be0d',
-              'Bedrock alpha - contract addresses'
-            ],
-            [
-              'https://oplabs.notion.site/Running-a-Node-eda545c730e64b44b762ab12e93296aa',
-              'Bedrock alpha - running a node'
-            ]        
+            '/docs/developers/bedrock-temp/public-testnets.md',
+            '/docs/developers/bedrock-temp/node-operator-guide.md',
+            '/docs/developers/bedrock-temp/upgrade-guide.md'
           ]
         }
       ],
