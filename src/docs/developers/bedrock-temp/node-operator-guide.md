@@ -107,14 +107,23 @@ Then, specify the following flags:
 - `--authrpc.addr`: Sets the address `op-geth`'s authenticated RPC should listen on.
 - `--authrpc.port`: Sets the port `op-geth`'s authenticated RPC should listen on. The default value is `8551`.
 - `--authrpc.jwtsecret`: Sets the path to a JWT secret file you generated above.
-
-Lastly, the following flags are required in order to make `op-geth` function properly:
-
 - `--syncmode=full`: This prevents Geth from attempting to snap sync. Snap sync is currently unsupported, but will be enabled shortly after the mainnet upgrade.
 - `--maxpeers=0`: This prevents Geth from peering with other Geth nodes. Execution-layer peering is currently unsupported, but will be added as part of enabling snap sync.
 - `--nodiscover`: This disables Geth's peer discovery mechanism. Execution-layer discovery is currently unsupported, but will be added as part of enabling snap sync.
 
-A valid command to run `op-geth` on our `beta-1` network and enable RPC over HTTP and WebSockets looks like:
+#### Optional op-geth Configuration
+
+You may also want to specify the following flags based on your configuration:
+
+- `--authrpc.vhosts`: Whitelists which hosts (as defined in the `Host` header) are allowed to access the authenticated RPC endpoint. This is useful if you're running `op-geth` on containerized infrastructure. The default value is `localhost`.
+- `--http.vhosts`: Whitelists which hosts (as defined in the `Host` header) are allowed to access the unauthenticated RPC endpoint. This is useful if you're running `op-geth` on containerized infrastructure. The default value is `localhost`.
+- `--http`, `--http.addr`, and `--http.port`: Enables the unauthenticated RPC endpoint, configures its address, and configures its port. You'll almost certainly want to specify these, since they will enable Geth's JSON-RPC endpoint.
+- `--ws`, `--ws.addr`, and `--ws.port`: Enables the WebSocket API.
+- `--verbosity`: Configures Geth's log level. This is a number between 0 and 5, with 5 being the most verbose. Defaults to 3.
+
+#### Working Base Configuration
+
+A valid command that runs `op-geth` on our `beta-1` network and enables RPC over HTTP and WebSockets looks like:
 
 ```bash
 geth \
@@ -130,6 +139,7 @@ geth \
   --authrpc.addr=localhost \
   --authrpc.jwtsecret=/var/secrets/jwt.txt \
   --authrpc.port=8551 \
+  --authrpc.vhosts="*" \
   --datadir=/data \
   --verbosity=3 \
   --rollup.disabletxpoolgossip=true \
@@ -370,6 +380,62 @@ sudo systemctl start op-node
 ```
 
 The nodes should start to sync. The full sync process may take some time. You can check the progress of the sync by running `cast block latest` and comparing the results either to one of our official replicas or to the network's block explorer. 
+
+## Troubleshooting
+
+### 401 Unauthorized: Signature Invalid
+
+If you see a log that looks like this in `op-node`:
+
+```
+WARN [12-13|15:53:20.263] Derivation process temporary error       attempts=80 err="stage 0 failed resetting: temp: failed to find the L2 Heads to start from: failed to fetch current L2 forkchoice state: failed to find the finalized L2 block: failed to determine L2BlockRef of finalized, could not get payload: 401 Unauthorized: signature is invalid
+```
+
+It means that the `op-node` is unable to authenticate with `op-geth`'s authenticated RPC using the JWT secret. To fix:
+
+1. Check that the JWT secret is correct in both services.
+2. Check that `op-geth`'s authenticated RPC is enabled, and that the URL is correct.
+
+### 403 Forbidden: Invalid Host Specified
+
+If you see a log that looks like this in `op-node`:
+
+```
+{"err":"403 Forbidden: invalid host specified\n","lvl":"eror","msg":"error getting latest header","t":"2022-12-13T22:29:18.932833159Z"}
+```
+
+It means that you have not whitelisted `op-node`'s host with `op-geth`. To fix:
+
+1. Make sure that the `--authrpc.vhosts` parameter in `op-geth` is either set to the correct host, or `*`.
+2. Check that `op-geth`'s authenticated RPC is enabled, and that the URL is correct.
+
+### Failed to Load P2P Config
+
+If you see a log that looks like this in `op-node`:
+
+```
+CRIT [12-13|13:46:21.386] Application failed                       message="failed to load p2p config: failed to load p2p discovery options: failed to open discovery db: mkdir /p2p: permission denied"
+```
+
+It means that the `op-node` does not have write access to the P2P discovery or peerstore directories. To fix:
+
+1. Make sure that the `op-node` has write access to the P2P directory. By default, this is `/p2p`.
+2. Set the P2P directory to somewhere the `op-node` can access via the `--p2p.discovery.path` and `--p2p.peerstore.path` parameters.
+3. Set the discovery path to `memory` to disable persistence via the `--p2p.discovery.path` and `--p2p.peerstore.path` parameters.
+
+### Wrong Chain
+
+If you see a log that looks like this in `op-node`:
+
+```
+{"attempts":183,"err":"stage 0 failed resetting: temp: failed to find the L2 Heads to start from: wrong chain L1: genesis: 0x4104895a540d87127ff11eef0d51d8f63ce00a6fc211db751a45a4b3a61a9c83:8106656, got 0x12e2c18a3ac50f74d3dd3c0ed7cb751cc924c2985de3dfed44080e683954f1dd:8106656","lvl":"warn","msg":"Derivation process temporary error","t":"2022-12-13T23:31:37.855253213Z"}
+```
+
+It means that the `op-node` is pointing to the wrong chain. To fix:
+
+1. Verify that the `op-node`'s L1 URL is pointing to the correct L1 for the given network.
+2. Verify that the `op-node`'s rollup config/`--network` parameter is set to the correct network.
+3. Verify that the `op-node`'s L2 URL is pointing to the correct instance of `op-geth`, and that `op-geth` is properly initialized for the given network.
 
 ## Further Reading
 
