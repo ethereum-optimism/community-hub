@@ -6,14 +6,23 @@ lang: en-US
 
 The AttestationStation is an **attestation smart contract** deployed on Optimism.  
 
-The goal of the AttestationStation is to provide a permissionless, accessible data source for builders creating reputation-based applications. By enabling anyone to make arbitrary attestations about other addresses, we can create a rich library of qualitative and quantitative data that can be used across the ecosystem.
+The goal of the AttestationStation is to provide a permissionless and accessible data source for builders creating reputation-based applications. By enabling anyone to make arbitrary attestations about other addresses, we can create a rich library of qualitative and quantitative data that can be used across the ecosystem.
+
 
 <!-- TODO: Add source code link when we have an authoritative source -->
 
 ## General FAQ
 
-#### What can attestations be used for?
-As multiple entities participate in providing qualitative attestations about actors within a community to the AttestationStation, an invaluable graph of p2p attestations is created for the broader ecosystem.
+#### What are attestations?
+
+Attestations are statements by a creator (who attested this) about a subject (who is being attested about). Attestations could present any qualitative or quantitative statement. To paint a picture — actors might submit attestations that are contextual to their brand, ecosystem, and governance structure.
+
+![](../../assets/docs/governance/attestationstation/attestations.png)
+
+
+#### What can attestations in the AttestationStation be used for?
+
+Attestations in the AttestationStation are on-chain and can be used by other smart contracts in a variety of applications. Instead of having a single entity owning user data and identity, the AttestationStation is a graph of peer-to-peer (p2p) attestations. 
 
 ![](../../assets/docs/governance/attestationstation/network.png)
 
@@ -21,21 +30,29 @@ We can then take the graph of p2p attestations from the AttestationStation and r
 
 ![](../../assets/docs/governance/attestationstation/eigan.png)
 
-To build a robust, trustworthy network, these computations will be run iteratively. We can start with a purely subjective web of trust, then pipe that as the starting point to derive a larger web of trust, and so on — we can then begin to establish a credibly neutral reputation that is entirely peer to peer. This open source primitive can be used for a wide variety of applications including voting, reputations / credit scores, reviews, and more.
+To build a robust, trustworthy identity network, these computations will be run iteratively. We can start with a purely subjective web of trust, and use that starting point to derive a larger web of trust, and so on — we can begin to establish a credibly neutral reputation that is entirely peer-to-peer. This open-source primitive can be used for a variety of sybil-resistant applications including voting, reputations / credit scores, reviews, and more.
 
+#### How is the AttestationStation different from other attestation products?
+
+The AttestationStation is deliberately dead simple and serves as an invite to ecosystem contributors to come build an open-source and permissionless attestation graph together.
+
+Creating this system in a decentralized and open-source manner is important because it allows for greater inclusion and representation of different perspectives. This can help to ensure that the system is fair and accessible to all, and that it accurately reflects the diversity of the communities it serves.
 
 #### How do I use the AttestationStation?
 
 See [the tutorial](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/ecosystem/attestation-station).
 
-
 #### What are the contract addresses for the AttestationStation?
 
 | Network | Address |
 | - | - |
-| Optimism Goerli | [`0x7787194CCA11131C0159c0AcFf7E127CF0B676ed`](https://goerli-optimism.etherscan.io/address/0x7787194cca11131c0159c0acff7e127cf0b676ed)  |
-| Optimism Mainnet | To be determined |
+| Optimism Goerli | [`0xEE36eaaD94d1Cc1d0eccaDb55C38bFfB6Be06C77`](https://goerli-optimism.etherscan.io/address/0xEE36eaaD94d1Cc1d0eccaDb55C38bFfB6Be06C77)  |
+| Optimism Mainnet | [`0xEE36eaaD94d1Cc1d0eccaDb55C38bFfB6Be06C77`](https://optimistic.etherscan.io/address/0xEE36eaaD94d1Cc1d0eccaDb55C38bFfB6Be06C77) |
 
+#### What products are built on the AttestationStation? 
+If your product is using the AttestationStation, make a PR including how you're using attestations to be added to the list 😊
+* [AttestationStation Interface by sbvegan](https://attestationstation.xyz/)
+* [Optimist Score by Flipside](https://science.flipsidecrypto.xyz/optimist/)
 
 #### I am building on the AttestationStation but have some questions, where can I discuss these?
 
@@ -45,33 +62,18 @@ The best place to ask any dev related questions is the #dev-support channel on t
 
 You can learn more about the variety of grants program available at Optimism [here](allocations/#ecosystem-fund). As a reminder, your work should be published to a public GitHub repo.
 
-#### What projects are writing attestations to the AttestationStation?
-If your project is using the AttestationStation, make a PR including how you're using the relevant attestation(s) to be added to the list 😊
-
-| Author              | Author Address | Key                                                        | Value | Description                                  |
-| ------------------- | ---------------| ---------------------------------------------------------- |------ |--------------------------------------------- |
-| Optimism Foundation | tbd            | op.retropgf.szn-2.can-vote:bool                            | true  | People eligible to vote in RetroPGF #2       |
-| Optimism Foundation | tbd            | op.pfp.can-mint:bool                                       | true  | People eligible to mint the Optimist NFT     |
-| Flipside | tbd                       | tbd                                                        | 1 - 5 | People's acitivity score for on-chain activity in the last 180 days  
-
-#### What naming convention do you recommend when writing attestations?
-
-To make attestations as easy to interpret as possible we recommend making your key descriptive about what the attestation is about and including the data type (bool, string, address, etc.) at the end of the key. 
-
-#### What is on the AttestationStation roadmap?
+#### What are some things I should build with the AttestationStation?
 
 It will take a huge community effort to realize the potential that reputation has to transform web3. That’s why we started small with the AttestationStation and an open invite to come experiment with us. We can already think of a bunch of fun projects to build today like:
 
 * **EiganTrust**: Aggregate attestations from various communities and use techniques like [EigenTrust](https://en.wikipedia.org/wiki/EigenTrust) to derive reputation
+* **SybilRank**: Create a [SybilRank](https://users.cs.duke.edu/~qiangcao/sybilrank_project/index.html) calculator! (h/t Barry Whitehat for the suggestion)
 * **Data visualization**: Create data visualizations representing the different types of attestations in the AttestationStation
 * **Predictive attestations**: Instead of attesting “I trust XYZ”, try fun attestations like, “I believe XYZ will be considered trusted by a majority of node in the future”. Plus, what if we add a slashing condition to the predictive attestation?
-* **Attestation delegation**: Build a system which manages attestations automatically for users. This system should enable users to delegate some of their attestation assignment to a third party.
+* **Attestation delegation**: Build a system which manages attestations automatically for users. This system should enable users to delegate some of their attestation assignment to a third party. For instance, users may opt-in to delegating their trust scores to a sybil detection court system. Another project is to build that sybil detection court system! 
 * **Attestation import**: Write proxy contracts which import attestations of various formats into the standardized AttestationStation format so that they can be consumed by the standard AttestationStation tooling.
 * **Viral attestations**: Create systems which make it fun and easy for users to attest useful information about each other.
 
-#### What products are built on the AttestationStation? 
-* [Attestation Station Open Source Interface by sbvegan](https://github.com/sbvegan/attestation-station-interface)
-* [redacted]
 
 ## Technical specifications
 
