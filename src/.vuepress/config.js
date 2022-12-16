@@ -50,6 +50,10 @@ module.exports = {
         link: '/docs/protocol/',
       },      
       {
+        text: 'Project Support',
+        link: '/docs/biz/'        
+      },
+      {
         text: 'Security',
         link: '/docs/security-model/',
       },
