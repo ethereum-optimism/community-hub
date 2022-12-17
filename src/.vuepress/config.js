@@ -41,6 +41,8 @@ module.exports = {
       indexName: 'optimism'
     },
     nav: [
+      /* When you update here, don't forget to update the tiles
+         in src/README.md */
       {
         text: "Quick Start",
         link: '/docs/guides/'

@@ -6,20 +6,20 @@ heroImage: /assets/logos/header.png
 heroText: The Optimism Docs
 
 features:
+  - title: Quick Start
+    icon: book
+    details: How-to guides and tutorials for users and developers.
+    link: /docs/guides/
+    
   - title: How Optimism works
     icon: info-square
     details: General explanation of what makes Optimism tick.
-    link: /docs/how-optimism-works/
+    link: /docs/protocol/2-rollup-protocol/
 
   - title: Optimism's Security Model
     icon: shield
     details: Understand the safety and liveness properties of Optimism.
     link: /docs/security-model/
-
-  - title: Guides
-    icon: book
-    details: How-to guides and tutorials for users and developers.
-    link: /docs/guides/
 
   - title: Protocol specs
     icon: ruler-triangle
