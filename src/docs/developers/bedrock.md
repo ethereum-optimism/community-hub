@@ -16,9 +16,9 @@ If you want to jump directly to the parts relevant to your job role, here are th
 As a wallet developer you are most likely to interact with the JSON RPC, and your users want to know how much their transactions are going to cost.
 Timing may also be relevant.
 
-- [Fees](#transaction-fees)
-- [RPC changes](#json-rpc)
-- [Block time](#block-timing)
+- [EIP-1559](#eip-1559)
+- [JSON-RPC](#json-rpc)
+- [Block Production](#block-production)
 
 </details>
 
@@ -28,10 +28,10 @@ Timing may also be relevant.
 As an application developer you are probably interested in the fact bedrock has a mempool and the changes in transaction fees. 
 You might also be interested in changes in the RPC interface and block timing.
 
-- [Fees](#transaction-fees)
-- [Transactions (we now have a mempool)](#transactions)
-- [RPC changes](#json-rpc)
-- [Block time](#block-timing)
+- [EIP-1559](#eip-1559)
+- [Mempool](#mempool)
+- [JSON-RPC](#json-rpc)
+- [Block Production](#block-production)
 
 
 </details>
@@ -42,10 +42,10 @@ You might also be interested in changes in the RPC interface and block timing.
 As an application developer you are probably interested in the fact bedrock has a mempool and the changes in transaction fees. 
 You might also be interested in changes in the RPC interface and block timing.
 
-- [Fees](#transaction-fees)
-- [Transactions (we now have a mempool)](#transactions)
-- [RPC changes](#json-rpc)
-- [Block time](#block-timing)
+- [EIP-1559](#eip-1559)
+- [Mempool](#mempool)
+- [JSON-RPC](#json-rpc)
+- [Block Production](#block-production)
 
 </details>
 
@@ -56,12 +56,13 @@ To run a node you need to understand the executables required to run it.
 You might also be interested in the existence of the mempool and the changes in block timing, fess, and the JSON RPC.
 
 - [Executables](#executables)
-- [Transactions (we now have a mempool)](#transactions)
-- [Block time](#block-timing)
-- [Fees](#transaction-fees)
-- [RPC changes](#json-rpc)
+- [Mempool](#mempool)
+- [Block Production](#block-production)
+- [Historical Data](#historical-data)
+- [JSON-RPC](#json-rpc)
+- [Chain Reorganizations](#chain-reorganizations)
 
-[See here for a more detailed guide](bedrock-temp/node-operator-guide.md).
+[See here for a more detailed guide](bedrock-temp/node-operator-guide.md) on how to run a Bedrock node.
 
 </details>
 
@@ -70,19 +71,137 @@ You might also be interested in the existence of the mempool and the changes in 
 
 As a bridge developer you are likely most interested in deposits into Optimism and withdrawals back into Ethereum L1.
 
+- [Two-Phase Withdrawals](#two-phase-withdrawals)
 - [Deposits](#deposits-from-ethereum-to-optimism)
-- [Withdrawals](#withdrawals-from-optimism-to-ethereum)
 
 </details>
 
-
-
 ## The EVM
 
-- There is no longer an `L1BLOCKNUMBER` opcode. 
-- Bedrock includes an upgrade to the London fork, so the `BASEFEE` opcode is now supported.
-- `TIMESTAMP` will now be updated every two seconds (every new block).
-- `BLOCKNUMBER` will advance every two seconds because we'll create a new block every two seconds, regardless of the number of transactions.
+### Block Production
+
+:::warning Block Time Subject to Change
+Do not make assumptions around the block time. It may be changed in the future.
+:::
+
+Unlike the legacy network which mines a block for every incoming transaction, the Bedrock network will produce new blocks every two seconds. This introduces the following changes to the EVM:
+
+- `TIMESTAMP` will return the timestamp of the block. It will update every two seconds.
+- `BLOCKNUMBER` will return an actual block number. It will update every two seconds. The one-to-one mapping between blocks and transactions will no longer apply.
+
+The Bedrock upgrade also introduces the concept of _system transactions_. System transactions are created by the `op-node`, and are used to execute deposits and update the L2's view of L1. They have the following attributes:
+
+- Every block will contain at least one system transaction called the [L1 attributes deposited transaction](https://github.com/ethereum-optimism/optimism/blob/develop/specs/deposits.md#l1-attributes-deposited-transaction). It will always be the first transaction in the block.
+- Some blocks will contain one or more [user-deposited transactions](https://github.com/ethereum-optimism/optimism/blob/develop/specs/deposits.md#user-deposited-transactions).
+- All system transactions have an [EIP-2718](https://eips.ethereum.org/EIPS/eip-2718)-compatible transaction type of `0x7E`.
+- All system transactions are unsigned, and set their `v`, `r`, and `s` fields to `null`.
+
+For more information about these transactions, see the [deposited transactions specification](https://github.com/ethereum-optimism/optimism/blob/develop/specs/deposits.md) on GitHub.
+
+:::warning Known Issue
+Some Ethereum client libraries, such as Web3j, cannot parse the `null` signature fields described above. To work around this issue, you will need to manually filter out the system transactions before passing them to the library. 
+:::
+
+### EIP-1559
+
+As part of the Bedrock upgrade, we have upgraded the network to support [EIP-1559](https://eips.ethereum.org/EIPS/eip-1559). In EIP-1559 the cost of a unit of gas is composed of two components:
+
+- **Base fee**: This fee is the same for all transactions in a block. It varies between blocks based on the difference between the actual size of the blocks (which depends on the demand for block space) and the target block size. When the block uses more gas than the target block size the base fee goes up to discourage demand. When the block uses less gas than the target block size the base fee goes down to encourage demand.
+- **Priority fee**: This fee is specified in the transaction itself and varies between transactions. Block proposers are expected to select the transactions that offer them the highest priority fees first.
+
+There are some differences between Ethereum and Optimism in this regard:
+
+- ETH is not burned, but used to pay protocol expenses. Burning ETH on L2 would only lock it in the bridge forever.
+- The EIP 1559 parameters have different values. Once those values are finalized they will be posted here.
+
+The L1 security fee, which is the majority of the transaction cost, uses the same mechanism as before the upgrade. However, we are going to submit the transactions to L1 on a [non-contract address](#the-transaction-trail). Between that and improved compression, we hope to reduce the L1 security fee by about 20%.
+
+From an application development perspective, EIP-1559 introduces the following changes:
+
+- The `BASEFEE` opcode is now supported. The `BASEFEE` opcodes returns the base fee of the current block.
+- The `eth_maxPriorityFeePerGas` and `eth_maxFeePerGas` RPC methods are now supported. These methods return the maximum priority fee and maximum fee per gas that the transaction pool will accept.
+
+### Removed Opcodes
+
+One of the design goals of the Bedrock upgrade is to be maximally EVM equivalent. To reduce differences between Optimism's EVM and vanilla Ethereum's EVM, we have removed the `L1BLOCKNUMBER` opcode.
+
+### ETH Balances
+
+The previous version of the system used an ERC20 contract called `OVM_ETH` to represent ETH balances. These balances will be migrated into the Bedrock network's state as part of the migration. To preserve backwards compatibility, the methods on the `OVM_ETH` contract will continue to work. Note, however, that the `totalSupply()` method will return zero. 
+
+## Chain Reorganizations
+
+Unlike the legacy network, Bedrock nodes _always_ derive blocks from L1. This means that if L1 experiences a reorg, L2 will reorganize itself to match the state of L1. Blocks that have not been submitted to L1 yet are gossipped via a peer-to-peer network, and can be reorganized if the data on L1 does not match the data gossiped over P2P.
+
+Bedrock adopts the same vocabulary as the Beacon Chain to describe block finality. Blocks can be in one of the following states:
+
+- `unsafe`, meaning that the block has been received via gossip but has not yet been submitted to L1. Unsafe blocks can be reorged if L1 reorgs, or the sequencer reorgs.
+- `safe`, meaning that the block has been submitted to L1. Unsafe blocks can be reorged if L1 reorgs.
+- `finalized`, meaning that the block has reached sufficient depth to be considered final. Finalized blocks cannot be reorged.
+
+The current `safe`, `unsafe`, and `finalized` blocks can be queried via [JSON-RPC](#json-rpc).
+
+## Historical Data
+
+Bedrock nodes can serve pre-Bedrock block bodies, transactions, and receipts out of the box. However, you will need to run a Legacy Geth instance to serve historical execution traces. See the [Node Operator Guide](./bedrock-temp/node-operator-guide.md) for more information about how to do this.
+
+Note that the following legacy fields have been removed from pre-Bedrock JSON-RPC transaction responses:
+
+- `queueOrigin`
+- `l1TxOrigin`
+- `l1BlockNumber`
+- `l1Timestamp`
+- `index`
+- `queueIndex`
+- `rawTransaction`
+
+If your application needs these fields, query Legacy Geth instead of `op-geth`.
+
+## JSON-RPC
+
+Bedrock supports all of the standard JSON-RPC methods exposed by go-ethereum. In order to reduce differences between Bedrock and vanilla Ethereum, some legacy methods have been removed. These methods and their replacements are:
+
+- `eth_getBlockRange`: Use `eth_getBlockByNumber` in a batch request instead.
+- `rollup_getInfo`: None of the information returned by this method exists on Bedrock, so there is no replacement for this method.
+- `rollup_gasPrices`: Use `eth_gasPrice` instead. The L1 and L2 fees are combined, and returned as a single value.
+
+To query `op-node`'s sync status, use the `optimism_syncStatus` RPC method. This method will return the current `safe`, `unsafe`, and `finalized` as seen by the `op-node`.
+
+## Mempool
+
+Since the legacy network creates a block for every transaction, it processes new transactions in a first-come-first-serve manner. Bedrock, however, creates blocks on a fixed interval and therefore needs a mempool to store pending transactions until they are included in a block. To minimize MEV, Bedrock's mempool is private. To submit transactions, you will need to configure `op-geth` to forward transactions to the sequencer. This may change in the future.
+
+The sequencer processes transactions in the mempool in order of their base and priority fees.
+
+## Two-Phase Withdrawals
+
+On the legacy network, funds are withdrawn as follows:
+
+1. Users send a withdrawal message.
+2. Users wait seven days for the withdrawal to be finalized.
+3. Users post a withdrawal proof on L1, and claim their funds.
+
+However, this introduces a security risk. If the withdrawal proof can be successfully forged, an attacker could withdraw funds from the bridge that they are not authorized to. This kind of attack has been exploited before - a fraudulent proof led to the loss of [$100M on Binance Smart Chain](https://www.nansen.ai/research/bnb-chains-cross-chain-bridge-exploit-explained).
+
+To eliminate this risk, Bedrock requires users to post their withdrawal proofs upfront. Users must wait for a valid output root to be proposed so that the withdrawal proof can be validated on-chain. Once the seven-day waiting period has expired, users can then finalize the withdrawal and claim their funds. The updated withdrawal flow is as follows:
+
+1. Users send a withdrawal message.
+2. Users wait for a state output to be proposed on-chain. This can take up to an hour.
+3. Users call `proveWithdrawalTransaction()` on the `OptimismPortal` to post and validate their proof.
+4. Users wait for the withdrawal to be finalized. This takes seven days on mainnet.
+5. Users call `finalizeWithdrawal()` on the `OptimismPortal` to claim their funds.
+
+Visualized, this flow looks like this:
+
+<div style="text-align: center">
+    <img width="600" src="../../assets/docs/bedrock/two-phase-withdrawals.png">
+</div>
+
+By posting the proof upfront, it gives on-chain monitoring tools enough time to detect a fraudulent withdrawal proof so that we can take appropriate action. Regular users can do this monitoring too. For example, an exchange could halt withdrawals in the event of a fraudulent proof.
+
+Since this change fundamentally changes the way withdrawals are handled, it is **not** backwards-compatible with the old network. If you are performing withdrawals outside our standard bridge interface, you will need to update your software. The easiest way to to do this is to use our [TypeScript SDK](https://github.com/ethereum-optimism/optimism/tree/develop/packages/sdk), which includes two-phase withdrawals support out of the box.
+
+For more information on two-phase withdrawals, see the withdrawals specification on [GitHub](https://github.com/ethereum-optimism/optimism/blob/develop/specs/withdrawals.md).
 
 ## Contracts
 
@@ -169,13 +288,6 @@ These are contracts that are no longer relevant, but are kept as part of the sta
 - [OVM_ETH](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L2/OVM_ETH.sol):
   The `OVM_ETH` contract used to manage users ETH balances prior to bedrock.
 
-
-## JSON RPC 
-
-- Bedrock supports `eth_sendMessage` and `eth_getAccounts`.
-- The calls `eth_getBlockRange`, `rollup_getInfo`, and `rollup_gasPrices` are no longer supported.
-  You can get a lot of that information from [the rollup node](build/json-rpc.md#custom-json-rpc-methods).
-
 ## Communication between layers
 
 In Optimism terminology "deposit" refers to any message going from the Ethereum blockchain to Optimism, whether it has any assets attached or not.
@@ -211,187 +323,14 @@ Deposits are implemented using [a new transaction type](https://github.com/ether
 
 [You can read the full deposit specifications here](https://github.com/ethereum-optimism/optimism/blob/develop/specs/deposits.md#the-deposited-transaction-type).
 
-
-### Withdrawals (from Optimism to Ethereum)
-
-The withdrawal process is similar, but not identical.
-
-1. You initialize withdrawals with an L2 transaction, the same you did prior to bedrock.
-
-1. Wait for the next output root to be submitted to L1 (up to an hour on mainnet, less than that on the test network) then submit the withdrawal proof using `proveWithdrawalTransaction`.
-   This new step makes the proof available during the challenge period, which makes it much easier to identify faulty proofs.
-   Having the proof available for off-chain testing helps us guard against a whole class of vulnerabilities based on invalid fault proofs.
-
-1. After the fault challenge period ends (a week on mainnet, less than that on the test network), finalize the withdrawal.
-
-
-<!-- 
-To initiate withdrawals we recommend you use [`L2CrossDomainMessenger`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L2/L2CrossDomainMessenger.sol). 
-To claim/finalize the message continue to use [`L1CrossDomainMessenger`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L1/L1CrossDomainMessenger.sol).
--->
-
-<!-- 
-However, each of these contracts will be deployed twice. Once in the old address, where withdrawals use the state root. The other addresses are  where withdrawals use the withdrawals root, and are therefore cheaper.  
-
-# Add addresses here
--->
-
 [You can read the full withdrawal specifications here](https://github.com/ethereum-optimism/optimism/blob/develop/specs/withdrawals.md)
-
-## Blockchain
-
-In general, the blockchain in bedrock is a lot closer to Ethereum, at least post-merge Ethereum, than the current incarnation.
-
-### Blocks
-
-#### Block timing
-
-In bedrock blocks are produced every two seconds, regardless of whether there are transactions to put in them or not. 
-This brings us closer to post-merge Ethereum, [where blocks are expected every twelve seconds](https://blog.ethereum.org/2021/11/29/how-the-merge-impacts-app-layer/).
-Before bedrock an Optimism block was produced for every transaction, and if there were no transactions no block was produced.
-
-The period between different Ethereum blocks is called an epoch.
-Normally we'd expect to have six Optimism blocks per epoch, but it is expected that in some cases mainnet will miss a block (because the proposer is offline), and in those cases we'll have epochs with twelve Optimism blocks.
-
-
-#### Data structure
-
-The transactions in a block are divided into either two or three transaction types.
-
-1. The first transaction is an [L1 attributes deposit transaction](https://github.com/ethereum-optimism/optimism/blob/develop/specs/deposits.md#l1-attributes-deposited-transaction).
-  This transaction sets the parameters of [the `L1Block` contract](#l1block).
-  One of the attributes is the sequential number of the block within the epoch.
-
-1. In the first block of an epoch (the first L2 block produced after an L1 block) there can be [user deposit transactions](https://github.com/ethereum-optimism/optimism/blob/develop/specs/deposits.md#user-deposited-transactions).
-
-1. Finally there are the normal L2 transactions.
-
-
-
-### Transactions
-
-Currently transactions are privately forwarded from nodes directly to the sequencer, at which point they are either accepted and processed immediately or rejected (for low gas price, insufficient ETH, etc.).  
-
-In bedrock transactions are still privately forwarded from nodes directly to the sequencer, but now they get placed into a private mempool. 
-The private mempool’s operation is similar to the Ethereum L1’s mempool. 
-The sequencer will order transactions the way miners do, based on priority fee.
-
-
-#### Transaction fees
-
-In bedrock the transaction's L2 execution gas price is determined using the same mechanism that is used on Ethereum, [EIP 1559](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1559.md).
-
-In EIP-1559 the cost of a unit of gas is composed of two components:
-
-* **Base fee**: 
-  This fee is the same for all transactions in a block.
-  It varies between blocks based on the difference between the actual size of the blocks (which depends on the demand for block space) and the target block size.
-  When the block uses more gas than the target block size the base fee goes up to discourage demand.
-  When the block uses less gas than the target block size the base fee goes down to encourage demand.
-
-* **Priority fee**:
-  This fee is specified in the transaction itself and varies between transactions.
-  Miners (and after The Merge, proposers) are expected to select the transactions that offer them the highest priority fees first.
-
-There are some differences between Ethereum and Optimism in this regard:
-
-- ETH is not burned, but used to pay protocol expenses.
-  Burning ETH on L2 would only lock it in the bridge forever.
-
-- The EIP 1559 parameters have different values.
-  Once those values are finalized they will be posted here.
-
-<!-- TODO: Put values here when they are finalized
--->
-
-The L1 security fee, which is normally the majority of the transaction cost, uses the same mechanism as before the upgrade. 
-However, we are going to submit the transactions to L1 on a [non-contract address](#the-transaction-trail). 
-Between that and improved compression, we hope to reduce the L1 security fee by about 20%.
-
-
-<!-- 
-
-However, instead of using the latest L1 gas price ([possibly modified to avoid changes of over 25% in a five minute period](https://help.optimism.io/hc/en-us/articles/4416677738907-What-happens-if-the-L1-gas-price-spikes-while-a-transaction-is-in-process-)), bedrock uses a moving average to smooth out peaks in L1 gas price.
-
--->
-
-::: tip Estimating L1 gas prices
-The `OVM_GasPrice` interface is likely to change, so for estimating transaction prices we recommend [using the SDK](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/sdk-estimate-gas).
-:::
-
-## Executables
-
-The information in this section is primarily useful to people who run an Optimism network node, either as a replica or as an independent development node.
-
-In bedrock processing is divided between two components:
-
-- **op-node**: 
-  The component responsible for deriving the L2 chain from L1 blocks.
-  It is somewhat similar to the consensus layer client.
-
-- **op-geth**: 
-  The component that actually executes transactions. 
-  This is [a slightly modified version of geth](https://github.com/ethereum-optimism/reference-optimistic-geth/compare/master...optimism-prototype).
-
-Note that while op-geth is similar to the previous version's l2geth, there is no bedrock equivalent to the DTL.
-
-### op-node
-
-The op-node (Optimism's implementation of [a rollup node](https://github.com/ethereum-optimism/optimism/blob/develop/specs/rollup-node.md)) provides the L1 information that op-geth uses to derive the L2 blocks. 
-The op-node always provides the L2 state root to op-geth, because that's the root of trust that needs to come from L1. 
-It can also provide all the transactions from L1 for synchronization, but that mechanism is slower than snap sync (see next section).
-
-
-
-### op-geth
-
-op-geth (Optimism's implementation of [an execution engine](https://github.com/ethereum-optimism/optimism/blob/develop/specs/rollup-node.md)) runs a slightly modified version of geth.
-In terms of EVM equivalence, it is even closer to upstream geth than the current version.
-
-One important feature that we inherit from upstream geth is their peer to peer synchronization, which allows for much faster synchronization (from other op-geths). 
-Note that peer to peer synchronization is allowed, *not* required. 
-For censorship resistance, op-geth can synchronize purely from the op-node that receives data from L1. 
-There are two types of synchronization possible:
-
-
-1. **Snap sync**, which only synchronizes the state up to the point that has been submitted to L1.
-
-1. **Unsafe block sync**, which includes everything the sequencer created, even if it hasn't been written to L1 yet.
-
-
-### Legacy requests
-
-We need to provided history from the final regenesis (November 11th, 2021) until the introduction of bedrock.
-At the same time, we do not want to put anything in op-geth that doesn't need to be there. 
-The closer it is to upstream geth the better.
-
-The solution is to have two additional components:
-
-1. **Daisy chain**, an RPC proxy that routes read requests from before bedrock to the legacy geth, and everything else to op-geth.
-1. **Legacy geth**, a stripped down version of the previous version's `l2geth` with a read only database containing the pre-bedrock history.
-
-
-
 
 ## Behind the scenes
 
-This section discusses some of the changes in Optimism internals. 
-
+This section discusses some of the changes in Optimism internals.
 
 ### The transaction trail
 
-There is no longer a CTC (cannonical transaction chain) contract.
-Instead, L2 blocks are saved to the Ethereum blockchain using a non-contract address (`0xDeaDDEaDDeAdDeAdDEAdDEaddeAddEAdDEAd0001`), to minimize the L1 gas expense.
+There is no longer a CTC (cannonical transaction chain) contract. Instead, L2 blocks are saved to the Ethereum blockchain using a non-contract address to minimize the L1 gas expenses. Please see the [Public Testnets](./public-testnets.md) page for more information on where to find batch submission addresses. 
 
 [The block and transaction format is also different](https://github.com/ethereum-optimism/optimism/blob/develop/specs/rollup-node.md#l2-chain-derivation).
-
-
-### ETH balances
-
-In bedrock ETH is treated *exactly* as it is in Ethereum.
-
-In the previous version ETH was stored in a system level contract at 
-`0xDeadDeAddeAddEAddeadDEaDDEAdDeaDDeAD0000`.
-This is no longer the case.
-
-

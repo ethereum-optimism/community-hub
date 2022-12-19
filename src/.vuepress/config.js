@@ -341,6 +341,7 @@ module.exports = {
           title: "Bedrock (future version)",
           children: [
             '/docs/developers/bedrock.md',
+            '/docs/developers/differences.md',
             '/docs/developers/bedrock-temp/public-testnets.md',
             '/docs/developers/bedrock-temp/node-operator-guide.md',
             '/docs/developers/bedrock-temp/upgrade-guide.md'
