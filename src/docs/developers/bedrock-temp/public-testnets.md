@@ -132,7 +132,7 @@ The beta network is our official public testnet. It will continue to be maintain
     </tr>
     <tr>
         <td>Block Explorer</td>
-        <td>Coming Soon</td>
+        <td><a href="https://blockscout.com/optimism/bedrock-beta">Blockscout</a></td>
     </tr>
     <tr>
         <td>Public RPC Endpoints</td>
