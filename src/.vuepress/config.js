@@ -52,7 +52,7 @@ module.exports = {
         link: '/docs/protocol/',
       },      
       {
-        text: 'Project Support',
+        text: 'Support',
         link: '/docs/biz/'        
       },
       {
