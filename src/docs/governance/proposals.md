@@ -8,7 +8,8 @@ lang: en-US
 ::: tip        
              
 This information is here for your convenience. 
-The source of truth for all governance related processes is the [Operating Manual](https://github.com/ethereum-optimism/OPerating-manual/blob/main/manual.md#proposal-process--components-of-a-valid-proposal). The operating manual is currently in the process of being updated to reflect changes being voted on during Special Voting Cycles. 
+The source of truth for all governance related processes is the [Operating Manual](https://github.com/ethereum-optimism/OPerating-manual/blob/main/manual.md#proposal-process--components-of-a-valid-proposal). 
+The operating manual is currently in the process of being updated to reflect changes being voted on during Special Voting Cycles. 
 
 :::
 
@@ -24,7 +25,10 @@ There is a distinct OP allocation dedicated to this, which will be distributed v
 
 When writing your proposal, please adhere to the [grant proposal template](https://gov.optimism.io/t/grant-proposal-template/3233).
 
-The process for submitting a grant proposal is currently undergoing changes. A Grants Council, which will process grant applications in Season 3 was recently approved. Stay tuned for more information on how to submit a proposal to the Council shortly. **You can expect grant proposals to begin begin processed again, via the Grants Council, January 26th.**
+The process for submitting a grant proposal is currently undergoing changes. 
+A Grants Council, which will process grant applications in Season 3 was recently approved. 
+Stay tuned for more information on how to submit a proposal to the Council shortly. 
+**You can expect grant proposals to begin begin processed again, via the Grants Council, January 26th.**
 
 
 ## Other proposal types
