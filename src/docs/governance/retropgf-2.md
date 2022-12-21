@@ -4,7 +4,7 @@ lang: en-US
 ---
 
 
-The Optimism Collective’s second round of Retroactive Public Goods Funding (RetroPGF) takes place in January 2023. 
+The Optimism Collective’s second round of Retroactive Public Goods Funding (RetroPGF) takes place in Q1 2023. 
 RetroPGF 2 will allocate 10m OP tokens to **fund public goods that support development and usage of the OP Stack.** 
 
 Optimism’s vision is to build a global system where positive impact to the collective is rewarded by profit to the individual. 
@@ -14,13 +14,12 @@ By funding public goods sustainably, the Collective can create a rich ecosystem 
 
 ## Timeline
 
-**Nomination window**: Jan 3 - Jan 17
+**Nomination window**: Jan 17 - Jan 31
 
-**Signup deadline**: Jan 24
+**Signup deadline**: Feb 7
 
-**Voting window**: Jan 31 - Feb 10
+**Voting window**: Feb 21 - Mar 7
 
-![Timeline](../../assets/docs/governance/rpfg-2/timeline.png)
 
 
 ## Scope of RetroPGF 2
