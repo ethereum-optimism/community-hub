@@ -28,7 +28,7 @@ When writing your proposal, please adhere to the [grant proposal template](https
 The process for submitting a grant proposal is currently undergoing changes. 
 A Grants Council, which will process grant applications in Season 3 was recently approved. 
 Stay tuned for more information on how to submit a proposal to the Council shortly. 
-**You can expect grant proposals to begin begin processed again, via the Grants Council, January 26th.**
+**You can expect grant proposals to begin being processed again via the Grants Council on January 26th.**
 
 
 ## Other proposal types
