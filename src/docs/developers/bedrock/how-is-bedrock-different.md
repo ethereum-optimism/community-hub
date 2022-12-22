@@ -62,7 +62,7 @@ You might also be interested in the existence of the mempool and the changes in 
 - [JSON-RPC](#json-rpc)
 - [Chain Reorganizations](#chain-reorganizations)
 
-[See here for a more detailed guide](bedrock-temp/node-operator-guide.md) on how to run a Bedrock node.
+[See here for a more detailed guide](src/docs/developers/bedrock/node-operator-guide.md) on how to run a Bedrock node.
 
 </details>
 
@@ -143,7 +143,7 @@ The current `safe`, `unsafe`, and `finalized` blocks can be queried via [JSON-RP
 
 ## Historical Data
 
-Bedrock nodes can serve pre-Bedrock block bodies, transactions, and receipts out of the box. However, you will need to run a Legacy Geth instance to serve historical execution traces. See the [Node Operator Guide](./bedrock-temp/node-operator-guide.md) for more information about how to do this.
+Bedrock nodes can serve pre-Bedrock block bodies, transactions, and receipts out of the box. However, you will need to run a Legacy Geth instance to serve historical execution traces. See the [Node Operator Guide](src/docs/developers/bedrock/node-operator-guide.md) for more information about how to do this.
 
 Note that the following legacy fields have been removed from pre-Bedrock JSON-RPC transaction responses:
 
@@ -194,7 +194,7 @@ To eliminate this risk, Bedrock requires users to post their withdrawal proofs u
 Visualized, this flow looks like this:
 
 <div style="text-align: center">
-    <img width="600" src="../../assets/docs/bedrock/two-phase-withdrawals.png">
+    <img width="600" src="src/assets/docs/bedrock/two-phase-withdrawals.png">
 </div>
 
 By posting the proof upfront, it gives on-chain monitoring tools enough time to detect a fraudulent withdrawal proof so that we can take appropriate action. Regular users can do this monitoring too. For example, an exchange could halt withdrawals in the event of a fraudulent proof.
