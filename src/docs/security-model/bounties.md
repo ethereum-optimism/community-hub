@@ -13,7 +13,7 @@ Optimism has a very detailed [Bug bounty Page on Immunefi](https://immunefi.com/
 
 ### Bedrock Bounty
 
-With our upcoming launch of [Bedrock](../developers/bedrock.md) we will be launching a specific bug bounty program. Follow our [Twitter](https://twitter.com/optimismFND) or keep an eye on [Immunefi](https://immunefi.com/bounty/optimism/) for more information.
+With our upcoming launch of [Bedrock](../developers/bedrock/how-is-bedrock-different.md) we will be launching a specific bug bounty program. Follow our [Twitter](https://twitter.com/optimismFND) or keep an eye on [Immunefi](https://immunefi.com/bounty/optimism/) for more information.
 
 ### Unscoped Bug
 
