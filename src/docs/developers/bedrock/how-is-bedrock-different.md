@@ -55,14 +55,13 @@ You might also be interested in changes in the RPC interface and block timing.
 To run a node you need to understand the executables required to run it. 
 You might also be interested in the existence of the mempool and the changes in block timing, fess, and the JSON RPC.
 
-- [Executables](#executables)
 - [Mempool](#mempool)
 - [Block Production](#block-production)
 - [Historical Data](#historical-data)
 - [JSON-RPC](#json-rpc)
 - [Chain Reorganizations](#chain-reorganizations)
 
-[See here for a more detailed guide](src/docs/developers/bedrock/node-operator-guide.md) on how to run a Bedrock node.
+[See here for a more detailed guide](./node-operator-guide.md) on how to run a Bedrock node.
 
 </details>
 
@@ -143,7 +142,7 @@ The current `safe`, `unsafe`, and `finalized` blocks can be queried via [JSON-RP
 
 ## Historical Data
 
-Bedrock nodes can serve pre-Bedrock block bodies, transactions, and receipts out of the box. However, you will need to run a Legacy Geth instance to serve historical execution traces. See the [Node Operator Guide](src/docs/developers/bedrock/node-operator-guide.md) for more information about how to do this.
+Bedrock nodes can serve pre-Bedrock block bodies, transactions, and receipts out of the box. However, you will need to run a Legacy Geth instance to serve historical execution traces. See the [Node Operator Guide](./node-operator-guide.md) for more information about how to do this.
 
 Note that the following legacy fields have been removed from pre-Bedrock JSON-RPC transaction responses:
 
@@ -313,7 +312,7 @@ This provides an uncensorable alternative in case the sequencer is down.
 Even though the sequencer is down, verifiers (nodes that synchronize the Optimism state from L1) are still going to receive such transactions and modify the state accordingly. 
 When the sequencer is back up it has to process the transactions in the same order to have a valid state.
 
-Deposits that come from contracts still use [address aliasing](build/differences/#address-aliasing).
+Deposits that come from contracts still use [address aliasing](../build/differences.md#address-aliasing).
 
 Deposits will also be faster, probably about 2.5 minutes or less, rather than the 10-20 minutes they take now.
 

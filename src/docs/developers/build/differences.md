@@ -162,7 +162,7 @@ Just be careful.
 
 # Bedrock
 
-In [the Bedrock version](src/docs/developers/bedrock/bedrock.md) there are even less differences between Optimism and L1 Ethereum.
+In [the Bedrock version](src/docs/developers/bedrock/how-is-bedrock-different.md) there are even less differences between Optimism and L1 Ethereum.
 
 ## Opcode Differences
 

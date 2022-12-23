@@ -53,7 +53,7 @@ The best way to prepare for the upgrade is to participate in one of our public t
 
 On upgrade day, we will pause deposits and withdrawals. We will also pause ingress on the sequencer. This means that all transactions on Optimism will be halted for the duration of the upgrade.
 
-Once the upgrade is complete, however, everything should be identical to how it was before the upgrade. All balances, contract addresses, transaction data, block data, and historical execution traces will be preserved. The new network is EVM-equivalent, so all existing Ethereum tooling will continue to work with the new system. The only differences are described in [How is Bedrock Different?](src/docs/developers/bedrock/bedrock.md).
+Once the upgrade is complete, however, everything should be identical to how it was before the upgrade. All balances, contract addresses, transaction data, block data, and historical execution traces will be preserved. The new network is EVM-equivalent, so all existing Ethereum tooling will continue to work with the new system. The only differences are described in [How is Bedrock Different?](./how-is-bedrock-different.md).
 
 ## FAQs
 
