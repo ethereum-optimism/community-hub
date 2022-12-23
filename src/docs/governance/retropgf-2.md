@@ -39,7 +39,7 @@ RetroPGF 2 focuses on a narrow, Optimism-specific scope of impact to drive the c
 
 ## Nominations
 
-Nominations will be open from Jan 3 to Jan 17. During this window, anyone can nominate a **project or person** for funding.
+Nominations will be open from Jan 17 to Jan 31. During this window, anyone can nominate a **project or person** for funding.
 
 Nominations will take place on the [Optimism Governance Forum](https://gov.optimism.io/). Any community member can nominate a person or project by supplying: 
 
@@ -92,7 +92,7 @@ Badgeholders will be added to a public channel on Discord for announcements and 
 
 ## Voting
 
-Each badgeholder will be asked to vote during a ten-day window from Jan 31 - Feb 10.
+Each badgeholder will be asked to vote during a ten-day window from Feb 21 - Mar 7.
 
 Voters will be able to filter, sort, and search projects. 
 Projects will be displayed with their answers to the application questions included in the project profile created via Gitcoin Grants Hub.
