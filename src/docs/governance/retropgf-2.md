@@ -39,7 +39,7 @@ RetroPGF 2 focuses on a narrow, Optimism-specific scope of impact to drive the c
 
 ## Nominations
 
-Nominations will be open from Jan 3 to Jan 17. During this window, anyone can nominate a **project or person** for funding.
+Nominations will be open from Jan 17 to Jan 31. During this window, anyone can nominate a **project or person** for funding.
 
 Nominations will take place on the [Optimism Governance Forum](https://gov.optimism.io/). Any community member can nominate a person or project by supplying: 
 
