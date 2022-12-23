@@ -92,7 +92,7 @@ Badgeholders will be added to a public channel on Discord for announcements and 
 
 ## Voting
 
-Each badgeholder will be asked to vote during a ten-day window from Jan 31 - Feb 10.
+Each badgeholder will be asked to vote during a ten-day window from Feb 21 - Mar 7.
 
 Voters will be able to filter, sort, and search projects. 
 Projects will be displayed with their answers to the application questions included in the project profile created via Gitcoin Grants Hub.
