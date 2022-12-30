@@ -140,6 +140,18 @@ The URL format is `https://optimism.nownodes.io/?API_key=<API key from NOWNodes`
 
 - Optimism Ethereum
 
+## NodeReal
+
+### Description and pricing
+
+[NodeReal](https://nodereal.io/) is a one-stop blockchain infrastructure and services provider, we provide scalable, reliable, and efficient blockchain solutions for everyone, aiming to support the massive adoption, growth, and long-term success of the Web3 ecosystem. You can connect to the Optimism MegaNode for free every month. Details are [here](https://nodereal.io/pricing)
+
+[Sign up for your free account here](https://nodereal.io/meganode).
+
+### Supported Networks
+
+- Optimism Ethereum
+
 
 
 
