@@ -206,12 +206,11 @@ Since Legacy Geth is read-only, it is safe to run multiple Legacy Geth nodes beh
 
 #### Historical Execution vs. Historical Data Routing
 
-Only requests for historical execution will be routed to Legacy Geth. Everything else will be served by `op-geth` directly. The term _historical execution_ refers to RPC methods that return transaction or block execution traces. Specifically, these are:
+Only requests for historical execution will be routed to Legacy Geth. Everything else will be served by `op-geth` directly. The term _historical execution_ refers to RPC methods that return transaction or block execution traces, or those that query the state of the blockchain prior to the Bedrock upgrade:
 
-- `debug_traceBlockByHash`
-- `debug_traceBlockByNumber`
-- `debug_traceCall`
-- `debug_traceTransaction`
+- [State methods](https://ethereum.org/en/developers/docs/apis/json-rpc/#state_methods)
+- [History methods](https://ethereum.org/en/developers/docs/apis/json-rpc/#history_methods)
+- Debug methods such as `debug_traceBlockByHash`, `debug_traceBlockByNumber`, `debug_traceCall` and `debug_traceTransaction`
 
 If you do not need these RPC methods for historical data, then you do not need to run Legacy Geth at all.
 
