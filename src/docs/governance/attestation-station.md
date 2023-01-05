@@ -53,6 +53,7 @@ See [the tutorial](https://github.com/ethereum-optimism/optimism-tutorial/tree/m
 If your product is using the AttestationStation, make a PR including how you're using attestations to be added to the list 😊
 * [AttestationStation Interface by sbvegan](https://attestationstation.xyz/)
 * [Optimist Score by Flipside](https://science.flipsidecrypto.xyz/optimist/)
+* [Optimism Attestor by Clique](https://provenance.clique.social/attestor/opattestor)
 
 #### I am building on the AttestationStation but have some questions, where can I discuss these?
 
