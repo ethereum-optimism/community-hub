@@ -209,11 +209,12 @@ module.exports = {
               "https://github.com/ethereum-optimism/optimism-tutorial/tree/main/getting-started",
               "Developing smart contracts on Optimism"
             ],            
+            '/docs/guides/nft.md',            
             '/docs/guides/testing.md',
             [
               'https://docs.alchemy.com/reference/optimism-sdk-examples',
               'Using Alchemy to query the Optimism blockchain'
-            ]            
+            ]
           ],
           collapsable: true,
         },
