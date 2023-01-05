@@ -102,6 +102,34 @@ This addon is currently free but Infura seems to intend to charge $200/month for
 
 
 
+## NodeReal
+
+### Description and pricing
+
+[NodeReal](https://nodereal.io/) is a one-stop blockchain infrastructure and services provider, we provide scalable, reliable, and efficient blockchain solutions for everyone, aiming to support the massive adoption, growth, and long-term success of the Web3 ecosystem. You can connect to the Optimism MegaNode for free every month. Details are [here](https://nodereal.io/pricing)
+
+[Sign up for your free account here](https://nodereal.io/meganode).
+
+### Supported Networks
+
+- Optimism Ethereum
+
+
+
+## NOWNodes
+
+### Description and pricing
+
+[NOWNodes](https://nownodes.io/nodes/optimism) provide access to mainnet Optimism node. Shared and Dedicated nodes are Available. You can connect to the shared Optimism node for free for one month with 5,000 requests/per day or for €20 with 1,000,000 requests/per month.
+
+The URL format is `https://optimism.nownodes.io/?API_key=<API key from NOWNodes`.
+
+### Supported Networks
+
+- Optimism Ethereum
+
+
+
 
 ## Pocket Network
 
@@ -125,33 +153,6 @@ You can select addons, like "Archive Mode" or "Trace Mode" for an additional cos
 
 - Optimism Ethereum
 - Optimism Goerli
-
-
-
-## NOWNodes
-
-### Description and pricing
-
-[NOWNodes](https://nownodes.io/nodes/optimism) provide access to mainnet Optimism node. Shared and Dedicated nodes are Available. You can connect to the shared Optimism node for free for one month with 5,000 requests/per day or for €20 with 1,000,000 requests/per month.
-
-The URL format is `https://optimism.nownodes.io/?API_key=<API key from NOWNodes`.
-
-### Supported Networks
-
-- Optimism Ethereum
-
-## NodeReal
-
-### Description and pricing
-
-[NodeReal](https://nodereal.io/) is a one-stop blockchain infrastructure and services provider, we provide scalable, reliable, and efficient blockchain solutions for everyone, aiming to support the massive adoption, growth, and long-term success of the Web3 ecosystem. You can connect to the Optimism MegaNode for free every month. Details are [here](https://nodereal.io/pricing)
-
-[Sign up for your free account here](https://nodereal.io/meganode).
-
-### Supported Networks
-
-- Optimism Ethereum
-
 
 
 
