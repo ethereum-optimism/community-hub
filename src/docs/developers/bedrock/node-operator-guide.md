@@ -17,7 +17,7 @@ This document is designed to be a general overview of how to deploy a Bedrock no
 A Bedrock deployment consists of two core components: 
 
 1. The Rollup Node, which is responsible for deriving blocks from L1 and passing them to the Execution engine. It also participates in a peer-to-peer network that synchronizes unsubmitted blocks as the sequencer creates them. We refer to this component as `op-node`.
-2. The Execution Engine, which is responsible for executing the blocks it receives from the rollup node and storing state. It also exposes standard JSON-RPC methods to query blockchain data and submit transactions to the network. We refer to this component as `op-geth`, since our Execution Engine is a minimal fork of `go-ethereum`.
+2. The Execution Engine, which is responsible for executing the blocks it receives from the rollup node and storing state. It also exposes standard JSON-RPC methods to query blockchain data and submit transactions to the network. We refer to this component as `op-geth`, since our Execution Engine is [a minimal fork](https://op-geth.optimism.io/) of `go-ethereum`.
 
 The Rollup Node and Execution Engine communicate with each other over JSON-RPC via the Engine API. This is similar to how regular Ethereum networks are deployed. The Rollup Node functions as Optimism's consensus client, and the Execution Engine as its execution client.
 

@@ -4,6 +4,7 @@ lang: en-US
 ---
 
 Bedrock is the next major release of the Optimism network, planned for the first quarter of 2023. 
+It will further reduce [the differences between Optimism and L1 Ethereum](https://op-geth.optimism.io/).
 Here are the major changes:
 
 ## Guide by persona
