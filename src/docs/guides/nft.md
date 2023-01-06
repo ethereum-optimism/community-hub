@@ -3,8 +3,9 @@ title: Creating an Optimistic NFT
 lang: en-US
 ---
 
-A typical NFT ecosystem consists of creators (supply), marketplaces, and buyers/traders (demand) built on top of infrastructures that enable algorithmic generation of art, deployment of smart contracts and access to NFT market intelligence.
+An NFT ecosystem consists of creators (supply), marketplaces, and buyers/traders (demand) built on top of infrastructures that enable algorithmic generation of art, deployment of smart contracts and access to NFT market intelligence.
 
+[Click here for statistics abou NFTs on Optimism][https://dune.com/oplabspbc/optimism-nft-secondary-marketplaces]
 
 ## The Optimism NFT ecosystem
 
