@@ -61,9 +61,17 @@ You can always get up to date information (see, for example, [here (scroll down 
 
 ### Verifiable Randomness Function (VRF)
 
+#### Portal
 Portal providers a source of randomness on chain (for now on Optimism Goerli, but eventually also on the Optimism mainnet).
 [You can learn how to use it here](https://portal-docs.readthedocs.io/en/latest/user-vrf-docs.html). 
 It is a single-transaction pull oracle.
+
+#### Band
+[Band](https://bandprotocol.com/vrf) provides a source of [on-chain randomness](https://bandprotocol.com/vrf). 
+[You can learn how to use it here](https://docs.bandchain.org/vrf/getting-started.html).
+It is a single-transaction pull oracle.
+
+
 
 ## Universal Market Access (UMA)
 
