@@ -16,13 +16,20 @@ Unlike our previous upgrades, the Bedrock upgrade will not be a "regenesis" even
 
 The upgrade will proceed as follows on upgrade day:
 
-1. We will pause deposits and withdrawals on the legacy network.
-2. We will upgrade the smart contracts on L1 and perform an irregular state transition on L2.
-3. We will start up the Bedrock sequencer.
-4. We will re-enable deposits and withdrawals.
-5. We will distribute the contract addresses, binaries, and data directories required to interact with the new system.
+1. We will pause deposits and withdrawals on the legacy network
+2. We will stop accepting transactions on the legacy sequencer
+3. We will upgrade the smart contracts on L1 and perform an irregular state transition on L2.
+4. We will start up the Bedrock sequencer.
+5. We will re-enable deposits and withdrawals.
+6. We will distribute the contract addresses, binaries, and data directories required to interact with the new system.
 
 Backwards compatibility is one of the upgrade's key design goals. We will clearly highlight any potential incompatibilities and their workarounds in the sections below.
+
+## Optimism Goerli Upgrade
+The Bedrock upgrade to the Optimism Goerli Network will begin at 18:00 UTC (10:00 PST/ 13:00 EST) on Thursday January 12, 2023. To follow our progress in getting the sequencer back up on the day of upgrade, please follow our updates on [our status page](https://status.optimism.io/). After the sequencer is back online, major third party infrastructure will slowly return online, which you can track on our [infra status tracker](https://oplabs.notion.site/External-Optimism-Goerli-Bedrock-Upgrade-Infra-Status-Tracker-86e67c08c09a4a85ae7987fca6fb1ddb).
+
+## Optimism Mainnet Upgrade
+The Bedrock upgrade to the Optimism Mainnet Network is yet to be scheduled. We plan to announce an official date and time in February 2023 at least 3 weeks in advance.
 
 ## For Node Operators
 
