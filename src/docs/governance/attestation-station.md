@@ -46,7 +46,7 @@ See [the tutorial](https://github.com/ethereum-optimism/optimism-tutorial/tree/m
 
 | Network | Address |
 | - | - |
-| Optimism Goerli | [`0xEE36eaaD94d1Cc1d0eccaDb55C38bFfB6Be06C77`](https://goerli-optimism.etherscan.io/address/0xEE36eaaD94d1Cc1d0eccaDb55C38bFfB6Be06C77)  |
+| Optimism Goerli | [`0xEE36eaaD94d1Cc1d0eccaDb55C38bFfB6Be06C77`](https://goerli-explorer.optimism.io/address/0xEE36eaaD94d1Cc1d0eccaDb55C38bFfB6Be06C77)  |
 | Optimism Mainnet | [`0xEE36eaaD94d1Cc1d0eccaDb55C38bFfB6Be06C77`](https://explorer.optimism.io/address/0xEE36eaaD94d1Cc1d0eccaDb55C38bFfB6Be06C77) |
 
 #### What products are built on the AttestationStation? 

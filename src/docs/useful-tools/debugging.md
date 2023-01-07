@@ -14,7 +14,7 @@ You can inspect the state of your verified contract in any step of the transacti
 
 ## Etherscan
 
-[Etherscan](https://explorer.optimism.io) allows you to see events as well as revert messages for transactions that have been mined on Optimism (mainnet) as well as [Optimism Goerli (testnet)](https://goerli-optimism.etherscan.io). 
+[Etherscan](https://explorer.optimism.io) allows you to see events as well as revert messages for transactions that have been mined on Optimism (mainnet) as well as [Optimism Goerli (testnet)](https://goerli-explorer.optimism.io). 
 You can see more information about all the L2 features Etherscan offers in our [Explorers page](./explorers.md#etherscan).
 
 
