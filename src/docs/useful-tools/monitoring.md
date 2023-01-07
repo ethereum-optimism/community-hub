@@ -18,7 +18,7 @@ You can view information about both the Optimism mainnet and the Optimism Goerli
 ### Etherscan
 
 Etherscan provides a lot of detailed information about what's happening on Optimism.
-Check out the [Optimism mainnet explorer](https://optimistic.etherscan.io/) as well as the [Optimism Goerli explorer](https://goerli-optimism.etherscan.io) to get a look for yourself.
+Check out the [Optimism mainnet explorer](https://explorer.optimism.io) as well as the [Optimism Goerli explorer](https://goerli-optimism.etherscan.io) to get a look for yourself.
 
 ### Blockscout
 

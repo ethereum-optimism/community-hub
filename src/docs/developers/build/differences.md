@@ -304,4 +304,4 @@ Starting in November 2022, pre-EIP-155 transactions are no longer supported on O
 
 The addresses in which various infrastructure contracts are installed are different between L1 Ethereum and Optimism.
 For example, [WETH9](https://github.com/gnosis/canonical-weth/blob/master/contracts/WETH9.sol) is installed on L1 Ethereum on [address `0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2`](https://etherscan.io/address/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2). 
-On Optimism the same contract is installed on [address `0x4200000000000000000000000000000000000006`](https://optimistic.etherscan.io/address/0x4200000000000000000000000000000000000006).
+On Optimism the same contract is installed on [address `0x4200000000000000000000000000000000000006`](https://explorer.optimism.io/address/0x4200000000000000000000000000000000000006).
