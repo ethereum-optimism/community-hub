@@ -5,6 +5,83 @@ lang: en-US
 
 We are operating a series of public Bedrock testnets to allow node operators and dApp developers to prepare their systems for the upcoming upgrade. Information on how to participate in these testnets is below.
 
+## Goerli
+
+This is our official testnet. It will replace the legacy Goerli testnet on January 12, 2023.
+
+<table width="100%">
+    <tbody>
+        <tr>
+            <td colspan="2"><strong>Chain Parameters</strong></td>
+        </tr>
+        <tr>
+            <td>L1 Chain</td>
+            <td>Goerli</td>
+        </tr>
+        <tr>
+            <td>L1 Chain ID</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>L2 Chain ID</td>
+            <td><code>420</code></td>
+        </tr>
+        <tr>
+            <td>Rollup Config</td>
+            <td>This network does not require a rollup config. Specify <code>--network=goerli</code> on the command line when official images are released.</td>
+        </tr>
+        <tr>
+            <td>Bedrock Data Directory</td>
+            <td><a href="https://storage.googleapis.com/oplabs-goerli-data/goerli-bedrock.tar">https://storage.googleapis.com/oplabs-goerli-data/goerli-bedrock.tar</a></td>
+        </tr>
+        <tr>
+            <td>Legacy Geth Data Directory</td>
+            <td><a href="https://storage.googleapis.com/oplabs-goerli-data/goerli-legacy.tar">https://storage.googleapis.com/oplabs-goerli-data/goerli-legacy.tar</a></td>
+        </tr>
+        <tr>
+            <td>Block Explorer</td>
+            <td>Coming soon.</td>
+        </tr>
+        <tr>
+            <td>Public RPC Endpoint</td>
+            <td>
+                <a href="https://goerli.optimism.io">https://goerli.optimism.io</a>
+            </td>
+        </tr>
+        <tr>
+            <td>Sequencer Endpoint</td>
+            <td>
+                <a href="https://goerli-sequencer.optimism.io">https://goerli-sequencer.optimism.io</a>
+            </td>
+        </tr>
+        <tr>
+            <td>Withdrawal Period</td>
+            <td>2 Seconds</td>
+        </tr>
+        <tr>
+            <td colspan="2"><strong>Software Images</strong></td>
+        </tr>
+        <tr>
+            <td>op-node</td>
+            <td>To be provided on upgrade day.</td>
+        </tr>
+        <tr>
+            <td>op-geth</td>
+            <td><code>ethereumoptimism/op-geth:v1.10.26-166f27c</code></td>
+        </tr>
+        <tr>
+            <td>Legacy Geth</td>
+            <td><code>ethereumoptimism/l2geth:0.5.29</code></td>
+        </tr>
+        <tr>
+            <td colspan="2"><strong>Contract Addresses</strong></td>
+        </tr>
+        <tr>
+            <td colspan="2">Coming soon.</td>
+        </tr>
+    </tbody>
+</table>
+
 ## Goerli Upgrade Rehearsal
 
 The Goerli Upgrade Rehearsal is a public testnet that will be used to rehearse the upgrade process. It will be a full upgrade of our Goerli testnet using a forked L1. The L2 network was upgraded at block 3324763.
