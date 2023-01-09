@@ -12,7 +12,7 @@ Before deciding to become a delegate you should be familiar with:
 
 * The [Working Constitution](https://gov.optimism.io/t/working-constitution-of-the-optimism-collective/55).
 * The [Operating Manual](https://github.com/ethereum-optimism/OPerating-manual/blob/main/manual.md).
-* The delegate code of conduct, once it is released.
+* The [Delegate Code of Conduct](https://gov.optimism.io/t/delegate-code-of-conduct/3943)
 
 
 ## Ready to be a delegate?
