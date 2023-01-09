@@ -14,29 +14,29 @@ We have a Blockscout explorer for the [Goerli testnet](https://blockscout.com/op
 
 ## Etherscan
 
-We have Etherscan explorers for the [Optimism mainnet](https://optimistic.etherscan.io) and the  [Optimism  Goerli testnet](https://goerli-optimism.etherscan.io).
+We have Etherscan explorers for the [Optimism mainnet](https://explorer.optimism.io) and the  [Optimism  Goerli testnet](https://goerli-explorer.optimism.io).
 Etherscan has lots of tools to help you debug transactions.
 
 Optimistic Etherscan has all the tools you expect from Etherscan, such as:
-- [Verified contract source code, along with the ability to interact with it](https://optimistic.etherscan.io/address/0x420000000000000000000000000000000000000F#code)
-- [Detailed transaction information](https://optimistic.etherscan.io/tx/0x292423266d6da24126dc4e0e81890c22a67295cc8b1a987e71ad84748511452f)
+- [Verified contract source code, along with the ability to interact with it](https://explorer.optimism.io/address/0x420000000000000000000000000000000000000F#code)
+- [Detailed transaction information](https://explorer.optimism.io/tx/0x292423266d6da24126dc4e0e81890c22a67295cc8b1a987e71ad84748511452f)
 - And everything else you might find on Etherscan!
 
 It's also got some Optimism-specific features:
-- [A list of L1-to-L2 transactions](https://optimistic.etherscan.io/txsEnqueued)
-- [A list of L2-to-L1 transactions](https://optimistic.etherscan.io/txsExit)
-- [A tool for finalizing L2-to-L1 transactions](https://optimistic.etherscan.io/messagerelayer)
+- [A list of L1-to-L2 transactions](https://explorer.optimism.io/txsEnqueued)
+- [A list of L2-to-L1 transactions](https://explorer.optimism.io/txsExit)
+- [A tool for finalizing L2-to-L1 transactions](https://explorer.optimism.io/messagerelayer)
 - And more! Just check it out and click around to find all of the available features.
 
 ## Access to pre-regenesis history
 
 Because of our final regenesis on 11 November 2021, older transactions are not part of the current blockchain. 
-As such, they do not appear, for example, on [Etherscan](https://optimistic.etherscan.io/).
+As such, they do not appear, for example, on [Etherscan](https://explorer.optimism.io/).
 However, you **can** access transaction history between 23 June 2021 and the final regenesis using the Etherscan CSV exporting tool.
 
 ### Etherscan access
 
-[Browse here](https://optimistic.etherscan.io/exportDataMain) and select your address and the type of report you want.
+[Browse here](https://explorer.optimism.io/exportDataMain) and select your address and the type of report you want.
 
 ![export data](../../assets/docs/useful-tools/explorers/export.png)
 
