@@ -5,7 +5,7 @@ lang: en-US
 
 Welcome! We're stoked that you're launching on Optimism. 
 
-If you have not filled out the [get started form](https://optimismpbc.typeform.com/get-in-touch?typeform-source=community.optimism.io) please do so prior to reading this.
+If you have not filled out the [get started form](https://oplabs.typeform.com/get-in-touch?typeform-source=community.optimism.io) please do so prior to reading this.
 
 We are excited for your deployment onto Optimism! 
 You will be welcomed by [the following metrics](https://dune.com/optimismfnd/Optimism) 📈📈 (up and to the right!), [a budding community](https://discord-gateway.optimism.io/) 🫂🫂, and some great exclusive [Telegram Channels](https://t.me/+Cb7q0a1YqItkZTRk) ⚙️⚙️ for builders.
@@ -22,13 +22,13 @@ Steps to take if you would like developer support immediately, ranked in order o
 1. See our [Developer Documentation](../developers/), [Tutorials](https://github.com/ethereum-optimism/optimism-tutorial), and [Help Center](https://help.optimism.io)
 1. Head over to [**#dev-support**](https://discord.com/channels/667044843901681675/887914409207414785) on discord for the fastest help 
 1. Join [this TG group](https://t.me/+Cb7q0a1YqItkZTRk) and ask for help there
-1. Last attempt: [Fill out this form](https://optimismpbc.typeform.com/get-in-touch?typeform-source=community.optimism.io)
+1. Last attempt: [Fill out this form](https://oplabs.typeform.com/get-in-touch?typeform-source=community.optimism.io)
 
 
 ## Marketing Requests 🦸🦸
 
 When your project is deployed on Optimism, you can be added to [our ecosystem page](https://www.optimism.io/apps/all). 
-Simply [fill out this form](https://optimismpbc.typeform.com/op-marketing) to be included. Inclusion is at our discretion. 
+Simply [fill out this form](https://oplabs.typeform.com/op-marketing) to be included. Inclusion is at our discretion. 
 We add new projects live on the Optimism mainnet [here](https://www.optimism.io/apps/all) once a week.
 
 
