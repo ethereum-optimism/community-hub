@@ -172,11 +172,11 @@ Each of the above flags can also be defined via an environment variable. Run `op
 
 #### Configuring Peer-to-Peer Networking
 
-Unlike the previous system, the `op-node` participates in a peer-to-peer network. This network is used to distribute blocks that have not been submitted to L1 yet. The `op-node` will automatically discover and connect to peers in this network, but you can also manually specify peers to connect to via the `--p2p.static` flag. A list of suggested static peers is provided as part of the documentation for each testnet.
+Unlike the previous system, the `op-node` participates in a peer-to-peer network. This network is used to distribute blocks that have not been submitted to L1 yet. The `op-node` will automatically discover and connect to peers using a hardcoded set of bootnodes. You can also manually specify peers to connect to via the `--p2p.static` flag.
 
-For best results, run `op-node` with a static IP address that is accessible from the public Internet. For Kubernetes deployments, this can be achived by configuring a dedicated `Ingress` with an external IP, and using the `--p2p.advertise.ip` flag to specify the IP address of the load balancer when advertising IP addresses to peers.
+For best results, run `op-node` with a static IP address that is accessible from the public Internet. For Kubernetes deployments, this can be achieved by configuring a dedicated `Ingress` with an external IP, and using the `--p2p.advertise.ip` flag to specify the IP address of the load balancer when advertising IP addresses to peers.
 
-The default port for the peer-to-peer network is `9003`. You will need to open this port on your firewall to receive unsubmitted blocks.
+The default port for the peer-to-peer network is `9003`. You will need to open this port on your firewall to receive unsubmitted blocks. For your node to be discoverable, this port must be accessible via both TCP and UDP protocols.
 
 ### Legacy Geth
 
