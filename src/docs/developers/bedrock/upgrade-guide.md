@@ -48,9 +48,9 @@ On upgrade day, we will provide node operators with the following information:
 
 We will embed the rollup config into the `op-node` itself. Then, on upgrade day, you will need to:
 
-1. Initialize `op-geth`'s data directory using the upgraded genesis state from the provided URL. See the [Initialization via Data Directory](./node-operator-guide#initialization-via-data-directory) section of the Node Operator Guide for more information.
+1. Initialize `op-geth`'s data directory using the upgraded genesis state from the provided URL. See the [Initialization via Data Directory](./node-operator-guide.md#initialization-via-data-directory) section of the Node Operator Guide for more information.
 2. Specify the `op-node`'s network via the `--network` flag or `OP_NODE_NETWORK` environment variable. Its value will be `goerli` for the Goerli upgrade, or `mainnet` for the mainnet upgrade.
-3. Initialize Legacy Geth's data directory using the legacy genesis state from the provided URL. See the [Initialization via Data Directory](./node-operator-guide#initialization-via-data-directory) and [Legacy Geth](./node-operator-guide#legacy-geth) sections of the Node Operator Guide for more information.
+3. Initialize Legacy Geth's data directory using the legacy genesis state from the provided URL. See the [Initialization via Data Directory](./node-operator-guide.md#initialization-via-data-directory) and [Legacy Geth](./node-operator-guide.md#legacy-geth) sections of the Node Operator Guide for more information.
 4. Set the `op-geth` `--rollup.historicalrpc` parameter to point to Legacy Geth's RPC endpoint.
 5. Start `op-geth` and `op-node` as usual.
 
