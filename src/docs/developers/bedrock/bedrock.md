@@ -119,7 +119,7 @@ The L1 security fee, which is the majority of the transaction cost, uses the sam
 From an application development perspective, EIP-1559 introduces the following changes:
 
 - The `BASEFEE` opcode is now supported. The `BASEFEE` opcodes returns the base fee of the current block.
-- The `eth_maxPriorityFeePerGas` and `eth_maxFeePerGas` RPC methods are now supported. These methods return the maximum priority fee and maximum fee per gas that the transaction pool will accept.
+- The `eth_maxPriorityFeePerGas` and `eth_feeHistory` RPC methods are now supported. `eth_maxPriorityFeePerGas` returns a fee per gas that is an estimate of how much you can pay as a priority fee, or 'tip', to get a transaction included in the current block. `eth_feeHistory` returns a collection of historical gas information from which you can decide what to submit as your `maxFeePerGas` and/or `maxPriorityFeePerGas`.
 
 ### Removed Opcodes
 
