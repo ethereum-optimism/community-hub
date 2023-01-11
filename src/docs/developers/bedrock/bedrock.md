@@ -203,6 +203,14 @@ Since this change fundamentally changes the way withdrawals are handled, it is *
 
 For more information on two-phase withdrawals, see the withdrawals specification on [GitHub](https://github.com/ethereum-optimism/optimism/blob/develop/specs/withdrawals.md).
 
+## Deposit Replayability
+
+:::warning Breaking Change
+The changes described in this section are **not** backwards-compatible with the old network. Please read this section carefully. 
+:::
+
+On the legacy network, deposits are replayable. This is no longer the case in Bedrock. Additionally, as part of the migration, all deposits on the legacy network that have not been replayed will no longer be replayable. **This means that if you have not replayed your deposit, you must do so before the migration.** This affects fewer than 100 transactions of the nearly 40 million on mainnet.
+
 ## Contracts
 
 ### L1 contracts
