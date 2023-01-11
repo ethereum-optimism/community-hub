@@ -252,7 +252,7 @@ Clone the Optimism monorepo, and build the binary:
 ```bash
 cd
 git clone https://github.com/ethereum-optimism/optimism.git
-git checkout 0dccbdaaf2d9b3137a245b12e36de29d8b4ecc0f
+git checkout 4ea2555c2185aa3b1011ac01838e13f30d833c2c
 cd optimism/op-node
 make op-node
 sudo cp ./bin/op-node /usr/local/bin
