@@ -82,34 +82,29 @@ This is our official testnet. It will replace the legacy Goerli testnet on Janua
             <td colspan="2"><strong>Contract Addresses</strong></td>
         </tr>
         <tr>
-            <td><a href="https://goerli.etherscan.io/address/0x771b21C63dd9f2C6ca470df52fa37Dce3f47f501">SystemConfigProxy</a>
+            <td><a href="https://goerli.etherscan.io/address/0xAe851f927Ee40dE99aaBb7461C00f9622ab91d60">SystemConfigProxy</a>
             </td>
-            <td><code>0x771b21C63dd9f2C6ca470df52fa37Dce3f47f501</code></td>
+            <td><code>0xAe851f927Ee40dE99aaBb7461C00f9622ab91d60</code></td>
         </tr>
         <tr>
-            <td><a href="https://goerli.etherscan.io/address/0x39EFBC8F910322416b25cDe115a44c241e220cf7">L2OutputOracleProxy</a>
+            <td><a href="https://goerli.etherscan.io/address/0xE6Dfba0953616Bacab0c9A8ecb3a9BBa77FC15c0">L2OutputOracleProxy</a>
             </td>
-            <td><code>0x39EFBC8F910322416b25cDe115a44c241e220cf7</code></td>
+            <td><code>0xE6Dfba0953616Bacab0c9A8ecb3a9BBa77FC15c0</code></td>
         </tr>
         <tr>
-            <td><a href="https://goerli.etherscan.io/address/0x3BcaC7D78567f9C99A645bDF684b67282433a4aD">OptimismPortalProxy</a>
+            <td><a href="https://goerli.etherscan.io/address/0x5b47E1A08Ea6d985D6649300584e6722Ec4B1383">OptimismPortalProxy</a>
             </td>
-            <td><code>0x3BcaC7D78567f9C99A645bDF684b67282433a4aD</code></td>
+            <td><code>0x5b47E1A08Ea6d985D6649300584e6722Ec4B1383</code></td>
         </tr>
         <tr>
-            <td><a href="https://goerli.etherscan.io/address/0xE3a74D496E279D50447fe32a7D5fF2BE323e512b">L1ERC721BridgeProxy</a>
+            <td><a href="https://goerli.etherscan.io/address/0x883dcF8B05364083D849D8bD226bC8Cb4c42F9C5">OptimismMintableERC20FactoryProxy</a>
             </td>
-            <td><code>0xE3a74D496E279D50447fe32a7D5fF2BE323e512b</code></td>
+            <td><code>0x883dcF8B05364083D849D8bD226bC8Cb4c42F9C5</code></td>
         </tr>
         <tr>
-            <td><a href="https://goerli.etherscan.io/address/0x70bE33ECC8e48CB3243E31B50788Da69010B0675">OptimismMintableERC20FactoryProxy</a>
+            <td><a href="https://goerli.etherscan.io/address/0x1f0613A44c9a8ECE7B3A2e0CdBdF0F5B47A50971">SystemDictatorProxy</a>
             </td>
-            <td><code>0x70bE33ECC8e48CB3243E31B50788Da69010B0675</code></td>
-        </tr>
-        <tr>
-            <td><a href="https://goerli.etherscan.io/address/0x5005430537eCe905454736470D1502Ce7e5dcae2">SystemDictatorProxy</a>
-            </td>
-            <td><code>0x5005430537eCe905454736470D1502Ce7e5dcae2</code></td>
+            <td><code>0x1f0613A44c9a8ECE7B3A2e0CdBdF0F5B47A50971</code></td>
         </tr>
         <tr>
             <td>
