@@ -3,7 +3,8 @@ title: Public Testnets
 lang: en-US
 ---
 
-We are operating a series of public Bedrock testnets to allow node operators and dApp developers to prepare their systems for the upcoming upgrade. Information on how to participate in these testnets is below.
+We are operating a series of public Bedrock testnets to allow node operators and dApp developers to prepare their
+systems for the upcoming upgrade. Information on how to participate in these testnets is below.
 
 ## Goerli
 
@@ -28,15 +29,19 @@ This is our official testnet. It will replace the legacy Goerli testnet on Janua
         </tr>
         <tr>
             <td>Rollup Config</td>
-            <td>This network does not require a rollup config. Specify <code>--network=goerli</code> on the command line when official images are released.</td>
+            <td>This network does not require a rollup config. Specify <code>--network=goerli</code> on the command line
+                when official images are released.
+            </td>
         </tr>
         <tr>
             <td>Bedrock Data Directory</td>
-            <td><a href="https://storage.googleapis.com/oplabs-goerli-data/goerli-bedrock.tar">https://storage.googleapis.com/oplabs-goerli-data/goerli-bedrock.tar</a></td>
+            <td><a href="https://storage.googleapis.com/oplabs-goerli-data/goerli-bedrock.tar">https://storage.googleapis.com/oplabs-goerli-data/goerli-bedrock.tar</a>
+            </td>
         </tr>
         <tr>
             <td>Legacy Geth Data Directory</td>
-            <td><a href="https://storage.googleapis.com/oplabs-goerli-data/goerli-legacy.tar">https://storage.googleapis.com/oplabs-goerli-data/goerli-legacy.tar</a></td>
+            <td><a href="https://storage.googleapis.com/oplabs-goerli-data/goerli-legacy.tar">https://storage.googleapis.com/oplabs-goerli-data/goerli-legacy.tar</a>
+            </td>
         </tr>
         <tr>
             <td>Block Explorer</td>
@@ -77,17 +82,71 @@ This is our official testnet. It will replace the legacy Goerli testnet on Janua
             <td colspan="2"><strong>Contract Addresses</strong></td>
         </tr>
         <tr>
-            <td colspan="2">Coming soon.</td>
+            <td><a href="https://goerli.etherscan.io/address/0x771b21C63dd9f2C6ca470df52fa37Dce3f47f501">SystemConfigProxy</a>
+            </td>
+            <td><code>0x771b21C63dd9f2C6ca470df52fa37Dce3f47f501</code></td>
+        </tr>
+        <tr>
+            <td><a href="https://goerli.etherscan.io/address/0x39EFBC8F910322416b25cDe115a44c241e220cf7">L2OutputOracleProxy</a>
+            </td>
+            <td><code>0x39EFBC8F910322416b25cDe115a44c241e220cf7</code></td>
+        </tr>
+        <tr>
+            <td><a href="https://goerli.etherscan.io/address/0x3BcaC7D78567f9C99A645bDF684b67282433a4aD">OptimismPortalProxy</a>
+            </td>
+            <td><code>0x3BcaC7D78567f9C99A645bDF684b67282433a4aD</code></td>
+        </tr>
+        <tr>
+            <td><a href="https://goerli.etherscan.io/address/0xE3a74D496E279D50447fe32a7D5fF2BE323e512b">L1ERC721BridgeProxy</a>
+            </td>
+            <td><code>0xE3a74D496E279D50447fe32a7D5fF2BE323e512b</code></td>
+        </tr>
+        <tr>
+            <td><a href="https://goerli.etherscan.io/address/0x70bE33ECC8e48CB3243E31B50788Da69010B0675">OptimismMintableERC20FactoryProxy</a>
+            </td>
+            <td><code>0x70bE33ECC8e48CB3243E31B50788Da69010B0675</code></td>
+        </tr>
+        <tr>
+            <td><a href="https://goerli.etherscan.io/address/0x5005430537eCe905454736470D1502Ce7e5dcae2">SystemDictatorProxy</a>
+            </td>
+            <td><code>0x5005430537eCe905454736470D1502Ce7e5dcae2</code></td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://goerli.etherscan.io/address/0xa6f73589243a6A7a9023b1Fa0651b1d89c177111">Lib_AddressManager</a>
+            </td>
+            <td>
+                <code>0xa6f73589243a6A7a9023b1Fa0651b1d89c177111</code>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://goerli.etherscan.io/address/0x5086d1eEF304eb5284A0f6720f79403b4e9bE294">Proxy__OVM_L1CrossDomainMessenger</a>
+            </td>
+            <td>
+                <code>0x5086d1eEF304eb5284A0f6720f79403b4e9bE294</code>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://goerli.etherscan.io/address/0x636Af16bf2f682dD3109e60102b8E1A089FedAa8">Proxy__OVM_L1StandardBridge</a>
+            </td>
+            <td>
+                <code>0x636Af16bf2f682dD3109e60102b8E1A089FedAa8</code>
+            </td>
         </tr>
     </tbody>
 </table>
 
 ## Goerli Upgrade Rehearsal
 
-The Goerli Upgrade Rehearsal is a public testnet that will be used to rehearse the upgrade process. It will be a full upgrade of our Goerli testnet using a forked L1. The L2 network was upgraded at block 3324763.
+The Goerli Upgrade Rehearsal is a public testnet that will be used to rehearse the upgrade process. It will be a full
+upgrade of our Goerli testnet using a forked L1. The L2 network was upgraded at block 3324763.
 
 :::warning Replayability Warning
-This network is an exact fork of both L1 and L2 Goerli. The chain IDs for these forks are the same as their original networks. As a result, transactions submitted to either the forked L1 or the testnet L2 can be replayed on their respective actual networks. **Please do not send any transactions on this network that you do not want replayed.**
+This network is an exact fork of both L1 and L2 Goerli. The chain IDs for these forks are the same as their original
+networks. As a result, transactions submitted to either the forked L1 or the testnet L2 can be replayed on their
+respective actual networks. **Please do not send any transactions on this network that you do not want replayed.**
 :::
 
 <table width="100%">
@@ -182,7 +241,8 @@ This network is an exact fork of both L1 and L2 Goerli. The chain IDs for these 
 
 ## Beta
 
-The beta network is our official public testnet. It will continue to be maintained until we upgrade Goerli in early 2023.
+The beta network is our official public testnet. It will continue to be maintained until we upgrade Goerli in early
+2023.
 
 <table width="100%">
     <tbody>
