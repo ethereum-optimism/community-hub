@@ -16,7 +16,7 @@ By funding public goods sustainably, the Collective can create a rich ecosystem 
 
 **Nomination window**: Jan 17 - Jan 31
 
-**Signup deadline**: Feb 7
+**Project opt-in deadline**: Feb 7
 
 **Voting window**: Feb 21 - Mar 7
 
@@ -24,9 +24,9 @@ By funding public goods sustainably, the Collective can create a rich ecosystem 
 
 ## Scope of RetroPGF 2
 
-**RetroPGF Round #2 will fund public goods that support development and usage of the OP Stack. This falls in three main categories:**
+**RetroPGF Round #2 will fund public goods that support development and usage of the OP Stack. This falls into three main categories:**
 
-- **Infrastructure + Dependencies**: Software used to build or deploy the OP Stack; contributions to protocols or standards the OP Stack depends on run; experiments that support future development of the core OP Stack protocol
+- **Infrastructure + Dependencies**: Software used to build or deploy the OP Stack; contributions to protocols or standards upon which the OP Stack runs; experiments that support future development of the core OP Stack protocol
 
 - **Tooling + Utilities**: Work that helps builders create applications on Optimism mainnet, build on the OP Stack, interact with governance of the Collective, or use applications built on Optimism
 
@@ -39,30 +39,35 @@ RetroPGF 2 focuses on a narrow, Optimism-specific scope of impact to drive the c
 
 ## Nominations
 
-Nominations will be open from Jan 17 to Jan 31. During this window, anyone can nominate a **project or person** for funding.
+Nominations will be open from Jan 17 to Jan 31. During this window, anyone can nominate a project for funding.
+Here the term “project” can describe work that has been done by both an individual or a group. 
+Collections, a term used to describe projects without a single person or entity that can be verified via GitHub or Twitter, may only be nominated by the Optimism Foundation. 
 
-Nominations will take place on the [Optimism Governance Forum](https://gov.optimism.io/). Any community member can nominate a person or project by supplying: 
+Nominations will take place on the [Optimism Governance Forum](https://gov.optimism.io/). Any community member can nominate a project by supplying: 
 
-- the project or person’s name
-- a description of how they’ve provided public good to the Collective
+- the project name
+- A description of how the project has supported development and usage of the OP Stack
 - a link to their GitHub, Twitter, Discord, or Optimism address
-- (optional) contact info for the project or person
+- (optional) contact info for the project or project lead
 
 A full nomination template will be posted on the Forum before the nomination period begins.
 
 
+
 ## Funding Eligibility
 
-Any project or person that has been nominated for RetroPGF 2 must complete a project profile in the **Gitcoin Grants Hub** in order to be eligible for voting. 
+Any project that has been nominated for RetroPGF 2 must complete a project profile on the **RetroPGF Application Manager** on the Optimism website in order to be eligible for voting. 
 
-Grants Hub will ask for information about your project, including authentication with Twitter or GitHub to prevent impersonations. 
+The Application Manager will ask for information about your project, including authentication with Twitter or GitHub to prevent impersonations. 
 
-Grants Hub will also ask for information about team size, funding amount, impact provided to the Collective. 
+The Application Manager will also ask for information about team size, funding amount, impact provided to the Collective. 
 This information will help voters make choices about how to allocate funding. 
 
 After project nominations close, the Optimism Foundation will review completed profile submissions for spam and fraud. 
 
 Any project without a correctly verified GitHub or Twitter account, any project impersonating another team, or any project without a complete profile may be hidden from the voting round at the Foundation’s discretion.
+
+More information and guidance on the nomination and application process  will be provided in a forthcoming Project Manual.
 
 
 ## Voting Badge distribution
@@ -80,7 +85,7 @@ Any project without a correctly verified GitHub or Twitter account, any project 
 
 - Holding a voting badge for one round does not guarantee voting rights in subsequent rounds; Citizenship criteria are subject to change going forward
 - Voting Badges in RetroPGF 2 are recorded as a simple attestation in the AttestationStation, not as a soulbound token. This approach preserves flexibility for future iterations
-- Badgeholders are expected to adhere to the Optimism Delegate Code of Conduct
+- Badgeholders are expected to adhere to the [Optimism Delegate Code of Conduct](https://gov.optimism.io/t/delegate-code-of-conduct/3943)
 - An individual does not have to accept the voting badge. If an eligible person declines, the badge will not be distributed to someone else
 - Anyone holding a Voting Badge will be able to mint an Optimist NFT – the inception of identity on Optimism
 - Badgeholders with any participation or ownership stake in a project up for vote in RetroPGF 2 will be expected to not vote in favor of that project. Rules around conflicts of interest will be itemized in a forthcoming Badgeholder Manual
@@ -95,10 +100,10 @@ Badgeholders will be added to a public channel on Discord for announcements and 
 Each badgeholder will be asked to vote during a ten-day window from Feb 21 - Mar 7.
 
 Voters will be able to filter, sort, and search projects. 
-Projects will be displayed with their answers to the application questions included in the project profile created via Gitcoin Grants Hub.
+Projects will be displayed with their answers to the application questions included in the project profile created via the RPGF Application Manager.
 
 Votes will be aggregated as a simple weighted average, not as a quadratic vote. 
-Votes are encrypted on the frontend and stored on-chain, which means an individual Citizen’s vote will not be public by default. 
+Votes are submitted via a form and will only be accessible to the Foundation, which means an individual Citizen’s vote will not be public by default. 
 Once a vote is cast, the Citizen cannot update their vote.
 
 
