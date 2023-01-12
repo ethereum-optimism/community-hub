@@ -84,7 +84,7 @@ They are reproduced here for convenience
 | PortalSender | [`0xe7FACd39531ee3C313330E93B4d7a8B8A3c84Aa4`](https://goerli.etherscan.io/address/0xe7FACd39531ee3C313330E93B4d7a8B8A3c84Aa4)
 | ProxyAdmin | [`0x01d3670863c3F4b24D7b107900f0b75d4BbC6e0d`](https://goerli.etherscan.io/address/0x01d3670863c3F4b24D7b107900f0b75d4BbC6e0d)
 | SystemConfig | [`0xAe851f927Ee40dE99aaBb7461C00f9622ab91d60`](https://goerli.etherscan.io/address/0xAe851f927Ee40dE99aaBb7461C00f9622ab91d60) | [🔗](https://goerli.etherscan.io/address/0xea6d6b962b2252C6d8e6abBE48248597Ce15f048)
-| SystemDictator | [`0x1f0613A44c9a8ECE7B3A2e0CdBdF0F5B47A50971`](0x1f0613A44c9a8ECE7B3A2e0CdBdF0F5B47A50971) | [🔗](https://goerli.etherscan.io/address/0xCdD9F7C335bFDF3eaBDB4dF29f7417Ce8552A833)
+| SystemDictator | [`0x1f0613A44c9a8ECE7B3A2e0CdBdF0F5B47A50971`](https://goerli.etherscan.io/address/0x1f0613A44c9a8ECE7B3A2e0CdBdF0F5B47A50971) | [🔗](https://goerli.etherscan.io/address/0xCdD9F7C335bFDF3eaBDB4dF29f7417Ce8552A833)
 
 
 ### API Options
