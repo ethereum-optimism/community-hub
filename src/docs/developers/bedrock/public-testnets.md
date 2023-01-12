@@ -68,7 +68,7 @@ This is our official testnet. It will replace the legacy Goerli testnet on Janua
         </tr>
         <tr>
             <td>op-node</td>
-            <td>To be provided on upgrade day.</td>
+            <td><code>us-docker.pkg.dev/oplabs-tools-artifacts/images/op-node:v0.10.9</code></td>
         </tr>
         <tr>
             <td>op-geth</td>
