@@ -15,6 +15,12 @@ Such RPCs are either totally unsupported, or will return nonsensical values.
 ## Optimism (mainnet)
 
 
+::: tip Pre-Bedrock
+We are currently testing the [Bedrock](../developers/bedrock/bedrock.md) release.
+The mainnet network has still not been updated.
+:::
+
+
 | Parameter | Value |
 | --------- | ----- |
 | Network Name | **`Optimism`** |
@@ -47,6 +53,7 @@ You can run a large application for free using [Alchemy](https://www.alchemy.com
 
 ::: tip Purpose
 This is our test network.
+It has already been updated to the [Bedrock](../developers/bedrock/bedrock.md) release.
 :::
 
 
