@@ -75,7 +75,7 @@ They are reproduced here for convenience
 
 | Contract name | Address |
 | - | -
-| L1CrossDomainMessenger | [`0x06D225e6dd7d56437486352466137B7431eb0558`](https://goerli.etherscan.io/address/0x06D225e6dd7d56437486352466137B7431eb0558)
+| L1CrossDomainMessenger | [`0x5086d1eEF304eb5284A0f6720f79403b4e9bE294`](https://goerli.etherscan.io/address/0x5086d1eEF304eb5284A0f6720f79403b4e9bE294)
 | L1ERC721Bridge | [`0x0F9C590b958002E8B10a7431979c1aF882772E88`](https://goerli.etherscan.io/address/0x0F9C590b958002E8B10a7431979c1aF882772E88)
 | L1StandardBridge | [`0x2Fd98C3581b658643C18CCea9b9181ba3a7F7c54`](https://goerli.etherscan.io/address/0x2Fd98C3581b658643C18CCea9b9181ba3a7F7c54)
 | L2OutputOracle | [`0xE6Dfba0953616Bacab0c9A8ecb3a9BBa77FC15c0`](https://goerli.etherscan.io/address/0xE6Dfba0953616Bacab0c9A8ecb3a9BBa77FC15c0) 
