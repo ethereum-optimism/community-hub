@@ -219,6 +219,7 @@ The term _historical execution_ refers to RPC methods that need to execute trans
 
 If you do not need these RPC methods for historical data, then you do not need to run Legacy Geth at all.
 
+<!--
 ## Tutorial: Bare Metal Deployment
 
 The following is an example Bedrock deployment on a bare metal Ubuntu node. It connects to the `beta-1` testnet, and uses `systemd`. It also compiles `op-node` and `op-geth` from source.
@@ -384,6 +385,9 @@ sudo systemctl start op-node
 ```
 
 The nodes should start to sync. The full sync process may take some time. You can check the progress of the sync by running `cast block latest` and comparing the results either to one of our official replicas or to the network's block explorer. 
+
+
+-->
 
 ## Troubleshooting
 
