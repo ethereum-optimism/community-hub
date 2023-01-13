@@ -194,7 +194,11 @@ To eliminate this risk, Bedrock requires users to post their withdrawal proofs u
 Visualized, this flow looks like this:
 
 <div style="text-align: center">
-    <img width="600" src="src/assets/docs/bedrock/two-phase-withdrawals.png">
+
+
+![](../../../assets/docs/bedrock/two-phase-withdrawals.png)
+
+
 </div>
 
 By posting the proof upfront, it gives on-chain monitoring tools enough time to detect a fraudulent withdrawal proof so that we can take appropriate action. Regular users can do this monitoring too. For example, an exchange could halt withdrawals in the event of a fraudulent proof.
