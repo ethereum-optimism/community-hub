@@ -15,6 +15,12 @@ Such RPCs are either totally unsupported, or will return nonsensical values.
 ## Optimism (mainnet)
 
 
+::: tip Pre-Bedrock
+We are currently testing the [Bedrock](../developers/bedrock/bedrock.md) release.
+The mainnet network has still not been updated.
+:::
+
+
 | Parameter | Value |
 | --------- | ----- |
 | Network Name | **`Optimism`** |
@@ -47,6 +53,7 @@ You can run a large application for free using [Alchemy](https://www.alchemy.com
 
 ::: tip Purpose
 This is our test network.
+It has already been updated to the [Bedrock](../developers/bedrock/bedrock.md) release.
 :::
 
 
@@ -58,9 +65,28 @@ This is our test network.
 | Chain ID | **`420`** |
 | Explorer | **[https://goerli-explorer.optimism.io](https://goerli-explorer.optimism.io)** |
 | HTTP Endpoint | **`https://goerli.optimism.io`** |
-| L1 Contract Addresses | [link](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/deployments/goerli#layer-1-contracts) |
-| L2 Contract Addresses | [link](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/deployments/goerli#layer-2-contracts) |
 | chainid.link | [https://chainid.link/?network=optimism-goerli](https://chainid.link/?network=optimism-goerli)
+
+
+### Contract addresses
+
+The authoritative list of contract addresses is [in the monorepo](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts-bedrock/deployments/goerli).
+They are reproduced here for convenience
+
+| Contract name | Address |
+| - | -
+| L1CrossDomainMessenger | [`0x5086d1eEF304eb5284A0f6720f79403b4e9bE294`](https://goerli.etherscan.io/address/0x5086d1eEF304eb5284A0f6720f79403b4e9bE294)
+| L1ERC721Bridge | [`0x0F9C590b958002E8B10a7431979c1aF882772E88`](https://goerli.etherscan.io/address/0x0F9C590b958002E8B10a7431979c1aF882772E88)
+| L1StandardBridge | [`0x636Af16bf2f682dD3109e60102b8E1A089FedAa8`](https://goerli.etherscan.io/address/0x636Af16bf2f682dD3109e60102b8E1A089FedAa8)
+| L2OutputOracle | [`0xE6Dfba0953616Bacab0c9A8ecb3a9BBa77FC15c0`](https://goerli.etherscan.io/address/0xE6Dfba0953616Bacab0c9A8ecb3a9BBa77FC15c0) 
+| Lib_AddressManager | [`0xa6f73589243a6A7a9023b1Fa0651b1d89c177111`](https://goerli.etherscan.io/address/0xa6f73589243a6A7a9023b1Fa0651b1d89c177111)
+| OptimismMintableERC20Factory | [`0x883dcF8B05364083D849D8bD226bC8Cb4c42F9C5`](https://goerli.etherscan.io/address/0x883dcF8B05364083D849D8bD226bC8Cb4c42F9C5) 
+| OptimismPortal | [`0x5b47E1A08Ea6d985D6649300584e6722Ec4B1383`](https://goerli.etherscan.io/address/0x5b47E1A08Ea6d985D6649300584e6722Ec4B1383) | 
+| PortalSender | [`0xe7FACd39531ee3C313330E93B4d7a8B8A3c84Aa4`](https://goerli.etherscan.io/address/0xe7FACd39531ee3C313330E93B4d7a8B8A3c84Aa4)
+| ProxyAdmin | [`0x01d3670863c3F4b24D7b107900f0b75d4BbC6e0d`](https://goerli.etherscan.io/address/0x01d3670863c3F4b24D7b107900f0b75d4BbC6e0d)
+| SystemConfig | [`0xAe851f927Ee40dE99aaBb7461C00f9622ab91d60`](https://goerli.etherscan.io/address/0xAe851f927Ee40dE99aaBb7461C00f9622ab91d60)
+| SystemDictator | [`0x1f0613A44c9a8ECE7B3A2e0CdBdF0F5B47A50971`](https://goerli.etherscan.io/address/0x1f0613A44c9a8ECE7B3A2e0CdBdF0F5B47A50971)
+
 
 ### API Options
 
