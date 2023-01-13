@@ -10,7 +10,7 @@ Do not attempt to use this in production prior to that upgrade. Keep an eye on t
 
 This document provides an overview of how to deploy a Bedrock node. To learn more about how Bedrock itself works and its motivations, please see [the specs on GitHub](https://github.com/ethereum-optimism/optimism/tree/develop/specs).
 
-This document is designed to be a general overview of how to deploy a Bedrock node. An example bare-metal deployment is provided [at the end](#tutorial-bare-metal-deployment).
+This document is designed to be a general overview of how to deploy a Bedrock node. 
 
 ## Deployment Overview
 
@@ -35,7 +35,7 @@ The architecture of a typical Bedrock deployment looks like this:
 
 Legacy Geth uses version `0.5.29` of our old `l2geth` image.
 
-You can also compile `op-geth` and `op-node` from source. See [the tutorial below](#tutorial-bare-metal-deployment) for a walkthrough.
+You can also compile `op-geth` and `op-node` from source.
 
 ## Node Configuration
 

@@ -54,7 +54,7 @@ We will embed the rollup config into the `op-node` itself. Then, on upgrade day,
 4. Set the `op-geth` `--rollup.historicalrpc` parameter to point to Legacy Geth's RPC endpoint.
 5. Start `op-geth` and `op-node` as usual.
 
-The best way to prepare for the upgrade is to participate in one of our public testnets. Please see the [Beta Testnet](./public-testnets.md#beta) page for how to connect to our current testnet.
+The best way to prepare for the upgrade is to participate in one of our public testnets. Please see the [public testnets](./public-testnets.md) page for how to connect to our testnet.
 
 ## For dApp and Wallet Developers
 
