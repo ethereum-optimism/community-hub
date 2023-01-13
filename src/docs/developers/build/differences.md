@@ -190,7 +190,7 @@ However, there could be edge cases we did not think about where this matters.
 ### Accessing L1 information
 
 If you need the equivalent information from the latest L1 block, you can get it from [the `L1Block` contract](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L2/L1Block.sol).
-This contract is a predeploy at address [`0x4200000000000000000000000000000000000015`](https://blockscout.com/optimism/bedrock-alpha/address/0x4200000000000000000000000000000000000015).
+This contract is a predeploy at address [`0x4200000000000000000000000000000000000015`](https://goerli-optimism.etherscan.io/address/0x4200000000000000000000000000000000000015).
 You can use [the getter functions](https://docs.soliditylang.org/en/v0.8.12/contracts.html#getter-functions) to get these parameters:
 
 - `number`: The latest L1 block number known to L2
