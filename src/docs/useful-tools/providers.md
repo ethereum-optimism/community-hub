@@ -86,7 +86,7 @@ On the platform, there are also [Public APIs](https://blastapi.io/public-api/opt
 ### Supported Networks
 
 - Optimism Ethereum
-
+- Optimism Goerli
 
 ## Infura
 
