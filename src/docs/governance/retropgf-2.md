@@ -8,13 +8,13 @@ The Optimism Collective’s second round of Retroactive Public Goods Funding (Re
 RetroPGF 2 will allocate 10m OP tokens to **fund public goods that support development and usage of the OP Stack.** 
 
 Optimism’s vision is to build a global system where positive impact to the collective is rewarded by profit to the individual. 
-RetroPGF is an experimental mechanism to fund positive impact. 
+RetroPGF is an experimental mechanism to realize this goal of **“impact = profit”**.
 
 By funding public goods sustainably, the Collective can create a rich ecosystem and a better economy.
 
 ## Timeline
 
-**Nomination window**: Jan 17 - Jan 31
+**Nomination window**: Jan 17 - Jan 31 19:00 GMT
 
 **Project opt-in deadline**: Feb 7
 
@@ -32,25 +32,34 @@ By funding public goods sustainably, the Collective can create a rich ecosystem 
 
 - **Education**: Work to spread awareness and knowledge of how Optimism works, whether technically or socially
 
-Today, the **OP Stack** refers to the Optimism monorepo and its dependencies.
+Today, the OP Stack refers to the OSS code powering Optimism. Today, this means the Optimism monorepo and its dependencies. Eligible projects **need not** be exclusive to the Optimism ecosystem, but there should be a connection. For example,
+
+- **go-ethereum** is an important dependency of the OP Stack, but is not Optimism-specific.
+- **Ethereum L2 explorer pages** which give stats on various L2s provide educational impact for the OP Stack, but are not Optimism-specific
 
 RetroPGF 2 focuses on a narrow, Optimism-specific scope of impact to drive the core engine for ecosystem growth. In future rounds, this scope will expand.
 
 
 ## Nominations
 
-Nominations will be open from Jan 17 to Jan 31. During this window, anyone can nominate a project for funding.
+Nominations will be open from **Jan 17 to Jan 31 19:00 GMT**. During this window, anyone can nominate a project for funding.
 Here the term “project” can describe work that has been done by both an individual or a group. 
 Collections, a term used to describe projects without a single person or entity that can be verified via GitHub or Twitter, may only be nominated by the Optimism Foundation. 
 
-Nominations will take place on the [Optimism Governance Forum](https://gov.optimism.io/). Any community member can nominate a project by supplying: 
+Nominations will take place on the [Optimism Governance Forum](https://gov.optimism.io/t/nominations-for-retropgf2/4636). Any community member can nominate a project by supplying: 
 
 - the project name
 - A description of how the project has supported development and usage of the OP Stack
-- a link to their GitHub, Twitter, Discord, or Optimism address
+- a link to projects GitHub or Twitter
 - (optional) contact info for the project or project lead
 
-A full nomination template will be posted on the Forum before the nomination period begins.
+### You can nominate projects by category on the below forum posts
+
+- [**Nominations for Infrastructure + Dependencies**](https://gov.optimism.io/t/infrastructure-dependencies-nominations-for-rpgf2/4637)
+
+- [**Nominations for Tooling + Utilities**](https://gov.optimism.io/t/tooling-utilities-nominations-for-rpgf2/4639)
+
+- [**Nominations for Education**](https://gov.optimism.io/t/education-nominations-for-rpgf2/4640)
 
 
 
@@ -67,7 +76,7 @@ After project nominations close, the Optimism Foundation will review completed p
 
 Any project without a correctly verified GitHub or Twitter account, any project impersonating another team, or any project without a complete profile may be hidden from the voting round at the Foundation’s discretion.
 
-More information and guidance on the nomination and application process  will be provided in a forthcoming Project Manual.
+For more information and guidance on the nomination and application process for projects, see the [**RetroPGF Project Manual**](https://www.notion.so/oplabs/Optimism-RetroPGF-2-Project-Manual-0a2e741133cd49b0b005ff759934b998).
 
 
 ## Voting Badge distribution
