@@ -326,7 +326,7 @@ Even though the sequencer is down, verifiers (nodes that synchronize the Optimis
 When the sequencer is back up it has to process the transactions in the same order to have a valid state.
 
 
-We recommend adding a 50% buffer to whatever is returned by `estimateGas` to ensure that your deposit will not run out of gas (Note: the Optimism SDK already does this under the hood). For example, if you wish to send a deposit of ETH, you migh call `eth_estimateGas` and see that the deposit is expected to consume `100,000 gas`. You should then multiply that estimated about by `1.5` and then send your transaction with a `gasLimit` of at least `150,000 gas`.
+We recommend adding a 50% buffer to whatever is returned by `estimateGas` to ensure that your deposit will not run out of gas (Note: the Optimism SDK already does this under the hood). For example, if you wish to send a deposit of ETH, you might call `eth_estimateGas` and see that the deposit is expected to consume `100,000 gas`. You should then multiply that estimated about by `1.5` and then send your transaction with a `gasLimit` of at least `150,000 gas`.
 
 
 :::tip
