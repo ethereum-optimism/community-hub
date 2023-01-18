@@ -21,13 +21,13 @@ Attestations are statements by a creator (who attested this) about a subject (wh
 
 
 
-#### What do we plan to use attestations for?
+#### What can attestations be used for?
 
-The first use case for attestations is to create sybil resistant identity that can power [non-plutocratic governance](https://vitalik.ca/general/2021/08/16/voting3.html).
+We imagine the first use case for attestations is to create sybil resistant identity that can power [non-plutocratic governance](https://vitalik.ca/general/2021/08/16/voting3.html).
 
 Longer term, this open-source primitive can be used for a variety of sybil-resistant applications including on-chain credit scoring / under collateralized loans.
 
-#### How do we plan to go from attestations to sybil-resistant identity?
+#### How can you go from attestations to sybil-resistant identity?
 
 Attestations in the AttestationStation are on-chain and can be used by other smart contracts in a variety of applications. Instead of having a single entity owning user data and identity, the AttestationStation is a graph of peer-to-peer (p2p) attestations. 
 
