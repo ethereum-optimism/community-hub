@@ -20,17 +20,28 @@ Attestations are statements by a creator (who attested this) about a subject (wh
 ![](../../assets/docs/governance/attestationstation/attestations.png)
 
 
-#### What can attestations in the AttestationStation be used for?
+
+#### What do we plan to use attestations for?
+
+The first use case for attestations is to create sybil resistant identity that can power [non-plutocratic governance](https://vitalik.ca/general/2021/08/16/voting3.html).
+
+Longer term, this open-source primitive can be used for a variety of sybil-resistant applications including on-chain credit scoring / under collateralized loans.
+
+#### How do we plan to go from attestations to sybil-resistant identity?
 
 Attestations in the AttestationStation are on-chain and can be used by other smart contracts in a variety of applications. Instead of having a single entity owning user data and identity, the AttestationStation is a graph of peer-to-peer (p2p) attestations. 
 
+The first step to get from attestations to sybil-resistant identity is to grow the number of attestations in the AttestationStation. To do that, we are taking a two pronged approach by growing the number of:
+    * Trusted attestations: These attestations are made by organizations like Gitcoin, DegenScore, Otterspace, etc. attest about individual community members.
+    * Social attestations: These are attestations from one address about another. Eg zain.eth says kathy.eth is a colleague, kathy.eth says will.eth is a friend, etc.
+
 ![](../../assets/docs/governance/attestationstation/network.png)
 
-We can then take the graph of p2p attestations from the AttestationStation and run computations like EigenTrust over the set of data to derive identity sets on top of a purely subjective web of trust.
+Anyone can then take the graph of p2p attestations from the AttestationStation and run computations like EigenTrust over the set of data to derive identity sets on top of a purely subjective web of trust.
 
 ![](../../assets/docs/governance/attestationstation/eigan.png)
 
-To build a robust, trustworthy identity network, these computations will be run iteratively. We can start with a purely subjective web of trust, and use that starting point to derive a larger web of trust, and so on — we can begin to establish a credibly neutral reputation that is entirely peer-to-peer. This open-source primitive can be used for a variety of sybil-resistant applications including voting, reputations / credit scores, reviews, and more.
+To build a robust, trustworthy identity network, these computations will be run iteratively. We can start with a purely subjective web of trust, and use that starting point to derive a larger web of trust, and so on — we can begin to establish a credibly neutral reputation that is entirely peer-to-peer. 
 
 #### How is the AttestationStation different from other attestation products?
 
@@ -74,6 +85,7 @@ It will take a huge community effort to realize the potential that reputation ha
 * **Attestation delegation**: Build a system which manages attestations automatically for users. This system should enable users to delegate some of their attestation assignment to a third party. For instance, users may opt-in to delegating their trust scores to a sybil detection court system. Another project is to build that sybil detection court system! 
 * **Attestation import**: Write proxy contracts which import attestations of various formats into the standardized AttestationStation format so that they can be consumed by the standard AttestationStation tooling.
 * **Viral attestations**: Create systems which make it fun and easy for users to attest useful information about each other.
+* **Composable NFT allowlists**: Create a way for creators to easily build, manage, and share mint allowlists for upcoming NFT drops!
 
 
 ## Technical specifications
