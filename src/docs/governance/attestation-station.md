@@ -32,8 +32,9 @@ Longer term, this open-source primitive can be used for a variety of sybil-resis
 Attestations in the AttestationStation are on-chain and can be used by other smart contracts in a variety of applications. Instead of having a single entity owning user data and identity, the AttestationStation is a graph of peer-to-peer (p2p) attestations. 
 
 The first step to get from attestations to sybil-resistant identity is to grow the number of attestations in the AttestationStation. To do that, we are taking a two pronged approach by growing the number of:
-    * Trusted attestations: These attestations are made by organizations like Gitcoin, DegenScore, Otterspace, etc. attest about individual community members.
-    * Social attestations: These are attestations from one address about another. Eg zain.eth says kathy.eth is a colleague, kathy.eth says will.eth is a friend, etc.
+
+* Trusted attestations: These attestations are made by organizations like Gitcoin, DegenScore, Otterspace, etc. attest about individual community members.
+* Social attestations: These are attestations from one address about another. Eg zain.eth says kathy.eth is a colleague, kathy.eth says will.eth is a friend, etc.
 
 ![](../../assets/docs/governance/attestationstation/network.png)
 
