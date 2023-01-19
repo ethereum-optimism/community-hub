@@ -166,7 +166,7 @@ A minimal valid configuration for a rollup node on our testnet looks like this:
 ```bash
 op-node --l1=<goerli RPC url> \
         --l2=<op-geth authenticated RPC url> \
-        --network=goerli 1
+        --network=goerli \
         --rpc.addr=127.0.0.1 \
         --rpc.port=9545 \
         --l2.jwt-secret=<path to JWT secret>
