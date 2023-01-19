@@ -130,7 +130,7 @@ You may also want to specify the following flags based on your configuration:
 
 #### Working Base Configuration
 
-A valid command that runs `op-geth` on our `beta-1` network and enables RPC over HTTP and WebSockets looks like:
+A valid command that runs `op-geth` on the goerli test network and enables RPC over HTTP and WebSockets looks like:
 
 ```bash
 geth \
@@ -149,8 +149,7 @@ geth \
   --authrpc.vhosts="*" \
   --datadir=/data \
   --verbosity=3 \
-  --rollup.disabletxpoolgossip=true \
-  --rollup.sequencerhttp=https://bedrock-beta-1-sequencer.optimism.io \
+  --network=goerli \
   --nodiscover \
   --syncmode=full \
   --maxpeers=0
@@ -162,12 +161,12 @@ Consult [Geth's documentation](https://geth.ethereum.org/docs/) for more informa
 
 `op-node` is a standalone, statically linked binary. It stores no state, and requires no initialization. It consumes configuration parameters either via the command line or environment variables. For some networks, the Rollup Node also requires a configuration file (called `rollup.json` or the "rollup config") that configures network-specific genesis parameters. For official networks like Goerli and mainnet, the genesis config is hardcoded in the `op-node` software and can be specified via a `--network` flag.
 
-A minimal valid configuration for a rollup node on our `beta-1` testnet looks like this:
+A minimal valid configuration for a rollup node on our testnet looks like this:
 
 ```bash
 op-node --l1=<goerli RPC url> \
         --l2=<op-geth authenticated RPC url> \
-        --network=beta-1
+        --network=goerli 1
         --rpc.addr=127.0.0.1 \
         --rpc.port=9545 \
         --l2.jwt-secret=<path to JWT secret>
