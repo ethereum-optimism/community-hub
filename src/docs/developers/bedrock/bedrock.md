@@ -228,7 +228,7 @@ This is the contract that replaces the old State Commitment Chain.
 
 #### OptimismPortal
 
-[The `OptimismPortal` contract](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L1/OptimismPortal.sol) provides [the new API for communications between layers](#deposits-from-ethereum-to-optimism). 
+[The `OptimismPortal` contract](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L1/OptimismPortal.sol) provides [the low-level API for communications between layers](#deposits-from-ethereum-to-optimism). Unless you are trying to send L2 transactions via L1 to bypass the sequencer, we strongly recommend sending messages between L1 and L2 via the L1CrossDomainMessenger and L2CrossDomainMessenger.
 
 
 #### Existing interface
@@ -318,12 +318,20 @@ More information will be posted here once we have more exact information after w
 ### Deposits (from Ethereum to Optimism)
 
 To create a deposit we recommend that you use the pre-bedrock contracts [`L1StandardBridge`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L1/L1StandardBridge.sol) and [`L1CrossDomainMessenger`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L1/L1CrossDomainMessenger.sol).
-[`OptimismPortal`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L1/OptimismPortal.sol) also has deposit functionality.
+[`OptimismPortal`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L1/OptimismPortal.sol) also has low-level deposit functionality.
 
-With the portal’s `depositTransaction` function you can do from L1 anything you can do by contacting L2 directly: send transactions, send payments, create contracts, etc.
+With the OptimismPortal’s `depositTransaction` function you can do from L1 anything you can do by contacting L2 directly: send transactions, send payments, create contracts, etc.
 This provides an uncensorable alternative in case the sequencer is down. 
 Even though the sequencer is down, verifiers (nodes that synchronize the Optimism state from L1) are still going to receive such transactions and modify the state accordingly. 
 When the sequencer is back up it has to process the transactions in the same order to have a valid state.
+
+
+We recommend adding a 50% buffer to whatever is returned by `estimateGas` to ensure that your deposit will not run out of gas (Note: the Optimism SDK already does this under the hood). For example, if you wish to send a deposit of ETH, you might call `eth_estimateGas` and see that the deposit is expected to consume `100,000 gas`. You should then multiply that estimated about by `1.5` and then send your transaction with a `gasLimit` of at least `150,000 gas`.
+
+
+:::tip
+In order to prevent the Optimism network from being DOSed via forced L1 to L2 transactions that bypass the Sequencer, we have added a fee adjustment schedule to all L1→L2 transactions that closely mimics EIP1559. Like in the current network, deposit fees are paid by burning some amount of L1 gas proportional to your deposit's L2 gas limit. Unfortunately, this means that you may have cases where you estimate how much gas an L1→L2 deposit will cost, and deposit fees increase by the time your transaction gets included in a block and executed, causing your deposit to run out of gas and revert. This is why we recommend adding a 50% buffer to your `gasLimit` to ensure your deposit will not run out of gas.
+:::
 
 Deposits that come from contracts still use [address aliasing](../build/differences.md#address-aliasing).
 
