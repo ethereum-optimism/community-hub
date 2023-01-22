@@ -57,7 +57,7 @@ If your product is using the AttestationStation, make a PR including how you're 
 
 #### I am building on the AttestationStation but have some questions, where can I discuss these?
 
-The best place to ask any dev related questions is the #dev-support channel on the [the Optimism Discord](https://discord-gateway.optimism.io/). If you need additional support check out this [Help Article](https://help.optimism.io/hc/en-us/articles/9762044018843-How-do-I-get-project-support-marketing-integrations-etc-).
+The best place to ask any dev related questions is the #dev-support channel on [the Optimism Discord](https://discord-gateway.optimism.io/). If you need additional support check out this [Help Article](https://help.optimism.io/hc/en-us/articles/9762044018843-How-do-I-get-project-support-marketing-integrations-etc-).
 
 #### I want to apply for a grant to build on the AttestationStation, how can I do this?
 
