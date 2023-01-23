@@ -21,5 +21,6 @@ Following the guidelines on [Contributing](https://github.com/ethereum-optimism/
 :::
 
 ## Community contributions
-- Improving this [community site](https://community.optimism.io/) [documentation](https://github.com/ethereum-optimism/community-hub) and [tutorials](https://github.com/ethereum-optimism/optimism-tutorial).
+- Pick an idea from the [project ideas list](https://github.com/ethereum-optimism/optimism-project-ideas) to start building
+- Improve the [community site](https://community.optimism.io/) [documentation](https://github.com/ethereum-optimism/community-hub) or [tutorials](https://github.com/ethereum-optimism/optimism-tutorial).
 - Become an "Optimizer" and answer questions in the [Optimism Discord](https://discord-gateway.optimism.io).
