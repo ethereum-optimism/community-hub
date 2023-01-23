@@ -16,9 +16,9 @@ By funding public goods sustainably, the Collective can create a rich ecosystem 
 
 **Nomination window**: Jan 17 - Jan 31 19:00 GMT
 
-**Project opt-in deadline**: Feb 7
+**Project opt-in deadline**: Feb 14
 
-**Voting window**: Feb 21 - Mar 7
+**Voting window**: Feb 28 - Mar 14
 
 
 
@@ -106,7 +106,7 @@ Badgeholders will be added to a public channel on Discord for announcements and 
 
 ## Voting
 
-Each badgeholder will be asked to vote during a ten-day window from Feb 21 - Mar 7.
+Each badgeholder will be asked to vote during a ten-day window from Feb 28 - Mar 14.
 
 Voters will be able to filter, sort, and search projects. 
 Projects will be displayed with their answers to the application questions included in the project profile created via the RPGF Application Manager.
