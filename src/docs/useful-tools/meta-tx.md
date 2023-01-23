@@ -12,7 +12,7 @@ Here are some example use cases for meta-transactions:
 
 - **On boarding**. 
   Users who aren't committed to web3 yet need to pay and go through [KYC](https://www.thalesgroup.com/en/markets/digital-identity-and-security/banking-payment/issuance/id-verification/know-your-customer) before they can do anything.
-  This a bad initial experience that can cause people to decide they prefer to investigate something else, especially for non-
+  This is a bad initial experience that can cause people to decide they prefer to investigate something else, especially for non-
 
 - **Privacy**.
   It's easy to use a new address for privacy purposes.
