@@ -16,8 +16,8 @@ Here are some example use cases for meta-transactions:
 
 - **Privacy**.
   It's easy to use a new address for privacy purposes.
-  It is a lot harder to transfer ETH to the new address privately without it being traceable to you, making the new address useless.
-
+  It is a lot harder to transfer ETH to the new address privately without creating a connection between it and your identity.
+  
 - **Transaction payment by other means**.
   With meta-transactions you can collect payment for transactions either using a different token (ERC-20) or a off-chain means (for example a credit card).
 
