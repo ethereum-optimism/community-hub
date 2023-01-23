@@ -20,7 +20,7 @@ The possibility of an eventual exit payment can also encourage investors to fund
 
 ### How is this going to be governed?
 
-The Optimsim Collective takes [an experimental and agile approach to governance](https://optimism.mirror.xyz/r888e4B5iiNQi-3_mO26ixgv-plQ099XWgqEOv9iWKA) relentlessly iterating towards a system which stands the test of time.
+The Optimism Collective takes [an experimental and agile approach to governance](https://optimism.mirror.xyz/r888e4B5iiNQi-3_mO26ixgv-plQ099XWgqEOv9iWKA) relentlessly iterating towards a system which stands the test of time.
 Initially, the Collective's model of digital democratic governance will consist of two houses: the *Token House* and the *Citizens' House*. 
     
 
