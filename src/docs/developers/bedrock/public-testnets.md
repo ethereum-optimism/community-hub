@@ -3,12 +3,9 @@ title: Public Testnets
 lang: en-US
 ---
 
-We are operating a series of public Bedrock testnets to allow node operators and dApp developers to prepare their
-systems for the upcoming upgrade. Information on how to participate in these testnets is below.
-
 ## Goerli
 
-This is our official testnet. It will replace the legacy Goerli testnet on January 12, 2023.
+The Optimism Goerli testnet was migrated to Bedrock on January 12, 2023.
 
 <table width="100%">
     <tbody>
@@ -40,7 +37,7 @@ This is our official testnet. It will replace the legacy Goerli testnet on Janua
         </tr>
         <tr>
             <td>Legacy Geth Data Directory</td>
-            <td><a href="https://storage.googleapis.com/oplabs-goerli-data/goerli-legacy.tar">https://storage.googleapis.com/oplabs-goerli-data/goerli-legacy.tar</a>
+            <td><a href="https://storage.googleapis.com/oplabs-goerli-data/goerli-legacy-archival.tar">https://storage.googleapis.com/oplabs-goerli-data/goerli-legacy-archival.tar</a>
             </td>
         </tr>
         <tr>
@@ -129,107 +126,6 @@ This is our official testnet. It will replace the legacy Goerli testnet on Janua
             <td>
                 <code>0x636Af16bf2f682dD3109e60102b8E1A089FedAa8</code>
             </td>
-        </tr>
-    </tbody>
-</table>
-
-## Goerli Upgrade Rehearsal
-
-The Goerli Upgrade Rehearsal is a public testnet that will be used to rehearse the upgrade process. It will be a full
-upgrade of our Goerli testnet using a forked L1. The L2 network was upgraded at block 3324763.
-
-:::warning Replayability Warning
-This network is an exact fork of both L1 and L2 Goerli. The chain IDs for these forks are the same as their original
-networks. As a result, transactions submitted to either the forked L1 or the testnet L2 can be replayed on their
-respective actual networks. **Please do not send any transactions on this network that you do not want replayed.**
-:::
-
-<table width="100%">
-    <tbody>
-        <tr>
-            <td colspan="2"><strong>Chain Parameters</strong></td>
-        </tr>
-        <tr>
-            <td>L1 Chain</td>
-            <td>Forked Goerli</td>
-        </tr>
-        <tr>
-            <td>L1 Chain ID</td>
-            <td>5</td>
-        </tr>
-        <tr>
-            <td>L1 Fork RPC</td>
-            <td><a href="https://goerli-l1-public-rehearsal.optimism.io">https://goerli-l1-public-rehearsal.optimism.io</a></td>
-        </tr>
-        <tr>
-            <td>L2 Chain ID</td>
-            <td><code>420</code></td>
-        </tr>
-        <tr>
-            <td>Rollup Config</td>
-            <td><a href="https://storage.googleapis.com/bedrock-goerli-regenesis-data/goerli-public-rehearsal/rollup.json">https://storage.googleapis.com/bedrock-goerli-regenesis-data/goerli-public-rehearsal/rollup.json</a></td>
-        </tr>
-        <tr>
-            <td>Bedrock Data Directory</td>
-            <td><a href="https://storage.googleapis.com/op-bedrock-migration/goerli-3324763-bedrock.tar">https://storage.googleapis.com/op-bedrock-migration/goerli-3324763-bedrock.tar</a></td>
-        </tr>
-        <tr>
-            <td>Legacy Geth Data Directory</td>
-            <td><a href="https://storage.googleapis.com/op-bedrock-migration/goerli-3324763-legacy.tar">https://storage.googleapis.com/op-bedrock-migration/goerli-3324763-legacy.tar</a></td>
-        </tr>
-        <tr>
-            <td>Block Explorer</td>
-            <td>N/A</td>
-        </tr>
-        <tr>
-            <td>Public RPC Endpoints</td>
-            <td>
-                Please use the sequencer endpoint below.
-            </td>
-        </tr>
-        <tr>
-            <td>Sequencer Endpoint</td>
-            <td>
-                <a href="https://goerli-l2-public-rehearsal-sequencer.optimism.io">https://goerli-l2-public-rehearsal-sequencer.optimism.io</a>
-            </td>
-        </tr>
-        <tr>
-            <td>Withdrawal Period</td>
-            <td>2 Seconds</td>
-        </tr>
-        <tr>
-            <td colspan="2"><strong>Software Images</strong></td>
-        </tr>
-        <tr>
-            <td>op-node</td>
-            <td><code>us-central1-docker.pkg.dev/bedrock-goerli-development/images/op-node:goerli-public-rehearsal-1</code></td>
-        </tr>
-        <tr>
-            <td>op-geth</td>
-            <td><code>ethereumoptimism/op-geth:goerli-public-rehearsal-1</code></td>
-        </tr>
-        <tr>
-            <td>Legacy Geth</td>
-            <td><code>ethereumoptimism/l2geth:0.5.29</code></td>
-        </tr>
-        <tr>
-            <td colspan="2"><strong>Contract Addresses</strong></td>
-        </tr>
-        <tr>
-            <td>L2OutputOracleProxy</td>
-            <td><code>0x02Ac1923480E7fd234e7F2Fd11596b9F20372374</code></td>
-        </tr>
-        <tr>
-            <td>OptimismMintableERC20FactoryProxy</td>
-            <td><code>0x60fAF74F5F366B0e8F2D0bBC099a6cD7f5aE352A</code></td>
-        </tr>
-        <tr>
-            <td>OptimismPortalProxy</td>
-            <td><code>0x7Db2f4b1F880257a99e024647CeaD4e3aD63b665</code></td>
-        </tr>
-        <tr>
-            <td>SystemConfigProxy</td>
-            <td><code>0x26B331110F1358b6cD1d6ab3e1015b9f4916d2B7</code></td>
         </tr>
     </tbody>
 </table>
