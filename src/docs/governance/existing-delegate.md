@@ -3,6 +3,13 @@ title: Existing Delegates
 lang: en-US
 ---
     
+::: danger Out of date information
+
+This process is currently under construction for Season 3. 
+Check back soon for updated information.
+
+:::
+
 
 Thank you for being active in Optimism Token House Governance. 
 
