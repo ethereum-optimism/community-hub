@@ -37,7 +37,7 @@ The Optimism Goerli testnet was migrated to Bedrock on January 12, 2023.
         </tr>
         <tr>
             <td>Legacy Geth Data Directory</td>
-            <td><a href="https://storage.googleapis.com/oplabs-goerli-data/goerli-legacy.tar">https://storage.googleapis.com/oplabs-goerli-data/goerli-legacy-archival.tar</a>
+            <td><a href="https://storage.googleapis.com/oplabs-goerli-data/goerli-legacy-archival.tar">https://storage.googleapis.com/oplabs-goerli-data/goerli-legacy-archival.tar</a>
             </td>
         </tr>
         <tr>
