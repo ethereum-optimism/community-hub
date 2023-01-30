@@ -12,9 +12,11 @@ With just a little bit of elbow grease, you too can create contracts that bridge
 [See here for a step by step tutorial](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/cross-dom-comm)
 :::
 
-## Understanding contract calls
+<details>
 
-In order to understand the process of creating bridges between contracts on Layer 1 and Layer 2, you should first have a basic understanding of the way contracts on *Ethereum* communicate with one another.
+<summary><b>Understanding contract calls</b></summary>
+
+To understand the process of creating bridges between contracts on Layer 1 and Layer 2, you should first have a basic understanding of the way contracts on *Ethereum* communicate with one another.
 If you're a smart contract developer, you might be familiar with stuff like this:
 
 ```solidity
@@ -61,6 +63,8 @@ contract MyOtherContract {
 
 Here we're using the [low-level "call" function](https://docs.soliditylang.org/en/v0.8.4/units-and-global-variables.html#members-of-address-types) and one of the [ABI encoding functions built into Solidity](https://docs.soliditylang.org/en/v0.8.4/units-and-global-variables.html#abi-encoding-and-decoding-functions).
 Although these two code snippets look a bit different, they're actually functionally identical.
+
+</details>
 
 ## Communication basics between layers
 
