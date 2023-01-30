@@ -3,6 +3,13 @@ title: Submitting Proposals
 lang: en-US
 ---
 
+::: danger Out of date information
+
+This process is currently under construction for Season 3. 
+Check back soon for updated information.
+
+:::
+
 ## Grant Proposals
 
 ::: tip        
