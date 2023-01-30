@@ -58,8 +58,8 @@ This publication step is what makes Optimism a Layer 2 blockchain.
 Unlike with the standard execution gas fee, users cannot specify a particular gas price or gas limit for this portion of their transaction cost.
 Instead, this fee is automatically deducted from the user's ETH balance on Optimism when the transaction is executed.
 
-[You can read more about this subject here](../developers/build/transaction-fees.md).
-In particular, you should examine [this code sample](../developers/build/transaction-fees.md#displaying-fees-to-users) that explains how to accurately estimate the L1 portion of a transaction's fee.
+[You can read more about this subject here](../developers/build/transaction-fees.md),
+or use [this tutoriial](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/sdk-estimate-gas).
 The total fee paid by a transaction will be a combination of the normal fee estimation formula (`gasPrice * gasLimit`) in addition to the estimated L1 fee.
 
 ### Displaying fees
@@ -75,4 +75,4 @@ You **MUST** deduct both the L2 execution fee and the L1 data fee or the charged
 
 ### Displaying the gas prices
 
-If you want to display the current gas prices, you can [use the `rollup_gasPrices` RPC method](../developers/build/json-rpc.md#rollup-gasprices)
+If you want to display the current gas prices, you can [use the `rollup_gasPrices` RPC method](../developers/build/json-rpc.md#rollup-gasprices) prior to Bedrock, or `eth_gasPrice` in Bedrock.
