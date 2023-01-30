@@ -42,7 +42,9 @@ The Optimism Goerli testnet was migrated to Bedrock on January 12, 2023.
         </tr>
         <tr>
             <td>Block Explorer</td>
-            <td>Coming soon.</td>
+            <td>
+                <a href="https://goerli-optimism.etherscan.io">https://goerli-optimism.etherscan.io</a>
+            </td>
         </tr>
         <tr>
             <td>Public RPC Endpoint</td>
