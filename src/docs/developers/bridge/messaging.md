@@ -12,9 +12,11 @@ With just a little bit of elbow grease, you too can create contracts that bridge
 [See here for a step by step tutorial](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/cross-dom-comm)
 :::
 
-## Understanding contract calls
+<details>
 
-In order to understand the process of creating bridges between contracts on Layer 1 and Layer 2, you should first have a basic understanding of the way contracts on *Ethereum* communicate with one another.
+<summary><b>Understanding contract calls</b></summary>
+
+To understand the process of creating bridges between contracts on Layer 1 and Layer 2, you should first have a basic understanding of the way contracts on *Ethereum* communicate with one another.
 If you're a smart contract developer, you might be familiar with stuff like this:
 
 ```solidity
@@ -62,10 +64,9 @@ contract MyOtherContract {
 Here we're using the [low-level "call" function](https://docs.soliditylang.org/en/v0.8.4/units-and-global-variables.html#members-of-address-types) and one of the [ABI encoding functions built into Solidity](https://docs.soliditylang.org/en/v0.8.4/units-and-global-variables.html#abi-encoding-and-decoding-functions).
 Although these two code snippets look a bit different, they're actually functionally identical.
 
-## Communication basics between layers
+</details>
 
-Cool!
-Now that you have a general idea of how contracts on Ethereum interact with one another, let's take a look at how we do the same thing *between* Optimism and Ethereum.
+## Communication basics between layers
 
 At a high level, this process is pretty similar to the same process for two contracts on Ethereum (with a few caveats).
 **Communication between L1 and L2 is enabled by two special smart contracts called the "messengers"**.
@@ -81,8 +82,7 @@ function sendMessage(
 ) public;
 ```
 
-Look familiar?
-It's the same as that `call` function we used earlier.
+It's the same as that `call` function used for contract messaging within L1 Ethereums.
 We have an extra `_gasLimit` field here, but `call` has that too.
 This is basically equivalent to:
 
@@ -90,10 +90,10 @@ This is basically equivalent to:
 address(_target).call{gas: _gasLimit}(_message);
 ```
 
-Except, of course, that we're calling a contract on a completely different network!
+Except, of course, that we're calling a contract on a completely different network.
 
-We're glossing over a lot of the technical details that make this whole thing work under the hood but whatever.
-Point is, it works!
+We're glossing over a lot of the technical details that make this whole thing work under the hood.
+Point is, it works.
 Want to call a contract on Optimism from a contract on Ethereum?
 It's dead simple:
 
@@ -140,7 +140,10 @@ This is because L2 nodes will wait for a certain number of block confirmations o
 L2 to L1 transactions have to wait two periods:
 
 1. The time until the state root is written to L1.
-   You can estimate this time by looking at how often transactions happen to the State Commitment Chain (on both [mainnet](https://etherscan.io/address/0xBe5dAb4A2e9cd0F27300dB4aB94BeE3A233AEB19) and [goerli](https://goerli.etherscan.io/address/0x9c945ac97baf48cb784abbb61399beb71af7a378)).
+   You can estimate this time by looking at how often transactions happen to the State Commitment Chain (on both [mainnet](https://etherscan.io/address/0xBe5dAb4A2e9cd0F27300dB4aB94BeE3A233AEB19) and [goerli](https://goerli.etherscan.io/address/0xE6Dfba0953616Bacab0c9A8ecb3a9BBa77FC15c0)).
+
+   As of the Bedrock update, it is necessary to provide a Merkle proof of the message on L1 after the state root is written.
+   The fault challenge period starts *after* that proof transaction becomes part of the L1 chain.
 
 1. The [fault challenge period](#understanding-the-challenge-period), which is a few seconds on goerli and seven days on mainnet.
    This waiting period is a core part of the security mechanism designed to keep funds on Optimism secure and cannot be circumvented.
@@ -208,13 +211,19 @@ To see the present values, [go to Etherscan](https://etherscan.io/address/0x5E4e
 
 ### Fees for L2 ⇒ L1 transactions
 
-Each message from L2 to L1 requires two transactions:
+Each message from L2 to L1 requires three transactions:
 
 1. An L2 transaction that *initiates* the transaction, which is priced the same as any other transaction made on Optimism.
-1. An L1 transaction that *finalizes* the transaction. This transaction can only be submitted after the transaction challenge period (7 days on mainnet) has passed. This transaction is expensive because it includes verifying a [Merkle trie](https://eth.wiki/fundamentals/patricia-tree) inclusion proof.
 
-The total cost of an L2 to L1 transaction is therefore the combined cost of the L2 initialization transaction and the L1 finalization transaction.
-The L1 finalization transaction is typically significantly more expensive than the L2 initialization transaction.
+1. An L1 transaction that *proves* the transaction.
+   This transaction can only be submitted after the state root is submitted to L1.
+   This transaction is expensive because it includes verifying a [Merkle trie](https://eth.wiki/fundamentals/patricia-tree) inclusion proof.
+
+1. An L1 transaction that *finalizes* the transaction. 
+   This transaction can only be submitted after the transaction challenge period (7 days on mainnet) has passed. 
+
+The total cost of an L2 to L1 transaction is therefore the combined cost of the L2 initialization transaction and the two L1 transactions.
+The L1 proof and finalization transactions are typically significantly more expensive than the L2 initialization transaction.
 
 ## Understanding the challenge period
 
