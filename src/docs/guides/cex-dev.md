@@ -5,7 +5,9 @@ lang: en-US
 
 ## Connecting to Optimism
 
-You connect to Optimism the same way you do to Ethereum, by connecting to a JSON RPC endpoint. However, the currently supported fork for Optimism is [Berlin](https://eth.wiki/roadmap/berlin), not [London](https://eth.wiki/roadmap/london), so EIP-1559 transactions are not supported yet.
+You connect to Optimism the same way you do to Ethereum, by connecting to a JSON RPC endpoint. 
+However, the currently supported fork for Optimism is [Berlin](https://eth.wiki/roadmap/berlin). 
+After the Bedrock upgrade, we'll support EIP 1559.
 
 ### Endpoints
 
@@ -13,9 +15,10 @@ You connect to Optimism the same way you do to Ethereum, by connecting to a JSON
 
 ### ETH balance
 
-In Optimism the ETH balance of an account is not stored as part of the account's state, but as an ERC-20 balance at address [`0xDeadDeAddeAddEAddeadDEaDDEAdDeaDDeAD0000`](https://explorer.optimism.io/address/0xDeadDeAddeAddEAddeadDEaDDEAdDeaDDeAD0000).
+Prior to Bedrock, the ETH balance of an account is not stored as part of the account's state, but as an ERC-20 balance at address [`0xDeadDeAddeAddEAddeadDEaDDEAdDeaDDeAD0000`](https://explorer.optimism.io/address/0xDeadDeAddeAddEAddeadDEaDDEAdDeaDDeAD0000).
 You can still access it using the standard APIs.
 
+In Bedrock ETH is used precisely the way it is used in L1 Ethereum.
 
 ### Token addresses
 
@@ -35,10 +38,6 @@ To get the total SNX balance of a user that uses Optimism you need to:
 1. Connect to a standard Ethereum endpoint and send a `balanceOf` query to address `0xc011a73ee8576fb46f5e1c5751ca3b9fe0af2a6f`.
 1. Connect to an Optimism endpoint and send a `balanceOf` query to address `0x8700daec35af8ff88c16bdf0418774cb3d7599b4`.
 
-<!--
-TODO: Add a Georli example when we have a token listing with that chainId
--->
-
 
 ## Deposits and withdrawals within Optimism
 
@@ -49,7 +48,8 @@ The ERC-20 contracts on Optimism function the same way they do on Ethereum, so y
 
 Most of the cost of an Optimism transaction is not the gas consumed by the transaction itself (which is priced in most cases at 0.001 gwei), but the cost of writing the transaction in Ethereum. That cost is deducted automatically from the user's balance on Optimism. If you charge your users the cost of withdrawals, you have to account for it.
 
-[You can read more about this subject here](../developers/build/transaction-fees.md). The relevant code sample is [here](../developers/build/transaction-fees/#displaying-fees-to-users).
+[You can read more about this subject here](../developers/build/transaction-fees.md).
+The relevant code is [here](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/sdk-estimate-gas).
 
 
 ## Deposits and withdrawals across chains
