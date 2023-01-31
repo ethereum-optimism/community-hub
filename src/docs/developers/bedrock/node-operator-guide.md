@@ -4,7 +4,7 @@ lang: en-US
 ---
 
 ::: warning This guide is for bedrock
-This guide is for the *bedrock* upgrade, which is coming in Q1, 2023.
+This guide is for the *bedrock* upgrade, which is coming in Q1, 2023, subject to approval by Optimism governance.
 Do not attempt to use this in production prior to that upgrade. Keep an eye on these docs or [our official Twitter](https://twitter.com/OPLabsPBC) for announcements.
 :::
 

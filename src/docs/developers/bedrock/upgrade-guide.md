@@ -3,8 +3,8 @@ title: Upgrade Guide
 lang: en-US
 ---
 
-:::warning This guide is for bedrock
-This guide is for the *bedrock* upgrade, which is coming in Q1, 2023.
+::: warning This guide is for bedrock
+This guide is for the *bedrock* upgrade, which is coming in Q1, 2023, subject to approval by Optimism governance.
 Do not attempt to use this in production prior to that upgrade. Keep an eye on these docs or [our official Twitter](https://twitter.com/OPLabsPBC) for announcements.
 :::
 
@@ -12,24 +12,23 @@ This document provides an overview of how the Bedrock upgrade will be executed a
 
 ## Upgrade Overview
 
-Unlike our previous upgrades, the Bedrock upgrade will not be a "regenesis" event where historical transaction data is lost and the chain resets at block zero. Instead, the Bedrock upgrade will resemble a hard fork where the new Bedrock chain will be a continuation of the old one. This ensures that the upgrade is as seamless as possible.
+Unlike previous upgrades, the Bedrock upgrade will not be a "regenesis" event where historical transaction data is lost and the chain resets at block zero. Instead, the Bedrock upgrade will resemble a hard fork where the new Bedrock chain will be a continuation of the old one. This ensures that the upgrade is as seamless as possible.
 
 The upgrade will proceed as follows on upgrade day:
 
-1. We will pause deposits and withdrawals on the legacy network
-2. We will stop accepting transactions on the legacy sequencer
-3. We will upgrade the smart contracts on L1 and perform an irregular state transition on L2.
-4. We will start up the Bedrock sequencer.
-5. We will re-enable deposits and withdrawals.
-6. We will distribute the contract addresses, binaries, and data directories required to interact with the new system.
+1. Deposits and withdrawals on the legacy network will be paused.
+2. Transactions on the legacy sequencer will no longer be accepted.
+3. The smart contracts on L1 will be upgraded and an irregular state transition on L2 will be performed.
+4. The Bedrock sequencer will start up.
+5. Deposits and withdrawals will be re-enabled.
+6. The contract addresses, binaries, and data directories required to interact with the new system will be distributed.
 
-Backwards compatibility is one of the upgrade's key design goals. We will clearly highlight any potential incompatibilities and their workarounds in the sections below.
-
-## Optimism Goerli Upgrade
-The Bedrock upgrade to the Optimism Goerli Network will begin at 18:00 UTC (10:00 PST/ 13:00 EST) on Thursday January 12, 2023. To follow our progress in getting the sequencer back up on the day of upgrade, please follow our updates on [our status page](https://status.optimism.io/). After the sequencer is back online, major third party infrastructure will slowly return online, which you can track on our [infra status tracker](https://oplabs.notion.site/External-Optimism-Goerli-Bedrock-Upgrade-Infra-Status-Tracker-86e67c08c09a4a85ae7987fca6fb1ddb).
+Backwards compatibility is one of the upgrade's key design goals. 
+Potential incompatibilities and their workarounds are highlighted in the sections below.
 
 ## Optimism Mainnet Upgrade
-The Bedrock upgrade to the Optimism Mainnet Network is yet to be scheduled. We plan to announce an official date and time in February 2023 at least 3 weeks in advance.
+The Bedrock upgrade to the Optimism Mainnet Network is yet to be scheduled. 
+We plan to announce an official date and time in February 2023 at least 3 weeks in advance of the upgrade, subject to approval by Optimism governance.
 
 ## For Node Operators
 
@@ -58,9 +57,9 @@ The best way to prepare for the upgrade is to participate in one of our public t
 
 ## For dApp and Wallet Developers
 
-On upgrade day, we will pause deposits and withdrawals. We will also pause ingress on the sequencer. This means that all transactions on Optimism will be halted for the duration of the upgrade.
+On upgrade day, deposits and withdrawals will be paused, along with ingress on the sequencer. This means that all transactions on Optimism will be halted for the duration of the upgrade.
 
-Once the upgrade is complete, however, everything should be identical to how it was before the upgrade. All balances, contract addresses, transaction data, block data, and historical execution traces will be preserved. The new network is EVM-equivalent, so all existing Ethereum tooling will continue to work with the new system. The only differences are described in [How is Bedrock Different?](./how-is-bedrock-different.md).
+Once the upgrade is complete, everything should be identical to how it was before the upgrade. All balances, contract addresses, transaction data, block data, and historical execution traces will be preserved. The new network is EVM-equivalent, so all existing Ethereum tooling will continue to work with the new system. Differences are described in [How is Bedrock Different?](./how-is-bedrock-different.md).
 
 ## FAQs
 
@@ -88,11 +87,12 @@ You only need to run Legacy Geth if you need historical execution traces.
 
 ### What version of upstream Geth is op-geth based off of?
 
-`op-geth` is currently based off of the `1.10.x` version of `go-ethereum`. We periodically update `op-geth` to include the latest upstream changes.
+`op-geth` is currently based off of the `1.10.x` version of `go-ethereum`. 
+`op-geth` is periodically updated include the latest upstream changes.
 
 ### How can I see the difference between upstream Geth and op-geth?
 
-We maintain a single-commit diff on our `op-geth` repository. See [here](https://github.com/ethereum-optimism/op-geth/compare/master...optimism) for the comparison.
+A single-commit diff is maintained in the `op-geth` repository. See [here](https://github.com/ethereum-optimism/op-geth/compare/master...optimism) for the comparison.
 
 ### Will transaction tracing for post-Bedrock data be faster?
 
