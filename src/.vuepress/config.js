@@ -340,10 +340,10 @@ module.exports = {
         },
         '/docs/developers/media.md',
         {
-          title: "Bedrock (future version)",
+          title: "OP Stack: Bedrock",
           children: [
-            '/docs/developers/bedrock.md',
-            '/docs/developers/bedrock/how-is-bedrock-different.md',
+            ['/docs/developers/bedrock/explainer.md', 'Explainer'],
+            ['/docs/developers/bedrock/differences.md', 'Differences'],
             '/docs/developers/bedrock/public-testnets.md',
             '/docs/developers/bedrock/node-operator-guide.md',
             '/docs/developers/bedrock/upgrade-guide.md',
