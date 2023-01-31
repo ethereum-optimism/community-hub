@@ -3,7 +3,7 @@ title: Bedrock Differences
 lang: en-US
 ---
 
-Bedrock is the next major release of the Optimism network, planned for the first quarter of 2023. 
+Bedrock is the next major release of the Optimism network, planned for the first quarter of 2023 (subject to approval by Optimism governance). 
 It will further reduce [the differences between Optimism and L1 Ethereum](https://op-geth.optimism.io/).
 Here are the major changes:
 
@@ -26,7 +26,7 @@ Timing may also be relevant.
 <details>
 <summary>Dapp frontend developer</summary>
 
-As an application developer you are probably interested in the fact bedrock has a mempool and the changes in transaction fees. 
+As an application developer you are probably interested in the fact Bedrock has a mempool and the changes in transaction fees. 
 You might also be interested in changes in the RPC interface and block timing.
 
 - [EIP-1559](#eip-1559)
@@ -40,7 +40,7 @@ You might also be interested in changes in the RPC interface and block timing.
 <details>
 <summary>Dapp backend (protocol) developer</summary>
 
-As an application developer you are probably interested in the fact bedrock has a mempool and the changes in transaction fees. 
+As an application developer you are probably interested in the fact Bedrock has a mempool and the changes in transaction fees. 
 You might also be interested in changes in the RPC interface and block timing.
 
 - [EIP-1559](#eip-1559)
@@ -81,7 +81,10 @@ As a bridge developer you are likely most interested in deposits into Optimism a
 ### Block Production
 
 :::warning Block Time Subject to Change
-Do not make assumptions around the block time. It may be changed in the future.
+
+Currently blocks are produced every two seconds.
+However, that value may change in the future.
+
 :::
 
 Unlike the legacy network which mines a block for every incoming transaction, the Bedrock network will produce new blocks every two seconds. This introduces the following changes to the EVM:
@@ -111,10 +114,10 @@ As part of the Bedrock upgrade, we have upgraded the network to support [EIP-155
 
 There are some differences between Ethereum and Optimism in this regard:
 
-- ETH is not burned, but used to pay protocol expenses. Burning ETH on L2 would only lock it in the bridge forever.
+- ETH is not burned. Burning ETH on L2 would only lock it in the bridge forever.
 - The EIP 1559 parameters have different values. Once those values are finalized they will be posted here.
 
-The L1 security fee, which is the majority of the transaction cost, uses the same mechanism as before the upgrade. However, we are going to submit the transactions to L1 on a [non-contract address](#the-transaction-trail). Between that and improved compression, we hope to reduce the L1 security fee by about 20%.
+The L1 security fee, which is the majority of the transaction cost, uses the same mechanism as before the upgrade. However, the transactions to L1 are going to be submitted on a [non-contract address](#the-transaction-trail). Between that and improved compression, the L1 security fee should be reduced by about 20%.
 
 From an application development perspective, EIP-1559 introduces the following changes:
 
@@ -201,7 +204,8 @@ Visualized, this flow looks like this:
 
 </div>
 
-By posting the proof upfront, it gives on-chain monitoring tools enough time to detect a fraudulent withdrawal proof so that we can take appropriate action. Regular users can do this monitoring too. For example, an exchange could halt withdrawals in the event of a fraudulent proof.
+By posting the proof upfront, it gives on-chain monitoring tools enough time to detect a fraudulent withdrawal proof and attempt corrective action. 
+Regular users can do this monitoring too. For example, an exechange could halt withdrawals in the event of a fraudulent proof.
 
 Since this change fundamentally changes the way withdrawals are handled, it is **not** backwards-compatible with the old network. If you are performing withdrawals outside our standard bridge interface, you will need to update your software. The easiest way to to do this is to use our [TypeScript SDK](https://github.com/ethereum-optimism/optimism/tree/develop/packages/sdk), which includes two-phase withdrawals support out of the box.
 
@@ -233,7 +237,7 @@ This is the contract that replaces the old State Commitment Chain.
 
 #### Existing interface
 
-These contracts provide the same interface as existed pre-bedrock so dapps don’t have to be modified to run on bedrock.
+These contracts provide the same interface as existed pre-Bedrock so dapps don’t have to be modified to run on Bedrock.
 
 
 - [L1CrossDomainMessenger](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L1/L1CrossDomainMessenger.sol):
@@ -276,12 +280,12 @@ The fees are calculated using [EIP 1559](https://github.com/ethereum/EIPs/blob/m
 
 #### Existing interface
 
-These contracts provide the same interface as existed pre-bedrock so dapps don’t have to be modified to run on bedrock.
+These contracts provide the same interface as existed pre-Bedrock so dapps don’t have to be modified to run on Bedrock.
 
 
 - [L1BlockNumber](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L2/L1BlockNumber.sol): 
   The `L1BlockNumber` contract provides the number of the latest L1 block. 
-  In bedrock it is simply a proxy to [`L1Block`](#l1block). 
+  In Bedrock it is simply a proxy to [`L1Block`](#l1block). 
 - [L2CrossDomainMessenger](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L2/L2CrossDomainMessenger.sol):
   The `L2CrossDomainMessenger` contract is used to send messages from Optimism to Ethereum.
 - [L2StandardBridge](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L2/L2StandardBridge.sol):
@@ -298,7 +302,7 @@ These are contracts that are no longer relevant, but are kept as part of the sta
   The `DeployerWhitelist` contract used to manage the whitelist before [Optimism moved out of beta](https://twitter.com/optimismFND/status/1471571415774023682).
 
 - [OVM_ETH](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L2/OVM_ETH.sol):
-  The `OVM_ETH` contract used to manage users ETH balances prior to bedrock.
+  The `OVM_ETH` contract used to manage users ETH balances prior to Bedrock.
 
 ## Communication between layers
 
@@ -308,16 +312,19 @@ Similarly, "withdrawal" refers to any message going from Optimism to Ethereum.
 [See here for the messenger specs](https://github.com/ethereum-optimism/optimism/blob/develop/specs/messengers.md) and [here for the bridge specs](https://github.com/ethereum-optimism/optimism/blob/develop/specs/bridges.md).
 
 
+<!--
 ### Gas cost changes
 
 The gas costs for communication between layers are going to change, they will probably get lower. 
 More information will be posted here once we have more exact information after we profile a test network.
 
+-->
+
 <!-- TODO get the figures and put them here -->
 
 ### Deposits (from Ethereum to Optimism)
 
-To create a deposit we recommend that you use the pre-bedrock contracts [`L1StandardBridge`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L1/L1StandardBridge.sol) and [`L1CrossDomainMessenger`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L1/L1CrossDomainMessenger.sol).
+To create a deposit we recommend that you use the pre-Bedrock contracts [`L1StandardBridge`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L1/L1StandardBridge.sol) and [`L1CrossDomainMessenger`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L1/L1CrossDomainMessenger.sol).
 [`OptimismPortal`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L1/OptimismPortal.sol) also has low-level deposit functionality.
 
 With the OptimismPortal’s `depositTransaction` function you can do from L1 anything you can do by contacting L2 directly: send transactions, send payments, create contracts, etc.
@@ -330,7 +337,7 @@ We recommend adding a 50% buffer to whatever is returned by `estimateGas` to ens
 
 
 :::tip
-In order to prevent the Optimism network from being DOSed via forced L1 to L2 transactions that bypass the Sequencer, we have added a fee adjustment schedule to all L1→L2 transactions that closely mimics EIP1559. Like in the current network, deposit fees are paid by burning some amount of L1 gas proportional to your deposit's L2 gas limit. Unfortunately, this means that you may have cases where you estimate how much gas an L1→L2 deposit will cost, and deposit fees increase by the time your transaction gets included in a block and executed, causing your deposit to run out of gas and revert. This is why we recommend adding a 50% buffer to your `gasLimit` to ensure your deposit will not run out of gas.
+In order to prevent the Optimism network from being DOSed via forced L1 to L2 transactions that bypass the Sequencer, a fee adjustment schedule to all L1→L2 transactions that closely mimics EIP1559 is included with Bedrock. Like in the current network, deposit fees are paid by burning some amount of L1 gas proportional to your deposit's L2 gas limit. Unfortunately, this means that you may have cases where you estimate how much gas an L1→L2 deposit will cost, and deposit fees increase by the time your transaction gets included in a block and executed, causing your deposit to run out of gas and revert. This is why we recommend adding a 50% buffer to your `gasLimit` to ensure your deposit will not run out of gas.
 :::
 
 Deposits that come from contracts still use [address aliasing](../build/differences.md#address-aliasing).
