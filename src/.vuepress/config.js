@@ -172,7 +172,7 @@ module.exports = {
             '/docs/governance/token-house-history.md',
             '/docs/governance/gov-fund.md', 
             [
-              'https://docs.google.com/spreadsheets/d/1eaHOlWB34ij1KGsXdaNyTQg4tt1Pu2JurJsElBb6a8k/edit#gid=0',
+              "https://docs.google.com/spreadsheets/d/1Ul8iMTsOFUKUmqz6MK0zpgt8Ki8tFtoWKGlwXj-Op34",
               "Governance Fund Tracker"
             ],            
             [
