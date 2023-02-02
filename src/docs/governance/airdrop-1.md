@@ -7,7 +7,7 @@ lang: en-US
 ## Background
 
 The Optimism Foundation’s Airdrop #1 rewards those who have been instrumental as early adopters and active users of projects in the Optimism ecosystem. 
-To celebrate our Ethereum roots, The Optimism Foundation also want to welcome active L1 participants who can help scale Ethereum’s innovations, culture, and values to Layer 2. 
+To celebrate our Ethereum roots, The Optimism Foundation also wants to welcome active L1 participants who can help scale Ethereum’s innovations, culture, and values to Layer 2. 
 In total, **248,699** addresses are eligible to claim OP in this *initial* airdrop.
 
 Our airdrop has six sets of criteria. 
@@ -63,7 +63,7 @@ These rules aim to target behaviors that match Ethereum and Optimism’s values 
 
 #### DAO Voters
 
-The Foudation believes that active and engaged governance is crucial to scaling decentralized systems. 
+The Foundation believes that active and engaged governance is crucial to scaling decentralized systems. 
 Addresses who match this criterion have actively chosen to actively contribute by participating in governance.
 
 *Criterion: Address has either voted on or authored at least one proposal on-chain, or at least two on Snapshot (off-chain).*
@@ -115,7 +115,7 @@ So we applied some basic filters to various criteria:
   This applied to all Ethereum criteria except for multisig signers, since it’s common for signers to have “signing-only” addresses.
 - **Sybil Farmers:** We identified a few patterns of likely sybil attackers, who often created tens, hundreds, or more duplicate addresses. 
   We required stronger activity criteria for these addresses, which helped filter out these attackers, but also preserved many real users. 
-  It’s impossible to catch everything, but removing as many sybillors as we can helps get more OP in the hands of true positive-sum participants.
+  It’s impossible to catch everything, but removing as many sybillors as we can help get more OP in the hands of true positive-sum participants.
 - **Snapshot Bots and Spam:** We used [ENS’ bot-catching proposal](https://snapshot.org/#/ens.eth/proposal/QmfLwPbo5UwnyvkXo7emsSMDMFCr8UtJ76n87v9Rf7gEuH) to filter out addresses that spam Snapshot votes. Snapshot spaces that appeared to be either compromised or falsified were also excluded.
 - **Exchanges and On-Ramps:** We filtered our known centralized exchange and fiat on-ramp addresses.
 - **Exploiters:** Known exploit addresses were filtered out.

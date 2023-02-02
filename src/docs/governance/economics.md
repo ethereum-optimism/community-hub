@@ -61,7 +61,7 @@ The aggregate effect is an ecosystem that is easier to build on, learn about, an
 
 But what value do these public goods provide, and for whom is it valuable? 
 This is a rich design space. 
-Optimism’s governance is designed to create conditions for experimentation around this questions. 
+Optimism’s governance is designed to create conditions for experimentation around this question. 
 The Foundation draws heavily on the work of Ostrom, Vitalik, and others to make sure funding for public goods is maximally efficient, effective, and safe. 
 
 To start, Foundation governance is shared and divided through a two-house system, where network parameters for the amount of funding are controlled by both houses, but the governance of RetroPGF allocation is determined by a set of Citizens with local knowledge and skin in the game.
