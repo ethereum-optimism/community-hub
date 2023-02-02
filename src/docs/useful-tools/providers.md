@@ -78,6 +78,17 @@ On the platform, there are also [Public APIs](https://blastapi.io/public-api/opt
 
 - Optimism Ethereum
 
+## Chainnodes
+
+### Description and Pricing
+
+[Chainnodes](https://www.chainnodes.org/) offers low-latency archival nodes for Optimism with a free tier and transparent pricing for all needs. Websocket support is included for all networks. Debug and trace APIs and archival requests are available and free.
+
+### Supported Networks
+
+- Optimism Ethereum
+- Optimism Goerli
+
 ## GetBlock
 
 [GetBlock developer](https://getblock.io/en/nodes/optimism/) tools and valuable insights guarantee a simple and reliable API access to multiple blockchains.
