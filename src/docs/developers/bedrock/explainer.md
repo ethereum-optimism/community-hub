@@ -206,7 +206,7 @@ With Bedrock, the OP Stack leans heavily into the technical separation of concer
 
 An **execution client** is the system that sequencers and other kinds of node operators run to determine the state of the [canonical L2 chain](#protocol). It also performs other functions such as processing inbound transactions and communicating them peer-to-peer, and handling the state of the system to process queries against it.
 
-With Bedrock, the OP Stack is designed to reuse E[thereum’s own execution client specifications](https://github.com/ethereum/execution-specs) and its many implementations. In this release, Bedrock has demonstrated an extremely limited modification of go-ethereum, the most popular Ethereum client written in Go, to a [diff of less than 2000 lines of code](https://op-geth.optimism.io/).
+With Bedrock, the OP Stack is designed to reuse [Ethereum’s own execution client specifications](https://github.com/ethereum/execution-specs) and its many implementations. In this release, Bedrock has demonstrated an extremely limited modification of go-ethereum, the most popular Ethereum client written in Go, to a [diff of less than 2000 lines of code](https://op-geth.optimism.io/).
 
 There are two fundamental reasons for having any diff at all: handling deposited transactions, and charging transaction fees.
 
@@ -252,7 +252,7 @@ The most common way to use a [rollup node](#rollup-node) is to participate in a 
 
 Nodes participating in the network may make use of the safe and unsafe heads of the L2 they're syncing.
 
--The **safe L2 head** represents the rollup that can be constructed where every block up to and including the head can be fully derived from the reference L1 chain, before L1 has necessarily finalized (i.e., a re-org may occur on L1 still).
+- The **safe L2 head** represents the rollup that can be constructed where every block up to and including the head can be fully derived from the reference L1 chain, before L1 has necessarily finalized (i.e., a re-org may occur on L1 still).
 - The **unsafe L2 head** includes [unsafe blocks](https://github.com/ethereum-optimism/optimism/blob/develop/specs/glossary.md#unsafe-l2-block) that have not yet been derived from L1. These blocks either come from operating the [rollup node](#rollup-node) as a sequencer or from [unsafe sync](https://github.com/ethereum-optimism/optimism/blob/develop/specs/glossary.md#unsafe-sync) with the sequencer. This is also known as the "latest" head. The safe L2 head is always chosen over the unsafe L2 head in cases of disagreements. When disagreements occur, the unsafe portion of the chain will reorg.
 
 For most purposes, nodes in the L2 network will refer to the unsafe L2 head for end-user applications.
