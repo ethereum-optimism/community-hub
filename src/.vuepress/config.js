@@ -342,8 +342,8 @@ module.exports = {
         {
           title: "OP Stack: Bedrock",
           children: [
-            ['/docs/developers/bedrock/explainer.md', 'Explainer'],
-            ['/docs/developers/bedrock/differences.md', 'Differences'],
+            '/docs/developers/bedrock/explainer.md',
+            '/docs/developers/bedrock/differences.md',
             '/docs/developers/bedrock/public-testnets.md',
             '/docs/developers/bedrock/node-operator-guide.md',
             '/docs/developers/bedrock/upgrade-guide.md',
