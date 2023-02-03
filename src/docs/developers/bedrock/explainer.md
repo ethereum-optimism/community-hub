@@ -232,7 +232,7 @@ Bedrock specifies that both of these fees are added up into a single `gasPrice` 
 
 ### Rollup Node
 
-Unlike Ethereum, Bedrock does not have proof-of-stake consensus. Instead, the consensus of the [canonical L2 chain](#protocol) is defined by [block derivation](#block-derivation). An [execution client](#execution-client) of the OP Stack communicates to a new component that implements [block derivation](#block-derivation) called a **[rollup node](#rollup-node)**. This node communicates to the [execution client](#execution-client) using the exact same [Engine API](https://github.com/ethereum/execution-apis/tree/main/src/engine) that Ethereum uses.
+Unlike Ethereum, Bedrock does not have proof-of-stake consensus. Instead, the consensus of the [canonical L2 chain](#protocol) is defined by [block derivation](#block-derivation). An [execution client](#execution-client) of the OP Stack communicates to a new component that implements [block derivation](#block-derivation) called a **rollup node**. This node communicates to the [execution client](#execution-client) using the exact same [Engine API](https://github.com/ethereum/execution-apis/tree/main/src/engine) that Ethereum uses.
 
 The [rollup node](#rollup-node) is a stateless component responsible for deriving the state of the system by reading data and [deposits](#deposits) on the L1. In Bedrock, a [rollup node](#rollup-node) can either be used to sequence incoming transactions from users or other [rollup nodes](#rollup-node) or to verify confirmed transactions posted on the L1 by singularly relying on the L1.
 
