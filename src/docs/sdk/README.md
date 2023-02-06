@@ -4,7 +4,7 @@ lang: en-US
 ---
 
 In most ways Optimism is [EVM equivalent](https://medium.com/ethereum-optimism/introducing-evm-equivalence-5c2021deb306).
-However, the are [a few differences](../developers/build/differences/), which sometimes require decentralized applications to access Optimism-specific services.
+However, there are [a few differences](../developers/build/differences/), which sometimes require decentralized applications to access Optimism-specific services.
 
 For example, decentralized applications might need to estimate gas costs.
 The standard Ethereum tooling assumes that gas cost is proportional to the gas used by the transaction, which is correct on L1, but not on Optimism.
