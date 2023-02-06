@@ -4,7 +4,7 @@ lang: en-US
 ---
 
 ::: tip EVM Equivalence
-As Optimism is [EVM Equivalent](https://medium.com/ethereum-optimism/introducing-evm-equivalence-5c2021deb306), most debugging tools work out the box with Optimism.
+As Optimism is [EVM Equivalent](https://medium.com/ethereum-optimism/introducing-evm-equivalence-5c2021deb306), most debugging tools work out of the box with Optimism.
 :::
 
 ## Tenderly
@@ -15,7 +15,7 @@ You can inspect the state of your verified contract in any step of the transacti
 ## Etherscan
 
 [Etherscan](https://explorer.optimism.io) allows you to see events as well as revert messages for transactions that have been mined on Optimism (mainnet) as well as [Optimism Goerli (testnet)](https://goerli-explorer.optimism.io). 
-You can see more information about all the L2 features Etherscan offers in our [Explorers page](./explorers.md#etherscan).
+You can see more information about all the L2 features Etherscan offers on our [Explorers page](./explorers.md#etherscan).
 
 
 ## Blockscout
