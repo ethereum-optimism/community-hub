@@ -16,7 +16,7 @@ By funding public goods sustainably, the Collective can create a rich ecosystem 
 
 **Nomination window**: Jan 17 - Jan 31 19:00 GMT
 
-**Project opt-in deadline**: Feb 14
+**Project opt-in deadline**: Feb 21
 
 **Voting window**: Feb 28 - Mar 14
 
@@ -42,18 +42,18 @@ RetroPGF 2 focuses on a narrow, Optimism-specific scope of impact to drive the c
 
 ## Nominations
 
-Nominations will be open from **Jan 17 to Jan 31 19:00 GMT**. During this window, anyone can nominate a project for funding.
+Nominations are open from **Jan 17 to Jan 31 19:00 GMT**. During this window, anyone can nominate a project for funding.
 Here the term “project” can describe work that has been done by both an individual or a group. 
 Collections, a term used to describe projects without a single person or entity that can be verified via GitHub or Twitter, may only be nominated by the Optimism Foundation. 
 
-Nominations will take place on the [Optimism Governance Forum](https://gov.optimism.io/t/nominations-for-retropgf2/4636). Any community member can nominate a project by supplying: 
+Nominations take place on the [Optimism Governance Forum](https://gov.optimism.io/t/nominations-for-retropgf2/4636). Any community member can nominate a project by supplying: 
 
 - the project name
 - A description of how the project has supported development and usage of the OP Stack
 - a link to projects GitHub or Twitter
 - (optional) contact info for the project or project lead
 
-### You can nominate projects by category on the below forum posts
+### Projects can be nominated by category on the below forum posts
 
 - [**Nominations for Infrastructure + Dependencies**](https://gov.optimism.io/t/infrastructure-dependencies-nominations-for-rpgf2/4637)
 
@@ -65,11 +65,13 @@ Nominations will take place on the [Optimism Governance Forum](https://gov.optim
 
 ## Funding Eligibility
 
-Any project that has been nominated for RetroPGF 2 must complete a project profile on the **RetroPGF Application Manager** on the Optimism website in order to be eligible for voting. 
+Any project that has been nominated for RetroPGF 2 must complete a project profile on the [**RetroPGF Application Manager**](https://app.optimism.io/retropgf-manager) on the Optimism website in order to be eligible for voting. 
 
-The Application Manager will ask for information about your project, including authentication with Twitter or GitHub to prevent impersonations. 
+[**You can find the RetroPGF application manager here**](https://app.optimism.io/retropgf-manager)
 
-The Application Manager will also ask for information about team size, funding amount, impact provided to the Collective. 
+The Application Manager asks for information about your project, including authentication with Twitter or GitHub to prevent impersonations. 
+
+The Application Manager also asks for information about team size, funding amount, impact provided to the Collective. 
 This information will help voters make choices about how to allocate funding. 
 
 After project nominations close, the Optimism Foundation will review completed profile submissions for spam and fraud. 
@@ -81,7 +83,7 @@ For more information and guidance on the nomination and application process for 
 
 ## Voting Badge distribution
 
-✨ Voting Badges for RetroPGF 2 will be distributed to a set of **90 community members.**
+✨ Voting Badges for RetroPGF 2 are distributed to a set of **90 community members.**
 
 1. **One badge distributed to each voter from RetroPGF Round 1**, excluding full time employees of OP Labs or the Optimism Foundation. (14 badges, [list](https://docs.google.com/spreadsheets/d/1g4ilAByMNQsmlBC8cskQip7Ojd_qK6IhozJCyoVfU9k/edit#gid=0)) 
 2. **One badge given to an individual selected by each of the previous voters in RetroPGF Round 1** (14 badges) 
@@ -100,15 +102,15 @@ For more information and guidance on the nomination and application process for 
 - Badgeholders with any participation or ownership stake in a project up for vote in RetroPGF 2 will be expected to not vote in favor of that project. Rules around conflicts of interest will be itemized in a forthcoming Badgeholder Manual
 - Citizens’ House adheres to “one person one vote.” If an individual falls into more than one category above or is nominated more than once, they will still receive only one voting badge
 
-Badgeholders will be added to a public channel on Discord for announcements and discussion. 
+Badgeholders are added to a public channel on Discord for announcements and discussion. 
 
 
 
 ## Voting
 
-Each badgeholder will be asked to vote during a ten-day window from Feb 28 - Mar 14.
+Each badgeholder is asked to vote during a ten-day window from Feb 28 - Mar 14.
 
-Voters will be able to filter, sort, and search projects. 
+Voters are able to filter, sort, and search projects on the RetroPGF discovery UI. 
 Projects will be displayed with their answers to the application questions included in the project profile created via the RPGF Application Manager.
 
 Votes will be aggregated as a simple weighted average, not as a quadratic vote. 
