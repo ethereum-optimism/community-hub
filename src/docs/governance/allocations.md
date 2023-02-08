@@ -40,8 +40,7 @@ Airdrop #1 cast a wide net to distribute OP to more than 250k addresses. See the
 
 An allocation of **14%** of the OP token supply will be held in reserve for future user airdrops. 
 As a result of the game-able nature of airdrops, the Optimism Foundation will be responsible for determining airdrop metrics as fairly as possible. 
-The intent behind airdrops is to distribute them to addresses which positively impact the Optimism community. 
-The best way to improve your odds of receiving future airdrops is to get involved!
+The intent behind airdrops is to distribute them to addresses which positively impact the Optimism community. Participation on governance forums will not be used as a criteria for future airdrops. The best way to improve your odds of receiving future airdrops is to get meaningfully involved!
 
 ## Ecosystem Fund
 
@@ -70,7 +69,7 @@ Each fund can be thought of as a parallel experiment in OP allocation, enabling 
 ### Governance Fund
 
 An allocation of **5.4%** of the OP token supply will be dedicated to the first Governance Fund. 
-All projects demonstrating usage on Optimism can request tokens from this fund at [gov.optimism.io](https://gov.optimism.io/)
+All projects demonstrating usage on Optimism can request tokens from this fund via the [Optimism Grants Council](https://foul-porch-0eb.notion.site/Optimism-Grants-Council-090bb648d1854136b9630c608da7a8bc)
 
 ### Partner Fund
 
