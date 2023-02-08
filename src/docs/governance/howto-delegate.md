@@ -30,7 +30,7 @@ If you do not wish to delegate your voting power to a representative, you will s
 
 1. Your delegate should write up the reasoning behind their votes in a [Delegate Communications Thread](https://gov.optimism.io/c/governance/41).
 
-Delegation is always in your control. You can return to the [delegation page](https://app.optimism.io/delegates) at any time to change your delegate selection, or to re-delegate voting power to yourself (more below).
+Delegation is always in your control. You can return to the [delegation app](https://app.optimism.io/delegates) at any time to change your delegate selection. 
 
 ### How do I delegate to myself?
 
@@ -38,13 +38,11 @@ Would you rather vote yourself?
 No problem, but you’ll have to delegate to yourself first! 
 If you try to vote with your tokens but have not delegated to yourself, you will not be able to vote. 
 
-1. [Delegate to yourself](https://help.optimism.io/hc/en-us/articles/6296720540955-How-do-I-delegate-to-myself-).
+1. Delegate to yourself by registering via the [Optimsim Governance Portal](https://vote.optimism.io/) following the [delegate commitment template](https://gov.optimism.io/t/delegate-commitments/235)
 
-1. [Go to the delegates app](https://vote.optimism.io/) to see that you’ve delegated your tokens to your own address.
+1. [Go to the delegates app](https://app.optimism.io/delegates) to see that you’ve delegated your tokens to your own address.
 
    Please note that delegate voting power is measured at the start of every voting period, which is every five weeks.
-
-   If you want to become a delegate that others delegate to you need register via the [Optimism Governance Portal](https://vote.optimism.io/).
 
 1. Once you’ve been added as a delegate in the next voting cycle, you can start [voting](https://vote.optimism.io/)!
 
