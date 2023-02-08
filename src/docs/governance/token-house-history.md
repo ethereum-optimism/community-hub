@@ -25,7 +25,6 @@ You can see up to date information about the seasons and voting cycles in [the g
 
 ## History
 
-<!--
 ### Season #3: January 26th, 2023 - April 5th, 2023
 
 * Voting cycle #11 (March 2nd - April 5th)
@@ -33,13 +32,12 @@ You can see up to date information about the seasons and voting cycles in [the g
 
 ### Reflection Period #2
  
-*[Protocol Delegation Elections](https://snapshot.org/#/opcollective.eth/proposal/0x88583c43b196ec86cee45345611b582108f1d6933ab688a7cae992a6baa552a6)
-*[Grants Council Elections - Growth Experiments](https://snapshot.org/#/opcollective.eth/proposal/0xa9457a5344747a6c272de786419fc7a4e83fcf0f927ef9b1ce767452faa9b453)
-*[Grants Council Elections - Builders](https://snapshot.org/#/opcollective.eth/proposal/0xdcff47b93fb17a11411bda1809e22cba72e5131d31624e4c0f2b9dbee6811f5c)
-*[Badgeholder Nomination Voting](https://snapshot.org/#/opcollective.eth/proposal/0x22d4c3ab56832de58c1774d1a0aeb61ba6dde8b16c0f8382f85d8935f3ee1f11)
-*[Protocol Delegation Program](https://snapshot.org/#/opcollective.eth/proposal/0x3a1f9a30c47d6060f3b732404f3a6b2ceba3da07be0505ef0f93b6dab7fa3185)
-*[Grants Council](https://snapshot.org/#/opcollective.eth/proposal/0x37fc8a6ae60cff2e4e72fe9c0567f739bb9a78262c2ada236892fcbc7af2c32d)
--->
+* [Protocol Delegation Elections](https://snapshot.org/#/opcollective.eth/proposal/0x88583c43b196ec86cee45345611b582108f1d6933ab688a7cae992a6baa552a6)
+* [Grants Council Elections - Growth Experiments](https://snapshot.org/#/opcollective.eth/proposal/0xa9457a5344747a6c272de786419fc7a4e83fcf0f927ef9b1ce767452faa9b453)
+* [Grants Council Elections - Builders](https://snapshot.org/#/opcollective.eth/proposal/0xdcff47b93fb17a11411bda1809e22cba72e5131d31624e4c0f2b9dbee6811f5c)
+* [Badgeholder Nomination Voting](https://snapshot.org/#/opcollective.eth/proposal/0x22d4c3ab56832de58c1774d1a0aeb61ba6dde8b16c0f8382f85d8935f3ee1f11)
+* [Protocol Delegation Program](https://snapshot.org/#/opcollective.eth/proposal/0x3a1f9a30c47d6060f3b732404f3a6b2ceba3da07be0505ef0f93b6dab7fa3185)
+* [Grants Council](https://snapshot.org/#/opcollective.eth/proposal/0x37fc8a6ae60cff2e4e72fe9c0567f739bb9a78262c2ada236892fcbc7af2c32d)
 
 ### Season #2: Aug 25th - Nov 9th, 2022
 
