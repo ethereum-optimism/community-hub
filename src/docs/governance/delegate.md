@@ -21,19 +21,12 @@ This is the process to become a delegate:
 
 ### Step 1: Commit
 
-* Read the delegate responsibilities
-* Post a completed [delegate commitment form](https://gov.optimism.io/t/delegate-commitments/235). 
-  If you have any questions about the form, ask in the [delegation questions feedback thread](https://gov.optimism.io/t/delegation-questions-feedback-thread/236)
-* It is not required, but you probably also want to [delegate your OP tokens' voting power to yourself](https://app.optimism.io/delegates).
-  Please note that the expectation is that token grants **will not be** self-delegated to grant recipients.
+* Read the delegate responsibilities on the [forum](https://gov.optimism.io/t/delegate-commitments/235) and make sure you understand the responsibilities. 
+
 
 ### Step 2: Set up your profile  
 
-* Set up your delegate profile. 
-
-  Please note that delegate avatars are taken from ENS. 
-  [If you want to change your avatar, you’ll need to do it via ENS](https://medium.com/the-ethereum-name-service/step-by-step-guide-to-setting-an-nft-as-your-ens-profile-avatar-3562d39567fc).
-
-  The Optimism Foundation will add new profiles to the [delegate site](https://app.optimism.io/delegates) once per Season. 
-
+* Register to be a delegate on the [Optimism Governance Portal](https://vote.optimism.io/) following the [delegate commitment form](https://gov.optimism.io/t/delegate-commitments/235)
+* It is not required, but you probably also want to [delegate your OP tokens' voting power to yourself](https://vote.optimism.io/).
+  Please note that the expectation is that token grants **will not be** self-delegated to grant recipients.
 
