@@ -38,7 +38,7 @@ Would you rather vote yourself?
 No problem, but you’ll have to delegate to yourself first! 
 If you try to vote with your tokens but have not delegated to yourself, you will not be able to vote. 
 
-1. Delegate to yourself by registering via the [Optimsim Governance Portal](https://vote.optimism.io/) following the [delegate commitment template](https://gov.optimism.io/t/delegate-commitments/235)
+1. Delegate to yourself by registering via the [Optimism Governance Portal](https://vote.optimism.io/) following the [delegate commitment template](https://gov.optimism.io/t/delegate-commitments/235)
 
 1. [Go to the delegates app](https://app.optimism.io/delegates) to see that you’ve delegated your tokens to your own address.
 
