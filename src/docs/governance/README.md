@@ -26,7 +26,7 @@ Initially, the Collective's model of digital democratic governance will consist
 
 ## Token House
 
-Governance of the Optimism Collective began with the launch of the OP token and the [Token House]. 
+Governance of the Optimism Collective began with the launch of the OP token and the Token House. 
 OP was distributed to hundreds of thousands of addresses that engaged in positive-sum, community-oriented behavior with [Airdrop #1](airdrop-1.md). 
 You can read more about the [distribution criteria here](airdrop-1.md). 
 
@@ -55,4 +55,4 @@ For details about RetroPGF 2, visit [the RetroPGF 2 program details](./retropgf-
 For plans around identity and governance, see [the Citizenship page](./citizenship.md).  
 
 **What is described here is an initial experiment**. 
-The specifics of this system will evolve as the [Collective](token-house.md)grows.
+The specifics of this system will evolve as the [Collective](token-house.md) grows.
