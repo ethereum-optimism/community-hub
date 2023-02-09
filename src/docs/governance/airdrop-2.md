@@ -24,7 +24,7 @@ Read on for more detail about eligibility criteria and distribution.
 Airdrop #2 is distributed directly to eligible wallets. 
 There is no need to claim tokens by interacting with any website.
 Do not trust any website pretending to help you claim your tokens for Airdrop #2. 
-If an address is eligible, it will have tokens sent directly to it at approximately 2:00pm EST on February 9th, 2023.
+If an address is eligible, it will have tokens sent directly to it on February 9th, 2023 by 8pm ET.
 
 :::
 
