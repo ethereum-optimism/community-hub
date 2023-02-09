@@ -140,8 +140,9 @@ module.exports = {
           children: [
             '/docs/governance/howto-delegate.md',
             '/docs/governance/economics.md',
-            '/docs/governance/allocations.md',             
-            '/docs/governance/airdrop-1.md'    
+            '/docs/governance/allocations.md',
+            '/docs/governance/airdrop-2.md',                         
+            '/docs/governance/airdrop-1.md'
           ],
           collapsable: true,
         },                
