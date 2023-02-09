@@ -9,7 +9,7 @@ At the moment, **it’s important to understand that the security of the Optimis
 This multisig wallet can be used to upgrade core Optimism smart contracts without upgrade delays.
 
 Please also keep in mind that just like any other system, **the Optimism codebase may contain unknown bugs** that could lead to the loss of some or all of the assets held within the system.
-[Optimism’s smart contract codebase has been audited repeatedly](https://github.com/ethereum-optimism/optimism/tree/develop/technical-documents/audits) but **audits are not a stamp of approval** and **a completed audit does not mean that the audited codebase is free of bugs.**
+[Optimism’s smart contract codebase has been audited repeatedly](https://github.com/ethereum-optimism/optimism/tree/develop/technical-documents/security-reviews) but **audits are not a stamp of approval** and **a completed audit does not mean that the audited codebase is free of bugs.**
 It’s important to understand that using Optimism inherently exposes you to the risk of bugs within the Optimism codebase.
 
 ## Security Model FAQ
