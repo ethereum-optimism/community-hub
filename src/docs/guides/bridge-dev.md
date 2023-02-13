@@ -9,7 +9,7 @@ lang: en-US
 ::: tip
 Consider using the [Standard bridge](../developers/bridge/standard-bridge/) first before deciding to develop a custom bridge solution.
 
-In the standard bridge when ERC20 is deposited on L1 and transferred to the bridge contract, it remains "locked" there while the equivallent amount is minted in the L2 token. For withdrawals the opposite happens, the L2 token amount is burned then the same amount of L1 tokens is transferred to the recipient.
+In the standard bridge when ERC20 is deposited on L1 and transferred to the bridge contract, it remains "locked" there while the equivalent amount is minted in the L2 token. For withdrawals the opposite happens, the L2 token amount is burned then the same amount of L1 tokens is transferred to the recipient.
 This implementation satisfies a wide range of requirements.
 :::
 

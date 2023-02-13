@@ -12,20 +12,20 @@ For example, a [stablecoin](https://ethereum.org/en/stablecoins/) that accepts E
 - Do we need to liquidate any deposits because they are under collateralized?
 
 Different oracles have different security assumptions and different levels of decentralization.
-Usually they are either run by the organization that produces the information, or have a mechanism to reward entites that provide accurate information and penalize those that provide incorrect information.
+Usually they are either run by the organization that produces the information, or have a mechanism to reward entities that provide accurate information and penalize those that provide incorrect information.
 
 ## Types of oracles
 
 There are two types of oracles:
 
-1. **Push oracles** are updated continously and always have up to date information available on chain.
+1. **Push oracles** are updated continuously and always have up to date information available on chain.
 
 1. **Pull oracles** are only updated when information is requested by a contract.
    Pull oracles are themselves divided into two types:
    1. Double-transaction oracles, which require two transactions. 
       The first transaction is the request for information, which usually causes the oracle to emit an event that triggers some off-chain mechanism to provide the answer (through its own transaction).
       The second transaction actually reads on-chain the result from the oracle and uses it.
-   1. Single-transaction oracles, which only require one transaction, such as [Chainlink's random nunber generator](https://docs.chain.link/docs/get-a-random-number/#request-random-values).
+   1. Single-transaction oracles, which only require one transaction, such as [Chainlink's random number generator](https://docs.chain.link/docs/get-a-random-number/#request-random-values).
       The way this works is that the transaction that requests the information includes a callback (address and the call data to provide it). 
       When the oracle is updated (which also happens through a transaction, but one that is not sent by the user), the oracle uses the callback to inform a contract of the result.
 
@@ -77,7 +77,7 @@ It is a single-transaction pull oracle.
 
 [UMA](https://umaproject.org/) is a generic oracle.
 It lets any contract request information (ask a question), and any staked entity can provide an answer.
-Other external entities can dispute the proposed answer by providing their own answer and a putting up their own stake.
+Other external entities can dispute the proposed answer by providing their own answer and putting up their own stake.
 In the case of dispute the question goes to a vote of token holders.
 The token holders that vote with the majority are assumed to be truthful and get rewarded.
 The external entities that proposed the correct answer are rewarded.
@@ -88,9 +88,9 @@ Those that proposed the wrong answer lose their stake.
 [See here for instructions how to use UMA](https://docs.umaproject.org/build-walkthrough/build-process).
 
 UMA is a pull Oracle, it does not get information until it is requested by a contract. 
-This means that an decentralized application needs to issue two transactions.
+This means that a decentralized application needs to issue two transactions.
 First, a transaction that causes a contract on the blockchain to ask for the information.
-Later (in the case of UMA 48 hours later if there is no dispute, longer if there is), a second transaction need to be triggered to causes the contract to read from the Oracle and see the response to the request.
+Later (in the case of UMA 48 hours later if there is no dispute, longer if there is), a second transaction need to be triggered to cause the contract to read from the Oracle and see the response to the request.
 
 ## Uniswap
 

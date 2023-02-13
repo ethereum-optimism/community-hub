@@ -59,7 +59,7 @@ Unlike with the standard execution gas fee, users cannot specify a particular ga
 Instead, this fee is automatically deducted from the user's ETH balance on Optimism when the transaction is executed.
 
 [You can read more about this subject here](../developers/build/transaction-fees.md),
-or use [this tutoriial](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/sdk-estimate-gas).
+or use [this tutorial](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/sdk-estimate-gas).
 The total fee paid by a transaction will be a combination of the normal fee estimation formula (`gasPrice * gasLimit`) in addition to the estimated L1 fee.
 
 ### Displaying fees

@@ -10,7 +10,7 @@ Optimism is a good place for meta-transactions because the low gas costs make it
 
 Here are some example use cases for meta-transactions:
 
-- **On boarding**. 
+- **Onboarding**. 
   Users who aren't committed to web3 yet need to pay and go through [KYC](https://www.thalesgroup.com/en/markets/digital-identity-and-security/banking-payment/issuance/id-verification/know-your-customer) before they can do anything.
   This is a bad initial experience that can cause people to decide they prefer to investigate something else, especially for non-
 
@@ -19,7 +19,7 @@ Here are some example use cases for meta-transactions:
   It is a lot harder to transfer ETH to the new address privately without creating a connection between it and your identity.
   
 - **Transaction payment by other means**.
-  With meta-transactions you can collect payment for transactions either using a different token (ERC-20) or a off-chain means (for example a credit card).
+  With meta-transactions you can collect payment for transactions either using a different token (ERC-20) or an off-chain means (for example a credit card).
 
 ## OpenGSN
 
