@@ -8,15 +8,20 @@ lang: en-US
 The Citizens’ House relies on the concept of identity-based governance. 
 This is distinct from the more common pattern of token-voting governance (as used in [Optimism’s Token House](./token-house.md)). 
 
-To start, the initial set of Citizens in this stage is determined by (a) criteria set by the Optimism Foundation and (b) a special election from the Token House. 
+To start, the initial set of Citizens in this stage is determined by 
+- (a) criteria set by the Optimism Foundation
+- (b) a special election from the Token House. 
+
 Citizenship is conferred by a simple entry in the [AttestationStation](./attestation-station.md).
+
+<img width="auto" alt="Optimism Identity" src="https://user-images.githubusercontent.com/27849965/219097012-a21ebb1f-66dc-47a8-8b3f-6382774ad5d6.png">
 
 In future stages, the Token House and Citizens’ House together will collaborate on ongoing criteria for participation in the Citizens’ House. 
 
 This means the criteria for Citizenship will evolve over time. 
 Holding a voting badge in RetroPGF 2 does not guarantee voting rights in all future rounds of RetroPGF, as eventually membership will be determined by governance and may change.
 
-How does this work?
+**How does this work?**
 
 - Optimism has a neutral, permissionless attestation contract called the [`AttestationStation`](./attestation-station.md)
 - Optimism Governance (Token + Citizens’ House) has authority over a function that takes the AttestationStation as an argument and uses any data included to determine the set of Citizens.
