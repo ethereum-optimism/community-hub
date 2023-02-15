@@ -2,7 +2,12 @@
 title: RetroPGF Round 2
 lang: en-US
 ---
+::: tip TLDR: We are kicking of RetroPGF 2 with the goal of funding public goods!
+- A total of 10m OP tokens will be distributed to public goods projects. How much each project receives will be decided by roughly 90 badgeholders.
+- The outcome of RetroPGF 2 will be final by Mar 15 and the grant distribution will happen in the weeks after.
+:::
 
+![1dd95d90524b8082cab08f71d8f681daee683305](https://user-images.githubusercontent.com/27849965/219015824-7e2ae438-e8c2-4c22-b048-b77435816b6a.jpeg)
 
 The Optimism Collective’s second round of Retroactive Public Goods Funding (RetroPGF) takes place in Q1 2023. 
 RetroPGF 2 will allocate 10m OP tokens to **fund public goods that support development and usage of the OP Stack.** 
@@ -12,15 +17,15 @@ RetroPGF is an experimental mechanism to realize this goal of **“impact = prof
 
 By funding public goods sustainably, the Collective can create a rich ecosystem and a better economy.
 
-## Timeline
+## Process Timeline
 
-**Nomination window**: Jan 17 - Jan 31 19:00 GMT
+- **Nomination window**: Jan 17 - Jan 31 19:00 GMT
 
-**Project opt-in deadline**: Feb 21
+- **Project opt-in deadline**: Feb 21 (Extend from Feb 14)
 
-**Voting window**: Feb 28 - Mar 14
+- **Voting window**: Feb 28 - Mar 14
 
-
+![15b1961e1480797d22cc5ff34f1171beb14e535a](https://user-images.githubusercontent.com/27849965/219021652-2b6d7308-0386-4f66-9e6b-7d48b2f3b985.png)
 
 ## Scope of RetroPGF 2
 
@@ -61,7 +66,7 @@ Nominations take place on the [Optimism Governance Forum](https://gov.optimism.i
 
 - [**Nominations for Education**](https://gov.optimism.io/t/education-nominations-for-rpgf2/4640)
 
-
+Note that: The Foundation may nominate collections for funding. A collection is different from a project in that a collection may not have a single entity that can be verified via GitHub or Twitter. Optimism’s Support NERDs or the set of code contributors to the Optimism monorepo are both examples of potential collections.
 
 ## Funding Eligibility
 
@@ -108,7 +113,7 @@ Badgeholders are added to a public channel on Discord for announcements and disc
 
 ## Voting
 
-Each badgeholder is asked to vote during a ten-day window from Feb 28 - Mar 14.
+Each badgeholder is asked to vote during a ten-day window (will cast votes on how to allocate 10m OP tokens across all the projects that were nominated.) from **Feb 28 - Mar 14**.
 
 Voters are able to filter, sort, and search projects on the RetroPGF discovery UI. 
 Projects will be displayed with their answers to the application questions included in the project profile created via the RPGF Application Manager.
@@ -117,4 +122,9 @@ Votes will be aggregated as a simple weighted average, not as a quadratic vote.
 Votes are submitted via a form and will only be accessible to the Foundation, which means an individual Citizen’s vote will not be public by default. 
 Once a vote is cast, the Citizen cannot update their vote.
 
+## Grant  Dispersal
+
+After voting concludes on  **Mar 14**, Optimism will aggregate badgeholder preferences via a simple average, publish the final grant amount for each project, and distribute tokens. The outcome of RetroPGF 2 will be final by **Mar 15**. 
+
+**To receive your grant you will need to KYC with the Foundation** and the grant distribution will happen in the weeks after.
 
