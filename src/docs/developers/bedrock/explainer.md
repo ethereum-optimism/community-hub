@@ -160,8 +160,6 @@ The batch derivation pipeline treats the timestamps of the L1 blocks associated 
 
 Note that the target configuration for the block time on L2 in the Bedrock release is 2 seconds.
 
-> **Note** that the target configuration for the block time on L2 in the Bedrock release is 2 seconds.
-
 #### Handling L1 and L2 timestamps
 
 Bedrock attempts to address the problem of reconciling the timestamps on L2 with timestamps on L1 present in [deposited transactions](#arbitrary-message-passing-from-l1). It does this by allowing a short window of time for sequencing to liberally apply timestamps on L2 transactions between [epochs](#guaranteed-inclusion-of-deposits).
