@@ -12,7 +12,7 @@ One of those networks is Optimism Goerli.
 
 #### Coinbase
 
-Users of [Coinbase Wallet](https://www.coinbase.com/wallet) can get test ETH on Optimism Goerli directly from the Coinbase Wallet extension or via their [website](https://coinbase.com/faucets).
+Users of [Coinbase Wallet](https://www.coinbase.com/wallet) can get test ETH on Optimism Goerli directly from the Coinbase Wallet extension or via the [Coinbase Faucet website](https://coinbase.com/faucets/optimism-goerli-faucet).
 
 
 ### Goerli Faucets
