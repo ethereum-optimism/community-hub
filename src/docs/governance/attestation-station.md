@@ -134,15 +134,29 @@ event AttestationCreated(
 
 #### attest
 
+Records attestations to the AttestationStation's state and emits an `AttestationCreated` event with the address of the message sender, address the attestation is about, the bytes32 key, and bytes value.
+
+```
+function attest(address _about, bytes32 _key, bytes memory _val) public
+```
+
+Allows anyone to create an attestation. 
+
+| Name   | Type    | Description                                           |
+|--------|---------|-------------------------------------------------------|
+| _about | address | Address that the attestation is about.                |
+| _key   | bytes32 | A key used to namespace the attestation.              |
+| _val   | bytes   | An arbitrary value stored as part of the attestation. |
+
 ```
 function attest(AttestationData[] memory _attestations) public
 ```
 
-Records attestations to the AttestationStation's state and emits an `AttestationCreated` event with the address of the message sender, address the attestation is about, the bytes32 key, and bytes value.
+Allows anyone to create attestations. 
 
 Parameters:
 
-| Name           | Type              | Description                         |
-| -------------- | ----------------- | ----------------------------------- |
-| \_attestations | AttestationData[] | Array of `AttestationData` structs. |
+| Name           | Type              | Description                   |
+| -------------- | ----------------- | ----------------------------- |
+| \_attestations | AttestationData[] | An array of attestation data. |
 
