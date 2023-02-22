@@ -10,7 +10,7 @@ If you have not filled out the [get started form](https://oplabs.typeform.com/ge
 We are excited for your deployment onto Optimism! 
 You will be welcomed by [the following metrics](https://dune.com/optimismfnd/Optimism) 📈📈 (up and to the right!), [a budding community](https://discord-gateway.optimism.io/) 🫂🫂, and some great exclusive [Telegram Channels](https://t.me/+Cb7q0a1YqItkZTRk) ⚙️⚙️ for builders.
 
-The OPLabs team gets a flurry of inbound messages and calls every day and we reply to them as efficiently as possible, but we are only human! 
+The business development team gets a flurry of inbound messages and calls every day and we reply to them as efficiently as possible, but we are only human! 
 Please be patient if you are in need of direct support. 
 We cannot always provide direct help, but we strive to help everyone succeed on Optimism through the various resources we provide to projects. 
 
