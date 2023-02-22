@@ -33,6 +33,6 @@ Check out Optimism’s detailed [Pragmatic Path to Decentralization](https://med
 
 ### How can I help make Optimism more secure?
 
-[Optimism has one of the biggest bug bounties (ever)](https://immunefi.com/bounty/optimism/).
+[Optimism has one of the biggest bug bounties (ever)](./bounties.md).
 You can earn up to $2,000,042 by finding critical bugs in the Optimism codebase.
 You can also [run your own verifier node](https://github.com/smartcontracts/simple-optimism-node/) to detect network faults.
