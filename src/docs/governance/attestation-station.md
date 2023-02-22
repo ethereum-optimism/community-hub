@@ -66,6 +66,7 @@ If your product is using the AttestationStation, make a PR including how you're 
 * [AttestationStation Interface by sbvegan](https://attestationstation.xyz/)
 * [Optimist Score by Flipside](https://science.flipsidecrypto.xyz/optimist/)
 * [Optimism Attestor by Clique](https://provenance.clique.social/attestor/opattestor)
+* [ZK Discord Attestations by Clique](https://clique.social/attestor/opattestor_discordroles)
 
 #### I am building on the AttestationStation but have some questions, where can I discuss these?
 

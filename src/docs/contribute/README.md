@@ -14,6 +14,7 @@ The Optimism codebase is maintained in a monorepo at [https://github.com/ethereu
 - Reporting issues. For security issues see [Security policy](https://github.com/ethereum-optimism/.github/blob/master/SECURITY.md).
 - Participate in the [Bug Bouty programme](https://immunefi.com/bounty/optimism/).
 - Fixing and responding to existing issues. You can start off with those tagged ["good first issue"](https://github.com/ethereum-optimism/optimism/contribute) which are meant as introductory issues for external contributors.
+  Contributions are rewarded with a cool [GitPOAP](https://www.gitpoap.io/gp/1035).
 - Work on open [bounties on Gitcoin](https://gitcoin.co/ethereum-optimism).
 
 ::: tip

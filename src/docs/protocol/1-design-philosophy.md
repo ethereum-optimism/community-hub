@@ -35,7 +35,7 @@ Optimism's design philosophy prioritizes user and developer needs over theoretic
 Sometimes the best solution isn't the prettiest one.
 
 Optimism is also developed with the understanding that any core team will have limited areas of expertise.
-Optimism is developed iteratively and strives to continously pull feedback from users.
+Optimism is developed iteratively and strives to continuously pull feedback from users.
 Many core Optimism features today (like [EVM Equivalence](https://medium.com/ethereum-optimism/introducing-evm-equivalence-5c2021deb306)) were only made possible by this iterative approach to protocol development.
 
 ## Sustainability
@@ -53,7 +53,7 @@ By keeping our codebase simple we're able to build a bigger community of contrib
 
 Of course, none of this would be possible without a sense of optimism.
 Our optimism about the Ethereum vision keeps this project moving forward.
-We believe in an optimistic future for Ethereum, a future where we get to redesign our relationships to the institutions that coordinate our lives.
+We believe in an optimistic future for Ethereum, a future where we get to redesign our relationships with the institutions that coordinate our lives.
 
 Although Optimism looks like a standalone blockchain, it's ultimately designed as an extension to Ethereum.
 We keep this in mind whenever we're creating new features or trying to simplify existing ones.

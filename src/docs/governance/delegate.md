@@ -7,8 +7,7 @@ lang: en-US
 Participating in Token House governance can require a serious time commitment. 
 For this reason, people are able to delegate their OP to community members who have explicitly volunteered to play an active role in Token House governance. 
 
-Being a delegate is an important job that comes with a lot of responsibility.
-Before deciding to become a delegate you should be familiar with:
+Being a delegate is an important job that comes with a lot of responsibility. Therefore, before deciding to become a delegate, you should be familiar with:
 
 * The [Working Constitution](https://gov.optimism.io/t/working-constitution-of-the-optimism-collective/55).
 * The [Operating Manual](https://github.com/ethereum-optimism/OPerating-manual/blob/main/manual.md).
@@ -21,19 +20,11 @@ This is the process to become a delegate:
 
 ### Step 1: Commit
 
-* Read the delegate responsibilities
-* Post a completed [delegate commitment form](https://gov.optimism.io/t/delegate-commitments/235). 
-  If you have any questions about the form, ask in the [delegation questions feedback thread](https://gov.optimism.io/t/delegation-questions-feedback-thread/236)
-* It is not required, but you probably also want to [delegate your OP tokens' voting power to yourself](https://app.optimism.io/delegates).
-  Please note that the expectation is that token grants **will not be** self-delegated to grant recipients.
+* Read the delegate responsibilities on the [forum](https://gov.optimism.io/t/delegate-commitments/235) and make sure you understand the responsibilities. 
+
 
 ### Step 2: Set up your profile  
 
-* Set up your delegate profile. 
-
-  Please note that delegate avatars are taken from ENS. 
-  [If you want to change your avatar, you’ll need to do it via ENS](https://medium.com/the-ethereum-name-service/step-by-step-guide-to-setting-an-nft-as-your-ens-profile-avatar-3562d39567fc).
-
-  The Optimism Foundation will add new profiles to the [delegate site](https://app.optimism.io/delegates) once per Season. 
-
-
+* Register to be a delegate on the [Optimism Governance Portal (Optimism Agora)](https://vote.optimism.io/) following the [delegate commitment form](https://gov.optimism.io/t/delegate-commitments/235).
+* It is not required, but you probably also want to [delegate your OP tokens' voting power to yourself](https://vote.optimism.io/).
+  Please note that the expectation is that token grants **will not be** self-delegated to grant recipients.

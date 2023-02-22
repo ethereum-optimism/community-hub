@@ -4,11 +4,11 @@ lang: en-US
 ---
 
 ::: tip Developer Tip
-We recommend using [Alchemy](https://www.alchemy.com/optimism) for its scalablity, reliability, and data accuracy. 
+We recommend using [Alchemy](https://www.alchemy.com/optimism) for its scalability, reliability, and data accuracy. 
 :::
 
 ::: warning
-Some API calls, such as the those in the [personal namespace](https://geth.ethereum.org/docs/rpc/ns-personal) make no sense in a shared environment.
+Some API calls, such as those in the [personal namespace](https://geth.ethereum.org/docs/rpc/ns-personal) make no sense in a shared environment.
 Such RPCs are either totally unsupported, or will return nonsensical values.
 :::
 
@@ -121,6 +121,6 @@ In the months prior to a major release, such as Bedrock, we may have a different
 
 However, we also have other networks such as [Goerli Nightly](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/deployments/goerli-nightly).
 These are networks that are used for internal Optimism development.
-Unless you are working on the Optimism protocol (rather than building things on top of it), ignore these network.
+Unless you are working on the Optimism protocol (rather than building things on top of it), ignore these networks.
 
 :::

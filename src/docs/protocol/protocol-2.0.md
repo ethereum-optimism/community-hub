@@ -39,7 +39,7 @@ The Chain is composed of a set of contracts running on the Ethereum mainnet. The
 lists of:
 
 1. An _ordered_ list of all transactions applied to the L2 state.
-2. The proposed state root which would results from the application of each transaction.
+2. The proposed state root which would result from the application of each transaction.
 3. Transactions sent from L1 to L2, which are pending inclusion in the ordered list.
 
 <!--
