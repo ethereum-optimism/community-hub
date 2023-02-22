@@ -24,7 +24,7 @@ There are two types of oracles:
    Pull oracles are themselves divided into two types:
    1. Double-transaction oracles, which require two transactions. 
       The first transaction is the request for information, which usually causes the oracle to emit an event that triggers some off-chain mechanism to provide the answer (through its own transaction).
-      The second transaction actually reads on-chain the result from the oracle and uses it.
+      The second transaction actually reads onchain the result from the oracle and uses it.
    1. Single-transaction oracles, which only require one transaction, such as [Chainlink's random number generator](https://docs.chain.link/docs/get-a-random-number/#request-random-values).
       The way this works is that the transaction that requests the information includes a callback (address and the call data to provide it). 
       When the oracle is updated (which also happens through a transaction, but one that is not sent by the user), the oracle uses the callback to inform a contract of the result.
@@ -67,7 +67,7 @@ Portal providers a source of randomness on chain (for now on Optimism Goerli, bu
 It is a single-transaction pull oracle.
 
 #### Band
-[Band](https://bandprotocol.com/vrf) provides a source of [on-chain randomness](https://bandprotocol.com/vrf). 
+[Band](https://bandprotocol.com/vrf) provides a source of [onchain randomness](https://bandprotocol.com/vrf). 
 [You can learn how to use it here](https://docs.bandchain.org/vrf/getting-started.html).
 It is a single-transaction pull oracle.
 
@@ -94,7 +94,7 @@ Later (in the case of UMA 48 hours later if there is no dispute, longer if there
 
 ## Uniswap
 
-Technically speaking [Uniswap](https://uniswap.io/) is not an oracle, because the information comes from on-chain sources.
+Technically speaking [Uniswap](https://uniswap.io/) is not an oracle, because the information comes from onchain sources.
 However, Uniswap pools do provide [quotes that give the relative costs of assets](https://docs.uniswap.org/protocol/concepts/V3-overview/oracle).
 
 ::: warning

@@ -40,7 +40,7 @@ Transaction call data is *expensive*.
 The cost of writing a byte to L1 is approximately 16 gas.
 At a cost of 45 gwei per L1 gas unit, writing one byte to L1 on Optimism costs 720 gwei, or 720,000 units of L2 gas (at the non-congested price of 0.001 gwei per L2 gas unit).
 
-In comparison, on-chain processing and storage are cheap.
+In comparison, onchain processing and storage are cheap.
 The worst case for writing to storage (previously uninitialized storage) is a cost of [22100 L2 gas per EVM word, which contains 32 bytes of data](https://www.evm.codes/#55), which averages out to less than 700 L2 gas / byte.
 At a cost of 45 gwei per L1 gas unit, this means it is cheaper to write a whole kilobyte to storage, rather than add one byte to the transaction call data. 
 
