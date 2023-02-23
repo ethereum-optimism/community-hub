@@ -69,7 +69,7 @@ If your product is using the AttestationStation, make a PR including how you're 
 * [ZK Discord Attestations by Clique](https://clique.social/attestor/opattestor_discordroles)
 
 
-#### What indexing is available for the the AttestationStation? 
+#### What indexing is available for the AttestationStation? 
 * [API endpoints by nxyz](https://docs.n.xyz/reference/attestation-station)
 
 
