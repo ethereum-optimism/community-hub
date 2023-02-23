@@ -99,6 +99,14 @@ On the platform, there are also [Public APIs](https://blastapi.io/public-api/opt
 - Optimism Ethereum
 - Optimism Goerli
 
+## Footprint Analytics
+
+The Footprint Analytics Data API provides blockchain and DApp developers with various ways to interact and gain insights from the distributed ledger. It covers a wide range of scenarios, including tracking whales, NFT collections, GameFi data, and more, across 24 chains. You can find more information about it on the Footprint Analytics website at https://footprint.network/.
+
+### Supported Networks
+
+- Optimism Ethereum
+
 ## Infura
 
 ### Description and Pricing
