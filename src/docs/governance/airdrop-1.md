@@ -66,7 +66,7 @@ These rules aim to target behaviors that match Ethereum and Optimism’s values 
 The Foundation believes that active and engaged governance is crucial to scaling decentralized systems. 
 Addresses who match this criterion have actively chosen to actively contribute by participating in governance.
 
-*Criterion: Address has either voted on or authored at least one proposal on-chain, or at least two on Snapshot (off-chain).*
+*Criterion: Address has either voted on or authored at least one proposal onchain, or at least two on Snapshot (off-chain).*
 - *We filtered to “active DAOs” who have had at least 5 proposals with at least 5 votes.*
 - *On-Chain governance contracts included: Governor Alpha and Bravo, Aave, Curve, Maker, Aragon, DAOHaus, DAOStack, and forks.*
 - *Since Snapshot votes were off-chain, the Foundation recognized that these were more susceptible to spam/farming behavior, often driven by voters with nominal voting power. 
@@ -85,7 +85,7 @@ They are often the present (and future) DAO leaders and builders.
 Gitcoin donors have chosen to behave in positive-sum ways by funding public goods. 
 These addresses may also align with Optimism’s goal to build sustainable funding source for public goods through [retroactive funding (RetroPGF](https://medium.com/ethereum-optimism/retropgf-experiment-1-1-million-dollars-for-public-goods-f7e455cbdca)).
 
-*Criterion: Address has made an on-chain donation through Gitcoin on L1. This includes any donation, regardless of if it was during a matching round.*
+*Criterion: Address has made an onchain donation through Gitcoin on L1. This includes any donation, regardless of if it was during a matching round.*
 - *For the time period between rounds 1 - 5, we included addresses who interacted with Gitcoin contracts, sent legacy `ExecuteSubscription` calls, or appeared in [Gitcoin’s donor API](https://docs.gitcoin.co/mk_rest_api/).*
 - *For the period between rounds 6 - 13 (present), we included donor addresses in the Gitcoin ‘BulkCheckout’ contract transaction logs.*
 

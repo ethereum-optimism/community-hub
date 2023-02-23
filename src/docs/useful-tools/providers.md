@@ -72,7 +72,7 @@ On the platform, there are also [Public APIs](https://blastapi.io/public-api/opt
 
 ## BlockVision
 
-[BlockVision](https://blockvision.org/) is a one-stop development platform and on-chain data retrieval portal for developers that boasts impressively low-latencies and high availability.
+[BlockVision](https://blockvision.org/) is a one-stop development platform and onchain data retrieval portal for developers that boasts impressively low-latencies and high availability.
 
 ### Supported Networks
 

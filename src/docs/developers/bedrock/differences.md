@@ -186,10 +186,10 @@ On the legacy network, funds are withdrawn as follows:
 
 However, this introduces a security risk. If the withdrawal proof can be successfully forged, an attacker could withdraw funds from the bridge that they are not authorized to. This kind of attack has been exploited before - a fraudulent proof led to the loss of [$100M on Binance Smart Chain](https://www.nansen.ai/research/bnb-chains-cross-chain-bridge-exploit-explained).
 
-To eliminate this risk, Bedrock requires users to post their withdrawal proofs upfront. Users must wait for a valid output root to be proposed so that the withdrawal proof can be validated on-chain. Once the seven-day waiting period has expired, users can then finalize the withdrawal and claim their funds. The updated withdrawal flow is as follows:
+To eliminate this risk, Bedrock requires users to post their withdrawal proofs upfront. Users must wait for a valid output root to be proposed so that the withdrawal proof can be validated onchain. Once the seven-day waiting period has expired, users can then finalize the withdrawal and claim their funds. The updated withdrawal flow is as follows:
 
 1. Users send a withdrawal message.
-2. Users wait for a state output to be proposed on-chain. This can take up to an hour.
+2. Users wait for a state output to be proposed onchain. This can take up to an hour.
 3. Users call `proveWithdrawalTransaction()` on the `OptimismPortal` to post and validate their proof.
 4. Users wait for the withdrawal to be finalized. This takes seven days on mainnet.
 5. Users call `finalizeWithdrawal()` on the `OptimismPortal` to claim their funds.
@@ -204,7 +204,7 @@ Visualized, this flow looks like this:
 
 </div>
 
-By posting the proof upfront, it gives on-chain monitoring tools enough time to detect a fraudulent withdrawal proof and attempt corrective action. 
+By posting the proof upfront, it gives onchain monitoring tools enough time to detect a fraudulent withdrawal proof and attempt corrective action. 
 Regular users can do this monitoring too. For example, an exechange could halt withdrawals in the event of a fraudulent proof.
 
 Since this change fundamentally changes the way withdrawals are handled, it is **not** backwards-compatible with the old network. If you are performing withdrawals outside our standard bridge interface, you will need to update your software. The easiest way to to do this is to use our [TypeScript SDK](https://github.com/ethereum-optimism/optimism/tree/develop/packages/sdk), which includes two-phase withdrawals support out of the box.
