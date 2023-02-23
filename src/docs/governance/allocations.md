@@ -82,7 +82,8 @@ An allocation of **5.4%** of the OP token supply will be dedicated to the Seed F
 
 ### Unspent allocation for future growth programs
 
-An allocation of **8.8%** of the OP token supply will be held in reserve for future community growth programs.
+
+An allocation of **8.8%** of the OP token supply will be held in reserve for future programs, to be determined by the Foundation and/or the governance community as appropriate.
 
 ## Retroactive Public Goods Funding
 
@@ -125,16 +126,16 @@ These distributions will be administered over time by the Optimism Foundation in
 
 In Year 1, 30% of the initial token supply will be made available to the Foundation for distribution. 
 After the first year, token holders will vote to determine the Foundation’s annual OP distribution budget. 
-The Foundation expects to seek the following annual allocations:
-
-- Year 2: 15% of the initial token supply
-- Year 3: 10% of the initial token supply
-- Year 4: 4% of the initial token supply
 
 If the Foundation’s authorized OP expenditures ever reaches below 10% of the initial token supply, it is expected to request an additional allocation.
 
-Taken together, the Foundation expects the total supply of unlocked OP tokens to approximate the graph below.
+Taken together, the Foundation estimates the total supply of circulating OP tokens to increase as detailed in [this sheet](https://docs.google.com/spreadsheets/d/1qVMhLmmch3s6XSbiBe8hgD4ntMkPIOhc1WrhsYsQc7M/).
 
-Note this graph is for illustration only, and actual unlocked supply will depend on governance and the rate that OP is allocated across user airdrops, the Ecosystem Fund, and RetroPGF.
+**Circulating supply** is defined as the amount of OP tokens in general circulation that have no known restrictions on transfer. 
+
+**Available supply** is the amount of OP tokens that are (a) part of the circulating supply, or (b) are subject to some governing body to determine the pace at which they are distributed. This includes all Ecosystem Funding indicated in the pie chart above.
+
+
+The graph below shows the available supply of OP. Note this graph is for illustration only, and actual circulating supply will depend on governance and the rate that OP is allocated across user airdrops, the Ecosystem Fund, and RetroPGF.
 
 ![](../../assets/docs/governance/allocations/alloc-by-time.png)
