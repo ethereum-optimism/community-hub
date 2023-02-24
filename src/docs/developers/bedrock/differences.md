@@ -26,7 +26,7 @@ Timing may also be relevant.
 <details>
 <summary>Dapp frontend developer</summary>
 
-As an application developer you are probably interested in the fact Bedrock has a mempool and the changes in transaction fees. 
+As an application developer you are probably interested in the fact Bedrock has a mempool and the changes in transaction fees.
 You might also be interested in changes in the RPC interface and block timing.
 
 - [EIP-1559](#eip-1559)
@@ -40,7 +40,7 @@ You might also be interested in changes in the RPC interface and block timing.
 <details>
 <summary>Dapp backend (protocol) developer</summary>
 
-As an application developer you are probably interested in the fact Bedrock has a mempool and the changes in transaction fees. 
+As an application developer you are probably interested in the fact Bedrock has a mempool and the changes in transaction fees.
 You might also be interested in changes in the RPC interface and block timing.
 
 - [EIP-1559](#eip-1559)
@@ -53,8 +53,8 @@ You might also be interested in changes in the RPC interface and block timing.
 <details>
 <summary>Infrastructure provider (or anybody else running a node)</summary>
 
-To run a node you need to understand the executables required to run it. 
-You might also be interested in the existence of the mempool and the changes in block timing, fess, and the JSON RPC.
+To run a node you need to understand the executables required to run it.
+You might also be interested in the existence of the mempool and the changes in block timing, fees, and the JSON RPC.
 
 - [Mempool](#mempool)
 - [Block Production](#block-production)
@@ -102,7 +102,7 @@ The Bedrock upgrade also introduces the concept of _system transactions_. System
 For more information about these transactions, see the [deposited transactions specification](https://github.com/ethereum-optimism/optimism/blob/develop/specs/deposits.md) on GitHub.
 
 :::warning Known Issue
-Some Ethereum client libraries, such as Web3j, cannot parse the `null` signature fields described above. To work around this issue, you will need to manually filter out the system transactions before passing them to the library. 
+Some Ethereum client libraries, such as Web3j, cannot parse the `null` signature fields described above. To work around this issue, you will need to manually filter out the system transactions before passing them to the library.
 :::
 
 ### EIP-1559
@@ -130,7 +130,7 @@ One of the design goals of the Bedrock upgrade is to be maximally EVM equivalent
 
 ### ETH Balances
 
-The previous version of the system used an ERC20 contract called `OVM_ETH` to represent ETH balances. These balances will be migrated into the Bedrock network's state as part of the migration. To preserve backwards compatibility, the methods on the `OVM_ETH` contract will continue to work. Note, however, that the `totalSupply()` method will return zero. 
+The previous version of the system used an ERC20 contract called `OVM_ETH` to represent ETH balances. These balances will be migrated into the Bedrock network's state as part of the migration. To preserve backwards compatibility, the methods on the `OVM_ETH` contract will continue to work. Note, however, that the `totalSupply()` method will return zero.
 
 ## Chain Reorganizations
 
@@ -204,7 +204,7 @@ Visualized, this flow looks like this:
 
 </div>
 
-By posting the proof upfront, it gives onchain monitoring tools enough time to detect a fraudulent withdrawal proof and attempt corrective action. 
+By posting the proof upfront, it gives onchain monitoring tools enough time to detect a fraudulent withdrawal proof and attempt corrective action.
 Regular users can do this monitoring too. For example, an exechange could halt withdrawals in the event of a fraudulent proof.
 
 Since this change fundamentally changes the way withdrawals are handled, it is **not** backwards-compatible with the old network. If you are performing withdrawals outside our standard bridge interface, you will need to update your software. The easiest way to to do this is to use our [TypeScript SDK](https://github.com/ethereum-optimism/optimism/tree/develop/packages/sdk), which includes two-phase withdrawals support out of the box.
@@ -214,7 +214,7 @@ For more information on two-phase withdrawals, see the withdrawals specification
 ## Deposit Replayability
 
 :::warning Breaking Change
-The changes described in this section are **not** backwards-compatible with the old network. Please read this section carefully. 
+The changes described in this section are **not** backwards-compatible with the old network. Please read this section carefully.
 :::
 
 On the legacy network, deposits are replayable. This is no longer the case in Bedrock. Additionally, as part of the migration, all deposits on the legacy network that have not been replayed will no longer be replayable. **This means that if you have not replayed your deposit, you must do so before the migration.** This affects fewer than 100 transactions of the nearly 40 million on mainnet.
@@ -263,7 +263,7 @@ You can use [the getter functions](https://docs.soliditylang.org/en/v0.8.12/cont
 - `sequenceNumber`: The number of the L2 block within the epoch (the epoch changes when there is a new L1 block)
 
 
-Currently the L1 information is delayed by ten block confirmations (~2.5 minutes) to minimize the impact of reorgs. 
+Currently the L1 information is delayed by ten block confirmations (~2.5 minutes) to minimize the impact of reorgs.
 This value may be reduced in the future.
 
 #### SequencerFeeVault
@@ -283,14 +283,14 @@ The fees are calculated using [EIP 1559](https://github.com/ethereum/EIPs/blob/m
 These contracts provide the same interface as existed pre-Bedrock so dapps don’t have to be modified to run on Bedrock.
 
 
-- [L1BlockNumber](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L2/L1BlockNumber.sol): 
-  The `L1BlockNumber` contract provides the number of the latest L1 block. 
-  In Bedrock it is simply a proxy to [`L1Block`](#l1block). 
+- [L1BlockNumber](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L2/L1BlockNumber.sol):
+  The `L1BlockNumber` contract provides the number of the latest L1 block.
+  In Bedrock it is simply a proxy to [`L1Block`](#l1block).
 - [L2CrossDomainMessenger](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L2/L2CrossDomainMessenger.sol):
   The `L2CrossDomainMessenger` contract is used to send messages from Optimism to Ethereum.
 - [L2StandardBridge](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L2/L2StandardBridge.sol):
   The `L2StandardBridge` contract is used to "attach" assets (ETH and ERC-20 tokens) to messages that are then sent by `L2CrossDomainMessenger`.
-- [WETH9](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L2/WETH9.sol): 
+- [WETH9](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L2/WETH9.sol):
   [The WETH9 contract](https://weth.io/) is an ERC-20 token that wraps around ETH to provide extra functionality, such as approvals.
 
 
@@ -315,7 +315,7 @@ Similarly, "withdrawal" refers to any message going from Optimism to Ethereum.
 <!--
 ### Gas cost changes
 
-The gas costs for communication between layers are going to change, they will probably get lower. 
+The gas costs for communication between layers are going to change, they will probably get lower.
 More information will be posted here once we have more exact information after we profile a test network.
 
 -->
@@ -328,8 +328,8 @@ To create a deposit we recommend that you use the pre-Bedrock contracts [`L1Stan
 [`OptimismPortal`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L1/OptimismPortal.sol) also has low-level deposit functionality.
 
 With the OptimismPortal’s `depositTransaction` function you can do from L1 anything you can do by contacting L2 directly: send transactions, send payments, create contracts, etc.
-This provides an uncensorable alternative in case the sequencer is down. 
-Even though the sequencer is down, verifiers (nodes that synchronize the Optimism state from L1) are still going to receive such transactions and modify the state accordingly. 
+This provides an uncensorable alternative in case the sequencer is down.
+Even though the sequencer is down, verifiers (nodes that synchronize the Optimism state from L1) are still going to receive such transactions and modify the state accordingly.
 When the sequencer is back up it has to process the transactions in the same order to have a valid state.
 
 
@@ -358,6 +358,6 @@ This section discusses some of the changes in Optimism internals.
 
 ### The transaction trail
 
-There is no longer a CTC (cannonical transaction chain) contract. Instead, L2 blocks are saved to the Ethereum blockchain using a non-contract address to minimize the L1 gas expenses. Please see the [Public Testnets](./public-testnets.md) page for more information on where to find batch submission addresses. 
+There is no longer a CTC (cannonical transaction chain) contract. Instead, L2 blocks are saved to the Ethereum blockchain using a non-contract address to minimize the L1 gas expenses. Please see the [Public Testnets](./public-testnets.md) page for more information on where to find batch submission addresses.
 
 [The block and transaction format is also different](https://github.com/ethereum-optimism/optimism/blob/develop/specs/rollup-node.md#l2-chain-derivation).
