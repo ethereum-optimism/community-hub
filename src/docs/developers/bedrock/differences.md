@@ -54,7 +54,7 @@ You might also be interested in changes in the RPC interface and block timing.
 <summary>Infrastructure provider (or anybody else running a node)</summary>
 
 To run a node you need to understand the executables required to run it. 
-You might also be interested in the existence of the mempool and the changes in block timing, fess, and the JSON RPC.
+You might also be interested in the existence of the mempool and the changes in block timing, fees, and the JSON RPC.
 
 - [Mempool](#mempool)
 - [Block Production](#block-production)
