@@ -110,6 +110,25 @@ If you want to add [Waffle](https://github.com/TrueFiEng/Waffle) to an already e
 npm install --save-dev ethereum-waffle@alpha @ethereum-waffle/optimism@alpha
 ```
 
+## Alchemy
+
+[Alchemy](https://docs.alchemy.com/reference/optimism-api-quickstart) provides a stateless and lightweight JSON-RPC standard API to interact with on-chain data and send different types of transactions to the Optimism network. Getting started with Alchemy:
+
+```bash
+npm install alchemy-sdk
+```
+
+Once installed, connecting to the Optimism Network with the Alchemy SDK is simple:
+
+```js
+const { Network, Alchemy } = require("alchemy-sdk");
+
+const settings = {
+  apiKey: "demo", // Replace with your Alchemy API Key.
+  network: Network.OPT_MAINNET, // Replace with your network.
+};
+```
+
 ## Other tools
 
 Got a favorite tool that works well with Optimism?
