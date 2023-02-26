@@ -15,6 +15,8 @@ You can view information about both the Optimism mainnet and the Optimism Goerli
 
 ## Block explorers
 
+You can find a full list of Optimism Block Explorers [here](https://www.alchemy.com/list-of/block-explorers-on-optimism). 
+
 ### Etherscan
 
 Etherscan provides a lot of detailed information about what's happening on Optimism.
