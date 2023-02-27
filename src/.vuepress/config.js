@@ -292,7 +292,10 @@ module.exports = {
         {
           title: 'Building on Optimism',
           children: [
-            '/docs/developers/build/using-tools.md',
+            [
+              'https://github.com/ethereum-optimism/optimism-tutorial/tree/main/getting-started#development-stacks',
+              "Development stacks"
+            ],
             '/docs/developers/build/transaction-fees.md',
             '/docs/developers/build/system-contracts.md',
             '/docs/developers/build/dev-node.md',
