@@ -262,9 +262,7 @@ You can use [the getter functions](https://docs.soliditylang.org/en/v0.8.12/cont
 - `hash`: The hash of the latest L1 block
 - `sequenceNumber`: The number of the L2 block within the epoch (the epoch changes when there is a new L1 block)
 
-
-Currently the L1 information is delayed by ten block confirmations (~2.5 minutes) to minimize the impact of reorgs. 
-This value may be reduced in the future.
+Currently the L1 information is delayed by two block confirmations (~24 seconds) to minimize the impact of reorgs.
 
 #### SequencerFeeVault
 
