@@ -103,14 +103,14 @@ On the platform, there are also [Public APIs](https://blastapi.io/public-api/opt
 
 ### Description and Pricing
 
-[Infura](https://infura.io) offers access to hosted Optimism nodes via addon.
-This addon is currently free but Infura seems to intend to charge $200/month for this addon in the future.
+[Infura](https://infura.io) is a Web3 infrastructure provider that offers free access to hosted [Optimism nodes](https://docs.infura.io/infura/networks/optimism), with the option to upgrade to [paid plans](https://www.infura.io/pricing) for more features. With Infura's highly performant Optimism node infrastructure, developers can eliminate the need for syncing or complex setups and get reliable and consistent access to the Optimism blockchain. 
+
+[Sign up for a free Infura account here](https://app.infura.io/register)
 
 ### Supported Networks
 
 - Optimism Ethereum
 - Optimism Goerli
-
 
 
 ## NodeReal
