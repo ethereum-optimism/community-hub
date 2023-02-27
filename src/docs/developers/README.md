@@ -22,7 +22,7 @@ They'll help you get a headstart when building your first Optimistic project.
 
 ### Ready to deploy a contract?
 
-If you're looking to deploy your contracts to the Optimism mainnet or the Optimism Goerli testnet, take a look at our page on [using your favorite tools](./build/using-tools.md).
+If you're looking to deploy your contracts to the Optimism mainnet or the Optimism Goerli testnet, take a look at the [getting started tutorial](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/getting-started#development-stacks).
 It contains sample configuration files for deploying your contracts from common frameworks like Hardhat, Truffle, and Brownie.
 
 You might also want to check out our guides for [running a local development environment](./build/dev-node.md) or [running your own Optimism node](./build/run-a-node.md).
