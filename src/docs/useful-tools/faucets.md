@@ -22,6 +22,7 @@ We recommend getting Goerli ETH from Alchemy's faucet [here](https://goerlifauce
 Alchemy's Goerli faucet provides 0.25 Goerli ETH per day.
 
 Once you have that Goerli ETH, use [the Optimism Bridge](https://app.optimism.io/bridge) to get it on Optimism Goerli.
+If the bridge seems "stuck" on the production networks, change to **Goerli** in the wallet, and then disconnect and reconnect the wallet to the page.
 
 
 ## Mainnet Faucets
