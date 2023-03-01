@@ -254,3 +254,8 @@ We're open to changing the length of the window as long as we feel this can be d
 If you're strongly opinionated about this, we recommend [opening an issue on GitHub](https://github.com/ethereum-optimism/optimism/issues) explaining your position.
 We *will* hear you out!
 :::
+
+## Further Reading
+
+- [Optimistic Rollups: The Complete Guide](https://www.alchemy.com/overviews/optimistic-rollups)
+- [Optimistic Rollups vs ZK Rollups](https://limechain.tech/blog/optimistic-rollups-vs-zk-rollups/)
