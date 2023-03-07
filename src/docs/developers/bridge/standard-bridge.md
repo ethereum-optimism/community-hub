@@ -30,8 +30,8 @@ You **must** approve the Standard Token Bridge to use the amount of tokens that 
 
 Note that the bridge does *not* support certain ERC-20 configurations:
 
-1. [Fee on Transfer tokens](https://github.com/d-xo/weird-erc20#fee-on-transfer)
-1. [Tokens that modify balances without emitting a Transfer event](https://github.com/d-xo/weird-erc20#balance-modifications-outside-of-transfers-rebasingairdrops)
+- [Fee on Transfer tokens](https://github.com/d-xo/weird-erc20#fee-on-transfer)
+- [Tokens that modify balances without emitting a Transfer event](https://github.com/d-xo/weird-erc20#balance-modifications-outside-of-transfers-rebasingairdrops)
 
 ::: danger Use the standard bridge contract only with standard bridge tokens
 The standard bridge can only be used with tokens that have a properly configured ERC-20 version on Optimism.
