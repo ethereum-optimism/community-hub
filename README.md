@@ -1,6 +1,6 @@
 # The Optimism Community Hub
 
-[![Discord](https://img.shields.io/discord/667044843901681675.svg?color=768AD4&label=discord&logo=https%3A%2F%2Fdiscordapp.com%2Fassets%2F8c9701b98ad4372b58f13fd9f65f966e.svg)](https://discord.optimism.io/)
+[![Discord](https://img.shields.io/discord/667044843901681675.svg?color=768AD4&label=discord&logo=https%3A%2F%2Fdiscordapp.com%2Fassets%2F8c9701b98ad4372b58f13fd9f65f966e.svg)](https://discord.optimism.io)
 [![Twitter Follow](https://img.shields.io/twitter/follow/OptimismFND.svg?label=OptimismFND&style=social)](https://twitter.com/OptimismFND)
 
 Optimism is a Layer 2 platform for Ethereum.
