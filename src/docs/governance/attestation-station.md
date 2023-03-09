@@ -51,7 +51,7 @@ Creating this system in a decentralized and open-source manner is important beca
 
 #### How do I use the AttestationStation?
 
-See [the tutorial](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/ecosystem/attestation-station). A SDK and CLI for the AttestationStation can be found at [@eth-optimism/atst](https://www.npmjs.com/package/@eth-optimism/atst). Ready to deploy your app? Checkout this [starter project](https://github.com/ethereum-optimism/optimism-starter) which has everything you need to get started! 
+See [the tutorial](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/ecosystem/attestation-station). A SDK and CLI for the AttestationStation can be found at [@eth-optimism/atst](https://www.npmjs.com/package/@eth-optimism/atst). Ready to build your app? Checkout this [starter project](https://github.com/ethereum-optimism/optimism-starter) which has everything you need to get started! 
 
 #### What are the contract addresses for the AttestationStation?
 
