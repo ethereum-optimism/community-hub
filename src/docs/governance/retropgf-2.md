@@ -83,14 +83,46 @@ For more information and guidance on the nomination and application process for 
 
 ## Voting Badge distribution
 
-✨ Voting Badges for RetroPGF 2 are distributed to a set of **90 community members.**
+✨ Voting Badges for RetroPGF 2 were distributed to a set of **71 community members.**
 
-1. **One badge distributed to each voter from RetroPGF Round 1**, excluding full time employees of OP Labs or the Optimism Foundation. (14 badges, [list](https://docs.google.com/spreadsheets/d/1g4ilAByMNQsmlBC8cskQip7Ojd_qK6IhozJCyoVfU9k/edit#gid=0)) 
-2. **One badge given to an individual selected by each of the previous voters in RetroPGF Round 1** (14 badges) 
-3. **One badge given to 10 Token House delegates, selected by a Token House vote.** (10 badges)
-4. **One badge given to an individual selected by each of the badge-holding Token House delegates in (3) above** (10 badges)
-5. **Twenty-one badges distributed to unaffiliated community contributors chosen by the Optimism Foundation**. (21 badges)
-6. **Twenty-one badges distributed to individuals selected by each badge-holding community contributor in (5) above** (21 badges)
+| 🔰 Badgeholders from Round 1 | 🔴 Foundation Choice | 🏛 Token House Elected       | 🌐 Selected by Badgeholders  |
+|-----------------------------|---------------------|-----------------------------|-----------------------------|
+| TheEthernaut                | Ludens              | Linda Xie                   | Phil Ngo                    |
+| Austin Griffith             | Vitalik Buterin     | Bobby Bola                  | Gubsheep                    |
+| Transmissions11             | Rick Dudley         | Katie Garcia                | Yuet Loo Wong               |
+| David Hoffman               | Sarah Allen         | Lefteris                    | Fred                        |
+| Elena Gesheva               | Mikhail Kalinin     | Polynya                     | thesleeper                  |
+| Gregory Markou              | Justin Drake        | Joxes \| DeFi LATAM         | Adam Fuller                 |
+| Jenny Pollack               | Dankrad Feist       | Mastermojo                  | 13 year old                 |
+| Kris Kackzor                | Diligit             | Francis Gowen (Fig)         | Cassidy Daly                |
+| Lightclient                 | Devin Walsh         | MinimalGravitas             | Griff Green                 |
+| Ricmoo                      | Alisha.eth          | Jacob (jacob.willemsma.eth) | Ken Ng                      |
+| Scott Moore                 | Denis Nazarov       |                             | Thomas Jay Rush             |
+| Yoav Weiss                  | Jesse Pollak        |                             | Daniel Hwang                |
+| Breck Stodghill             | Tracheopteryx       |                             | Vectorized                  |
+|                             | Shannon Wells       |                             | Matt Losquadro              |
+|                             | Kevin Owocki        |                             | Alex Stokes                 |
+|                             | Renee               |                             | Ben Giove                   |
+|                             | Kartik              |                             | OPUser                      |
+|                             | Rev Miller          |                             | solarcurve                  |
+|                             | Bryan Lehrer        |                             | Chris Ahn                   |
+|                             |                     |                             | Dhannte                     |
+|                             |                     |                             | CryptoChica                 |
+|                             |                     |                             | Drake Danner                |
+|                             |                     |                             | Loggum                      |
+|                             |                     |                             | zakku                       |
+|                             |                     |                             | mel.eth                     |
+|                             |                     |                             | Krzysztof Urbański          |
+|                             |                     |                             | CJ Hetherington             |
+|                             |                     |                             | John Palmer                 |
+|                             |                     |                             | Leighton                    |
+
+
+In total there were 90 possible badgeholders, they were selected as follows
+1. **One badge distributed to each voter from RetroPGF Round 1**, excluding full time employees of OP Labs or the Optimism Foundation. (16 badges offered, 13 accepted) [list](https://docs.google.com/spreadsheets/d/1g4ilAByMNQsmlBC8cskQip7Ojd_qK6IhozJCyoVfU9k/edit#gid=0) 
+2. **One badge given to 10 Token House delegates, selected by a Token House vote.** (10 badges)
+3. **Twenty-one badges distributed to unaffiliated community contributors chosen by the Optimism Foundation**. (21 badges offered, 19 accepted)
+4. **Each Badgeholder from round 1 (1), each Badgeholder elected by Token House vote (2) and each Badgeholder chosen by the Optimism Foundation (3) could select another person to become a Badgeholder** (31 offered, 29 accepted)
 
 **Notes**
 
@@ -108,7 +140,7 @@ Badgeholders are added to a public channel on Discord for announcements and disc
 
 ## Voting
 
-Each badgeholder is asked to vote during a fourteen-day window from Mar 9 - Mar 23.
+Each Badgeholder is asked to vote during a fourteen-day window from Mar 9 - Mar 23.
 
 Voters are able to filter, sort, and search projects on the RetroPGF discovery UI. 
 Projects will be displayed with their answers to the application questions included in the project profile created via the RPGF Application Manager.
