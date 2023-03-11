@@ -3,7 +3,7 @@ title: Bedrock Differences
 lang: en-US
 ---
 
-Bedrock is the next major release of the Optimism network, planned for the first quarter of 2023 (subject to approval by Optimism governance). 
+Bedrock is the next major release of the Optimism network, planned for the second quarter of 2023 (subject to approval by Optimism governance). 
 It will further reduce [the differences between Optimism and L1 Ethereum](https://op-geth.optimism.io/).
 Here are the major changes:
 
@@ -274,6 +274,11 @@ The fees are calculated using [EIP 1559](https://github.com/ethereum/EIPs/blob/m
 #### L2ToL1MessagePasser
 
 [The `L2ToL1MessagePasser` contract](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L2/L2ToL1MessagePasser.sol) is used internally by `L2CrossDomainMessenger` to initiate withdrawals.
+
+Note that in Bedrock there are two contracts:
+
+- [The legacy contract](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/legacy/LegacyMessagePasser.sol) at address `0x4200000000000000000000000000000000000000`
+- [The new contract](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L2/L2ToL1MessagePasser.sol) at address `0x4200000000000000000000000000000000000016`
 
 
 #### Existing interface

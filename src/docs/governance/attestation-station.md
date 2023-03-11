@@ -20,7 +20,6 @@ Attestations are statements by a creator (who attested this) about a subject (wh
 ![](../../assets/docs/governance/attestationstation/attestations.png)
 
 
-
 #### What can attestations be used for?
 
 We imagine the first use case for attestations is to create sybil resistant identity that can power [non-plutocratic governance](https://vitalik.ca/general/2021/08/16/voting3.html).
@@ -52,7 +51,7 @@ Creating this system in a decentralized and open-source manner is important beca
 
 #### How do I use the AttestationStation?
 
-See [the tutorial](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/ecosystem/attestation-station).
+See [the tutorial](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/ecosystem/attestation-station). A SDK and CLI for the AttestationStation can be found at [@eth-optimism/atst](https://www.npmjs.com/package/@eth-optimism/atst). Ready to build your app? Checkout this [starter project](https://github.com/ethereum-optimism/optimism-starter) which has everything you need to get started! 
 
 #### What are the contract addresses for the AttestationStation?
 
@@ -71,11 +70,12 @@ If your product is using the AttestationStation, make a PR including how you're 
 
 #### What indexing is available for the AttestationStation? 
 * [API endpoints by nxyz](https://docs.n.xyz/reference/attestation-station)
+* [ShroomSDK by Flipside](https://github.com/MSilb7/op_attestationstation_data)
 
 
 #### I am building on the AttestationStation but have some questions, where can I discuss these?
 
-The best place to ask any dev related questions is the #dev-support channel on [the Optimism Discord](https://discord-gateway.optimism.io/). If you need additional support check out this [Help Article](https://help.optimism.io/hc/en-us/articles/9762044018843-How-do-I-get-project-support-marketing-integrations-etc-).
+The best place to ask any dev related questions is the [Telegram Colloborators channel](https://t.me/+zwpJ8Ohqgl8yNjNh). If you need additional support check out this [Help Article](https://help.optimism.io/hc/en-us/articles/9762044018843-How-do-I-get-project-support-marketing-integrations-etc-).
 
 #### I want to apply for a grant to build on the AttestationStation, how can I do this?
 
@@ -83,17 +83,7 @@ You can learn more about the variety of grants program available at Optimism [he
 
 #### What are some things I should build with the AttestationStation?
 
-It will take a huge community effort to realize the potential that reputation has to transform web3. That’s why we started small with the AttestationStation and an open invite to come experiment with us. We can already think of a bunch of fun projects to build today like:
-
-* **EiganTrust**: Aggregate attestations from various communities and use techniques like [EigenTrust](https://en.wikipedia.org/wiki/EigenTrust) to derive reputation
-* **SybilRank**: Create a [SybilRank](https://users.cs.duke.edu/~qiangcao/sybilrank_project/index.html) calculator! (h/t Barry Whitehat for the suggestion)
-* **Data visualization**: Create data visualizations representing the different types of attestations in the AttestationStation
-* **Predictive attestations**: Instead of attesting “I trust XYZ”, try fun attestations like, “I believe XYZ will be considered trusted by a majority of node in the future”. Plus, what if we add a slashing condition to the predictive attestation?
-* **Attestation delegation**: Build a system which manages attestations automatically for users. This system should enable users to delegate some of their attestation assignment to a third party. For instance, users may opt-in to delegating their trust scores to a sybil detection court system. Another project is to build that sybil detection court system! 
-* **Attestation import**: Write proxy contracts which import attestations of various formats into the standardized AttestationStation format so that they can be consumed by the standard AttestationStation tooling.
-* **Viral attestations**: Create systems which make it fun and easy for users to attest useful information about each other.
-* **Composable NFT allowlists**: Create a way for creators to easily build, manage, and share mint allowlists for upcoming NFT drops!
-
+It will take a huge community effort to realize the potential that reputation has to transform web3. That’s why we started small with the AttestationStation and an open invite to come experiment with us. Head over to the project ideas list for a bunch of [fun projects](https://github.com/ethereum-optimism/optimism-project-ideas#ideas) to build today. 
 
 ## Technical specifications
 
@@ -140,15 +130,29 @@ event AttestationCreated(
 
 #### attest
 
+Records attestations to the AttestationStation's state and emits an `AttestationCreated` event with the address of the message sender, address the attestation is about, the bytes32 key, and bytes value.
+
+```
+function attest(address _about, bytes32 _key, bytes memory _val) public
+```
+
+Allows anyone to create an attestation. 
+
+| Name   | Type    | Description                                           |
+|--------|---------|-------------------------------------------------------|
+| _about | address | Address that the attestation is about.                |
+| _key   | bytes32 | A key used to namespace the attestation.              |
+| _val   | bytes   | An arbitrary value stored as part of the attestation. |
+
 ```
 function attest(AttestationData[] memory _attestations) public
 ```
 
-Records attestations to the AttestationStation's state and emits an `AttestationCreated` event with the address of the message sender, address the attestation is about, the bytes32 key, and bytes value.
+Allows anyone to create attestations. 
 
 Parameters:
 
-| Name           | Type              | Description                         |
-| -------------- | ----------------- | ----------------------------------- |
-| \_attestations | AttestationData[] | Array of `AttestationData` structs. |
+| Name           | Type              | Description                   |
+| -------------- | ----------------- | ----------------------------- |
+| \_attestations | AttestationData[] | An array of attestation data. |
 
