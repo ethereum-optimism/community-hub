@@ -7,6 +7,10 @@ lang: en-US
 
 The Optimism Goerli testnet was migrated to Bedrock on January 12, 2023.
 
+:::warning Upgrade Required
+Optimism Goerli is upgrading to the [Regolith hardfork](https://github.com/ethereum-optimism/optimism/blob/develop/specs/network-upgrades.md#regolith) on March 17, 2023. Please make sure to upgrade your nodes to at least the `op-node` and `op-geth` versions below prior to that date.
+:::
+
 <table width="100%">
     <tbody>
         <tr>
@@ -67,11 +71,11 @@ The Optimism Goerli testnet was migrated to Bedrock on January 12, 2023.
         </tr>
         <tr>
             <td>op-node</td>
-            <td><code>us-docker.pkg.dev/oplabs-tools-artifacts/images/op-node:v0.10.9</code></td>
+            <td><code>us-docker.pkg.dev/oplabs-tools-artifacts/images/op-node:v1.0.0</code></td>
         </tr>
         <tr>
             <td>op-geth</td>
-            <td><code>ethereumoptimism/op-geth:v1.10.26-166f27c</code></td>
+            <td><code>us-docker.pkg.dev/oplabs-tools-artifacts/images/op-geth:v1.11.2-13ee9ab</code></td>
         </tr>
         <tr>
             <td>Legacy Geth</td>
