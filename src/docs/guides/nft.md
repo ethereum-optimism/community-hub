@@ -66,6 +66,6 @@ It is accurate, as far as we know, when written (early January 2023), but new fe
 
 - [Alchemy](https://docs.alchemy.com/reference/nft-api-quickstart)
 - [SimpleHash](https://simplehash.com/)
-
+- [QuickNode](https://www.quicknode.com/nft-api)
 
 
