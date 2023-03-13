@@ -20,6 +20,45 @@ In this video you learn how to use Optimism for your own development:
 
 <iframe src="https://www.youtube.com/embed/_Y6CwsYgqwI" title="Getting Started with Optimism" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+## ETHDenver 2023 
+
+February 24th to Mar 5th, 2023
+
+### Scaling Ethereum - Panel with Liam Horne
+
+Our own CEO, Liam Horne joined Jesse from Base, Eva from The Graph Foundation, and Stani from Aave for a panel covering how L2s are scaling Ethereum for global adoption, moderated by Molly from Protocol Labs.
+
+<iframe width="720" height="407" src="https://www.youtube.com/embed/bBNmPNM8U_c" title="Scaling Ethereum for Global Adoption with L2 Panel" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+
+### Doing Decentralization Identity Right - Kelvin Fichter
+
+From our DevRel team, Kelvin Fichter talked about building decentralized, attestation-based identity onchain. Come for the knowledge, stay for the slide art.
+
+<iframe width="720" height="407" src="https://www.youtube.com/embed/o0N1Z9AyrEM" title="Doing Decentralized Identity Right with Kelvin Fichter" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+
+### Web3 Identity Off-Chain, On-Chain, and Both - Panel with Kelvin Fichter
+
+He continued to share his thoughts on a panel, where he sat down Masha Healy & Evin McMullen as they all discussed Web3 identity off-chain, on-chain, or both.
+
+<iframe width="720" height="407" src="https://www.youtube.com/embed/b7UTF1Ri7AM" title="Web3 identity off-chain, on-chain, and both with Kelvin Fichter, Masha Healy &amp; Evin McMullen" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+
+### The Collective DAO Archive - Justine Humenansky
+
+At both ETHDenver, and Schelling Point, Justine Humenansky shared findings from her months long research into DAO governance and policy. Not only did she organize her research results into 10 categories and bless us with actionable takeaways for each, she also open sourced her work! Check out her presentation and dive into [The Collective DAO Archives](https://www.notion.so/1ffe90c038a64f309af46009895495c6?ref=the-optimistic-dev-blog), a searchable library of DAO policies, programs, and processes.
+
+<iframe width="720" height="407" src="https://www.youtube.com/embed/-szn6codPOk" title="The Collective DAO Archives by Justine Humenansky" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+
+### Playing the Cooperative Game Retroactively - Ben Jones 
+
+The OP Stack, the codebase that powers Optimism, is the most overpowered public good in the game. But don’t take our word for it; you can take Ben Jones’ - aka Weird ETH Yankovic - who covered all things RetroPGF and how the OP Stack fits into the broader Ethereum ecosystem.
+
+<iframe width="720" height="407" src="https://www.youtube.com/embed/Ll-iAJeueG4" title="Playing the Cooperative Game, ♻️🔴✨Retroactively✨🔴♻️ with Ben Jones" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+
 ## ETHOnline 2022 | Optimism Summit
 
 September 22nd, 2022
