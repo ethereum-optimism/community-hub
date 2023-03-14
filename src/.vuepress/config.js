@@ -265,7 +265,7 @@ module.exports = {
         '/docs/security-model/optimism-security-model.md',
         '/docs/security-model/bounties.md',
         [
-          'htthttps://dev.optimism.io/decentralization-roadmap/',
+          'https://dev.optimism.io/decentralization-roadmap/',
           'Path to Decentralization (Feb 23rd, 2023)'
         ]
       ],
