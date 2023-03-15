@@ -360,7 +360,7 @@ module.exports = {
   },
 
   plugins: [
-    ["@vuepress/pwa", { skipWaiting: true }],
+    "@vuepress/pwa",
     [
       '@vuepress/plugin-medium-zoom',
       {
