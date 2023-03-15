@@ -39,9 +39,9 @@ It's through this relationship (in part, at least) that Optimism derives its sec
 </details>
 
 <details>
-<summary><b>Bedrock (coming Q1 2023)</b></summary>
+<summary><b>Bedrock (coming Q2 2023)</b></summary>
 
-In Bedrock L2 blocks are saved to the Ethereum blockchain using a non-contract address ([`0xDeadDeAddeAddEAddeadDEaDDEAdDeaDDeAD0001`](https://etherscan.io/address/0xDeadDeAddeAddEAddeadDEaDDEAdDeaDDeAD0001)), to minimize the L1 gas expense. 
+In Bedrock L2 blocks are saved to the Ethereum blockchain using a non-contract address ([`0xff00000000000000000000000000000000000420`](https://etherscan.io/address/0xff00000000000000000000000000000000000420)), to minimize the L1 gas expense. 
 As these blocks are submitted as transaction calldata on Ethereum, there is no way to modify or censor them after the "transaction" is included in a block that has enough attestations.
 This is the way that Optimism inherits the availability and integrity guarantees of Ethereum.
 
@@ -85,7 +85,7 @@ Even if the sequencer is actively censoring a user, the user can always continue
 
 
 <details>
-<summary><b>Bedrock (coming Q1 2023)</b></summary>
+<summary><b>Bedrock (coming Q2 2023)</b></summary>
 
 In Bedrock the sequencer does have a mempool, similar to L1 Ethereum, but the mempool is private to avoid opening opportunities for MEV.
 Blocks are produced every two seconds, regardless of whether they are empty (no transactions), filled up to the block gas limit with transactions, or anything in between.
@@ -133,7 +133,7 @@ This process is then repeated for each new block indexed by the DTL.
 </details>
 
 <details>
-<summary><b>Bedrock (coming Q1 2023)</b></summary>
+<summary><b>Bedrock (coming Q2 2023)</b></summary>
 
 The execution engine (implemented as the `op-geth` component) receive blocks using two mechanisms:
 
@@ -171,7 +171,7 @@ User-created blocks can include transactions that will appear to originate from 
 </details>
 
 <details>
-<summary><b>Bedrock (coming Q1 2023)</b></summary>
+<summary><b>Bedrock (coming Q2 2023)</b></summary>
 
 The contract interface for deposits is very similar, you use [`L1CrossDomainMessenger`](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/cross-dom-comm) or [`L1StandardBridge`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L1/L1StandardBridge.sol).
 Deposit transactions become part of the canonical blockchain in the first L2 block of the "epoch" corresponding to the L1 block where the deposits were made. 
@@ -205,7 +205,7 @@ Users can then prove to contracts on Ethereum that a given contract on Optimism 
 </details>
 
 <details>
-<summary><b>Bedrock (coming Q1 2023)</b></summary>
+<summary><b>Bedrock (coming Q2 2023)</b></summary>
 
 Withdrawals (the term is used for any Optimism to Ethereum message, regardless of whether it has attached assets or not) have three stages:
 
