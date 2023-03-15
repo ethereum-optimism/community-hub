@@ -31,10 +31,6 @@ module.exports = {
     pageInfo: false,
     pwa: {
       cacheHTML: false,
-      workboxOptions: {
-        skipWaiting: true,
-        clientsClaim: true,
-      }
     },
     activeHash: {
       offset: -200,
