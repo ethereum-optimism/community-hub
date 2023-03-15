@@ -1,7 +1,7 @@
 import event from '@vuepress/plugin-pwa/lib/event'
 
 export default ({ router }) => {
-  console.log('new build is here');
+  console.log('second new build is here');
   autoReload();
   
   router.addRoutes([
@@ -12,6 +12,6 @@ export default ({ router }) => {
 const autoReload = () => {
     event.$on('sw-updated', e => e.skipWaiting().then(() => {
       console.log('SW UPDATED AND RELOADING 2');
-      location.reload(true);
+      // location.reload(true);
     }))
 }
