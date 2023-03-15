@@ -29,7 +29,7 @@ Another block explorer for the Georli test network is [Blockscout](https://block
 
 ## Dashboards on Dune Analytics
 
-[Dune Analytics](https://dune.xyz) allows anyone to create dashboards that present information about Optimism Ethereum.
+[Dune Analytics](https://dune.xyz) allows anyone to create dashboards that present information about Optimism Mainnet.
 You can find a full list of community created dashboards for Optimism [here](https://dune.xyz/browse/dashboards?q=optimism), or [create your own](https://docs.dune.xyz/#queries) dashboard.
 
 Here are some of our favorite dashboards so far:
