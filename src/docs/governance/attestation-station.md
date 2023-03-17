@@ -66,6 +66,7 @@ If your product is using the AttestationStation, make a PR including how you're 
 * [Optimist Score by Flipside](https://science.flipsidecrypto.xyz/optimist/)
 * [Optimism Attestor by Clique](https://provenance.clique.social/attestor/opattestor)
 * [ZK Discord Attestations by Clique](https://clique.social/attestor/opattestor_discordroles)
+* [Credit Risk Score by RociFi](https://v2.roci.fi/app/analytics?address=0x00227dd82fae1220bdac630297753bb2cb4e8ddd)
 
 
 #### What indexing is available for the AttestationStation? 
