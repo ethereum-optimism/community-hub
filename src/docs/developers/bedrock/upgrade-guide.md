@@ -5,7 +5,7 @@ lang: en-US
 
 ::: warning This guide is for bedrock
 This guide is for the *bedrock* upgrade, which is coming in Q1, 2023, subject to approval by Optimism governance.
-Do not attempt to use this in production prior to that upgrade. Keep an eye on these docs or [our official Twitter](https://twitter.com/OPLabsPBC) for announcements.
+Do not attempt to use this in production prior to that upgrade. Keep an eye on these docs or [OP Lab's Twitter account](https://twitter.com/OPLabsPBC) for announcements.
 :::
 
 This document provides an overview of how the Bedrock upgrade will be executed and how it will impact node operators and dApp developers.
