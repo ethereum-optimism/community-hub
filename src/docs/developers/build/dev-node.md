@@ -7,7 +7,7 @@ lang: en-US
 
 A development environment is a local installation of the entire Optimism system.
 Our default development environment includes both L1 and L2 development nodes.
-Running the Optimism environment locally is a great way to test your code and see how your contracts will behave on Optimism before you graduate to a testnet deployment (and eventually a mainnet deployment).
+Running the Optimism environment locally is a great way to test your code and see how your contracts will behave on Optimism before you graduate to a testnet deployment (and eventually a mainnet deployment). A comparison of different nodes can also be found [here](https://www.alchemy.com/overviews/optimism-node).
 
 Alternatively, you can get a hosted development node from [Alchemy](https://www.alchemy.com/optimism) or [any of these providers](../../useful-tools/providers.md).
 
