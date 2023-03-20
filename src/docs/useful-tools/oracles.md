@@ -53,6 +53,19 @@ You can always get up to date information (see, for example, [here (scroll down 
 
 [See this guide to learn how to use the Chainlink feeds](https://docs.chain.link/docs/get-the-latest-price/).
 
+## Tellor
+
+[Tellor](https://tellor.io/) is a permissionless, censorship-resistant, and customizable oracle.
+
+The Tellor protocol can secure putting any verifiable data on-chain, from spot price feeds, TWAPs, random numbers, to EVM calldata - you can even [specify your own "query type"](https://github.com/tellor-io/dataSpecs/issues/new?assignees=&labels=&template=new_query_type.yaml&title=%5BNew+Data+Request+Form%5D%3A+) to build a feed to fit your specific needs.
+
+As described in the oracles overview section of this page, we are an oracle protocol that has "a mechanism to reward entities that provide accurate information and penalize those that provide incorrect information." Therefore it is necessary to allow some reasonable [amount of time](https://docs.tellor.io/tellor/getting-data/solidity-integration#reading-data) between an oracle update and using that data, to allow for a potential dispute (probablistic finality).
+
+Tellor is a pull oracle where users fund (tip) a specific feed to get updated data reports and then read the data from our oracle contract, however under certain circumstances it can act similar to a push oracle; if your reading from a feed that is already being updated by others, or if you are [running your own data reporter.](https://docs.tellor.io/tellor/reporting-data/introduction)
+
+To learn more about using tellor please [read our docs](https://docs.tellor.io) or [get in touch](https://discord.gg/tellor).
+
+[Tellor contract addresses on Optimism can be found here.](https://docs.tellor.io/tellor/the-basics/contracts-reference#optimism)
 
 
 ## Portal
