@@ -63,7 +63,7 @@ export default Vue.extend({
                                     " Discord community"
                                 ])
                             ]),
-                            h("a", { attrs: { href: "https://oplabs.typeform.com/get-in-touch", target: "_blank" } }, [
+                            h("a", { attrs: { href: "https://forms.monday.com/forms/c867f3f357707ff1fb4af0d3d5080710?r=use1", target: "_blank" } }, [
                                 h("div", [
                                     h("i", { attrs: { class: "far fa-comment-dots" } }),
                                     " Get support for going live"
