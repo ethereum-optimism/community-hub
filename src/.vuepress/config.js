@@ -11,6 +11,11 @@ module.exports = {
     ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
     ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }],
     ['link', { rel: "icon", type: "image/png", sizes: "32x32", href: "/assets/logos/favicon.png"}],
+    ['meta', { property: 'og:image', content: 'https://docs.optimism.io/assets/logos/twitter-logo.png' }],
+    ['meta', { name: 'twitter:image', content: 'https://docs.optimism.io/assets/logos/twitter-logo.png' }],
+    ['meta', { name: 'twitter:title', content: 'OP Docs' }],
+    ['meta', { property: 'og:title', content: 'OP Docs' }],
+    ['meta', { name: 'twitter:card', content: 'summary' } ],    
   ],
 
   theme: path.resolve(__dirname, './theme'),
