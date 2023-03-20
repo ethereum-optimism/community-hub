@@ -26,6 +26,13 @@ If you don't fall into one of the above categories, you can probably get away wi
 If you don't know whether or not you should be using the development environment, feel free to hop into the [Optimism discord](https://discord-gateway.optimism.io).
 Someone nice will help you out!
 
+
+## How to do it
+
+The easiest way to create a development node is to use [OP Stack](https://stack.optimism.io/).
+The L1 can be Goerli, as [explaied in the OP Stack setup doc](https://stack.optimism.io/docs/build/getting-started/), or it can be a locally run node such as [Ganache](https://trufflesuite.com/ganache/).
+
+<!-- 
 ## What does it include?
 
 Everything you need to test your Optimistic application:
@@ -256,3 +263,4 @@ curl http://localhost:8080/addresses.json
 
 You should get back a JSON object that contains a mapping of contract names to contract addresses.
 These addresses should not change, even if you restart your environment.
+-->
