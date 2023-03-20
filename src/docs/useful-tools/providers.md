@@ -39,7 +39,7 @@ Its API takes only a few lines of code to get up and running. Alchemy isn't just
 
 ### Alchemy's Supported Networks
 
-- Optimism Ethereum
+- Optimism Mainnet
 - Optimism Goerli
 
 [Sign up for a free Alchemy account here](https://www.alchemy.com/optimism).
@@ -54,7 +54,7 @@ Moreover, Ankr offers access to developer tooling on Optimism like SDKs and [Adv
 
 ### Supported Networks
 
-- Optimism Ethereum
+- Optimism Mainnet
 - Optimism Goerli
 
 
@@ -67,7 +67,7 @@ On the platform, there are also [Public APIs](https://blastapi.io/public-api/opt
 
 ### Supported Networks
 
-- Optimism Ethereum
+- Optimism Mainnet
 - Optimism Goerli
 
 ## BlockVision
@@ -76,7 +76,7 @@ On the platform, there are also [Public APIs](https://blastapi.io/public-api/opt
 
 ### Supported Networks
 
-- Optimism Ethereum
+- Optimism Mainnet
 
 ## Chainnodes
 
@@ -86,7 +86,7 @@ On the platform, there are also [Public APIs](https://blastapi.io/public-api/opt
 
 ### Supported Networks
 
-- Optimism Ethereum
+- Optimism Mainnet
 - Optimism Goerli
 
 ## GetBlock
@@ -96,7 +96,7 @@ On the platform, there are also [Public APIs](https://blastapi.io/public-api/opt
 
 ### Supported Networks
 
-- Optimism Ethereum
+- Optimism Mainnet
 - Optimism Goerli
 
 ## Infura
@@ -109,7 +109,7 @@ On the platform, there are also [Public APIs](https://blastapi.io/public-api/opt
 
 ### Supported Networks
 
-- Optimism Ethereum
+- Optimism Mainnet
 - Optimism Goerli
 
 
@@ -123,7 +123,7 @@ On the platform, there are also [Public APIs](https://blastapi.io/public-api/opt
 
 ### Supported Networks
 
-- Optimism Ethereum
+- Optimism Mainnet
 
 
 
@@ -137,7 +137,7 @@ The URL format is `https://optimism.nownodes.io/?API_key=<API key from NOWNodes`
 
 ### Supported Networks
 
-- Optimism Ethereum
+- Optimism Mainnet
 
 
 
@@ -150,7 +150,7 @@ The URL format is `https://optimism.nownodes.io/?API_key=<API key from NOWNodes`
 
 ### Supported Networks
 
-- Optimism Ethereum
+- Optimism Mainnet
 
 
 ## QuickNode
@@ -162,7 +162,7 @@ You can select addons, like "Archive Mode" or "Trace Mode" for an additional cos
 
 ### Supported Networks
 
-- Optimism Ethereum
+- Optimism Mainnet
 - Optimism Goerli
 
 
