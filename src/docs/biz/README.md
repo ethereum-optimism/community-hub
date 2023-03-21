@@ -5,7 +5,7 @@ lang: en-US
 
 Welcome! We're stoked that you're launching on Optimism. 
 
-If you have not filled out the [get started form](https://oplabs.typeform.com/get-in-touch?typeform-source=community.optimism.io) please do so prior to reading this.
+If you have not filled out the [get started form](https://forms.monday.com/forms/c867f3f357707ff1fb4af0d3d5080710) please do so prior to reading this.
 
 We are excited for your deployment onto Optimism! 
 You will be welcomed by [the following metrics](https://dune.com/optimismfnd/Optimism) 📈📈 (up and to the right!), [a budding community](https://discord-gateway.optimism.io/) 🫂🫂, and some great exclusive [Telegram Channels](https://t.me/+Cb7q0a1YqItkZTRk) ⚙️⚙️ for builders.
@@ -22,7 +22,7 @@ Steps to take if you would like developer support immediately, ranked in order o
 1. See our [Developer Documentation](../developers/), [Tutorials](https://github.com/ethereum-optimism/optimism-tutorial), and [Help Center](https://help.optimism.io)
 1. Head over to [**#dev-support**](https://discord.com/channels/667044843901681675/887914409207414785) on discord for the fastest help 
 1. Join [this TG group](https://t.me/+Cb7q0a1YqItkZTRk) and ask for help there
-1. Last attempt: [Fill out this form](https://oplabs.typeform.com/get-in-touch?typeform-source=community.optimism.io)
+1. Last attempt: [Fill out this form](https://forms.monday.com/forms/c867f3f357707ff1fb4af0d3d5080710).
 
 
 ## Marketing Requests 🦸🦸
@@ -80,7 +80,7 @@ Check out [Bedrock](https://dev.optimism.io/introducing-optimism-bedrock/) and [
 Want to see the first ever step forward into a modular rollup architecture? We are making it easy for anyone to deploy their own app-specific rollup via the [OP Stack](https://optimism.mirror.xyz/fLk5UGjZDiXFuvQh6R_HscMQuuY9ABYNF7PI76-qJYs). 
 **Fun fact:** A team has already launched [a Voxel Game on the OP Stack](https://dev.optimism.io/opcraft-autonomous-world/)! 
 Interested in exploring more? 
-[Fill out this form](https://docs.google.com/forms/d/e/1FAIpQLSciIONqVoMI6ivlrvp2EAdjrWqmZVGIpEaBbhaVZ17ZOf8DqQ/viewform?usp=sharing).
+[Fill out this form](https://wkf.ms/3XTdpLl).
 
 **Last note:** [We’re hiring](https://boards.greenhouse.io/oplabs)! 
 Join our community! 
