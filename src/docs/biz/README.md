@@ -80,7 +80,7 @@ Check out [Bedrock](https://dev.optimism.io/introducing-optimism-bedrock/) and [
 Want to see the first ever step forward into a modular rollup architecture? We are making it easy for anyone to deploy their own app-specific rollup via the [OP Stack](https://optimism.mirror.xyz/fLk5UGjZDiXFuvQh6R_HscMQuuY9ABYNF7PI76-qJYs). 
 **Fun fact:** A team has already launched [a Voxel Game on the OP Stack](https://dev.optimism.io/opcraft-autonomous-world/)! 
 Interested in exploring more? 
-[Fill out this form](https://docs.google.com/forms/d/e/1FAIpQLSciIONqVoMI6ivlrvp2EAdjrWqmZVGIpEaBbhaVZ17ZOf8DqQ/viewform?usp=sharing).
+[Fill out this form](https://wkf.ms/3XTdpLl).
 
 **Last note:** [We’re hiring](https://boards.greenhouse.io/oplabs)! 
 Join our community! 
