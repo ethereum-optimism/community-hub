@@ -41,7 +41,7 @@ It's through this relationship (in part, at least) that Optimism derives its sec
 <details>
 <summary><b>Bedrock (coming Q1 2023)</b></summary>
 
-In Bedrock L2 blocks are saved to the Ethereum blockchain using a non-contract address ([`0xDeadDeAddeAddEAddeadDEaDDEAdDeaDDeAD0001`](https://etherscan.io/address/0xDeadDeAddeAddEAddeadDEaDDEAdDeaDDeAD0001)), to minimize the L1 gas expense. 
+In Bedrock L2 blocks are saved to the Ethereum blockchain using a non-contract address ([`0xff00000000000000000000000000000000000420`](https://etherscan.io/address/0xff00000000000000000000000000000000000420)), to minimize the L1 gas expense.
 As these blocks are submitted as transaction calldata on Ethereum, there is no way to modify or censor them after the "transaction" is included in a block that has enough attestations.
 This is the way that Optimism inherits the availability and integrity guarantees of Ethereum.
 
