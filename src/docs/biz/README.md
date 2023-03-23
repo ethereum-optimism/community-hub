@@ -82,7 +82,7 @@ Want to see the first ever step forward into a modular rollup architecture? We a
 Interested in exploring more? 
 [Fill out this form](https://wkf.ms/3XTdpLl).
 
-**Last note:** [We’re hiring](https://boards.greenhouse.io/oplabs)! 
+**Last note:** [We’re hiring](https://jobs.optimism.io/)! 
 Join our community! 
 Have fun! 
 Enjoy life! 

@@ -26,14 +26,14 @@ February 24th to Mar 5th, 2023
 
 ### Scaling Ethereum - Panel with Liam Horne
 
-Our own CEO, Liam Horne joined Jesse from Base, Eva from The Graph Foundation, and Stani from Aave for a panel covering how L2s are scaling Ethereum for global adoption, moderated by Molly from Protocol Labs.
+OP Labs' CEO, Liam Horne joined Jesse from Base, Eva from The Graph Foundation, and Stani from Aave for a panel covering how L2s are scaling Ethereum for global adoption, moderated by Molly from Protocol Labs.
 
 <iframe width="720" height="407" src="https://www.youtube.com/embed/bBNmPNM8U_c" title="Scaling Ethereum for Global Adoption with L2 Panel" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 
 ### Doing Decentralization Identity Right - Kelvin Fichter
 
-From our DevRel team, Kelvin Fichter talked about building decentralized, attestation-based identity onchain. Come for the knowledge, stay for the slide art.
+From the OP Labs DevRel team, Kelvin Fichter talked about building decentralized, attestation-based identity onchain. Come for the knowledge, stay for the slide art.
 
 <iframe width="720" height="407" src="https://www.youtube.com/embed/o0N1Z9AyrEM" title="Doing Decentralized Identity Right with Kelvin Fichter" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
