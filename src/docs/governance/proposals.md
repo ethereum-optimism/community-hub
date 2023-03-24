@@ -2,12 +2,13 @@
 title: Submitting Proposals
 lang: en-US
 ---
-:::         
-             
-This information is here for your convenience. 
+
+::: tip This information is here for your convenience
+
 The source of truth for all governance related processes is the [Operating Manual](https://github.com/ethereum-optimism/OPerating-manual/blob/main/manual.md#proposal-process--components-of-a-valid-proposal). 
 
 :::
+
 ## Governance Fund Grant Proposals
 
 Projects may submit a proposal to request OP tokens from the [Governance Fund](https://gov.optimism.io/t/governance-fund-charter/3944). 
