@@ -3,7 +3,7 @@ home: true
 icon: home
 title: Home
 heroImage: /assets/logos/header.png
-heroText: The Optimism Docs
+heroText: " "
 
 features:
   - title: Quick Start
