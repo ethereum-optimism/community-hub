@@ -65,7 +65,7 @@ If your product is using the AttestationStation, make a PR including how you're 
 * [Optimism Attestor by Clique](https://provenance.clique.social/attestor/opattestor)
 * [ZK Discord Attestations by Clique](https://clique.social/attestor/opattestor_discordroles)
 * [Credit Risk Score by RociFi](https://v2.roci.fi/app/analytics?address=0x00227dd82fae1220bdac630297753bb2cb4e8ddd)
-* [AttestationStation Provider by Sismo](https://docs.sismo.io/sismo-docs/technical-documentation/sismo-hub/data-providers)
+* [Data Provider by Sismo](https://factory.sismo.io/) - [docs](https://docs.sismo.io/sismo-docs/technical-documentation/sismo-hub/data-providers)
 
 #### What indexing is available for the AttestationStation? 
 * [API endpoints by nxyz](https://docs.n.xyz/reference/attestation-station)
