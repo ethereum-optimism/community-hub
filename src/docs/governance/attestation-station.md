@@ -22,18 +22,16 @@ Attestations are statements by a creator (who attested this) about a subject (wh
 
 #### What can attestations be used for?
 
-We imagine the first use case for attestations is to create sybil resistant identity that can power [non-plutocratic governance](https://vitalik.ca/general/2021/08/16/voting3.html).
+We imagine the first use case for attestations is to create sybil resistant identity that can power [Optimism's Citizen House](https://community.optimism.io/docs/governance/citizenship/#) and other forms of [non-plutocratic governance](https://vitalik.ca/general/2021/08/16/voting3.html).
 
 Longer term, this open-source primitive can be used for a variety of sybil-resistant applications including onchain credit scoring / under collateralized loans.
 
 #### How can you go from attestations to sybil-resistant identity?
 
-Attestations in the AttestationStation are onchain and can be used by other smart contracts in a variety of applications. Instead of having a single entity owning user data and identity, the AttestationStation is a graph of peer-to-peer (p2p) attestations. 
+Attestations in the AttestationStation are onchain and can be used by other smart contracts in a variety of applications. 
 
-The first step to get from attestations to sybil-resistant identity is to grow the number of attestations in the AttestationStation. To do that, we are taking a two pronged approach by growing the number of:
+Our first step towards building a decentralized and secure identity infrastructure involves creating a network of attestations from various sources. This approach eliminates the need for a single entity to own user data and identity. Instead, we are growing attestations from both existing centralized entities and peer-to-peer attestations to create a more robust and diverse network.
 
-* **Trusted attestations**: These attestations are made by organizations like Gitcoin, DegenScore, Otterspace, etc. attest about individual community members.
-* **Social attestations**: These are attestations from one address about another. Eg zain.eth says kathy.eth is a colleague, kathy.eth says will.eth is a friend, etc.
 
 ![](../../assets/docs/governance/attestationstation/network.png)
 
