@@ -17,6 +17,6 @@ These are issues that appear like they might be a problem, but really aren't.
   These transactions come from a dummy address and don't have a signature.
   Because in Ethereum the chainID is encoded as part of the signature, this means there is no recoverable chainID for these transactions.
 
-  This is an a problem because the only source of deposit transactions is the block derivation process. 
+  This is not a problem because the only source of deposit transactions is the block derivation process. 
   There shouldn't be a need to recover the chainID.
 
