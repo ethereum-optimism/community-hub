@@ -138,6 +138,7 @@ module.exports = {
           'https://www.optimism.io/vision',
           'The Optimistic Vision'
         ],
+        '/docs/governance/media.md',
         {
           title: "OP Holders",
           children: [
