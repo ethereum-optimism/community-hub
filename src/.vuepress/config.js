@@ -47,27 +47,27 @@ module.exports = {
       /* When you update here, don't forget to update the tiles
          in src/README.md */
       {
-        text: "Quick Start",
-        link: '/docs/guides/'
+        text: "About Governance",
+        link: '/docs/about-governance/'
       },      
       {
-        text: 'How Optimism Works',
-        link: '/docs/protocol/',
+        text: 'This Season',
+        link: '/docs/seasons/',
       },      
       {
-        text: 'Support',
+        text: 'Token House',
         link: '/docs/biz/'        
       },
       {
-        text: 'Security',
+        text: 'Citizen House',
         link: '/docs/security-model/',
       },
       {
-        text: 'Dev Docs',
-        link: '/docs/developers/',
+        text: 'Treasury',
+        link: '/docs/treasury/',
       },
       {
-        text: "Governance",
+        text: "Policies",
         link: "/docs/governance/"
       },   
       {
@@ -75,7 +75,7 @@ module.exports = {
         link: '/docs/contribute/',
       },
       {
-        text: 'Community',
+        text: 'Platforms',
         items: [
           {
             icon: 'discord',
@@ -206,63 +206,74 @@ module.exports = {
         '/docs/governance/what-is-the-optimism-foundation.md',
         '/docs/governance/attestation-station.md' 
       ],
-      '/docs/guides/': [
+      '/docs/seasons/': [
         {
-          title: "Beginner",
-          children: [
-            [
-              "https://github.com/ethereum-optimism/optimism-tutorial/tree/main/getting-started",
-              "Developing smart contracts on Optimism"
-            ],            
-            '/docs/guides/nft.md',            
-            '/docs/guides/testing.md',
-            [
-              'https://docs.alchemy.com/reference/optimism-sdk-examples',
-              'Using Alchemy to query the Optimism blockchain'
-            ]
+          title: "Retroactive Public Goods Funding",
+          children: [       
+            '/docs/seasons/about-retropgf.md',            
+            '/docs/seasons/citizen-retro-2.md',
+            '/docs/seasons/citizen-retro-1.md'            
           ],
           collapsable: true,
         },
         {
-          title: "Getting your dapp on Optimism",
-          children: [
-            [
-              "https://github.com/ethereum-optimism/optimism-tutorial/tree/main/cross-dom-bridge-eth",
-              "Bridging ETH with the Optimism SDK"
-            ],
-            [
-              "https://github.com/ethereum-optimism/optimism-tutorial/tree/main/cross-dom-bridge-erc20",
-              "Bridging ERC-20 tokens with the Optimism SDK"
-            ],
-            [
-              "https://github.com/ethereum-optimism/optimism-tutorial/tree/main/sdk-view-tx",
-              "View transactions between layers"
-            ],
-            [
-              "https://github.com/ethereum-optimism/optimism-tutorial/tree/main/standard-bridge-standard-token",
-              "Creating an ERC20 Token on L2 to represent one on L1"
-            ],
-            [
-              "https://github.com/ethereum-optimism/optimism-tutorial/tree/main/standard-bridge-custom-token",
-              "Registering a Custom ERC20 Token on L2"
-            ],
-            [
-              "https://github.com/ethereum-optimism/optimism-tutorial/tree/main/sdk-estimate-gas",
-              "Estimate the costs of an Optimistic (L2) transaction"
-            ]
+          title: "Token House Seasons",
+          children: [       
+            '/docs/seasons/about-token-house-seasons.md',            
+            '/docs/seasons/token-house-s4.md',
+            '/docs/seasons/token-house-s3.md',
+            '/docs/seasons/token-house-s2.md',
+            '/docs/seasons/token-house-s1.md'        
           ],
           collapsable: true,
         },
         {
-          title: "Specific guides",
-          children: [
-            '/docs/guides/wallet-dev.md',
-            '/docs/guides/cex-dev.md',
-            '/docs/guides/bridge-dev.md',    
+          title: "Airdrops",
+          children: [       
+            '/docs/seasons/about-airdrops.md',            
+            '/docs/seasons/airdrop-1.md',
+            '/docs/seasons/airdrop-2.md'    
           ],
           collapsable: true,
-        },        
-
+        }
+      ],
+      '/docs/treasury/': [
+        {
+          title: 'Optimism Collective Economics',
+          children: [
+            '/docs/treasury/economics.md',
+            '/docs/treasury/allocations.md',
+          ]
+        },
+        {
+          title: "Retroactive Public Goods Funding",
+          children: [       
+            '/docs/seasons/about-retropgf.md',            
+            '/docs/seasons/citizen-retro-2.md',
+            '/docs/seasons/citizen-retro-1.md'            
+          ],
+          collapsable: true,
+        },
+        {
+          title: "Token House Seasons",
+          children: [       
+            '/docs/seasons/about-token-house-seasons.md',            
+            '/docs/seasons/token-house-s4.md',
+            '/docs/seasons/token-house-s3.md',
+            '/docs/seasons/token-house-s2.md',
+            '/docs/seasons/token-house-s1.md'        
+          ],
+          collapsable: true,
+        },
+        {
+          title: "Airdrops",
+          children: [       
+            '/docs/seasons/about-airdrops.md',            
+            '/docs/seasons/airdrop-1.md',
+            '/docs/seasons/airdrop-2.md'    
+          ],
+          collapsable: true,
+        }
       ],
       '/docs/security-model/': [
         '/docs/security-model/optimism-security-model.md',
