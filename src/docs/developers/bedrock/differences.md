@@ -139,7 +139,7 @@ Unlike the legacy network, Bedrock nodes _always_ derive blocks from L1. This me
 Bedrock adopts the same vocabulary as the Beacon Chain to describe block finality. Blocks can be in one of the following states:
 
 - `unsafe`, meaning that the block has been received via gossip but has not yet been submitted to L1. Unsafe blocks can be reorged if L1 reorgs, or the sequencer reorgs.
-- `safe`, meaning that the block has been submitted to L1. Unsafe blocks can be reorged if L1 reorgs.
+- `safe`, meaning that the block has been submitted to L1. Safe blocks can also be reorged if L1 reorgs.
 - `finalized`, meaning that the block has reached sufficient depth to be considered final. Finalized blocks cannot be reorged.
 
 The current `safe`, `unsafe`, and `finalized` blocks can be queried via [JSON-RPC](#json-rpc).
