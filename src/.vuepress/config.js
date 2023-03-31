@@ -352,7 +352,6 @@ module.exports = {
           children: [
             '/docs/developers/bedrock/explainer.md',
             '/docs/developers/bedrock/differences.md',
-            '/docs/developers/bedrock/public-testnets.md',
             '/docs/developers/bedrock/node-operator-guide.md',
             '/docs/developers/bedrock/upgrade-guide.md',
             '/docs/developers/bedrock/metrics.md'

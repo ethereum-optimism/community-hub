@@ -86,7 +86,31 @@ They are reproduced here for convenience
 | ProxyAdmin | [`0x01d3670863c3F4b24D7b107900f0b75d4BbC6e0d`](https://goerli.etherscan.io/address/0x01d3670863c3F4b24D7b107900f0b75d4BbC6e0d)
 | SystemConfig | [`0xAe851f927Ee40dE99aaBb7461C00f9622ab91d60`](https://goerli.etherscan.io/address/0xAe851f927Ee40dE99aaBb7461C00f9622ab91d60)
 | SystemDictator | [`0x1f0613A44c9a8ECE7B3A2e0CdBdF0F5B47A50971`](https://goerli.etherscan.io/address/0x1f0613A44c9a8ECE7B3A2e0CdBdF0F5B47A50971)
+| Batch Inbox Address | [`0xff00000000000000000000000000000000000420`](https://goerli.etherscan.io/address/0xff00000000000000000000000000000000000420)
 
+<details>
+
+<summary><b>Additional parameters</b></summary>
+
+These parameters are mostly useful to people responsible for running and administring network nodes.
+
+| Parameter      | Value |
+| -------------- | ----- |
+| L1 Chain ID    | 5 |
+| Rollup Config  | This network does not require a rollup config. Specify `--network=goerli` on the command line
+| Withdrawal period | 2 seconds |
+
+
+
+#### Links
+
+- [Bedrock Data Directory](https://storage.googleapis.com/oplabs-goerli-data/goerli-bedrock.tar)
+- [Legacy Geth Data Directory](https://storage.googleapis.com/oplabs-goerli-data/goerli-legacy-archival.tar)
+- [Configuration parameters](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/deploy-config/goerli.json)
+- [Docker images (`op-node` and `op-geth`)](https://console.cloud.google.com/artifacts/docker/oplabs-tools-artifacts/us/images)
+- [Legacy geth](https://hub.docker.com/layers/ethereumoptimism/l2geth/0.5.29/images/sha256-e40ea183c[…]e981408ccf9c07191667554c48b620e5eabc61521c3b3?context=explore)
+
+</details>
 
 ### API Options
 
