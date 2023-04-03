@@ -99,7 +99,7 @@ Transactions get to the sequencer in two ways:
    This provides Optimism with L1 Ethereum level censorship resistance.
    You can read more about this mechanism [is the protocol specifications](https://github.com/ethereum-optimism/optimism/blob/develop/specs/derivation.md#deriving-the-transaction-list).
 
-1. Transactions submitted directly to the sequnecer. 
+1. Transactions submitted directly to the sequencer. 
    These transactions are a lot cheaper to submit (because you do not need the expense of a separate L1 transaction), but of course they cannot be made censorship resistant, because the sequencer is the only entity that knows about them.
 
 </details>
