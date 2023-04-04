@@ -43,6 +43,31 @@ This is a push Oracle.
 Optimism updates the gas price parameters on chain whenever those parameters change. 
 The L1 gas price, which can be volatile, is only pushed once every 5 minutes, and each time can change only by up to 20%.
 
+## API3
+
+[API3](https://api3.org) is a collaborative project to **deliver traditional API services to smart contracts** in a decentralized and trust-minimized way.
+
+It is governed by a decentralized autonomous organization (DAO), namely the [API3 DAO](https://api3.org/dao).
+
+### Airnode
+
+An [Airnode](https://docs.api3.org/airnode) is a **first-party oracle** that pushes off-chain API data to your on-chain contract. Airnode lets API providers easily run their own oracle nodes. That way, they can provide data to any on-chain dApp that's interested in their services, all without an intermediary.
+
+[Check this guide to learn how to call an Airnode](https://docs.api3.org/airnode/v0.10/grp-developers/call-an-airnode.html)
+
+### dAPIs - API3 Datafeeds
+
+[dAPIs](https://docs.api3.org/dapis/) are continuously updated streams of off-chain data, such as the latest cryptocurrency, stock and commodity prices. They can power various decentralized applications such as DeFi lending, synthetic assets, stablecoins, derivatives, NFTs and more.
+
+The data feeds are continuously updated by [first-party oracles](https://dapi-docs.api3.org/explore/introduction/first-party.html) using signed data. dApp owners can read the on-chain value of any dAPI in realtime.
+
+[Check this guide to learn how to use dAPIs in your Smart Contracts](https://dapi-docs.api3.org/guides/dapis/subscribing-self-funded-dapis/).
+
+### QRNG
+
+[API3 QRNG](https://docs.api3.org/qrng/) is a public utility we provide with the courtesy of [Australian National University (ANU)](https://www.anu.edu.au/). It is powered by an Airnode hosted by [ANU Quantum Random Numbers](https://quantumnumbers.anu.edu.au/), meaning that it is a first-party service.
+It is served as a public good and is free of charge (apart from the gas costs), and it **provides ‘true’ quantum randomness** via an easy-to-use solution when requiring RNG on-chain.
+
 ## Chainlink
 
 On Optimism [Chainlink](https://chain.link/) provides a number of [price feeds](https://docs.chain.link/docs/optimism-price-feeds/).
