@@ -288,6 +288,13 @@ module.exports = {
             '/docs/protocol/compressed-ctc.md'
           ],
           collapsable: false,  
+        },
+        {
+          title: 'Data flows (in bedrock)',
+          children: [
+            '/docs/protocol/txn-flow.md',
+          ],
+          collapsable: false,  
         }
       ],
       '/docs/developers/': [
