@@ -115,7 +115,7 @@ To add your token to the standard bridge, see the guide [Adding an ERC20 token t
 
 The Standard bridge allows a one-to-many mapping between L1 and L2 tokens, meaning that there can be many Optimism implementations of an L1 token.
 However there is always a one-to-one mapping between L1 and L2 tokens in the [Superchain token list](https://github.com/ethereum-optimism/ethereum-optimism.github.io/blob/master/optimism.tokenlist.json).
-The Superchain token list is used as the source of truth for the [Optimism Bridge](https://app.optimism.io/bridge/deposit) which is the main portal for moving assets between Layer 1 and Layer 2.
+The Superchain token list is used as the source of truth for the [Optimism bridge UI](https://app.optimism.io/bridge/deposit) which is the main portal for moving assets between Layer 1 and Layer 2.
 
 If you want to have your token added to the Superchain token list, you must make a pull request against the [Superchain token list repository](https://github.com/ethereum-optimism/ethereum-optimism.github.io#adding-a-token-to-the-list).
 You'll need the addresses for both the L1 and L2 tokens, as well as a logo for the token.
