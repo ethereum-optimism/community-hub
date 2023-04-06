@@ -117,6 +117,6 @@ The Standard bridge allows a one-to-many mapping between L1 and L2 tokens, meani
 However there is always a one-to-one mapping between L1 and L2 tokens in the [Superchain token list](https://github.com/ethereum-optimism/ethereum-optimism.github.io/blob/master/optimism.tokenlist.json).
 The Superchain token list is used as the source of truth for the [Optimism Bridge](https://app.optimism.io/bridge/deposit) which is the main portal for moving assets between Layer 1 and Layer 2.
 
-If you want to have your token added to the token list, you must make a pull request against the [Superchain token list repository](https://github.com/ethereum-optimism/ethereum-optimism.github.io#adding-a-token-to-the-list).
+If you want to have your token added to the Superchain token list, you must make a pull request against the [Superchain token list repository](https://github.com/ethereum-optimism/ethereum-optimism.github.io#adding-a-token-to-the-list).
 You'll need the addresses for both the L1 and L2 tokens, as well as a logo for the token.
 If you're looking for an example to follow, take a look at [this simple pull request that adds a token to the token list](https://github.com/ethereum-optimism/ethereum-optimism.github.io/pull/43/files).
