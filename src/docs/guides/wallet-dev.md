@@ -22,7 +22,7 @@ The ERC-20 contract address for a token on Optimism may be different from the ad
 Optimism maintains [a token list](https://static.optimism.io/optimism.tokenlist.json) that includes known addresses for many popular tokens.
 You can see the same list with a nicer user interface [here](https://tokenlists.org/token-list?url=https://static.optimism.io/optimism.tokenlist.json).
 
-For example, looking at the **SNX** token, the [Optimism token list](https://static.optimism.io/optimism.tokenlist.json) returns the following addresses:
+For example, looking at the **SNX** token, the [Superchain token list](https://static.optimism.io/optimism.tokenlist.json) returns the following addresses:
 
 | ChainID | Network | Address |
 | -: | - | - |
