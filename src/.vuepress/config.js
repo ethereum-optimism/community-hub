@@ -368,6 +368,14 @@ module.exports = {
       ],
       '/docs/contribute/': [
         {
+          title: 'Contribution Paths',
+          children: [
+            '/docs/contribute/about-contribution-paths.md',
+            '/docs/contribute/start-contributing.md',
+          ],
+          collapsable: true,          
+        },
+        {
           title: 'Ambassadors',
           children: [
             '/docs/contribute/Ambassador-req.md'
