@@ -376,12 +376,20 @@ module.exports = {
           collapsable: true,          
         },
         {
-          title: 'Ambassadors',
+          title: 'Ambassadors Program',
           children: [
-            '/docs/contribute/Ambassador-req.md'
+            '/docs/contribute/ambassador-req.md'
           ],
           collapsable: true,          
         },
+        {
+          title: 'NERD Program',
+          children: [
+            '/docs/contribute/nerd-req.md'
+          ],
+          collapsable: true,          
+        },
+        '/docs/contribute/dev-contributions.md'
       ]
     }
   },

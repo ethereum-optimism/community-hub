@@ -1,5 +1,5 @@
 ---
-title: Ambassador Requirements 
+title: Ambassador Requirements 1.0
 lang: en-US
 ---
 
