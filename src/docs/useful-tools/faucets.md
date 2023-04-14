@@ -14,6 +14,10 @@ One of those networks is Optimism Goerli.
 
 Users of [Coinbase Wallet](https://www.coinbase.com/wallet) can get test ETH on Optimism Goerli directly from the Coinbase Wallet extension or via the [Coinbase Faucet website](https://coinbase.com/faucets/optimism-goerli-faucet).
 
+### QuickNode
+
+[Optimism Faucet for Goerli by QuickNode](https://faucet.quicknode.com/optimism/goerli) is another easy way to acquire
+some testnet ETH for Optimism.
 
 ### Goerli Faucets
 
