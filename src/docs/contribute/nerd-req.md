@@ -46,10 +46,10 @@ The journey to become an Ambassador follow the following steps:
 You can get the `wannabe-NERD` role in the Optimism Discord. 
 
 ### Requirements  
-Post proof of meeting the requirements in the `#wannabe-NERD` channel. If you speak a second language and would like to offer support in this language, please include this in your message.
-
 - Introduce yourself! Mention your timezone, country, languages you can speak, when you will be online and what your strengths are (i.e technical, design, research, etc)
 - Find other ways you can help! Translating documents, connecting resources, provide research, find helpful resources, make PRs on the docs. There is so much that can be done!
+
+Post proof of meeting the requirements in the `#wannabe-NERD` channel. If you speak a second language and would like to offer support in this language, please include this in your message.
 
 Now that you have the role its time to start contributing! 
 
@@ -57,7 +57,7 @@ Now that you have the role its time to start contributing!
     
 - Answering questions that you know the answer to.
 - Tagging the `support-nerds` to answer questions you don’t know the answer to.
-    - ⚠️ Giving bad/incorrect/misleading answers to users instead of tagging the nerds *will count against you*.
+    - **⚠️ Giving bad/incorrect/misleading answers to users instead of tagging the nerds *will count against you*.**
 - Reporting scams, bots or spam.
 - Keeping the discord “clean” (channel hygiene)
     - Asking users who post questions in general to post them in `user-support`, same for developer issues in `developer-support`
@@ -84,7 +84,7 @@ Now that you have the role its time to start contributing!
 
 `wannabe-NERD` → **`NERD-in-training`** → `NERD`
 
-### Requirements:
+### Requirements
 - Be in the Optimism Discord for at least 2 months. We need to know you are serious 👀  
 - Be actively offering support in the Discord for at least 2 months.
  

@@ -389,6 +389,13 @@ module.exports = {
           ],
           collapsable: true,          
         },
+        {
+          title: 'Translator Program',
+          children: [
+            '/docs/contribute/translator-req.md'
+          ],
+          collapsable: true,          
+        },
         '/docs/contribute/dev-contributions.md'
       ]
     }
