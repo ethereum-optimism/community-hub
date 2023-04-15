@@ -28,7 +28,7 @@ Potential incompatibilities and their workarounds are highlighted in the section
 
 ## Optimism Mainnet Upgrade
 The Bedrock upgrade to the Optimism Mainnet Network is yet to be scheduled. 
-We plan to announce an official date and time at least 3 weeks in advance of the upgrade, subject to completing the [list of criteria](https://gov.optimism.io/t/final-upgrade-proposal-bedrock-v2/5548) approved by Optimism governance.
+We plan to announce an official date and time via [Twitter](https://twitter.com/optimismFND) at least 3 weeks in advance of the upgrade, subject to completing the [list of criteria](https://gov.optimism.io/t/final-upgrade-proposal-bedrock-v2/5548) approved by Optimism governance.
 
 ## For Node Operators
 
@@ -65,7 +65,8 @@ Once the upgrade is complete, everything should be identical to how it was befor
 
 ### When is the upgrade taking place?
 
-The Goerli upgrade completed successfully on [January 12, 2023](https://twitter.com/OPLabsPBC/status/1613684377124327424?lang=en). The mainnet upgrade will be scheduled as soon as we hit all of our criteria laid out in this [approved governance proposal](https://gov.optimism.io/t/final-upgrade-proposal-bedrock-v2/5548).
+The Goerli upgrade completed successfully on [January 12, 2023](https://twitter.com/OPLabsPBC/status/1613684377124327424?lang=en). The mainnet upgrade will be scheduled and announced as soon as we hit all of our criteria laid out in this [approved governance proposal](https://gov.optimism.io/t/final-upgrade-proposal-bedrock-v2/5548).
+
 ### Is this a hard fork, or a new network?
 
 This is a hard fork. The network will retain the same chain ID, transaction history, and state. The first block of the new network will be the last block of the new network + 1.
