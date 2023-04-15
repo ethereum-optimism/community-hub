@@ -4,7 +4,7 @@ lang: en-US
 ---
 
 ::: warning This guide is for bedrock
-This guide is for the *bedrock* upgrade, which is coming in Q1, 2023, subject to approval by Optimism governance.
+This guide is for the *bedrock* upgrade, which is coming in Q2, 2023, subject to approval by Optimism governance.
 Do not attempt to use this in production prior to that upgrade. Keep an eye on these docs or [the OP Labs Twitter account](https://twitter.com/OPLabsPBC) for announcements.
 :::
 
@@ -28,7 +28,7 @@ Potential incompatibilities and their workarounds are highlighted in the section
 
 ## Optimism Mainnet Upgrade
 The Bedrock upgrade to the Optimism Mainnet Network is yet to be scheduled. 
-We plan to announce an official date and time in February 2023 at least 3 weeks in advance of the upgrade, subject to approval by Optimism governance.
+We plan to announce an official date and time at least 3 weeks in advance of the upgrade, subject to completing the [list of criteria](https://gov.optimism.io/t/final-upgrade-proposal-bedrock-v2/5548) approved by Optimism governance.
 
 ## For Node Operators
 
@@ -65,8 +65,7 @@ Once the upgrade is complete, everything should be identical to how it was befor
 
 ### When is the upgrade taking place?
 
-The Goerli upgrade is tentatively scheduled for January 2023. The mainnet upgrade is tentatively scheduled for February 2023. The Goerli upgrade will be live for at least a month before the mainnet upgrade.
-
+The Goerli upgrade completed successfully on [January 12, 2023](https://twitter.com/OPLabsPBC/status/1613684377124327424?lang=en). The mainnet upgrade will be scheduled as soon as we hit all of our criteria laid out in this [approved governance proposal](https://gov.optimism.io/t/final-upgrade-proposal-bedrock-v2/5548).
 ### Is this a hard fork, or a new network?
 
 This is a hard fork. The network will retain the same chain ID, transaction history, and state. The first block of the new network will be the last block of the new network + 1.
