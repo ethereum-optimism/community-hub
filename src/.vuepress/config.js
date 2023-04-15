@@ -366,6 +366,15 @@ module.exports = {
           ]
         }
       ],
+      '/docs/contribute/': [
+        {
+          title: 'Ambassadors',
+          children: [
+            '/docs/contribute/Ambassador-req.md'
+          ],
+          collapsable: true,          
+        },
+      ]
     }
   },
 
