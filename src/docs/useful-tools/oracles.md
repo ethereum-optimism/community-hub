@@ -51,21 +51,21 @@ It is governed by a decentralized autonomous organization (DAO), namely the [API
 
 ### Airnode
 
-An [Airnode](https://docs.api3.org/airnode) is a **first-party oracle** that pushes off-chain API data to your on-chain contract. Airnode lets API providers easily run their own oracle nodes. That way, they can provide data to any on-chain dApp that's interested in their services, all without an intermediary.
+An [Airnode](https://docs.api3.org/explore/airnode/what-is-airnode.html) is a **first-party oracle** that pushes off-chain API data to your on-chain contract. Airnode lets API providers easily run their own oracle nodes. That way, they can provide data to any on-chain dApp that's interested in their services, all without an intermediary.
 
-[Check this guide to learn how to call an Airnode](https://docs.api3.org/airnode/v0.10/grp-developers/call-an-airnode.html)
+[Check this guide to learn how to call an Airnode](https://docs.api3.org/guides/airnode/calling-an-airnode/)
 
 ### dAPIs - API3 Datafeeds
 
-[dAPIs](https://docs.api3.org/dapis/) are continuously updated streams of off-chain data, such as the latest cryptocurrency, stock and commodity prices. They can power various decentralized applications such as DeFi lending, synthetic assets, stablecoins, derivatives, NFTs and more.
+[dAPIs](https://docs.api3.org/explore/dapis/what-are-dapis.html) are continuously updated streams of off-chain data, such as the latest cryptocurrency, stock and commodity prices. They can power various decentralized applications such as DeFi lending, synthetic assets, stablecoins, derivatives, NFTs and more.
 
-The data feeds are continuously updated by [first-party oracles](https://dapi-docs.api3.org/explore/introduction/first-party.html) using signed data. dApp owners can read the on-chain value of any dAPI in realtime.
+The data feeds are continuously updated by [first-party oracles](https://docs.api3.org/explore/introduction/first-party.html) using signed data. dApp owners can read the on-chain value of any dAPI in realtime.
 
-[Check this guide to learn how to use dAPIs in your Smart Contracts](https://dapi-docs.api3.org/guides/dapis/subscribing-self-funded-dapis/).
+[Check this guide to learn how to use dAPIs in your Smart Contracts](https://docs.api3.org/guides/dapis/subscribing-self-funded-dapis/).
 
 ### QRNG
 
-[API3 QRNG](https://docs.api3.org/qrng/) is a public utility we provide with the courtesy of [Australian National University (ANU)](https://www.anu.edu.au/). It is powered by an Airnode hosted by [ANU Quantum Random Numbers](https://quantumnumbers.anu.edu.au/), meaning that it is a first-party service.
+[API3 QRNG](https://docs.api3.org/explore/qrng/) is a public utility we provide with the courtesy of [Australian National University (ANU)](https://www.anu.edu.au/). It is powered by an Airnode hosted by [ANU Quantum Random Numbers](https://quantumnumbers.anu.edu.au/), meaning that it is a first-party service.
 It is served as a public good and is free of charge (apart from the gas costs), and it **provides ‘true’ quantum randomness** via an easy-to-use solution when requiring RNG on-chain.
 
 ## Chainlink
