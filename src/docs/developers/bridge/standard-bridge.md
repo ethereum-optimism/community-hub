@@ -119,4 +119,4 @@ The Superchain token list is used as the source of truth for the [Optimism bridg
 
 If you want to have your token added to the Superchain token list, you must make a pull request against the [Superchain token list repository](https://github.com/ethereum-optimism/ethereum-optimism.github.io#adding-a-token-to-the-list).
 You'll need the addresses for both the L1 and L2 tokens, as well as a logo for the token.
-If you're looking for an example to follow, take a look at [this simple pull request that adds a token to the token list](https://github.com/ethereum-optimism/ethereum-optimism.github.io/pull/43/files).
+If you're looking for an example to follow, take a look at [this simple pull request that adds a token to the token list](https://github.com/ethereum-optimism/ethereum-optimism.github.io/pull/319/files).
