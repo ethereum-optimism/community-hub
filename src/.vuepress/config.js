@@ -138,6 +138,7 @@ module.exports = {
           'https://www.optimism.io/vision',
           'The Optimistic Vision'
         ],
+        '/docs/governance/media.md',
         {
           title: "OP Holders",
           children: [
@@ -288,6 +289,13 @@ module.exports = {
             '/docs/protocol/compressed-ctc.md'
           ],
           collapsable: false,  
+        },
+        {
+          title: 'Data flows (in bedrock)',
+          children: [
+            '/docs/protocol/txn-flow.md',
+          ],
+          collapsable: false,  
         }
       ],
       '/docs/developers/': [
@@ -352,13 +360,21 @@ module.exports = {
           children: [
             '/docs/developers/bedrock/explainer.md',
             '/docs/developers/bedrock/differences.md',
-            '/docs/developers/bedrock/public-testnets.md',
             '/docs/developers/bedrock/node-operator-guide.md',
             '/docs/developers/bedrock/upgrade-guide.md',
             '/docs/developers/bedrock/metrics.md'
           ]
         }
       ],
+      '/docs/contribute/': [
+        {
+          title: 'Ambassadors',
+          children: [
+            '/docs/contribute/Ambassador-req.md'
+          ],
+          collapsable: true,          
+        },
+      ]
     }
   },
 
