@@ -1,3 +1,7 @@
 <script>
-window.location.href = "https://community.optimism.io/docs/useful-tools/networks/#optimism-goerli"
+export default {
+  mounted () {
+    window.location.href="/docs/useful-tools/networks/#optimism-goerli"
+  }
+}
 </script>
