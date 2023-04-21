@@ -145,7 +145,6 @@ The URL format is `https://optimism.nownodes.io/?API_key=<API key from NOWNodes`
 
 [OnFinality](https://onfinality.io/) is a blockchain infrastructure platform that saves Web3 builders time and makes their lives easier. OnFinality delivers scalable API endpoints for the biggest blockchain networks and empowers developers to automatically test, deploy, scale and monitor their own blockchain nodes in minutes. OnFinality offers free and premium (Pay-as-you-go or subsrciption-based) dedicated nodes or API [services for Optimism](https://onfinality.io/networks/optimism). 
 
-
 ### Supported Networks
 
 - Optimism Mainnet
