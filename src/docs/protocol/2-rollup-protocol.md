@@ -212,7 +212,7 @@ Withdrawals (the term is used for any Optimism to Ethereum message, regardless o
 1. You initialize withdrawals with an L2 transaction.
 
 1. Wait for the next output root to be submitted to L1 (you can see this on [the SDK](../sdk/js-client.md)) and then submit the withdrawal proof using `proveWithdrawalTransaction`.
-   This new step enables off-chain monitoring of the withdrawals, which makes it easier to identify incorrect withdrawals or output roots.
+   This new step enables offchain monitoring of the withdrawals, which makes it easier to identify incorrect withdrawals or output roots.
    This protects Optimism users against a whole class of potential bridge vulnerabilities.
 
 1. After the fault challenge period ends (a week on mainnet, less than that on the test network), finalize the withdrawal.

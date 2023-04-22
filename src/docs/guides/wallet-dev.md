@@ -38,7 +38,7 @@ For example, looking at the **SNX** token, the [Superchain token list](https://s
 A transaction in Optimism can be in one of two states:
 
 1. **Sequencer Confirmed**: The transaction has been accepted by the sequencer on Optimism (L2)
-2. **Confirmed On-Chain**: The transaction has been written to Ethereum (L1)
+2. **Confirmed Onchain**: The transaction has been written to Ethereum (L1)
 
 We're still working on the tooling to easily detect when a given transaction has been published to Ethereum.
 For the moment, we recommend wallets consider transactions final after they are "Sequencer Confirmed".

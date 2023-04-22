@@ -19,12 +19,12 @@ Here are some example use cases for meta-transactions:
   It is a lot harder to transfer ETH to the new address privately without creating a connection between it and your identity.
   
 - **Transaction payment by other means**.
-  With meta-transactions you can collect payment for transactions either using a different token (ERC-20) or an off-chain means (for example a credit card).
+  With meta-transactions you can collect payment for transactions either using a different token (ERC-20) or an offchain means (for example a credit card).
 
 ## OpenGSN
 
 The [Gas Station Network](https://opengsn.org/) is distributed infrastructure for meta-transaction that allows you to create your own relay, or pay other relays to relay your users' traffic.
-Relays have to post a bond, which they lose if they attempt to censor transactions (by pretending to accept them without sending them on chain).
+Relays have to post a bond, which they lose if they attempt to censor transactions (by pretending to accept them without sending them onchain).
 See here for [their documentation](https://docs.opengsn.org/).
 
 ### Supported networks:
