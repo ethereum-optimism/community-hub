@@ -266,7 +266,6 @@ module.exports = {
 
       ],
       '/docs/security-model/': [
-        '/docs/security-model/optimism-security-model.md',
         '/docs/security-model/bounties.md',
         [
           'https://dev.optimism.io/decentralization-roadmap/',
@@ -393,3 +392,4 @@ module.exports = {
 }
   
 module.exports.themeConfig.sidebar["/docs/useful-tools/"] = module.exports.themeConfig.sidebar["/docs/developers/"]
+module.exports.themeConfig.sidebar["/docs/sdk/"] = module.exports.themeConfig.sidebar["/docs/developers/"]
