@@ -66,10 +66,10 @@ These rules aim to target behaviors that match Ethereum and Optimism’s values 
 The Foundation believes that active and engaged governance is crucial to scaling decentralized systems. 
 Addresses who match this criterion have actively chosen to actively contribute by participating in governance.
 
-*Criterion: Address has either voted on or authored at least one proposal onchain, or at least two on Snapshot (off-chain).*
+*Criterion: Address has either voted on or authored at least one proposal onchain, or at least two on Snapshot (offchain).*
 - *We filtered to “active DAOs” who have had at least 5 proposals with at least 5 votes.*
-- *On-Chain governance contracts included: Governor Alpha and Bravo, Aave, Curve, Maker, Aragon, DAOHaus, DAOStack, and forks.*
-- *Since Snapshot votes were off-chain, the Foundation recognized that these were more susceptible to spam/farming behavior, often driven by voters with nominal voting power. 
+- *Onchain governance contracts included: Governor Alpha and Bravo, Aave, Curve, Maker, Aragon, DAOHaus, DAOStack, and forks.*
+- *Since Snapshot votes were offchain, the Foundation recognized that these were more susceptible to spam/farming behavior, often driven by voters with nominal voting power. 
   To mitigate this, we filtered Snapshot votes to voters who made up the top 99.9% of total voting power in each DAO (i.e. >= 0.1% of voting power was made up by the sum of all smaller voters).*
 
 #### Multi-Sig Signers

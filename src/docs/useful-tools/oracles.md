@@ -4,7 +4,7 @@ lang: en-US
 ---
 
 
-[Oracles](https://ethereum.org/en/developers/docs/oracles/) provide off-chain data on chain. 
+[Oracles](https://ethereum.org/en/developers/docs/oracles/) provide offchain data onchain. 
 This allows code running on a blockchain to access a wide variety of information.
 For example, a [stablecoin](https://ethereum.org/en/stablecoins/) that accepts ETH as collateral needs to know the ETH/USD exchange rate:
 
@@ -18,12 +18,12 @@ Usually they are either run by the organization that produces the information, o
 
 There are two types of oracles:
 
-1. **Push oracles** are updated continuously and always have up to date information available on chain.
+1. **Push oracles** are updated continuously and always have up to date information available onchain.
 
 1. **Pull oracles** are only updated when information is requested by a contract.
    Pull oracles are themselves divided into two types:
    1. Double-transaction oracles, which require two transactions. 
-      The first transaction is the request for information, which usually causes the oracle to emit an event that triggers some off-chain mechanism to provide the answer (through its own transaction).
+      The first transaction is the request for information, which usually causes the oracle to emit an event that triggers some offchain mechanism to provide the answer (through its own transaction).
       The second transaction actually reads onchain the result from the oracle and uses it.
    1. Single-transaction oracles, which only require one transaction, such as [Chainlink's random number generator](https://docs.chain.link/docs/get-a-random-number/#request-random-values).
       The way this works is that the transaction that requests the information includes a callback (address and the call data to provide it). 
@@ -40,7 +40,7 @@ This contract is a predeploy at address `0x4200000000000000000000000000000000000
 - [On the Optimism Goerli test network](https://goerli-explorer.optimism.io/address/0x420000000000000000000000000000000000000F)
 
 This is a push Oracle. 
-Optimism updates the gas price parameters on chain whenever those parameters change. 
+Optimism updates the gas price parameters onchain whenever those parameters change. 
 The L1 gas price, which can be volatile, is only pushed once every 5 minutes, and each time can change only by up to 20%.
 
 ## Chainlink
@@ -57,7 +57,7 @@ You can always get up to date information (see, for example, [here (scroll down 
 
 [Tellor](https://tellor.io/) is a permissionless, censorship-resistant, and customizable oracle.
 
-The Tellor protocol can secure putting any verifiable data on-chain, from spot price feeds, TWAPs, random numbers, to EVM calldata - you can even [specify your own "query type"](https://github.com/tellor-io/dataSpecs/issues/new?assignees=&labels=&template=new_query_type.yaml&title=%5BNew+Data+Request+Form%5D%3A+) to build a feed to fit your specific needs.
+The Tellor protocol can secure putting any verifiable data onchain, from spot price feeds, TWAPs, random numbers, to EVM calldata - you can even [specify your own "query type"](https://github.com/tellor-io/dataSpecs/issues/new?assignees=&labels=&template=new_query_type.yaml&title=%5BNew+Data+Request+Form%5D%3A+) to build a feed to fit your specific needs.
 
 As described in the oracles overview section of this page, we are an oracle protocol that has "a mechanism to reward entities that provide accurate information and penalize those that provide incorrect information." Therefore it is necessary to allow some reasonable [amount of time](https://docs.tellor.io/tellor/getting-data/solidity-integration#reading-data) between an oracle update and using that data, to allow for a potential dispute (probablistic finality).
 
@@ -75,7 +75,7 @@ To learn more about using tellor please [read our docs](https://docs.tellor.io) 
 ### Verifiable Randomness Function (VRF)
 
 #### Portal
-Portal providers a source of randomness on chain (for now on Optimism Goerli, but eventually also on the Optimism mainnet).
+Portal provides a source of randomness onchain (for now on Optimism Goerli, but eventually also on the Optimism mainnet).
 [You can learn how to use it here](https://portal-docs.readthedocs.io/en/latest/user-vrf-docs.html). 
 It is a single-transaction pull oracle.
 
