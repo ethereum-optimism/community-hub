@@ -2,6 +2,8 @@
 title: What is the AttestationStation?
 lang: en-US
 ---
+
+
 ![](../../assets/docs/governance/attestationstation/attestationstation.png)
 
 The AttestationStation is an **attestation smart contract** deployed on Optimism.  
