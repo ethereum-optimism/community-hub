@@ -134,6 +134,7 @@ module.exports = {
     searchPlaceholder: 'Search the docs',
     sidebar: {    
       '/docs/identity/': [
+        '/docs/identity/intro',
         '/docs/identity/build',
         {
           title: "Technical details",
@@ -221,7 +222,6 @@ module.exports = {
           'Governance Calendar'
         ],
         '/docs/governance/what-is-the-optimism-foundation.md',
-        '/docs/governance/attestation-station.md' 
       ],
       '/docs/guides/': [
         {
