@@ -1,0 +1,22 @@
+---
+title: AttestationStation v1 
+lang: en-US
+---
+
+The AttestationStation v1 uses [the EAS standard](https://docs.attest.sh/docs/welcome) deployed on these addresses:
+
+| Network         | Attestation Contract | Schema Registry Contract |
+| --------------- | - | - |
+| Optimism Goerli | [0x1a5650d0ecbca349dd84bafa85790e3e6955eb84](https://goerli-optimism.etherscan.io/address/0x1a5650d0ecbca349dd84bafa85790e3e6955eb84) | [0x7b24c7f8af365b4e308b6acb0a7dfc85d034cb3f](https://goerli-optimism.etherscan.io/address/0x7b24c7f8af365b4e308b6acb0a7dfc85d034cb3f)
+| Optimism Mainnet | To be announced | To be announced |
+
+You can read and write attestations in several ways:
+
+- [EAS scan user interface](https://easscan.org/)
+- [JavaScript SDK](https://docs.attest.sh/docs/getting--started/javascript)
+- [Access directly onchain](https://github.com/ethereum-attestation-service/eas-contracts/blob/master/contracts/EAS.sol) (if you need to attest from a smart contract)
+
+Searching attestations:
+
+- [User interface](https://easscan.com/)
+- [GraphQL API](https://docs.attest.sh/docs/getting--started/api)
