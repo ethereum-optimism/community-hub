@@ -88,14 +88,14 @@ The directions here are for [Foundry](https://book.getfoundry.sh/), but the conc
    If the result is greater than the block number of the transaction, or equal, the transaction is finalized.
 
    ```sh
-   cast block finalized
+   cast block finalized --field number
    ```
 
 1. Get the number of the latest safe block.
    If the result is greater than the block number of the transaction, or equal, the transaction is safe.
 
    ```sh
-   cast block safe
+   cast block safe --field number
    ```
 
 1. If the transaction isn't finalized or safe, it's unsafe. 
