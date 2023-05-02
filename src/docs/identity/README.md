@@ -1,5 +1,5 @@
 ---
-title: Identity
+title: Identity Overview
 lang: en-US
 ---
 
@@ -11,7 +11,7 @@ However, the current online identity landscape is fragmented, non-interoperable,
 Decentralized identity solutions empower individuals to customize their identity according to their preferences, move it seamlessly across services, and regain control of their personal information from centralized platforms. 
 These solutions are designed to enable users to prove specific attributes about themselves in a trustworthy and verifiable way, without compromising their privacy or security.
 
-Optimism's mission is to create a more decentralized and democratic world, and decentralized identity is central to that mission. 
+The Optimism Collective is [building a better economic engine that fuels positive-sum games](https://www.optimism.io/vision) and decentralized identity is central to that mission. 
 For example, the two-house governance system of the Optimism Collective is composed of token holders and community members who participate in a one-person-one-vote system based on reputation and community contributions. 
 
 In addition to democratic governance, decentralized identity expands the design space for innovation and gives individuals greater control over their finances, and enables them to participate in the global economy on their own terms.
