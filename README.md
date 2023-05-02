@@ -1,32 +1,31 @@
----
-title: Identity
-lang: en-US
----
+# The Optimism Community Hub
 
-## Introduction
+[![Discord](https://img.shields.io/discord/667044843901681675.svg?color=768AD4&label=discord&logo=https%3A%2F%2Fdiscordapp.com%2Fassets%2F8c9701b98ad4372b58f13fd9f65f966e.svg)](https://discord-gateway.optimism.io)
+[![Twitter Follow](https://img.shields.io/twitter/follow/OptimismFND.svg?label=OptimismFND&style=social)](https://twitter.com/OptimismFND)
 
-Identity is a fundamental aspect of human experience that encompasses the relationships, interests, and values that define individuals and groups. 
-However, the current online identity landscape is fragmented, non-interoperable, and controlled by centralized gatekeepers.
+Optimism is a Layer 2 platform for Ethereum.
 
-Decentralized identity solutions empower individuals to customize their identity according to their preferences, move it seamlessly across services, and regain control of their personal information from centralized platforms. 
-These solutions are designed to enable users to prove specific attributes about themselves in a trustworthy and verifiable way, without compromising their privacy or security.
+Optimism is, in a nutshell, an application inside of Ethereum that executes transactions more efficiently than Ethereum itself. It's based on the concept of the [Optimistic Rollup](https://research.paradigm.xyz/rollups), a construction that allows us to "optimistically" publish transaction results without actually executing those transactions on Ethereum (most of the time). Optimism makes transactions cheaper, faster, and smarter.
 
-Optimism's mission is to create a more decentralized and democratic world, and decentralized identity is central to that mission. 
-For example, the two-house governance system of the Optimism Collective is composed of token holders and community members who participate in a one-person-one-vote system based on reputation and community contributions. 
+Please note that this repository is undergoing rapid development.
 
-In addition to democratic governance, decentralized identity expands the design space for innovation and gives individuals greater control over their finances, and enables them to participate in the global economy on their own terms.
+------
 
-## Building a decentralized identity ecosystem, together
+This is the source for the [community hub](https://community.optimism.io/).
 
-Building decentralized identity on the Superchain involves creating a network of reputation data from various sources, eliminating the need for a single entity to own user data and identity.
+# Usage
+## Serve Locally
+```shell
+yarn dev
+```
 
-Through this process, anyone can use algorithms like [EigenTrust](https://en.wikipedia.org/wiki/EigenTrust) to derive identity sets based on a purely subjective web of trust. 
-This allows for the establishment of a more trustworthy and reliable means of verifying an individual's identity in a decentralized environment.
+Then navigate to http://localhost:8080.
+If that link doesn't work, double check the output of `yarn dev`. 
+You might already be serving something on port 8080 and the site may be on port 8081.
 
-This open-source primitive can be applied across the Superchain for a variety of Sybil-resistant applications, including democratic voting and on-chain credit scoring for under-collateralized loans. 
-By leveraging attestations in this way, developers can create more secure, transparent, and democratic systems that allow for greater participation and access for everyone.
+## Build for Production
+```shell
+yarn build
+```
 
-Decentralized identity is an essential components of a more democratic, secure, and accessible web. 
-By working together, we can establish a more diverse and trustworthy network of identities that benefits everyone, and enables new opportunities for innovation in the decentralized identity space. 
-
-The Superchain's AttestationStation and its underlying network of attestations provide a solid foundation for building decentralized identity systems that can scale and adapt to the changing needs of users and developers.
+You probably don't need to run this command, but now you know.
