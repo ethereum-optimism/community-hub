@@ -7,7 +7,7 @@ lang: en-US
 
 Attestations are one of the building blocks of decentralized identity.
 
-Our journey towards decentralized identity begins with the AttestationStation, an attestation smart contract for creating, verifying, and revoking on/off-chain attestations that serve as the data layer towards the goal of enabling a decentralized identity and reputation system on any OP Chain in the Superchain.
+Our journey towards decentralized identity begins with the AttestationStation, an attestation smart contract using the [Ethereum Attestation Service standard](https://optimism-goerli.easscan.org/) for creating, verifying, and revoking on/off-chain attestations. Attestations in the AttestationStation serve that serve as the data layer towards the goal of enabling a decentralized identity and reputation system on any OP Chain in the Superchain.
 
 ![Logo](../../assets/docs/identity/atst-logo.png)
 
