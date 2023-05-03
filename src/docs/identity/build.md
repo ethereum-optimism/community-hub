@@ -33,7 +33,7 @@ The AttestationStation makes it easy to sign any piece of data. In addition, her
 ## Ideas
 
 Are you inspired and don’t know what to build? 
-We have a [project idea list](https://github.com/ethereum-optimism/optimism-project-ideas#identity-ideas). 
+We have a [project idea list](https://optimism.io/ideas). 
 Do you have a good idea, but you know you’re not the right person to build it? Please open a PR on that list and suggest it.
 
 
