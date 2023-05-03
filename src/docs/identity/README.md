@@ -29,4 +29,4 @@ By leveraging attestations in this way, developers can create more secure, trans
 Decentralized identity is an essential components of a more democratic, secure, and accessible web. 
 By working together, we can establish a more diverse and trustworthy network of identities that benefits everyone, and enables new opportunities for innovation in the decentralized identity space. 
 
-The Superchain's AttestationStation and its underlying network of attestations provide a solid foundation for building decentralized identity systems that can scale and adapt to the changing needs of users and developers.
+The Superchain's AttestationStation and its underlying network of attestations provide a solid foundation for building decentralized identity systems that can scale and adapt to the changing needs of users and developers. As an example identity and reputation can emerge by aggregating many individual attestations to derive an identity set.
