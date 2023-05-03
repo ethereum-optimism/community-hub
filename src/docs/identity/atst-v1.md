@@ -3,7 +3,7 @@ title: AttestationStation v1
 lang: en-US
 ---
 
-The AttestationStation v1 uses [the EAS standard](https://docs.attest.sh/docs/welcome) deployed on these addresses:
+The AttestationStation v1 uses [the Ethereum Attestation service standard](https://docs.attest.sh/docs/welcome) deployed on these addresses:
 
 | Network         | Attestation Contract | Schema Registry Contract |
 | --------------- | - | - |
@@ -12,7 +12,7 @@ The AttestationStation v1 uses [the EAS standard](https://docs.attest.sh/docs/we
 
 You can read and write attestations in several ways:
 
-- [EAS scan user interface](https://easscan.org/)
+- [EAS scan user interface](https://optimism-goerli.easscan.org/)
 - [JavaScript SDK](https://docs.attest.sh/docs/getting--started/javascript)
 - [Access directly onchain](https://github.com/ethereum-attestation-service/eas-contracts/blob/master/contracts/EAS.sol) (if you need to attest from a smart contract)
 
