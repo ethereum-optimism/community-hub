@@ -18,5 +18,5 @@ You can read and write attestations in several ways:
 
 Searching attestations:
 
-- [User interface](https://easscan.com/)
+- [User interface](https://optimism-goerli.easscan.org/)
 - [GraphQL API](https://docs.attest.sh/docs/getting--started/api)
