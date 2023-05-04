@@ -12,7 +12,7 @@ To start, the initial set of Citizens in this stage is determined by
 - (a) criteria set by the Optimism Foundation
 - (b) a special election from the Token House. 
 
-Citizenship is conferred by a simple entry in the [AttestationStation](./attestation-station.md).
+Citizenship is conferred by a simple entry in the [AttestationStation](../identity/).
 
 <img width="auto" alt="Optimism Identity" src="https://user-images.githubusercontent.com/27849965/219097012-a21ebb1f-66dc-47a8-8b3f-6382774ad5d6.png">
 
@@ -23,13 +23,13 @@ Holding a voting badge in RetroPGF 2 does not guarantee voting rights in all fut
 
 **How does this work?**
 
-- Optimism has a neutral, permissionless attestation contract called the [`AttestationStation`](./attestation-station.md)
+- Optimism has a neutral, permissionless attestation contract called the [`AttestationStation`](../identity/)
 - Optimism Governance (Token + Citizens’ House) has authority over a function that takes the AttestationStation as an argument and uses any data included to determine the set of Citizens.
 
 Optimism governance can use any reputation data written to the AttestationStation contract to determine Citizenship in future iterations of the Citizens’ House. 
 This system is designed to be flexible and future-proof; rather than prescribe citizenship criteria at the outset, the Collective is keeping true to its principle of iterative governance. 
 
-For more information on Optimism's identity layer, visit the [AttestationStation documentation](./attestation-station.md). 
+For more information on Optimism's identity layer, visit the [AttestationStation documentation](../identity/). 
 
 ## Becoming a Citizen
 
