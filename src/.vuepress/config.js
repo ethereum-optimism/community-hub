@@ -67,6 +67,10 @@ module.exports = {
         link: '/docs/developers/',
       },
       {
+        text: 'Identity',
+        link: '/docs/identity/'
+      },
+      {
         text: "Governance",
         link: "/docs/governance/"
       },   
@@ -129,6 +133,19 @@ module.exports = {
     ],
     searchPlaceholder: 'Search the docs',
     sidebar: {    
+      '/docs/identity/': [
+        '/docs/identity/intro',
+        '/docs/identity/build',
+        {
+          title: "Technical details",
+          children: [
+            '/docs/identity/atst-v1',
+            '/docs/identity/atst-v0'            
+          ]
+        },
+        '/docs/identity/app',
+        '/docs/identity/glossary'
+      ],
       '/docs/governance/': [
         [
           '/docs/governance/',
@@ -205,7 +222,6 @@ module.exports = {
           'Governance Calendar'
         ],
         '/docs/governance/what-is-the-optimism-foundation.md',
-        '/docs/governance/attestation-station.md' 
       ],
       '/docs/guides/': [
         {

@@ -5,6 +5,7 @@ export default ({ router }) => {
   
   router.addRoutes([
     { path: '/docs/', redirect: '/' },
+    { path: '/docs/governance/attestation-station/', redirect: '/docs/identity' }
   ])
 }
 
