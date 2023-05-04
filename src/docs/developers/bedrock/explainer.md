@@ -210,7 +210,7 @@ There are two fundamental reasons for having any diff at all: handling deposited
 
 #### Handling deposited transactions
 
-To represent [deposited transactions](#arbitrary-message-passing-from-l1) in the rollup, there is an additional transaction type introduced. The [execution client](#execution-client) implements this [new transaction type](https://github.com/ethereum-optimism/optimism/blob/develop/specs/%5Bdeposits%5D(#deposits).md%23the-deposited-transaction-type) according to the [EIP-2718 typed transactions](https://eips.ethereum.org/EIPS/eip-2718) standard.
+To represent [deposited transactions](#arbitrary-message-passing-from-l1) in the rollup, there is an additional transaction type introduced. The [execution client](#execution-client) implements this [new transaction type](https://github.com/ethereum-optimism/optimism/blob/develop/specs/deposits.md#the-deposited-transaction-type) according to the [EIP-2718 typed transactions](https://eips.ethereum.org/EIPS/eip-2718) standard.
 
 #### Charging transaction fees
 

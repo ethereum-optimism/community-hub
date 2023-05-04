@@ -27,7 +27,7 @@ For example, if your decentralized application relies on [inter-domain communica
 ## Integration with other products
 
 In many cases a decentralized application requires the services of other contracts. 
-For example, [Perpetual v. 2](https://v2docs.perp.fi/benefits-of-v2) cannot function without [Uniswap v. 3](https://uniswap.org/blog/uniswap-v3).
+For example, [Perpetual v. 2](https://support.perp.com/hc/en-us/articles/5748372509081-Perpetual-Uniswap) cannot function without [Uniswap v. 3](https://uniswap.org/blog/uniswap-v3).
 
 If that is the case you can use [mainnet forking](https://hardhat.org/hardhat-network/guides/mainnet-forking.html).
 It works with Optimism with the exception of transactions that use the `L1BlockNumber` opcode directly.

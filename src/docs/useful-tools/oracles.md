@@ -67,17 +67,7 @@ To learn more about using tellor please [read our docs](https://docs.tellor.io) 
 
 [Tellor contract addresses on Optimism can be found here.](https://docs.tellor.io/tellor/the-basics/contracts-reference#optimism)
 
-
-## Portal
-
-[Portal](https://portal-docs.readthedocs.io/en/latest/index.html) offers users private, scalable, and fast compute power at low costs.
-
 ### Verifiable Randomness Function (VRF)
-
-#### Portal
-Portal provides a source of randomness onchain (for now on Optimism Goerli, but eventually also on the Optimism mainnet).
-[You can learn how to use it here](https://portal-docs.readthedocs.io/en/latest/user-vrf-docs.html). 
-It is a single-transaction pull oracle.
 
 #### Band
 [Band](https://bandprotocol.com/vrf) provides a source of [onchain randomness](https://bandprotocol.com/vrf). 
@@ -108,7 +98,7 @@ Later (in the case of UMA 48 hours later if there is no dispute, longer if there
 ## Uniswap
 
 Technically speaking [Uniswap](https://uniswap.io/) is not an oracle, because the information comes from onchain sources.
-However, Uniswap pools do provide [quotes that give the relative costs of assets](https://docs.uniswap.org/protocol/concepts/V3-overview/oracle).
+However, Uniswap pools do provide [quotes that give the relative costs of assets](https://docs.uniswap.org/concepts/protocol/oracle).
 
 ::: warning
 

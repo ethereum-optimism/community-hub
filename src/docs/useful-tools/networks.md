@@ -130,8 +130,7 @@ To see the full list of providers visit [Node & API Providers](./providers.md).
 
 ### Test ETH
 
-[The Optimism Faucet](https://optimismfaucet.xyz/) provides Optimism Goerli ETH.
-Alternatively, if you already have Goerli ETH, you can [bridge it](https://app.optimism.io/bridge). For more faucet options see [Network Faucets](./faucets.md).
+If you already have Goerli ETH, you can [bridge it](https://app.optimism.io/bridge). For more faucet options see [Network Faucets](./faucets.md).
 
 
 

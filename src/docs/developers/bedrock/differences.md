@@ -286,25 +286,25 @@ Note that in Bedrock there are two contracts:
 These contracts provide the same interface as existed pre-Bedrock so dapps don’t have to be modified to run on Bedrock.
 
 
-- [L1BlockNumber](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L2/L1BlockNumber.sol): 
+- [L1BlockNumber](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/legacy/L1BlockNumber.sol): 
   The `L1BlockNumber` contract provides the number of the latest L1 block. 
   In Bedrock it is simply a proxy to [`L1Block`](#l1block). 
 - [L2CrossDomainMessenger](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L2/L2CrossDomainMessenger.sol):
   The `L2CrossDomainMessenger` contract is used to send messages from Optimism to Ethereum.
 - [L2StandardBridge](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L2/L2StandardBridge.sol):
   The `L2StandardBridge` contract is used to "attach" assets (ETH and ERC-20 tokens) to messages that are then sent by `L2CrossDomainMessenger`.
-- [WETH9](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L2/WETH9.sol): 
-  [The WETH9 contract](https://weth.io/) is an ERC-20 token that wraps around ETH to provide extra functionality, such as approvals.
+- [WETH9](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/vendor/WETH9.sol): 
+  [The WETH9 contract](https://web.archive.org/web/20221022164309/https://weth.io/) is an ERC-20 token that wraps around ETH to provide extra functionality, such as approvals.
 
 
 #### Historical contracts
 
 These are contracts that are no longer relevant, but are kept as part of the state in case there is a call in any dapp that uses them.
 
-- [DeployerWhitelist](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L2/DeployerWhitelist.sol):
+- [DeployerWhitelist](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/legacy/DeployerWhitelist.sol):
   The `DeployerWhitelist` contract used to manage the whitelist before [Optimism moved out of beta](https://twitter.com/optimismFND/status/1471571415774023682).
 
-- [OVM_ETH](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L2/OVM_ETH.sol):
+- [OVM_ETH](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/legacy/LegacyERC20ETH.sol):
   The `OVM_ETH` contract used to manage users ETH balances prior to Bedrock.
 
 ## Communication between layers
