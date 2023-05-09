@@ -25,7 +25,7 @@ The talk touches on a few different Optimism governance initiatives including th
 
 ### The Collective DAO Archive - Justine Humenansky
 
-At both ETHDenver, and Schelling Point, Justine Humenansky shared findings from her months long research into DAO governance and policy. Not only did she organize her research results into 10 categories and bless us with actionable takeaways for each, she also open sourced her work! Check out her presentation and dive into [The Collective DAO Archives](https://www.notion.so/1ffe90c038a64f309af46009895495c6?ref=the-optimistic-dev-blog), a searchable library of DAO policies, programs, and processes.
+At both ETHDenver, and Schelling Point, Justine Humenansky shared findings from her months long research into DAO governance and policy. Not only did she organize her research results into 10 categories and bless us with actionable takeaways for each, she also open sourced her work! Check out her presentation and dive into [The Collective DAO Archives](https://plaid-cement-e44.notion.site/The-Collective-DAO-Archives-Governance-Library-a58c6a2567c34636bc425ac97c7c9a79 ), a searchable library of DAO policies, programs, and processes.
 
 <iframe width="720" height="407" src="https://www.youtube.com/embed/-szn6codPOk" title="The Collective DAO Archives by Justine Humenansky" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
