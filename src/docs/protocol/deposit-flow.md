@@ -74,7 +74,6 @@ Deposits are transactions, and as such can fail due to several reasons:
 
 It is possible to replay a failed deposit, possibly with more gas, 
 
-<!-- 
 
 ### Replays in action
 
@@ -124,7 +123,7 @@ To see how replays work, you can use [this contract on Optimism Goerli](https://
      | payableAmount | 0 
      | _target       | 0x26A145eccDf258688C763726a8Ab2aced898ADe1
      | _message      | The calldata you created in the previous step
-     | _minGasLimit  | 50000
+     | _minGasLimit  | 100000
 
    - To send the greeting change as a deposit using Foundry, use these commands:
 
@@ -133,17 +132,58 @@ To see how replays work, you can use [this contract on Optimism Goerli](https://
      L1_CROSS_DOM_COMM=0x5086d1eef304eb5284a0f6720f79403b4e9be294
      FUNC="sendMessage(address,bytes,uint32)"
      CALLDATA=`cast calldata "setGreeting(string)" "testing"`
-     cast send --rpc-url $L1_RPC --private-key $PRIV_KEY $L1_CROSS_DOM_COMM $FUNC $GREETER $CALLDATA 50000
+     cast send --rpc-url $L1_RPC --private-key $PRIV_KEY $L1_CROSS_DOM_COMM $FUNC $GREETER $CALLDATA 100000
      ```
 
-1. The next step is to find the hash of the failed message.
-   The easiest way to do this is to look in [the internal transactions of the destination contract](https://goerli-optimism.etherscan.io/address/0x26A145eccDf258688C763726a8Ab2aced898ADe1#internaltx), select the latest one, and then look at the transaction's events.
-   There should be a `FailedRelayedMessage` event, similar to [this one](https://goerli-optimism.etherscan.io/tx/0xbfc03667d9bd8673bc6058f7db7c319f8f6962053ad5328664544b1c6f0235e3#eventlog).
-   The parameter to that log entry is the hash we need to replay.
+   Either way, the message will fail. 
 
-   ![Hash to replay](../../assets/docs/protocol/deposit-flow/getHash.png)
+1. Call `startChanges()` to allow changes.
+   You can do that either [from Etherscan](https://goerli-optimism.etherscan.io/address/0x26A145eccDf258688C763726a8Ab2aced898ADe1#writeContract#F2), or using this Foundry command:
+
+   ```sh
+   cast send --private-key $PRIV_KEY $GREETER "startChanges()"
+   ```
+
+1. Verify that `getStatus()` returns `True`, meaning changes are not allowed, and see the value of `greet()`.
+   Again, you can do this from [Etherscan](https://goerli-optimism.etherscan.io/address/0x26A145eccDf258688C763726a8Ab2aced898ADe1#readContract), or use Foundry:
+
+   ```sh
+   cast call $GREETER "greet()" | cast --to-ascii ; cast call $GREETER "getStatus()"
+   ```
+
+1. The next step is to find the hash of the failed relay.
+   The easiest way to do this is to look in [the internal transactions of the destination contract](https://goerli-optimism.etherscan.io/address/0x26A145eccDf258688C763726a8Ab2aced898ADe1#internaltx), and select the latest one that appears as a failure.
+   It should be a call to L2CrossDomainMessenger at address `0x420...007`. This is the call you need to replay.
+
+1. Get the transaction information using Foundry.
+
+   ```sh
+   TX_HASH=<transaction hash from Etherscan>
+   L2_CROSS_DOM_COMM=0x4200000000000000000000000000000000000007
+   REPLAY_DATA=`cast tx $TX_HASH input`
+   cast send --private-key $PRIV_KEY $L2_CROSS_DOM_COMM $REPLAY_DATA 
+   ```
 
 
-1. 
+<!-- 
+1. You can replay the message [from Etherscan](https://goerli-optimism.etherscan.io/address/0x4200000000000000000000000000000000000007#writeProxyContract) using the same parameters with a payable amount of zero.
+   Make sure to add `0x` in front of the values you got from Etherscan in the previous step, and to remove the zeros in front of the addresses (`_sender` and `_target`).   
+   Note that all the values after the gas limit are a single value parameter, the message - you need to write them together, with a single `0x` in front.
+
+
+Function: relayMessage(uint256 _nonce,address _sender,address _target,uint256 _value,uint256 _minGasLimit,bytes _message)
+
+MethodID: 0xd764ad0b
+[0]:  000100000000000000000000000000000000000000000000000000000000a25a
+[1]:  0000000000000000000000008225d72f2c39f3729d7f3fc03c6aa8731eaeef48
+[2]:  00000000000000000000000026a145eccdf258688c763726a8ab2aced898ade1
+[3]:  0000000000000000000000000000000000000000000000000000000000000000
+[4]:  000000000000000000000000000000000000000000000000000000000000c350
+[5]:  00000000000000000000000000000000000000000000000000000000000000c0
+[6]:  0000000000000000000000000000000000000000000000000000000000000064
+[7]:  a413686200000000000000000000000000000000000000000000000000000000
+[8]:  0000002000000000000000000000000000000000000000000000000000000000
+[9]:  0000000774657374696e67000000000000000000000000000000000000000000
+[10]: 0000000000000000000000000000000000000000000000000000000000000000
 
 -->
