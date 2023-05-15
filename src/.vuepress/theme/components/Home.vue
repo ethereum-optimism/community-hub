@@ -54,6 +54,16 @@
       </div>
     </header>
 
+    <div style="background:rgb(253, 235, 236);padding:16px 16px 16px 12px">
+      <p style="text-align: center;">
+        The OP Mainnet upgrade to the Bedrock release will take place on <b>June 6, 2023 at 16:00 UTC!</b>
+        <br />
+        <a target="_" href="https://oplabs.notion.site/Bedrock-Mission-Control-EXTERNAL-fca344b1f799447cb1bcf3aae62157c5">See here for additional details.</a>
+        <OutboundLink>
+        </OutboundLink>
+      </p>
+    </div> 
+
     <MyTransition :delay="0.16">
       <div>
         <h2 class="features-header">Resources</h2>
