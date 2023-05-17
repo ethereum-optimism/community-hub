@@ -14,7 +14,7 @@ lang: en-US
 - **Attestation verifier:** The entity or individual that verifies the attestation and ensures that it is valid and accurate. 
   In decentralized identity, the attestation verifier can be a service provider, website, or any other entity that requires verification of a person's identity or personal information.
 
-- **AttestationStation (ATST)**: AttestationStation is a decentralized, permissionless platform for for creating, verifying, and revoking on/off-chain attestations on the Superchain. 
+- **AttestationStation (ATST)**: AttestationStation is a decentralized, permissionless database for for creating, verifying, and revoking on/off-chain attestations on the Superchain. 
 The AttestationStation uses [the EAS Standard](https://attest.sh/).
 
 - **Decentralized identity**: A system that enables individuals to have greater control and ownership over their personal data and identity. 

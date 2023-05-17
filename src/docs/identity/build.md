@@ -7,7 +7,7 @@ lang: en-US
 
 Attestations are one of the building blocks of decentralized identity.
 
-Our journey towards decentralized identity begins with the AttestationStation, an attestation smart contract using the [Ethereum Attestation Service standard](https://optimism-goerli.easscan.org/) for creating, verifying, and revoking on/off-chain attestations. Attestations in the AttestationStation serve that serve as the data layer towards the goal of enabling a decentralized identity and reputation system on any OP Chain in the Superchain.
+Our journey towards decentralized identity begins with the AttestationStation, an attestation smart contract using the [Ethereum Attestation Service standard](https://optimism-goerli.easscan.org/) for creating, verifying, and revoking on/off-chain attestations. Attestations in the AttestationStation serve as the data layer towards the goal of enabling a decentralized identity and reputation system on any OP Chain in the Superchain. You can think of the AttestationStation as a multiplayer database for streamlining the attestation process and establishing a robust trust network.
 
 ![Logo](../../assets/docs/identity/atst-logo.png)
 
@@ -16,8 +16,6 @@ An attestation is a signed statement about a person, entity, or thing, made by a
 The reliability of an attestation is dependent on the credibility of the person or entity making the statement. When the attestation pertains to significant matters, such as a credit score, it is only considered valuable if it comes from a trusted source, such as a credit score provider.
 
 It is essential to note that attestations should not be viewed as a replacement for verifiable credentials or decentralized identifiers. Rather developers can use AttestationStation to create [decentralized identifiers](https://www.w3.org/TR/did-core/), credentials, claims, and more.
-
-AttestationStation is a shared public platform for streamlining the attestation process and establishing a robust trust network.
 
 
 ## Benefits of using the AttestationStation
