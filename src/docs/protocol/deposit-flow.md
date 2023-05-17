@@ -83,12 +83,14 @@ To see how replays work, you can use [this contract on Optimism Goerli](https://
    You can do that either [from Etherscan](https://goerli-optimism.etherscan.io/address/0x26A145eccDf258688C763726a8Ab2aced898ADe1#writeContract#F3), or using this Foundry command (after you set `$PRIV_KEY` to your private key, and `$ETH_RPC_URL` to a URL to Optimism Goerli):
 
    ```sh
+   PRIV_KEY=<your private key here>
+   export ETH_RPC_URL=<url to Optimism Goerli>
    GREETER=0x26A145eccDf258688C763726a8Ab2aced898ADe1
    cast send --private-key $PRIV_KEY $GREETER "stopChanges()"
    ```
 
 1. Verify that `getStatus()` returns `False`, meaning changes are not allowed, and see the value of `greet()`.
-   Again, you can do this from [Etherscan](https://goerli-optimism.etherscan.io/address/0x26A145eccDf258688C763726a8Ab2aced898ADe1#readContract), or use Foundry:
+   Again, you can do this from [Etherscan](https://goerli-optimism.etherscan.io/address/0x26A145eccDf258688C763726a8Ab2aced898ADe1#readContract), or use Foundry (where `False` is returned as zero):
 
    ```sh
    cast call $GREETER "greet()" | cast --to-ascii ; cast call $GREETER "getStatus()"
@@ -135,7 +137,9 @@ To see how replays work, you can use [this contract on Optimism Goerli](https://
      cast send --rpc-url $L1_RPC --private-key $PRIV_KEY $L1_CROSS_DOM_COMM $FUNC $GREETER $CALLDATA 100000
      ```
 
-   Either way, the message will fail. 
+   <!--
+   Either way, the transaction will be successful on L1, and then fail on L2. It is a good idea to keep the transaction hash of this transaction to facilitate future debugging. Store it in `L1_TX_HASH`.
+   -->
 
 1. Call `startChanges()` to allow changes.
    You can do that either [from Etherscan](https://goerli-optimism.etherscan.io/address/0x26A145eccDf258688C763726a8Ab2aced898ADe1#writeContract#F2), or using this Foundry command:
@@ -145,7 +149,7 @@ To see how replays work, you can use [this contract on Optimism Goerli](https://
    ```
 
 1. Verify that `getStatus()` returns `True`, meaning changes are not allowed, and see the value of `greet()`.
-   Again, you can do this from [Etherscan](https://goerli-optimism.etherscan.io/address/0x26A145eccDf258688C763726a8Ab2aced898ADe1#readContract), or use Foundry:
+   Again, you can do this from [Etherscan](https://goerli-optimism.etherscan.io/address/0x26A145eccDf258688C763726a8Ab2aced898ADe1#readContract), or use Foundry (where it returns one):
 
    ```sh
    cast call $GREETER "greet()" | cast --to-ascii ; cast call $GREETER "getStatus()"
@@ -163,6 +167,22 @@ To see how replays work, you can use [this contract on Optimism Goerli](https://
    REPLAY_DATA=`cast tx $TX_HASH input`
    cast send --private-key $PRIV_KEY $L2_CROSS_DOM_COMM $REPLAY_DATA 
    ```
+
+   Note: For debugging you can ask the L2 cross domain messenger the state of the transaction. 
+    
+   1. Look in Etherscan to see the `FailedRelayedMessage` event. Set `MSG_HASH` to that value.
+
+   1. To check if the message is listed as failed, run this:
+
+      ```sh
+      cast call $L2_CROSS_DOM_COMM "failedMessages(bytes32)" $MSG_HASH
+      ```
+
+      To check if it is listed as successful, run this:
+
+      ```sh
+      cast call $L2_CROSS_DOM_COMM "successfulMessages(bytes32)" $MSG_HASH
+      ```
 
 
 <!-- 
