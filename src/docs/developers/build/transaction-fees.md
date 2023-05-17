@@ -26,6 +26,16 @@ The amount of L2 gas used depends on the particular transaction that you're tryi
 Thanks to [EVM equivalence](https://medium.com/ethereum-optimism/introducing-evm-equivalence-5c2021deb306), transactions typically use approximately the same amount of gas on Optimism as they do on Ethereum.
 Gas prices fluctuate with time and congestion, but you can always check the current estimated L2 gas price on the [public Optimism dashboard](https://public-grafana.optimism.io/d/9hkhMxn7z/public-dashboard?orgId=1&refresh=5m).
 
+::: tip Slightly different in Bedrock 
+
+The Bedrock upgrade includes [EIP-1559](https://eips.ethereum.org/EIPS/eip-1559), so 
+
+```
+transaction_gas_price = l2_base_fee + l2_priority_fee
+```
+
+:::
+
 ### The L1 data fee
 
 Optimism differs from Ethereum because all transactions on Optimism are also published to Ethereum.
