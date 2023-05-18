@@ -18,14 +18,14 @@ In addition to democratic governance, decentralized identity expands the design 
 
 ## Building a decentralized identity ecosystem, together
 
-Building decentralized identity on the Superchain involves using proof of personhood and web of trust data from various sources, eliminating the need for a single entity to own user data and identity.
+Building decentralized identity on the Superchain involves using proof of personhood and reputation data from various sources, eliminating the need for a single entity to own user data and identity.
 
 Through this process, anyone can use algorithms like [EigenTrust](https://en.wikipedia.org/wiki/EigenTrust) to derive identity sets based on a purely subjective web of trust. This allows for the establishment of a more trustworthy and reliable means of verifying an individual's identity in a decentralized environment.
 
-This open-source primitive can be applied across the Superchain for a variety of Sybil-resistant applications, including democratic voting and on-chain credit scoring for under-collateralized loans. By leveraging attestations in this way, developers can create more secure, transparent, and democratic systems that allow for greater participation and access for everyone.
+This open-source primitive can be applied across the Superchain for a variety of Sybil-resistant applications, including democratic voting and onchain credit scoring for under-collateralized loans. By leveraging attestations in this way, developers can create more secure, transparent, and democratic systems that allow for greater participation and access for everyone.
 
 Decentralized identity is an essential components of a more democratic, secure, and accessible web. By working together, we can establish a more diverse and trustworthy network of identities that benefits everyone, and enables new opportunities for innovation in the decentralized identity space. 
 
-The Superchain's AttestationStation is a multiplayer database and its underlying network of attestations provide the foundation for building decentralized identity systems that can scale and adapt to the changing needs of users and developers.
+To help enable this the AttestationStation is a multiplayer database and its underlying network of attestations provide the foundation for building decentralized identity systems that can scale and adapt to the changing needs of users and developers.
 
 [Next >](./build.md)
