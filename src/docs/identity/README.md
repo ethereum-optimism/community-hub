@@ -26,6 +26,6 @@ This open-source primitive can be applied across the Superchain for a variety of
 
 Decentralized identity is an essential components of a more democratic, secure, and accessible web. By working together, we can establish a more diverse and trustworthy network of identities that benefits everyone, and enables new opportunities for innovation in the decentralized identity space. 
 
-To help enable this the AttestationStation is a multiplayer database and its underlying network of attestations provide the foundation for building decentralized identity systems that can scale and adapt to the changing needs of users and developers.
+The AttestationStation serves as a key component in achieving this vision. It functions as a multiplayer database and its underlying network of attestations lays the foundation for constructing decentralized identity systems that can effectively scale and adapt to the evolving needs of users and developers.
 
 [Next >](./build.md)
