@@ -35,6 +35,7 @@ If you want to search for information (for example, “all attestations about ad
 To optimize for performance, there are several APIs that you can use to search attestations:
 
 - [API endpoints by nxyz](https://docs.n.xyz/reference/attestation-station)
+- [GraphQL Indexer by Mason Hall](https://attestation-indexer-production.up.railway.app/graphql)
 - [ShroomSDK by Flipside](https://github.com/MSilb7/op_attestationstation_data)
 - [Subgraph by wslyvh](https://thegraph.com/hosted-service/subgraph/wslyvh/optimism-atst)
 
