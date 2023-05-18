@@ -5,7 +5,7 @@ lang: en-US
 
 ## About attestations
 
-Attestations are signed statements about a person, entity, or thing, made by an individual, company, or organization. Attestations are  one of the building blocks of decentralized identity.
+Attestations are signed statements about a person, entity, or thing, made by an individual, company, or organization and are one of the building blocks of decentralized identity.
 
 Our journey towards decentralized identity begins with the AttestationStation, an attestation smart contract using the [Ethereum Attestation Service standard](https://optimism-goerli.easscan.org/) for creating, verifying, and revoking on/off-chain attestations. You can think of the AttestationStation as a multiplayer database for streamlining the attestation process and enabling a robust web of trust on any OP Chain in the Superchain.
 
