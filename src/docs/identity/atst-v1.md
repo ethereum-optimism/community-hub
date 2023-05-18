@@ -16,7 +16,7 @@ You can read and write attestations in several ways:
 - [JavaScript SDK](https://docs.attest.sh/docs/getting--started/javascript)
 - [Access directly onchain](https://github.com/ethereum-attestation-service/eas-contracts/blob/master/contracts/EAS.sol) (if you need to attest from a smart contract)
 
-Searching attestations:
-
-- [User interface](https://optimism-goerli.easscan.org/)
-- [GraphQL API](https://docs.attest.sh/docs/getting--started/api)
+Indexing is available via: 
+- [GraphQL endpoint](https://optimism-goerli.easscan.org/graphql)
+- [Ponder graph]( https://github.com/ethereum-attestation-service/eas-ponder-graph)
+- [Open source indexer]( https://github.com/ethereum-attestation-service/eas-indexing-service)
