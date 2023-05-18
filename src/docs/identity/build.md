@@ -54,7 +54,7 @@ Here are some best practices to avoid violating users’ privacy:
 
 **Q: Are attestations replacements for proof of personhood?**
 
-**A:** Attestations and the underlying web of trust are complementary with proof of personhood like [WorldID](https://worldcoin.org/blog/announcements/worldcoin-commits-optimism-superchain-vision-ahead-mainnet-launch) and similar solutions. Without proof of personhood, agents could sybil-attack the web of trust to build their reputation. On the otherhand web of trust extends proof of personhood to confer more information about the person you're interacting with which is critical in governance and other use-cases that require knowledge of the person's reputation.   
+**A:** Attestations and the associated web of trust are complementary with proof of personhood like [WorldID](https://worldcoin.org/blog/announcements/worldcoin-commits-optimism-superchain-vision-ahead-mainnet-launch) and similar solutions. Without proof of personhood, agents could sybil-attack the web of trust to build their reputation. On the otherhand web of trust extends proof of personhood to confer more information about the person you're interacting with which is critical in governance and other use-cases that require knowledge of the person's reputation.   
 
 **Q: Why attestations instead of soulbound / non-transferable tokens?**
 
