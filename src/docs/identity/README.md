@@ -18,7 +18,7 @@ In addition to democratic governance, decentralized identity expands the design 
 
 ## Building a decentralized identity ecosystem, together
 
-Building decentralized identity on the Superchain involves creating a web of trust using proof of personhood and reputation data from various sources, eliminating the need for a single entity to own user data and identity.
+Building decentralized identity on the Superchain involves using proof of personhood and web of trust data from various sources, eliminating the need for a single entity to own user data and identity.
 
 Through this process, anyone can use algorithms like [EigenTrust](https://en.wikipedia.org/wiki/EigenTrust) to derive identity sets based on a purely subjective web of trust. This allows for the establishment of a more trustworthy and reliable means of verifying an individual's identity in a decentralized environment.
 
