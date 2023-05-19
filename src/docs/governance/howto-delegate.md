@@ -82,5 +82,5 @@ Make sure you understand and follow the [delegate code of conduct](https://gov.o
 ## Step 4: Vote (if you are a delegate)
 
 Go to the [Optimism Governance Portal](https://vote.optimism.io/), connect your wallet, and vote.
-There is no minimum OP holding voting requirement, but you will need to have the OP tokens you wish to delegate or vote with in your wallet when the voting measurment is taken. 
+There is no minimum OP holding voting requirement, but you will need to have the OP tokens you wish to delegate or vote with in your wallet when the voting measurement is taken. 
 Tokens that are staked or LP’d at the time of measurement do not carry voting power.

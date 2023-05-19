@@ -92,7 +92,7 @@ They are reproduced here for convenience
 
 <summary><b>Additional parameters</b></summary>
 
-These parameters are mostly useful to people responsible for running and administring network nodes.
+These parameters are mostly useful to people responsible for running and administering network nodes.
 
 | Parameter      | Value |
 | -------------- | ----- |
