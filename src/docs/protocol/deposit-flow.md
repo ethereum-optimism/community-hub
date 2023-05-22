@@ -5,7 +5,7 @@ lang: en-US
 
 ## Introduction
 
-In Optimism terminology *deposit* refers to any transaction that goes from L1 to L2.
+In Optimism terminology, the term "*deposit transaction*" refers to any L2 transaction that is triggered by a transaction or event on L1.
 A deposit transaction may or may not have assets (ETH, tokens, etc.) attached to it.
 
 The process is somewhat similar to [the way most networking stacks work](https://en.wikipedia.org/wiki/Encapsulation_(networking)).
