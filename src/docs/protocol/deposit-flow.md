@@ -40,6 +40,9 @@ Information is encapsulated in lower layer packets on the sending side, and then
 
 1. [`_sendMessage`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L1/L1CrossDomainMessenger.sol#L45-L52) calls the portal's [`depositTransaction` function](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L1/OptimismPortal.sol#L434).
 
+   Note that other contracts can also call [`depositTransaction`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L1/OptimismPortal.sol#L434) directly. 
+   However, doing so bypasses certain safeguards, so in post cases it's a bad idea.
+
 1. [The `depositTransaction` function](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L1/OptimismPortal.sol#L434) runs a few sanity checks, and then emits a [`TransactionDeposited`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L1/OptimismPortal.sol#L85-L99) event. 
 
 
@@ -163,7 +166,7 @@ To see how replays work, you can use [this contract on Optimism Goerli](https://
    ::: details Why do we need to specify the gas limit?
    
    The gas estimation mechanism tries to find the minimum gas limit at which the transaction would be successful. 
-   However, the L2 cross domain messenger does not revert when a replay fails due to low gas limit, it just emits a failure message. 
+   However, `L2CrossDomainMessenger` does not revert when a replay fails due to low gas limit, it just emits a failure message. 
    The gas estimation mechanism considers that a success.
 
    To get a gas estimate, you can use this command:
