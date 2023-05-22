@@ -9,7 +9,7 @@ In Optimism terminology *deposit* refers to any transaction that goes from L1 to
 A deposit transaction may or may not have assets (ETH, tokens, etc.) attached to it.
 
 The process is somewhat similar to [the way most networking stacks work](https://en.wikipedia.org/wiki/Encapsulation_(networking)).
-Information is encapsulated in lower layer packets on the sending side, and then retrieved in those layers on the receiving side before being available 
+Information is encapsulated in lower layer packets on the sending side, and then retrieved and used by those layers on the receiving side while going up the stack to the receiving application.
 
 ![Overall process](../../assets/docs/protocol/deposit-flow/overall-process.svg)
 
@@ -22,7 +22,7 @@ Information is encapsulated in lower layer packets on the sending side, and then
    - `_target`, target address on L2.
    - `_message`, the L2 transaction's calldata, [formatted as per the ABI](https://docs.soliditylang.org/en/v0.8.19/abi-spec.html).
    - `_minGasLimit`, the gas limit required for the transaction on L2. 
-     Note that the actual amount will be higher, because the portal contract on L2 needs to do some processing before submitting the call to `_target`.
+     Note that the actual amount provided on L2 will be higher, because the portal contract on L2 needs to do some processing before submitting the call to `_target`.
 
    You can see code that implements this call [in the tutorial](https://github.com/ethereum-optimism/optimism-tutorial/blob/main/cross-dom-comm/hardhat/contracts/FromL1_ControlL2Greeter.sol#L16).
 
@@ -79,8 +79,7 @@ It is possible to replay a failed deposit, possibly with more gas,
 
 To see how replays work, you can use [this contract on Optimism Goerli](https://goerli-optimism.etherscan.io/address/0x26A145eccDf258688C763726a8Ab2aced898ADe1#code). 
 
-1. Call `stopChanges`. 
-   You can do that either [from Etherscan](https://goerli-optimism.etherscan.io/address/0x26A145eccDf258688C763726a8Ab2aced898ADe1#writeContract#F3), or using this Foundry command (after you set `$PRIV_KEY` to your private key, and `$ETH_RPC_URL` to a URL to Optimism Goerli):
+1. Call `stopChanges`, using this Foundry command:
 
    ```sh
    PRIV_KEY=<your private key here>
@@ -89,22 +88,15 @@ To see how replays work, you can use [this contract on Optimism Goerli](https://
    cast send --private-key $PRIV_KEY $GREETER "stopChanges()"
    ```
 
-1. Verify that `getStatus()` returns `False`, meaning changes are not allowed, and see the value of `greet()`.
-   Again, you can do this from [Etherscan](https://goerli-optimism.etherscan.io/address/0x26A145eccDf258688C763726a8Ab2aced898ADe1#readContract), or use Foundry (where `False` is returned as zero):
+1. Verify that `getStatus()` returns false, meaning changes are not allowed, and see the value of `greet()` using Foundry.
+   Note that Foundry returns false as zero.
 
    ```sh
    cast call $GREETER "greet()" | cast --to-ascii ; cast call $GREETER "getStatus()"
    ```
 
 1. Get the calldata.
-   You can use [an online calculator](https://abi.hashex.org/) with these parameters:
-
-   | Field         | Type | Value
-   | - | - | - |
-   | Function | your function | `setGreeting(string)`
-   | Argument | String | `testing`
-
-   Alternatively, you can use this Foundry command:
+   You can use this Foundry command:
 
    ```sh
    cast calldata "setGreeting(string)" "testing"
@@ -117,47 +109,23 @@ To see how replays work, you can use [this contract on Optimism Goerli](https://
    ```
 
 1. Send a greeting change as a deposit.
-
-   - To do this using [Etherscan](https://goerli.etherscan.io/address/0x5086d1eEF304eb5284A0f6720f79403b4e9bE294#writeProxyContract#F5), use these parameters:
-
-     | Parameter | Value |
-     | - | - 
-     | payableAmount | 0 
-     | _target       | 0x26A145eccDf258688C763726a8Ab2aced898ADe1
-     | _message      | The calldata you created in the previous step
-     | _minGasLimit  | 100000
-
-   - To send the greeting change as a deposit using Foundry, use these commands:
-
-     ```sh
-     L1_RPC=<URL to Goerli>
-     L1_CROSS_DOM_COMM=0x5086d1eef304eb5284a0f6720f79403b4e9be294
-     FUNC="sendMessage(address,bytes,uint32)"
-     CALLDATA=`cast calldata "setGreeting(string)" "testing"`
-     cast send --rpc-url $L1_RPC --private-key $PRIV_KEY $L1_CROSS_DOM_COMM $FUNC $GREETER $CALLDATA 100000
-     ```
-
-   <!--
-   Either way, the transaction will be successful on L1, and then fail on L2. It is a good idea to keep the transaction hash of this transaction to facilitate future debugging. Store it in `L1_TX_HASH`.
-   -->
-
-1. Call `startChanges()` to allow changes.
-   You can do that either [from Etherscan](https://goerli-optimism.etherscan.io/address/0x26A145eccDf258688C763726a8Ab2aced898ADe1#writeContract#F2), or using this Foundry command:
+   Use these commands:
 
    ```sh
-   cast send --private-key $PRIV_KEY $GREETER "startChanges()"
+   L1_RPC=<URL to Goerli>
+   L1_CROSS_DOM_COMM=0x5086d1eef304eb5284a0f6720f79403b4e9be294
+   FUNC="sendMessage(address,bytes,uint32)"
+   CALLDATA=`cast calldata "setGreeting(string)" "testing"`
+   cast send --rpc-url $L1_RPC --private-key $PRIV_KEY $L1_CROSS_DOM_COMM $FUNC $GREETER $CALLDATA 10000000
    ```
 
-1. Verify that `getStatus()` returns `True`, meaning changes are not allowed, and see the value of `greet()`.
-   Again, you can do this from [Etherscan](https://goerli-optimism.etherscan.io/address/0x26A145eccDf258688C763726a8Ab2aced898ADe1#readContract), or use Foundry (where it returns one):
-
-   ```sh
-   cast call $GREETER "greet()" | cast --to-ascii ; cast call $GREETER "getStatus()"
-   ```
+   The transaction will be successful on L1, but then emit a fail event on L2.
 
 1. The next step is to find the hash of the failed relay.
    The easiest way to do this is to look in [the internal transactions of the destination contract](https://goerli-optimism.etherscan.io/address/0x26A145eccDf258688C763726a8Ab2aced898ADe1#internaltx), and select the latest one that appears as a failure.
    It should be a call to L2CrossDomainMessenger at address `0x420...007`. This is the call you need to replay.
+
+   If the latest internal transaction is a success, it probably means your transaction hasn't relayed yet. When until it is, that may take a few minutes.
 
 1. Get the transaction information using Foundry.
 
@@ -165,12 +133,61 @@ To see how replays work, you can use [this contract on Optimism Goerli](https://
    TX_HASH=<transaction hash from Etherscan>
    L2_CROSS_DOM_COMM=0x4200000000000000000000000000000000000007
    REPLAY_DATA=`cast tx $TX_HASH input`
-   cast send --private-key $PRIV_KEY $L2_CROSS_DOM_COMM $REPLAY_DATA 
    ```
 
-   Note: For debugging you can ask the L2 cross domain messenger the state of the transaction. 
+1. Call `startChanges()` to allow changes using this Foundry command:
+
+   ```sh
+   cast send --private-key $PRIV_KEY $GREETER "startChanges()"
+   ```
+
+   ::: warning Don't do this prematurely
+
+   If you call `startChanges()` too early, it will happen from the message is relayed to L2, and then the initial deposit will be successful and there will be no need to replay it.
+
+   :::
+
+1. Verify that `getStatus()` returns true, meaning changes are not allowed, and see the value of `greet()`. 
+   Foundry returns true as one.
+
+   ```sh
+   cast call $GREETER "greet()" | cast --to-ascii ; cast call $GREETER "getStatus()"
+   ```
+
+1. Actually send the replay transaction.
+
+   ```sh   
+   cast send --private-key $PRIV_KEY --gas-limit 10000000 $L2_CROSS_DOM_COMM $REPLAY_DATA 
+   ```
+
+   ::: details Why do we need to specify the gas limit?
+   
+   The gas estimation mechanism tries to find the minimum gas limit at which the transaction would be successful. 
+   However, the L2 cross domain messenger does not revert when a replay fails due to low gas limit, it just emits a failure message. 
+   The gas estimation mechanism considers that a success.
+
+   To get a gas estimate, you can use this command:
+
+   ```sh
+   cast estimate --from 0x0000000000000000000000000000000000000001 $L2_CROSS_DOM_COMM $REPLAY_DATA
+   ```
+
+   That address is a special case in which the contract does revert.
+
+   :::
+
+1. Verify the greeting has changed:
+
+   ```sh
+   cast call $GREETER "greet()" | cast --to-ascii ; cast call $GREETER "getStatus()"
+   ```
+
+::: tip Debugging
+
+   For debugging you can ask the L2 cross domain messenger the state of the transaction. 
     
-   1. Look in Etherscan to see the `FailedRelayedMessage` event. Set `MSG_HASH` to that value.
+   1. Look in Etherscan to see the `FailedRelayedMessage` event. 
+      Set `MSG_HASH` to that value.
 
    1. To check if the message is listed as failed, run this:
 
@@ -183,27 +200,4 @@ To see how replays work, you can use [this contract on Optimism Goerli](https://
       ```sh
       cast call $L2_CROSS_DOM_COMM "successfulMessages(bytes32)" $MSG_HASH
       ```
-
-
-<!-- 
-1. You can replay the message [from Etherscan](https://goerli-optimism.etherscan.io/address/0x4200000000000000000000000000000000000007#writeProxyContract) using the same parameters with a payable amount of zero.
-   Make sure to add `0x` in front of the values you got from Etherscan in the previous step, and to remove the zeros in front of the addresses (`_sender` and `_target`).   
-   Note that all the values after the gas limit are a single value parameter, the message - you need to write them together, with a single `0x` in front.
-
-
-Function: relayMessage(uint256 _nonce,address _sender,address _target,uint256 _value,uint256 _minGasLimit,bytes _message)
-
-MethodID: 0xd764ad0b
-[0]:  000100000000000000000000000000000000000000000000000000000000a25a
-[1]:  0000000000000000000000008225d72f2c39f3729d7f3fc03c6aa8731eaeef48
-[2]:  00000000000000000000000026a145eccdf258688c763726a8ab2aced898ade1
-[3]:  0000000000000000000000000000000000000000000000000000000000000000
-[4]:  000000000000000000000000000000000000000000000000000000000000c350
-[5]:  00000000000000000000000000000000000000000000000000000000000000c0
-[6]:  0000000000000000000000000000000000000000000000000000000000000064
-[7]:  a413686200000000000000000000000000000000000000000000000000000000
-[8]:  0000002000000000000000000000000000000000000000000000000000000000
-[9]:  0000000774657374696e67000000000000000000000000000000000000000000
-[10]: 0000000000000000000000000000000000000000000000000000000000000000
-
--->
+:::
