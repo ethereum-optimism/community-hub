@@ -5,7 +5,7 @@ lang: en-US
 
 ## Introduction
 
-In Optimism terminology, the term "*deposit transaction*" refers to any L2 transaction that is triggered by a transaction or event on L1.
+In Optimism terminology, "*deposit transaction*" refers to any L2 transaction that is triggered by a transaction or event on L1.
 A deposit transaction may or may not have assets (ETH, tokens, etc.) attached to it.
 
 The process is somewhat similar to [the way most networking stacks work](https://en.wikipedia.org/wiki/Encapsulation_(networking)).
@@ -113,10 +113,10 @@ To see how replays work, you can use [this contract on Optimism Goerli](https://
 
    ```sh
    L1_RPC=<URL to Goerli>
-   L1_CROSS_DOM_COMM=0x5086d1eef304eb5284a0f6720f79403b4e9be294
+   L1XDM_ADDRESS=0x5086d1eef304eb5284a0f6720f79403b4e9be294
    FUNC="sendMessage(address,bytes,uint32)"
    CALLDATA=`cast calldata "setGreeting(string)" "testing"`
-   cast send --rpc-url $L1_RPC --private-key $PRIV_KEY $L1_CROSS_DOM_COMM $FUNC $GREETER $CALLDATA 10000000
+   cast send --rpc-url $L1_RPC --private-key $PRIV_KEY $L1XDM_ADDRESS $FUNC $GREETER $CALLDATA 10000000
    ```
 
    The transaction will be successful on L1, but then emit a fail event on L2.
@@ -157,7 +157,7 @@ To see how replays work, you can use [this contract on Optimism Goerli](https://
 1. Actually send the replay transaction.
 
    ```sh   
-   cast send --private-key $PRIV_KEY --gas-limit 10000000 $L2_CROSS_DOM_COMM $REPLAY_DATA 
+   cast send --private-key $PRIV_KEY --gas-limit 10000000 $L2XDM_ADDRESS $REPLAY_DATA 
    ```
 
    ::: details Why do we need to specify the gas limit?
@@ -169,7 +169,7 @@ To see how replays work, you can use [this contract on Optimism Goerli](https://
    To get a gas estimate, you can use this command:
 
    ```sh
-   cast estimate --from 0x0000000000000000000000000000000000000001 $L2_CROSS_DOM_COMM $REPLAY_DATA
+   cast estimate --from 0x0000000000000000000000000000000000000001 $L2XDM_ADDRESS $REPLAY_DATA
    ```
 
    That address is a special case in which the contract does revert.
@@ -192,12 +192,12 @@ To see how replays work, you can use [this contract on Optimism Goerli](https://
    1. To check if the message is listed as failed, run this:
 
       ```sh
-      cast call $L2_CROSS_DOM_COMM "failedMessages(bytes32)" $MSG_HASH
+      cast call $L2XDM_ADDRESS "failedMessages(bytes32)" $MSG_HASH
       ```
 
       To check if it is listed as successful, run this:
 
       ```sh
-      cast call $L2_CROSS_DOM_COMM "successfulMessages(bytes32)" $MSG_HASH
+      cast call $L2XDM_ADDRESS "successfulMessages(bytes32)" $MSG_HASH
       ```
 :::
