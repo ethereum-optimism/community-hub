@@ -20,8 +20,8 @@ Information is encapsulated in lower layer packets on the sending side, and then
   This function accepts three parameters:
 
    - `_target`, target address on L2.
-   - `_message`, the L2 transaction's calldata, [formatted as per the ABI](https://docs.soliditylang.org/en/v0.8.19/abi-spec.html).
-   - `_minGasLimit`, the gas limit required for the transaction on L2. 
+   - `_message`, the L2 transaction's calldata, formatted as per the [ABI](https://docs.soliditylang.org/en/v0.8.19/abi-spec.html) of the target account.
+   - `_minGasLimit`, the minimum gas limit allowed for the transaction on L2. Note that this is a *minimum* and the actual amount provided on L2 may be higher (but never lower) than the specified gas limit.
      Note that the actual amount provided on L2 will be higher, because the portal contract on L2 needs to do some processing before submitting the call to `_target`.
 
    You can see code that implements this call [in the tutorial](https://github.com/ethereum-optimism/optimism-tutorial/blob/main/cross-dom-comm/hardhat/contracts/FromL1_ControlL2Greeter.sol#L16).
@@ -131,7 +131,7 @@ To see how replays work, you can use [this contract on Optimism Goerli](https://
 
    ```sh
    TX_HASH=<transaction hash from Etherscan>
-   L2_CROSS_DOM_COMM=0x4200000000000000000000000000000000000007
+   L2XDM_ADDRESS=0x4200000000000000000000000000000000000007
    REPLAY_DATA=`cast tx $TX_HASH input`
    ```
 
