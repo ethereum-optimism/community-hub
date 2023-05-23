@@ -22,7 +22,7 @@ Bedrock improves on its predecessor by reducing transaction fees using optimized
 
 In addition, Bedrock implements an optimized data [compression](#optimized-data-compression) strategy to minimize data costs. We are currently benchmarking the impact of this change, but we expect it to reduce fees significantly.
 
-Bedrock also removes all gas costs associated with EVM execution when submitting data to L1. This reduces fees by an additional 10% over the previous version of the protocol.
+Bedrock also removes all L1 execution gas, reducing L1 data fees to the theoretical minimum. This reduces fees by an additional 10% over the previous version of the protocol.
 
 ### Shorter deposit times
 
