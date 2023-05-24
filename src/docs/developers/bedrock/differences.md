@@ -115,7 +115,16 @@ As part of the Bedrock upgrade, we have upgraded the network to support [EIP-155
 There are some differences between Ethereum and Optimism in this regard:
 
 - ETH is not burned. Burning ETH on L2 would only lock it in the bridge forever.
-- The EIP 1559 parameters have different values. Once those values are finalized they will be posted here.
+- Some EIP 1559 parameters are different:
+
+  | Parameter | Optimism value | Ethereum value (for reference) |
+  | - | -: | -: |
+  | Block gas limit | 25,000,000 gas | 30,000,000 gas
+  | Block gas target | 2,500,000 gas | 15,000,000 gas
+  | EIP-1559 elasticity multiplier | 10 | 2
+  | EIP-1559 denominator | 50 | 8
+  | Maximum base fee increase (per block) | 18% | 12.5%
+  | Maximum base fee decrease (per block) |  2% | 12.5%
 
 The L1 security fee, which is the majority of the transaction cost, uses the same mechanism as before the upgrade. However, the transactions to L1 are going to be submitted on a [non-contract address](#the-transaction-trail). Between that and improved compression, the L1 security fee should be reduced by about 20%.
 
