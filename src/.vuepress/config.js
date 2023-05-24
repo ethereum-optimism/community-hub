@@ -310,6 +310,7 @@ module.exports = {
           title: 'Data flows (in bedrock)',
           children: [
             '/docs/protocol/txn-flow.md',
+            '/docs/protocol/withdrawal-flow.md'
           ],
           collapsable: false,  
         }
