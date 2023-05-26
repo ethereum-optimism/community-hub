@@ -1,10 +1,14 @@
 <template>
   <main class="page">
-    <BreadCrumb :key="$route.path" />
 
     <slot name="top" />
 
-    <div style="background:rgb(253, 235, 236);padding:16px 16px 16px 12px">
+    <BreadCrumb :key="$route.path" />
+
+
+
+    <div 
+      style="background:rgb(253, 235, 236);padding:16px 16px 16px 12px;margin-top:3rem">
       <p style="text-align: center;">
         The OP Mainnet upgrade to the Bedrock release will take place on <b>June 6, 2023 at 16:00 UTC!</b>
         There will be 2-4 hours of downtime.
@@ -13,7 +17,7 @@
         <OutboundLink>
         </OutboundLink>
       </p>
-    </div> 
+    </div>
 
     <PageInfo :key="$route.path" />
 
