@@ -70,6 +70,14 @@ On the platform, there are also [Public APIs](https://blastapi.io/public-api/opt
 - Optimism Mainnet
 - Optimism Goerli
 
+## BlockSpaces
+
+[BlockSpaces](https://www.blockspaces.com/web3-infrastructure) is a multiweb integration platform that is currently offering Web3 infrastructure for free, up to 10 million transactions supported DAILY. To get started, click [here](https://www.blockspaces.com/web3-infrastructure) and leave an email address. If being able to integrate your Optimism dApp to other web2 business platforms (like Quickbooks) interestes you, make sure to sign up for our Multiweb integration waitlist.
+
+### Supported Networks
+
+- Optimism Ethereum
+
 ## BlockVision
 
 [BlockVision](https://blockvision.org/) is a one-stop development platform and onchain data retrieval portal for developers that boasts impressively low-latencies and high availability.
