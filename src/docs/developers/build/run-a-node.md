@@ -36,7 +36,7 @@ Prior to Bedrock you choose one of two configurations.
   Replicas gives you the most up to date information, at the cost of having to trust Optimism's updates.
 
 - **Verifiers** replicate from L1 (Ethereum).
-  Verifiers read and execute transactions from the cannonical block chain. 
+  Verifiers read and execute transactions from the canonical block chain. 
   As a result, the only way for them to have inaccurate information is an [Ethereum reorg](https://www.paradigm.xyz/2021/07/ethereum-reorgs-after-the-merge#post-merge-ethereum-with-proof-of-stake), an extremely rare event. 
 
 </details>

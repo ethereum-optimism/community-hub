@@ -6,7 +6,7 @@ lang: en-US
 ## Seasons and voting cycles
 
 Token House governance operates on a seasonal schedule.
-Season three began on Janaury 26th, 2023, with Voting Cycle Ten.
+Season three began on January 26th, 2023, with Voting Cycle Ten.
 Seasons are separated with a Reflection Period. Reflection Periods may be followed by Special Voting Cycles to adopt proposals that come out of the previous Reflection Period.
 
 During each Season, Token House voting occurs via five-week voting cycles. 

@@ -59,7 +59,7 @@ You can always get up to date information (see, for example, [here (scroll down 
 
 The Tellor protocol can secure putting any verifiable data onchain, from spot price feeds, TWAPs, random numbers, to EVM calldata - you can even [specify your own "query type"](https://github.com/tellor-io/dataSpecs/issues/new?assignees=&labels=&template=new_query_type.yaml&title=%5BNew+Data+Request+Form%5D%3A+) to build a feed to fit your specific needs.
 
-As described in the oracles overview section of this page, we are an oracle protocol that has "a mechanism to reward entities that provide accurate information and penalize those that provide incorrect information." Therefore it is necessary to allow some reasonable [amount of time](https://docs.tellor.io/tellor/getting-data/solidity-integration#reading-data) between an oracle update and using that data, to allow for a potential dispute (probablistic finality).
+As described in the oracles overview section of this page, we are an oracle protocol that has "a mechanism to reward entities that provide accurate information and penalize those that provide incorrect information." Therefore it is necessary to allow some reasonable [amount of time](https://docs.tellor.io/tellor/getting-data/solidity-integration#reading-data) between an oracle update and using that data, to allow for a potential dispute (probabilistic finality).
 
 Tellor is a pull oracle where users fund (tip) a specific feed to get updated data reports and then read the data from our oracle contract, however under certain circumstances it can act similar to a push oracle; if your reading from a feed that is already being updated by others, or if you are [running your own data reporter.](https://docs.tellor.io/tellor/reporting-data/introduction)
 
