@@ -11,7 +11,7 @@ Below is a brief summary of some of the planned [Optimism roadmap](https://www.o
 
 ## Next gen fault proofs
 
-As part of the OVM 2.0 upgrade, the **Optimism fault proof mechanism had to be temporarily disabled**. This means that users of the Optimism network currently need to trust the Sequencer node (run by Optimism PBC) to publish valid state roots to Ethereum. **You can read more about our security model [here](../security-model/README.md)**. 
+As part of the OVM 2.0 upgrade, the **Optimism fault proof mechanism had to be temporarily disabled**. This means that users of the Optimism network currently need to trust the Sequencer node (run by Optimism Foundation) to publish valid state roots to Ethereum. **You can read more about our security model [here](../security-model/README.md)**. 
 
 We're making progress on the upgrade fault proof mechanism and we expect to productionize our work in 2022. You can keep up with developments in the [Cannon repository](https://github.com/ethereum-optimism/cannon/).
 
