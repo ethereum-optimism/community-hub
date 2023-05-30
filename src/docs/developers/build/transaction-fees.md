@@ -10,6 +10,8 @@ Luckily, Optimism's [EVM equivalence](https://medium.com/ethereum-optimism/intro
 This page includes the formula for calculating the gas cost of transactions on Optimism.
 You can also [use our SDK](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/sdk-estimate-gas) to calculate those costs for you.
 
+There are two costs for transaction on Optimism: the L2 execution fee and the L1 data/security fee.
+
 ## The L2 execution fee
 
 Just like on Ethereum, transactions on Optimism have to pay **gas** for the amount of computation and storage that they use.
