@@ -41,7 +41,7 @@ Information is encapsulated in lower layer packets on the sending side, and then
 1. [`_sendMessage`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L1/L1CrossDomainMessenger.sol#L45-L52) calls the portal's [`depositTransaction` function](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L1/OptimismPortal.sol#L434).
 
    Note that other contracts can also call [`depositTransaction`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L1/OptimismPortal.sol#L434) directly. 
-   However, doing so bypasses certain safeguards, so in post cases it's a bad idea.
+   However, doing so bypasses certain safeguards, so in most cases it's a bad idea.
 
 1. [The `depositTransaction` function](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L1/OptimismPortal.sol#L434) runs a few sanity checks, and then emits a [`TransactionDeposited`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L1/OptimismPortal.sol#L85-L99) event. 
 
@@ -70,7 +70,7 @@ This L2 gas is paid for by burning L1 gas [here](https://github.com/ethereum-opt
 
 ## Replaying messages
 
-Deposits are transactions, and as such can fail due to several reasons:
+Deposits transactions can fail due to several reasons:
 
 - Not enough gas provided.
 - The state on L2 does not allow the transaction to be successful.
@@ -128,7 +128,7 @@ To see how replays work, you can use [this contract on Optimism Goerli](https://
    The easiest way to do this is to look in [the internal transactions of the destination contract](https://goerli-optimism.etherscan.io/address/0x26A145eccDf258688C763726a8Ab2aced898ADe1#internaltx), and select the latest one that appears as a failure.
    It should be a call to L2CrossDomainMessenger at address `0x420...007`. This is the call you need to replay.
 
-   If the latest internal transaction is a success, it probably means your transaction hasn't relayed yet. When until it is, that may take a few minutes.
+   If the latest internal transaction is a success, it probably means your transaction hasn't relayed yet. Wait until it is, that may take a few minutes.
 
 1. Get the transaction information using Foundry.
 
@@ -157,7 +157,7 @@ To see how replays work, you can use [this contract on Optimism Goerli](https://
    cast call $GREETER "greet()" | cast --to-ascii ; cast call $GREETER "getStatus()"
    ```
 
-1. Actually send the replay transaction.
+1. Now send the replay transaction.
 
    ```sh   
    cast send --private-key $PRIV_KEY --gas-limit 10000000 $L2XDM_ADDRESS $REPLAY_DATA 
@@ -187,9 +187,9 @@ To see how replays work, you can use [this contract on Optimism Goerli](https://
 
 ::: tip Debugging
 
-   For debugging you can ask the L2 cross domain messenger the state of the transaction. 
+   To debug deposit transactions you can ask the L2 cross domain messenger for the state of the transaction. 
     
-   1. Look in Etherscan to see the `FailedRelayedMessage` event. 
+   1. Look on Etherscan to see the `FailedRelayedMessage` event. 
       Set `MSG_HASH` to that value.
 
    1. To check if the message is listed as failed, run this:
