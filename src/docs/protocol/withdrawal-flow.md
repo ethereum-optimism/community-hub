@@ -39,7 +39,8 @@ You can see an example of how to do this [in the tutorials](https://github.com/e
    - `sender` - The L2 address that initiated the transfer, typically [`L2CrossDomainMessenger`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L2/L2CrossDomainMessenger.sol)
    - `target` - The L1 target address
    - `value` - The amount of WEI transferred by this transaction
-   - `gasLimit` - Gas limit for the transaction
+   - `gasLimit` - Gas limit for the transaction, the system guarantees that at least this amount of gas will be available to the transaction on L1.
+     Note that if the gas limit is not enough, or if the L1 finalizing transaction does not have enough gas to provide that gas limit, the finalizing transaction returns a failure, it does not revert.
    - `data` - The calldata for the withdrawal transaction
 
 1. When `op-proposer` [proposes a new output](https://github.com/ethereum-optimism/optimism/blob/develop/op-proposer/proposer/l2_output_submitter.go#L322-L329), the output proposal includes [the output root](https://github.com/ethereum-optimism/optimism/blob/develop/op-proposer/proposer/l2_output_submitter.go#L287-L314), provided as part of the block by `op-node`. 
