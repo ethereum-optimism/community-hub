@@ -125,6 +125,7 @@ There are some differences between Ethereum and Optimism in this regard:
   | EIP-1559 denominator | 50 | 8
   | Maximum base fee increase (per block) | 10% | 12.5%
   | Maximum base fee decrease (per block) | 2% | 12.5%
+  | Block time in seconds | 2 | 12
 
 The L1 security fee, which is the majority of the transaction cost, uses the same mechanism as before the upgrade. However, the transactions to L1 are going to be submitted on a [non-contract address](#the-transaction-trail). Between that and improved compression, the L1 security fee should be reduced by about 20%.
 
