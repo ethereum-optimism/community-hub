@@ -22,7 +22,7 @@ Bedrock improves on its predecessor by reducing transaction fees using optimized
 
 In addition, Bedrock implements an optimized data [compression](#optimized-data-compression) strategy to minimize data costs. We are currently benchmarking the impact of this change, but we expect it to reduce fees significantly.
 
-Bedrock also removes all gas costs associated with EVM execution when submitting data to L1. This reduces fees by an additional 10% over the previous version of the protocol.
+Bedrock also removes all L1 execution gas, reducing L1 data fees to the theoretical minimum. This reduces fees by an additional 10% over the previous version of the protocol.
 
 ### Shorter deposit times
 
@@ -120,7 +120,7 @@ Withdrawals are initiated on L2 via a call to the **Message Passer** predeploy c
 
 #### Two-step withdrawals
 
-Withdrawal proof validation bugs have been the root cause of many of the biggest bridge hacks of the last few years. The Bedrock release introduces an additional step in the withdrawals’ process of prior versions meant to provide an extra layer of defense against these types of bugs. In the two-step withdrawal process, a Merkle proof corresponding to the withdrawal must be submitted 7 days before the withdrawal can be finalized..  This new safety mechanism gives monitoring tools a full  7 days to find and detect invalid withdrawal proofs . If the [withdrawal](#withdrawals) proof is found to be invalid, a contract fix can be deployed before funds are lost. This dramatically reduces the risk of a bridge compromise.
+Withdrawal proof validation bugs have been the root cause of many of the biggest bridge hacks of the last few years. The Bedrock release introduces an additional step in the withdrawals’ process of prior versions meant to provide an extra layer of defense against these types of bugs. In the two-step withdrawal process, a Merkle proof corresponding to the withdrawal must be submitted 7 days before the withdrawal can be finalized. This new safety mechanism gives monitoring tools a full 7 days to find and detect invalid withdrawal proofs. If the [withdrawal](#withdrawals) proof is found to be invalid, a contract fix can be deployed before funds are lost. This dramatically reduces the risk of a bridge compromise.
 
 For full details, see the [withdrawals](https://github.com/ethereum-optimism/optimism/blob/develop/specs/withdrawals.md) section of the protocol specification.
 

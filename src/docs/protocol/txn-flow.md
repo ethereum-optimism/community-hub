@@ -68,7 +68,7 @@ While the state after the transaction is subject to fault challenges, the transa
 :::
 
 You can see the code that builds the channels to be written to L1 in [`channel_out.go`](https://github.com/ethereum-optimism/optimism/blob/develop/op-node/rollup/derive/channel_out.go) and [`channel_builder.go`](https://github.com/ethereum-optimism/optimism/blob/develop/op-batcher/batcher/channel_builder.go).
-The transasctions themselves are sent in [`op-batcher`'s main loop](https://github.com/ethereum-optimism/optimism/blob/915036aaa7eba7ee2ce290be90f78bb35df8d066/op-batcher/batcher/driver.go#L284-L299), which calls [`publishStateToL1`](https://github.com/ethereum-optimism/optimism/blob/915036aaa7eba7ee2ce290be90f78bb35df8d066/op-batcher/batcher/driver.go#L303-L344)
+The transactions themselves are sent in [`op-batcher`'s main loop](https://github.com/ethereum-optimism/optimism/blob/915036aaa7eba7ee2ce290be90f78bb35df8d066/op-batcher/batcher/driver.go#L284-L299), which calls [`publishStateToL1`](https://github.com/ethereum-optimism/optimism/blob/915036aaa7eba7ee2ce290be90f78bb35df8d066/op-batcher/batcher/driver.go#L303-L344)
 
 
 #### Determining the status of a transaction

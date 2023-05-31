@@ -205,7 +205,7 @@ Visualized, this flow looks like this:
 </div>
 
 By posting the proof upfront, it gives onchain monitoring tools enough time to detect a fraudulent withdrawal proof and attempt corrective action. 
-Regular users can do this monitoring too. For example, an exechange could halt withdrawals in the event of a fraudulent proof.
+Regular users can do this monitoring too. For example, an exchange could halt withdrawals in the event of a fraudulent proof.
 
 Since this change fundamentally changes the way withdrawals are handled, it is **not** backwards-compatible with the old network. If you are performing withdrawals outside our standard bridge interface, you will need to update your software. The easiest way to to do this is to use our [TypeScript SDK](https://github.com/ethereum-optimism/optimism/tree/develop/packages/sdk), which includes two-phase withdrawals support out of the box.
 
@@ -361,6 +361,6 @@ This section discusses some of the changes in Optimism internals.
 
 ### The transaction trail
 
-There is no longer a CTC (cannonical transaction chain) contract. Instead, L2 blocks are saved to the Ethereum blockchain using a non-contract address to minimize the L1 gas expenses. Please see the [Public Testnets](./public-testnets.md) page for more information on where to find batch submission addresses. 
+There is no longer a CTC (canonical transaction chain) contract. Instead, L2 blocks are saved to the Ethereum blockchain using a non-contract address to minimize the L1 gas expenses. Please see the [Public Testnets](./public-testnets.md) page for more information on where to find batch submission addresses. 
 
 [The block and transaction format is also different](https://github.com/ethereum-optimism/optimism/blob/develop/specs/rollup-node.md#l2-chain-derivation).

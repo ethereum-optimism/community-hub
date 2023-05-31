@@ -310,7 +310,8 @@ module.exports = {
           title: 'Data flows (in bedrock)',
           children: [
             '/docs/protocol/txn-flow.md',
-            '/docs/protocol/withdrawal-flow.md'
+            '/docs/protocol/deposit-flow.md',
+            '/docs/protocol/withdrawal-flow.md',           
           ],
           collapsable: false,  
         }
@@ -378,7 +379,10 @@ module.exports = {
             '/docs/developers/bedrock/explainer.md',
             '/docs/developers/bedrock/differences.md',
             '/docs/developers/bedrock/node-operator-guide.md',
-            '/docs/developers/bedrock/upgrade-guide.md',
+            [
+              'https://oplabs.notion.site/Bedrock-Mission-Control-EXTERNAL-fca344b1f799447cb1bcf3aae62157c5',
+              'Upgrade mission control'
+            ],
             '/docs/developers/bedrock/metrics.md'
           ]
         }
