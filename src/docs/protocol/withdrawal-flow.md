@@ -10,7 +10,7 @@ This withdrawal may or may not have assets attached to it.
 Withdrawals require the user to submit three transactions:
 
 1. **Withdrawal initiating transaction**, which the user submits on L2.
-1. **Withdrawal proving transaction**, which the user submits on L1 to prove that the withdrawal is legitimate (based on a merkle root whose tree is available on L1)
+1. **Withdrawal proving transaction**, which the user submits on L1 to prove that the withdrawal is legitimate (based on a merkle patricia trie root that commits to the state of the `L2ToL1MessagePasser`'s storage on L2)
 1. **Withdrawal finalizing transaction**, which the user submits on L1 after the fault challenge period has passed, to actually run the transaction on L1, claim any assets attached, etc.
 
 You can see an example of how to do this [in the tutorials](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/cross-dom-comm#optimism-message-to-ethereum-withdrawal).
@@ -24,7 +24,7 @@ You can see an example of how to do this [in the tutorials](https://github.com/e
 
    - `_target`, target address on L1.
    - `_message`, the L1 transaction's calldata, formatted as per the [ABI](https://docs.soliditylang.org/en/v0.8.19/abi-spec.html) of the target account.
-   - `_minGasLimit`, limit on the gas that the withdrawal finalizing transaction will provide for the withdrawal transaction.
+   - `_minGasLimit`, The minimum amount of gas that the withdrawal finalizing transaction can provide to the withdrawal transaction. This is enforced by the `SafeCall` library, and if the minimum amount of gas cannot be met at the time of the external call from the `OptimismPortal` -> `L1CrossDomainMessenger`, the finalization transaction will revert to allow for re-attempting with a higher gas limit. In order to account for the gas consumed in the `L1CrossDomainMessenger.relayMessage` function's execution, extra gas will be added on top of the `_minGasLimit` value by the `CrossDomainMessenger.baseGas` function when `sendMessage` is called on L2.
 
 1. `sendMessage` is a generic function that is used in both cross domain messengers. 
    It calls [`_sendMessage`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L2/L2CrossDomainMessenger.sol#L51-L60), which is specific to [`L2CrossDomainMessenger`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L2/L2CrossDomainMessenger.sol).
@@ -43,7 +43,7 @@ You can see an example of how to do this [in the tutorials](https://github.com/e
    - `data` - The calldata for the withdrawal transaction
 
 1. When `op-proposer` [proposes a new output](https://github.com/ethereum-optimism/optimism/blob/develop/op-proposer/proposer/l2_output_submitter.go#L322-L329), the output proposal includes [the output root](https://github.com/ethereum-optimism/optimism/blob/develop/op-proposer/proposer/l2_output_submitter.go#L287-L314), provided as part of the block by `op-node`. 
-   This new output root is affected by `L2ToL1MessagePasser.sentMessages`, and can be used to prove it.
+   This new output root commits to the state of the `sentMessages` mapping in the `L2ToL1MessagePasser` contract's storage on L2, and it can be used to prove the presence of a pending withdrawal within it.
 
 
 
@@ -71,7 +71,7 @@ Typically this is done [by the SDK](https://sdk.optimism.io/classes/crosschainme
 
 [`OptimismPortal.proveWithdrawalTransaction()`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L1/OptimismPortal.sol#L234-L318) runs a few sanity checks.
 Then it verifies that in `L2ToL1MessagePasser.sentMessages` on L2 the hash for the withdrawal is turned on, and that this proof have not been submitted before.
-If everything checks out, it writes the output root, the timestamp, and the L2 output root to which it applies in `provenWithdrawals` and emits an event. 
+If everything checks out, it writes the output root, the timestamp, and the L2 output index to which it applies in `provenWithdrawals` and emits an event. 
 
 The next step is to wait the fault challenge period, to ensure that the L2 output root used in the proof is legitimate, and that the proof itself is legitimate and not a hack.
 
