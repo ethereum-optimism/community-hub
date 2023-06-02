@@ -63,7 +63,8 @@ Note that we use EIP 1559 for congestion pricing and if a block has more than 5,
 
 ### How do I determine the priority fee?
 
-See what priority fee was paid by transactions in the last block, as you can do on L1.
+You can see what priority fee was paid by transactions in the last block, as you can do on L1.
+You can also use [this dashboard](https://optimism.io/gas-tracker).
 
 
 ### How will costs change immediately after the upgrade?
