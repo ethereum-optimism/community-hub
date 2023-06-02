@@ -5,9 +5,8 @@ lang: en-US
 
 ## Connecting to Optimism
 
-You connect to Optimism the same way you do to Ethereum, by connecting to a JSON RPC endpoint. 
-However, the currently supported fork for Optimism is [Berlin](https://eth.wiki/roadmap/berlin). 
-After the Bedrock upgrade, we'll support EIP 1559.
+You connect to Optimism the same way you do to Ethereum, by connecting to a JSON RPC endpoint.
+Note that 
 
 ### Endpoints
 
@@ -15,10 +14,7 @@ After the Bedrock upgrade, we'll support EIP 1559.
 
 ### ETH balance
 
-Prior to Bedrock, the ETH balance of an account is not stored as part of the account's state, but as an ERC-20 balance at address [`0xDeadDeAddeAddEAddeadDEaDDEAdDeaDDeAD0000`](https://explorer.optimism.io/address/0xDeadDeAddeAddEAddeadDEaDDEAdDeaDDeAD0000).
-You can still access it using the standard APIs.
-
-In Bedrock ETH is used precisely the way it is used in L1 Ethereum.
+ETH is used precisely the way it is used in L1 Ethereum.
 
 ### Token addresses
 

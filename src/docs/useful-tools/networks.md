@@ -14,13 +14,6 @@ Such RPCs are either totally unsupported, or will return nonsensical values.
 
 ## Optimism (mainnet)
 
-
-::: tip Pre-Bedrock
-We are currently testing the [Bedrock](../developers/bedrock/bedrock.md) release.
-The mainnet network has still not been updated.
-:::
-
-
 | Parameter | Value |
 | --------- | ----- |
 | Network Name | **`Optimism`** |
@@ -28,8 +21,8 @@ The mainnet network has still not been updated.
 | Chain ID | **`10`** |
 | Explorer | **[https://explorer.optimism.io](https://explorer.optimism.io)** |
 | HTTP Endpoint<sup>1</sup> | We recommend [Alchemy](https://docs.alchemy.com/reference/optimism-api-quickstart/?a=818c11a8da). Optimism also provides this endpoint: **`https://mainnet.optimism.io`.** _But it is not for production systems and is rate limited._   |
-| L1 Contract Addresses | [link](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/deployments/mainnet#layer-1-contracts) |
-| L2 Contract Addresses | [link](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/deployments/mainnet#layer-2-contracts) |
+| L1 Contract Addresses | [link](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts-bedrock/deployments/mainnet) |
+| L2 Contract Addresses | [link](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts-bedrock/deployments/optimism-mainnet) |
 | chainid.link | [https://chainid.link/?network=optimism](https://chainid.link/?network=optimism)
 
 ::: tip Developer Tip 
@@ -53,7 +46,6 @@ You can run a large application for free using [Alchemy](https://www.alchemy.com
 
 ::: tip Purpose
 This is our test network.
-It has already been updated to the [Bedrock](../developers/bedrock/bedrock.md) release.
 :::
 
 
