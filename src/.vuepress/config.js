@@ -383,7 +383,8 @@ module.exports = {
               'https://oplabs.notion.site/Bedrock-Mission-Control-EXTERNAL-fca344b1f799447cb1bcf3aae62157c5',
               'Upgrade mission control'
             ],
-            '/docs/developers/bedrock/metrics.md'
+            '/docs/developers/bedrock/metrics.md',
+            '/docs/developers/bedrock/faq.md',            
           ]
         }
       ],
