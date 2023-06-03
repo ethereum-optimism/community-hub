@@ -26,7 +26,7 @@ The cost of an L2 transaction on Optimism is composed of two components:
   - The cost of gas on L1.
     The cost of gas on L1 can be extremely volatile. 
   
-To view the current gas costs as a user, [see here](https://public-grafana.optimism.io/). To retrieve them programatically, [see here](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/sdk-estimate-gas).
+To view the current gas costs as a user, [see here](https://optimism.io/gas-tracker). To retrieve them programatically, [see here](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/sdk-estimate-gas).
 
 For a more in depth look at how transaction fees are calculated see our [fee documentation](transaction-fees.md).
 
