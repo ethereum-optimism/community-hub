@@ -36,8 +36,25 @@ The mainnet network has still not been updated.
 If you are seeing rate limit issues when testing with the public end point, or if you need websocket functionality, we recommend signing up for [Alchemy's](https://www.alchemy.com/optimism) free trial.
 :::
 
-(1) Some API calls, such as those in the [personal namespace](https://geth.ethereum.org/docs/rpc/ns-personal) make no sense in a shared environment.
-Such RPCs are either not supported, or will return nonsensical values.
+### Contract addresses
+
+The authoritative list of contract addresses is [in the monorepo](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts-bedrock/deployments/mainnet).
+They are reproduced here for convenience
+
+| Contract name | Address |
+| - | -
+| L1CrossDomainMessenger | [`0x25ace71c97B33Cc4729CF772ae268934F7ab5fA1`](https://etherscan.io/address/0x25ace71c97B33Cc4729CF772ae268934F7ab5fA1)
+| L1ERC721Bridge | [`0x5a7749f83b81B301cAb5f48EB8516B986DAef23D`](https://etherscan.io/address/0x5a7749f83b81B301cAb5f48EB8516B986DAef23D)
+| L1StandardBridge | [`0x99C9fc46f92E8a1c0deC1b1747d010903E884bE1`](https://etherscan.io/address/0x99C9fc46f92E8a1c0deC1b1747d010903E884bE1)
+| L2OutputOracle | [`0xdfe97868233d1aa22e815a266982f2cf17685a27`](https://etherscan.io/address/0xdfe97868233d1aa22e815a266982f2cf17685a27) 
+| OptimismMintableERC20Factory | [`0x75505a97BD334E7BD3C476893285569C4136Fa0F`](https://etherscan.io/address/0x75505a97BD334E7BD3C476893285569C4136Fa0F) 
+| OptimismPortal | [`0xbEb5Fc579115071764c7423A4f12eDde41f106Ed`](https://etherscan.io/address/0xbEb5Fc579115071764c7423A4f12eDde41f106Ed) | 
+| PortalSender | [`0x0A893d9576b9cFD9EF78595963dc973238E78210`](https://etherscan.io/address/0x0A893d9576b9cFD9EF78595963dc973238E78210)
+| ProxyAdmin | [`0x543bA4AADBAb8f9025686Bd03993043599c6fB04`](https://etherscan.io/address/0x543bA4AADBAb8f9025686Bd03993043599c6fB04)
+| SystemConfig | [`0x229047fed2591dbec1eF1118d64F7aF3dB9EB290`](https://etherscan.io/address/0x229047fed2591dbec1eF1118d64F7aF3dB9EB290)
+| SystemDictator | [`0xB4453CEb33d2e67FA244A24acf2E50CEF31F53cB`](https://etherscan.io/address/0xB4453CEb33d2e67FA244A24acf2E50CEF31F53cB)
+| Batch Inbox Address | [`0xff00000000000000000000000000000000000010`](https://etherscan.io/address/0xff00000000000000000000000000000000000010)
+
 
 
 ### API Options:
@@ -79,7 +96,6 @@ They are reproduced here for convenience
 | L1ERC721Bridge | [`0x0F9C590b958002E8B10a7431979c1aF882772E88`](https://goerli.etherscan.io/address/0x0F9C590b958002E8B10a7431979c1aF882772E88)
 | L1StandardBridge | [`0x636Af16bf2f682dD3109e60102b8E1A089FedAa8`](https://goerli.etherscan.io/address/0x636Af16bf2f682dD3109e60102b8E1A089FedAa8)
 | L2OutputOracle | [`0xE6Dfba0953616Bacab0c9A8ecb3a9BBa77FC15c0`](https://goerli.etherscan.io/address/0xE6Dfba0953616Bacab0c9A8ecb3a9BBa77FC15c0) 
-| Lib_AddressManager | [`0xa6f73589243a6A7a9023b1Fa0651b1d89c177111`](https://goerli.etherscan.io/address/0xa6f73589243a6A7a9023b1Fa0651b1d89c177111)
 | OptimismMintableERC20Factory | [`0x883dcF8B05364083D849D8bD226bC8Cb4c42F9C5`](https://goerli.etherscan.io/address/0x883dcF8B05364083D849D8bD226bC8Cb4c42F9C5) 
 | OptimismPortal | [`0x5b47E1A08Ea6d985D6649300584e6722Ec4B1383`](https://goerli.etherscan.io/address/0x5b47E1A08Ea6d985D6649300584e6722Ec4B1383) | 
 | PortalSender | [`0xe7FACd39531ee3C313330E93B4d7a8B8A3c84Aa4`](https://goerli.etherscan.io/address/0xe7FACd39531ee3C313330E93B4d7a8B8A3c84Aa4)
