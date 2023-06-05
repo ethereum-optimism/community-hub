@@ -39,7 +39,7 @@ If you are seeing rate limit issues when testing with the public end point, or i
 ### Contract addresses
 
 The authoritative list of contract addresses is [in the monorepo](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts-bedrock/deployments/mainnet).
-They are reproduced here for convenience
+They are reproduced here for convenience.
 
 | Contract name | Address |
 | - | -
@@ -54,6 +54,40 @@ They are reproduced here for convenience
 | SystemConfig | [`0x229047fed2591dbec1eF1118d64F7aF3dB9EB290`](https://etherscan.io/address/0x229047fed2591dbec1eF1118d64F7aF3dB9EB290)
 | SystemDictator | [`0xB4453CEb33d2e67FA244A24acf2E50CEF31F53cB`](https://etherscan.io/address/0xB4453CEb33d2e67FA244A24acf2E50CEF31F53cB)
 | Batch Inbox Address | [`0xff00000000000000000000000000000000000010`](https://etherscan.io/address/0xff00000000000000000000000000000000000010)
+
+
+<details>
+
+<summary><b>Additional parameters</b></summary>
+
+These parameters are mostly useful to people responsible for running and administering network nodes.
+
+| Parameter      | Value |
+| -------------- | ----- |
+| L1 Chain ID    | 1 |
+| Rollup Config  | This network does not require a rollup config. Specify `--network=mainnet` on the command line
+| Withdrawal period | 2 seconds |
+
+
+
+#### Links
+
+::: tip
+  
+Links to download data directories will be posted here as soon as they are available.
+  
+:::
+  
+<!--  
+- [Bedrock Data Directory](https://storage.googleapis.com/oplabs-goerli-data/goerli-bedrock.tar)
+- [Legacy Geth Data Directory](https://storage.googleapis.com/oplabs-goerli-data/goerli-legacy-archival.tar)
+- [Configuration parameters](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/deploy-config/mainnet.json)
+- [Docker images (`op-node` and `op-geth`)](https://console.cloud.google.com/artifacts/docker/oplabs-tools-artifacts/us/images)
+- [Legacy geth](https://hub.docker.com/layers/ethereumoptimism/l2geth/0.5.29/images/sha256-e40ea183c[…]e981408ccf9c07191667554c48b620e5eabc61521c3b3?context=explore)
+-->
+  
+</details>
+
 
 
 
