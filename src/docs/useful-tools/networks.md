@@ -26,6 +26,7 @@ The mainnet network has still not been updated.
 | Network Name | **`Optimism`** |
 | Description | **`Mainnet`** |
 | Chain ID | **`10`** |
+| L1 Chain ID | **`1`** |
 | Explorer | **[https://explorer.optimism.io](https://explorer.optimism.io)** |
 | HTTP Endpoint<sup>1</sup> | We recommend [Alchemy](https://docs.alchemy.com/reference/optimism-api-quickstart/?a=818c11a8da). Optimism also provides this endpoint: **`https://mainnet.optimism.io`.** _But it is not for production systems and is rate limited._   |
 | L1 Contract Addresses | [link](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/deployments/mainnet#layer-1-contracts) |
@@ -66,19 +67,7 @@ They are reproduced here for convenience.
 You can run a large application for free using [Alchemy](https://www.alchemy.com/optimism). We’ve done extensive diligence and Alchemy is our recommendation due to reliability, scalability, and data correctness. They're the default API provider and developer platform for top projects like OpenSea and Facebook. 
 
 
-### Parameters for node operators
-
-These parameters are mostly useful to people responsible for running and administering network nodes.
-
-| Parameter      | Value |
-| -------------- | ----- |
-| L1 Chain ID    | 1 |
-| Rollup Config  | This network does not require a rollup config. Specify `--network=mainnet` on the command line
-| Withdrawal period | 2 seconds |
-
-
-
-#### Links
+### Links
 
 ::: tip
   
@@ -110,6 +99,7 @@ It has already been updated to the [Bedrock](../developers/bedrock/bedrock.md) r
 | Network Name | **`Optimism Goerli`** |
 | Description | **`Testnet (public)`** |
 | Chain ID | **`420`** |
+| L1 Chain ID | **`5`** |
 | Explorer | **[https://goerli-explorer.optimism.io](https://goerli-explorer.optimism.io)** |
 | HTTP Endpoint | **`https://goerli.optimism.io`** |
 | chainid.link | [https://chainid.link/?network=optimism-goerli](https://chainid.link/?network=optimism-goerli)
@@ -157,20 +147,7 @@ To see the full list of providers visit [Node & API Providers](./providers.md).
 If you already have Goerli ETH, you can [bridge it](https://app.optimism.io/bridge). For more faucet options see [Network Faucets](./faucets.md).
 
 
-### Parameters for node operators
-
-These parameters are mostly useful to people responsible for running and administering network nodes.
-
-
-| Parameter      | Value |
-| -------------- | ----- |
-| L1 Chain ID    | 5 |
-| Rollup Config  | This network does not require a rollup config. Specify `--network=goerli` on the command line
-| Withdrawal period | 2 seconds |
-
-
-
-#### Links
+### Links
 
 - [Bedrock Data Directory](https://storage.googleapis.com/oplabs-goerli-data/goerli-bedrock.tar)
 - [Legacy Geth Data Directory](https://storage.googleapis.com/oplabs-goerli-data/goerli-legacy-archival.tar)
