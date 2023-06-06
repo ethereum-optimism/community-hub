@@ -74,7 +74,7 @@ These parameters are mostly useful to people responsible for running and adminis
 | -------------- | ----- |
 | L1 Chain ID    | 1 |
 | Rollup Config  | This network does not require a rollup config. Specify `--network=mainnet` on the command line
-| Withdrawal period | 2 seconds |
+| Withdrawal period | 1 week |
 
 
 
