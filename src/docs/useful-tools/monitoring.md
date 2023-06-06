@@ -8,10 +8,10 @@ lang: en-US
 Check out the [Optimism status page](https://status.optimism.io/).
 This page includes public APIs, the gateway, deposits, withdraws and transaction sequencing for both Optimism mainnet and Optimism Goerli.
 
-## Public Grafana Dashboard
+## Gas price
 
-[Optimism](https://optimism.io) maintains a [public Grafana dashboard](https://public-grafana.optimism.io/d/9hkhMxn7z/public-dashboard?orgId=1&refresh=5m) that tracks gas prices, transaction volume, and network uptime in one place.
-You can view information about both the Optimism mainnet and the Optimism Goerli testnet on this dashboard.
+You can see the current gas price [here](https://optimism.io/gas-tracker).
+
 
 ## Block explorers
 

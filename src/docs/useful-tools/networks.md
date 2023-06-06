@@ -87,13 +87,14 @@ Links to download data directories will be posted here as soon as they are avail
 :::
   
 
-- Bedrock Data Directory: Will be posted here as soon as it is available.
+- Bedrock Data Directory:
+  - [On GCS](https://storage.googleapis.com/oplabs-mainnet-data/mainnet-bedrock.tar)
 - Legacy Geth Data Directory: 
   - [On GCS](https://storage.googleapis.com/oplabs-mainnet-data/mainnet-legacy-archival.tar)
 - [Configuration parameters](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/deploy-config/mainnet.json).
-- [Latest release of `op-geth`](https://github.com/ethereum-optimism/op-geth/releases/tag/v1.101105.2)
-- Latest release of `op-node`: Will be posted here as soon as it is available.
-- [Legacy geth](https://hub.docker.com/layers/ethereumoptimism/l2geth/0.5.29/images/sha256-e40ea183c[…]e981408ccf9c07191667554c48b620e5eabc61521c3b3?context=explore).
+- [Latest release of `op-geth`](https://github.com/ethereum-optimism/op-geth/releases/latest)
+- [Latest release of `op-node`](https://github.com/ethereum-optimism/optimism/releases/latest)
+- [Legacy geth](https://hub.docker.com/layers/ethereumoptimism/l2geth/0.5.31/images/sha256-5577036dc36d167d11f5ac49b91cc0a3d835574928a9563783c2e70309e5eb28?context=explore).
   
 
 
@@ -176,9 +177,9 @@ These parameters are mostly useful to people responsible for running and adminis
 - [Bedrock Data Directory](https://storage.googleapis.com/oplabs-goerli-data/goerli-bedrock.tar)
 - [Legacy Geth Data Directory](https://storage.googleapis.com/oplabs-goerli-data/goerli-legacy-archival.tar)
 - [Configuration parameters](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/deploy-config/goerli.json)
-- [Latest releases of `op-geth`](https://github.com/ethereum-optimism/op-geth/releases)
-- [Latest releases of `op-node`](https://console.cloud.google.com/artifacts/docker/oplabs-tools-artifacts/us/images/op-node)
-- [Legacy geth](https://hub.docker.com/layers/ethereumoptimism/l2geth/0.5.29/images/sha256-e40ea183c[…]e981408ccf9c07191667554c48b620e5eabc61521c3b3?context=explore)
+- [Latest releases of `op-geth`](https://github.com/ethereum-optimism/op-geth/releases/latest)
+- [Latest releases of `op-node`](https://github.com/ethereum-optimism/optimism/releases/latest)
+- [Legacy geth](https://hub.docker.com/layers/ethereumoptimism/l2geth/0.5.31/images/sha256-5577036dc36d167d11f5ac49b91cc0a3d835574928a9563783c2e70309e5eb28?context=explore)
 
 
 

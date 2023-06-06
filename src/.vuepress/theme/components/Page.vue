@@ -6,19 +6,6 @@
     <BreadCrumb :key="$route.path" />
 
 
-
-    <div 
-      style="background:rgb(253, 235, 236);padding:16px 16px 16px 12px;margin-top:3rem">
-      <p style="text-align: center;">
-        The OP Mainnet upgrade to the Bedrock release will take place on <b>June 6, 2023 at 16:00 UTC!</b>
-        There will be 2-4 hours of downtime.
-        <br />
-        <a target="_" href="https://oplabs.notion.site/Bedrock-Mission-Control-EXTERNAL-fca344b1f799447cb1bcf3aae62157c5">See here for additional details.</a>
-        <OutboundLink>
-        </OutboundLink>
-      </p>
-    </div>
-
     <PageInfo :key="$route.path" />
 
     <MyTransition v-if="pagePassword && !pageDescrypted" :delay="0.08" :disable="true">
