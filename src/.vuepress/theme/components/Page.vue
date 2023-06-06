@@ -10,7 +10,7 @@
     <div 
       style="background:rgb(253, 235, 236);padding:16px 16px 16px 12px;margin-top:3rem">
       <p style="text-align: center;">
-        All OP Mainnet transactions are currently paused. 
+        All OP Mainnet transactions are currently paused for the Bedrock Upgrade. 
         <a target="_" href="https://oplabs.notion.site/Bedrock-Mission-Control-EXTERNAL-fca344b1f799447cb1bcf3aae62157c5">See here for additional details.</a> 
         <OutboundLink>
         </OutboundLink>
