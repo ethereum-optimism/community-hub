@@ -156,6 +156,7 @@ module.exports = {
           'The Optimistic Vision'
         ],
         '/docs/governance/media.md',
+        '/docs/governance/get-a-grant.md',
         {
           title: "OP Holders",
           children: [
