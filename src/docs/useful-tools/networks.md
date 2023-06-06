@@ -56,9 +56,17 @@ They are reproduced here for convenience.
 | Batch Inbox Address | [`0xff00000000000000000000000000000000000010`](https://etherscan.io/address/0xff00000000000000000000000000000000000010)
 
 
-<details>
+### API Options:
 
-<summary><b>Additional parameters</b></summary>
+1. Get free access to Optimism through [Alchemy](https://www.alchemy.com/optimism)
+
+2. For small scale tests, you can use our public API:
+- HTTP endpoint: [https://mainnet.optimism.io](https://mainnet.optimism.io) (note, this is for testing. For production, use Alchemy) 
+
+You can run a large application for free using [Alchemy](https://www.alchemy.com/optimism). We’ve done extensive diligence and Alchemy is our recommendation due to reliability, scalability, and data correctness. They're the default API provider and developer platform for top projects like OpenSea and Facebook. 
+
+
+### Parameters for node operators
 
 These parameters are mostly useful to people responsible for running and administering network nodes.
 
@@ -79,25 +87,14 @@ Links to download data directories will be posted here as soon as they are avail
 :::
   
 
-- Bedrock Data Directory: Will be posted here as soon as it is available
-- Legacy Geth Data Directory: Will be posted here as soon as it is available
-- [Configuration parameters](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/deploy-config/mainnet.json)
-- [Docker images (`op-node` and `op-geth`)](https://console.cloud.google.com/artifacts/docker/oplabs-tools-artifacts/us/images)
-- [Legacy geth](https://hub.docker.com/layers/ethereumoptimism/l2geth/0.5.29/images/sha256-e40ea183c[…]e981408ccf9c07191667554c48b620e5eabc61521c3b3?context=explore)
+- Bedrock Data Directory: Will be posted here as soon as it is available.
+- Legacy Geth Data Directory: Will be posted here as soon as it is available.
+- [Configuration parameters](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/deploy-config/mainnet.json).
+- [Latest release of `op-geth`](https://github.com/ethereum-optimism/op-geth/releases/tag/v1.101105.2)
+- Latest release of `op-node`: Will be posted here as soon as it is available.
+- [Legacy geth](https://hub.docker.com/layers/ethereumoptimism/l2geth/0.5.29/images/sha256-e40ea183c[…]e981408ccf9c07191667554c48b620e5eabc61521c3b3?context=explore).
   
-</details>
 
-
-
-
-### API Options:
-
-1. Get free access to Optimism through [Alchemy](https://www.alchemy.com/optimism)
-
-2. For small scale tests, you can use our public API:
-- HTTP endpoint: [https://mainnet.optimism.io](https://mainnet.optimism.io) (note, this is for testing. For production, use Alchemy) 
-
-You can run a large application for free using [Alchemy](https://www.alchemy.com/optimism). We’ve done extensive diligence and Alchemy is our recommendation due to reliability, scalability, and data correctness. They're the default API provider and developer platform for top projects like OpenSea and Facebook. 
 
 ## Optimism Goerli
 
@@ -137,29 +134,7 @@ They are reproduced here for convenience
 | SystemDictator | [`0x1f0613A44c9a8ECE7B3A2e0CdBdF0F5B47A50971`](https://goerli.etherscan.io/address/0x1f0613A44c9a8ECE7B3A2e0CdBdF0F5B47A50971)
 | Batch Inbox Address | [`0xff00000000000000000000000000000000000420`](https://goerli.etherscan.io/address/0xff00000000000000000000000000000000000420)
 
-<details>
 
-<summary><b>Additional parameters</b></summary>
-
-These parameters are mostly useful to people responsible for running and administering network nodes.
-
-| Parameter      | Value |
-| -------------- | ----- |
-| L1 Chain ID    | 5 |
-| Rollup Config  | This network does not require a rollup config. Specify `--network=goerli` on the command line
-| Withdrawal period | 2 seconds |
-
-
-
-#### Links
-
-- [Bedrock Data Directory](https://storage.googleapis.com/oplabs-goerli-data/goerli-bedrock.tar)
-- [Legacy Geth Data Directory](https://storage.googleapis.com/oplabs-goerli-data/goerli-legacy-archival.tar)
-- [Configuration parameters](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/deploy-config/goerli.json)
-- [Docker images (`op-node` and `op-geth`)](https://console.cloud.google.com/artifacts/docker/oplabs-tools-artifacts/us/images)
-- [Legacy geth](https://hub.docker.com/layers/ethereumoptimism/l2geth/0.5.29/images/sha256-e40ea183c[…]e981408ccf9c07191667554c48b620e5eabc61521c3b3?context=explore)
-
-</details>
 
 ### API Options
 
@@ -180,6 +155,29 @@ To see the full list of providers visit [Node & API Providers](./providers.md).
 ### Test ETH
 
 If you already have Goerli ETH, you can [bridge it](https://app.optimism.io/bridge). For more faucet options see [Network Faucets](./faucets.md).
+
+
+### Parameters for node operators
+
+These parameters are mostly useful to people responsible for running and administering network nodes.
+
+
+| Parameter      | Value |
+| -------------- | ----- |
+| L1 Chain ID    | 5 |
+| Rollup Config  | This network does not require a rollup config. Specify `--network=goerli` on the command line
+| Withdrawal period | 2 seconds |
+
+
+
+#### Links
+
+- [Bedrock Data Directory](https://storage.googleapis.com/oplabs-goerli-data/goerli-bedrock.tar)
+- [Legacy Geth Data Directory](https://storage.googleapis.com/oplabs-goerli-data/goerli-legacy-archival.tar)
+- [Configuration parameters](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/deploy-config/goerli.json)
+- [Latest releases of `op-geth`](https://github.com/ethereum-optimism/op-geth/releases)
+- [Latest releases of `op-node`](https://console.cloud.google.com/artifacts/docker/oplabs-tools-artifacts/us/images/op-node)
+- [Legacy geth](https://hub.docker.com/layers/ethereumoptimism/l2geth/0.5.29/images/sha256-e40ea183c[…]e981408ccf9c07191667554c48b620e5eabc61521c3b3?context=explore)
 
 
 
