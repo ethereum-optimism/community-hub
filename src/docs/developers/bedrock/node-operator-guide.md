@@ -40,7 +40,7 @@ We recommend the following minimum system requirements to run Bedrock:
 
 `op-geth` and `op-node` are available as Docker images. Consult the [documentation](./public-testnets.md) for the network you are participating in to get the correct image tag.
 
-Legacy Geth uses version `0.5.29` of our old `l2geth` image.
+Legacy Geth uses version `0.5.31` of our old `l2geth` image.
 
 You can also compile `op-geth` and `op-node` from source.
 
