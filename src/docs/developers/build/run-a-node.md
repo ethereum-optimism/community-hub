@@ -23,28 +23,12 @@ Otherwise, your node will eventually stop working.
 
 Replicas need to store the transaction history of Optimism and to run Geth. 
 They need to be relatively powerful machines (real or virtual). 
-We recommend at least 16 GB RAM, and an SSD drive with at least 100 GB free.
+We recommend at least 16 GB RAM, and an SSD drive with at least 500 GB free (for the production network).
 
 ### Source of synchronization
 
-<details>
-<summary><b>Pre-Bedrock (current version)</b></summary>
 
-Prior to Bedrock you choose one of two configurations.
-
-- **Replicas** replicate from L2 (Optimism).
-  Replicas gives you the most up to date information, at the cost of having to trust Optimism's updates.
-
-- **Verifiers** replicate from L1 (Ethereum).
-  Verifiers read and execute transactions from the canonical block chain. 
-  As a result, the only way for them to have inaccurate information is an [Ethereum reorg](https://www.paradigm.xyz/2021/07/ethereum-reorgs-after-the-merge#post-merge-ethereum-with-proof-of-stake), an extremely rare event. 
-
-</details>
-
-<details>
-<summary><b>Bedrock (coming late 2022)</b></summary>
-
-In Bedrock the [op-geth](https://community.optimism.io/docs/developers/bedrock-temp/infra/#bedrock-geth) typically synchronizes from other Optimism nodes (https://github.com/ethereum-optimism/optimism/blob/develop/specs/exec-engine.md#happy-path-sync), meaning L2, but it can [synchronize from L1](https://github.com/ethereum-optimism/optimism/blob/develop/specs/exec-engine.md#worst-case-sync) if necessary.
+[The `op-geth` component](../bedrock/explainer.md#execution-client) synchronizes from both other Optimism nodes (https://github.com/ethereum-optimism/optimism/blob/develop/specs/exec-engine.md#happy-path-sync), meaning L2, [and L1 Ethereum](https://github.com/ethereum-optimism/optimism/blob/develop/specs/exec-engine.md#worst-case-sync) if necessar.
 
 To synchronize only from L1, you edit the [op-node configuration](https://github.com/ethereum-optimism/optimism/blob/develop/specs/rollup-node.md) to set `OP_NODE_P2P_DISABLE` to `true`.
 
@@ -56,7 +40,6 @@ When you use RPC to get block information (https://github.com/ethereum-optimism/
 - **finalized**: Latest block fully finalized on L1 (a process that takes 12 minutes with Proof of Stake)
 
 
-</details>
 
 ## Docker configuration
 
