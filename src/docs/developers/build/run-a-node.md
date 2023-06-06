@@ -190,7 +190,6 @@ Make sure the change `<< URL TO OPTIMISM>>` to a service provider's URL for the 
 #! /usr/bin/bash
 
 cd ~/optimism/op-node
-
 ./bin/op-node \
         --l2=http://localhost:8551 \
         --l2.jwt-secret=./jwt.txt \
