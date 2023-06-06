@@ -28,6 +28,7 @@ The mainnet network has still not been updated.
 | Chain ID | **`10`** |
 | Explorer | **[https://explorer.optimism.io](https://explorer.optimism.io)** |
 | HTTP Endpoint<sup>1</sup> | We recommend [Alchemy](https://docs.alchemy.com/reference/optimism-api-quickstart/?a=818c11a8da). Optimism also provides this endpoint: **`https://mainnet.optimism.io`.** _But it is not for production systems and is rate limited._   |
+| Sequencer URL | **`https://mainnet-sequencer.optimism.io/`** |
 | L1 Contract Addresses | [link](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/deployments/mainnet#layer-1-contracts) |
 | L2 Contract Addresses | [link](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/deployments/mainnet#layer-2-contracts) |
 | chainid.link | [https://chainid.link/?network=optimism](https://chainid.link/?network=optimism)
@@ -113,6 +114,7 @@ It has already been updated to the [Bedrock](../developers/bedrock/bedrock.md) r
 | Chain ID | **`420`** |
 | Explorer | **[https://goerli-explorer.optimism.io](https://goerli-explorer.optimism.io)** |
 | HTTP Endpoint | **`https://goerli.optimism.io`** |
+| Sequencer URL | **`https://goerli-sequencer.optimism.io/`** |
 | chainid.link | [https://chainid.link/?network=optimism-goerli](https://chainid.link/?network=optimism-goerli)
 
 
