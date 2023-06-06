@@ -6,7 +6,6 @@ lang: en-US
 ## Connecting to Optimism
 
 You connect to Optimism the same way you do to Ethereum, by connecting to a JSON RPC endpoint.
-Note that 
 
 ### Endpoints
 
