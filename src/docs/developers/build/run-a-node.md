@@ -28,7 +28,7 @@ We recommend at least 16 GB RAM, and an SSD drive with at least 500 GB free (for
 ### Source of synchronization
 
 
-[The `op-geth` component](../bedrock/explainer.md#execution-client) typically synchronizes from other Optimism nodes (https://github.com/ethereum-optimism/optimism/blob/develop/specs/exec-engine.md#happy-path-sync), meaning L2, but it can [synchronize from L1](https://github.com/ethereum-optimism/optimism/blob/develop/specs/exec-engine.md#worst-case-sync) if necessary.
+[The `op-geth` component](../bedrock/explainer.md#execution-client) synchronizes from both other Optimism nodes (https://github.com/ethereum-optimism/optimism/blob/develop/specs/exec-engine.md#happy-path-sync), meaning L2, [and L1 Ethereum](https://github.com/ethereum-optimism/optimism/blob/develop/specs/exec-engine.md#worst-case-sync) if necessar.
 
 To synchronize only from L1, you edit the [op-node configuration](https://github.com/ethereum-optimism/optimism/blob/develop/specs/rollup-node.md) to set `OP_NODE_P2P_DISABLE` to `true`.
 
