@@ -23,7 +23,7 @@ Otherwise, your node will eventually stop working.
 
 Replicas need to store the transaction history of Optimism and to run Geth. 
 They need to be relatively powerful machines (real or virtual). 
-We recommend at least 16 GB RAM, and an SSD drive with at least 5 TB free (for the production network).
+We recommend at least 16 GB RAM, and an SSD drive with at least 500 GB free (for the production network).
 
 ### Source of synchronization
 
