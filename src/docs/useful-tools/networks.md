@@ -87,7 +87,8 @@ Links to download data directories will be posted here as soon as they are avail
 :::
   
 
-- Bedrock Data Directory: Will be posted here as soon as it is available.
+- Bedrock Data Directory:
+  - [On GCS](https://storage.googleapis.com/oplabs-mainnet-data/mainnet-bedrock.tar)
 - Legacy Geth Data Directory: Will be posted here as soon as it is available.
 - [Configuration parameters](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/deploy-config/mainnet.json).
 - [Latest release of `op-geth`](https://github.com/ethereum-optimism/op-geth/releases/tag/v1.101105.2)
