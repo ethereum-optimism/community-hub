@@ -27,11 +27,13 @@ The mainnet network has still not been updated.
 | Description | **`Mainnet`** |
 | Chain ID | **`10`** |
 | Explorer | **[https://explorer.optimism.io](https://explorer.optimism.io)** |
-| HTTP Endpoint<sup>1</sup> | We recommend [Alchemy](https://docs.alchemy.com/reference/optimism-api-quickstart/?a=818c11a8da). Optimism also provides this endpoint: **`https://mainnet.optimism.io`.** _But it is not for production systems and is rate limited._   |
-| Sequencer URL | **`https://mainnet-sequencer.optimism.io/`** |
+| HTTP Endpoint | We recommend [Alchemy](https://docs.alchemy.com/reference/optimism-api-quickstart/?a=818c11a8da). Optimism also provides this endpoint: **`https://mainnet.optimism.io`.** _But it is not for production systems and is rate limited._   |
+| Sequencer URL<sup>1</sup> | **`https://mainnet-sequencer.optimism.io/`** |
 | L1 Contract Addresses | [link](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/deployments/mainnet#layer-1-contracts) |
 | L2 Contract Addresses | [link](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/deployments/mainnet#layer-2-contracts) |
 | chainid.link | [https://chainid.link/?network=optimism](https://chainid.link/?network=optimism)
+
+(1) The sequencer URL is write only, it only accepts `eth_sendRawTransaction` requests.
 
 ::: tip Developer Tip 
 If you are seeing rate limit issues when testing with the public end point, or if you need websocket functionality, we recommend signing up for [Alchemy's](https://www.alchemy.com/optimism) free trial.
@@ -114,9 +116,10 @@ It has already been updated to the [Bedrock](../developers/bedrock/bedrock.md) r
 | Chain ID | **`420`** |
 | Explorer | **[https://goerli-explorer.optimism.io](https://goerli-explorer.optimism.io)** |
 | HTTP Endpoint | **`https://goerli.optimism.io`** |
-| Sequencer URL | **`https://goerli-sequencer.optimism.io/`** |
+| Sequencer URL<sup>1</sup> | **`https://goerli-sequencer.optimism.io/`** |
 | chainid.link | [https://chainid.link/?network=optimism-goerli](https://chainid.link/?network=optimism-goerli)
 
+(1) The sequencer URL is write only, it only accepts `eth_sendRawTransaction` requests.
 
 ### Contract addresses
 
