@@ -54,6 +54,7 @@ They are reproduced here for convenience.
 | SystemConfig | [`0x229047fed2591dbec1eF1118d64F7aF3dB9EB290`](https://etherscan.io/address/0x229047fed2591dbec1eF1118d64F7aF3dB9EB290)
 | SystemDictator | [`0xB4453CEb33d2e67FA244A24acf2E50CEF31F53cB`](https://etherscan.io/address/0xB4453CEb33d2e67FA244A24acf2E50CEF31F53cB)
 | Batch Inbox Address | [`0xff00000000000000000000000000000000000010`](https://etherscan.io/address/0xff00000000000000000000000000000000000010)
+| Batch Submitter Address | [`0x6887246668a3b87f54deb3b94ba47a6f63f32985`](https://etherscan.io/address/0x6887246668a3b87f54deb3b94ba47a6f63f32985)
 
 
 ### API Options:
@@ -134,6 +135,7 @@ They are reproduced here for convenience
 | SystemConfig | [`0xAe851f927Ee40dE99aaBb7461C00f9622ab91d60`](https://goerli.etherscan.io/address/0xAe851f927Ee40dE99aaBb7461C00f9622ab91d60)
 | SystemDictator | [`0x1f0613A44c9a8ECE7B3A2e0CdBdF0F5B47A50971`](https://goerli.etherscan.io/address/0x1f0613A44c9a8ECE7B3A2e0CdBdF0F5B47A50971)
 | Batch Inbox Address | [`0xff00000000000000000000000000000000000420`](https://goerli.etherscan.io/address/0xff00000000000000000000000000000000000420)
+| Batch Submitter Address | [`0x7431310e026b69bfc676c0013e12a1a11411eec9`](https://goerli.etherscan.io/address/0x7431310e026b69bfc676c0013e12a1a11411eec9)
 
 
 
