@@ -83,14 +83,16 @@ Links to download data directories will be posted here as soon as they are avail
 :::
   
 
-- Bedrock Data Directory:
+- Bedrock Data Directory (400GB):
   - [On GCS](https://storage.googleapis.com/oplabs-mainnet-data/mainnet-bedrock.tar)
-- Legacy Geth Data Directory: Will be posted here as soon as it is available.
+- Legacy Geth Data Directory (2.4TB): Will be posted here as soon as it is available.<sup>1</sup>
 - [Configuration parameters](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/deploy-config/mainnet.json).
 - [Latest release of `op-geth`](https://github.com/ethereum-optimism/op-geth/releases/latest)
 - [Latest release of `op-node`](https://github.com/ethereum-optimism/optimism/releases/latest)
 - [Legacy geth](https://hub.docker.com/layers/ethereumoptimism/l2geth/0.5.31/images/sha256-5577036dc36d167d11f5ac49b91cc0a3d835574928a9563783c2e70309e5eb28?context=explore).
   
+
+(1) This file is compressed with `zstd`. We recommend that users install the command line tool if it is not already installed on their system. `tar -xf` will work without installing anything if you have an up to date version of `tar`. If you want to decompress separately, we recommend `pzstd -d`  or `zstd -d` (pzstd will likely be faster).
 
 
 ## Optimism Goerli
@@ -170,8 +172,8 @@ These parameters are mostly useful to people responsible for running and adminis
 
 #### Links
 
-- [Bedrock Data Directory](https://storage.googleapis.com/oplabs-goerli-data/goerli-bedrock.tar)
-- [Legacy Geth Data Directory](https://storage.googleapis.com/oplabs-goerli-data/goerli-legacy-archival.tar)
+- [Bedrock Data Directory (7.5GB)](https://storage.googleapis.com/oplabs-goerli-data/goerli-bedrock.tar)
+- [Legacy Geth Data Directory (62.2GB)](https://storage.googleapis.com/oplabs-goerli-data/goerli-legacy-archival.tar)
 - [Configuration parameters](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/deploy-config/goerli.json)
 - [Latest releases of `op-geth`](https://github.com/ethereum-optimism/op-geth/releases/latest)
 - [Latest releases of `op-node`](https://github.com/ethereum-optimism/optimism/releases/latest)
