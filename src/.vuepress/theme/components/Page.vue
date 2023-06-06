@@ -10,8 +10,8 @@
     <div 
       style="background:rgb(253, 235, 236);padding:16px 16px 16px 12px;margin-top:3rem">
       <p style="text-align: center;">
-        The OP Mainnet was upgraded to Bedrock on June 6th, 2023
-        <a target="_" href="https://oplabs.notion.site/Bedrock-Mission-Control-EXTERNAL-fca344b1f799447cb1bcf3aae62157c5">See here for additional details.</a>
+        All OP Mainnet transactions are currently paused. 
+        <a target="_" href="https://oplabs.notion.site/Bedrock-Mission-Control-EXTERNAL-fca344b1f799447cb1bcf3aae62157c5">See here for additional details.</a> 
         <OutboundLink>
         </OutboundLink>
       </p>
