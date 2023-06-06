@@ -91,7 +91,7 @@ Links to download data directories will be posted here as soon as they are avail
 - Legacy Geth Data Directory: Will be posted here as soon as it is available.
 - [Configuration parameters](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/deploy-config/mainnet.json).
 - [Latest release of `op-geth`](https://github.com/ethereum-optimism/op-geth/releases/tag/v1.101105.2)
-- Latest release of `op-node`: Will be posted here as soon as it is available.
+- [Latest release of `op-node`](https://github.com/ethereum-optimism/optimism/releases/tag/v1.1.0)
 - [Legacy geth](https://hub.docker.com/layers/ethereumoptimism/l2geth/0.5.29/images/sha256-e40ea183c[…]e981408ccf9c07191667554c48b620e5eabc61521c3b3?context=explore).
   
 
