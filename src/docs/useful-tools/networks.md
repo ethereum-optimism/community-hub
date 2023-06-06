@@ -90,8 +90,8 @@ Links to download data directories will be posted here as soon as they are avail
 - Bedrock Data Directory: Will be posted here as soon as it is available.
 - Legacy Geth Data Directory: Will be posted here as soon as it is available.
 - [Configuration parameters](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/deploy-config/mainnet.json).
-- Docker image for `op-geth`: Will be posted here as soon as it is available.
-- Docker image for `op-node`: Will be posted here as soon as it is available.
+- [Latest release of `op-geth`](https://github.com/ethereum-optimism/op-geth/releases/tag/v1.101105.2)
+- Latest release of `op-node`: Will be posted here as soon as it is available.
 - [Legacy geth](https://hub.docker.com/layers/ethereumoptimism/l2geth/0.5.29/images/sha256-e40ea183c[…]e981408ccf9c07191667554c48b620e5eabc61521c3b3?context=explore).
   
 
@@ -175,8 +175,8 @@ These parameters are mostly useful to people responsible for running and adminis
 - [Bedrock Data Directory](https://storage.googleapis.com/oplabs-goerli-data/goerli-bedrock.tar)
 - [Legacy Geth Data Directory](https://storage.googleapis.com/oplabs-goerli-data/goerli-legacy-archival.tar)
 - [Configuration parameters](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/deploy-config/goerli.json)
-- [Docker image for `op-geth`](https://console.cloud.google.com/artifacts/docker/oplabs-tools-artifacts/us/images/op-geth).
-- [Docker image for `op-node`](https://console.cloud.google.com/artifacts/docker/oplabs-tools-artifacts/us/images/op-node)
+- [Latest release of `op-geth`](https://github.com/ethereum-optimism/op-geth/releases/tag/v1.101105.2)
+- [Latest release of `op-node`](https://console.cloud.google.com/artifacts/docker/oplabs-tools-artifacts/us/images/op-node)
 - [Legacy geth](https://hub.docker.com/layers/ethereumoptimism/l2geth/0.5.29/images/sha256-e40ea183c[…]e981408ccf9c07191667554c48b620e5eabc61521c3b3?context=explore)
 
 
