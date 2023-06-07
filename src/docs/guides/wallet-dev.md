@@ -35,37 +35,46 @@ For example, looking at the **SNX** token, the [Superchain token list](https://s
 
 ## Transaction status
 
-A transaction in Optimism can be in one of two states:
+We use the same vocabulary as the Beacon Chain to describe block finality. 
+Blocks (and the transactions within them) can be in one of the following states:
 
-1. **Sequencer Confirmed**: The transaction has been accepted by the sequencer on Optimism (L2)
-2. **Confirmed Onchain**: The transaction has been written to Ethereum (L1)
+- `unsafe`, meaning that the block has been received via gossip but has not yet been submitted to L1. Unsafe blocks can be reorged if L1 reorgs, or the sequencer reorgs.
+- `safe`, meaning that the block has been submitted to L1. Safe blocks can also be reorged if L1 reorgs.
+- `finalized`, meaning that the block has reached sufficient depth to be considered final. Finalized blocks cannot be reorged.
 
-We're still working on the tooling to easily detect when a given transaction has been published to Ethereum.
-For the moment, we recommend wallets consider transactions final after they are "Sequencer Confirmed".
-Transactions are considered "Sequencer Confirmed" as soon as their transaction receipt shows at least one confirmation.
+The current `safe`, `unsafe`, and `finalized` blocks can be queried via [JSON-RPC](../developers/build/json-rpc.md#optimism-syncstatus).
 
 ## Transaction Fees
 
-We aim to be [EVM equivalent](https://medium.com/ethereum-optimism/introducing-evm-equivalence-5c2021deb306), meaning we aim to minimize the differences between Optimism and Ethereum.
-You can see a summary of the few differences between Optimism and Ethereum [here](../developers/build/differences.md).
-One of the most important discrepancies can be found within Optimism's fee model.
-As a wallet developer, you **must** be aware of this difference.
+The transaction fee is based on two components:
 
-### Estimating total fees
+1. L2 execution fee
+1. L1 data fee
 
-Most of the cost of a transaction on Optimism comes from the cost of publishing the transaction to Ethereum.
-This publication step is what makes Optimism a Layer 2 blockchain.
-Unlike with the standard execution gas fee, users cannot specify a particular gas price or gas limit for this portion of their transaction cost.
-Instead, this fee is automatically deducted from the user's ETH balance on Optimism when the transaction is executed.
+[See here for a deeper explanation of Optimism's transasction fees](../developers/build/transaction-fees.md).
 
-[You can read more about this subject here](../developers/build/transaction-fees.md),
-or use [this tutorial](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/sdk-estimate-gas).
-The total fee paid by a transaction will be a combination of the normal fee estimation formula (`gasPrice * gasLimit`) in addition to the estimated L1 fee.
-
-### Displaying fees
+You can send transactions using standard EIP 1559 user interface and logic, as long as you make sure to **display the entire fee, including the L1 data fee**. 
 
 We **highly recommend** displaying fees on Optimism as one unified fee to minimize user confusion.
 You can do this by combining both portions of the fee (the L2 execution fee and the L1 data fee) into a single value presented to the end user.
+[The SDK can do that for you](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/sdk-estimate-gas).
+
+
+### The L2 execution fee
+
+This fee is calculated using the same [EIP 1559 mechanism](https://eips.ethereum.org/EIPS/eip-1559) used by L1 Ethereum (except with different parameters). This means it is composed of two components: a fixed base fee and a user selected priority fee.
+
+To enable your users to select a priority fee, you can [build a priority fee estimator]
+(https://docs.alchemy.com/docs/how-to-build-a-gas-fee-estimator-using-eip-1559).
+If you already have estimating code you use for L1 Ethereum, you can just use that.
+
+### The L1 data fee
+
+[You can see how this fee is calculated here](../developers/build/transaction-fees.md#the-l1-data-fee). 
+However, the easiest way to get it is to [use the SDK](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/sdk-estimate-gas).
+If you cannot use the SDK for some reason, you can get an L1 data fee estimate [`GasPriceOracle`'s `getL1Fee` function](https://optimistic.etherscan.io/address/0x420000000000000000000000000000000000000F#readContract#F3).
+
+
 
 ### Sending "max" ETH
 
@@ -73,6 +82,3 @@ Many wallets allow users to send the maximum amount of ETH available in the user
 Of course, this requires that the predicted fee for the send transaction be deducted from the ETH balance being sent.
 You **MUST** deduct both the L2 execution fee and the L1 data fee or the charged fee plus the balance sent will exceed the user's balance and the transaction will fail.
 
-### Displaying the gas prices
-
-If you want to display the current gas prices, you can use [`eth_gasPrice`](https://docs.alchemy.com/reference/eth-gasprice).
