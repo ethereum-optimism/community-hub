@@ -53,11 +53,10 @@ The transaction fee is based on two components:
 
 [See here for a deeper explanation of Optimism's transasction fees](../developers/build/transaction-fees.md).
 
-You can send transactions using standard EIP 1559 user interface and logic, as long as you make sure to **display the entire fee, including the L1 data fee**. 
-
+You can send transactions using standard EIP 1559 user interface and logic, as long as you make sure to display the entire fee, including the L1 data fee. 
 We **highly recommend** displaying fees on Optimism as one unified fee to minimize user confusion.
 You can do this by combining both portions of the fee (the L2 execution fee and the L1 data fee) into a single value presented to the end user.
-[The SDK can do that for you](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/sdk-estimate-gas).
+[The SDK can also do that for you](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/sdk-estimate-gas).
 
 
 ### The L2 execution fee
