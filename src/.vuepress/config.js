@@ -380,8 +380,8 @@ module.exports = {
             '/docs/developers/bedrock/differences.md',
             '/docs/developers/bedrock/node-operator-guide.md',
             [
-              'https://oplabs.notion.site/Bedrock-Mission-Control-EXTERNAL-fca344b1f799447cb1bcf3aae62157c5',
-              'Upgrade mission control'
+              '/docs/guides/wallet-dev.md',
+              'Wallet Developer guide'
             ],
             '/docs/developers/bedrock/metrics.md'
           ]
