@@ -58,7 +58,7 @@ The [Partner Fund](https://gov.optimism.io/t/partner-fund-overview/5268) is a gr
 
 - Apply [here](https://github.com/ethereum-optimism/ecosystem-contributions/issues?q=is%3Aissue+is%3Aopen+RFP)! There are no deadlines, applications are processed on a rolling basis.
 
-## Retroactive Grants (RetroPGF)
+# Retroactive Grants (RetroPGF)
 
 RetroPGF stands for Retroactive Public Goods Funding. RetroPGF rewards are allocated by the Citizens’ House to reward work that has already been completed for its impact. 
 
