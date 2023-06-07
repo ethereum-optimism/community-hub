@@ -176,8 +176,10 @@ Bedrock supports all of the standard JSON-RPC methods exposed by go-ethereum. In
 
 - `eth_getBlockRange`: Use `eth_getBlockByNumber` in a batch request instead.
 - `rollup_getInfo`: None of the information returned by this method exists on Bedrock, so there is no replacement for this method.
-- `rollup_gasPrices`: Use `eth_gasPrice` instead. The L1 and L2 fees are combined, and returned as a single value.
-
+- `rollup_gasPrices`: Use [`eth_gasPrice`](https://docs.alchemy.com/reference/eth-gasprice) instead for the L2 gas price. 
+  For the L1 gas price, you can call the [`GasPriceOracle`'s `l1BaseFee` function](https://optimistic.etherscan.io/address/0x420000000000000000000000000000000000000F#readContract#F5).
+  If you want to estimate the cost of a transaction, you can [use the SDK](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/sdk-estimate-gas).
+  
 To query `op-node`'s sync status, use the `optimism_syncStatus` RPC method. This method will return the current `safe`, `unsafe`, and `finalized` as seen by the `op-node`.
 
 ## Mempool
