@@ -142,7 +142,7 @@ L2 to L1 transactions have to wait two periods:
 1. The time until the state root is written to L1.
    You can estimate this time by looking at how often transactions happen to the State Commitment Chain (on both [mainnet](https://etherscan.io/address/0xBe5dAb4A2e9cd0F27300dB4aB94BeE3A233AEB19) and [goerli](https://goerli.etherscan.io/address/0xE6Dfba0953616Bacab0c9A8ecb3a9BBa77FC15c0)).
 
-   As of the Bedrock update, it is necessary to provide a Merkle proof of the message on L1 after the state root is written.
+   It is necessary to provide a Merkle proof of the message on L1 after the state root is written.
    The fault challenge period starts *after* that proof transaction becomes part of the L1 chain.
 
 1. The [fault challenge period](#understanding-the-challenge-period), which is a few seconds on goerli and seven days on mainnet.

@@ -75,4 +75,4 @@ You **MUST** deduct both the L2 execution fee and the L1 data fee or the charged
 
 ### Displaying the gas prices
 
-If you want to display the current gas prices, you can [use the `rollup_gasPrices` RPC method](../developers/build/json-rpc.md#rollup-gasprices) prior to Bedrock, or `eth_gasPrice` in Bedrock.
+If you want to display the current gas prices, you can use [`eth_gasPrice`](https://docs.alchemy.com/reference/eth-gasprice).
