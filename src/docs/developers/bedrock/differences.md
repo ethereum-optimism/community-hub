@@ -121,7 +121,7 @@ There are some differences between Ethereum and Optimism in this regard:
   | - | -: | -: |
   | Block gas limit | 30,000,000 gas | 30,000,000 gas
   | Block gas target | 5,000,000 gas | 15,000,000 gas
-  | EIP-1559 elasticity multiplier | 5 | 2
+  | EIP-1559 elasticity multiplier | 6 | 2
   | EIP-1559 denominator | 50 | 8
   | Maximum base fee increase (per block) | 10% | 12.5%
   | Maximum base fee decrease (per block) | 2% | 12.5%
