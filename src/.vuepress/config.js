@@ -379,7 +379,7 @@ module.exports = {
             '/docs/developers/bedrock/explainer.md',
             '/docs/developers/bedrock/differences.md',
             '/docs/developers/bedrock/node-operator-guide.md',
-            '/docs/developers/bedrock/wallet-upgrade.md'
+            '/docs/developers/bedrock/wallet-upgrade.md',
             '/docs/developers/bedrock/metrics.md'
           ]
         }
