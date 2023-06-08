@@ -75,12 +75,6 @@ These parameters are mostly useful to people responsible for running and adminis
 
 
 #### Links
-
-::: tip
-  
-Links to download data directories will be posted here as soon as they are available.
-  
-:::
   
 
 - Bedrock Data Directory (400GB):
