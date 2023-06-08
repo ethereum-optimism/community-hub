@@ -77,10 +77,8 @@ These parameters are mostly useful to people responsible for running and adminis
 #### Links
   
 
-- Bedrock Data Directory (400GB):
-  - [On GCS](https://storage.googleapis.com/oplabs-mainnet-data/mainnet-bedrock.tar)
-- Legacy Geth Data Directory (2.9TB)<sup>1</sup>: 
-  - [On GCS](https://storage.googleapis.com/oplabs-mainnet-data/mainnet-legacy-archival.tar.zst)
+- [Bedrock Data Directory (400GB)](https://storage.googleapis.com/oplabs-mainnet-data/mainnet-bedrock.tar)
+- [Legacy Geth Data Directory (2.9TB)<sup>1</sup>](https://storage.googleapis.com/oplabs-mainnet-data/mainnet-legacy-archival.tar.zst)
 - [Configuration parameters](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/deploy-config/mainnet.json).
 - [Latest release of `op-geth`](https://github.com/ethereum-optimism/op-geth/releases/latest)
 - [Latest release of `op-node`](https://github.com/ethereum-optimism/optimism/releases/latest)
