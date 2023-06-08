@@ -78,10 +78,15 @@ These parameters are mostly useful to people responsible for running and adminis
   
 
 - [Bedrock Data Directory (400GB)](https://storage.googleapis.com/oplabs-mainnet-data/mainnet-bedrock.tar)
-- [Legacy Geth Data Directory (2.9TB)<sup>1</sup>](https://storage.googleapis.com/oplabs-mainnet-data/mainnet-legacy-archival.tar.zst)
 - [Configuration parameters](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/deploy-config/mainnet.json).
 - [Latest release of `op-geth`](https://github.com/ethereum-optimism/op-geth/releases/latest)
 - [Latest release of `op-node`](https://github.com/ethereum-optimism/optimism/releases/latest)
+
+#### Additional links for archive nodes
+
+  You only need to download these files if you are running an archive node with `l2geth` for functions, such as pre-Bedrock transaction tracing, that `op-geth` does not provide.
+
+- [Legacy Geth Data Directory (2.9TB)<sup>1</sup>](https://storage.googleapis.com/oplabs-mainnet-data/mainnet-legacy-archival.tar.zst)
 - [Legacy geth](https://hub.docker.com/layers/ethereumoptimism/l2geth/0.5.31/images/sha256-5577036dc36d167d11f5ac49b91cc0a3d835574928a9563783c2e70309e5eb28?context=explore).
   
 
@@ -169,10 +174,15 @@ These parameters are mostly useful to people responsible for running and adminis
 #### Links
 
 - [Bedrock Data Directory (7.5GB)](https://storage.googleapis.com/oplabs-goerli-data/goerli-bedrock.tar)
-- [Legacy Geth Data Directory (62.2GB)](https://storage.googleapis.com/oplabs-goerli-data/goerli-legacy-archival.tar)
 - [Configuration parameters](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/deploy-config/goerli.json)
 - [Latest releases of `op-geth`](https://github.com/ethereum-optimism/op-geth/releases/latest)
 - [Latest releases of `op-node`](https://github.com/ethereum-optimism/optimism/releases/latest)
+
+#### Additional links for archive nodes
+
+  You only need to download these files if you are running an archive node with `l2geth` for functions, such as pre-Bedrock transaction tracing, that `op-geth` does not provide.
+
+- [Legacy Geth Data Directory (62.2GB)](https://storage.googleapis.com/oplabs-goerli-data/goerli-legacy-archival.tar)
 - [Legacy geth](https://hub.docker.com/layers/ethereumoptimism/l2geth/0.5.31/images/sha256-5577036dc36d167d11f5ac49b91cc0a3d835574928a9563783c2e70309e5eb28?context=explore)
 
 
