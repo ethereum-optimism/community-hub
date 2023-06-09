@@ -44,6 +44,25 @@ Its API takes only a few lines of code to get up and running. Alchemy isn't just
 
 [Sign up for a free Alchemy account here](https://www.alchemy.com/optimism).
 
+## Allnodes
+
+### Description and Pricing
+
+[Allnodes](https://www.allnodes.com) is the go-to provider for fast, scalable, FREE, and UNLIMITED access to Optimism RPC.
+
+Moreover, Allnodes provides superior performance and uninterrupted access to full nodes, solidifying your connection with the Optimism network.
+
+Allnodes' reliable services have earned the trust of a diverse clientele, including data analytics firms, exchanges, and wallet companies. Allnodes goes beyond being just a service provider; we position ourselves as a dedicated partner on your blockchain journey, always prepared to meet your unique needs and tailor our approach to ensure your success.
+
+Experience the advantage of FREE, unlimited, geo-distributed, public access to Optimism RPC, full nodes today.
+
+[Click here](https://optimism.publicnode.com) to get started
+
+### Supported Networks
+
+- Optimism Mainnet
+- Optimism Goerli
+
 ## Ankr
 
 ### Description and Pricing
