@@ -3,10 +3,6 @@ title: Node Operator Guide
 lang: en-US
 ---
 
-::: warning This guide is for bedrock
-This guide is for the *bedrock* upgrade, which is coming in Q1, 2023, subject to approval by Optimism governance.
-Do not attempt to use this in production prior to that upgrade. Keep an eye on these docs or [the OP Labs Twitter account](https://twitter.com/OPLabsPBC) for announcements.
-:::
 
 This document provides an overview of how to deploy a Bedrock node. To learn more about how Bedrock itself works and its motivations, please see [the specs on GitHub](https://github.com/ethereum-optimism/optimism/tree/develop/specs).
 
