@@ -76,9 +76,8 @@ we come to trust them.
 
 In brief: If a proposed state root is not the correct result of executing a transaction, then a Verifier (which is anyone running an Optimism 'full node') can initiate a transaction result challenge. If the transaction result is successfully proven to be incorrect, the Verifier will receive a reward taken from funds which a Sequencer must put up as a bond.
 
-::: Notice
-This system is still being written, so these details are likely to
-change
+::: warning Notice
+This system is still being written, so these details are likely to change.
 :::
 
 
@@ -154,10 +153,6 @@ it is similar to the EVM's predeploys.
 ### [`OVM_L2ToL1MessagePasser`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/L2/predeploys/OVM_L2ToL1MessagePasser.sol)
 The L2 to L1 Message Passer is a utility contract which facilitate an L1 proof of a message on L2. The L1 Cross Domain Messenger performs this proof in its _verifyStorageProof function, which verifies the existence of the transaction hash in this  contract's `sentMessages` mapping.
 
-<!--
-### [`OVM_SequencerEntrypoint`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/optimistic-ethereum/OVM/predeploys/OVM_SequencerEntrypoint.sol)
-The Sequencer Entrypoint is a predeploy which, despite its name, can in fact be called by  any account. It accepts a more efficient compressed calldata format, which it decompresses and  encodes to the standard EIP155 transaction format. This contract is the implementation referenced by the Proxy Sequencer Entrypoint, thus enabling the Optimism team to upgrade the decompression of calldata from the Sequencer.
--->
 
 ### [`OVM_SequencerFeeVault`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/L2/predeploys/OVM_SequencerFeeVault.sol)
 This contract holds fees paid to the sequencer until there is enough to

@@ -8,7 +8,7 @@ There are several Optimism components with an RPC API:
 
 ## Rollup node (op-node)
 
-[*Rollup node*](https://github.com/ethereum-optimism/optimism/blob/develop/specs/rollup-node.md) refers to the component in the protocol specifications. 
+[*Rollup node*](https://github.com/ethereum-optimism/optimism/blob/65ec61dde94ffa93342728d324fecf474d228e1f/specs/rollup-node.md) refers to the component in the protocol specifications. 
 The Optimism implementation is called *op-node*.
 
 The `op-node` component implements several RPC methods:
@@ -16,7 +16,7 @@ The `op-node` component implements several RPC methods:
 ### `optimism_outputAtBlock`
 
 Get the output root at a specific block.
-This method is documented in [the specifications](https://github.com/ethereum-optimism/optimism/blob/develop/specs/rollup-node.md#output-method-api).
+This method is documented in [the specifications](https://github.com/ethereum-optimism/optimism/blob/65ec61dde94ffa93342728d324fecf474d228e1f/specs/rollup-node.md#output-method-api).
 
 ```sh
 curl -X POST -H "Content-Type: application/json" --data  \
@@ -180,12 +180,12 @@ Sample output:
 
 ### Peer to peer synchronization
 
-Optionally, the rollup node can provide [peer to peer synchronization](https://github.com/ethereum-optimism/optimism/blob/develop/specs/rollup-node-p2p.md) to provide pending L2 blocks to other rollup nodes.
+Optionally, the rollup node can provide [peer to peer synchronization](https://github.com/ethereum-optimism/optimism/blob/65ec61dde94ffa93342728d324fecf474d228e1f/specs/rollup-node-p2p.md) to provide pending L2 blocks to other rollup nodes.
 
 
 ## Execution engine (op-geth)
 
-[*Execution engine*](https://github.com/ethereum-optimism/optimism/blob/develop/specs/rollup-node.md) refers to the component in the protocol specifications. 
+[*Execution engine*](https://github.com/ethereum-optimism/optimism/blob/65ec61dde94ffa93342728d324fecf474d228e1f/specs/rollup-node.md) refers to the component in the protocol specifications. 
 The Optimism implementation is called *op-geth*.
 
 The execution engine's RPC interface is identical to [the upstream Geth RPC interface](https://geth.ethereum.org/docs/rpc/server). This includes the ability to provide [snap sync](https://github.com/ethereum/devp2p/blob/master/caps/snap.md) functionality to other execution engines.

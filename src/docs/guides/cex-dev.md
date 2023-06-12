@@ -65,4 +65,4 @@ If you need to implement some kind of custom logic, [see this tutorial](https://
 
 ## Audit reports
 
-* [OpenZeppelin on OVM 1.0](https://blog.openzeppelin.com/optimism-smart-contracts-audit/), for the code as it was in April 11th, 2021. For a full list of audit reports visit [GitHub](https://github.com/ethereum-optimism/optimism/tree/develop/technical-documents/security-reviews). 
+* [OpenZeppelin on OVM 1.0](https://blog.openzeppelin.com/optimism-smart-contracts-audit/), for the code as it was in April 11th, 2021. For a full list of audit reports visit [GitHub](https://github.com/ethereum-optimism/optimism/tree/65ec61dde94ffa93342728d324fecf474d228e1f/technical-documents/security-reviews). 

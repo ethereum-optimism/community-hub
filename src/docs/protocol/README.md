@@ -28,4 +28,4 @@ The first step to decentralizing the sequencer is to still have one sequencer at
 After this, the next step is to support multiple concurrent sequencers. This can be simply achieved by adopting a standard BFT consensus protocol, as used by other L1 protocols and sidechains like Polygon and Cosmos.
 
 
-You can keep up with the roadmap progress in [Cannon repository](https://github.com/ethereum-optimism/cannon/) for the fault proofs and [Optimism specs repository](https://github.com/ethereum-optimism/optimism/tree/develop/specs) for the overall protocol work.
+You can keep up with the roadmap progress in [Cannon repository](https://github.com/ethereum-optimism/cannon/) for the fault proofs and [Optimism specs repository](https://github.com/ethereum-optimism/optimism/tree/65ec61dde94ffa93342728d324fecf474d228e1f/specs) for the overall protocol work.
