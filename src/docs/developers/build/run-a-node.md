@@ -111,6 +111,7 @@ The next step is to download the data directory for `op-geth`.
 
 1. Download the correct data directory snapshot.
 
+   - [Optimism mainnet](https://storage.googleapis.com/oplabs-mainnet-data/mainnet-bedrock.tar)
    - [Optimism Goerli](https://storage.googleapis.com/oplabs-goerli-data/goerli-bedrock.tar)
 
 1. Create the data directory in `op-geth` and fill it.
