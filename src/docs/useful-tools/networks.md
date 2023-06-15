@@ -83,10 +83,10 @@ Links to download data directories will be posted here as soon as they are avail
 :::
   
 
-- Bedrock Data Directory (400GB):
-  - [On GCS](https://storage.googleapis.com/oplabs-mainnet-data/mainnet-bedrock.tar)
+- Bedrock Data Directory (303 GB)<sup>1</sup>:
+  - [On GCS](https://datadirs.optimism.io/mainnet-bedrock.tar.zst)
 - Legacy Geth Data Directory (2.9TB)<sup>1</sup>: 
-  - [On GCS](https://storage.googleapis.com/oplabs-mainnet-data/mainnet-legacy-archival.tar.zst)
+  - [On GCS](https://datadirs.optimism.io/mainnet-legacy-archival.tar.zst)
 - [Configuration parameters](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/deploy-config/mainnet.json).
 - [Latest release of `op-geth`](https://github.com/ethereum-optimism/op-geth/releases/latest)
 - [Latest release of `op-node`](https://github.com/ethereum-optimism/optimism/releases/latest)
@@ -176,8 +176,8 @@ These parameters are mostly useful to people responsible for running and adminis
 
 #### Links
 
-- [Bedrock Data Directory (7.5GB)](https://storage.googleapis.com/oplabs-goerli-data/goerli-bedrock.tar)
-- [Legacy Geth Data Directory (62.2GB)](https://storage.googleapis.com/oplabs-goerli-data/goerli-legacy-archival.tar)
+- [Bedrock Data Directory (7.5GB)](https://datadirs.optimism.io/goerli-bedrock.tar)
+- [Legacy Geth Data Directory (62.2GB)](https://datadirs.optimism.io/goerli-legacy-archival.tar)
 - [Configuration parameters](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/deploy-config/goerli.json)
 - [Latest releases of `op-geth`](https://github.com/ethereum-optimism/op-geth/releases/latest)
 - [Latest releases of `op-node`](https://github.com/ethereum-optimism/optimism/releases/latest)
