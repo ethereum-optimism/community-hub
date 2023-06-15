@@ -83,10 +83,8 @@ Links to download data directories will be posted here as soon as they are avail
 :::
   
 
-- Bedrock Data Directory (303 GB)<sup>1</sup>:
-  - [On GCS](https://datadirs.optimism.io/mainnet-bedrock.tar.zst)
-- Legacy Geth Data Directory (2.9TB)<sup>1</sup>: 
-  - [On GCS](https://datadirs.optimism.io/mainnet-legacy-archival.tar.zst)
+- [Bedrock Data Directory (303 GB)<sup>1</sup>](https://datadirs.optimism.io/mainnet-bedrock.tar.zst)
+- [Legacy Geth Data Directory (2.9TB)<sup>1</sup>](https://datadirs.optimism.io/mainnet-legacy-archival.tar.zst)
 - [Configuration parameters](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/deploy-config/mainnet.json).
 - [Latest release of `op-geth`](https://github.com/ethereum-optimism/op-geth/releases/latest)
 - [Latest release of `op-node`](https://github.com/ethereum-optimism/optimism/releases/latest)
