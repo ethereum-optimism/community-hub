@@ -174,8 +174,8 @@ These parameters are mostly useful to people responsible for running and adminis
 
 #### Links
 
-- [Bedrock Data Directory (7.5GB)](https://datadirs.optimism.io/goerli-bedrock.tar)
-- [Legacy Geth Data Directory (62.2GB)](https://datadirs.optimism.io/goerli-legacy-archival.tar)
+- [Bedrock Data Directory (5.0GB)](https://datadirs.optimism.io/goerli-bedrock.tar.zst)
+- [Legacy Geth Data Directory (50GB)](https://datadirs.optimism.io/goerli-legacy-archival.tar.zst)
 - [Configuration parameters](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/deploy-config/goerli.json)
 - [Latest releases of `op-geth`](https://github.com/ethereum-optimism/op-geth/releases/latest)
 - [Latest releases of `op-node`](https://github.com/ethereum-optimism/optimism/releases/latest)
