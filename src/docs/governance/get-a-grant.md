@@ -20,7 +20,7 @@ Here are some examples of projects that received grants from the Grants Council 
 
 **How to apply:**
 
-- The [Grants Council](hhttps://app.charmverse.io/op-grants/page-701220845245208) processes applications on five-week cycles during regular Voting Cycles.  You can reference the [governance calendar](https://calendar.google.com/calendar/u/0/r?cid=Y19mbm10Z3VoNm5vbzZxZ2JuaTJncGVyaWQ0a0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t) for schedule and deadlines.
+- The [Grants Council](https://app.charmverse.io/op-grants/page-701220845245208) processes applications on five-week cycles during regular Voting Cycles.  You can reference the [governance calendar](https://calendar.google.com/calendar/u/0/r?cid=Y19mbm10Z3VoNm5vbzZxZ2JuaTJncGVyaWQ0a0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t) for schedule and deadlines.
 - Apply [here](https://app.charmverse.io/op-grants/page-701220845245208)! To understand the types of grants the Council would like to make, please see Requests for Grants (Coming soon!)
 - Watch [How to Apply to Grants Council](https://www.loom.com/share/e128bd6cca844fa7ae47a91510d37bda)
 
