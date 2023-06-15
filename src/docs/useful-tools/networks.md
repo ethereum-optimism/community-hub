@@ -12,7 +12,7 @@ Some API calls, such as those in the [personal namespace](https://geth.ethereum.
 Such RPCs are either totally unsupported, or will return nonsensical values.
 :::
 
-## Optimism (mainnet)
+## OP Mainnet
 
 | Parameter | Value |
 | --------- | ----- |
@@ -54,7 +54,7 @@ They are reproduced here for convenience.
 
 ### API Options:
 
-1. Get free access to Optimism through [Alchemy](https://www.alchemy.com/optimism)
+1. Get free access to OP Mainnet through [Alchemy](https://www.alchemy.com/optimism)
 
 2. For small scale tests, you can use our public API:
 - HTTP endpoint: [https://mainnet.optimism.io](https://mainnet.optimism.io) (note, this is for testing. For production, use Alchemy) 
@@ -97,7 +97,7 @@ We recommend that users install the command line tool if it is not already insta
 If you want to decompress separately, we recommend `pzstd -d`  or `zstd -d` (pzstd will likely be faster).
 
 
-## Optimism Goerli
+## OP Goerli
 
 ::: tip Purpose
 This is our test network.
@@ -141,7 +141,7 @@ They are reproduced here for convenience
 ### API Options
 
 
-1. Get free access to Optimism through [Alchemy](https://www.alchemy.com/optimism)
+1. Get free access to OP Goerli through [Alchemy](https://www.alchemy.com/optimism)
 
 2. For small scale tests, you can use our public API:
 - HTTP endpoint: [https://goerli.optimism.io](https://goerli.optimism.io) (note, this is for testing. For production, use Alchemy) 
