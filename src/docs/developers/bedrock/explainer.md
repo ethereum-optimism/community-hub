@@ -8,7 +8,7 @@ meta:
 
 ![Bedrock](https://dev.optimism.io/content/images/size/w2000/2022/12/bedrock-BLUE.jpg)
 
-Bedrock is the name of the first ever official release of the OP Stack, which is a set of free and open-source modular components that work together to power Optimism blockchains such as OP Mainnet.
+Bedrock is the name of the first ever official release of the OP Stack, which is a set of free and open-source modular components that work together to power blockchains such as OP Mainnet.
 
 - To understand what is in the Bedrock release, keep reading.
 - To develop on OP Mainnet, which upgraded its infrastructure to the Bedrock release, read the docs.
