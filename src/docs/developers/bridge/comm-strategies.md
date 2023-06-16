@@ -17,7 +17,7 @@ If you want to do something that relies on the L2 state prior to that point, you
 
 ## Fully centralized
 
-If your dapp has a centralized always on server, the easiest solution is to just have two providers, one connected to Ethereum (L1) and the other to Optimism (L2).
+If your dapp has a centralized always on server, the easiest solution is to just have two providers, one connected to Ethereum (L1) and the other to OP Mainnet (L2).
 
 | Parameter         | Evaluation |
 | - | - |
@@ -28,7 +28,7 @@ If your dapp has a centralized always on server, the easiest solution is to just
 
 ### Using the client (please don't)
 
-The client (typically a browser with a wallet) can also connect to both Ethereum and Optimism, but it isn't a great mechanism for inter-layer communication.
+The client (typically a browser with a wallet) can also connect to both Ethereum and OP Mainnet, but it isn't a great mechanism for inter-layer communication.
 You know what the code in the server is, because you wrote it.
 You know what the code in the client is *supposed to be*, but it is possible for users to run a different client that pretends to be the legitimate one. 
 The only time that you can trust the client for inter-layer communication is when it is in the best interest of the user running the client not to lie.
@@ -37,7 +37,7 @@ And even then, you shouldn't because a hacker can cause a user to run malware.
 
 ## Fully decentralized
 
-If you want to keep the same decentralization promises as Optimism and Ethereum, you can [rely on our messaging infrastructure](messaging.md).
+If you want to keep the same decentralization promises as OP Mainnet and Ethereum, you can [rely on our messaging infrastructure](messaging.md).
 You are already trusting Optimism to run the chain, and the messaging infrastructure goes through the same development process.
 
 ### Messages from L1 to L2
@@ -48,7 +48,7 @@ If you want L1 code to either tell L2 code to do something, or update L2 code wi
 | - | - |
 | Speed             | ~15 minutes
 | Cost              | Cheapish (requires an L1 transaction)
-| Trust assumption  | Same as using Optimism
+| Trust assumption  | Same as using OP Mainnet
 
 ### Messages from L2 to L1
 
@@ -63,7 +63,7 @@ It requires two transactions:
 | - | - |
 | Speed             | >7 days 
 | Cost              | Expensive
-| Trust Assumption  | Almost as good as using Optimism, however someone needs to initiate the claim transaction on L1
+| Trust Assumption  | Almost as good as using OP Mainnet, however someone needs to initiate the claim transaction on L1
 
 
 ## Incentivized communication
