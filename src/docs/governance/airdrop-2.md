@@ -10,11 +10,11 @@ With the introduction of OP, the Collective set out to establish a bicameral gov
 
 Since then, the Token House has matured as the first piece of Optimism governance.
 As of today (February 9th, 2023) 88k addresses have voted on over 90 proposals to distribute more than 55m OP tokens across the ecosystem, and Optimism’s first protocol upgrade is headed to vote in February. A total of 293k addresses are **delegating their voting power** — a positive-sum activity that helps strengthen the fabric of Optimism’s governance system.
-At the same time, Optimism Mainnet is developing into a booming economy. 
+At the same time, OP Mainnet is developing into a booming economy. 
 Over 1.5 million addresses have sent 64 million transactions since our first Airdrop, spending nearly $15 million in fees on the network. 
 Participation in governance and in the Optimism economy is what helps our Collective grow and thrive.
 
-Optimism’s Airdrop #2 distributes 11,742,277.10 OP to 307,965 unique addresses to reward **positive-sum governance participation** and **power users of Optimism Mainnet**. 
+Optimism’s Airdrop #2 distributes 11,742,277.10 OP to 307,965 unique addresses to reward **positive-sum governance participation** and **power users of OP Mainnet**. 
 A snapshot of addresses was taken on 01-20-2023 0:00 UTC.
 
 Read on for more detail about eligibility criteria and distribution.
