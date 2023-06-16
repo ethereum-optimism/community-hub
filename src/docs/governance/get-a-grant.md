@@ -52,7 +52,7 @@ You can view the full list of Foundation Missions (RFPs) [here](https://github.c
 
 ### 4. The Partner Fund
 
-The [Partner Fund](https://gov.optimism.io/t/partner-fund-overview/5268) is a grants program run by the Optimism Foundation. It’s focused on strategic or larger scale grants to partners that have already achieved product market fit. These grants are typically larger than those made by the Grants Council. 
+The [Partner Fund](https://gov.optimism.io/t/partner-fund-overview/5268) is a grants program run by the Optimism Foundation. It’s focused on strategic or larger scale grants to partners that have already achieved product market fit. 
 
 **How to apply:**
 
