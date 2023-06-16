@@ -29,5 +29,5 @@ For example, if your decentralized application relies on [inter-domain communica
 In many cases a decentralized application requires the services of other contracts. 
 For example, [Perpetual v. 2](https://support.perp.com/hc/en-us/articles/5748372509081-Perpetual-Uniswap) cannot function without [Uniswap v. 3](https://uniswap.org/blog/uniswap-v3).
 
-If that is the case you can use [mainnet forking](https://hardhat.org/hardhat-network/guides/mainnet-forking.html), it works with OP Mainnet. 
+If that is the case you can use [mainnet forking](https://hardhat.org/hardhat-network/guides/mainnet-forking.html). It works with OP Mainnet. 
 Alternatively, you can connect to our [test network](../../useful-tools/networks.md#optimism-goerli) if those contracts are also deployed there (in many cases they are).
