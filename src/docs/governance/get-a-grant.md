@@ -56,7 +56,7 @@ The [Partner Fund](https://gov.optimism.io/t/partner-fund-overview/5268) is a gr
 
 **How to apply:**
 
-- Apply [here](https://forms.monday.com/forms/89675838770f70674de78da3e20b8155?r=use1)! There are no deadlines, applications are processed on a rolling basis.
+- Apply [here](https://airtable.com/shrvQNlFPHGcVNqDe?prefill_Referrer=OPGov)! There are no deadlines, applications are processed on a rolling basis.
 
 # Retroactive Grants (RetroPGF)
 
