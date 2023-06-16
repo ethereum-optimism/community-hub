@@ -14,7 +14,7 @@ We have a Blockscout explorer for both [OP Mainnet](https://blockscout.com/optim
 
 ## Etherscan
 
-We have Etherscan explorers for the [OP Mainnet](https://explorer.optimism.io) and the  [OP Goerli](https://goerli-explorer.optimism.io).
+We have Etherscan explorers for the [OP Mainnet](https://explorer.optimism.io) and the [OP Goerli](https://goerli-explorer.optimism.io).
 Etherscan has lots of tools to help you debug transactions.
 
 Optimistic Etherscan has all the tools you expect from Etherscan, such as:
