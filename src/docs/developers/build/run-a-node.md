@@ -1,16 +1,16 @@
 ---
-title: Running a testnet or mainnet node
+title: Running an OP Mainnet or testnet
 lang: en-US
 ---
 
-If you're looking to build an app on Optimism you'll need access to an Optimism node. You have two options - use a hosted node from providers like Alchemy or run your own. 
+If you're looking to build an app on OP Mainnet you'll need access to an OP Mainnet node. You have two options - use a hosted node from providers like Alchemy or run your own. 
 
 ## Hosted node providers
 
 You can get a free, hosted one from [any of these providers](../../useful-tools/providers.md) to get up and building quickly. Of them, [Alchemy](https://www.alchemy.com/optimism) is our preferred node provider, and is used to power our [public endpoint](../../useful-tools/networks.md). 
 
-However, you might be interested in running your very own Optimism node.
-Here we'll go over the process of running a testnet or mainnet Optimism node for yourself.
+However, you might be interested in running your very own node.
+Here we'll go over the process of running an OP Mainnet or testnet node for yourself.
 
 ## Upgrades
 
@@ -21,14 +21,14 @@ Otherwise, your node will eventually stop working.
 
 ### Hardware requirements
 
-Replicas need to store the transaction history of Optimism and to run Geth. 
+Replicas need to store the transaction history of OP Mainnet (or the relevant OP testnet) and to run Geth. 
 They need to be relatively powerful machines (real or virtual). 
-We recommend at least 16 GB RAM, and an SSD drive with at least 500 GB free (for the production network).
+We recommend at least 16 GB RAM, and an SSD drive with at least 500 GB free (for OP Mainnet).
 
 ### Source of synchronization
 
 
-[The `op-geth` component](../bedrock/explainer.md#execution-client) synchronizes from both other Optimism nodes (https://github.com/ethereum-optimism/optimism/blob/develop/specs/exec-engine.md#happy-path-sync), meaning L2, [and L1 Ethereum](https://github.com/ethereum-optimism/optimism/blob/develop/specs/exec-engine.md#worst-case-sync) if necessar.
+[The `op-geth` component](../bedrock/explainer.md#execution-client) synchronizes from both other OP Mainnet (or testnet) nodes (https://github.com/ethereum-optimism/optimism/blob/develop/specs/exec-engine.md#happy-path-sync), meaning L2, [and Ethereum (or the appropriate L1 testnet)](https://github.com/ethereum-optimism/optimism/blob/develop/specs/exec-engine.md#worst-case-sync) if necessar.
 
 To synchronize only from L1, you edit the [op-node configuration](https://github.com/ethereum-optimism/optimism/blob/develop/specs/rollup-node.md) to set `OP_NODE_P2P_DISABLE` to `true`.
 
@@ -111,7 +111,8 @@ The next step is to download the data directory for `op-geth`.
 
 1. Download the correct data directory snapshot.
 
-   - [Optimism Goerli](https://datadirs.optimism.io/goerli-bedrock.tar)
+   - [OP Mainnet](https://datadirs.optimism.io/mainnet-bedrock.tar.zst)
+   - [OP Goerli](https://datadirs.optimism.io/goerli-bedrock.tar.zst)
 
 1. Create the data directory in `op-geth` and fill it.
    Note that these directions assume the data directory snapshot is at `~`, the home directory. Modify if needed.
@@ -161,10 +162,10 @@ cd ~/op-geth
   --syncmode=full \
   --maxpeers=0 \
   --datadir ./datadir \
-  --rollup.sequencerhttp= << URL TO OPTIMISM >>
+  --rollup.sequencerhttp= << URL TO OP Mainnet or testnet >>
 ```
 
-Make sure the change `<< URL TO OPTIMISM>>` to a service provider's URL for the Optimism network (either the production one or Optimism Goerli).
+Make sure the change `<< URL TO OP Mainnet or testnet >>` to a service provider's URL for the OP network (either OP Mainnet or an OP testnet).
 
 
 #### `op-node`

@@ -49,7 +49,7 @@ This way there is no centralized authority to trust.
 
 ## Smart contracts / technical specifications
 
-The legacy AttestationStation contract is located [in the Optimism monorepo](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-periphery/contracts/universal/op-nft/AttestationStation.sol). It is deployed at address `0xEE36eaaD94d1Cc1d0eccaDb55C38bFfB6Be06C77`, both on [Optimism Mainnet](https://explorer.optimism.io/address/0xEE36eaaD94d1Cc1d0eccaDb55C38bFfB6Be06C77) and [Optimism Goerli](https://goerli-optimism.etherscan.io/address/0xEE36eaaD94d1Cc1d0eccaDb55C38bFfB6Be06C77). The following is the breakdown of this smart contract.
+The legacy AttestationStation contract is located [in the Optimism monorepo](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-periphery/contracts/universal/op-nft/AttestationStation.sol). It is deployed at address `0xEE36eaaD94d1Cc1d0eccaDb55C38bFfB6Be06C77`, both on [OP Mainnet](https://explorer.optimism.io/address/0xEE36eaaD94d1Cc1d0eccaDb55C38bFfB6Be06C77) and [OP Goerli](https://goerli-optimism.etherscan.io/address/0xEE36eaaD94d1Cc1d0eccaDb55C38bFfB6Be06C77). The following is the breakdown of this smart contract.
 
 ### State
 
