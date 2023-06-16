@@ -16,7 +16,7 @@ Therefore, it is a good idea to run the majority of tests, which do not rely on 
 It is a lot faster.
 
 Ideally you would want to be able to run some tests on an OP test network, either a [local development environment](dev-node.md) or [the test network](../../useful-tools/networks.md#optimism-goerli).
-This would be a much slower process, but it would let you identify cases where [the equivalence between OP Network and Ethereum breaks down](differences.md) (or the equivalence between Ethereum itself and the development stack, for that matter).
+This would be a much slower process, but it would let you identify cases where [the equivalence between OP Mainnet and Ethereum breaks down](differences.md) (or the equivalence between Ethereum itself and the development stack, for that matter).
 
 ## Multilayer integration tests
 
