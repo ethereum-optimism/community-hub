@@ -1,5 +1,5 @@
 ---
-title: Optimism's Security Model
+title: OP Mainnet's Security Model
 lang: en-US
 ---
 
