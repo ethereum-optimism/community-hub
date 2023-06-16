@@ -1,15 +1,15 @@
 ---
-title: Optimism Guides
+title: OP Mainnet Guides
 lang: en-US
 ---
 
 ## Where should I start?
 
-If you're brand new to Optimism, we recommend checking out the [guide to deploying a basic contract](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/getting-started)
+If you're brand new to OP Mainnet, we recommend checking out the [guide to deploying a basic contract](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/getting-started)
 It'll get you familiar with the core steps required to get a contract deployed to the network.
-Luckily, Optimism is [EVM equivalent](https://medium.com/ethereum-optimism/introducing-evm-equivalence-5c2021deb306), so it's 100% the same as deploying a contract to Ethereum.
+Luckily, OP Mainnet is [EVM equivalent](https://medium.com/ethereum-optimism/introducing-evm-equivalence-5c2021deb306), so it's 100% the same as deploying a contract to Ethereum.
 
-If you're a bit more familiar with Optimism and Ethereum, you can try walking through one of the various [tutorials](https://github.com/ethereum-optimism/optimism-tutorial) put together by the Optimism community.
+If you're a bit more familiar with OP  and Ethereum, you can try walking through one of the various [tutorials](https://github.com/ethereum-optimism/optimism-tutorial) put together by the Optimism community.
 They'll help you get a headstart when building your first Optimistic project.
 
 
