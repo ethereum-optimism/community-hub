@@ -44,8 +44,8 @@ To enable your users to select a priority fee, you can [build a priority fee est
 (https://docs.alchemy.com/docs/how-to-build-a-gas-fee-estimator-using-eip-1559).
 If you already have estimating code you use for L1 Ethereum, you can just use that.
 
-Note that on Optimism the priority fee tends to be very low. 
-As I am writing this, a priority fee of 0.001 gwei is sufficient ([see here](https://optimism.io/gas-tracker) to get the current values).
+Note that on OP Mainnet the priority fee tends to be very low. 
+As I am writing this, a priority fee of 0.2 gwei is sufficient ([see here](https://optimism.io/gas-tracker) to get the current values).
 
 To display the entire estimated cost of a transaction we recommend you [use the SDK](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/sdk-estimate-gas). 
 
