@@ -10,7 +10,7 @@ If you're looking to build an app on OP Mainnet you'll need access to an OP Main
 You can get a free, hosted one from [any of these providers](../../useful-tools/providers.md) to get up and building quickly. Of them, [Alchemy](https://www.alchemy.com/optimism) is our preferred node provider, and is used to power our [public endpoint](../../useful-tools/networks.md). 
 
 However, you might be interested in running your very own node.
-Here we'll go over the process of running an OP Mainnet to testnet node for yourself.
+Here we'll go over the process of running an OP Mainnet or testnet node for yourself.
 
 ## Upgrades
 
