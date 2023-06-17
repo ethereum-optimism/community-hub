@@ -11,7 +11,7 @@ There are four different types of Collective Grants.
 
 ### 1. Grants Council
 
-The [Grants Council](https://www.notion.so/Optimism-Grants-Council-090bb648d1854136b9630c608da7a8bc?pvs=21) is a group of community members elected by the Token House. The council makes small to medium-sized grants based in two categories: 
+The [Grants Council](https://app.charmverse.io/op-grants/page-701220845245208) is a group of community members elected by the Token House. The council makes small to medium-sized grants based in two categories: 
 
 - **Builders Grants:** To support builders innovating on novel applications and infrastructure
 - **Growth Experiments Grants:** To support projects with strategies to drive more users on Optimism via novel incentive programs
@@ -20,8 +20,8 @@ Here are some examples of projects that received grants from the Grants Council 
 
 **How to apply:**
 
-- The [Grants Council](https://www.notion.so/Optimism-Grants-Council-090bb648d1854136b9630c608da7a8bc?pvs=21) processes applications on five-week cycles during regular Voting Cycles.  You can reference the [governance calendar](https://calendar.google.com/calendar/u/0/r?cid=Y19mbm10Z3VoNm5vbzZxZ2JuaTJncGVyaWQ0a0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t) for schedule and deadlines.
-- Apply [here](https://www.notion.so/Optimism-Grants-Council-090bb648d1854136b9630c608da7a8bc?pvs=21)! To understand the types of grants the Council would like to make, please see Requests for Grants (Coming soon!)
+- The [Grants Council](https://app.charmverse.io/op-grants/page-701220845245208) processes applications on five-week cycles during regular Voting Cycles.  You can reference the [governance calendar](https://calendar.google.com/calendar/u/0/r?cid=Y19mbm10Z3VoNm5vbzZxZ2JuaTJncGVyaWQ0a0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t) for schedule and deadlines.
+- Apply [here](https://app.charmverse.io/op-grants/page-701220845245208)! To understand the types of grants the Council would like to make, please see Requests for Grants (Coming soon!)
 - Watch [How to Apply to Grants Council](https://www.loom.com/share/e128bd6cca844fa7ae47a91510d37bda)
 
 ### 2. Token House **Missions**
