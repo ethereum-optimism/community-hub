@@ -3,11 +3,15 @@ title: Contribute to Optimism
 lang: en-US
 ---
 
+::: tip Welcome!
+
 So you think you could make an impact in The Collective? We are so happy to have you! Let’s make sure we are on the same page about what The Collective is all about.
 
-At the core of The Collective is the tenant “impact = profit”. This tenant aims to fix an injustice we see daily. Peoples impact on their community not being rewarded under capitalism. This flaw of the system haunts us in every aspect of modern day living. From infrastructure to third spaces, public goods are being cast aside and deprioritised, despite being essential. This problem is the thesis that Optimism is built around. What if we could fix how Public Goods get funded? 
+:::
 
-“Impact = profit” is the optimistic solution. An experimental combination of capitalistic value capture with Collective sense making. A network of hardware that collects value combined with networks of humans to effectively distribute it. 
+At the core of The Collective is the tenant **“impact = profit”**. This tenant aims to fix an injustice we see daily. Peoples impact on their community not being rewarded under capitalism. This flaw of the system haunts us in every aspect of modern day living. From infrastructure to third spaces, public goods are being cast aside and deprioritised, despite being essential. This problem is the thesis that Optimism is built around. What if we could fix how Public Goods get funded? 
+
+**“Impact = profit” is the optimistic solution.** An experimental combination of capitalistic value capture with Collective sense making. A network of hardware that collects value combined with networks of humans to effectively distribute it. 
 
 This is the vision of The Optimism Collective. Its big! Beautiful. Ambitious, and we need all the help we can get. This journey will be long and have many obstacles, lessons and evolutions before the fly wheel is established. 
 
@@ -17,13 +21,20 @@ So, how can you have the biggest impact in The Collective? We recommend followin
 2. ***Fix the problem in front of you.*** → Chances are if you have a problem, someone else has that problem as well. Let’s fix it! What caused the problem? How do you fix it, and can you fix it for everyone else? 
 3. ***Do it with optimism.*** → Be kind, patient and optimistic in everything you do. 
 
-# WHERE TO GO
+# Getting Started
 
 You can contribute towards the collective in a million different ways, and there is no way we could make processes for all of these contributions. Nor would we want to! However, getting from 0 to 1 is the hardest step. So we have made a few ways to get you up to speed and contributing in no time! 
 
 If this list is too overwhelming you can start by checking out the “Get a Grant” page.
 
-***Technical***
+## 💻 Developers
+
+As a developer you have a few options to get contributing! 
+
+* If you are a dapp developer, check out our [developer docs to get started](/docs/developers/). 
+* If you want to get a little deeper into the [OP Stack](https://stack.optimism.io/), we have great docs for [Getting Started with the OP Stack](https://stack.optimism.io/docs/build/getting-started/). 
+* If you are looking for inspiration on what to build then check out the [Ideas List](https://github.com/orgs/ethereum-optimism/projects/31/views/3) which has a wide range of ideas from quick builds to mad science innovations. Go poke around! 
+* And last but not least, if you are familiar with the struggles of developing in the blockchain world, you can help out your fellow developers by joining the [TechNERD program](./contribution-path/techNERDs.md). 
 
 Build on Optimism
 
