@@ -422,28 +422,31 @@ module.exports = {
         {
           title: '🌍 Accessibility',
           children: [
-            '/docs/contribute/translators.md'
-          ],
-          collapsable: true,          
-        },
-        {
-          title: '🔎 Research',
-          children: [
-            '/docs/contribute/contribution-path/Ambassador-req.md'
+            '/docs/contribute/contribution-path/translators.md',
+            '/docs/contribute/contribution-path/local-optimists.md',
+            '/docs/contribute/contribution-path/NERD-req.md'
           ],
           collapsable: true,          
         },
         {
           title: '🤝 Outreach',
           children: [
-            '/docs/contribute/contribution-path/Ambassador-req.md'
+            '/docs/contribute/contribution-path/ambassador-req.md'
           ],
           collapsable: true,          
         },
         {
           title: '🏛️ Governance',
           children: [
-            '/docs/contribute/contribution-path/Ambassador-req.md'
+            '/docs/governance/get-a-grant.md',
+            [
+              '/docs/governance/delegate.md',
+              'Token House'
+            ],
+            [
+              '/docs/governance/citizens-house.md',
+              'Citizen House'
+            ],
           ],
           collapsable: true,          
         },

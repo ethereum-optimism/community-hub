@@ -9,7 +9,6 @@ lang: en-US
 
 ⚠️ **This document is a work in progress, and will evolve. Check back occasionally.**
 
-
 First off, let's check you are doing this for the right reasons. Check your assumptions at the door, please:
 
 ❌  Being an Ambassador will NOT give you eternal fame and glory.
