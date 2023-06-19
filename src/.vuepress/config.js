@@ -394,6 +394,22 @@ module.exports = {
           'Contributions Home'
         ],
         {
+          title: '🌍 Accessibility',
+          children: [
+            '/docs/contribute/contribution-path/translators.md',
+            '/docs/contribute/contribution-path/local-optimists.md',
+            '/docs/contribute/contribution-path/NERD-req.md'
+          ],
+          collapsable: true,          
+        },
+        {
+          title: '📈 Data & Analytics',
+          children: [
+            '/docs/contribute/contribution-path/numbaNERDs.md'
+          ],
+          collapsable: true,          
+        },
+        {
           title: '💻 Developers',
           children: [
             [
@@ -413,29 +429,6 @@ module.exports = {
           collapsable: true,          
         },
         {
-          title: '📈 Data & Analytics',
-          children: [
-            '/docs/contribute/contribution-path/numbaNERDs.md'
-          ],
-          collapsable: true,          
-        },
-        {
-          title: '🌍 Accessibility',
-          children: [
-            '/docs/contribute/contribution-path/translators.md',
-            '/docs/contribute/contribution-path/local-optimists.md',
-            '/docs/contribute/contribution-path/NERD-req.md'
-          ],
-          collapsable: true,          
-        },
-        {
-          title: '🤝 Outreach',
-          children: [
-            '/docs/contribute/contribution-path/ambassador-req.md'
-          ],
-          collapsable: true,          
-        },
-        {
           title: '🏛️ Governance',
           children: [
             '/docs/governance/get-a-grant.md',
@@ -450,6 +443,14 @@ module.exports = {
           ],
           collapsable: true,          
         },
+        {
+          title: '🤝 Outreach',
+          children: [
+            '/docs/contribute/contribution-path/ambassador-req.md'
+          ],
+          collapsable: true,          
+        },
+        
       ]
     }
   },

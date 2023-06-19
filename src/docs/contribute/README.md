@@ -27,23 +27,6 @@ You can contribute towards the collective in a million different ways, and there
 
 If this list is too overwhelming you can start by checking out the “Get a Grant” page.
 
-## 💻 Developers
-
-As a developer you have a few options to get contributing! Build on us, with us, or help move the whole space forward. We are happy to have you <3.
-
-* If you are a dapp developer, check out our [developer docs to get started](/docs/developers/). 
-* If you want to get a little deeper into the [OP Stack](https://stack.optimism.io/), we have great docs for [Getting Started with the OP Stack](https://stack.optimism.io/docs/build/getting-started/). 
-* If you are looking for inspiration on what to build then check out the [Ideas List](https://github.com/orgs/ethereum-optimism/projects/31/views/3) which has a wide range of ideas from quick builds to mad science innovations. Go poke around! 
-* And last but not least, if you are familiar with the struggles of developing in the blockchain world, you can help out your fellow developers by joining the [TechNERD program](./contribution-path/techNERDs.md). 
-* You can also help [make the developer tutorials better](https://github.com/ethereum-optimism/optimism-tutorial). 
-
-## 📈 Data & Analytics
-
-Data is an essential ingredient to good decision making. We take our data seriously. 
-
-* Check out our existing [Dune dashboards](https://dune.com/optimismfnd) to give you an idea of what we are looking at. 
-* If you have a nack for numbers then you should get involved in the [NumbaNERDs program](./contribution-path/numbaNERDs.md)!
-
 ## 🌍 Accessibility
 
 At Optimism, we know that we can never truly decentralise if we do not embrace the diversity of our community. As such, we take translations seriously. 
@@ -57,11 +40,22 @@ At Optimism, we know that we can never truly decentralise if we do not embrace t
 // LocalOptimists 
 -->
 
-## 🤝 Outreach
+## 📈 Data & Analytics
 
-The Optimism Vision is big! And Visions this big need whole teams to help make them real. 
+Data is an essential ingredient to good decision making. We take our data seriously. 
 
-* The [Ambassadors program](./contribution-path/Ambassador-req.md) enables community members to create focused content to bring the Vision closer to reality. If you have a talent for writing, design or visuals, come get involved! 
+* Check out our existing [Dune dashboards](https://dune.com/optimismfnd) to give you an idea of what we are looking at. 
+* If you have a nack for numbers then you should get involved in the [NumbaNERDs program](./contribution-path/numbaNERDs.md)!
+
+## 💻 Developers
+
+As a developer you have a few options to get contributing! Build on us, with us, or help move the whole space forward. We are happy to have you <3.
+
+* If you are a dapp developer, check out our [developer docs to get started](/docs/developers/). 
+* If you want to get a little deeper into the [OP Stack](https://stack.optimism.io/), we have great docs for [Getting Started with the OP Stack](https://stack.optimism.io/docs/build/getting-started/). 
+* If you are looking for inspiration on what to build then check out the [Ideas List](https://github.com/orgs/ethereum-optimism/projects/31/views/3) which has a wide range of ideas from quick builds to mad science innovations. Go poke around! 
+* And last but not least, if you are familiar with the struggles of developing in the blockchain world, you can help out your fellow developers by joining the [TechNERD program](./contribution-path/techNERDs.md). 
+* You can also help [make the developer tutorials better](https://github.com/ethereum-optimism/optimism-tutorial). 
 
 ## 🏛️ Governance
 
@@ -71,4 +65,10 @@ The Optimism Collectives governance is an incredibly collective and exciting spa
 * Before getting into our governance its highly recommended to [understand our unique governance set up](../governance/README.md).
 * If you are serious about getting into governance you can get involved in the Token House by [becoming a Delegate](../governance/delegate.md). This is a serious responsibility, so make sure you [understand what is required of you](../governance/existing-delegate.md).
 * There is also the [Citizens House](../governance/citizens-house.md). You can read more about [Citizenship here](../governance/citizenship.md). 
+
+## 🤝 Outreach
+
+The Optimism Vision is big! And Visions this big need whole teams to help make them real. 
+
+* The [Ambassadors program](./contribution-path/Ambassador-req.md) enables community members to create focused content to bring the Vision closer to reality. If you have a talent for writing, design or visuals, come get involved! 
 
