@@ -3,26 +3,63 @@ title: Contribute to Optimism
 lang: en-US
 ---
 
-🎈 Thanks for your help improving the project! We are so happy to have you!
+So you think you could make an impact in The Collective? We are so happy to have you! Let’s make sure we are on the same page about what The Collective is all about.
 
-There are plenty of ways to contribute, in particular we appreciate support in the following areas:
+At the core of The Collective is the tenant “impact = profit”. This tenant aims to fix an injustice we see daily. Peoples impact on their community not being rewarded under capitalism. This flaw of the system haunts us in every aspect of modern day living. From infrastructure to third spaces, public goods are being cast aside and deprioritised, despite being essential. This problem is the thesis that Optimism is built around. What if we could fix how Public Goods get funded? 
 
-## Code contributions
+“Impact = profit” is the optimistic solution. An experimental combination of capitalistic value capture with Collective sense making. A network of hardware that collects value combined with networks of humans to effectively distribute it. 
 
-The Optimism codebase is maintained in a monorepo at [https://github.com/ethereum-optimism/optimism](https://github.com/ethereum-optimism/optimism). It's a [collection of packages](https://github.com/ethereum-optimism/optimism#directory-structure) all requiring different skills to maintain and evolve ranging from NodeJS and TypeScript, Solidity and EVM, Go and Geth to Docker and Kubernetes. The following are good entry points into using your coding skills to help us build Optimism:
+This is the vision of The Optimism Collective. Its big! Beautiful. Ambitious, and we need all the help we can get. This journey will be long and have many obstacles, lessons and evolutions before the fly wheel is established. 
 
-- Reporting issues. For security issues see [Security policy](https://github.com/ethereum-optimism/.github/blob/master/SECURITY.md).
-- Participate in the [Bug Bounty programme](https://immunefi.com/bounty/optimism/).
-- Fixing and responding to existing issues. You can start off with those tagged ["good first issue"](https://github.com/ethereum-optimism/optimism/contribute) which are meant as introductory issues for external contributors.
-  Contributions are rewarded with a cool [GitPOAP](https://www.gitpoap.io/gp/1035).
-- Work on open [bounties on Gitcoin](https://gitcoin.co/ethereum-optimism).
+So, how can you have the biggest impact in The Collective? We recommend following these 3 very easy principals:
 
-::: tip
-Following the guidelines on [Contributing](https://github.com/ethereum-optimism/optimism/blob/master/CONTRIBUTING.md) and [Code of Conduct](https://github.com/ethereum-optimism/.github/blob/master/CODE_OF_CONDUCT.md) in all your interactions with the project will ensure your contributions are processed by the team.
-:::
+1. ***Do what you love.*** → Real impact stems from passion, a love for what you do.
+2. ***Fix the problem in front of you.*** → Chances are if you have a problem, someone else has that problem as well. Let’s fix it! What caused the problem? How do you fix it, and can you fix it for everyone else? 
+3. ***Do it with optimism.*** → Be kind, patient and optimistic in everything you do. 
 
-## Community contributions
-- Pick an idea from the [project ideas list](https://github.com/ethereum-optimism/optimism-project-ideas) to start building
-- Improve the [community site](https://community.optimism.io/) [documentation](https://github.com/ethereum-optimism/community-hub) or [tutorials](https://github.com/ethereum-optimism/optimism-tutorial).
-- Become an "Optimizer" or "Support-NERDs" 🤓 and answer questions in the [Optimism Discord](https://discord-gateway.optimism.io). Being a "Support-NERDs" comes with responsibilities. To really understand what it takes to be a NERD we have the following document [here](https://www.notion.so/optimismpbc/NERD-Requirements-v1-0-e39878496b3e40a0815521f566af6a4d).
-- Become an "Ambassador" if you like to create valuable contents about Optimism on social media and grab some best vibe out there ✨. Check it out about requirement [here](Ambassador-req.md).
+# WHERE TO GO
+
+You can contribute towards the collective in a million different ways, and there is no way we could make processes for all of these contributions. Nor would we want to! However, getting from 0 to 1 is the hardest step. So we have made a few ways to get you up to speed and contributing in no time! 
+
+If this list is too overwhelming you can start by checking out the “Get a Grant” page.
+
+***Technical***
+
+Build on Optimism
+
+Building with the OP Stack
+
+TechNERDs 
+
+Ideas List
+
+***Analytics***
+
+NumbaNERDs
+
+***Accessibility***
+
+LocalOptimists
+
+Translators
+
+supNERDs
+
+***Research***
+
+RFPs
+
+***Sharing the love***
+
+Ambassadors
+
+Impact Hunters
+
+***Governance***
+
+Getting a Grant
+
+Get Involved in the Token House 
+
+Get Involved in the Citizens House
+

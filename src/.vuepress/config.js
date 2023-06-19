@@ -389,10 +389,61 @@ module.exports = {
         }
       ],
       '/docs/contribute/': [
+        [
+          '/docs/contribute/',
+          'Contributions Home'
+        ],
         {
-          title: 'Ambassadors',
+          title: '💻 Developers',
           children: [
-            '/docs/contribute/Ambassador-req.md'
+            [
+              '/docs/developers/',
+              'Build on Optimism'
+            ],
+            [
+              'https://stack.optimism.io/',
+              'Building with the OP Stack'
+            ],
+            [
+              'https://github.com/orgs/ethereum-optimism/projects/31/views/3',
+              'Ideas List'
+            ],
+            '/docs/contribute/contribution-path/techNERDs.md'
+          ],
+          collapsable: true,          
+        },
+        {
+          title: '📈 Data & Analytics',
+          children: [
+            '/docs/contribute/contribution-path/numbaNERDs.md'
+          ],
+          collapsable: true,          
+        },
+        {
+          title: '🌍 Accessibility',
+          children: [
+            '/docs/contribute/translators.md'
+          ],
+          collapsable: true,          
+        },
+        {
+          title: '🔎 Research',
+          children: [
+            '/docs/contribute/contribution-path/Ambassador-req.md'
+          ],
+          collapsable: true,          
+        },
+        {
+          title: '🤝 Outreach',
+          children: [
+            '/docs/contribute/contribution-path/Ambassador-req.md'
+          ],
+          collapsable: true,          
+        },
+        {
+          title: '🏛️ Governance',
+          children: [
+            '/docs/contribute/contribution-path/Ambassador-req.md'
           ],
           collapsable: true,          
         },
