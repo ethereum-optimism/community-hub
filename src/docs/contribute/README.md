@@ -36,6 +36,13 @@ As a developer you have a few options to get contributing! Build on us, with us,
 * If you are looking for inspiration on what to build then check out the [Ideas List](https://github.com/orgs/ethereum-optimism/projects/31/views/3) which has a wide range of ideas from quick builds to mad science innovations. Go poke around! 
 * And last but not least, if you are familiar with the struggles of developing in the blockchain world, you can help out your fellow developers by joining the [TechNERD program](./contribution-path/techNERDs.md). 
 
+## 📈 Data & Analytics
+
+Data is an essential ingredient to good decision making. We take our data seriously. 
+
+* Check out our existing [Dune dashboards](https://dune.com/optimismfnd) to give you an idea of what we are looking at. 
+* If you have a nack for numbers then you should get involved in the [NumbaNERDs program](./contribution-path/numbaNERDs.md)!
+
 ## 🏛️ Governance
 
 The Optimism Collectives governance is an incredibly collective and exciting space that is growing and evolving. Plenty of opportunities to have impact! 
@@ -45,11 +52,6 @@ The Optimism Collectives governance is an incredibly collective and exciting spa
 * If you are serious about getting into governance you can get involved in the Token House by [becoming a Delegate](../governance/delegate.md). This is a serious responsibility, so make sure you [understand what is required of you](../governance/existing-delegate.md).
 * There is also the [Citizens House](../governance/citizens-house.md). You can read more about [Citizenship here](../governance/citizenship.md). 
 
-Getting a Grant
-
-Get Involved in the Token House 
-
-Get Involved in the Citizens House
 ***Analytics***
 
 NumbaNERDs
