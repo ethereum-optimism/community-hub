@@ -15,7 +15,7 @@ Most Ethereum development stacks include features that make testing easier, whic
 Therefore, it is a good idea to run the majority of tests, which do not rely on OP Mainnet-specific features, in the development stack.
 It is a lot faster.
 
-Ideally you would want to be able to run some tests on an OP test network, either a [local development environment](dev-node.md) or [the test network](../../useful-tools/networks.md#optimism-goerli).
+Ideally you would want to be able to run some tests on an OP test network, either a [local development environment](dev-node.md) or [the test network](../../useful-tools/networks.md#OP-Goerli). 
 This would be a much slower process, but it would let you identify cases where [the equivalence between OP Mainnet and Ethereum breaks down](differences.md) (or the equivalence between Ethereum itself and the development stack, for that matter).
 
 ## Multilayer integration tests
