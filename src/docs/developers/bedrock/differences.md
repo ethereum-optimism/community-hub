@@ -336,7 +336,7 @@ More information will be posted here once we have more exact information after w
 
 <!-- TODO get the figures and put them here -->
 
-### Deposits, from the underlying L1 (Ethereum, Goerli, etc.) to L2 (OP Mainnet, OP Goerli, etc.)
+### Deposits from the underlying L1 (Ethereum, Goerli, etc.) to L2 (OP Mainnet, OP Goerli, etc.)
 
 To create a deposit we recommend that you use the pre-Bedrock contracts [`L1StandardBridge`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L1/L1StandardBridge.sol) and [`L1CrossDomainMessenger`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L1/L1CrossDomainMessenger.sol).
 [`OptimismPortal`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L1/OptimismPortal.sol) also has low-level deposit functionality.
@@ -356,7 +356,8 @@ In order to prevent Optimism networks from being DOSed via forced L1 to L2 trans
 
 Deposits that come from contracts still use [address aliasing](../build/differences.md#address-aliasing).
 
-Deposits will also be faster, probably about 2.5 minutes or less, rather than the 10-20 minutes they take now.
+Deposits are faster, about a minute, because they only require five blocks for confirmation (and L1 blocks are usually 12 seconds apart).
+
 
 <!--
 Deposits are implemented using [a new transaction type](https://github.com/ethereum-optimism/optimism/blob/develop/specs/deposits.md#the-deposited-transaction-type), 0x7E.
