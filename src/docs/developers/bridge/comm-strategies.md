@@ -42,7 +42,7 @@ You are already trusting Optimism to run the chain, and the messaging infrastruc
 
 ### Messages from L1 to L2
 
-If you want L1 code to either tell L2 code to do something, or update L2 code with some information, you just need to [issue a single L1 transaction](messaging.md#for-ethereum-l1-to-optimism-l2-transactions).
+If you want L1 code to either tell L2 code to do something, or update L2 code with some information, you just need to [issue a single L1 transaction](messaging.md#for-ethereum-l1-to-op-mainnet-l2-transactions).
 
 | Parameter         | Evaluation |
 | - | - |
@@ -52,7 +52,7 @@ If you want L1 code to either tell L2 code to do something, or update L2 code wi
 
 ### Messages from L2 to L1
 
-Sending messages from L2 to L1 is [a lot harder](messaging.md#for-optimism-l2-to-ethereum-l1-transactions). 
+Sending messages from L2 to L1 is [a lot harder](messaging.md#for-op-mainnet-l2-to-ethereum-l1-transactions). 
 It requires two transactions:
 
 1. An initiating transaction on L2, which is pretty cheap.
