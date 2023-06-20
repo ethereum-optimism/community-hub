@@ -12,5 +12,4 @@ dist
 config.local.js
 basement_dist
 yarn.lock
-test
 
