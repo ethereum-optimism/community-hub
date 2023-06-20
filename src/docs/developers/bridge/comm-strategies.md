@@ -52,7 +52,7 @@ If you want L1 code to either tell L2 code to do something, or update L2 code wi
 
 ### Messages from L2 to L1
 
-Sending messages from L2 to L1 is [a lot harder](./messaging.md#for-optimism-l2-to-ethereum-l1-transactions). 
+Sending messages from L2 to L1 is [a lot harder](./messaging.md#for-op-mainnet-l2-to-ethereum-l1-transactions).
 It requires two transactions:
 
 1. An initiating transaction on L2, which is pretty cheap.
