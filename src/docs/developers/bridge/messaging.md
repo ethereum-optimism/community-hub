@@ -132,8 +132,8 @@ The exact speed of a cross-chain transaction depends on the direction in which t
 
 ### For Ethereum (L1) to OP Mainnet (L2) transactions
 
-Transactions sent from L1 to L2 take up to approximately 15 minutes on mainnet and 5 minutes on the OP Goerli testnet to reach the target L2 contract.
-This is because L2 nodes will wait for a certain number of block confirmations on Ethereum before executing an L1 to L2 transaction.
+Transactions sent from L1 to L2 take approximately a minute to get from Ethereum to OP Mainnet, or from Goerli to OP Goerli.
+This is because L2 nodes wait for five block confirmations on Ethereum before executing an L1 to L2 transaction, to reduce the chance of a chain reorg.
 
 ### For OP Mainnet (L2) to Ethereum (L1) transactions
 
