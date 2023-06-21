@@ -46,24 +46,25 @@ If you want L1 code to either tell L2 code to do something, or update L2 code wi
 
 | Parameter         | Evaluation |
 | - | - |
-| Speed             | ~15 minutes
+| Speed             | About one minutes
 | Cost              | Cheapish (requires an L1 transaction)
 | Trust assumption  | Same as using OP Mainnet
 
 ### Messages from L2 to L1
 
 Sending messages from L2 to L1 is [a lot harder](messaging.md#for-op-mainnet-l2-to-ethereum-l1-transactions). 
-It requires two transactions:
+It requires three transactions:
 
 1. An initiating transaction on L2, which is pretty cheap.
-1. Once the fault challenge period passes, a claiming transaction on L1, which includes [a merkle proof](https://medium.com/crypto-0-nite/merkle-proofs-explained-6dd429623dc5). 
+1. After the state root is posted to L1, a proving transaction of L1, which includes [a merkle proof](https://medium.com/crypto-0-nite/merkle-proofs-explained-6dd429623dc5). 
    This transaction is expensive because merkle proof verification is expensive.
+1. After the fault challenge period passes, a claiming transaction on L1, which runs the actual transaction on L1.
 
 | Parameter         | Evaluation |
 | - | - |
 | Speed             | >7 days 
 | Cost              | Expensive
-| Trust Assumption  | Almost as good as using OP Mainnet, however someone needs to initiate the claim transaction on L1
+| Trust Assumption  | Almost as good as using OP Mainnet, however someone needs to run the proof and claim transactions on L1 (your server can do that for better user experience)
 
 
 ## Incentivized communication
