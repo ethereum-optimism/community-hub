@@ -215,7 +215,8 @@ module.exports = {
             '/docs/governance/citizens-house.md',
             '/docs/governance/citizenship.md',
             '/docs/governance/retropgf-1.md',
-            '/docs/governance/retropgf-2.md',                        
+            '/docs/governance/retropgf-2.md',
+            '/docs/governance/retropgf-3.md'
           ],
           collapsable: true
         },
