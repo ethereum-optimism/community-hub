@@ -85,6 +85,8 @@ Links to download data directories will be posted here as soon as they are avail
 
 - [Bedrock Data Directory (303 GB)<sup>1</sup>](https://datadirs.optimism.io/mainnet-bedrock.tar.zst)
 - [Legacy Geth Data Directory (2.9TB)<sup>1</sup>](https://datadirs.optimism.io/mainnet-legacy-archival.tar.zst)
+  Note that you *only* need this file if you run `l2geth` to answer archive queries prior to the bedrock upgrade. 
+  If you are running an archive only for post-bedrock transactions (using `op-geth` with the command line flag `gcmode=archive`), you do *not* need this file.
 - [Configuration parameters](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/deploy-config/mainnet.json).
 - [Latest release of `op-geth`](https://github.com/ethereum-optimism/op-geth/releases/latest)
 - [Latest release of `op-node`](https://github.com/ethereum-optimism/optimism/releases/latest)
@@ -175,7 +177,9 @@ These parameters are mostly useful to people responsible for running and adminis
 #### Links
 
 - [Bedrock Data Directory (5.0GB)<sup>1</sup>](https://datadirs.optimism.io/goerli-bedrock.tar.zst)
-- [Legacy Geth Data Directory (50GB)<sup>1</sup>](https://datadirs.optimism.io/goerli-legacy-archival.tar.zst)
+- [Legacy Geth Data Directory (50GB)<sup>1</sup>](https://datadirs.optimism.io/goerli-legacy-archival.tar.zst). 
+  Note that you *only* need this file if you run `l2geth` to answer archive queries prior to the bedrock upgrade. 
+  If you are running an archive only for post-bedrock transactions (using `op-geth` with the command line flag `gcmode=archive`), you do *not* need this file.
 - [Configuration parameters](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/deploy-config/goerli.json)
 - [Latest releases of `op-geth`](https://github.com/ethereum-optimism/op-geth/releases/latest)
 - [Latest releases of `op-node`](https://github.com/ethereum-optimism/optimism/releases/latest)
