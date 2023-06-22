@@ -20,7 +20,7 @@ You can see more information about all the L2 features Etherscan offers on our [
 
 ## Blockscout
 
-Blockscout allows you to see events on both [OP Mainnet](https://blockscout.com/optimism/mainnet) and [OP Goerli](https://blockscout.com/optimism/goerli).
+Blockscout allows you to see events on both [OP Mainnet](https://optimism.blockscout.com) and [OP Goerli](https://optimism-goerli.blockscout.com).
 
 ## Know other good tools?
 

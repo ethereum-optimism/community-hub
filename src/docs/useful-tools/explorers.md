@@ -5,10 +5,10 @@ lang: en-US
 
 ## Blockscout
 
-We have a Blockscout explorer for both [OP Mainnet](https://blockscout.com/optimism/mainnet/) and [OP Goerli](https://blockscout.com/optimism/goerli/). It includes:
+We have a Blockscout explorer for both [OP Mainnet](https://optimism.blockscout.com) and [OP Goerli](https://optimism-goerli.blockscout.com). It includes:
 
-- [Verified contract source code, along with the ability to interact with it](https://blockscout.com/optimism/goerli/address/0x106941459A8768f5A92b770e280555FAF817576f/contracts#address-tabs)
-- [Detailed transaction information](https://blockscout.com/optimism/goerli/tx/0xeb98c8279983cfee472c6067d2405acc130dca37e7536d6c83930e29aaa40e3e)
+- [Verified testnet contract source code, along with the ability to interact with it](https://optimism-goerli.blockscout.com/verified-contracts)
+- [Detailed testnet transaction information](https://optimism-goerli.blockscout.com/txs)
 
 
 
