@@ -9,13 +9,13 @@ So you think you could make an impact in The Collective? We are so happy to have
 
 :::
 
-At the core of The Collective is the tenant **“impact = profit”**. This tenant aims to fix an injustice we see daily. Peoples impact on their community not being rewarded under capitalism. This flaw of the system haunts us in every aspect of modern day living. From infrastructure to third spaces, public goods are being cast aside and deprioritised, despite being essential. This problem is the thesis that Optimism is built around. What if we could fix how Public Goods get funded? 
+At the core of The Collective is the tenet **“impact = profit”**. This tenet aims to fix an injustice we see daily. Peoples impact on their community not being rewarded under capitalism. This flaw of the system haunts us in every aspect of modern day living. From infrastructure to third spaces, public goods are being cast aside and deprioritised, despite being essential. This problem is the thesis that Optimism is built around. What if we could fix how Public Goods get funded? 
 
-**“Impact = profit” is the optimistic solution.** An experimental combination of capitalistic value capture with Collective sense making. A network of hardware that collects value combined with networks of humans to effectively distribute it. 
+**“Impact = profit” is the optimistic solution.** An experimental combination of capitalistic value capture with Collective sense making. A network of hardware that collects value combined with networks of humans to effectively distribute it. The solution we have designed is called Retroactive Public Goods Funding, or RetroPGF for short. Contributions to the Collective are assessed and rewarded through RetroPGF. You can [read more about RetroPGF here](../governance/citizens-house.md). 
 
 This is the vision of The Optimism Collective. Its big! Beautiful. Ambitious, and we need all the help we can get. This journey will be long and have many obstacles, lessons and evolutions before the fly wheel is established. 
 
-So, how can you have the biggest impact in The Collective? We recommend following these 3 very easy principals:
+So, how can you have the biggest impact in The Collective? We recommend following these 3 very easy principles:
 
 1. ***Do what you love.*** → Real impact stems from passion, a love for what you do.
 2. ***Fix the problem in front of you.*** → Chances are if you have a problem, someone else has that problem as well. Let’s fix it! What caused the problem? How do you fix it, and can you fix it for everyone else? 
@@ -68,4 +68,4 @@ The Optimism Vision is big! And Visions this big need whole teams to help make t
 
 * The [Ambassadors program](./contribution-path/Ambassador-req.md) enables community members to create focused content to bring the Vision closer to reality. If you have a talent for writing, design or visuals, come get involved! 
 * If your project wants some marketing love, you have options! Get your dapp in front of the Optimism community with our [Demo Day (once every two weeks)](./demo-day.md).
-<!-- * If is deployed on OP Mainnet, you can be added to our [ecosystem page](https://www.optimism.io/apps/all). Simply [fill out this form]() to be included. Inclusion is at our discretion. We add new projects live on OP Mainnet once a week. -->
+* If is deployed on OP Mainnet, you can be added to our [ecosystem page](https://www.optimism.io/apps/all). Simply [fill out this form](https://optimismfnd.typeform.com/optimism-mktg) to be included. Inclusion is at our discretion. We add new projects live on OP Mainnet once a week.
