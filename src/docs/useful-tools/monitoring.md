@@ -27,6 +27,13 @@ Check out the [OP Mainnet explorer](https://explorer.optimism.io) as well as the
 Another block explorer for [OP Mainnet](https://blockscout.com/optimism/mainnet) and [OP Goerli](https://blockscout.com/optimism/goerli) is [Blockscout](https://blockscout.com).
 
 
+### Tenderly
+
+[Tenderly](https://tenderly.co/) monitoring stack shows transactions and block data, with an option to filter millions of transactions with advanced trace search and a detailed execution overview. 
+You can check out [how to robustly monitor wallets](https://blog.tenderly.co/how-to-monitor-ethereum-wallets/) or even [set up real-time alerting for smart contracts](https://blog.tenderly.co/how-to-set-up-real-time-alerting-for-smart-contracts-with-tenderly/), and in both cases you can simulate pending (or any other historical) transactions and see their exact outcomes. 
+Finally you can [automate your responses to alert triggers](https://blog.tenderly.co/tenderly-alert-webhooks/) with custom webhooks.
+
+
 ## Dashboards on Dune Analytics
 
 [Dune Analytics](https://dune.xyz) allows anyone to create dashboards that present information about OP Mainnet.
