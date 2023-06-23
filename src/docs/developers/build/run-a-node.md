@@ -1,5 +1,5 @@
 ---
-title: Running an OP Mainnet or testnet
+title: Running an OP Mainnet or testnet node
 lang: en-US
 ---
 
