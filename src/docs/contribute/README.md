@@ -50,7 +50,7 @@ As a developer you have a few options to get contributing! Build on us, with us,
 * If you are a dapp developer, check out our [developer docs to get started](/docs/developers/). 
 * If you want to get a little deeper into the [OP Stack](https://stack.optimism.io/), we have great docs for [Getting Started with the OP Stack](https://stack.optimism.io/docs/build/getting-started/). 
 * If you are looking for inspiration on what to build then check out the [Ideas List](https://github.com/orgs/ethereum-optimism/projects/31/views/3) which has a wide range of ideas from quick builds to mad science innovations. Go poke around! 
-* And last but not least, if you are familiar with the struggles of developing in the blockchain world, you can help out your fellow developers by joining the [TechNERD program](./contribution-path/techNERDs.md). 
+* And last but not least, if you are familiar with the struggles of developing in the blockchain world and have a passion for technical support, you can help out your fellow developers by joining the [TechNERD program](./contribution-path/techNERDs.md). 
 * You can also help [make the developer tutorials better](https://github.com/ethereum-optimism/optimism-tutorial). 
 
 ## 🏛️ Governance
