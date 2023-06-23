@@ -9,8 +9,11 @@ As OP Mainnet is [EVM Equivalent](https://medium.com/ethereum-optimism/introduci
 
 ## Tenderly
 
-[Tenderly](https://tenderly.co/) lets you inspect any transaction execution on OP Mainnet (or the testnet). 
-You can inspect the state of your verified contract in any step of the transactions execution, as well as step into or over function calls. 
+[Tenderly](https://tenderly.co/) lets you [inspect any transaction execution on OP Mainnet or OP Goerli](https://docs.tenderly.co/debugger/how-to-use-tenderly-debuggers). 
+You can inspect the state of your verified contract in any step of the transaction's execution, as well as step into or over function calls. 
+The level of detail the Tenderly dashboard presents will reduce your development time as well as help you understand the execution flow of transactions. 
+It helps you to inspect states at every instance of transaction and gives a platform to trace transactions.
+
 
 ## Etherscan
 
