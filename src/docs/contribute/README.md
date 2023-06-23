@@ -36,10 +36,6 @@ At Optimism, we know that we can never truly decentralise if we do not embrace t
 * For those of you who enjoy connecting with like minded individuals, keep an eye on our [Local Optimists Program](./contribution-path/local-optimists.md) for events near you!
 * If you enjoy helping others then you should check out the [support NERD program](./contribution-path/NERD-req.md).
 
-<!--
-// LocalOptimists 
--->
-
 ## 📈 Data & Analytics
 
 Data is an essential ingredient to good decision making. We take our data seriously. 
@@ -66,9 +62,10 @@ The Optimism Collectives governance is an incredibly collective and exciting spa
 * If you are serious about getting into governance you can get involved in the Token House by [becoming a Delegate](../governance/delegate.md). This is a serious responsibility, so make sure you [understand what is required of you](../governance/existing-delegate.md).
 * There is also the [Citizens House](../governance/citizens-house.md). You can read more about [Citizenship here](../governance/citizenship.md). 
 
-## 🤝 Outreach
+## 🫡 Marketing
 
 The Optimism Vision is big! And Visions this big need whole teams to help make them real. 
 
 * The [Ambassadors program](./contribution-path/Ambassador-req.md) enables community members to create focused content to bring the Vision closer to reality. If you have a talent for writing, design or visuals, come get involved! 
-
+* If your project wants some marketing love, you have options! Get your dapp in front of the Optimism community with our [Demo Day (once every two weeks)](./demo-day.md).
+<!-- * If is deployed on OP Mainnet, you can be added to our [ecosystem page](https://www.optimism.io/apps/all). Simply [fill out this form]() to be included. Inclusion is at our discretion. We add new projects live on OP Mainnet once a week. -->

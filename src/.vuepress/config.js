@@ -444,9 +444,10 @@ module.exports = {
           collapsable: true,          
         },
         {
-          title: '🤝 Outreach',
+          title: '🫡 Marketing',
           children: [
-            '/docs/contribute/contribution-path/ambassador-req.md'
+            '/docs/contribute/contribution-path/Ambassador-req.md',
+            '/docs/contribute/demo-day.md'
           ],
           collapsable: true,          
         },
