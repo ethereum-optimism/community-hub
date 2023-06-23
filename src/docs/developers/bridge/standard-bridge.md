@@ -103,7 +103,7 @@ If you'd like to see this contracts in action, you should check out the [L1 ⇔ 
 ### Withdrawing ETH
 
 Unlike on L1, we do not have a separate function on L2 for withdrawing ETH.
-Instead, you can use the `withdraw` or `withdrawTo` functions on the [`L2StandardBridge`](https://linear.app/optimism/issue/DEVRL-984/techical-specifications-page) and use the address `0xDeadDeAddeAddEAddeadDEaDDEAdDeaDDeAD0000` as the L2 token address.
+Instead, you can use the `withdraw` or `withdrawTo` functions on the [`L2StandardBridge`](https://github.com/ethereum-optimism/optimism/blob/65ec61dde94ffa93342728d324fecf474d228e1f/packages/contracts-bedrock/contracts/L2/L2StandardBridge.sol) and use the address `0xDeadDeAddeAddEAddeadDEaDDEAdDeaDDeAD0000` as the L2 token address.
 
 ## Adding an ERC20 token to the Standard Bridge
 
