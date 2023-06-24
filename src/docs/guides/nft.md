@@ -46,6 +46,14 @@ It is accurate, as far as we know, when written (early January 2023), but new fe
 
 </details>
 
+### NFT data APIs
+
+- [Alchemy](https://docs.alchemy.com/reference/nft-api-quickstart)
+- [SimpleHash](https://simplehash.com/)
+- [QuickNode](https://www.quicknode.com/nft-api)
+- [Reservoir](https://docs.reservoir.tools/reference/optimism)
+- [NFTScan](https://docs.nftscan.com/reference/evm/get-nfts-by-account)
+
 ### Marketplaces
 
 - [Quix](https://qx.app/)
@@ -54,18 +62,12 @@ It is accurate, as far as we know, when written (early January 2023), but new fe
 - [OptiMarket](https://optimarket.io/)
 - [Circular Art](https://www.circularart.xyz/)
 
-### Transaction aggregator
+### Marketplace aggregators
 
 - [Bluesweep](https://www.bluesweep.xyz/)
 
-### Liquidity 
+### NFT liquidity 
 
 - [Backed](https://www.withbacked.xyz/network/optimism) lets you use NFTs as collateral
-
-### NFT data APIs
-
-- [Alchemy](https://docs.alchemy.com/reference/nft-api-quickstart)
-- [SimpleHash](https://simplehash.com/)
-- [QuickNode](https://www.quicknode.com/nft-api)
 
 
