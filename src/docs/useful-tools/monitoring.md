@@ -24,7 +24,7 @@ Check out the [OP Mainnet explorer](https://explorer.optimism.io) as well as the
 
 ### Blockscout
 
-Another block explorer for [OP Mainnet](https://blockscout.com/optimism/mainnet) and [OP Goerli](https://blockscout.com/optimism/goerli) is [Blockscout](https://blockscout.com).
+Another block explorer for [OP Mainnet](https://optimism.blockscout.com) and [OP Goerli](https://optimism-goerli.blockscout.com) is [Blockscout](https://blockscout.com).
 
 
 ## Dashboards on Dune Analytics
