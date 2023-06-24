@@ -43,7 +43,9 @@ When you use RPC to get block information (https://github.com/ethereum-optimism/
 
 ## Docker configuration
 
-The recommended method to create a replica is to use [Docker](https://www.docker.com/) and the [Docker images we provide](https://hub.docker.com/u/ethereumoptimism). 
+The recommended method to create a replica is to use [Docker](https://www.docker.com/) and the Docker images we provide for [`op-geth`](https://github.com/ethereum-optimism/op-geth/releases/latest) and [`op-node`](https://github.com/ethereum-optimism/optimism/releases/).
+For `op-node` you need to scroll down to the latest release that has `op-node`.
+
 They include all the configuration settings.
 This is the recommended method because it is what we for our own systems.
 As such, the docker images go through a lot more tests than any other configuration.
