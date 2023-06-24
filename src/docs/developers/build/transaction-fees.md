@@ -1,22 +1,22 @@
 ---
-title: Transaction fees on L2
+title: Transaction fees on OP Mainnet
 lang: en-US
 ---
 
-Transaction fees on Optimism work a lot like fees on Ethereum.
+Transaction fees on OP Mainnet work a lot like fees on Ethereum.
 However, Layer 2 introduces some new paradigms that means it can never be exactly like Ethereum.
-Luckily, Optimism's [EVM equivalence](https://medium.com/ethereum-optimism/introducing-evm-equivalence-5c2021deb306) makes these differences easy to understand and even easier to handle within your app.
+Luckily, OP Mainnet's [EVM equivalence](https://medium.com/ethereum-optimism/introducing-evm-equivalence-5c2021deb306) makes these differences easy to understand and even easier to handle within your app.
 
-This page includes the formula for calculating the gas cost of transactions on Optimism.
+This page includes the formula for calculating the gas cost of transactions on OP Mainnet.
 You can also [use our SDK](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/sdk-estimate-gas) to calculate those costs for you.
 
-There are two costs for transaction on Optimism: the L2 execution fee and the L1 data/security fee.
+There are two costs for transaction on OP Mainnet: the L2 execution fee and the L1 data/security fee.
 
 ## The L2 execution fee
 
-Just like on Ethereum, transactions on Optimism have to pay **gas** for the amount of computation and storage that they use.
+Just like on Ethereum, transactions on OP Mainnet have to pay **gas** for the amount of computation and storage that they use.
 Every L2 transaction will pay some **execution fee**, equal to the amount of gas used by the transaction multiplied by the gas price attached to the transaction.
-This is exactly how fees work on Ethereum with the added bonus that gas prices on Optimism are seriously low.
+This is exactly how fees work on Ethereum with the added bonus that gas prices on OP Mainnet are seriously low.
 
 Here's the (simple) math:
 
@@ -26,25 +26,25 @@ transaction_gas_price = l2_base_fee + l2_priority_fee
 ```
 
 The amount of L2 gas used depends on the particular transaction that you're trying to send.
-Thanks to [EVM equivalence](https://medium.com/ethereum-optimism/introducing-evm-equivalence-5c2021deb306), transactions typically use approximately the same amount of gas on Optimism as they do on Ethereum.
-Gas prices fluctuate with time and congestion, but you can always check the current estimated L2 gas price on the [public Optimism dashboard](https://optimism.io/gas-tracker).
+Thanks to [EVM equivalence](https://medium.com/ethereum-optimism/introducing-evm-equivalence-5c2021deb306), transactions typically use approximately the same amount of gas on OP Mainnet as they do on Ethereum.
+Gas prices fluctuate with time and congestion, but you can always check the current estimated L2 gas price on the [public OP Mainnet dashboard](https://optimism.io/gas-tracker).
 
 
 ## The L1 data fee
 
-Optimism differs from Ethereum because all transactions on Optimism are also published to Ethereum.
-This step is crucial to the security properties of Optimism because it means that all of the data you need to sync an Optimism node is always publicly available on Ethereum.
-It's what makes Optimism an L2.
+OP Mainnet differs from Ethereum because all transactions on OP Mainnet are also published to Ethereum.
+This step is crucial to the security properties of OP Mainnet because it means that all of the data you need to sync an OP Mainnet node is always publicly available on Ethereum.
+It's what makes OP Mainnet an L2.
 
-Users on Optimism have to pay for the cost of submitting their transactions to Ethereum.
-We call this the **L1 data fee**, and it's the primary discrepancy between Optimism (and other L2s) and Ethereum.
-Because the cost of gas is so expensive on Ethereum, the L1 data fee typically dominates the total cost of a transaction on Optimism.
+Users on OP Mainnet have to pay for the cost of submitting their transactions to Ethereum.
+We call this the **L1 data fee**, and it's the primary discrepancy between OP Mainnet (and other L2s) and Ethereum.
+Because the cost of gas is so expensive on Ethereum, the L1 data fee typically dominates the total cost of a transaction on OP Mainnet.
 This fee is based on four factors:
 
 1. The current gas price on Ethereum.
 2. The gas cost to publish the transaction to Ethereum. This scales roughly with the size of the transaction (in bytes).
 3. A fixed overhead cost denominated in gas. This is currently set to 2100.
-4. A dynamic overhead cost which scales the L1 fee paid by a fixed number. This is currently set to 1.0.
+4. A dynamic overhead cost which scales the L1 fee paid by a fixed number. This is currently set to 0.684.
 
 Here's the math:
 
@@ -74,7 +74,7 @@ The L1 gas price used to charge the data fee is automatically updated when new d
 
 ### Sending transactions
 
-The process of sending a transaction on Optimism is identical to the process of sending a transaction on Ethereum.
+The process of sending a transaction on OP Mainnet is identical to the process of sending a transaction on Ethereum.
 When sending a transaction, you should provide a gas price greater than or equal to the current L2 gas price.
 Like on Ethereum, you can query this gas price with the `eth_gasPrice` RPC method.
 Similarly, you should set your transaction gas limit in the same way that you would set your transaction gas limit on Ethereum (e.g. via `eth_estimateGas`).
@@ -83,14 +83,14 @@ Similarly, you should set your transaction gas limit in the same way that you wo
 
 Gas prices on L2 default to 0.001 Gwei but can increase dynamically if the network is congested.
 When this happens, the lowest fee that the network will accept increases.
-Unlike Ethereum, Optimism currently does not have a mempool to hold transactions with too low a fee.
-Instead, Optimism nodes will reject the transaction with the message `Fee too low`.
+Unlike Ethereum, OP Mainnet currently does not have a mempool to hold transactions with too low a fee.
+Instead, OP Mainnet nodes will reject the transaction with the message `Fee too low`.
 You may need to handle this case explicitly and retry the transaction with a new gas price when this happens.
 
 ### Displaying fees to users
 
 Many Ethereum applications display estimated fees to users by multiplying the gas price by the gas limit.
-However, as discussed earlier, users on Optimism are charged both an L2 execution fee and an L1 data fee.
+However, as discussed earlier, users on OP Mainnet are charged both an L2 execution fee and an L1 data fee.
 As a result, you should display the sum of both of these fees to give users the most accurate estimate of the total cost of a transaction.
 
 [See here for a code sample using the JavaScript SDK](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/sdk-estimate-gas)
@@ -131,13 +131,13 @@ You might get this error when attempting to send max ETH if you aren't properly 
 - Error code: `-32000`
 - Error message: `gas price too low: X wei, use at least tx.gasPrice = Y wei`
 
-This is a custom RPC error that Optimism returns when a transaction is rejected because the gas price is too low.
+This is a custom RPC error that OP Mainnet returns when a transaction is rejected because the gas price is too low.
 See the section on [Responding to gas price updates](#responding-to-gas-price-updates) for more information.
 
 ### Gas price too high
 - Error code: `-32000`
 - Error message: `gas price too high: X wei, use at most tx.gasPrice = Y wei`
 
-This is a custom RPC error that Optimism returns when a transaction is rejected because the gas price is too high.
+This is a custom RPC error that OP Mainnet returns when a transaction is rejected because the gas price is too high.
 We include this as a safety measure to prevent users from accidentally sending a transaction with an extremely high L2 gas price.
 See the section on [Responding to gas price updates](#responding-to-gas-price-updates) for more information.

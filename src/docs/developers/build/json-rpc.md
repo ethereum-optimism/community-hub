@@ -4,12 +4,13 @@ lang: en-US
 ---
 
 
-There are several Optimism components with an RPC API:
+There are several OP Mainnet components with an RPC API:
 
 ## Rollup node (op-node)
 
+
 [*Rollup node*](https://github.com/ethereum-optimism/optimism/blob/65ec61dde94ffa93342728d324fecf474d228e1f/specs/rollup-node.md) refers to the component in the protocol specifications. 
-The Optimism implementation is called *op-node*.
+The OP Mainnet implementation is called *op-node*.
 
 The `op-node` component implements several RPC methods:
 
@@ -185,8 +186,9 @@ Optionally, the rollup node can provide [peer to peer synchronization](https://g
 
 ## Execution engine (op-geth)
 
+
 [*Execution engine*](https://github.com/ethereum-optimism/optimism/blob/65ec61dde94ffa93342728d324fecf474d228e1f/specs/rollup-node.md) refers to the component in the protocol specifications. 
-The Optimism implementation is called *op-geth*.
+The OP Mainnet implementation is called *op-geth*.
 
 The execution engine's RPC interface is identical to [the upstream Geth RPC interface](https://geth.ethereum.org/docs/rpc/server). This includes the ability to provide [snap sync](https://github.com/ethereum/devp2p/blob/master/caps/snap.md) functionality to other execution engines.
 

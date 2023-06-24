@@ -8,11 +8,11 @@ meta:
 
 ![Bedrock](https://dev.optimism.io/content/images/size/w2000/2022/12/bedrock-BLUE.jpg)
 
-Bedrock is the name of the first ever official release of the OP Stack, which is a set of free and open-source modular components that work together to power Optimism.
+Bedrock is the name of the first ever official release of the OP Stack, which is a set of free and open-source modular components that work together to power blockchains such as OP Mainnet.
 
 - To understand what is in the Bedrock release, keep reading.
-- To develop on Optimism Mainnet, which will upgrade its infrastructure to the Bedrock release, read the docs.
-- To contribute to the OP Stack, see the contribution guidelines on the ethereum-optimism monorepo.
+- To develop on OP Mainnet, which upgraded its infrastructure to the Bedrock release, read the docs.
+- To contribute to the OP Stack, see the contribution guidelines on the Optimism monorepo.
 
 ## Summary of Improvements
 
@@ -281,7 +281,7 @@ Although fault proof construction and verification is implemented in the [Cannon
 
 ### Protocol Specification
 
-The protocol specification defines the technical details of the OP Stack. It is the most up-to-date source of truth for the inner workings of the protocol. The protocol specification is located in the ethereum-optimism [monorepo](https://github.com/ethereum-optimism/optimism/blob/65ec61dde94ffa93342728d324fecf474d228e1f/specs/README.md).
+The protocol specification defines the technical details of the OP Stack. It is the most up-to-date source of truth for the inner workings of the protocol. The protocol specification is located in [the Optimism monorepo](https://github.com/ethereum-optimism/optimism/blob/65ec61dde94ffa93342728d324fecf474d228e1f/specs/README.md).
 
 ### Bedrock Differences
 

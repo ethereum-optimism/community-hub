@@ -3,9 +3,9 @@ title: Developer tools
 lang: en-US
 ---
 
-Welcome to the Optimism developer tools!
+Welcome to the OP Mainnet developer tools!
 
-If you are already familiar with [building on Optimism](../developers/README.md) and just need the tools to get cracking, you are in the right place!
+If you are already familiar with [building on OP Mainnet](../developers/README.md) and just need the tools to get cracking, you are in the right place!
 
 ## Connecting
 
@@ -13,7 +13,7 @@ You have the list of [networks](./networks.md) and [node providers](./providers.
 
 ## Deploying
 
-To get some ETH bridged over for deployment gas fees, use one of the available [faucets](./faucets.md) or just bridge ETH using the [Optimism Gateway](https://gateway.optimism.io/).
+To get some ETH bridged over for deployment gas fees, use one of the available [faucets](./faucets.md) or just bridge ETH using the [OP Mainnet Gateway](https://gateway.optimism.io/).
 
 ## Monitoring
 

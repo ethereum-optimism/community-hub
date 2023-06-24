@@ -1,9 +1,9 @@
 ---
-title: Interacting with Optimism contracts
+title: Interacting with OP Mainnet contracts
 lang: en-US
 ---
 
-Optimism is composed, in part, of a series of smart contracts on both L1 (Ethereum) and L2 (Optimism).
+OP Mainnet is composed, in part, of a series of smart contracts on both L1 (Ethereum) and L2 (OP Mainnet).
 You may want to interact with these contracts for any number of reasons, including:
 
 - Sending messages between L1 and L2
@@ -21,13 +21,13 @@ You can also find the addresses for all networks in the [deployments folder](htt
 
 ## Interacting from another contract
 
-All you need to interact with the Optimism system contracts from another contract is an address and an interface.
+All you need to interact with the OP Mainnet system contracts from another contract is an address and an interface.
 You can follow [the instructions above](#finding-contract-addresses) to find the address of the contract you want to interact with.
 Now you simply need to import the appropriate contracts.
 
 ### Installing via NPM or Yarn
 
-We export a package [`@eth-optimism/contracts`](https://www.npmjs.com/package/@eth-optimism/contracts?activeTab=readme) that makes it easy to use the Optimism contracts within NPM or Yarn based projects.
+We export a package [`@eth-optimism/contracts`](https://www.npmjs.com/package/@eth-optimism/contracts?activeTab=readme) that makes it easy to use the OP Mainnet contracts within NPM or Yarn based projects.
 Install the package as follows:
 
 ```
@@ -56,11 +56,11 @@ We provide these addresses as constants within the [`Lib_PredeployAddresses`](ht
 
 ## Interacting from the client side
 
-Just like when interacting from another contract, we've created a few packages that make it easy to interact with the Optimism system contracts from the client side.
+Just like when interacting from another contract, we've created a few packages that make it easy to interact with the OP Mainnet system contracts from the client side.
 
 ### Installing via NPM or Yarn
 
-You can use the [`@eth-optimism/contracts`](https://www.npmjs.com/package/@eth-optimism/contracts?activeTab=readme) package to interact with the Optimism system contracts from a JavaScript or TypeScript based project.
+You can use the [`@eth-optimism/contracts`](https://www.npmjs.com/package/@eth-optimism/contracts?activeTab=readme) package to interact with the OP Mainnet system contracts from a JavaScript or TypeScript based project.
 Install the package as follows:
 
 ```
@@ -69,7 +69,7 @@ npm install @eth-optimism/contracts
 
 ### Getting contract artifacts, interfaces, and ABIs
 
-You can get the compiler artifact, bytecode, and ABI for any Optimism contract as follows:
+You can get the compiler artifact, bytecode, and ABI for any OP Mainnet contract as follows:
 
 ```ts
 import { getContractDefinition } from '@eth-optimism/contracts'

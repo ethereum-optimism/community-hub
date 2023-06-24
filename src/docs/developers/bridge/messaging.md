@@ -3,8 +3,8 @@ title: Sending data between L1 and L2
 lang: en-US
 ---
 
-Apps on Optimism can be made to interact with apps on Ethereum via a process called "bridging".
-In a nutshell, **contracts on Optimism can trigger contract functions on Ethereum, and vice versa**.
+Apps on OP Mainnet can be made to interact with apps on Ethereum via a process called "bridging".
+In a nutshell, **contracts on OP Mainnet can trigger contract functions on Ethereum, and vice versa**.
 With just a little bit of elbow grease, you too can create contracts that bridge the gap between Layer 1 and Layer 2!
 
 
@@ -94,7 +94,7 @@ Except, of course, that we're calling a contract on a completely different netwo
 
 We're glossing over a lot of the technical details that make this whole thing work under the hood.
 Point is, it works.
-Want to call a contract on Optimism from a contract on Ethereum?
+Want to call a contract on OP Mainnet from a contract on Ethereum?
 It's dead simple:
 
 ```solidity
@@ -127,15 +127,15 @@ You can find the exact addresses of these contracts on our various deployments [
 
 ## Communication speed
 
-Unlike calls between contracts on the same blockchain, calls between Ethereum and Optimism are *not* instantaneous.
+Unlike calls between contracts on the same blockchain, calls between Ethereum and OP Mainnet are *not* instantaneous.
 The exact speed of a cross-chain transaction depends on the direction in which the transaction is sent.
 
-### For Ethereum (L1) to Optimism (L2) transactions
+### For Ethereum (L1) to OP Mainnet (L2) transactions
 
-Transactions sent from L1 to L2 take up to approximately 15 minutes on mainnet and 5 minutes on the Optimism Goerli testnet to reach the target L2 contract.
-This is because L2 nodes will wait for a certain number of block confirmations on Ethereum before executing an L1 to L2 transaction.
+Transactions sent from L1 to L2 take approximately a minute to get from Ethereum to OP Mainnet, or from Goerli to OP Goerli.
+This is because L2 nodes wait for five block confirmations on Ethereum before executing an L1 to L2 transaction, to reduce the chance of a chain reorg.
 
-### For Optimism (L2) to Ethereum (L1) transactions
+### For OP Mainnet (L2) to Ethereum (L1) transactions
 
 L2 to L1 transactions have to wait two periods:
 
@@ -213,7 +213,7 @@ To see the present values, [go to Etherscan](https://etherscan.io/address/0x5E4e
 
 Each message from L2 to L1 requires three transactions:
 
-1. An L2 transaction that *initiates* the transaction, which is priced the same as any other transaction made on Optimism.
+1. An L2 transaction that *initiates* the transaction, which is priced the same as any other transaction made on OP Mainnet.
 
 1. An L1 transaction that *proves* the transaction.
    This transaction can only be submitted after the state root is submitted to L1.
@@ -248,7 +248,7 @@ Otherwise you might be making decisions based on an invalid transaction result.
 As a result, L2 ⇒ L1 messages sent using the standard messenger contracts cannot be relayed until they've waited out the full challenge period.
 
 ::: tip On the length of the challenge period
-We've set the challenge period to be exactly seven days on the Optimism mainnet.
+We've set the challenge period to be exactly seven days on the OP Mainnet.
 We believe this is a reasonable balance between security and usability, with an emphasis on increased security to start.
 We're open to changing the length of the window as long as we feel this can be done without significantly reducing the security of the system.
 If you're strongly opinionated about this, we recommend [opening an issue on GitHub](https://github.com/ethereum-optimism/optimism/issues) explaining your position.

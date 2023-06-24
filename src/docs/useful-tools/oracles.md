@@ -31,21 +31,22 @@ There are two types of oracles:
 
 ## Gas Oracle
 
-Optimism provides a [Gas Price Oracle](https://github.com/ethereum-optimism/optimism/blob/233ede59d16cb01bdd8e7ff662a153a4c3178bdd/packages/contracts/contracts/L2/predeploys/OVM_GasPriceOracle.sol) that provides information about [gas prices and related parameters](../developers/build/transaction-fees.md).
+
+OP Mainnet provides a [Gas Price Oracle](https://github.com/ethereum-optimism/optimism/blob/233ede59d16cb01bdd8e7ff662a153a4c3178bdd/packages/contracts/contracts/L2/predeploys/OVM_GasPriceOracle.sol) that provides information about [gas prices and related parameters](../developers/build/transaction-fees.md).
 It can also calculate the total cost of a transaction for you before you send it.
 
 This contract is a predeploy at address `0x420000000000000000000000000000000000000F`:
 
-- [On the production Optimism network](https://explorer.optimism.io/address/0x420000000000000000000000000000000000000F#readContract)
-- [On the Optimism Goerli test network](https://goerli-explorer.optimism.io/address/0x420000000000000000000000000000000000000F)
+- [On OP Mainnet](https://explorer.optimism.io/address/0x420000000000000000000000000000000000000F#readContract)
+- [On OP Goerli](https://goerli-explorer.optimism.io/address/0x420000000000000000000000000000000000000F)
 
 This is a push Oracle. 
-Optimism updates the gas price parameters onchain whenever those parameters change. 
+OP Mainnet (and the testnets) updates the gas price parameters onchain whenever those parameters change. 
 The L1 gas price, which can be volatile, is only pushed once every 5 minutes, and each time can change only by up to 20%.
 
 ## Chainlink
 
-On Optimism [Chainlink](https://chain.link/) provides a number of [price feeds](https://docs.chain.link/docs/optimism-price-feeds/).
+On OP Mainnet [Chainlink](https://chain.link/) provides a number of [price feeds](https://docs.chain.link/docs/optimism-price-feeds/).
 Those feeds are available on the production network.
 
 This is a push Oracle. 
@@ -65,7 +66,7 @@ Tellor is a pull oracle where users fund (tip) a specific feed to get updated da
 
 To learn more about using tellor please [read our docs](https://docs.tellor.io) or [get in touch](https://discord.gg/tellor).
 
-[Tellor contract addresses on Optimism can be found here.](https://docs.tellor.io/tellor/the-basics/contracts-reference#optimism)
+[Tellor contract addresses on OP Mainnet and the testnets can be found here.](https://docs.tellor.io/tellor/the-basics/contracts-reference#optimism)
 
 ### Verifiable Randomness Function (VRF)
 
@@ -86,7 +87,7 @@ The token holders that vote with the majority are assumed to be truthful and get
 The external entities that proposed the correct answer are rewarded.
 Those that proposed the wrong answer lose their stake.
 
-[See here for the UMA addresses on Optimism](https://github.com/UMAprotocol/protocol/blob/master/packages/core/networks/10.json). 
+[See here for the UMA addresses on OP Mainnet](https://github.com/UMAprotocol/protocol/blob/master/packages/core/networks/10.json). 
 
 [See here for instructions how to use UMA](https://docs.umaproject.org/build-walkthrough/build-process).
 
@@ -108,14 +109,14 @@ Using onchain asset prices, especially those in low liquidity pools, makes you v
 
 To use Uniswap as an Oracle:
 
-1. See [the list of pools on Optimism](https://info.uniswap.org/#/optimism/).
+1. See [the list of pools on OP Mainnet](https://info.uniswap.org/#/optimism/).
 1. To find the pool address, [look at the Uniswap factory](https://explorer.optimism.io/address/0x1f98431c8ad98523631ae4a59f267346ea31f984#readContract).
    Use **getPool** with these parameters:
 
       | Parameter           | Meaning                             |
       | ------------------- | ----------------------------------- | 
-      | One token address   | [Address of the ERC-20 contract for that token on Optimism (chainId 10)](https://static.optimism.io/optimism.tokenlist.json) |
-      | Other token address | [Address of the ERC-20 contract for that token on Optimism (chainId 10)](https://static.optimism.io/optimism.tokenlist.json) |      
+      | One token address   | [Address of the ERC-20 contract for that token on OP Mainnet (chainId 10)](https://static.optimism.io/optimism.tokenlist.json) |
+      | Other token address | [Address of the ERC-20 contract for that token on OP Mainnet (chainId 10)](https://static.optimism.io/optimism.tokenlist.json) |      
       | Pool fee            | The pool fee percentage times ten thousand. For example, for 0.3% enter `3000` |
 
 1. In your contract, use [IUniswapV3PoolState](https://github.com/Uniswap/v3-core/blob/main/contracts/interfaces/pool/IUniswapV3PoolState.sol) and [IUniswapV3PoolDerivedState](https://github.com/Uniswap/v3-core/blob/main/contracts/interfaces/pool/IUniswapV3PoolDerivedState.sol) to get the pool state.

@@ -4,7 +4,7 @@ lang: en-US
 ---
 
 
-In Optimism terminology, a *withdrawal* is a transaction sent from L2 (Optimism) to L1 (Ethereum mainnet).
+In Optimism terminology, a *withdrawal* is a transaction sent from L2 (OP Mainnet, OP Goerli etc.) to L1 (Ethereum mainnet, Goerli, etc.).
 This withdrawal may or may not have assets attached to it.
 
 Withdrawals require the user to submit three transactions:

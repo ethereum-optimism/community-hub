@@ -54,10 +54,10 @@ If you didn’t qualify for Airdrop #1, don’t worry, there will be more.
       
 Claim your tokens by visiting **[the airdrop app](https://app.optimism.io/airdrop/check).** 
 It doesn’t cost anything to claim the airdrop, except for gas fees. 
-You will need to make sure you have some ETH on the Optimism network to pay for gas (0.003 is usually enough).
-[Learn here how to deposit ETH to Optimism](https://help.optimism.io/hc/en-us/sections/4413033248795-Deposit).
+You will need to make sure you have some ETH on OP Mainnet to pay for gas (0.003 is usually enough).
+[Learn here how to deposit ETH to OP Mainnet](https://help.optimism.io/hc/en-us/sections/4413033248795-Deposit).
 
-Didn’t qualify or just want more OP? OP is available to buy on all major exchanges deployed on Optimism.
+Didn’t qualify or just want more OP? OP is available to buy on all major exchanges deployed on OP Mainnet.
 
 ## Step 2: Delegate your tokens (to someone else or yourself)
 

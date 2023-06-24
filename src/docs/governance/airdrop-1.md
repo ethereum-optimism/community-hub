@@ -11,7 +11,7 @@ To celebrate our Ethereum roots, The Optimism Foundation also wants to welcome a
 In total, **248,699** addresses are eligible to claim OP in this *initial* airdrop.
 
 Our airdrop has six sets of criteria. 
-Two for Optimism users that target early adopters and active project users, and four for L1 Ethereum, which target active contribution, positive-sum behaviors, and active participation. 
+Two for OP Mainnet users that target early adopters and active project users, and four for L1 Ethereum, which target active contribution, positive-sum behaviors, and active participation. 
 Each set is distinct, meaning that an address can be eligible for multiple and allocated a sum of tokens accordingly. 
 A snapshot of addresses was taken on 03-25-2022 0:00 UTC.
 The allocations and criteria break down as follows:
@@ -20,42 +20,42 @@ The allocations and criteria break down as follows:
 
 | Name | # of Addresses Eligible | OP Allocated per Address |
 | -------- | ----------------------: | -----------------------: |
-| Optimism Users | 92,157 | 776.86
-| Repeat Optimism Users* | 19,174 | 1,692.49
+| OP Mainnet Users | 92,157 | 776.86
+| Repeat OP Mainnet Users* | 19,174 | 1,692.49
 | DAO Voters | 84,015 | 271.83
 | Multisig Signers | 19,542 | 1,190.26
 | Gitcoin Donors (on L1) | 23,925 | 555.92
 | Users Priced Out of Ethereum | 74,272 | 409.42
 
-\* *Note that Repeat Optimism Users Receive 776.86 + 1,692.49 = 2,469.35 OP*
+\* *Note that Repeat OP Mainnet Users Receive 776.86 + 1,692.49 = 2,469.35 OP*
 
 
 | Overlap Bonuses | # of Addresses Eligible | OP Allocated per Address
 | - | -: | -:
-| 4 Categories & OP User | 2,707 |  4,180.54
-| 5 Categories & OP User |   627 | 13,330.16
-| 6 Categories & OP User |    45 | 27,534.98
+| 4 Categories & OP Mainnet User | 2,707 |  4,180.54
+| 5 Categories & OP Mainnet User |   627 | 13,330.16
+| 6 Categories & OP Mainnet User |    45 | 27,534.98
 
 
 The amount of OP tokens that an address receives is cumulative, meaning that the sum of OP tokens allocated for each matching criteria set is the amount that an address is eligible to claim (overlap bonuses are not cumulative).
 
-### Optimism Early Adopters
+### OP Mainnet Early Adopters
 
-The Foundation sought to identify Optimism users who had actively used applications on Optimism as a part of their crypto experience. 
+The Foundation sought to identify OP Mainnet users who had actively used applications on OP Mainnet as a part of their crypto experience. 
 
-#### Optimism Users
+#### OP Mainnet Users
 
-This group selects for addresses that have used Optimism, including both early adopters and newer users, but narrows down to a group that has used Optimism multiple times. 
+This group selects for addresses that have used OP Mainnet, including both early adopters and newer users, but narrows down to a group that has used OP Mainnet multiple times. 
 
-*Criterion: Address bridged to Optimism from L1 during the early phases of mainnet (prior to Jun 23, 2021), or used Optimism for more than 1 day (at least 24 hours between their first and last transaction) and made a transaction using an app (after to Jun 23, 2021).*
-- *These rules are only based on usage on Optimism. It does not matter which bridge, exchange, fiat on-ramp, etc you used in order to come to Optimism.*
+*Criterion: Address bridged to OP Mainnet from L1 during the early phases of mainnet (prior to Jun 23, 2021), or used OP Mainnet for more than 1 day (at least 24 hours between their first and last transaction) and made a transaction using an app (after to Jun 23, 2021).*
+- *These rules are only based on usage on OP Mainnet. It does not matter which bridge, exchange, fiat on-ramp, etc you used in order to come to OP Mainnet.*
 
-#### Repeat Optimism Users
+#### Repeat OP Mainnet Users
 
-This tier selects for the most active Optimism users, who repeatedly come back to use applications in the Optimism ecosystem.
+This tier selects for the most active OP Mainnet users, who repeatedly come back to use applications in the Optimism ecosystem.
 
-*Criterion: Address is an ‘Optimism User’ and made at least 1 transaction with an Optimism application across four or more distinct weeks. This selects for the top 20% of ‘Optimism Users’.*
-- *"Distinct weeks" are counted based on the time of an addresses' first transaction (i.e. days 1 - 7 are considered Week 1, not the calendar week). This makes sure that there is no skew by which day of the week an address joined Optimism.*
+*Criterion: Address is an ‘OP Mainnet User’ and made at least 1 transaction with an OP Mainnet application across four or more distinct weeks. This selects for the top 20% of ‘OP Mainnet Users’.*
+- *"Distinct weeks" are counted based on the time of an addresses' first transaction (i.e. days 1 - 7 are considered Week 1, not the calendar week). This makes sure that there is no skew by which day of the week an address joined OP Mainnet.*
 
 ### Active Ethereum Participants
 
@@ -95,14 +95,14 @@ Active users of dapps on Ethereum are critical to ecosystem growth. Many of thes
 
 *Criterion: Address bridged to another chain, but still made an app transaction on Ethereum in each month after they bridged, and transacted at an average rate of at least 2 per week since then (top 60% of matching addresses).*
 
-- *Bridges included top L1s by TVL: Terra, BSC, Fantom, Avalanche, Solana, Polygon; and general-purpose L2s: Arbtirum, Optimism, Metis, Boba.*
+- *Bridges included top L1s by TVL: Terra, BSC, Fantom, Avalanche, Solana, Polygon; and general-purpose L2s: Arbtirum, OP Mainnet, Metis, Boba.*
 - *To ensure that we gave a long enough period to sample activity, addresses had to have bridged away from Ethereum at least 90 days before the snapshot.*
 
 ### Overlap Bonus
 
-Early Optimism users who also match multiple Ethereum criteria may be most likely to become important participants in the Optimism ecosystem, so these addresses were rewarded with an extra overlap bonus.
+Early OP Mainnet users who also match multiple Ethereum criteria may be most likely to become important participants in the OP Mainnet ecosystem, so these addresses were rewarded with an extra overlap bonus.
 
-*Criterion: Address matches an ‘Optimism Early Adopter’ criterion, and matches at least 4 criteria sets in total (including Optimism criteria).*
+*Criterion: Address matches an ‘OP Mainnet Early Adopter’ criterion, and matches at least 4 criteria sets in total (including OP Mainnet criteria).*
 
 - *The overlap bonus increases as more criteria are matched (i.e. the bonus for 5 criteria is greater than the bonus for 4 criteria)*
 
@@ -147,7 +147,7 @@ The best way to earn OP is to get involved in the Optimism Collective:
 
 - If you want to build on Optimism, visit our [developer documentation](../developers/README.md) or jump in to [Discord](https://discord-gateway.optimism.io).
 - If your talents are non-technical, jump in to [Discord](https://discord-gateway.optimism.io) to find other builders, apply to be a Support NERD, or just make some memes 🍉
-- [Bridge your assets to Optimism here](https://app.optimism.io/bridge) and explore projects on OP
+- [Bridge your assets to OP Mainnet here](https://app.optimism.io/bridge) and explore projects on OP
 
 As always: stay safe and stay Optimistic.
 

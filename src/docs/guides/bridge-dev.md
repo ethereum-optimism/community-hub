@@ -1,11 +1,12 @@
 ---
-title: Adding a custom bridge to Optimism
+title: Adding a custom bridge to OP Mainnet
 lang: en-US
 ---
 
-# Adding a custom bridge to Optimism
+# Adding a custom bridge to Mainnet
 
 ## Using the Standard bridge
+
 ::: tip
 Consider using the [Standard bridge](../developers/bridge/standard-bridge/) first before deciding to develop a custom bridge solution.
 
@@ -14,11 +15,11 @@ This implementation satisfies a wide range of requirements.
 :::
 
 ## Building a custom bridge
-When the Optimism Standard bridge does not satisfy your requirements for bridging assets or data you can deploy your custom bridge solution utilizing the same cross-domain infrastructure as the Standard bridge. For details on how cross-domain messaging works, see [Bridging basics](../developers/bridge/basics/) article and also the [tutorial on depositing and withdrawing between L1 and L2](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/cross-dom-bridge-erc20).
+When the OP Mainnet Standard bridge does not satisfy your requirements for bridging assets or data you can deploy your custom bridge solution utilizing the same cross-domain infrastructure as the Standard bridge. For details on how cross-domain messaging works, see [Bridging basics](../developers/bridge/basics/) article and also the [tutorial on depositing and withdrawing between L1 and L2](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/cross-dom-bridge-erc20).
 
 Some of the reasons why the standard bridge might not work for you is for example when you cannot limit the L2 token `mint` and `burn` functions to the bridge alone (something we require for security). Also certain custom bridges implement their own logic for managing the token supply which requires custom logic. Another case might be when you are bridging non-ERC20 tokens for example NFTs. Yet another case is when you are pooling deposits for cheaper transfers to L2.
 
-Note that when you are building a custom bridge for ERC20 tokens and planning to add these to the [Superchain token list](../developers/bridge/standard-bridge/#the-superchain-token-list), we have specific requirements for the bridge contracts. These have to implement the `IL1ERC20Bridge` interface in the L1 bridge contract and `IL2ERC20Bridge` interface in the L2 bridge contract. This ensures the [Optimism Bridge UI](https://app.optimism.io/bridge/deposit) can support token deposits and withdrawals via this custom bridge.
+Note that when you are building a custom bridge for ERC20 tokens and planning to add these to the [Superchain token list](../developers/bridge/standard-bridge/#the-superchain-token-list), we have specific requirements for the bridge contracts. These have to implement the `IL1ERC20Bridge` interface in the L1 bridge contract and `IL2ERC20Bridge` interface in the L2 bridge contract. This ensures the [OP Mainnet Bridge UI](https://app.optimism.io/bridge/deposit) can support token deposits and withdrawals via this custom bridge.
 
 To add your bridge and token to the token list, you must make a pull request against the [Superchain token list repository](https://github.com/ethereum-optimism/ethereum-optimism.github.io#adding-a-token-to-the-list). 
-Due to the complexity of reviewing a custom bridge, you will need to deploy to Optimism Goerli first, before going to production.
+Due to the complexity of reviewing a custom bridge, you will need to deploy to OP Goerli first, before going to production.
