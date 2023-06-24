@@ -21,7 +21,7 @@ Funding for RetroPGF can come from:
 
 Many values-aligned projects on Optimism have also chosen to contribute a portion of their revenue to retroPGF. 
 If your project wants to contribute funds, you can send ETH, ERC-20 tokens, or NFTs to the ENS address **retroPGF.eth**. 
-It is supported on **[Optimism](https://explorer.optimism.io/address/0x15dda60616ffca20371ed1659dbb78e888f65556)** as well as **[Ethereum mainnet](https://etherscan.io/address/0x15dda60616ffca20371ed1659dbb78e888f65556)**. 
+It is supported on **[OP Mainnet](https://explorer.optimism.io/address/0x15dda60616ffca20371ed1659dbb78e888f65556)** as well as **[Ethereum mainnet](https://etherscan.io/address/0x15dda60616ffca20371ed1659dbb78e888f65556)**. 
 Everything donated retroPGF.eth will be allocated to a RetroPGF round.
 
 **What is described here is an initial experiment for RetroPGF 2**. The specifics of this system will evolve as the Collective grows.

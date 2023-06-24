@@ -7,8 +7,8 @@ The AttestationStation v1 uses [the Ethereum Attestation service standard](https
 
 | Network         | Attestation Contract | Schema Registry Contract |
 | --------------- | - | - |
-| Optimism Goerli | [0x1a5650d0ecbca349dd84bafa85790e3e6955eb84](https://goerli-optimism.etherscan.io/address/0x1a5650d0ecbca349dd84bafa85790e3e6955eb84) | [0x7b24c7f8af365b4e308b6acb0a7dfc85d034cb3f](https://goerli-optimism.etherscan.io/address/0x7b24c7f8af365b4e308b6acb0a7dfc85d034cb3f)
-| Optimism Mainnet | To be announced | To be announced |
+| OP Goerli | [0x1a5650d0ecbca349dd84bafa85790e3e6955eb84](https://goerli-optimism.etherscan.io/address/0x1a5650d0ecbca349dd84bafa85790e3e6955eb84) | [0x7b24c7f8af365b4e308b6acb0a7dfc85d034cb3f](https://goerli-optimism.etherscan.io/address/0x7b24c7f8af365b4e308b6acb0a7dfc85d034cb3f)
+| OP Mainnet | To be announced | To be announced |
 
 You can read and write attestations in several ways:
 

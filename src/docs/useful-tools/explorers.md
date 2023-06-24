@@ -5,16 +5,16 @@ lang: en-US
 
 ## Blockscout
 
-We have a Blockscout explorer for the [Goerli testnet](https://blockscout.com/optimism/goerli/). It includes:
+We have a Blockscout explorer for both [OP Mainnet](https://optimism.blockscout.com) and [OP Goerli](https://optimism-goerli.blockscout.com). It includes:
 
-- [Verified contract source code, along with the ability to interact with it](https://blockscout.com/optimism/goerli/address/0x106941459A8768f5A92b770e280555FAF817576f/contracts#address-tabs)
-- [Detailed transaction information](https://blockscout.com/optimism/goerli/tx/0xeb98c8279983cfee472c6067d2405acc130dca37e7536d6c83930e29aaa40e3e)
+- [Verified testnet contract source code, along with the ability to interact with it](https://optimism-goerli.blockscout.com/verified-contracts)
+- [Detailed testnet transaction information](https://optimism-goerli.blockscout.com/txs)
 
 
 
 ## Etherscan
 
-We have Etherscan explorers for the [Optimism mainnet](https://explorer.optimism.io) and the  [Optimism  Goerli testnet](https://goerli-explorer.optimism.io).
+We have Etherscan explorers for the [OP Mainnet](https://explorer.optimism.io) and the [OP Goerli](https://goerli-explorer.optimism.io).
 Etherscan has lots of tools to help you debug transactions.
 
 Optimistic Etherscan has all the tools you expect from Etherscan, such as:
@@ -22,7 +22,7 @@ Optimistic Etherscan has all the tools you expect from Etherscan, such as:
 - [Detailed transaction information](https://explorer.optimism.io/tx/0x292423266d6da24126dc4e0e81890c22a67295cc8b1a987e71ad84748511452f)
 - And everything else you might find on Etherscan!
 
-It's also got some Optimism-specific features:
+It's also got some OP-Mainnet-specific features:
 - [A list of L1-to-L2 transactions](https://explorer.optimism.io/txsEnqueued)
 - [A list of L2-to-L1 transactions](https://explorer.optimism.io/txsExit)
 - [A tool for finalizing L2-to-L1 transactions](https://explorer.optimism.io/messagerelayer)

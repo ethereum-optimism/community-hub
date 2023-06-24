@@ -80,13 +80,13 @@ It is possible to replay a failed deposit, possibly with more gas,
 
 ### Replays in action
 
-To see how replays work, you can use [this contract on Optimism Goerli](https://goerli-optimism.etherscan.io/address/0x26A145eccDf258688C763726a8Ab2aced898ADe1#code). 
+To see how replays work, you can use [this contract on OP Goerli](https://goerli-optimism.etherscan.io/address/0x26A145eccDf258688C763726a8Ab2aced898ADe1#code). 
 
 1. Call `stopChanges`, using this Foundry command:
 
    ```sh
    PRIV_KEY=<your private key here>
-   export ETH_RPC_URL=<url to Optimism Goerli>
+   export ETH_RPC_URL=<url to OP Goerli>
    GREETER=0x26A145eccDf258688C763726a8Ab2aced898ADe1
    cast send --private-key $PRIV_KEY $GREETER "stopChanges()"
    ```

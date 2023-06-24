@@ -3,7 +3,7 @@ title: Testing on Optimistic Test Networks
 lang: en-US
 ---
 
-You can find the chainid and supporting information for Optimism Goerli, our test network, [using these endpoints](../useful-tools/networks.md).
+You can find the chainid and supporting information for OP Goerli, our test network, [using these endpoints](../useful-tools/networks.md).
 To obtain ETH and tokens (both ERC-20 and NFT) from faucets, [see here](../useful-tools/faucets.md).
 
 This page shows some additional testing utilities that you might find useful.
@@ -14,7 +14,7 @@ This page shows some additional testing utilities that you might find useful.
 We have several ERC-20 testing token contracts.
 This token is an implementation of ERC-20, with the addition of `faucet`, a function that mints for the caller 1000 tokens to facilitate testing.
 
-Additionally, all Optimism networks have [WETH at address `0x4200000000000000000000000000000000000006`](https://help.optimism.io/hc/en-us/articles/4417948883611-What-is-ETH-WETH-How-do-they-interact-).
+Additionally, both OP Mainnet and OP Goerli have [WETH at address `0x4200000000000000000000000000000000000006`](https://help.optimism.io/hc/en-us/articles/4417948883611-What-is-ETH-WETH-How-do-they-interact-).
 
 ### Goerli ERC-20 testing contracts
 
@@ -33,6 +33,6 @@ See [this tutorial](https://github.com/ethereum-optimism/optimism-tutorial/tree/
 
 ## ERC-721 tokens
 
-We have an ERC-721 token on Optimism Goerli at address [`0x38abA480f2bA7A17bC01EE5E1AD64fCedd93EfE7`](https://goerli-explorer.optimism.io/address/0x38abA480f2bA7A17bC01EE5E1AD64fCedd93EfE7).
+We have an ERC-721 token on OP Goerli at address [`0x38abA480f2bA7A17bC01EE5E1AD64fCedd93EfE7`](https://goerli-explorer.optimism.io/address/0x38abA480f2bA7A17bC01EE5E1AD64fCedd93EfE7).
 It is the OpenZeppelin ERC-721 token contract with the addition of `faucet`.
 Just call the `faucet` function to get as many NFT tokens as you need.

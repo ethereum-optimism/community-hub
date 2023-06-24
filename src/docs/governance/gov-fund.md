@@ -34,5 +34,5 @@ Projects are also encouraged to reference data from the success of their initial
 
 Phase 0 was designed to reward existing projects that have driven growth of the Optimism ecosystem. 
 
-The amount of funding for each project was determined by a set of onchain metrics, calculated via a snapshot of the Optimism chain on April 1, 2022 at 12:00am UTC.
+The amount of funding for each project was determined by a set of onchain metrics, calculated via a snapshot of the OP Mainnet chain on April 1, 2022 at 12:00am UTC.
 To see live tracking on Gov Fund allocations, please see the [Public Distribution Tracker](https://docs.google.com/spreadsheets/d/1eaHOlWB34ij1KGsXdaNyTQg4tt1Pu2JurJsElBb6a8k/edit#gid=0).

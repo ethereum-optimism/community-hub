@@ -1,17 +1,17 @@
 ---
-title: Creating an Optimistic NFT
+title: Creating an OP Mainnet NFT
 lang: en-US
 ---
 
 An NFT ecosystem consists of creators (supply), marketplaces, and buyers/traders (demand) built on top of infrastructures that enable algorithmic generation of art, deployment of smart contracts and access to NFT market intelligence.
 
-[Click here for statistics about NFTs on Optimism](https://dune.com/oplabspbc/optimism-nft-secondary-marketplaces)
+[Click here for statistics about NFTs on OP Mainnet](https://dune.com/oplabspbc/optimism-nft-secondary-marketplaces)
 
-## The Optimism NFT ecosystem
+## The OP Mainnet NFT ecosystem
 
-![The Optimism NFT ecosystem](../../assets/docs/guides/nft/OP-NFT-Ecosystem.jpg)
+![The OP Mainnet NFT ecosystem](../../assets/docs/guides/nft/OP-NFT-Ecosystem.jpg)
 
-These tools are available on Optimism:
+These tools are available on OP Mainnet:
 
 ### Creator tools
 
