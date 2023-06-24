@@ -6,7 +6,7 @@ lang: en-US
 ## What are those?
 
 Meta-transactions let users sign transactions that are then submitted (and the gas paid for) by somebody else. 
-Optimism is a good place for meta-transactions because the low gas costs make it possible to explore business models that allow for payment for transactions by other means.
+OP Mainnet is a good place for meta-transactions because the low gas costs make it possible to explore business models that allow for payment for transactions by other means.
 
 Here are some example use cases for meta-transactions:
 
@@ -29,8 +29,8 @@ See here for [their documentation](https://docs.opengsn.org/).
 
 ### Supported networks:
 
-- [Optimism mainnet](https://docs.opengsn.org/networks/optimism/optimism.html)
-- [Optimism Goerli](https://docs.opengsn.org/networks/optimism/goerli-optimism.html)
+- [OP Mainnet](https://docs.opengsn.org/networks/optimism/optimism.html)
+- [OP Goerli](https://docs.opengsn.org/networks/optimism/goerli-optimism.html)
 
 
 ## Gelato
@@ -39,5 +39,5 @@ See here for [their documentation](https://docs.opengsn.org/).
 
 ### Supported networks:
 
-- Optimism mainnet
-- Optimism Goerli
+- OP Mainnet
+- OP Goerli
