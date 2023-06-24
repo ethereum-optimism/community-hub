@@ -155,7 +155,6 @@ cd ~/op-geth
   --authrpc.jwtsecret=./jwt.txt \
   --authrpc.port=8551 \
   --authrpc.vhosts="*" \
-  --datadir=/data \
   --verbosity=3 \
   --rollup.disabletxpoolgossip=true \
   --nodiscover \
