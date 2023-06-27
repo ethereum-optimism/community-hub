@@ -83,8 +83,10 @@ Links to download data directories will be posted here as soon as they are avail
 :::
   
 
-- [Bedrock Data Directory (303 GB)<sup>1</sup>](https://datadirs.optimism.io/mainnet-bedrock.tar.zst)
-- [Legacy Geth Data Directory (2.9TB)<sup>1</sup>](https://datadirs.optimism.io/mainnet-legacy-archival.tar.zst)
+- [Bedrock Data Directory (303 GB)<sup>1</sup>](https://datadirs.optimism.io/mainnet-bedrock.tar.zst). 
+  The SHA-512 for this file is `c17067b7bc39a6daa14f71d448c6fa0477834c3e68a25e96f26fe849c12a09bffe510e96f7eacdef19e93e3167d15250f807d252dd6f6f9053d0e4457c73d5fb`.
+- [Legacy Geth Data Directory (2.9TB)<sup>1</sup>](https://datadirs.optimism.io/mainnet-legacy-archival.tar.zst).
+  The SHA-512 for this file is `e348488c458baa755510f23bbc8601619bc66bea78a89354c949ba7be3c6b39ed7dd2c50516621e38df6120299407da0d24445b96bf94a50364ed07bb8234b26`.
   Note that you *only* need this file if you run `l2geth` to answer archive queries prior to the bedrock upgrade. 
   If you are running an archive only for post-bedrock transactions (using `op-geth` with the command line flag `gcmode=archive`), you do *not* need this file.
 - [Configuration parameters](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/deploy-config/mainnet.json).
@@ -176,8 +178,9 @@ These parameters are mostly useful to people responsible for running and adminis
 
 #### Links
 
-- [Bedrock Data Directory (5.0GB)<sup>1</sup>](https://datadirs.optimism.io/goerli-bedrock.tar.zst)
+- [Bedrock Data Directory (5.0GB)<sup>1</sup>](https://datadirs.optimism.io/goerli-bedrock.tar.zst). The SHA-512 for this file is `7d420ddf34ee5b157d60cf7a9612cb950b24ff1405e1ab944f8d7910c45e7a46907bdb86ea124a8069b15ad9e171776ab5f8ed0146c43b0ff12539f38f262f7d`.
 - [Legacy Geth Data Directory (50GB)<sup>1</sup>](https://datadirs.optimism.io/goerli-legacy-archival.tar.zst). 
+The SHA-512 for this file is `5d78c1f2cd5bea062fb979b9d616a5fe4c55b27a444812b91a90340631d7a5f750c4e6e5a352513f3cf102d61586a4e2861f1aa3827e5be8fcae01e2ec291d2a`.
   Note that you *only* need this file if you run `l2geth` to answer archive queries prior to the bedrock upgrade. 
   If you are running an archive only for post-bedrock transactions (using `op-geth` with the command line flag `gcmode=archive`), you do *not* need this file.
 - [Configuration parameters](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/deploy-config/goerli.json)
