@@ -107,16 +107,16 @@ But it is nearly impossible to create two that are different by a specified amou
 There are several differences in the way blocks are produced between L1 Ethereum and OP Mainnet.
 
 
-| Parameter           | L1 Ethereum | OP Mainnet |
-| - | - | - |
-| Time between blocks | 12 seconds(1)  | 2 seconds |
-| Block target size   | 15,000,000 gas | to be determined |
-| Block maximum size  | 30,000,000 gas | to be determined | 
+| Parameter           | L1 Ethereum | Optimism Bedrock |
+| - | -: | -: |
+| Time between blocks | 12 seconds<sup>1</sup>  | 2 seconds |
+| Block target size   | 15,000,000 gas | 5,000,000 gas |
+| Block maximum size  | 30,000,000 gas | 30,000,000 gas | 
 
 (1) This is the ideal. 
     If any blocks are missed it could be an integer multiple such as 24 seconds, 36 seconds, etc.
 
-**Note:** The L1 Ethereum parameter values are taken from [ethereum.org](https://ethereum.org/en/developers/docs/blocks/#block-time). The OP Mainnet values are taken from [the OP Mainnet specs](https://github.com/ethereum-optimism/optimism/blob/develop/specs/guaranteed-gas-market.md#limiting-guaranteed-gas).
+**Note:** The L1 Ethereum parameter values are taken from [ethereum.org](https://ethereum.org/en/developers/docs/blocks/#block-time).
 
 
 
