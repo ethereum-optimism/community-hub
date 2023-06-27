@@ -144,6 +144,8 @@ For OP Mainnet (or other OP networks in the future, [get the sequencer URL here]
 ```
 #! /usr/bin/bash
 
+SEQUENCER_URL=https://goerli-sequencer.optimism.io/
+
 cd ~/op-geth
 
 ./build/bin/geth \
@@ -160,17 +162,16 @@ cd ~/op-geth
   --authrpc.jwtsecret=./jwt.txt \
   --authrpc.port=8551 \
   --authrpc.vhosts="*" \
+  --datadir=/data \
   --verbosity=3 \
-  --rollup.disabletxpoolgossip=true \
+  --rollup.sequencerhttp=$SEQUENCER_URL \
   --nodiscover \
   --syncmode=full \
   --maxpeers=0 \
   --datadir ./datadir \
-  --snapshot=false \
-  --rollup.sequencerhttp= << URL TO OP Mainnet or testnet >>
+  --snapshot=false
 ```
 
-Make sure the change `<< URL TO OP Mainnet or testnet >>` to a service provider's URL for the OP network (either OP Mainnet or an OP testnet).
 
 ::: info Snapshots
 
@@ -181,21 +182,31 @@ Later, for regular usage, you can remove that option to improve geth database in
 
 #### `op-node`
 
+- Change `<< URL to L1 >>` to a service provider's URL for the L1 network (either L1 Ethereum or Goerli).
+- Set `L1KIND` to the network provider you are using (alchemy, infura, etc.).
+- Set `NET` to either `goerli` or `mainnet`.
+
+
 ```
 #! /usr/bin/bash
 
+L1URL=  << URL to L1 >>
+L1KIND=alchemy
+NET=goerli
+
 cd ~/optimism/op-node
+
 ./bin/op-node \
+        --l1=$L1UL  \
+        --l1.rpckind=$L1KIND \
         --l2=http://localhost:8551 \
         --l2.jwt-secret=./jwt.txt \
-        --network=goerli \
+        --network=$NET \
         --rpc.addr=0.0.0.0 \
-        --rpc.port=8547 \
-        --p2p.disable \
-        --l1= << URL TO L1 >>       
+        --rpc.port=8547
+
 ```        
 
-Make sure to change `<< URL to L1 >>` to a service provider's URL for the L1 network (either L1 Ethereum or Goerli).
 
 
 
