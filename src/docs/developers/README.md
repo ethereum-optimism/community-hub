@@ -3,35 +3,35 @@ title: Developer docs
 lang: en-US
 ---
 
-Welcome to the Optimism developer docs!
+Welcome to the OP Mainnet developer docs!
 
-Whether you're just looking to [deploy a basic contract](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/getting-started) or you're ready to [build a cross-chain app](./bridge/messaging.md), you'll be able to find everything you need to start building on Optimism within this section.
+Whether you're just looking to [deploy a basic contract](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/getting-started) or you're ready to [build a cross-chain app](./bridge/messaging.md), you'll be able to find everything you need to start building on OP Mainnet within this section.
 
-If you're looking for third-party tools that make building on Optimism easier, check out the [Tools for Developers](../useful-tools) section.
+If you're looking for third-party tools that make building on OP Mainnet easier, check out the [Tools for Developers](../useful-tools) section.
 
 ## Where should I start?
 
-### Just getting started with Optimism?
+### Just getting started with OP Mainnet?
 
-If you're brand new to Optimism, we recommend checking out the [guide to deploying a basic contract](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/getting-started).
+If you're brand new to OP Mainnet, we recommend checking out the [guide to deploying a basic contract](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/getting-started).
 It'll get you familiar with the core steps required to get a contract deployed to the network.
-Luckily, Optimism is [EVM equivalent](https://medium.com/ethereum-optimism/introducing-evm-equivalence-5c2021deb306), so it's 100% the same as deploying a contract to Ethereum.
+Luckily, OP Mainnet is [EVM equivalent](https://medium.com/ethereum-optimism/introducing-evm-equivalence-5c2021deb306), so it's 100% the same as deploying a contract to Ethereum.
 
-If you're a bit more familiar with Optimism and Ethereum, you can try walking through one of the various [tutorials](https://github.com/ethereum-optimism/optimism-tutorial) put together by the Optimism community.
+If you're a bit more familiar with OP Mainnet and Ethereum, you can try walking through one of the various [tutorials](https://github.com/ethereum-optimism/optimism-tutorial) put together by the Optimism community.
 They'll help you get a headstart when building your first Optimistic project.
 
 ### Ready to deploy a contract?
 
-If you're looking to deploy your contracts to the Optimism mainnet or the Optimism Goerli testnet, take a look at the [getting started tutorial](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/getting-started#development-stacks).
+If you're looking to deploy your contracts to OP Mainnet or OP Goerli, take a look at the [getting started tutorial](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/getting-started#development-stacks).
 It contains sample configuration files for deploying your contracts from common frameworks like Hardhat, Truffle, and Brownie.
 
-You might also want to check out our guides for [running a local development environment](./build/dev-node.md) or [running your own Optimism node](./build/run-a-node.md).
-These guides are designed to help you feel totally confident in your Optimism deployment.
+You might also want to check out our guides for [running a local development environment](./build/dev-node.md) or [running your own OP Mainnet node](./build/run-a-node.md).
+These guides are designed to help you feel totally confident in your OP Mainnet deployment.
 
 ### Want to explore the cross-chain frontier?
 
 We've got detailed guides for that.
-If you want to bridge a token from Ethereum to Optimism (or vice versa!), you should learn more about our [Standard Token Bridge](./bridge/standard-bridge.md).
+If you want to bridge a token from Ethereum to OP Mainnet (or vice versa!), you should learn more about our [Standard Token Bridge](./bridge/standard-bridge.md).
 The Standard Token Bridge makes the process of moving tokens between chains as easy as possible.
 
 If you're looking for something more advanced, we recommend reading through our page on [sending data between L1 and L2](./bridge/messaging.md).

@@ -12,7 +12,7 @@ Some API calls, such as those in the [personal namespace](https://geth.ethereum.
 Such RPCs are either totally unsupported, or will return nonsensical values.
 :::
 
-## Optimism (mainnet)
+## OP Mainnet
 
 | Parameter | Value |
 | --------- | ----- |
@@ -54,7 +54,7 @@ They are reproduced here for convenience.
 
 ### API Options:
 
-1. Get free access to Optimism through [Alchemy](https://www.alchemy.com/optimism)
+1. Get free access to OP Mainnet through [Alchemy](https://www.alchemy.com/optimism)
 
 2. For small scale tests, you can use our public API:
 - HTTP endpoint: [https://mainnet.optimism.io](https://mainnet.optimism.io) (note, this is for testing. For production, use Alchemy) 
@@ -83,13 +83,13 @@ Links to download data directories will be posted here as soon as they are avail
 :::
   
 
-- Bedrock Data Directory (400GB):
-  - [On GCS](https://storage.googleapis.com/oplabs-mainnet-data/mainnet-bedrock.tar)
-- Legacy Geth Data Directory (2.9TB)<sup>1</sup>: 
-  - [On GCS](https://storage.googleapis.com/oplabs-mainnet-data/mainnet-legacy-archival.tar.zst)
+- [Bedrock Data Directory (303 GB)<sup>1</sup>](https://datadirs.optimism.io/mainnet-bedrock.tar.zst)
+- [Legacy Geth Data Directory (2.9TB)<sup>1</sup>](https://datadirs.optimism.io/mainnet-legacy-archival.tar.zst)
+  Note that you *only* need this file if you run `l2geth` to answer archive queries prior to the bedrock upgrade. 
+  If you are running an archive only for post-bedrock transactions (using `op-geth` with the command line flag `gcmode=archive`), you do *not* need this file.
 - [Configuration parameters](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/deploy-config/mainnet.json).
 - [Latest release of `op-geth`](https://github.com/ethereum-optimism/op-geth/releases/latest)
-- [Latest release of `op-node`](https://github.com/ethereum-optimism/optimism/releases/latest)
+- [Latest release of `op-node`](https://github.com/ethereum-optimism/optimism/releases/) - you need to scroll down until you get a release that has `op-node` in it.
 - [Legacy geth](https://hub.docker.com/layers/ethereumoptimism/l2geth/0.5.31/images/sha256-5577036dc36d167d11f5ac49b91cc0a3d835574928a9563783c2e70309e5eb28?context=explore).
   
 
@@ -99,7 +99,7 @@ We recommend that users install the command line tool if it is not already insta
 If you want to decompress separately, we recommend `pzstd -d`  or `zstd -d` (pzstd will likely be faster).
 
 
-## Optimism Goerli
+## OP Goerli
 
 ::: tip Purpose
 This is our test network.
@@ -143,7 +143,7 @@ They are reproduced here for convenience
 ### API Options
 
 
-1. Get free access to Optimism through [Alchemy](https://www.alchemy.com/optimism)
+1. Get free access to OP Goerli through [Alchemy](https://www.alchemy.com/optimism)
 
 2. For small scale tests, you can use our public API:
 - HTTP endpoint: [https://goerli.optimism.io](https://goerli.optimism.io) (note, this is for testing. For production, use Alchemy) 
@@ -176,13 +176,19 @@ These parameters are mostly useful to people responsible for running and adminis
 
 #### Links
 
-- [Bedrock Data Directory (7.5GB)](https://storage.googleapis.com/oplabs-goerli-data/goerli-bedrock.tar)
-- [Legacy Geth Data Directory (62.2GB)](https://storage.googleapis.com/oplabs-goerli-data/goerli-legacy-archival.tar)
+- [Bedrock Data Directory (5.0GB)<sup>1</sup>](https://datadirs.optimism.io/goerli-bedrock.tar.zst)
+- [Legacy Geth Data Directory (50GB)<sup>1</sup>](https://datadirs.optimism.io/goerli-legacy-archival.tar.zst). 
+  Note that you *only* need this file if you run `l2geth` to answer archive queries prior to the bedrock upgrade. 
+  If you are running an archive only for post-bedrock transactions (using `op-geth` with the command line flag `gcmode=archive`), you do *not* need this file.
 - [Configuration parameters](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/deploy-config/goerli.json)
 - [Latest releases of `op-geth`](https://github.com/ethereum-optimism/op-geth/releases/latest)
-- [Latest releases of `op-node`](https://github.com/ethereum-optimism/optimism/releases/latest)
+- [Latest release of `op-node`](https://github.com/ethereum-optimism/optimism/releases/) - you need to scroll down until you get a release that has `op-node` in it.
 - [Legacy geth](https://hub.docker.com/layers/ethereumoptimism/l2geth/0.5.31/images/sha256-5577036dc36d167d11f5ac49b91cc0a3d835574928a9563783c2e70309e5eb28?context=explore)
 
+(1) This file is compressed with `zstd`. 
+We recommend that users install the command line tool if it is not already installed on their system. 
+`tar -xf` will work without installing anything if you have an up to date version of `tar`. 
+If you want to decompress separately, we recommend `pzstd -d`  or `zstd -d` (pzstd will likely be faster).
 
 
 ::: warning Ignore other networks

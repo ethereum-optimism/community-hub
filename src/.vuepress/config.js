@@ -214,7 +214,9 @@ module.exports = {
           children: [
             '/docs/governance/citizens-house.md',
             '/docs/governance/citizenship.md',
-            '/docs/governance/retropgf-2.md',                        
+            '/docs/governance/retropgf-1.md',
+            '/docs/governance/retropgf-2.md',
+            '/docs/governance/retropgf-3.md'
           ],
           collapsable: true
         },
@@ -303,7 +305,10 @@ module.exports = {
           title: 'Protocol Specs',
           children: [
             '/docs/protocol/protocol-2.0.md',
-            '/docs/protocol/compressed-ctc.md'
+            [
+              'https://github.com/ethereum-optimism/optimism/blob/33741760adce92c8bdf61f693058144bb6986e30/specs/derivation.md#batch-submission-wire-format',
+              "The Canonical Transaction Chain (CTC) Format"
+            ]
           ],
           collapsable: false,  
         },

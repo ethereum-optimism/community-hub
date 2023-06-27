@@ -19,12 +19,7 @@ These attestations have these attributes:
 
 The interpretation of the attestation is up to the creator, and is not necessarily stored onchain.
 
-You can read and write attestations in several ways:
-
-- [Direct access](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/ecosystem/attestation-station/contract-access)
-- Using the SDK: 
-  - [Reference](https://github.com/ethereum-optimism/optimism/blob/develop/packages/atst/docs/sdk.md)
-  - [Tutorial](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/ecosystem/attestation-station/using-sdk)
+[Here is the tutorial](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/ecosystem/attestation-station/contract-access)
 
 
 ## Searches
@@ -49,7 +44,8 @@ This way there is no centralized authority to trust.
 
 ## Smart contracts / technical specifications
 
-The legacy AttestationStation contract is located [in the Optimism monorepo](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-periphery/contracts/universal/op-nft/AttestationStation.sol). It is deployed at address `0xEE36eaaD94d1Cc1d0eccaDb55C38bFfB6Be06C77`, both on [Optimism Mainnet](https://explorer.optimism.io/address/0xEE36eaaD94d1Cc1d0eccaDb55C38bFfB6Be06C77) and [Optimism Goerli](https://goerli-optimism.etherscan.io/address/0xEE36eaaD94d1Cc1d0eccaDb55C38bFfB6Be06C77). The following is the breakdown of this smart contract.
+The legacy AttestationStation contract is located [in the Optimism monorepo](https://github.com/ethereum-optimism/optimism/blob/e33d000561af65dbf438f5b8acfcc50c729a775e/packages/contracts-periphery/contracts/universal/op-nft/AttestationStation.sol). It is deployed at address `0xEE36eaaD94d1Cc1d0eccaDb55C38bFfB6Be06C77`, both on [Optimism Mainnet](https://explorer.optimism.io/address/0xEE36eaaD94d1Cc1d0eccaDb55C38bFfB6Be06C77) and [Optimism Goerli](https://goerli-optimism.etherscan.io/address/0xEE36eaaD94d1Cc1d0eccaDb55C38bFfB6Be06C77). The following is the breakdown of this smart contract.
+
 
 ### State
 

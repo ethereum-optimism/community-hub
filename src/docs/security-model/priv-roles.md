@@ -1,9 +1,9 @@
 ---
-title: Privileged Roles in Bedrock
+title: Privileged Roles in OP Mainnet
 lang: en-US
 ---
 
-In our current state of decentralization, there are still some privileged roles in Bedrock. This document explains what they are, and why they exist.
+In our current state of decentralization, there are still some privileged roles in OP Mainnet. This document explains what they are, and why they exist.
 
 ## Hot wallets
 
@@ -31,14 +31,14 @@ As long as we do it within seven days, the risk is minimalized.
 ## Cold wallets
 
 These addresses are *cold*, meaning the private key is not on any device connected to the network, and cannot be used without human intervention.
-On the Optimism mainnet these are usually multisig contracts, controlled by groups of community members.
+On OP Mainnet these are usually multisig contracts, controlled by groups of community members.
 On [OP Stack](https://stack.optimism.io) these wallets are set by default to the `ADMIN` account.
 When you create a new OP Stack blockchain you specify them in [the deployment configuration JSON file](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/deploy-config/getting-started.json).
 
 
 ### MintManager Owner
 
-On Optimism mainnet this account controls the [`MintManager`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/governance/MintManager.sol) that can mint new OP tokens.
+On OP Mainnet this account controls the [`MintManager`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/governance/MintManager.sol) that can mint new OP tokens.
 On OP Stack it is usually meaningless.
 
 

@@ -11,24 +11,24 @@ features:
     details: How-to guides and tutorials for users and developers.
     link: /docs/guides/
     
-  - title: How Optimism works
+  - title: How OP Mainnet works
     icon: info-square
-    details: General explanation of what makes Optimism tick.
+    details: General explanation of what makes OP Mainnet tick.
     link: /docs/protocol/2-rollup-protocol/
 
-  - title: Optimism's Security Model
+  - title: OP Mainnet's Security Model
     icon: shield
-    details: Understand the safety and liveness properties of Optimism.
+    details: Understand the safety and liveness properties of OP Mainnet.
     link: /docs/security-model/
 
   - title: Protocol specs
     icon: ruler-triangle
-    details: More detailed information about how Optimism works under the hood.
+    details: More detailed information about how OP Mainnet works under the hood.
     link: /docs/protocol/
 
   - title: Developer docs
     icon: code
-    details: Resources for building a decentralized application on Optimism.
+    details: Resources for building a decentralized application on OP Mainnet.
     link: /docs/developers/
 
   - title: Tools for developers

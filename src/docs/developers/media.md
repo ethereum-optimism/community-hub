@@ -6,21 +6,21 @@ lang: en-US
 These are developer videos.
 [See here for governance videos](../governance/media.md).
 
-### Getting started with Optimism
+### Getting started with OP Mainnet
 
-In this video you learn how to use Optimism for your own development:
+In this video you learn how to use OP Mainnet (or a test network) for your own development:
 
-- [Deploy a contract on Optimism (Foundry) (1:24)](https://youtu.be/_Y6CwsYgqwI?t=84)
-- [Interact with an Optimism contract (Foundry) (2:20)](https://youtu.be/_Y6CwsYgqwI?t=140)
-- [Use the Etherscan block explorer with Optimism (2:53)](https://youtu.be/_Y6CwsYgqwI?t=173)
+- [Deploy a contract on OP Goerli (Foundry) (1:24)](https://youtu.be/_Y6CwsYgqwI?t=84)
+- [Interact with an OP Goerli contract (Foundry) (2:20)](https://youtu.be/_Y6CwsYgqwI?t=140)
+- [Use the Etherscan block explorer with OP Goerli (2:53)](https://youtu.be/_Y6CwsYgqwI?t=173)
 - [Getting started docs, with other development stacks (4:45)](https://youtu.be/_Y6CwsYgqwI?t=285)
 - [Getting test ETH (6:00)](https://youtu.be/_Y6CwsYgqwI?t=360)
-- [The Optimism Bridge (7:25)](https://youtu.be/_Y6CwsYgqwI?t=445)
-- [Inter-layer communication, between Ethereum and Optimism (8:48)](https://youtu.be/_Y6CwsYgqwI?t=528)
+- [The OP Mainnet Bridge (7:25)](https://youtu.be/_Y6CwsYgqwI?t=445)
+- [Inter-layer communication, between Ethereum and OP Mainnet, or Goerli and OP Goerli (8:48)](https://youtu.be/_Y6CwsYgqwI?t=528)
 - [Gas cost calculation (10:20)](https://youtu.be/_Y6CwsYgqwI?t=620)
 
 
-<iframe src="https://www.youtube.com/embed/_Y6CwsYgqwI" title="Getting Started with Optimism" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/_Y6CwsYgqwI" title="Getting Started with OP Mainnet" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## ETHDenver 2023 
 
@@ -83,7 +83,7 @@ In this video you learn the design space around two design choices related to se
 
 ### Pluggable data availability - Protolambda
 
-In this talk protolambda explains how the next Optimism upgrade improves the rollup with modular design, and how this can be utilized to quickly adopt future scaling improvements like EIP-4844 (a.k.a. proto-danksharding). 
+In this talk protolambda explains how the next OP Mainnet upgrade improves the rollup with modular design, and how this can be utilized to quickly adopt future scaling improvements like EIP-4844 (a.k.a. proto-danksharding). 
 OP Labs is contributing to L1 research and development to increase the data availability used for securing all L2s.
 
 <iframe src="https://www.youtube.com/embed/-xWpalvZeEU?list=PLXzKMXK2aHh4vbe7GLQfOnL-QJ1O5EqMv" title="Pluggable data availability - Protolambda" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -103,8 +103,8 @@ The end game for data availability on Ethereum - Full Sharding - and how EIP-484
 
 ### Intro to Quix - Mark Dawson
 
-The NFT ecosystem on Optimism is an exciting, growing space. 
-Mark Dawson is the co-founder of Quix, the largest NFT marketplace on Optimism. 
-He discusses early NFT communities on Optimism, the upcoming NFT bridge, composable NFTs, and how to get started in the OP NFT ecosystem.
+The NFT ecosystem on OP Mainnet is an exciting, growing space. 
+Mark Dawson is the co-founder of Quix, the largest NFT marketplace on OP Mainnet. 
+He discusses early NFT communities on OP Mainnet, the upcoming NFT bridge, composable NFTs, and how to get started in the OP NFT ecosystem.
 
 <iframe src="https://www.youtube.com/embed/Z8L8vNDgJjY?list=PLXzKMXK2aHh4vbe7GLQfOnL-QJ1O5EqMv" title="Intro to Quix - Mark Dawson" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
