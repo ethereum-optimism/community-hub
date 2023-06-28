@@ -323,7 +323,10 @@ module.exports = {
         }
       ],
       '/docs/developers/': [
-        '/docs/developers/releases.md',
+        [
+          'https://github.com/ethereum-optimism/optimism/releases',
+          "Releases"
+        ],
         {
           title: 'Building on Optimism',
           children: [
