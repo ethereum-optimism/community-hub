@@ -5,7 +5,7 @@ lang: en-US
 
 ## Overview
 
-This guide is intended for wallet developers who want to give their users the ability to send transactions on OP Mainnet (most other OP Stack networks behave similarly).
+This guide is intended for wallet developers who want to give their users the ability to send transactions on OP Mainnet (most other OP Stack chains behave similarly).
 OP Mainnet generally behaves like any other EVM-based chain with the exception of minor discrepancies related to [transaction fees](#transaction-fees).
 These fee discrepancies are an inherent result of the fact that OP Mainnet is a Layer 2 blockchain network that must publish transaction data to Ethereum.
 
@@ -50,7 +50,7 @@ Transactions are considered "Sequencer Confirmed" as soon as their transaction r
 
 In OP Mainnet transaction fees include both an [L1 data fee](../developers/build/transaction-fees.md#estimating-the-l1-data-fee) and an [L2 execution fee](../developers/build/transaction-fees.md#the-l2-execution-fee). 
 To display the entire estimated cost of a transaction to your users we recommend you [use the SDK](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/sdk-estimate-gas).
-We **highly recommend** displaying fees on OP Mainnet (and any other OP Stack that uses the same mechanism) as one unified fee to minimize user confusion.
+We **highly recommend** displaying fees on OP Mainnet (and any other OP Stack chain that uses the same mechanism) as one unified fee to minimize user confusion.
 
 
 In Bedrock we support [EIP 1559](https://eips.ethereum.org/EIPS/eip-1559).
@@ -59,7 +59,7 @@ Therefore, the L2 execution fee is composed of two components: a fixed (per-bloc
 
 ### Base fee
 
-[The EIP 1559 parameters](../developers/bedrock/differences.md#eip-1559) have different values in OP Mainnet (and many other OP Stack networks) than those on L1 Ethereum.
+[The EIP 1559 parameters](../developers/bedrock/differences.md#eip-1559) have different values in OP Mainnet (and many other OP Stack chains) than those on L1 Ethereum.
 As a result, in every block the base fee can be between 98% and 110% of the previous value. 
 As blocks are produced every two seconds, the base fee can be between 54% and 1,745% of the value a minute earlier.
 If it takes the user fourteen seconds to approve the transaction in the wallet, the base fee can almost double in that time.

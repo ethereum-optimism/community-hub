@@ -37,7 +37,7 @@ If not, use [`eth_getBlockByNumber`](https://docs.alchemy.com/reference/eth-getb
 
 ## Transaction fees
 
-In OP Mainnet (and most other OP Stack networks) transaction fees include both an [L1 data fee](../build/transaction-fees.md#estimating-the-l1-data-fee) and an [L2 execution fee](../build/transaction-fees.md#the-l2-execution-fee). 
+In OP Mainnet (and most other OP Stack chain) transaction fees include both an [L1 data fee](../build/transaction-fees.md#estimating-the-l1-data-fee) and an [L2 execution fee](../build/transaction-fees.md#the-l2-execution-fee). 
 To display the entire estimated cost of a transaction to your users we recommend you [use the SDK](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/sdk-estimate-gas). 
 
 In Bedrock we support [EIP 1559](https://eips.ethereum.org/EIPS/eip-1559).
@@ -46,7 +46,7 @@ Therefore, the L2 execution fee is composed of two components: a fixed (per-bloc
 
 ### Base fee
 
-[The EIP 1559 parameters](./differences.md#eip-1559) have different values in OP Mainnet (and most other OP Stack networks) than those on L1 Ethereum.
+[The EIP 1559 parameters](./differences.md#eip-1559) have different values in OP Mainnet (and most other OP Stack chain) than those on L1 Ethereum.
 As a result, in every block the base fee can be between 98% and 110% of the previous value. 
 As blocks are produced every two seconds, the base fee can be between 54% and 1,745% of the value a minute earlier.
 If it takes the user fourteen seconds to approve the transaction in the wallet, the base fee can almost double in that time.
