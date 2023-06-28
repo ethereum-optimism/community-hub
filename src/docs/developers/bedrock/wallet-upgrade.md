@@ -53,6 +53,7 @@ If it takes the user fourteen seconds to approve the transaction in the wallet, 
 
 The base fee specified in the transaction is not necessarily the base fee that the user will pay, *it is merely an upper limit to that amount*.
 In most cases, it makes sense to specify a much higher base fee than the current value, to ensure acceptance. 
+
 For example, as I'm writing this, ETH is about $2000, and a cent is about 5000 gwei. 
 Assuming 20% of a cent is an acceptable base fee for a transaction, and that the transaction is a big 5,000,000 gas one (at the target block size), this gives us a base fee of 200,000 wei. 
 That would be the value to put in the transaction, even though the L2 base fee (as I'm writing this) is 2,420 wei. 
