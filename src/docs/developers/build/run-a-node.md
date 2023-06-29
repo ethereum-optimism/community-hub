@@ -181,7 +181,6 @@ cd ~/optimism/op-node
         --network=goerli \
         --rpc.addr=0.0.0.0 \
         --rpc.port=8547 \
-        --p2p.disable \
         --l1= << URL TO L1 >>       
 ```        
 
