@@ -194,11 +194,6 @@ The execution engine's RPC interface is identical to [the upstream Geth RPC inte
 
 The responses are nearly identical too, except we also include the L1 gas usage and price information.
 
-## Daisy chain
-
-The daisy chain is a proxy that distributes requests either to the execution engine (if related to post-Bedrock blocks), or the legacy geth (if related to blocks prior to bedrock). 
-It accepts [the interface used by L1 execution engines](https://playground.open-rpc.org/?schemaUrl=https://raw.githubusercontent.com/ethereum/execution-apis/assembled-spec/openrpc.json&uiSchema%5BappBar%5D%5Bui:splitView%5D=false&uiSchema%5BappBar%5D%5Bui:input%5D=false&uiSchema%5BappBar%5D%5Bui:examplesDropdown%5D=false).
-
 ## Legacy geth
 
 The legacy geth provides information about the blockchain prior to Bedrock.
