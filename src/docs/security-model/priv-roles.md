@@ -14,7 +14,7 @@ These are addresses that *need* to have their private key online somewhere for a
 This is the component that submits new transaction batches.
 
 - **Mainnet address**: [`0x6887246668a3b87F54DeB3b94Ba47a6f63F32985`](https://etherscan.io/address/0x6887246668a3b87F54DeB3b94Ba47a6f63F32985)
-- **Goerli address**: [`0x7431310e026B69BFC676C0013E12A1A11411EEc9`](https://etherscan.io/address/0x7431310e026B69BFC676C0013E12A1A11411EEc9)
+- **Goerli address**: [`0x7431310e026B69BFC676C0013E12A1A11411EEc9`](https://goerli.etherscan.io/address/0x7431310e026B69BFC676C0013E12A1A11411EEc9)
 
 If this account is compromised, that would enable denial of service attacks against the rollup.
 
