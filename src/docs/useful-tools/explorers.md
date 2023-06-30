@@ -28,6 +28,16 @@ It's also got some OP-Mainnet-specific features:
 - [A tool for finalizing L2-to-L1 transactions](https://explorer.optimism.io/messagerelayer)
 - And more! Just check it out and click around to find all of the available features.
 
+
+
+## Tenderly
+
+You can also search for, filter and explore transaction in the [Tenderly Dashboard](https://dashboard.tenderly.co/), where you also have easy and integrated access to stuff like:
+
+- Extremely detailed execution trace, with [complete control and insight into your debugging](https://blog.tenderly.co/tenderly-devnets-develop-and-test-with-mainnet-data/) and transaction simulation environment
+- [100% accurate gas estimates](https://blog.tenderly.co/how-tenderly-enables-most-accurate-ethereum-gas-estimation/)
+- [RPC customization](https://blog.tenderly.co/customizing-rpc-endpoints-with-node-extensions/)
+
 ## Access to pre-regenesis history
 
 Because of our final regenesis on 11 November 2021, older transactions are not part of the current blockchain. 
