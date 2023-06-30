@@ -27,7 +27,7 @@ Let’s break it down ⤵️
 
 ## Demand for OP blockspace generates revenue
 
-Funding for the OP economy comes from ownership of the Optimism network and the value of its blockspace. 
+Funding for the OP economy comes from ownership of OP Mainnet and the value of its blockspace. 
 Today, funding comes directly from the centralized sequencer, accruing to The Optimism Foundation for redistribution. 
 In the future, funding can accrue directly to the protocol by selling the right to participate in Optimism’s decentralized sequencing network.
 

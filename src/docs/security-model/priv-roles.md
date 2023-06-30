@@ -1,9 +1,9 @@
 ---
-title: Privileged Roles in Bedrock
+title: Privileged Roles in OP Mainnet
 lang: en-US
 ---
 
-In our current state of decentralization, there are still some privileged roles in Bedrock. This document explains what they are, and why they exist.
+In our current state of decentralization, there are still some privileged roles in OP Mainnet. This document explains what they are, and why they exist.
 
 ## Hot wallets
 
@@ -15,7 +15,6 @@ This is the component that submits new transaction batches.
 
 - **Mainnet address**: [`0x6887246668a3b87F54DeB3b94Ba47a6f63F32985`](https://etherscan.io/address/0x6887246668a3b87F54DeB3b94Ba47a6f63F32985)
 - **Goerli address**: [`0x7431310e026B69BFC676C0013E12A1A11411EEc9`](https://etherscan.io/address/0x7431310e026B69BFC676C0013E12A1A11411EEc9)
-
 
 If this account is compromised, that would enable denial of service attacks against the rollup.
 
@@ -34,14 +33,14 @@ As long as we do it within seven days, the risk is minimalized.
 ## Cold wallets
 
 These addresses are *cold*, meaning the private key is not on any device connected to the network, and cannot be used without human intervention.
-On the Optimism mainnet these are usually multisig contracts, controlled by groups of community members.
+On OP Mainnet these are usually multisig contracts, controlled by groups of community members.
 On [OP Stack](https://stack.optimism.io) these wallets are set by default to the `ADMIN` account.
-When you create a new OP Stack blockchain you specify them in [the deployment configuration JSON file](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/deploy-config/getting-started.json).
+When you create a new OP Stack blockchain you specify them in [the deployment configuration JSON file](https://github.com/ethereum-optimism/optimism/blob/62c7f3b05a70027b30054d4c8974f44000606fb7/packages/contracts-bedrock/deploy-config/getting-started.json).
 
 
 ### MintManager Owner
 
-On Optimism mainnet this account controls the [`MintManager`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/governance/MintManager.sol) that can mint new OP tokens.
+On OP Mainnet this account controls the [`MintManager`](https://github.com/ethereum-optimism/optimism/blob/62c7f3b05a70027b30054d4c8974f44000606fb7/packages/contracts-bedrock/contracts/governance/MintManager.sol) that can mint new OP tokens.
 On OP Stack it is usually meaningless.
 
 
@@ -56,7 +55,7 @@ If access to this account is compromised, attackers can mint an endless supply o
 
 ### System Config Owner
 
-This is the address authorized to change the settings in the [`SystemConfig`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L1/SystemConfig.sol) contract. 
+This is the address authorized to change the settings in the [`SystemConfig`](https://github.com/ethereum-optimism/optimism/blob/62c7f3b05a70027b30054d4c8974f44000606fb7/packages/contracts-bedrock/contracts/L1/SystemConfig.sol) contract. 
 
 - **Mainnet address**: [`0x9BA6e03D8B90dE867373Db8cF1A58d2F7F006b3A`](https://etherscan.io/address/0x9BA6e03D8B90dE867373Db8cF1A58d2F7F006b3A)
 - **Goerli address**: [`0xAe851f927Ee40dE99aaBb7461C00f9622ab91d60`](https://goerli.etherscan.io/address/0xAe851f927Ee40dE99aaBb7461C00f9622ab91d60#readProxyContract)
@@ -67,7 +66,7 @@ If access to this account is compromised, an attack can raise the gas markup and
 
 ### Migration SystemDictator Controller
 
-This is the address authorized to control [`SystemDictator`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/deployment/SystemDictator.sol), used for upgrades.
+This is the address authorized to control [`SystemDictator`](https://github.com/ethereum-optimism/optimism/blob/62c7f3b05a70027b30054d4c8974f44000606fb7/packages/contracts-bedrock/contracts/deployment/SystemDictator.sol), used for upgrades.
 It can be used to perform an upgrade, and to revert out of one until a certain stage is reached.
 
 - **Mainnet address**: [`0xB4453CEb33d2e67FA244A24acf2E50CEF31F53cB`](https://etherscan.io/address/0xB4453CEb33d2e67FA244A24acf2E50CEF31F53cB)
@@ -79,7 +78,7 @@ If access to the owner is lost, or compromised, it can prevent upgrades.
 
 ### Challenger
 
-This is the address authorized to call [`deleteL2Outputs()`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L1/L2OutputOracle.sol#L133-L167) to remove a faulty state commitment. 
+This is the address authorized to call [`deleteL2Outputs()`](https://github.com/ethereum-optimism/optimism/blob/62c7f3b05a70027b30054d4c8974f44000606fb7/packages/contracts-bedrock/contracts/L1/L2OutputOracle.sol#L133-L167) to remove a faulty state commitment. 
 
 Currently this is a multisig with trusted community members.
 Eventually, once fault proofs are completed, it will be a contract that verifies challenges are correct.

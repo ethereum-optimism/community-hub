@@ -1,17 +1,17 @@
 ---
-title: Creating an Optimistic NFT
+title: Creating an OP Mainnet NFT
 lang: en-US
 ---
 
 An NFT ecosystem consists of creators (supply), marketplaces, and buyers/traders (demand) built on top of infrastructures that enable algorithmic generation of art, deployment of smart contracts and access to NFT market intelligence.
 
-[Click here for statistics about NFTs on Optimism](https://dune.com/oplabspbc/optimism-nft-secondary-marketplaces)
+[Click here for statistics about NFTs on OP Mainnet](https://dune.com/oplabspbc/optimism-nft-secondary-marketplaces)
 
-## The Optimism NFT ecosystem
+## The OP Mainnet NFT ecosystem
 
-![The Optimism NFT ecosystem](../../assets/docs/guides/nft/OP-NFT-Ecosystem.jpg)
+![The OP Mainnet NFT ecosystem](../../assets/docs/guides/nft/OP-NFT-Ecosystem.jpg)
 
-These tools are available on Optimism:
+These tools are available on OP Mainnet:
 
 ### Creator tools
 
@@ -46,6 +46,14 @@ It is accurate, as far as we know, when written (early January 2023), but new fe
 
 </details>
 
+### NFT data APIs
+
+- [Alchemy](https://docs.alchemy.com/reference/nft-api-quickstart)
+- [SimpleHash](https://simplehash.com/)
+- [QuickNode](https://www.quicknode.com/nft-api)
+- [Reservoir](https://docs.reservoir.tools/reference/optimism)
+- [NFTScan](https://docs.nftscan.com/reference/evm/get-nfts-by-account)
+
 ### Marketplaces
 
 - [Quix](https://qx.app/)
@@ -54,18 +62,12 @@ It is accurate, as far as we know, when written (early January 2023), but new fe
 - [OptiMarket](https://optimarket.io/)
 - [Circular Art](https://www.circularart.xyz/)
 
-### Transaction aggregator
+### Marketplace aggregators
 
 - [Bluesweep](https://www.bluesweep.xyz/)
 
-### Liquidity 
+### NFT liquidity 
 
 - [Backed](https://www.withbacked.xyz/network/optimism) lets you use NFTs as collateral
-
-### NFT data APIs
-
-- [Alchemy](https://docs.alchemy.com/reference/nft-api-quickstart)
-- [SimpleHash](https://simplehash.com/)
-- [QuickNode](https://www.quicknode.com/nft-api)
 
 

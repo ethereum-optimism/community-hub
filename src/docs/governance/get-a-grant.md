@@ -3,7 +3,7 @@ title: Get a Grant
 lang: en-US
 ---
 
-## Collective Grants
+# Collective Grants
 
 **Collective Grants** support specific projects to be completed in the future. All Collective Grants are made in OP and are locked for one year, except growth experiments grants which may pass OP directly through to the end-users. Collective Grants may be distributed upon completing the milestones specific to your grant application.
 
@@ -11,7 +11,9 @@ There are four different types of Collective Grants.
 
 ### 1. Grants Council
 
-The [Grants Council](https://www.notion.so/Optimism-Grants-Council-090bb648d1854136b9630c608da7a8bc?pvs=21) is a group of community members elected by the Token House. The council makes small to medium-sized grants based in two categories: 
+The [Grants Council](https://app.charmverse.io/op-grants/page-701220845245208) is a group of community members elected by the Token House. 
+The council makes small to medium-sized grants supporting 
+[Intent #2](https://gov.optimism.io/t/collective-intents/5874#intent-2-innovate-on-novel-applications-3) based in two categories:
 
 - **Builders Grants:** To support builders innovating on novel applications and infrastructure
 - **Growth Experiments Grants:** To support projects with strategies to drive more users on Optimism via novel incentive programs
@@ -20,15 +22,15 @@ Here are some examples of projects that received grants from the Grants Council 
 
 **How to apply:**
 
-- The [Grants Council](https://www.notion.so/Optimism-Grants-Council-090bb648d1854136b9630c608da7a8bc?pvs=21) processes applications on five-week cycles during regular Voting Cycles.  You can reference the [governance calendar](https://calendar.google.com/calendar/u/0/r?cid=Y19mbm10Z3VoNm5vbzZxZ2JuaTJncGVyaWQ0a0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t) for schedule and deadlines.
-- Apply [here](https://www.notion.so/Optimism-Grants-Council-090bb648d1854136b9630c608da7a8bc?pvs=21)! To understand the types of grants the Council would like to make, please see Requests for Grants (Coming soon!)
+- The [Grants Council](https://app.charmverse.io/op-grants/page-701220845245208) processes applications on five-week cycles during regular Voting Cycles.  You can reference the [governance calendar](https://calendar.google.com/calendar/u/0/r?cid=Y19mbm10Z3VoNm5vbzZxZ2JuaTJncGVyaWQ0a0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t) for schedule and deadlines.
+- Apply [here](https://app.charmverse.io/op-grants/page-701220845245208)! To understand the types of grants the Council would like to make, please see Requests for Grants (Coming soon!)
 - Watch [How to Apply to Grants Council](https://www.loom.com/share/e128bd6cca844fa7ae47a91510d37bda)
 
 ### 2. Token House **Missions**
 
 Missions are specific pieces of work proposed by contributors. The Token House votes on approving Missions once per Season (roughly once every four-six months). 
 
-[Mission](https://gov.optimism.io/t/token-house-missions/5881)s support a broader range of grants than the Grants Council. Any initiative that aligns with one of the [Collective Intents](https://gov.optimism.io/t/collective-intents/5874/2) can receive a grant! Missions should be specific initiatives that can be completed start-to-finish (marked done by the end of the Season). 
+[Mission](https://gov.optimism.io/t/token-house-missions/5881)s support a broader range of grants than the Grants Council. Any initiative that aligns with one of the [Collective Intents](https://gov.optimism.io/t/collective-intents/5874/2) can receive a grant! Missions should be specific initiatives that can be completed start-to-finish (marked done by the end of the Season). You can propose a Mission under Intent #1, Intent #3, or Intent #4. All proposals under Intent #2 should be grant applications that will be processed by the Grants Council as outlined above in 1. 
 
 Here is a good [example](https://gov.optimism.io/t/superchain-governance-deep-dive/5920). 
 
@@ -52,11 +54,11 @@ You can view the full list of Foundation Missions (RFPs) [here](https://github.c
 
 ### 4. The Partner Fund
 
-The [Partner Fund](https://gov.optimism.io/t/partner-fund-overview/5268) is a grants program run by the Optimism Foundation. It’s focused on strategic or larger scale grants to partners that have already achieved product market fit. These grants are typically larger than those made by the Grants Council. 
+The [Partner Fund](https://gov.optimism.io/t/partner-fund-overview/5268) is a grants program run by the Optimism Foundation. It’s focused on strategic or larger scale grants to partners that have already achieved product market fit. 
 
 **How to apply:**
 
-- Apply [here](https://github.com/ethereum-optimism/ecosystem-contributions/issues?q=is%3Aissue+is%3Aopen+RFP)! There are no deadlines, applications are processed on a rolling basis.
+- Apply [here](https://airtable.com/shrvQNlFPHGcVNqDe?prefill_Referrer=OPGov)! There are no deadlines, applications are processed on a rolling basis.
 
 # Retroactive Grants (RetroPGF)
 

@@ -1,10 +1,10 @@
 ---
-title: Differences between Ethereum and Optimism
+title: Differences between Ethereum and OP Mainnet
 lang: en-US
 ---
 
-It's important to note that there are various minor discrepancies between the behavior of Optimism and Ethereum.
-You should be aware of these descrepancies when building apps on top of Optimism.
+It's important to note that there are various minor discrepancies between the behavior of OP Mainnet and Ethereum.
+You should be aware of these descrepancies when building apps on top of OP Mainnet.
 
 ## Opcode Differences
 
@@ -16,11 +16,12 @@ You should be aware of these descrepancies when building apps on top of Optimism
 | `TIMESTAMP`  | `block.timestamp`  | Timestamp of the L2 block
 | `ORIGIN`     | `tx.origin`        | If the transaction is an L1 ⇒ L2 transaction, then `tx.origin` is set to the [aliased address](#address-aliasing) of the address that triggered the L1 ⇒ L2 transaction. Otherwise, this opcode behaves normally. |
 | `CALLER`     | `msg.sender`      | If the transaction is an L1 ⇒ L2 transaction, and this is the initial call (rather than an internal transaction from one contract to another), the same [address aliasing](#address-aliasing) behavior applies.
+| [`PUSH0`](https://www.evm.codes/#5f?fork=shanghai)      | N/A               | Opcode not supported yet (will be added in a hardfork)
 
 ::: tip `tx.origin == msg.sender`
 
 On L1 Ethereum `tx.origin` is equal to `msg.sender` only when the smart contract was called directly from an externally owned account (EOA).
-However, on Optimism `tx.origin` is the origin *on Optimism*.
+However, on OP Mainnet `tx.origin` is the origin *on OP Mainnet*.
 It could be an EOA.
 However, in the case of messages from L1, it is possible for a message from a smart contract on L1 to appear on L2 with `tx.origin == msg.sender`.
 This is unlikely to make a significant difference, because an L1 smart contract cannot directly manipulate the L2 state.
@@ -30,7 +31,7 @@ However, there could be edge cases we did not think about where this matters.
 
 ### Accessing L1 information
 
-If you need the equivalent information from the latest L1 block, you can get it from [the `L1Block` contract](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L2/L1Block.sol).
+If you need the equivalent information from the latest L1 block, you can get it from [the `L1Block` contract](https://github.com/ethereum-optimism/optimism/blob/65ec61dde94ffa93342728d324fecf474d228e1f/packages/contracts-bedrock/contracts/L2/L1Block.sol).
 This contract is a predeploy at address [`0x4200000000000000000000000000000000000015`](https://goerli-optimism.etherscan.io/address/0x4200000000000000000000000000000000000015).
 You can use [the getter functions](https://docs.soliditylang.org/en/v0.8.12/contracts.html#getter-functions) to get these parameters:
 
@@ -93,7 +94,7 @@ It is possible that we will want to trust one of the contracts, but not the othe
    This transaction transfers 1000 DAI from Nimrod's address to Helena Hacker's address.
    If this transaction were to come from the same address as Hackswap on L2, it would be able to transfer the 1000 DAI because of the allowance Nimrod *had* to give Hackswap in the previous step to swap tokens.
    
-   Nimrod, despite his naivete, is protected because Optimism modified the transaction's `tx.origin` (which is also the initial `msg.sender`).
+   Nimrod, despite his naivete, is protected because OP Mainnet modified the transaction's `tx.origin` (which is also the initial `msg.sender`).
    That transaction comes from a *different* address, one that does not have the allowance.
 
 **Note:** It is simple to create two different contracts on the same address in different chains. 
@@ -104,37 +105,36 @@ But it is nearly impossible to create two that are different by a specified amou
 
 ## Blocks
 
-There are several differences in the way blocks are produced between L1 Ethereum and Optimism Bedrock.
+There are several differences in the way blocks are produced between L1 Ethereum and OP Mainnet.
 
 
 | Parameter           | L1 Ethereum | Optimism Bedrock |
-| - | - | - |
-| Time between blocks | 12 seconds(1)  | 2 seconds |
-| Block target size   | 15,000,000 gas | to be determined |
-| Block maximum size  | 30,000,000 gas | to be determined | 
+| - | -: | -: |
+| Time between blocks | 12 seconds<sup>1</sup>  | 2 seconds |
+| Block target size   | 15,000,000 gas | 5,000,000 gas |
+| Block maximum size  | 30,000,000 gas | 30,000,000 gas | 
 
 (1) This is the ideal. 
     If any blocks are missed it could be an integer multiple such as 24 seconds, 36 seconds, etc.
 
-**Note:** The L1 Ethereum parameter values are taken from [ethereum.org](https://ethereum.org/en/developers/docs/blocks/#block-time). The Optimism Bedrock values are taken from [the Optimism specs](https://github.com/ethereum-optimism/optimism/blob/develop/specs/guaranteed-gas-market.md#limiting-guaranteed-gas).
-
+**Note:** The L1 Ethereum parameter values are taken from [ethereum.org](https://ethereum.org/en/developers/docs/blocks/#block-time).
 
 
 ## Network specifications
 
 ### JSON-RPC differences
 
-Optimism uses the same [JSON-RPC API](https://eth.wiki/json-rpc/API) as Ethereum.
-Some additional Optimism specific methods have been introduced.
+OP Mainnet uses the same [JSON-RPC API](https://eth.wiki/json-rpc/API) as Ethereum.
+Some additional OP Mainnet specific methods have been introduced.
 See the full list of [custom JSON-RPC methods](./json-rpc.md) for more information.
 
 ## Transaction costs
 
-[Transaction costs on Optimism](./transaction-fees.md) include an [L2 execution fee](./transaction-fees.md#the-l2-execution-fee) and an [L1 data fee](./transaction-fees.md#the-l1-data-fee). 
+[Transaction costs on OP Mainnet](./transaction-fees.md) include an [L2 execution fee](./transaction-fees.md#the-l2-execution-fee) and an [L1 data fee](./transaction-fees.md#the-l1-data-fee). 
 
 
 ## Contract addresses
 
-The addresses in which various infrastructure contracts are installed are different between L1 Ethereum and Optimism.
+The addresses in which various infrastructure contracts are installed are different between L1 Ethereum and OP Mainnet.
 For example, [WETH9](https://github.com/gnosis/canonical-weth/blob/master/contracts/WETH9.sol) is installed on L1 Ethereum on [address `0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2`](https://etherscan.io/address/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2). 
-On Optimism the same contract is installed on [address `0x4200000000000000000000000000000000000006`](https://explorer.optimism.io/address/0x4200000000000000000000000000000000000006).
+On OP Mainnet the same contract is installed on [address `0x4200000000000000000000000000000000000006`](https://explorer.optimism.io/address/0x4200000000000000000000000000000000000006).

@@ -1,24 +1,24 @@
 ---
-title: Supporting Optimism in your wallet
+title: Supporting OP Mainnet in your wallet
 lang: en-US
 ---
 
 ## Overview
 
-This guide is intended for wallet developers who want to give their users the ability to send transactions on the Optimism network.
-Optimism generally behaves like any other EVM-based chain with the exception of minor discrepancies related to [transaction fees](#transaction-fees).
-These fee discrepancies are an inherent result of the fact that Optimism is a Layer 2 blockchain network that must publish transaction data to Ethereum.
+This guide is intended for wallet developers who want to give their users the ability to send transactions on OP Mainnet (most other OP Stack chains behave similarly).
+OP Mainnet generally behaves like any other EVM-based chain with the exception of minor discrepancies related to [transaction fees](#transaction-fees).
+These fee discrepancies are an inherent result of the fact that OP Mainnet is a Layer 2 blockchain network that must publish transaction data to Ethereum.
 
-## Connecting to Optimism
+## Connecting to OP Mainnet
 
-Optimism shares the [Ethereum JSON-RPC API](https://eth.wiki/json-rpc/API) with only [a few minor differences](../developers/build/json-rpc.md).
-You'll find all of the important information about each Optimism network on [our Networks page](../useful-tools/networks.md).
-You can choose to connect to Optimism via our rate-limited public endpoints, [private endpoints from infrastructure providers](../useful-tools/networks.md), or [by running your own node](../developers/build/run-a-node/).
+OP Mainnet shares the [Ethereum JSON-RPC API](https://eth.wiki/json-rpc/API) with only [a few minor differences](../developers/build/json-rpc.md).
+You'll find all of the important information about OP Mainnet, as well as any test networks, on [our Networks page](../useful-tools/networks.md).
+You can choose to connect to OP Mainnet via our rate-limited public endpoints, [private endpoints from infrastructure providers](../useful-tools/networks.md), or [by running your own node](../developers/build/run-a-node/).
 Because of throughput limits, we recommend using private node providers (particularly [Alchemy](https://www.alchemy.com/optimism)) or running your own node for production applications.
 
 ## Canonical token addresses
 
-The ERC-20 contract address for a token on Optimism may be different from the address for the same token on Ethereum.
+The ERC-20 contract address for a token on OP Mainnet may be different from the address for the same token on Ethereum.
 Optimism maintains [a token list](https://static.optimism.io/optimism.tokenlist.json) that includes known addresses for many popular tokens.
 You can see the same list with a nicer user interface [here](https://tokenlists.org/token-list?url=https://static.optimism.io/optimism.tokenlist.json).
 
@@ -27,45 +27,67 @@ For example, looking at the **SNX** token, the [Superchain token list](https://s
 | ChainID | Network | Address |
 | -: | - | - |
 | 1  | Ethereum    | 0xc011a73ee8576fb46f5e1c5751ca3b9fe0af2a6f |
-| 10 | Optimism    | 0x8700daec35af8ff88c16bdf0418774cb3d7599b4
+| 10 | OP Mainnet    | 0x8700daec35af8ff88c16bdf0418774cb3d7599b4
 | 5 | Goerli (test network) | 0x51f44ca59b867E005e48FA573Cb8df83FC7f7597
-| 420 | Optimistic Goerli (test network) | 0x2E5ED97596a8368EB9E44B1f3F25B2E813845303
+| 420 | OP Goerli (test network) | 0x2E5ED97596a8368EB9E44B1f3F25B2E813845303
 
 
 
 ## Transaction status
 
-A transaction in Optimism can be in one of two states:
+A transaction in OP Mainnet can be in one of two states:
 
-1. **Sequencer Confirmed**: The transaction has been accepted by the sequencer on Optimism (L2)
+1. **Sequencer Confirmed**: The transaction has been accepted by the sequencer on OP Mainnet (L2)
 2. **Confirmed Onchain**: The transaction has been written to Ethereum (L1)
 
 We're still working on the tooling to easily detect when a given transaction has been published to Ethereum.
 For the moment, we recommend wallets consider transactions final after they are "Sequencer Confirmed".
 Transactions are considered "Sequencer Confirmed" as soon as their transaction receipt shows at least one confirmation.
 
-## Transaction Fees
 
-We aim to be [EVM equivalent](https://medium.com/ethereum-optimism/introducing-evm-equivalence-5c2021deb306), meaning we aim to minimize the differences between Optimism and Ethereum.
-You can see a summary of the few differences between Optimism and Ethereum [here](../developers/build/differences.md).
-One of the most important discrepancies can be found within Optimism's fee model.
-As a wallet developer, you **must** be aware of this difference.
 
-### Estimating total fees
+## Transaction fees
 
-Most of the cost of a transaction on Optimism comes from the cost of publishing the transaction to Ethereum.
-This publication step is what makes Optimism a Layer 2 blockchain.
-Unlike with the standard execution gas fee, users cannot specify a particular gas price or gas limit for this portion of their transaction cost.
-Instead, this fee is automatically deducted from the user's ETH balance on Optimism when the transaction is executed.
+In OP Mainnet transaction fees include both an [L1 data fee](../developers/build/transaction-fees.md#estimating-the-l1-data-fee) and an [L2 execution fee](../developers/build/transaction-fees.md#the-l2-execution-fee). 
+To display the entire estimated cost of a transaction to your users we recommend you [use the SDK](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/sdk-estimate-gas).
+We **highly recommend** displaying fees on OP Mainnet (and any other OP Stack chain that uses the same mechanism) as one unified fee to minimize user confusion.
 
-[You can read more about this subject here](../developers/build/transaction-fees.md),
-or use [this tutorial](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/sdk-estimate-gas).
-The total fee paid by a transaction will be a combination of the normal fee estimation formula (`gasPrice * gasLimit`) in addition to the estimated L1 fee.
 
-### Displaying fees
+In Bedrock we support [EIP 1559](https://eips.ethereum.org/EIPS/eip-1559).
+Therefore, the L2 execution fee is composed of two components: a fixed (per-block) base fee and a user selected priority fee.
 
-We **highly recommend** displaying fees on Optimism as one unified fee to minimize user confusion.
-You can do this by combining both portions of the fee (the L2 execution fee and the L1 data fee) into a single value presented to the end user.
+
+### Base fee
+
+[The EIP 1559 parameters](../developers/bedrock/differences.md#eip-1559) have different values in OP Mainnet (and many other OP Stack chains) than those on L1 Ethereum.
+As a result, in every block the base fee can be between 98% and 110% of the previous value. 
+As blocks are produced every two seconds, the base fee can be between 54% and 1,745% of the value a minute earlier.
+If it takes the user fourteen seconds to approve the transaction in the wallet, the base fee can almost double in that time.
+
+The base fee specified in the transaction is not necessarily the base fee that the user will pay, *it is merely an upper limit to that amount*.
+In most cases, it makes sense to specify a much higher base fee than the current value, to ensure acceptance. 
+
+For example, as I'm writing this, ETH is about $2000, and a cent is about 5000 gwei. 
+Assuming 20% of a cent is an acceptable base fee for a transaction, and that the transaction is a big 5,000,000 gas one (at the target block size), this gives us a base fee of 200,000 wei. 
+That would be the value to put in the transaction, even though the L2 base fee (as I'm writing this) is 2,420 wei. 
+
+::: info Up to date information
+
+You can get the current L2 base fee [in the gas tracker dashboard](https://optimism.io/gas-tracker).
+
+:::
+
+
+### Priority fee
+
+In contrast to the base fee, the priority fee in the transaction is the amount that the user pays, and therefore it makes sense to keep it as low as possible.
+To enable your users to select a priority fee, you can [build a priority fee estimator](https://docs.alchemy.com/docs/how-to-build-a-gas-fee-estimator-using-eip-1559).
+If you already have estimating code you use for L1 Ethereum, you can just use that.
+
+Note that on OP Mainnet the priority fee tends to be very low. 
+As I am writing this, a priority fee of 500 wei is sufficient ([see here](https://optimism.io/gas-tracker) to get the current values).
+
+
 
 ### Sending "max" ETH
 

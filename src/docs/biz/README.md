@@ -3,16 +3,16 @@ title: How do I get project support (marketing / integrations / etc.)?
 lang: en-US
 ---
 
-Welcome! We're stoked that you're launching on Optimism. 
+Welcome! We're stoked that you're launching on OP Mainnet. 
 
 If you have not filled out the [get started form](https://forms.monday.com/forms/c867f3f357707ff1fb4af0d3d5080710) please do so prior to reading this.
 
-We are excited for your deployment onto Optimism! 
+We are excited for your deployment onto OP Mainnet! 
 You will be welcomed by [the following metrics](https://dune.com/optimismfnd/Optimism) 📈📈 (up and to the right!), [a budding community](https://discord-gateway.optimism.io/) 🫂🫂, and some great exclusive [Telegram Channels](https://t.me/+Cb7q0a1YqItkZTRk) ⚙️⚙️ for builders.
 
 The business development team gets a flurry of inbound messages and calls every day and we reply to them as efficiently as possible, but we are only human! 
 Please be patient if you are in need of direct support. 
-We cannot always provide direct help, but we strive to help everyone succeed on Optimism through the various resources we provide to projects. 
+We cannot always provide direct help, but we strive to help everyone succeed on OP Mainnet through the various resources we provide to projects. 
 
 
 ## Developer Support 🙋💻
@@ -27,9 +27,9 @@ Steps to take if you would like developer support immediately, ranked in order o
 
 ## Marketing Requests 🦸🦸
 
-When your project is deployed on Optimism, you can be added to [our ecosystem page](https://www.optimism.io/apps/all). 
+When your project is deployed on OP Mainnet, you can be added to [our ecosystem page](https://www.optimism.io/apps/all). 
 Simply [fill out this form](https://oplabs.typeform.com/op-marketing) to be included. Inclusion is at our discretion. 
-We add new projects live on the Optimism mainnet [here](https://www.optimism.io/apps/all) once a week.
+We add new projects live on OP Mainnet [here](https://www.optimism.io/apps/all) once a week.
 
 
 ### Promoting Values before anything else
@@ -54,13 +54,13 @@ We also host a weekly Twitter Space in an interview/podcast format called OP Rad
 Grants are mainly handled by [The Optimism Collective](https://app.optimism.io/announcement), our open governance system/digital society. If you are interested in applying, we first recommend the following: 
  
 - Check that your application falls within the possible Governance Grant categories in the [OPerating manual](https://github.com/ethereum-optimism/OPerating-manual/blob/main/manual.md#valid-proposal-types).
-- Deploy to Optimism (we are [EVM Equivalent](https://medium.com/ethereum-optimism/introducing-evm-equivalence-5c2021deb306), not just EVM compatible so it is very easy to deploy). 
+- Deploy to OP Mainnet (we are [EVM Equivalent](https://medium.com/ethereum-optimism/introducing-evm-equivalence-5c2021deb306), not just EVM compatible so it is very easy to deploy). 
   Check out our [getting started tutorial](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/getting-started) to see how to deploy. We also have [tons of more in-depth tutorials](https://github.com/ethereum-optimism/optimism-tutorial) for bridging and other L2 specific functionality. 
 - Try gaining organic traction:
   - Traction can be gained through our community.
   - Head over to [our discord](https://discord-gateway.optimism.io/) and check out [#showandtell](https://discord.com/channels/667044843901681675/819333988719263774) or [#demoday](https://discord.com/channels/667044843901681675/960493820674465883).
   Demo Day is an AMA about your product to our community. Apply in Discord. 
-  - Seek synergies – look at other teams already deployed on Optimism that could work with your product and reach out to them.
+  - Seek synergies – look at other teams already deployed on OP Mainnet that could work with your product and reach out to them.
 - Once you have done the above, check out our [governance grant process](https://gov.optimism.io/t/grant-proposal-template/3233).
 - To get reviews in real time from governance delegates go to discord and post about your project in [#temp-check](https://discord.com/channels/667044843901681675/1011238484373159956).
  

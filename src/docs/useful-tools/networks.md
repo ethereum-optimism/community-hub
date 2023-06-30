@@ -12,7 +12,7 @@ Some API calls, such as those in the [personal namespace](https://geth.ethereum.
 Such RPCs are either totally unsupported, or will return nonsensical values.
 :::
 
-## Optimism (mainnet)
+## OP Mainnet
 
 | Parameter | Value |
 | --------- | ----- |
@@ -54,7 +54,7 @@ They are reproduced here for convenience.
 
 ### API Options:
 
-1. Get free access to Optimism through [Alchemy](https://www.alchemy.com/optimism)
+1. Get free access to OP Mainnet through [Alchemy](https://www.alchemy.com/optimism)
 
 2. For small scale tests, you can use our public API:
 - HTTP endpoint: [https://mainnet.optimism.io](https://mainnet.optimism.io) (note, this is for testing. For production, use Alchemy) 
@@ -83,13 +83,15 @@ Links to download data directories will be posted here as soon as they are avail
 :::
   
 
-- Bedrock Data Directory (400GB):
-  - [On GCS](https://storage.googleapis.com/oplabs-mainnet-data/mainnet-bedrock.tar)
-- Legacy Geth Data Directory (2.9TB)<sup>1</sup>: 
-  - [On GCS](https://storage.googleapis.com/oplabs-mainnet-data/mainnet-legacy-archival.tar.zst)
+- [Bedrock Data Directory (303 GB)<sup>1</sup>](https://datadirs.optimism.io/mainnet-bedrock.tar.zst). 
+  The `sha512sum` for this file is `c17067b7bc39a6daa14f71d448c6fa0477834c3e68a25e96f26fe849c12a09bffe510e96f7eacdef19e93e3167d15250f807d252dd6f6f9053d0e4457c73d5fb`.
+- [Legacy Geth Data Directory (2.9TB)<sup>1</sup>](https://datadirs.optimism.io/mainnet-legacy-archival.tar.zst).
+  The `sha512sum` for this file is `e348488c458baa755510f23bbc8601619bc66bea78a89354c949ba7be3c6b39ed7dd2c50516621e38df6120299407da0d24445b96bf94a50364ed07bb8234b26`.
+  Note that you *only* need this file if you run `l2geth` to answer archive queries prior to the bedrock upgrade. 
+  If you are running an archive only for post-bedrock transactions (using `op-geth` with the command line flag `gcmode=archive`), you do *not* need this file.
 - [Configuration parameters](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/deploy-config/mainnet.json).
 - [Latest release of `op-geth`](https://github.com/ethereum-optimism/op-geth/releases/latest)
-- [Latest release of `op-node`](https://github.com/ethereum-optimism/optimism/releases/latest)
+- [Latest release of `op-node`](https://github.com/ethereum-optimism/optimism/releases/) - you need to scroll down until you get a release that has `op-node` in it.
 - [Legacy geth](https://hub.docker.com/layers/ethereumoptimism/l2geth/0.5.31/images/sha256-5577036dc36d167d11f5ac49b91cc0a3d835574928a9563783c2e70309e5eb28?context=explore).
   
 
@@ -99,7 +101,7 @@ We recommend that users install the command line tool if it is not already insta
 If you want to decompress separately, we recommend `pzstd -d`  or `zstd -d` (pzstd will likely be faster).
 
 
-## Optimism Goerli
+## OP Goerli
 
 ::: tip Purpose
 This is our test network.
@@ -143,7 +145,7 @@ They are reproduced here for convenience
 ### API Options
 
 
-1. Get free access to Optimism through [Alchemy](https://www.alchemy.com/optimism)
+1. Get free access to OP Goerli through [Alchemy](https://www.alchemy.com/optimism)
 
 2. For small scale tests, you can use our public API:
 - HTTP endpoint: [https://goerli.optimism.io](https://goerli.optimism.io) (note, this is for testing. For production, use Alchemy) 
@@ -176,25 +178,18 @@ These parameters are mostly useful to people responsible for running and adminis
 
 #### Links
 
-- [Bedrock Data Directory (7.5GB)](https://storage.googleapis.com/oplabs-goerli-data/goerli-bedrock.tar)
-- [Legacy Geth Data Directory (62.2GB)](https://storage.googleapis.com/oplabs-goerli-data/goerli-legacy-archival.tar)
+- [Bedrock Data Directory (5.0GB)<sup>1</sup>](https://datadirs.optimism.io/goerli-bedrock.tar.zst).
+  The `sha512sum` for this file is `7d420ddf34ee5b157d60cf7a9612cb950b24ff1405e1ab944f8d7910c45e7a46907bdb86ea124a8069b15ad9e171776ab5f8ed0146c43b0ff12539f38f262f7d`.
+- [Legacy Geth Data Directory (50GB)<sup>1</sup>](https://datadirs.optimism.io/goerli-legacy-archival.tar.zst).
+  The `sha512sum` for this file is `5d78c1f2cd5bea062fb979b9d616a5fe4c55b27a444812b91a90340631d7a5f750c4e6e5a352513f3cf102d61586a4e2861f1aa3827e5be8fcae01e2ec291d2a`.
+  Note that you *only* need this file if you run `l2geth` to answer archive queries prior to the bedrock upgrade. 
+  If you are running an archive only for post-bedrock transactions (using `op-geth` with the command line flag `gcmode=archive`), you do *not* need this file.
 - [Configuration parameters](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/deploy-config/goerli.json)
 - [Latest releases of `op-geth`](https://github.com/ethereum-optimism/op-geth/releases/latest)
-- [Latest releases of `op-node`](https://github.com/ethereum-optimism/optimism/releases/latest)
+- [Latest release of `op-node`](https://github.com/ethereum-optimism/optimism/releases/) - you need to scroll down until you get a release that has `op-node` in it.
 - [Legacy geth](https://hub.docker.com/layers/ethereumoptimism/l2geth/0.5.31/images/sha256-5577036dc36d167d11f5ac49b91cc0a3d835574928a9563783c2e70309e5eb28?context=explore)
 
-
-
-::: warning Ignore other networks
-
-Optimism mainnet and Optimism Goerli are, from Optimism's perspective, production networks. This means our Goerli network is something you can rely on for consistent state and uptime. We have other testnets that we use to test our code (such as the Goerli Nightly network) that we use to test new features. These networks are for _us_ to test, and therefore might not have reliable state & uptime. 
-
-If you want to test out our new infrastructure before it is stable, or are interested in working on the latest and greatest protocols please check these networks out! If not, they are best ignored. 
-We try to make sure they work and preserve the state.
-In the months prior to a major release, such as Bedrock, we may have a different network for testing dapps on that release.
-
-However, we also have other networks such as [Goerli Nightly](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/deployments/goerli-nightly).
-These are networks that are used for internal Optimism development.
-Unless you are working on the Optimism protocol (rather than building things on top of it), ignore these networks.
-
-:::
+(1) This file is compressed with `zstd`. 
+We recommend that users install the command line tool if it is not already installed on their system. 
+`tar -xf` will work without installing anything if you have an up to date version of `tar`. 
+If you want to decompress separately, we recommend `pzstd -d`  or `zstd -d` (pzstd will likely be faster).
