@@ -16,6 +16,7 @@ You should be aware of these descrepancies when building apps on top of OP Mainn
 | `TIMESTAMP`  | `block.timestamp`  | Timestamp of the L2 block
 | `ORIGIN`     | `tx.origin`        | If the transaction is an L1 ⇒ L2 transaction, then `tx.origin` is set to the [aliased address](#address-aliasing) of the address that triggered the L1 ⇒ L2 transaction. Otherwise, this opcode behaves normally. |
 | `CALLER`     | `msg.sender`      | If the transaction is an L1 ⇒ L2 transaction, and this is the initial call (rather than an internal transaction from one contract to another), the same [address aliasing](#address-aliasing) behavior applies.
+| [`PUSH0`](https://www.evm.codes/#5f?fork=shanghai)      | N/A               | Opcode not supported yet (will be added in a hardfork)
 
 ::: tip `tx.origin == msg.sender`
 
