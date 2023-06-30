@@ -31,7 +31,8 @@ There are two types of oracles:
 
 ## Gas Oracle
 
-OP Mainnet provides a [Gas Price Oracle](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/L2/predeploys/OVM_GasPriceOracle.sol) that provides information about [gas prices and related parameters](../developers/build/transaction-fees.md).
+
+OP Mainnet provides a [Gas Price Oracle](https://github.com/ethereum-optimism/optimism/blob/233ede59d16cb01bdd8e7ff662a153a4c3178bdd/packages/contracts/contracts/L2/predeploys/OVM_GasPriceOracle.sol) that provides information about [gas prices and related parameters](../developers/build/transaction-fees.md).
 It can also calculate the total cost of a transaction for you before you send it.
 
 This contract is a predeploy at address `0x420000000000000000000000000000000000000F`:

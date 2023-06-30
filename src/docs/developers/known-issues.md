@@ -13,7 +13,7 @@ These are issues that appear like they might be a problem, but really aren't.
 
 - **Deposit transactions don't have a chainId on L2**.
 
-  [Deposit transactions](https://github.com/ethereum-optimism/optimism/blob/develop/specs/deposits.md#the-deposited-transaction-type) are transactions added to the L2 blockchain as part of the block derivation process.
+  [Deposit transactions](https://github.com/ethereum-optimism/optimism/blob/65ec61dde94ffa93342728d324fecf474d228e1f/specs/deposits.md#the-deposited-transaction-type) are transactions added to the L2 blockchain as part of the block derivation process.
   These transactions come from a dummy address and don't have a signature.
   Because in Ethereum the chainID is encoded as part of the signature, this means there is no recoverable chainID for these transactions.
 

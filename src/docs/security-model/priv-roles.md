@@ -13,7 +13,9 @@ These are addresses that *need* to have their private key online somewhere for a
   
 This is the component that submits new transaction batches.
 
+
 - **Goerli address**: [`0x7431310e026B69BFC676C0013E12A1A11411EEc9`](https://goerli.etherscan.io/address/0x7431310e026B69BFC676C0013E12A1A11411EEc9)
+
 
 If this account is compromised, that would enable denial of service attacks against the rollup.
 
@@ -33,12 +35,12 @@ As long as we do it within seven days, the risk is minimalized.
 These addresses are *cold*, meaning the private key is not on any device connected to the network, and cannot be used without human intervention.
 On OP Mainnet these are usually multisig contracts, controlled by groups of community members.
 On [OP Stack](https://stack.optimism.io) these wallets are set by default to the `ADMIN` account.
-When you create a new OP Stack blockchain you specify them in [the deployment configuration JSON file](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/deploy-config/getting-started.json).
+When you create a new OP Stack blockchain you specify them in [the deployment configuration JSON file](https://github.com/ethereum-optimism/optimism/blob/62c7f3b05a70027b30054d4c8974f44000606fb7/packages/contracts-bedrock/deploy-config/getting-started.json).
 
 
 ### MintManager Owner
 
-On OP Mainnet this account controls the [`MintManager`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/governance/MintManager.sol) that can mint new OP tokens.
+On OP Mainnet this account controls the [`MintManager`](https://github.com/ethereum-optimism/optimism/blob/62c7f3b05a70027b30054d4c8974f44000606fb7/packages/contracts-bedrock/contracts/governance/MintManager.sol) that can mint new OP tokens.
 On OP Stack it is usually meaningless.
 
 
@@ -53,7 +55,7 @@ If access to this account is compromised, attackers can mint an endless supply o
 
 ### System Config Owner
 
-This is the address authorized to change the settings in the [`SystemConfig`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L1/SystemConfig.sol) contract. 
+This is the address authorized to change the settings in the [`SystemConfig`](https://github.com/ethereum-optimism/optimism/blob/62c7f3b05a70027b30054d4c8974f44000606fb7/packages/contracts-bedrock/contracts/L1/SystemConfig.sol) contract. 
 
 - **Goerli address**: [`0xAe851f927Ee40dE99aaBb7461C00f9622ab91d60`](https://goerli.etherscan.io/address/0xAe851f927Ee40dE99aaBb7461C00f9622ab91d60#readProxyContract)
 
@@ -63,7 +65,7 @@ If access to this account is compromised, an attack can raise the gas markup and
 
 ### Migration SystemDictator Controller
 
-This is the address authorized to control [`SystemDictator`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/deployment/SystemDictator.sol), used for upgrades.
+This is the address authorized to control [`SystemDictator`](https://github.com/ethereum-optimism/optimism/blob/62c7f3b05a70027b30054d4c8974f44000606fb7/packages/contracts-bedrock/contracts/deployment/SystemDictator.sol), used for upgrades.
 It can be used to perform an upgrade, and to revert out of one until a certain stage is reached.
 
 - **Goerli address**: [`0x1f0613A44c9a8ECE7B3A2e0CdBdF0F5B47A50971`](https://goerli.etherscan.io/address/0x1f0613A44c9a8ECE7B3A2e0CdBdF0F5B47A50971#readProxyContract)
@@ -74,7 +76,7 @@ If access to the owner is lost, or compromised, it can prevent upgrades.
 
 ### Challenger
 
-This is the address authorized to call [`deleteL2Outputs()`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L1/L2OutputOracle.sol#L133-L167) to remove a faulty state commitment. 
+This is the address authorized to call [`deleteL2Outputs()`](https://github.com/ethereum-optimism/optimism/blob/62c7f3b05a70027b30054d4c8974f44000606fb7/packages/contracts-bedrock/contracts/L1/L2OutputOracle.sol#L133-L167) to remove a faulty state commitment. 
 
 Currently this is a multisig with trusted community members.
 Eventually, once fault proofs are completed, it will be a contract that verifies challenges are correct.

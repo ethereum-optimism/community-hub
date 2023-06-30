@@ -93,12 +93,12 @@ Unlike the legacy network which mines a block for every incoming transaction, th
 
 The Bedrock upgrade also introduces the concept of _system transactions_. System transactions are created by the `op-node`, and are used to execute deposits and update the L2's view of L1. They have the following attributes:
 
-- Every block will contain at least one system transaction called the [L1 attributes deposited transaction](https://github.com/ethereum-optimism/optimism/blob/develop/specs/deposits.md#l1-attributes-deposited-transaction). It will always be the first transaction in the block.
-- Some blocks will contain one or more [user-deposited transactions](https://github.com/ethereum-optimism/optimism/blob/develop/specs/deposits.md#user-deposited-transactions).
+- Every block will contain at least one system transaction called the [L1 attributes deposited transaction](https://github.com/ethereum-optimism/optimism/blob/65ec61dde94ffa93342728d324fecf474d228e1f/specs/deposits.md#l1-attributes-deposited-transaction). It will always be the first transaction in the block.
+- Some blocks will contain one or more [user-deposited transactions](https://github.com/ethereum-optimism/optimism/blob/65ec61dde94ffa93342728d324fecf474d228e1f/specs/deposits.md#user-deposited-transactions).
 - All system transactions have an [EIP-2718](https://eips.ethereum.org/EIPS/eip-2718)-compatible transaction type of `0x7E`.
 - All system transactions are unsigned, and set their `v`, `r`, and `s` fields to `null`.
 
-For more information about these transactions, see the [deposited transactions specification](https://github.com/ethereum-optimism/optimism/blob/develop/specs/deposits.md) on GitHub.
+For more information about these transactions, see the [deposited transactions specification](https://github.com/ethereum-optimism/optimism/blob/65ec61dde94ffa93342728d324fecf474d228e1f/specs/deposits.md) on GitHub.
 
 :::warning Known Issue
 Some Ethereum client libraries, such as Web3j, cannot parse the `null` signature fields described above. To work around this issue, you will need to manually filter out the system transactions before passing them to the library. 
@@ -218,9 +218,9 @@ Visualized, this flow looks like this:
 By posting the proof upfront, it gives onchain monitoring tools enough time to detect a fraudulent withdrawal proof and attempt corrective action. 
 Regular users can do this monitoring too. For example, an exchange could halt withdrawals in the event of a fraudulent proof.
 
-Since this change fundamentally changes the way withdrawals are handled, it is **not** backwards-compatible with the old network. If you are performing withdrawals outside our standard bridge interface, you will need to update your software. The easiest way to to do this is to use our [TypeScript SDK](https://github.com/ethereum-optimism/optimism/tree/develop/packages/sdk), which includes two-phase withdrawals support out of the box.
+Since this change fundamentally changes the way withdrawals are handled, it is **not** backwards-compatible with the old network. If you are performing withdrawals outside our standard bridge interface, you will need to update your software. The easiest way to to do this is to use our [TypeScript SDK](https://github.com/ethereum-optimism/optimism/tree/65ec61dde94ffa93342728d324fecf474d228e1f/packages/sdk), which includes two-phase withdrawals support out of the box.
 
-For more information on two-phase withdrawals, see the withdrawals specification on [GitHub](https://github.com/ethereum-optimism/optimism/blob/develop/specs/withdrawals.md).
+For more information on two-phase withdrawals, see the withdrawals specification on [GitHub](https://github.com/ethereum-optimism/optimism/blob/65ec61dde94ffa93342728d324fecf474d228e1f/specs/withdrawals.md).
 
 ## Deposit Replayability
 
@@ -236,14 +236,14 @@ On the legacy network, deposits are replayable. This is no longer the case in Be
 
 #### L2OutputOracle
 
-[The `L2OutputOracle` contract](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L1/L2OutputOracle.sol) contains the state root of the Optimism blockchain (OP Mainnet, OP Goerli, etc.).
+[The `L2OutputOracle` contract](https://github.com/ethereum-optimism/optimism/blob/65ec61dde94ffa93342728d324fecf474d228e1f/packages/contracts-bedrock/contracts/L1/L2OutputOracle.sol) contains the state root of the Optimism blockchain (OP Mainnet, OP Goerli, etc.).
 Once fault proofs are activated, it will be the one that receives the result of the fault proof process.
 
 This is the contract that replaces the old State Commitment Chain.
 
 #### OptimismPortal
 
-[The `OptimismPortal` contract](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L1/OptimismPortal.sol) provides [the low-level API for communications between layers](#deposits-from-the-underlying-l1-ethereum-goerli-etc-to-l2-op-mainnet-op-goerli-etc). Unless you are trying to send L2 transactions via L1 to bypass the sequencer, we strongly recommend sending messages between L1 and L2 via the L1CrossDomainMessenger and L2CrossDomainMessenger.
+[The `OptimismPortal` contract](https://github.com/ethereum-optimism/optimism/blob/65ec61dde94ffa93342728d324fecf474d228e1f/packages/contracts-bedrock/contracts/L1/OptimismPortal.sol) provides [the low-level API for communications between layers](#deposits-from-the-underlying-l1-ethereum-goerli-etc-to-l2-op-mainnet-op-goerli-etc). Unless you are trying to send L2 transactions via L1 to bypass the sequencer, we strongly recommend sending messages between L1 and L2 via the L1CrossDomainMessenger and L2CrossDomainMessenger.
 
 
 #### Existing interface
@@ -251,9 +251,10 @@ This is the contract that replaces the old State Commitment Chain.
 These contracts provide the same interface as existed pre-Bedrock so dapps donâ€™t have to be modified to run on Bedrock.
 
 
-- [L1CrossDomainMessenger](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L1/L1CrossDomainMessenger.sol):
+
+- [L1CrossDomainMessenger](https://github.com/ethereum-optimism/optimism/blob/65ec61dde94ffa93342728d324fecf474d228e1f/packages/contracts-bedrock/contracts/L1/L1CrossDomainMessenger.sol):
   The `L1CrossDomainMessenger` contract is used for sending messages between the underlying L1 (Ethereum, Goerli, etc.) and L2 (OP Mainnet, OP Goerli, etc.). Those messages may or may not have assets attached to them.
-- [L1StandardBridge](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L1/L1StandardBridge.sol):
+- [L1StandardBridge](https://github.com/ethereum-optimism/optimism/blob/65ec61dde94ffa93342728d324fecf474d228e1f/packages/contracts-bedrock/contracts/L1/L1StandardBridge.sol):
   The `L1StandardBridge` contract uses `L1CrossDomainMessenger` to transfer ETH and ERC-20 tokens between the underlying L1 (Ethereum, Goerli, etc.) and L2 (OP Mainnet, OP Goerli, etc.).
 
 
@@ -264,7 +265,7 @@ These contracts provide the same interface as existed pre-Bedrock so dapps donâ€
 
 #### L1Block
 
-[The `L1Block` contract](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L2/L1Block.sol) sits at address `0x4200000000000000000000000000000000000015`.
+[The `L1Block` contract](https://github.com/ethereum-optimism/optimism/blob/65ec61dde94ffa93342728d324fecf474d228e1f/packages/contracts-bedrock/contracts/L2/L1Block.sol) sits at address `0x4200000000000000000000000000000000000015`.
 You can use [the getter functions](https://docs.soliditylang.org/en/v0.8.12/contracts.html#getter-functions) to get these parameters:
 
 - `number`: The latest L1 block number known to L2 (the `L1BlockNumber` contract is still supported to avoid breaking existing applications)
@@ -277,19 +278,19 @@ Currently the L1 information is delayed by two block confirmations (~24 seconds)
 
 #### SequencerFeeVault
 
-[The `SequencerFeeVault` contract](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L2/SequencerFeeVault.sol) handles funding the sequencer on L1 using the ETH base fee on L2.
+[The `SequencerFeeVault` contract](https://github.com/ethereum-optimism/optimism/blob/65ec61dde94ffa93342728d324fecf474d228e1f/packages/contracts-bedrock/contracts/L2/SequencerFeeVault.sol) handles funding the sequencer on L1 using the ETH base fee on L2.
 
 The fees are calculated using [EIP 1559](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1559.md), the same mechanism that Ethereum uses (but with different parameter values).
 
 
 #### L2ToL1MessagePasser
 
-[The `L2ToL1MessagePasser` contract](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L2/L2ToL1MessagePasser.sol) is used internally by `L2CrossDomainMessenger` to initiate withdrawals.
+[The `L2ToL1MessagePasser` contract](https://github.com/ethereum-optimism/optimism/blob/65ec61dde94ffa93342728d324fecf474d228e1f/packages/contracts-bedrock/contracts/L2/L2ToL1MessagePasser.sol) is used internally by `L2CrossDomainMessenger` to initiate withdrawals.
 
 Note that in Bedrock there are two contracts:
 
-- [The legacy contract](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/legacy/LegacyMessagePasser.sol) at address `0x4200000000000000000000000000000000000000`
-- [The new contract](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L2/L2ToL1MessagePasser.sol) at address `0x4200000000000000000000000000000000000016`
+- [The legacy contract](https://github.com/ethereum-optimism/optimism/blob/65ec61dde94ffa93342728d324fecf474d228e1f/packages/contracts-bedrock/contracts/legacy/LegacyMessagePasser.sol) at address `0x4200000000000000000000000000000000000000`
+- [The new contract](https://github.com/ethereum-optimism/optimism/blob/65ec61dde94ffa93342728d324fecf474d228e1f/packages/contracts-bedrock/contracts/L2/L2ToL1MessagePasser.sol) at address `0x4200000000000000000000000000000000000016`
 
 
 #### Existing interface
@@ -297,14 +298,14 @@ Note that in Bedrock there are two contracts:
 These contracts provide the same interface as existed pre-Bedrock so dapps donâ€™t have to be modified to run on Bedrock.
 
 
-- [L1BlockNumber](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/legacy/L1BlockNumber.sol): 
+- [L1BlockNumber](https://github.com/ethereum-optimism/optimism/blob/65ec61dde94ffa93342728d324fecf474d228e1f/packages/contracts-bedrock/contracts/legacy/L1BlockNumber.sol): 
   The `L1BlockNumber` contract provides the number of the latest L1 block. 
   In Bedrock it is simply a proxy to [`L1Block`](#l1block). 
-- [L2CrossDomainMessenger](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L2/L2CrossDomainMessenger.sol):
+- [L2CrossDomainMessenger](https://github.com/ethereum-optimism/optimism/blob/65ec61dde94ffa93342728d324fecf474d228e1f/packages/contracts-bedrock/contracts/L2/L2CrossDomainMessenger.sol):
   The `L2CrossDomainMessenger` contract is used to send messages from L2 (OP Mainnet, OP Goerli, etc.) to the underlying L1 (Ethereum, Goerli, etc.).
-- [L2StandardBridge](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L2/L2StandardBridge.sol):
+- [L2StandardBridge](https://github.com/ethereum-optimism/optimism/blob/65ec61dde94ffa93342728d324fecf474d228e1f/packages/contracts-bedrock/contracts/L2/L2StandardBridge.sol):
   The `L2StandardBridge` contract is used to "attach" assets (ETH and ERC-20 tokens) to messages that are then sent by `L2CrossDomainMessenger`.
-- [WETH9](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/vendor/WETH9.sol): 
+- [WETH9](https://github.com/ethereum-optimism/optimism/blob/65ec61dde94ffa93342728d324fecf474d228e1f/packages/contracts-bedrock/contracts/vendor/WETH9.sol): 
   [The WETH9 contract](https://web.archive.org/web/20221022164309/https://weth.io/) is an ERC-20 token that wraps around ETH to provide extra functionality, such as approvals.
 
 
@@ -312,10 +313,11 @@ These contracts provide the same interface as existed pre-Bedrock so dapps donâ€
 
 These are contracts that are no longer relevant, but are kept as part of the state in case there is a call in any dapp that uses them.
 
-- [DeployerWhitelist](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/legacy/DeployerWhitelist.sol):
+
+- [DeployerWhitelist](https://github.com/ethereum-optimism/optimism/blob/65ec61dde94ffa93342728d324fecf474d228e1f/packages/contracts-bedrock/contracts/legacy/DeployerWhitelist.sol):
   The `DeployerWhitelist` contract used to manage the whitelist before [OP Mainnet moved out of beta](https://twitter.com/optimismFND/status/1471571415774023682).
 
-- [OVM_ETH](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/legacy/LegacyERC20ETH.sol):
+- [OVM_ETH](https://github.com/ethereum-optimism/optimism/blob/65ec61dde94ffa93342728d324fecf474d228e1f/packages/contracts-bedrock/contracts/legacy/LegacyERC20ETH.sol):
   The `OVM_ETH` contract used to manage users ETH balances prior to Bedrock.
 
 ## Communication between layers
@@ -323,7 +325,7 @@ These are contracts that are no longer relevant, but are kept as part of the sta
 In Optimism terminology "deposit" refers to any message going from the underlying L1 blockchain to L2, whether it has any assets attached or not.
 Similarly, "withdrawal" refers to any message going from L2 to the underlying L1.
 
-[See here for the messenger specs](https://github.com/ethereum-optimism/optimism/blob/develop/specs/messengers.md) and [here for the bridge specs](https://github.com/ethereum-optimism/optimism/blob/develop/specs/bridges.md).
+[See here for the messenger specs](https://github.com/ethereum-optimism/optimism/blob/65ec61dde94ffa93342728d324fecf474d228e1f/specs/messengers.md) and [here for the bridge specs](https://github.com/ethereum-optimism/optimism/blob/65ec61dde94ffa93342728d324fecf474d228e1f/specs/bridges.md).
 
 
 <!--
@@ -338,8 +340,7 @@ More information will be posted here once we have more exact information after w
 
 ### Deposits from the underlying L1 (Ethereum, Goerli, etc.) to L2 (OP Mainnet, OP Goerli, etc.)
 
-To create a deposit we recommend that you use the pre-Bedrock contracts [`L1StandardBridge`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L1/L1StandardBridge.sol) and [`L1CrossDomainMessenger`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L1/L1CrossDomainMessenger.sol).
-[`OptimismPortal`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L1/OptimismPortal.sol) also has low-level deposit functionality.
+To create a deposit we recommend that you use the pre-Bedrock contracts [`L1StandardBridge`](https://github.com/ethereum-optimism/optimism/blob/65ec61dde94ffa93342728d324fecf474d228e1f/packages/contracts-bedrock/contracts/L1/L1StandardBridge.sol) and [`L1CrossDomainMessenger`](https://github.com/ethereum-optimism/optimism/blob/65ec61dde94ffa93342728d324fecf474d228e1f/packages/contracts-bedrock/contracts/L1/L1CrossDomainMessenger.sol) also has low-level deposit functionality.
 
 With the OptimismPortalâ€™s `depositTransaction` function you can do from L1 anything you can do by contacting L2 directly: send transactions, send payments, create contracts, etc.
 This provides an uncensorable alternative in case the sequencer is down. 
@@ -359,13 +360,10 @@ Deposits that come from contracts still use [address aliasing](../build/differen
 Deposits are faster, about a minute, because they only require five blocks for confirmation (and L1 blocks are usually 12 seconds apart).
 
 
-<!--
-Deposits are implemented using [a new transaction type](https://github.com/ethereum-optimism/optimism/blob/develop/specs/deposits.md#the-deposited-transaction-type), 0x7E.
--->
 
-[You can read the full deposit specifications here](https://github.com/ethereum-optimism/optimism/blob/develop/specs/deposits.md#the-deposited-transaction-type).
+[You can read the full deposit specifications here](https://github.com/ethereum-optimism/optimism/blob/65ec61dde94ffa93342728d324fecf474d228e1f/specs/deposits.md#the-deposited-transaction-type).
 
-[You can read the full withdrawal specifications here](https://github.com/ethereum-optimism/optimism/blob/develop/specs/withdrawals.md)
+[You can read the full withdrawal specifications here](https://github.com/ethereum-optimism/optimism/blob/65ec61dde94ffa93342728d324fecf474d228e1f/specs/withdrawals.md)
 
 ## Behind the scenes
 
@@ -375,4 +373,4 @@ This section discusses some of the changes in Optimism internals.
 
 There is no longer a CTC (canonical transaction chain) contract. Instead, L2 blocks are saved to the Ethereum blockchain using a non-contract address to minimize the L1 gas expenses. Please see the [Public Testnets](./public-testnets.md) page for more information on where to find batch submission addresses. 
 
-[The block and transaction format is also different](https://github.com/ethereum-optimism/optimism/blob/develop/specs/rollup-node.md#l2-chain-derivation).
+[The block and transaction format is also different](https://github.com/ethereum-optimism/optimism/blob/65ec61dde94ffa93342728d324fecf474d228e1f/specs/rollup-node.md#derivation).
