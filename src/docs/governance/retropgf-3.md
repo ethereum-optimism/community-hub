@@ -25,7 +25,7 @@ Work may be nominated in four categories
 
 ## FAQ
 **Q: Does my contribution need to have taken place between the end of round 2 and beginning of round 3?**
-A: No, all contributions have supported the development and adoption of Optimism are considered, no matter when they took place
+A: No, all contributions that have supported the development and adoption of Optimism are considered, no matter when they took place
 
 **Q: How does Voting work?**
 A: Details around round 3 voting will be shared in the coming months 
