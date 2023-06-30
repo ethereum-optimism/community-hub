@@ -193,18 +193,3 @@ These parameters are mostly useful to people responsible for running and adminis
 We recommend that users install the command line tool if it is not already installed on their system. 
 `tar -xf` will work without installing anything if you have an up to date version of `tar`. 
 If you want to decompress separately, we recommend `pzstd -d`  or `zstd -d` (pzstd will likely be faster).
-
-
-::: warning Ignore other networks
-
-Optimism mainnet and Optimism Goerli are, from Optimism's perspective, production networks. This means our Goerli network is something you can rely on for consistent state and uptime. We have other testnets that we use to test our code (such as the Goerli Nightly network) that we use to test new features. These networks are for _us_ to test, and therefore might not have reliable state & uptime. 
-
-If you want to test out our new infrastructure before it is stable, or are interested in working on the latest and greatest protocols please check these networks out! If not, they are best ignored. 
-We try to make sure they work and preserve the state.
-In the months prior to a major release, such as Bedrock, we may have a different network for testing dapps on that release.
-
-However, we also have other networks such as [Goerli Nightly](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/deployments/goerli-nightly).
-These are networks that are used for internal Optimism development.
-Unless you are working on the Optimism protocol (rather than building things on top of it), ignore these networks.
-
-:::
