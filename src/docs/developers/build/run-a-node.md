@@ -1,5 +1,5 @@
 ---
-title: Running an OP Mainnet or testnet
+title: Running an OP Mainnet or testnet node
 lang: en-US
 ---
 
@@ -139,8 +139,13 @@ The next step is to download the data directory for `op-geth`.
 
 #### `op-geth`
 
+This is the script for OP Goerli.
+For OP Mainnet (or other OP networks in the future, [get the sequencer URL here](../../useful-tools/networks.md)).
+
 ```
 #! /usr/bin/bash
+
+SEQUENCER_URL=https://goerli-sequencer.optimism.io/
 
 cd ~/op-geth
 
@@ -158,35 +163,122 @@ cd ~/op-geth
   --authrpc.jwtsecret=./jwt.txt \
   --authrpc.port=8551 \
   --authrpc.vhosts="*" \
+  --datadir=/data \
   --verbosity=3 \
-  --rollup.disabletxpoolgossip=true \
+  --rollup.sequencerhttp=$SEQUENCER_URL \
   --nodiscover \
   --syncmode=full \
   --maxpeers=0 \
   --datadir ./datadir \
-  --rollup.sequencerhttp= << URL TO OP Mainnet or testnet >>
+  --snapshot=false
 ```
 
-Make sure the change `<< URL TO OP Mainnet or testnet >>` to a service provider's URL for the OP network (either OP Mainnet or an OP testnet).
 
+::: info Snapshots
+
+For the initial synchronization it's a good idea to disable snapshots (`--snapshot=false`) to speed it up. 
+Later, for regular usage, you can remove that option to improve geth database integrity.
+
+:::
 
 #### `op-node`
+
+- Change `<< URL to L1 >>` to a service provider's URL for the L1 network (either L1 Ethereum or Goerli).
+- Set `L1KIND` to the network provider you are using (alchemy, infura, etc.).
+- Set `NET` to either `goerli` or `mainnet`.
+
 
 ```
 #! /usr/bin/bash
 
+L1URL=  << URL to L1 >>
+L1KIND=alchemy
+NET=goerli
+
 cd ~/optimism/op-node
+
 ./bin/op-node \
+        --l1=$L1UL  \
+        --l1.rpckind=$L1KIND \
         --l2=http://localhost:8551 \
         --l2.jwt-secret=./jwt.txt \
-        --network=goerli \
+        --network=$NET \
         --rpc.addr=0.0.0.0 \
-        --rpc.port=8547 \
-        --p2p.disable \
-        --l1= << URL TO L1 >>       
+        --rpc.port=8547
+
 ```        
 
-Make sure to change `<< URL to L1 >>` to a service provider's URL for the L1 network (either L1 Ethereum or Goerli).
+
+
+
+### The initial synchornization
+
+The datadir provided by Optimism is not updated continuously, so before you can use the node you need a to synchronize it.
+
+During that process you get log messages from `op-node`, and nothing else appears to happen.
+
+```
+INFO [06-26|13:31:20.389] Advancing bq origin                      origin=17171d..1bc69b:8300332 originBehind=false
+```
+
+That is normal - it means that `op-node` is looking for a location in the batch queue. 
+After a few minutes it finds it, and then it can start synchronizing.
+
+While it is synchronizing, you can expect log messages such as these from `op-node`:
+
+```
+INFO [06-26|14:00:59.460] Sync progress                            reason="processed safe block derived from L1" l2_finalized=ef93e6..e0f367:4067805 l2_safe=7fe3f6..900127:4068014 l2_unsafe=7fe3f6..900127:4068014 l2_time=1,673,564,096 l1_derived=6079cd..be4231:8301091
+INFO [06-26|14:00:59.460] Found next batch                         epoch=8e8a03..11a6de:8301087 batch_epoch=8301087 batch_timestamp=1,673,564,098
+INFO [06-26|14:00:59.461] generated attributes in payload queue    txs=1  timestamp=1,673,564,098
+INFO [06-26|14:00:59.463] inserted block                           hash=e80dc4..72a759 number=4,068,015 state_root=660ced..043025 timestamp=1,673,564,098 parent=7fe3f6..900127 prev_randao=78e43d..36f07a fee_recipient=0x4200000000000000000000000000000000000011 txs=1  update_safe=true
+```
+
+And log messages such as these from `op-geth`:
+
+```
+INFO [06-26|14:02:12.974] Imported new potential chain segment     number=4,068,194 hash=a334a0..609a83 blocks=1         txs=1         mgas=0.000  elapsed=1.482ms     mgasps=0.000   age=5mo2w20h dirty=2.31MiB
+INFO [06-26|14:02:12.976] Chain head was updated                   number=4,068,194 hash=a334a0..609a83 root=e80f5e..dd06f9 elapsed="188.373µs" age=5mo2w20h
+INFO [06-26|14:02:12.982] Starting work on payload                 id=0x5542117d680dbd4e
+```
+
+#### How long will the synchronization take?
+
+To estimate how long the synchronization will take, you need to first find out how many blocks you synchronize in a minute. 
+
+You can use this script, which uses [Foundry](https://book.getfoundry.sh/). and the UNIX Note that this script is for OP Goerli. 
+For OP Mainnet substitute `https://mainnet.optimism.io`
+
+```sh
+#! /usr/bin/bash
+
+export ETH_RPC_URL=http://localhost:8545
+T0=`cast block latest number` ; sleep 60 ; T1=`cast block latest number`
+PER_MIN=`expr $T1 - $T0`
+echo Blocks per minute: $PER_MIN
+
+
+if [ $PER_MIN -eq 0 ]; then
+    echo Not synching
+    exit;
+fi
+
+# During that minute the head of the chain progressed by thirty blocks
+PROGRESS_PER_MIN=`expr $PER_MIN - 30`
+echo Progress per minute: $PROGRESS_PER_MIN
+
+
+# How many more blocks do we need?
+HEAD=`cast block --rpc-url https://goerli.optimism.io latest number`
+BEHIND=`expr $HEAD - $T1` 
+MINUTES=`expr $BEHIND / $PROGRESS_PER_MIN`
+HOURS=`expr $MINUTES / 60`
+echo Hours until sync completed: $HOURS
+
+if [ $HOURS -gt 24 ] ; then
+   DAYS=`expr $HOURS / 24`
+   echo Days until sync complete: $DAYS
+fi
+```
 
 
 ### Operations
