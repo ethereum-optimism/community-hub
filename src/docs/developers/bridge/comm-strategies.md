@@ -46,7 +46,7 @@ If you want L1 code to either tell L2 code to do something, or update L2 code wi
 
 | Parameter         | Evaluation |
 | - | - |
-| Speed             | About one minutes
+| Speed             | About one minute
 | Cost              | Cheapish (requires an L1 transaction)
 | Trust assumption  | Same as using OP Mainnet
 
