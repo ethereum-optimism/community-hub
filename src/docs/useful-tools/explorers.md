@@ -29,6 +29,8 @@ It's also got some OP-Mainnet-specific features:
 - And more! Just check it out and click around to find all of the available features.
 
 
+## DexGuru Block Explorer 
+We have a DexGuru Block Explorer for [OP Mainnet](https://optimism.dex.guru/). It has a permissionless smart contract verification mechanism, transaction logs, and traces visualization. 
 
 ## Tenderly
 
