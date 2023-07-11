@@ -23,3 +23,12 @@ Work may be nominated in four categories
 
 **Sign up for the [Optimism’s RetroPGF Newsletter](https://mailchi.mp/optimism/retropgf)** to be notified when project registration goes live! 🔔
 
+## FAQ
+**Q: Does my contribution need to have taken place between the end of round 2 and beginning of round 3?**
+A: No, all contributions that have supported the development and adoption of Optimism are considered, no matter when they took place
+
+**Q: How does Voting work?**
+A: Details around round 3 voting will be shared in the coming months 
+
+**Q: Where can I nominate Projects?**
+A: There will be no nominations process, projects will directly register for RetroPGF 3
