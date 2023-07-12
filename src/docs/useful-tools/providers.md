@@ -181,6 +181,17 @@ You can select addons, like "Archive Mode" or "Trace Mode" for an additional cos
 - OP Mainnet
 - OP Goerli
 
+## Chainbase
+
+### Description and pricing
+
+[Chainbase](https://www.chainbase.com) is an all-in-one data infrastructure for Web3 that allows you to index, transform, and use on-chain data at scale. By leveraging enriched on-chain data and streaming computing technologies across one data infrastructure, Chainbase automates the indexing and querying of blockchain data, enabling developers to accomplish more with less effort.
+Chainbase offers free and premium (Pay-as-you-go or subsription-based) API [here](https://docs.chainbase.com/docs/chain-api-overview#optimism)
+
+### Supported Networks
+
+- OP Mainnet
+- OP Goerli
 
 
 ## Don't see your company here?
