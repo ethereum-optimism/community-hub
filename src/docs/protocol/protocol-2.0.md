@@ -14,7 +14,7 @@ This is the contract that replaces the old State Commitment Chain.
 
 ### OptimismPortal
 
-[The `OptimismPortal` contract](https://github.com/ethereum-optimism/optimism/blob/65ec61dde94ffa93342728d324fecf474d228e1f/packages/contracts-bedrock/contracts/L1/OptimismPortal.sol) provides [the low-level API for communications between layers](#deposits-from-the-underlying-l1-ethereum-goerli-etc-to-l2-op-mainnet-op-goerli-etc). Unless you are trying to send L2 transactions via L1 to bypass the sequencer, we strongly recommend sending messages between L1 and L2 via the L1CrossDomainMessenger and L2CrossDomainMessenger.
+[The `OptimismPortal` contract](https://github.com/ethereum-optimism/optimism/blob/65ec61dde94ffa93342728d324fecf474d228e1f/packages/contracts-bedrock/contracts/L1/OptimismPortal.sol) provides the low-level API for communications between layers. Unless you are trying to send L2 transactions via L1 to bypass the sequencer, we strongly recommend sending messages between L1 and L2 via the L1CrossDomainMessenger and L2CrossDomainMessenger.
 
 ### L1CrossDomainMessenger
 
