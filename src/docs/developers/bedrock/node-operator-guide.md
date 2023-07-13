@@ -243,7 +243,7 @@ It means that the `op-node` is unable to authenticate with `op-geth`'s authentic
 If you see a log that looks like this in `op-node`:
 
 ```
-{"err":"403 Forbidden: invalid host specified\n","lvl":"eror","msg":"error getting latest header","t":"2022-12-13T22:29:18.932833159Z"}
+{"err":"403 Forbidden: invalid host specified\n","lvl":"error","msg":"error getting latest header","t":"2022-12-13T22:29:18.932833159Z"}
 ```
 
 It means that you have not whitelisted `op-node`'s host with `op-geth`. To fix:
