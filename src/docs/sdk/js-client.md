@@ -20,4 +20,4 @@ Once you do that, you can use the SDK normally.
 - [Viewing transactions between layers](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/sdk-view-tx)
 - [Bridging ETH](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/cross-dom-bridge-eth)
 - [Bridging ERC-20](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/cross-dom-bridge-erc20)
-- [Estimate the costs of an Optimistic (L2) transaction](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/sdk-estimate-gas)
+- [Estimate the costs of an OP (L2) transaction](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/sdk-estimate-gas)
