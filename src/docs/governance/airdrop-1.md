@@ -3,6 +3,13 @@ title: Airdrop 1
 lang: en-US
 ---
 
+::: info You can still claim your tokens
+
+If you are eligible to claim tokens from this airdrop and haven't claimed them yet, you can still do it at least until 1 July 2024.
+[Click here to see if you have any tokens to claim](https://app.optimism.io/airdrop/check).
+
+:::
+
 
 ## Background
 
