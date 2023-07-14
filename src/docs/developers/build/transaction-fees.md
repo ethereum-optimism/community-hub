@@ -43,7 +43,7 @@ This fee is based on four factors:
 
 1. The current gas price on Ethereum.
 2. The gas cost to publish the transaction to Ethereum. This scales roughly with the size of the transaction (in bytes).
-3. A fixed overhead cost denominated in gas. This is currently set to 2100.
+3. A fixed overhead cost denominated in gas. This is currently set to 188.
 4. A dynamic overhead cost which scales the L1 fee paid by a fixed number. This is currently set to 0.684.
 
 Here's the math:
