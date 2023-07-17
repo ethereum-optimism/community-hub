@@ -10,6 +10,10 @@ As a result, while the base fee on L1 can grow by up to 12.5% in a twelve second
 However, it still shrinks by only up to 12.5% in the same twelve second period (if all the blocks are empty).
 
 If the maximum fee per gas specified by the transaction is less than the block base fee, it does not get included until the base fee drops to below the value in the transaction.
+When this happens, some users may see their transaction become stuck. 
+No funds are lost, but the transaction does not clear on its own. 
+
+We have a workaround that users and wallet operators can implement immediately, and we expect a protocol-level fix to be live by the end of Q4.
 
 ### Recommendation
 
