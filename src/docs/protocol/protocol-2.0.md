@@ -25,6 +25,10 @@ This is the contract that replaces the old State Commitment Chain.
 [The `L1StandardBridge` contract](https://github.com/ethereum-optimism/optimism/blob/65ec61dde94ffa93342728d324fecf474d228e1f/packages/contracts-bedrock/contracts/L1/L1StandardBridge.sol) uses `L1CrossDomainMessenger` to transfer ETH and ERC-20 tokens between the underlying L1 (Ethereum, Goerli, etc.) and L2 (OP Mainnet, OP Goerli, etc.).
 
 
+### L1ERC721Bridge
+
+[The `L1ERC721Bridge` contract](https://github.com/ethereum-optimism/optimism/blob/65ec61dde94ffa93342728d324fecf474d228e1f/packages/contracts-bedrock/contracts/L1/L1ERC721Bridge.sol) uses `L1CrossDomainMessenger` to transfer NFTs ([ERC-721 tokens](https://eips.ethereum.org/EIPS/eip-721)) between the underlying L1 (Ethereum, Goerli, etc.) and L2 (OP Mainnet, OP Goerli, etc.).
+
 ## L2 contracts (predeploys)
 
 ### L1Block
@@ -66,6 +70,9 @@ Note that there are two contracts under this name:
 
 [The `L2StandardBridge` contract](https://github.com/ethereum-optimism/optimism/blob/65ec61dde94ffa93342728d324fecf474d228e1f/packages/contracts-bedrock/contracts/L2/L2StandardBridge.sol) is used to "attach" assets (ETH and ERC-20 tokens) to messages that are then sent by `L2CrossDomainMessenger`.
 
+### L2ERC721Bridge
+
+[The `L2ERC721Bridge` contract](https://github.com/ethereum-optimism/optimism/blob/65ec61dde94ffa93342728d324fecf474d228e1f/packages/contracts-bedrock/contracts/L2/L2ERC721Bridge.sol) uses `L2CrossDomainMessenger` to transfer NFTs ([ERC-721 tokens](https://eips.ethereum.org/EIPS/eip-721)) between the underlying L1 (Ethereum, Goerli, etc.) and L2 (OP Mainnet, OP Goerli, etc.).
 
 ### WETH9
 
