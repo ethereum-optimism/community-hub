@@ -5,6 +5,9 @@ lang: en-US
 
 ## Testnet Faucets
 
+#### Superchain Faucet
+[Superchain Faucet](https://app.optimism.io/faucet) is a developer tool that allows you to claim free testnet Ether (ETH) to test apps on testnets on OP Chains like OP Goerli. Base Goerli and other OP Chains will be added soon!
+
 #### Paradigm MultiFaucet
 
 [Paradigm's MultiFaucet](https://faucet.paradigm.xyz/) is an easy way to get ETH on many different testnets at the same time.
