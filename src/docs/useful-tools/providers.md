@@ -182,6 +182,18 @@ You can select addons, like "Archive Mode" or "Trace Mode" for an additional cos
 - OP Goerli
 
 
+## Chainstack
+
+### Description and Pricing
+
+[Chainstack](https://www.chainstack.com/) is the leading suite of services connecting developers with Web3 infrastructure. Chainstack offers highly affordable & performant access to [OP Mainnet and testnet nodes](https://chainstack.com/build-better-with-optimism/) across all plans, including the free (Developer) plan.
+
+### Supported Networks
+
+- OP Mainnet
+- OP Goerli
+
+
 
 ## Don't see your company here?
 
