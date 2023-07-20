@@ -36,23 +36,26 @@ Gas prices fluctuate with time and congestion, but you can always check the curr
 The [base fee](https://eips.ethereum.org/EIPS/eip-1559#simple-summary) is charged for each unit of gas that a transaction uses.
 It is the same base fee for each transaction in the block, and is determined by formula based on the base fee of the previous block and how full that block was.
 
+
 [The EIP 1559 parameters](./differences.md#eip-1559) have different values in OP Mainnet (and most other OP Stack chain) than those on L1 Ethereum.
 As a result, in every block the base fee can be between 98% and 110% of the previous value. 
+
+::: info Base fee volatility
+
 As blocks are produced every two seconds, the base fee can be between 54% and 1,745% of the value a minute earlier.
 If it takes the user fourteen seconds to approve the transaction in the wallet, the base fee can almost double in that time.
 
-The base fee specified in the transaction is not necessarily the base fee that the user will pay, *it is merely an upper limit to that amount*.
+:::
+
+The base fee specified in the transaction (`max_gas_fee - max_priority_fee`) is not necessarily the base fee that the user will pay, *it is merely an upper limit to that amount*.
 In most cases, it makes sense to specify a much higher base fee than the current value, to ensure acceptance. 
 
 For example, as I'm writing this, ETH is about $2000, and a cent is about 5000 gwei. 
 Assuming 20% of a cent is an acceptable base fee for a transaction, and that the transaction is a big 5,000,000 gas one (at the target block size), this gives us a base fee of 200,000 wei. 
-That would be the value to put in the transaction, even though the L2 base fee (as I'm writing this) is 2,420 wei. 
-
-::: info Up to date information
+That plus a reasonable priority fee would be the value to put in the transaction as max gas fee, even though the L2 base fee (as I'm writing this) is 2,420 wei. 
 
 You can get the current L2 base fee [in the gas tracker dashboard](https://optimism.io/gas-tracker).
 
-:::
 
 
 ### Priority fee
