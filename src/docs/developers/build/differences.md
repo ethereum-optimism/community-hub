@@ -110,7 +110,7 @@ But it is nearly impossible to create two that are different by a specified amou
 
 [Transaction costs on OP Mainnet](./transaction-fees.md) include an [L2 execution fee](./transaction-fees.md#the-l2-execution-fee) and an [L1 data fee](./transaction-fees.md#the-l1-data-fee). 
 
-### Transasction pool (a.k.a. mempool)
+### Transaction pool (a.k.a. mempool)
 
 As in L1 Ethereum, transactions are stored in a pool until they can be included in a block.
 To minimize MEV, Bedrock's mempool is private. 
