@@ -97,6 +97,16 @@ On the platform, there are also [Public APIs](https://blastapi.io/public-api/opt
 - OP Mainnet
 - OP Goerli
 
+## DRPC
+
+### Description and Pricing
+
+[DRPC](https://drpc.org/) is a decentralized provider network that offers reliable, secure and cost-effective access to OP Mainnet (and testnets) nodes with unlimited scalability. We offer a pay-as-you-go payment scheme based on CUs. Additionally, we have a free tier that you can use without any limitations.
+
+### Supported Networks
+
+- OP Mainnet
+
 ## GetBlock
 
 [GetBlock developer](https://getblock.io/en/nodes/optimism/) tools and valuable insights guarantee a simple and reliable API access to multiple blockchains.
