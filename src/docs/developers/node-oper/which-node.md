@@ -1,5 +1,5 @@
 ---
-title: Should you run your own node?
+title: Running your own node
 lang: en-US
 ---
 
@@ -15,7 +15,7 @@ Many applications include a server component that needs to communicate directly 
 Once an application's needs exceed the free tier, you can use one of the paid tiers to continue to use the hosted node provider.
 
 
-## Running your own node
+## Should you run your own node?
 
 There are several advantages to running your own node:
 
@@ -49,5 +49,8 @@ To synchronize only from L1, you edit the [op-node configuration](https://github
 
 ### Upgrades
 
-If you run a node you need to subscribe to either [the mailing list](https://groups.google.com/a/optimism.io/g/optimism-announce) or [the RSS feed](https://changelog.optimism.io/feed.xml) to know when to upgrade. 
-Otherwise, your node will eventually stop working.
+At present, the best way to know when to upgrade your software is to look at the software releases on github.
+
+
+- [`op-geth`](https://github.com/ethereum-optimism/op-geth/releases/latest)
+- [`op-node`](https://github.com/ethereum-optimism/optimism/releases/), but because the monorepo is also used for other software, you might need to scroll down to see what is the latest `op-node` release.
