@@ -375,7 +375,7 @@ module.exports = {
           children: [
             '/docs/sdk/js-client.md',
             [
-              'https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/docs',
+              'https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts-bedrock',
               'Optimism Contracts'
             ],
             '/docs/sdk/alchemy-sdk.md'           
