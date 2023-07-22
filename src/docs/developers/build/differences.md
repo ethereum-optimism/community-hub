@@ -132,14 +132,14 @@ See the full list of [custom JSON-RPC methods](./json-rpc.md) for more informati
 
 [Transaction costs on OP Mainnet](./transaction-fees.md) include an [L2 execution fee](./transaction-fees.md#the-l2-execution-fee) and an [L1 data fee](./transaction-fees.md#the-l1-data-fee). 
 
-### EIP 1559
+### EIP-1559
 
 The L2 execution fee is calculated using [EIP-1559](https://notes.ethereum.org/@vbuterin/eip-1559-faq). The cost of a unit of gas is composed of two components:
 
 - **Base fee**: This fee is the same for all transactions in a block. It varies between blocks based on the difference between the actual size of the blocks (which depends on the demand for block space) and the target block size. When the block uses more gas than the target block size the base fee goes up to discourage demand. When the block uses less gas than the target block size the base fee goes down to encourage demand.
 - **Priority fee**: This fee is specified in the transaction itself and varies between transactions. Block proposers are expected to select the transactions that offer them the highest priority fees first.
 
-The EIP 1559 parameters are different:
+The EIP-1559 parameters are different:
 
   | Parameter | OP Mainnet value | Ethereum value (for reference) |
   | - | -: | -: |
