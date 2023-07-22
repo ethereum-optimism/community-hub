@@ -37,7 +37,7 @@ The [base fee](https://eips.ethereum.org/EIPS/eip-1559#simple-summary) is charge
 It is the same base fee for each transaction in the block, and is determined by formula based on the base fee of the previous block and how full that block was.
 
 
-[The EIP 1559 parameters](./differences.md#eip-1559) have different values in OP Mainnet (and most other OP Stack chain) than those on L1 Ethereum.
+[The EIP-1559 parameters](./differences.md#eip-1559) have different values in OP Mainnet (and most other OP Stack chain) than those on L1 Ethereum.
 As a result, in every block the base fee can be between 98% and 110% of the previous value. 
 
 ::: info Base fee volatility
