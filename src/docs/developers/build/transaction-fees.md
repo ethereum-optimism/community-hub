@@ -21,13 +21,48 @@ This is exactly how fees work on Ethereum with the added bonus that gas prices o
 Here's the (simple) math:
 
 ```
-l2_execution_fee = transaction_gas_price * l2_gas_used
 transaction_gas_price = l2_base_fee + l2_priority_fee
+l2_execution_fee = transaction_gas_price * l2_gas_used
 ```
 
 The amount of L2 gas used depends on the particular transaction that you're trying to send.
 Thanks to [EVM equivalence](https://medium.com/ethereum-optimism/introducing-evm-equivalence-5c2021deb306), transactions typically use approximately the same amount of gas on OP Mainnet as they do on Ethereum.
 Gas prices fluctuate with time and congestion, but you can always check the current estimated L2 gas price on the [public OP Mainnet dashboard](https://optimism.io/gas-tracker).
+
+
+
+### Base fee
+
+The [base fee](https://eips.ethereum.org/EIPS/eip-1559#simple-summary) is charged for each unit of gas that a transaction uses.
+It is the same base fee for each transaction in the block, and is determined by formula based on the base fee of the previous block and how full that block was.
+
+
+[The EIP-1559 parameters](./differences.md#eip-1559) have different values in OP Mainnet (and most other OP Stack chain) than those on L1 Ethereum.
+As a result, in every block the base fee can be between 98% and 110% of the previous value. 
+
+::: info Base fee volatility
+
+As blocks are produced every two seconds, the base fee can be between 54% and 1,745% of the value a minute earlier.
+If it takes the user fourteen seconds to approve the transaction in the wallet, the base fee can almost double in that time.
+
+:::
+
+The base fee specified in the transaction (`max_gas_fee - max_priority_fee`) is not necessarily the base fee that the user will pay, *it is merely an upper limit to that amount*.
+In most cases, it makes sense to specify a much higher base fee than the current value, to ensure acceptance. 
+
+For example, as I'm writing this, ETH is about $2000, and a cent is about 5000 gwei. 
+Assuming 20% of a cent is an acceptable base fee for a transaction, and that the transaction is a big 5,000,000 gas one (at the target block size), this gives us a base fee of 200,000 wei. 
+That plus a reasonable priority fee would be the value to put in the transaction as max gas fee, even though the L2 base fee (as I'm writing this) is 2,420 wei. 
+
+You can get the current L2 base fee [in the gas tracker dashboard](https://optimism.io/gas-tracker).
+
+
+
+### Priority fee
+
+In contrast to the base fee, the priority fee in the transaction is the amount that the user pays, and therefore it makes sense to keep it as low as possible.
+To enable your users to select a priority fee, you can [build a priority fee estimator](https://docs.alchemy.com/docs/how-to-build-a-gas-fee-estimator-using-eip-1559).
+If you already have estimating code you use for L1 Ethereum, you can just use that.
 
 
 ## The L1 data fee
@@ -75,17 +110,9 @@ The L1 gas price used to charge the data fee is automatically updated when new d
 ### Sending transactions
 
 The process of sending a transaction on OP Mainnet is identical to the process of sending a transaction on Ethereum.
-When sending a transaction, you should provide a gas price greater than or equal to the current L2 gas price.
-Like on Ethereum, you can query this gas price with the `eth_gasPrice` RPC method.
+When sending a transaction, you should provide a gas price greater than or equal to the current L2 gas price, or use [transaction type 2](https://www.educative.io/answers/type-0-vs-type-2-ethereum-transactions) and a priority fee that is within the same range as the transactions included in the latest block.
 Similarly, you should set your transaction gas limit in the same way that you would set your transaction gas limit on Ethereum (e.g. via `eth_estimateGas`).
 
-### Responding to gas price updates
-
-Gas prices on L2 default to 0.001 Gwei but can increase dynamically if the network is congested.
-When this happens, the lowest fee that the network will accept increases.
-Unlike Ethereum, OP Mainnet currently does not have a mempool to hold transactions with too low a fee.
-Instead, OP Mainnet nodes will reject the transaction with the message `Fee too low`.
-You may need to handle this case explicitly and retry the transaction with a new gas price when this happens.
 
 ### Displaying fees to users
 
@@ -116,7 +143,7 @@ Sending the maximum amount of ETH that a user has in their wallet is a relativel
 When doing this, you will need to subtract the estimated L2 execution fee and the estimated L1 data fee from the amount of ETH you want the user to send.
 Use the logic described above for estimating the total fee.
 
-## Common RPC Errors
+## Additional RPC Errors
 
 ### Insufficient funds
 
@@ -125,19 +152,3 @@ Use the logic described above for estimating the total fee.
 
 You'll get this error when attempting to send a transaction and you don't have enough ETH to pay for the value of the transaction, the L2 execution fee, and the L1 data fee.
 You might get this error when attempting to send max ETH if you aren't properly accounting for both the L2 execution fee and the L1 data fee.
-
-### Gas price too low
-
-- Error code: `-32000`
-- Error message: `gas price too low: X wei, use at least tx.gasPrice = Y wei`
-
-This is a custom RPC error that OP Mainnet returns when a transaction is rejected because the gas price is too low.
-See the section on [Responding to gas price updates](#responding-to-gas-price-updates) for more information.
-
-### Gas price too high
-- Error code: `-32000`
-- Error message: `gas price too high: X wei, use at most tx.gasPrice = Y wei`
-
-This is a custom RPC error that OP Mainnet returns when a transaction is rejected because the gas price is too high.
-We include this as a safety measure to prevent users from accidentally sending a transaction with an extremely high L2 gas price.
-See the section on [Responding to gas price updates](#responding-to-gas-price-updates) for more information.
