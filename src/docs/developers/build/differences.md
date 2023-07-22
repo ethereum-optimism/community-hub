@@ -103,6 +103,22 @@ But it is nearly impossible to create two that are different by a specified amou
 </details>
 
 
+
+## Transactions
+
+### Transaction costs
+
+[Transaction costs on OP Mainnet](./transaction-fees.md) include an [L2 execution fee](./transaction-fees.md#the-l2-execution-fee) and an [L1 data fee](./transaction-fees.md#the-l1-data-fee). 
+
+### Transaction pool (a.k.a. mempool)
+
+As in L1 Ethereum, transactions are stored in a pool until they can be included in a block.
+To minimize MEV, Bedrock's mempool is private. 
+To submit transactions, you will need to configure `op-geth` to forward transactions to the sequencer. This may change in the future.
+
+The sequencer processes transactions in the mempool in order of their base and priority fees.
+
+
 ## Blocks
 
 There are several differences in the way blocks are produced between L1 Ethereum and OP Mainnet.
@@ -127,10 +143,6 @@ There are several differences in the way blocks are produced between L1 Ethereum
 OP Mainnet uses the same [JSON-RPC API](https://eth.wiki/json-rpc/API) as Ethereum.
 Some additional OP Mainnet specific methods have been introduced.
 See the full list of [custom JSON-RPC methods](./json-rpc.md) for more information.
-
-## Transaction costs
-
-[Transaction costs on OP Mainnet](./transaction-fees.md) include an [L2 execution fee](./transaction-fees.md#the-l2-execution-fee) and an [L1 data fee](./transaction-fees.md#the-l1-data-fee). 
 
 
 ## Contract addresses
