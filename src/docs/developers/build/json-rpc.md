@@ -164,9 +164,9 @@ Sample output:
 Get the software version.
 
 ```sh
-curl -X POST -H "Content-Type: application/json" \
-'--data '{"jsonrpc":"2.0","method":"optimism_version","params":[],"id":1}' \
-http://localhost:9545
+curl -X POST -H "Content-Type: application/json" --data \
+    '{"jsonrpc":"2.0","method":"optimism_version","params":[],"id":1}' \
+    http://localhost:9545
 ```
 
 Sample output:
