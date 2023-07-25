@@ -193,7 +193,6 @@ module.exports = {
           children: [
             '/docs/governance/token-house.md',
             '/docs/governance/token-house-history.md',
-            '/docs/governance/law-of-chains-disclaimer.md',
             '/docs/governance/gov-fund.md', 
             [
               "https://docs.google.com/spreadsheets/d/1Ul8iMTsOFUKUmqz6MK0zpgt8Ki8tFtoWKGlwXj-Op34",
@@ -221,6 +220,10 @@ module.exports = {
           ],
           collapsable: true
         },
+        [
+          '/docs/governance/law-of-chains-disclaimer.md',
+          'Law of Chains Disclaimer'
+        ],
         [
           'https://calendar.google.com/calendar/u/0?cid=Y19mbm10Z3VoNm5vbzZxZ2JuaTJncGVyaWQ0a0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t',
           'Governance Calendar'
