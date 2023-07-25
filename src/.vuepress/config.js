@@ -193,7 +193,8 @@ module.exports = {
           children: [
             '/docs/governance/token-house.md',
             '/docs/governance/token-house-history.md',
-            '/docs/governance/gov-fund.md', 
+            '/docs/governance/gov-fund.md',
+            '/docs/governance/law-of-chains-disclaimer.md',
             [
               "https://docs.google.com/spreadsheets/d/1Ul8iMTsOFUKUmqz6MK0zpgt8Ki8tFtoWKGlwXj-Op34",
               "Governance Fund Tracker"
