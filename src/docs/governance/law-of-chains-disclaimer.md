@@ -5,11 +5,11 @@ lang: en-US
 
 # Important Disclaimer about the Law of Chains
 
+NOTE: Along with v0.1 of the Law of Chains, this disclaimer is current in [DRAFT] form.  
+
+::: tip Important
+
 The [Law of Chains](https://gov.optimism.io/t/law-of-chains-v0-1-full-draft/6514) is fundamentally social in nature, intended to guide Optimism Governance and participants in the Optimism Collective. It is not a legal contract, and provides no legally enforceable warranties, representations, indemnities, rights, or obligations.  Participants commit to the Law of Chains independently.  No party acquires the ability to bind the other by virtue of their shared commitment to these guidelines. 
-
-::: tip NOTE
-
-Along with v0.1 of the Law of Chains, this disclaimer is current in [DRAFT] form.  
 
 :::
 
