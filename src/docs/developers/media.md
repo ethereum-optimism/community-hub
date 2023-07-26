@@ -108,3 +108,11 @@ Mark Dawson is the co-founder of Quix, the largest NFT marketplace on OP Mainnet
 He discusses early NFT communities on OP Mainnet, the upcoming NFT bridge, composable NFTs, and how to get started in the OP NFT ecosystem.
 
 <iframe src="https://www.youtube.com/embed/Z8L8vNDgJjY?list=PLXzKMXK2aHh4vbe7GLQfOnL-QJ1O5EqMv" title="Intro to Quix - Mark Dawson" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+### How to Connect to Optimism (OP) Node
+
+In the following video, our DevOps engineer is going to demonstrate how easy it is to interact with Shared nodes for Optimism with the help of GetBlock’s infrastructure. 
+With GetBlock, Optimism shared and dedicated nodes can be seamlessly integrated into your decentralized business.
+
+<iframe src="https://www.youtube.com/watch?v=uxysKbPyzxo&t=3s" title="How to Connect to Optimism (OP) Node? Explained by GetBlock" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
