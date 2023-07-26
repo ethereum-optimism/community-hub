@@ -4,7 +4,7 @@ lang: en-US
 ---
 
 
-Here are the instructions if you want to build you own read-only replica without relying on our images.
+Here are the instructions if you want to build you own OP Mainnet, or OP Goerli, replica without relying on our images.
 These instructions were generated on an Ubuntu 20.04 LTS box, but they should work with other systems too.
 
 **Note:** This is *not* the recommended configuration.
