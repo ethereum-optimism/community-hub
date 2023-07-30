@@ -7,7 +7,7 @@ These are some of the applications that use the AttestationStation:
 
 ## AttestationStation v1
 
-- [EAS Scan](https://optimism-goerli.easscan.org/). This no-code interface lets you build schemas, query, and submit attestations.
+- [EAS Scan](https://optimism.easscan.org/). This no-code interface lets you build schemas, query, and submit attestations.
 
 
 ## AttestationStation v0
