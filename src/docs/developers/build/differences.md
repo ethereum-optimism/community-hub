@@ -16,6 +16,7 @@ You should be aware of these descrepancies when building apps on top of OP Mainn
 | `TIMESTAMP`  | `block.timestamp`  | Timestamp of the L2 block
 | `ORIGIN`     | `tx.origin`        | If the transaction is an L1 ⇒ L2 transaction, then `tx.origin` is set to the [aliased address](#address-aliasing) of the address that triggered the L1 ⇒ L2 transaction. Otherwise, this opcode behaves normally. |
 | `CALLER`     | `msg.sender`      | If the transaction is an L1 ⇒ L2 transaction, and this is the initial call (rather than an internal transaction from one contract to another), the same [address aliasing](#address-aliasing) behavior applies.
+| [`PUSH0`](https://www.evm.codes/#5f?fork=shanghai)      | N/A               | Opcode not supported yet (will be added in a hardfork)
 
 ::: tip `tx.origin == msg.sender`
 
@@ -30,7 +31,7 @@ However, there could be edge cases we did not think about where this matters.
 
 ### Accessing L1 information
 
-If you need the equivalent information from the latest L1 block, you can get it from [the `L1Block` contract](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L2/L1Block.sol).
+If you need the equivalent information from the latest L1 block, you can get it from [the `L1Block` contract](https://github.com/ethereum-optimism/optimism/blob/65ec61dde94ffa93342728d324fecf474d228e1f/packages/contracts-bedrock/contracts/L2/L1Block.sol).
 This contract is a predeploy at address [`0x4200000000000000000000000000000000000015`](https://goerli-optimism.etherscan.io/address/0x4200000000000000000000000000000000000015).
 You can use [the getter functions](https://docs.soliditylang.org/en/v0.8.12/contracts.html#getter-functions) to get these parameters:
 
@@ -102,22 +103,58 @@ But it is nearly impossible to create two that are different by a specified amou
 </details>
 
 
+
+## Transactions
+
+### Transaction costs
+
+[Transaction costs on OP Mainnet](./transaction-fees.md) include an [L2 execution fee](./transaction-fees.md#the-l2-execution-fee) and an [L1 data fee](./transaction-fees.md#the-l1-data-fee). 
+
+#### EIP-1559
+
+The L2 execution fee is calculated using [EIP-1559](https://notes.ethereum.org/@vbuterin/eip-1559-faq). The cost of a unit of gas is composed of two components:
+
+- **Base fee**: This fee is the same for all transactions in a block. It varies between blocks based on the difference between the actual size of the blocks (which depends on the demand for block space) and the target block size. When the block uses more gas than the target block size the base fee goes up to discourage demand. When the block uses less gas than the target block size the base fee goes down to encourage demand.
+- **Priority fee**: This fee is specified in the transaction itself and varies between transactions. Block proposers are expected to select the transactions that offer them the highest priority fees first.
+
+The EIP-1559 parameters are different:
+
+  | Parameter | OP Mainnet value | Ethereum value (for reference) |
+  | - | -: | -: |
+  | Block gas limit | 30,000,000 gas | 30,000,000 gas
+  | Block gas target | 5,000,000 gas | 15,000,000 gas
+  | EIP-1559 elasticity multiplier | 6 | 2
+  | EIP-1559 denominator | 50 | 8
+  | Maximum base fee increase (per block) | 10% | 12.5%
+  | Maximum base fee decrease (per block) | 2% | 12.5%
+  | Block time in seconds | 2 | 12
+
+
+
+### Transaction pool (a.k.a. mempool)
+
+As in L1 Ethereum, transactions are stored in a pool until they can be included in a block.
+To minimize MEV, Bedrock's mempool is private. 
+To submit transactions, you will need to configure `op-geth` to forward transactions to the sequencer. This may change in the future.
+
+The sequencer processes transactions in the mempool in order of their base and priority fees.
+
+
 ## Blocks
 
 There are several differences in the way blocks are produced between L1 Ethereum and OP Mainnet.
 
 
-| Parameter           | L1 Ethereum | OP Mainnet |
-| - | - | - |
-| Time between blocks | 12 seconds(1)  | 2 seconds |
-| Block target size   | 15,000,000 gas | to be determined |
-| Block maximum size  | 30,000,000 gas | to be determined | 
+| Parameter           | L1 Ethereum | Optimism Bedrock |
+| - | -: | -: |
+| Time between blocks | 12 seconds<sup>1</sup>  | 2 seconds |
+| Block target size   | 15,000,000 gas | 5,000,000 gas |
+| Block maximum size  | 30,000,000 gas | 30,000,000 gas | 
 
 (1) This is the ideal. 
     If any blocks are missed it could be an integer multiple such as 24 seconds, 36 seconds, etc.
 
-**Note:** The L1 Ethereum parameter values are taken from [ethereum.org](https://ethereum.org/en/developers/docs/blocks/#block-time). The OP Mainnet values are taken from [the OP Mainnet specs](https://github.com/ethereum-optimism/optimism/blob/develop/specs/guaranteed-gas-market.md#limiting-guaranteed-gas).
-
+**Note:** The L1 Ethereum parameter values are taken from [ethereum.org](https://ethereum.org/en/developers/docs/blocks/#block-time).
 
 
 ## Network specifications
@@ -127,10 +164,6 @@ There are several differences in the way blocks are produced between L1 Ethereum
 OP Mainnet uses the same [JSON-RPC API](https://eth.wiki/json-rpc/API) as Ethereum.
 Some additional OP Mainnet specific methods have been introduced.
 See the full list of [custom JSON-RPC methods](./json-rpc.md) for more information.
-
-## Transaction costs
-
-[Transaction costs on OP Mainnet](./transaction-fees.md) include an [L2 execution fee](./transaction-fees.md#the-l2-execution-fee) and an [L1 data fee](./transaction-fees.md#the-l1-data-fee). 
 
 
 ## Contract addresses

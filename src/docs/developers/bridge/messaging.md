@@ -121,7 +121,7 @@ contract MyOtherContract {
 ```
 
 ::: tip Using the messenger contracts
-Our messenger contracts, the [`L1CrossDomainMessenger`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/L1/messaging/L1CrossDomainMessenger.sol) and [`L2CrossDomainMessenger`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/L2/messaging/L2CrossDomainMessenger.sol), always come pre-deployed to each of our networks.
+Our messenger contracts, the [`L1CrossDomainMessenger`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/src/L1/L1CrossDomainMessenger.sol) and [`L2CrossDomainMessenger`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/src/L2/L2CrossDomainMessenger.sol), always come pre-deployed to each of our networks.
 You can find the exact addresses of these contracts on our various deployments [inside of the Optimism monorepo](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/deployments).
 :::
 
@@ -132,8 +132,8 @@ The exact speed of a cross-chain transaction depends on the direction in which t
 
 ### For Ethereum (L1) to OP Mainnet (L2) transactions
 
-Transactions sent from L1 to L2 take up to approximately 15 minutes on mainnet and 5 minutes on the OP Goerli testnet to reach the target L2 contract.
-This is because L2 nodes will wait for a certain number of block confirmations on Ethereum before executing an L1 to L2 transaction.
+Transactions sent from L1 to L2 take approximately a minute to get from Ethereum to OP Mainnet, or from Goerli to OP Goerli.
+This is because L2 nodes wait for five block confirmations on Ethereum before executing an L1 to L2 transaction, to reduce the chance of a chain reorg.
 
 ### For OP Mainnet (L2) to Ethereum (L1) transactions
 
@@ -179,7 +179,7 @@ modifier onlyOwner() {
 ### For L1 ⇒ L2 transactions
 
 The majority of the cost of an L1 to L2 transaction comes from sending a transaction on Ethereum.
-You send a transaction to the [`L1CrossDomainMessenger`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/L1/messaging/L1CrossDomainMessenger.sol)
+You send a transaction to the [`L1CrossDomainMessenger`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/src/L1/L1CrossDomainMessenger.sol)
 contract, which then sends a call to the [`CanonicalTransactionChain`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/L1/rollup/CanonicalTransactionChain.sol).
 This cost is ultimately determined by gas prices on Ethereum when you're sending the cross-chain transaction.
 

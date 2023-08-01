@@ -193,7 +193,8 @@ module.exports = {
           children: [
             '/docs/governance/token-house.md',
             '/docs/governance/token-house-history.md',
-            '/docs/governance/gov-fund.md', 
+            '/docs/governance/gov-fund.md',
+            '/docs/governance/law-of-chains-disclaimer.md',
             [
               "https://docs.google.com/spreadsheets/d/1Ul8iMTsOFUKUmqz6MK0zpgt8Ki8tFtoWKGlwXj-Op34",
               "Governance Fund Tracker"
@@ -214,7 +215,9 @@ module.exports = {
           children: [
             '/docs/governance/citizens-house.md',
             '/docs/governance/citizenship.md',
-            '/docs/governance/retropgf-2.md',                        
+            '/docs/governance/retropgf-1.md',
+            '/docs/governance/retropgf-2.md',
+            '/docs/governance/retropgf-3.md'
           ],
           collapsable: true
         },
@@ -321,7 +324,10 @@ module.exports = {
         }
       ],
       '/docs/developers/': [
-        '/docs/developers/releases.md',
+        [
+          'https://github.com/ethereum-optimism/optimism/releases',
+          "Releases"
+        ],
         {
           title: 'Building on Optimism',
           children: [
@@ -370,7 +376,7 @@ module.exports = {
           children: [
             '/docs/sdk/js-client.md',
             [
-              'https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/docs',
+              'https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts-bedrock',
               'Optimism Contracts'
             ],
             '/docs/sdk/alchemy-sdk.md'           

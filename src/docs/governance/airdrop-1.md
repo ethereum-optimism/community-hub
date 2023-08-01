@@ -3,6 +3,13 @@ title: Airdrop 1
 lang: en-US
 ---
 
+::: info You can still claim your tokens
+
+If you are eligible to claim tokens from this airdrop and haven't claimed them yet, you can still do it at least until 1 July 2024.
+[Click here to see if you have any tokens to claim](https://app.optimism.io/airdrop/check).
+
+:::
+
 
 ## Background
 
@@ -133,7 +140,6 @@ The [Airdrop #1 Allocations](#airdrop-1-allocations) table above has been update
 For a list of excluded sybil addresses, [see this spreadsheet](https://docs.google.com/spreadsheets/d/1kUAt-vrkID0yBkic72djWRxdliK8W_5rBGxq6-Iv3cg).
 
 In the interest of maintaining the integrity of future OP Airdrops, we will not be publishing the additional filters used to remove these addresses.
-If you have feedback about this additional sybil filtering process, please feel free to [fill out this feedback form](https://oplabs.typeform.com/sybil-feedback).
 
 ## What’s Next?
 

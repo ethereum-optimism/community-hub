@@ -29,7 +29,7 @@ Someone nice will help you out!
 
 ## How to do it
 
-The Optimism monorepo includes [a devnode setup you can use](https://github.com/ethereum-optimism/optimism/blob/develop/specs/meta/devnet.md).
+The Optimism monorepo includes [a devnode setup you can use](https://github.com/ethereum-optimism/optimism/blob/65ec61dde94ffa93342728d324fecf474d228e1f/specs/meta/devnet.md).
 
 ### Installation 
 
@@ -81,7 +81,7 @@ Other OSes or versions may use different tools.
 
 - To clean everything, run (in the root directory of the monorepo) `make devnet-clean`.
 
-- [The monorepo includes the L1 contract addresses](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/deploy-config/devnetL1.json).
+- [The monorepo includes the L1 contract addresses](https://github.com/ethereum-optimism/optimism/blob/65ec61dde94ffa93342728d324fecf474d228e1f/packages/contracts-bedrock/deploy-config/devnetL1.json).
   The L2 contract addresses are, of course, the standard ones.
 
 - There are some differences between the development node and the real world (a.k.a. Ethereum mainnet and OP Mainnet):

@@ -65,4 +65,4 @@ If you need to implement some kind of custom logic, [see this tutorial](https://
 
 ## Audit reports
 
-* For a full list of audit reports visit [GitHub](https://github.com/ethereum-optimism/optimism/tree/develop/technical-documents/security-reviews). 
+For a full list of audit reports visit [GitHub](https://github.com/ethereum-optimism/optimism/tree/develop/technical-documents/security-reviews). 

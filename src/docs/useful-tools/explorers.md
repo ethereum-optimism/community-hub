@@ -5,10 +5,10 @@ lang: en-US
 
 ## Blockscout
 
-We have a Blockscout explorer for both [OP Mainnet](https://blockscout.com/optimism/mainnet/) and [OP Goerli](https://blockscout.com/optimism/goerli/). It includes:
+We have a Blockscout explorer for both [OP Mainnet](https://optimism.blockscout.com) and [OP Goerli](https://optimism-goerli.blockscout.com). It includes:
 
-- [Verified contract source code, along with the ability to interact with it](https://blockscout.com/optimism/goerli/address/0x106941459A8768f5A92b770e280555FAF817576f/contracts#address-tabs)
-- [Detailed transaction information](https://blockscout.com/optimism/goerli/tx/0xeb98c8279983cfee472c6067d2405acc130dca37e7536d6c83930e29aaa40e3e)
+- [Verified testnet contract source code, along with the ability to interact with it](https://optimism-goerli.blockscout.com/verified-contracts)
+- [Detailed testnet transaction information](https://optimism-goerli.blockscout.com/txs)
 
 
 
@@ -27,6 +27,16 @@ It's also got some OP-Mainnet-specific features:
 - [A list of L2-to-L1 transactions](https://explorer.optimism.io/txsExit)
 - [A tool for finalizing L2-to-L1 transactions](https://explorer.optimism.io/messagerelayer)
 - And more! Just check it out and click around to find all of the available features.
+
+
+
+## Tenderly
+
+You can also search for, filter and explore transaction in the [Tenderly Dashboard](https://dashboard.tenderly.co/), where you also have easy and integrated access to stuff like:
+
+- Extremely detailed execution trace, with [complete control and insight into your debugging](https://blog.tenderly.co/tenderly-devnets-develop-and-test-with-mainnet-data/) and transaction simulation environment
+- [100% accurate gas estimates](https://blog.tenderly.co/how-tenderly-enables-most-accurate-ethereum-gas-estimation/)
+- [RPC customization](https://blog.tenderly.co/customizing-rpc-endpoints-with-node-extensions/)
 
 ## Access to pre-regenesis history
 

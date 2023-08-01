@@ -7,7 +7,7 @@ Certain interactions, like transferring ETH and ERC20 tokens between the two net
 
 The standard bridge functionality provides a method for an ERC20 token to be deposited and locked on L1 in exchange of the same amount of an equivalent token on L2. This process is known as "bridging a token", e.g. depositing 100 USDC on L1 in exchange for 100 USDC on L2 and also the reverse - withdrawing 100 USDC on L2 in exchange for the same amount on L1. In addition to bridging tokens the standard bridge is also used for ETH.
 
-The Standard Bridge is composed of two main contracts the [`L1StandardBridge`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/L1/messaging/L1StandardBridge.sol) (for Layer 1) and the [`L2StandardBridge`](https://github.com/ethereum-optimism/optimism/blob/master/packages/contracts/contracts/L2/messaging/L2StandardBridge.sol) (for Layer 2).
+The Standard Bridge is composed of two main contracts the [`L1StandardBridge`](https://github.com/ethereum-optimism/optimism/blob/65ec61dde94ffa93342728d324fecf474d228e1f/packages/contracts-bedrock/contracts/L1/L1StandardBridge.sol) (for Layer 1) and the [`L2StandardBridge`](https://github.com/ethereum-optimism/optimism/blob/65ec61dde94ffa93342728d324fecf474d228e1f/packages/contracts-bedrock/contracts/L2/L2StandardBridge.sol) (for Layer 2).
 
 Here we'll go over the basics of using this bridge to move ERC20 assets between Layer 1 and Layer 2.
 
@@ -25,7 +25,7 @@ If you want to deposit using a smart contract wallet and you know what you're do
 
 ### Depositing ERC20s
 
-ERC20 deposits into L2 can be triggered via the `depositERC20` and `depositERC20To` functions on the [`L1StandardBridge`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/L1/messaging/L1StandardBridge.sol).
+ERC20 deposits into L2 can be triggered via the `depositERC20` and `depositERC20To` functions on the [`L1StandardBridge`](https://github.com/ethereum-optimism/optimism/blob/65ec61dde94ffa93342728d324fecf474d228e1f/packages/contracts-bedrock/contracts/L1/L1StandardBridge.sol#L145-L205).
 You **must** approve the Standard Token Bridge to use the amount of tokens that you want to deposit or the deposit will fail.
 
 Note that the bridge does *not* support certain ERC-20 configurations:
@@ -79,7 +79,7 @@ There are two ways to check if a token can use the standard bridge:
    - Have an `l2Bridge` method
    - That method returns `0x4200...0010`. 
 
-   For example, [this link](https://explorer.optimism.io/address/0xe0bb0d3de8c10976511e5030ca403dbf4c25165b#readContract) can be used to see that `0xBTC` uses the standard bridge.
+   For example, [this link](https://optimistic.etherscan.io/address/0xe0bb0d3de8c10976511e5030ca403dbf4c25165b#readContract#F5) can be used to see that `0xBTC` uses the standard bridge.
 
    Note that you cannot query the L1 token contract the same way.
    L2 contracts know the identity of their L1 counterpart, but L1 contracts only need to implement the standard ERC-20 methods.
@@ -89,7 +89,7 @@ There are two ways to check if a token can use the standard bridge:
 
 ### Depositing ETH
 
-ETH deposits into L2 can be triggered via the `depositETH` and `depositETHTo` functions on the [`L1StandardBridge`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/L1/messaging/L1StandardBridge.sol).
+ETH deposits into L2 can be triggered via the `depositETH` and `depositETHTo` functions on the [`L1StandardBridge`](https://github.com/ethereum-optimism/optimism/blob/65ec61dde94ffa93342728d324fecf474d228e1f/packages/contracts-bedrock/contracts/L1/L1StandardBridge.sol#L110-L143).
 ETH deposits can alternatively be triggered by sending ETH directly to the `L1StandardBridge`.
 Once your deposit is detected and finalized on OP Mainnet, your account will be funded with the corresponding amount of ETH on L2.
 
@@ -97,13 +97,13 @@ Once your deposit is detected and finalized on OP Mainnet, your account will be 
 
 ### Withdrawing ERC20s
 
-ERC20 withdrawals can be triggered via the `withdraw` or `withdrawTo` functions on the [`L2StandardBridge`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/L2/messaging/L2StandardBridge.sol).
+ERC20 withdrawals can be triggered via the `withdraw` or `withdrawTo` functions on the [`L2StandardBridge`](https://github.com/ethereum-optimism/optimism/blob/65ec61dde94ffa93342728d324fecf474d228e1f/packages/contracts-bedrock/contracts/L2/L2StandardBridge.sol).
 If you'd like to see this contracts in action, you should check out the [L1 ⇔ L2 deposit-and-withdraw example](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/cross-dom-bridge-erc20).
 
 ### Withdrawing ETH
 
 Unlike on L1, we do not have a separate function on L2 for withdrawing ETH.
-Instead, you can use the `withdraw` or `withdrawTo` functions on the [`L2StandardBridge`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/L2/messaging/L2StandardBridge.sol) and use the address `0xDeadDeAddeAddEAddeadDEaDDEAdDeaDDeAD0000` as the L2 token address.
+Instead, you can use the `withdraw` or `withdrawTo` functions on the [`L2StandardBridge`](https://github.com/ethereum-optimism/optimism/blob/65ec61dde94ffa93342728d324fecf474d228e1f/packages/contracts-bedrock/contracts/L2/L2StandardBridge.sol) and use the address `0xDeadDeAddeAddEAddeadDEaDDEAdDeaDDeAD0000` as the L2 token address.
 
 ## Adding an ERC20 token to the Standard Bridge
 

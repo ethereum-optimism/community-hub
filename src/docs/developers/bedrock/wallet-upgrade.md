@@ -37,15 +37,43 @@ If not, use [`eth_getBlockByNumber`](https://docs.alchemy.com/reference/eth-getb
 
 ## Transaction fees
 
+In OP Mainnet (and most other OP Stack chain) transaction fees include both an [L1 data fee](../build/transaction-fees.md#estimating-the-l1-data-fee) and an [L2 execution fee](../build/transaction-fees.md#the-l2-execution-fee). 
+To display the entire estimated cost of a transaction to your users we recommend you [use the SDK](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/sdk-estimate-gas). 
+
 In Bedrock we support [EIP 1559](https://eips.ethereum.org/EIPS/eip-1559).
 Therefore, the L2 execution fee is composed of two components: a fixed (per-block) base fee and a user selected priority fee.
 
-To enable your users to select a priority fee, you can [build a priority fee estimator]
-(https://docs.alchemy.com/docs/how-to-build-a-gas-fee-estimator-using-eip-1559).
+
+### Base fee
+
+[The EIP 1559 parameters](./differences.md#eip-1559) have different values in OP Mainnet (and most other OP Stack chain) than those on L1 Ethereum.
+As a result, in every block the base fee can be between 98% and 110% of the previous value. 
+As blocks are produced every two seconds, the base fee can be between 54% and 1,745% of the value a minute earlier.
+If it takes the user fourteen seconds to approve the transaction in the wallet, the base fee can almost double in that time.
+
+The base fee specified in the transaction is not necessarily the base fee that the user will pay, *it is merely an upper limit to that amount*.
+In most cases, it makes sense to specify a much higher base fee than the current value, to ensure acceptance. 
+
+For example, as I'm writing this, ETH is about $2000, and a cent is about 5000 gwei. 
+Assuming 20% of a cent is an acceptable base fee for a transaction, and that the transaction is a big 5,000,000 gas one (at the target block size), this gives us a base fee of 200,000 wei. 
+That would be the value to put in the transaction, even though the L2 base fee (as I'm writing this) is 2,420 wei. 
+
+::: info Up to date information
+
+You can get the current L2 base fee [in the gas tracker dashboard](https://optimism.io/gas-tracker).
+
+:::
+
+
+### Priority fee
+
+In contrast to the base fee, the priority fee in the transaction is the amount that the user pays, and therefore it makes sense to keep it as low as possible.
+To enable your users to select a priority fee, you can [build a priority fee estimator](https://docs.alchemy.com/docs/how-to-build-a-gas-fee-estimator-using-eip-1559).
 If you already have estimating code you use for L1 Ethereum, you can just use that.
 
 Note that on OP Mainnet the priority fee tends to be very low. 
-As I am writing this, a priority fee of 0.0002 gwei is sufficient ([see here](https://optimism.io/gas-tracker) to get the current values).
+As I am writing this, a priority fee of 500 wei is sufficient ([see here](https://optimism.io/gas-tracker) to get the current values).
 
-To display the entire estimated cost of a transaction we recommend you [use the SDK](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/sdk-estimate-gas). 
+
+
 
