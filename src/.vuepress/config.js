@@ -428,7 +428,8 @@ module.exports = {
               'https://github.com/orgs/ethereum-optimism/projects/31/views/3',
               'Ideas List'
             ],
-            '/docs/contribute/contribution-path/techNERDs.md'
+            '/docs/contribute/contribution-path/techNERDs.md',
+            '/docs/contribute/technical-contributions.md'
           ],
           collapsable: true,          
         },
