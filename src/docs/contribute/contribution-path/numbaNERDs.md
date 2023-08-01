@@ -1,5 +1,5 @@
 ---
-title: NumbaNERDs (coming soon™️)
+title: NumbaNERDs 
 lang: en-US
 ---
 
