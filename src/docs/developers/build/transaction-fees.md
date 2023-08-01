@@ -8,7 +8,7 @@ However, Layer 2 introduces some new paradigms that means it can never be exactl
 Luckily, OP Mainnet's [EVM equivalence](https://medium.com/ethereum-optimism/introducing-evm-equivalence-5c2021deb306) makes these differences easy to understand and even easier to handle within your app.
 
 This page includes the formula for calculating the gas cost of transactions on OP Mainnet.
-You can also [use our SDK](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/sdk-estimate-gas) to calculate those costs for you.
+You can [use our SDK](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/sdk-estimate-gas) to calculate those costs for you. If the SDK is too heavy, or you just want to walk through some reference code, use [@eth-optimism/fee-estimation](https://github.com/ethereum-optimism/optimism/tree/develop/packages/fee-estimation). OP Stack fee estimation will soon be natively availabe in your favorite Ethereum tools.
 
 There are two costs for transaction on OP Mainnet: the L2 execution fee and the L1 data/security fee.
 
