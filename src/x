@@ -1,0 +1,5 @@
+
+   - [OP Goerli](https://datadirs.optimism.io/goerli-bedrock.tar.zst)
+This is the script for OP Goerli.
+You can use this script, which uses [Foundry](https://book.getfoundry.sh/). and the UNIX Note that this script is for OP Goerli. 
+./docs/developers/node-oper/dockerless.md

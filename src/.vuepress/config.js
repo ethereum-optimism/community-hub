@@ -337,7 +337,6 @@ module.exports = {
             '/docs/developers/build/transaction-fees.md',
             '/docs/developers/build/system-contracts.md',
             '/docs/developers/build/dev-node.md',
-            '/docs/developers/build/run-a-node.md',
             '/docs/developers/build/differences.md',
             '/docs/developers/build/json-rpc.md',
             '/docs/developers/build/testing-dapps.md',
@@ -354,6 +353,13 @@ module.exports = {
             '/docs/developers/bridge/comm-strategies.md'
           ],
           collapsable: true,
+        },
+        {
+          title: "Operating OP nodes",
+          children: [
+            '/docs/developers/node-oper/which-node.md',
+            '/docs/developers/node-oper/dockerless.md'
+          ]
         },
         '/docs/developers/known-issues.md',
         { 
