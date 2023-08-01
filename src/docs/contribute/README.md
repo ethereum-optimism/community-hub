@@ -5,7 +5,7 @@ lang: en-US
 
 ::: tip Welcome!
 
-So you think you could make an impact in The Collective? We are so happy to have you! Let’s make sure we are on the same page about what The Collective is all about.
+So you want to get involved in the Optimism Collective?? We are so happy to have you! Let’s make sure we are on the same page about what The Collective is all about.
 
 :::
 
