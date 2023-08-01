@@ -393,6 +393,10 @@ module.exports = {
           '/docs/contribute/',
           'Contributions Home'
         ],
+        [
+          'https://calendar.google.com/calendar/embed?src=c_4hui70itm089e7t8q50heh1kno%40group.calendar.google.com',
+          'Upcoming Events'
+        ],
         {
           title: '🌍 Accessibility',
           children: [

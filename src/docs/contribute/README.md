@@ -9,23 +9,31 @@ So you think you could make an impact in The Collective? We are so happy to have
 
 :::
 
-At the core of The Collective is the tenet **“impact = profit”**. This tenet aims to fix an injustice we see daily. Peoples impact on their community not being rewarded under capitalism. This flaw of the system haunts us in every aspect of modern day living. From infrastructure to third spaces, public goods are being cast aside and deprioritised, despite being essential. This problem is the thesis that Optimism is built around. What if we could fix how Public Goods get funded? 
+The Optimism Collective believes that **building public goods should be profitable.**
 
-**“Impact = profit” is the optimistic solution.** An experimental combination of capitalistic value capture with Collective sense making. A network of hardware that collects value combined with networks of humans to effectively distribute it. The solution we have designed is called Retroactive Public Goods Funding, or RetroPGF for short. Contributions to the Collective are assessed and rewarded through RetroPGF. You can [read more about RetroPGF here](../governance/citizens-house.md). 
+This key ingredient to the [Optimistic vision](https://www.optimism.io/vision) is more than just altruism – it’s core to our success. Optimism’s codebase itself is an open-source project, and builds on the shoulders of countless OSS giants which came before it.
 
-This is the vision of The Optimism Collective. Its big! Beautiful. Ambitious, and we need all the help we can get. This journey will be long and have many obstacles, lessons and evolutions before the fly wheel is established. 
+This means public goods funding is a critical growth strategy. For Optimism, well-funded public goods means better developer tooling, widespread user education, safer infrastructure, and industry-leading research. It means Optimism can last and thrive.
 
-So, how can you have the biggest impact in The Collective? We recommend following these 3 very easy principles:
+Once we show that this model can drive a successful economy for the Optimism Collective, we can scale the principle of **`impact = profit`** to the world!
+
+RetroPGF is a core part of Optimism’s vision. If done right, it will form the backbone for a new type of economy. As with any complex system, though, this new process can’t be centrally planned or designed all at once. **The only way to build it *well* is to build it *together*.** This journey will require care, open-mindedness, patience, and, of course, optimism!
+
+So, how can you have meaningful impact in The Collective? We recommend following these 3 very easy principles:
 
 1. ***Do what you love.*** → Real impact stems from passion, a love for what you do.
-2. ***Fix the problem in front of you.*** → Chances are if you have a problem, someone else has that problem as well. Let’s fix it! What caused the problem? How do you fix it, and can you fix it for everyone else? 
+2. ***Fix the problem in front of you, together.*** → Chances are if you have a problem, someone else has that problem as well. Let’s fix it together! What caused the problem? How do you fix it, and can we work together to fix it for everyone else? 
 3. ***Do it with optimism.*** → Be kind, patient and optimistic in everything you do. 
+
+Most importantly, make sure that your contributions align with the [Collective Intents](https://gov.optimism.io/t/collective-intents/5874). This will help ensure that your contribution is working towards a larger goal of the Collective. 
 
 # Getting Started
 
 You can contribute towards the collective in a million different ways, and there is no way we could make processes for all of these contributions. Nor would we want to! However, getting from 0 to 1 is the hardest step. So we have made a few ways to get you up to speed and contributing in no time! 
 
-If this list is too overwhelming you can start by checking out the “Get a Grant” page.
+If this list is too overwhelming you can start by checking out the [“Get a Grant”](../governance/get-a-grant.md) page.
+
+If you are looking for what is happening right now, add the [Optimism Public calender](https://calendar.google.com/calendar/embed?src=c_4hui70itm089e7t8q50heh1kno%40group.calendar.google.com) to see upcoming events!
 
 ## 🌍 Accessibility
 
@@ -42,6 +50,7 @@ Data is an essential ingredient to good decision making. We take our data seriou
 
 * Check out our existing [Dune dashboards](https://dune.com/optimismfnd) to give you an idea of what we are looking at. 
 * If you have a nack for numbers then you should get involved in the [NumbaNERDs program](./contribution-path/numbaNERDs.md)!
+* We also have [this gov post](https://gov.optimism.io/t/how-to-contribute-op-rewards-analytics/5975) with resources to get you inspired and informed.
 
 ## 💻 Developers
 
@@ -55,16 +64,17 @@ As a developer you have a few options to get contributing! Build on us, with us,
 
 ## 🏛️ Governance
 
-The Optimism Collectives governance is an incredibly collective and exciting space that is growing and evolving. Plenty of opportunities to have impact! 
+The Optimism Collectives governance is an incredibly collective and exciting space that is growing and evolving. Plenty of opportunities to have impact! All work supported or executed by the Collective should be in pursuit of our [Collective Intents](https://gov.optimism.io/t/collective-intents/5874).
 
 * An easy place to start is to look at the [Get a Grant](../governance/get-a-grant.md) page. This is an easy way to see what governance is looking for.
 * Before getting into our governance its highly recommended to [understand our unique governance set up](../governance/README.md).
 * If you are serious about getting into governance you can get involved in the Token House by [becoming a Delegate](../governance/delegate.md). This is a serious responsibility, so make sure you [understand what is required of you](../governance/existing-delegate.md).
 * There is also the [Citizens House](../governance/citizens-house.md). You can read more about [Citizenship here](../governance/citizenship.md). 
+* If you are a delegate already involved and voting, looking for additional ways to help the Collective, reach out to lavande@optimism.io.
 
 ## 🫡 Marketing
 
-The Optimism Vision is big! And Visions this big need whole teams to help make them real. 
+The Optimism Vision is big! And Visions this big need to be amplified by a diverse & aligned group to help make it real. 
 
 * The [Ambassadors program](./contribution-path/Ambassador-req.md) enables community members to create focused content to bring the Vision closer to reality. If you have a talent for writing, design or visuals, come get involved! 
 * If your project wants some marketing love, you have options! Get your dapp in front of the Optimism community with our [Demo Day (once every two weeks)](./demo-day.md).
