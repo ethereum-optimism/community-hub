@@ -56,7 +56,7 @@ Data is an essential ingredient to good decision making. We take our data seriou
 
 As a developer you have a few options to get contributing! Build on us, with us, or help move the whole space forward. We are happy to have you <3.
 
-* If you are a dapp developer, check out our [developer docs to get started](/docs/developers/). 
+* If you are a dapp developer, check out our [developer docs to get started](../developers/README.md). 
 * If you want to get a little deeper into the [OP Stack](https://stack.optimism.io/), we have great docs for [Getting Started with the OP Stack](https://stack.optimism.io/docs/build/getting-started/). 
 * If you are looking for inspiration on what to build then check out the [Ideas List](https://github.com/orgs/ethereum-optimism/projects/31/views/3) which has a wide range of ideas from quick builds to mad science innovations. Go poke around! 
 * If you want to contribute directly to the Optimism codebase please [read this doc](./technical-contributions.md).
