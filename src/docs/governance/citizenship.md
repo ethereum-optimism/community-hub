@@ -3,8 +3,6 @@ title: Citizenship
 lang: en-US
 ---
 
-## Citizenship
-
 The Citizens’ House relies on the concept of identity-based governance. Citizens are meant to represent individual human stakeholders of the Collective: builders, users, and community members who are aligned with the project’s values and are interested in the long-term benefit of the Collective.
 This is distinct from the more common pattern of token-voting governance (as used in [Optimism’s Token House](./token-house.md)). 
 
