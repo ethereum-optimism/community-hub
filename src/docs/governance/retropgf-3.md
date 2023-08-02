@@ -22,7 +22,7 @@ Work may be nominated in four categories
 
 ## How to become badgeholders
 - Each badgeholder who voted in RetroPGF 2 will receive a new voting badge (69 badgeholders) and will be able to distribute a voting badge to one community member of their choosing. If you’re a badgeholder, please use [this form](https://app.deform.cc/form/f08a65d7-ac0d-4054-8b55-8c89b66f7cb7) to tell us who should receive a voting badge.
-- The [top 50 recipients of RetroPGF 2](https://docs.google.com/spreadsheets/d/13QTVuv4HTTDBctRxuqngECUMc70QP4usbmcFT8XT-GI/edit#gid=583271201) will be able to distribute a voting badge to one community member of their choosing. If you’re one of the top 50 recipients of RetroPGF 2, please use [this form](https://app.deform.cc/form/0b2b8e01-eac1-4e86-b6d2-d14ec88b4ddd)
+- The [top 50 recipients of RetroPGF 2](https://docs.google.com/spreadsheets/d/13QTVuv4HTTDBctRxuqngECUMc70QP4usbmcFT8XT-GI/edit#gid=583271201) (the collections do not count for this) will be able to distribute a voting badge to one community member of their choosing. If you’re one of the top 50 recipients of RetroPGF 2, please use [this form](https://app.deform.cc/form/0b2b8e01-eac1-4e86-b6d2-d14ec88b4ddd)
 - The Optimism Foundation will distribute 10 voting badges (10 badgeholders), each of whom will be able to distribute a voting badge to one community member of their choosing. 
 
 **:bulb: Please note that the deadline for distributing your voting badge is September 15th, 2023. It is important to ensure that you distribute your badge before this date.**
@@ -42,6 +42,6 @@ A: Details around round 3 voting will be shared in the coming months
 A: There will be no nominations process, projects will directly register for RetroPGF 3
 
 **Q: How many badgeholders are set for this round?**
-A: A total of 208 voting badges will be offered to community members which you able to read more detail [here](https://gov.optimism.io/t/retropgf-3-voting-badge-distribution/6557) 🌱
+A: A total of 208 voting badges will be offered to community members which you able to read more detail [here](https://gov.optimism.io/t/retropgf-3-voting-badge-distribution/6557) 🌱 and if everyone participates in distributing voting badges, and everyone accepts their voting badge, there would be 129 new badgeholders for round 3.
 
 
