@@ -31,9 +31,7 @@ Most importantly, make sure that your contributions align with the [Collective I
 
 You can contribute towards the collective in a million different ways, and there is no way we could make processes for all of these contributions. Nor would we want to! However, getting from 0 to 1 is the hardest step. So we have made a few ways to get you up to speed and contributing in no time! 
 
-If this list is too overwhelming you can start by checking out the [“Get a Grant”](../governance/get-a-grant.md) page.
-
-If you are looking for what is happening right now, add the [Optimism Public calender](https://calendar.google.com/calendar/embed?src=c_4hui70itm089e7t8q50heh1kno%40group.calendar.google.com) to see upcoming events!
+If you are looking for what is happening right now, add the [Optimism Public calender](https://calendar.google.com/calendar/embed?src=c_4hui70itm089e7t8q50heh1kno%40group.calendar.google.com) to see upcoming events! We also have a [“Get a Grant”](../governance/get-a-grant.md) page if you already have an idea on how you want to contribute. 
 
 ## 🌍 Accessibility
 
