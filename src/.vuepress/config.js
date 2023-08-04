@@ -395,13 +395,74 @@ module.exports = {
         }
       ],
       '/docs/contribute/': [
+        [
+          '/docs/contribute/',
+          'Contributions Home'
+        ],
+        [
+          'https://calendar.google.com/calendar/embed?src=c_4hui70itm089e7t8q50heh1kno%40group.calendar.google.com',
+          'Upcoming Events'
+        ],
         {
-          title: 'Ambassadors',
+          title: '🌍 Accessibility',
           children: [
-            '/docs/contribute/Ambassador-req.md'
+            '/docs/contribute/contribution-path/translators.md',
+            '/docs/contribute/contribution-path/local-optimists.md',
+            '/docs/contribute/contribution-path/NERD-req.md'
           ],
           collapsable: true,          
         },
+        {
+          title: '📈 Data & Analytics',
+          children: [
+            '/docs/contribute/contribution-path/numbaNERDs.md'
+          ],
+          collapsable: true,          
+        },
+        {
+          title: '💻 Developers',
+          children: [
+            [
+              '/docs/developers/',
+              'Build on Optimism'
+            ],
+            [
+              'https://stack.optimism.io/',
+              'Building with the OP Stack'
+            ],
+            [
+              'https://github.com/orgs/ethereum-optimism/projects/31/views/3',
+              'Ideas List'
+            ],
+            '/docs/contribute/contribution-path/techNERDs.md',
+            '/docs/contribute/technical-contributions.md'
+          ],
+          collapsable: true,          
+        },
+        {
+          title: '🏛️ Governance',
+          children: [
+            '/docs/governance/get-a-grant.md',
+            [
+              '/docs/governance/delegate.md',
+              'Token House'
+            ],
+            [
+              '/docs/governance/citizens-house.md',
+              'Citizen House'
+            ],
+          ],
+          collapsable: true,          
+        },
+        {
+          title: '🫡 Marketing',
+          children: [
+            '/docs/contribute/contribution-path/Ambassador-req.md',
+            '/docs/contribute/demo-day.md'
+          ],
+          collapsable: true,          
+        },
+        
       ]
     }
   },
