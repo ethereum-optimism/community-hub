@@ -17,7 +17,7 @@ On this page we'll show you how to work with these contracts directly from other
 
 You'll need to find the address of the particular contract that you want to interact with before you can actually interact with it.
 Check out the [Networks and Connection Details page](../../useful-tools/networks.md) for links to the contract addresses for each network.
-You can also find the addresses for all networks in the [deployments folder](https://github.com/ethereum-optimism/optimism/tree/master/packages/contracts/deployments) of the [`contracts` package](https://github.com/ethereum-optimism/optimism/tree/master/packages/contracts).
+You can also find the addresses for all networks in the [deployments folder](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts-bedrock/deployments) of the [`contracts-bedrock` package](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts-bedrock).
 
 ## Interacting from another contract
 
@@ -27,32 +27,32 @@ Now you simply need to import the appropriate contracts.
 
 ### Installing via NPM or Yarn
 
-We export a package [`@eth-optimism/contracts`](https://www.npmjs.com/package/@eth-optimism/contracts?activeTab=readme) that makes it easy to use the OP Mainnet contracts within NPM or Yarn based projects.
+We export a package [`@eth-optimism/contracts-bedrock`](https://www.npmjs.com/package/@eth-optimism/contracts-bedrock) that makes it easy to use the OP Mainnet contracts within NPM or Yarn based projects.
 Install the package as follows:
 
 ```
-npm install @eth-optimism/contracts
+npm install @eth-optimism/contracts-bedrock@0.15.0
 ```
 
 ### Importing contracts
 
-Simply import the desired contract or interface from the `@eth-optimism/contracts` package:
+Simply import the desired contract or interface from the `@eth-optimism/contracts-bedrock` package:
 
 ```solidity
-import { SomeOptimismContract } from "@eth-optimism/contracts/path/to/SomeOptimismContract.sol";
+import { SomeOptimismContract } from "@eth-optimism/contracts-bedrock/path/to/SomeOptimismContract.sol";
 ```
 
-Please note that `path/to/SomeOptimismContract` is the path to the contract [within this folder](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/contracts).
-For example, if you wanted to import the [`L1CrossDomainMessenger`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/L1/messaging/L1CrossDomainMessenger.sol) contract, you would use the following import:
+Please note that `path/to/SomeOptimismContract` is the path to the contract [within this folder](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts-bedrock/src).
+For example, if you wanted to import the [`L1CrossDomainMessenger`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/src/L1/L1CrossDomainMessenger.sol) contract, you would use the following import:
 
 ```solidity
-import { L1CrossDomainMessenger } from "@eth-optimism/contracts/L1/messaging/L1CrossDomainMessenger.sol";
+import { L1CrossDomainMessenger } from "@eth-optimism/contracts-bedrock/contracts/L1/L1CrossDomainMessenger.sol";
 ```
 
 ### Getting L2 contract addresses
 
 Addresses of system contracts on the L2 side of the network are the same on every network.
-We provide these addresses as constants within the [`Lib_PredeployAddresses`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/libraries/constants/Lib_PredeployAddresses.sol) contract.
+We provide these addresses as constants within the [`Predeploys`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/src/libraries/Predeploys.sol) contract.
 
 ## Interacting from the client side
 
@@ -60,11 +60,11 @@ Just like when interacting from another contract, we've created a few packages t
 
 ### Installing via NPM or Yarn
 
-You can use the [`@eth-optimism/contracts`](https://www.npmjs.com/package/@eth-optimism/contracts?activeTab=readme) package to interact with the OP Mainnet system contracts from a JavaScript or TypeScript based project.
+You can use the [`@eth-optimism/contracts-bedrock`](https://www.npmjs.com/package/@eth-optimism/contracts-bedrock) package to interact with the OP Mainnet system contracts from a JavaScript or TypeScript based project.
 Install the package as follows:
 
 ```
-npm install @eth-optimism/contracts
+npm install @eth-optimism/contracts-bedrock@0.15.0
 ```
 
 ### Getting contract artifacts, interfaces, and ABIs
@@ -72,7 +72,7 @@ npm install @eth-optimism/contracts
 You can get the compiler artifact, bytecode, and ABI for any OP Mainnet contract as follows:
 
 ```ts
-import { getContractDefinition } from '@eth-optimism/contracts'
+import { getContractDefinition } from '@eth-optimism/contracts-bedrock'
 
 const artifact = getContractDefinition('SomeOptimismContract')
 const abi = artifact.abi
@@ -83,7 +83,7 @@ const deployedBytecode = artifact.deployedBytecode
 Similarly, you can also get [ethers Interface objects](https://docs.ethers.io/v5/api/utils/abi/interface/) for any contract:
 
 ```ts
-import { getContractInterface } from '@eth-optimism/contracts'
+import { getContractInterface } from '@eth-optimism/contracts-bedrock'
 
 const iface = getContractInterface('SomeOptimismContract')
 ```
@@ -93,7 +93,7 @@ const iface = getContractInterface('SomeOptimismContract')
 You can get the address of any L2 contract as follows:
 
 ```ts
-import { predeploys } from '@eth-optimism/contracts'
+import { predeploys } from '@eth-optimism/contracts-bedrock'
 
 const address = predeploys.CONTRACT_NAME_GOES_HERE
 ```
