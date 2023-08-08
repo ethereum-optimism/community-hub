@@ -22,13 +22,13 @@ Users of [Coinbase Wallet](https://www.coinbase.com/wallet) can get test ETH on 
 [Optimism Faucet for Goerli by QuickNode](https://faucet.quicknode.com/optimism/goerli) is another easy way to acquire
 some testnet ETH for OP Goerli.
 
-### Bridging testnet funds to/from Ethereum L1
+### Bridging testnet tokens to/from Ethereum L1
 Need another option? Alternatively you can get L1 Goerli ETH from Alchemy's faucet [here](https://goerlifaucet.com/?a=818c11a8da) or similar Ethereum testnet faucets and use the [Optimism Bridge interface](https://app.optimism.io/bridge) to bridge the testnet ETH to OP Goerli.
 
 
 ## Mainnet Faucets
 
 If you need to get ETH on OP Mainnet for a contract deployment, you should [bridge ETH onto L2](https://app.optimism.io/bridge)).
-This process is relatively cheap and takes about ~1 minute to complete.
+This process takes about ~1 minute to complete.
 
 You can also get some ETH for expenses by [bridging enough USDC](https://optifaucet.com/) courtesy of [Perpetual Protocol](https://perp.com/).
