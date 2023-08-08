@@ -4,7 +4,7 @@ lang: en-US
 ---
 
 ## Testnet Faucets
-Testnet faucets are services that distribute testnet ETH on test networks like OP Goerli for development and testing purposes.
+Testnet faucets are services that distribute testnet ETH on test networks like OP Goerli and Ethereum Goerli for development and testing purposes.
 
 #### Superchain Faucet
 [Superchain Faucet](https://app.optimism.io/faucet) is a developer tool that allows you to claim free testnet Ether (ETH) to test apps on testnet OP Chains like OP Goerli. Testnet faucets for other OP Chains, such as Base Goerli, will be added soon!
