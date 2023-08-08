@@ -29,6 +29,6 @@ Need another option? Alternatively you can get L1 Goerli ETH from Alchemy's fauc
 
 ## Mainnet Faucets
 
-If you need to get ETH on OP Mainnet for a contract deployment, you can [bridge ETH from Ethereum Mainnet to OP Mainnet](https://app.optimism.io/bridge)). This process takes about ~1 minute to complete.
+If you need to get ETH on OP Mainnet for a contract deployment, you can [bridge ETH from Ethereum Mainnet to OP Mainnet](https://app.optimism.io/bridge). This process takes about ~1 minute to complete.
 
 You can also get some ETH for expenses by [bridging enough USDC](https://optifaucet.com/) courtesy of [Perpetual Protocol](https://perp.com/).
