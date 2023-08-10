@@ -227,7 +227,7 @@ The L1 proof and finalization transactions are typically significantly more expe
 
 ## Understanding the challenge period
 
-One of the most important things to understand about L1 ⇔ L2 interaction is that **messages sent from Layer 2 to Layer 1 cannot be relayed for at least one week**.
+One of the most important things to understand about L1 ⇔ L2 interaction is that **mainnet messages sent from Layer 2 to Layer 1 cannot be relayed for at least one week**.
 This means that any messages you send from Layer 2 will only be received on Layer 1 after this one week period has elapsed.
 We call this period of time the "challenge period" because it is the time during which a transaction can be challenged with a [fault proof](../../protocol/2-rollup-protocol.md#fault-proofs).
 
@@ -249,7 +249,8 @@ As a result, L2 ⇒ L1 messages sent using the standard messenger contracts cann
 
 ::: tip On the length of the challenge period
 We've set the challenge period to be exactly seven days on the OP Mainnet.
-We believe this is a reasonable balance between security and usability, with an emphasis on increased security to start.
+We believe this is a reasonable balance between security and usability, with an emphasis on increased security to start. Testnet messages sent from Layer 2 to Layer 1 have a much shorter period of 5 minutes to prove and 1 minute to withdraw.
+
 We're open to changing the length of the window as long as we feel this can be done without significantly reducing the security of the system.
 If you're strongly opinionated about this, we recommend [opening an issue on GitHub](https://github.com/ethereum-optimism/optimism/issues) explaining your position.
 We *will* hear you out!
