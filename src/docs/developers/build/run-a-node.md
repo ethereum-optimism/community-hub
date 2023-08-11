@@ -163,13 +163,12 @@ cd ~/op-geth
   --authrpc.jwtsecret=./jwt.txt \
   --authrpc.port=8551 \
   --authrpc.vhosts="*" \
-  --datadir=/data \
   --verbosity=3 \
   --rollup.sequencerhttp=$SEQUENCER_URL \
   --nodiscover \
   --syncmode=full \
   --maxpeers=0 \
-  --datadir ./datadir \
+  --datadir=./datadir \
   --snapshot=false
 ```
 
