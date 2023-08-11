@@ -12,13 +12,13 @@ The AttestationStation v1 uses [the Ethereum Attestation service standard](https
 
 You can read and write attestations in several ways:
 
-- [EAS scan user interface (Optimism Goerli)](https://optimism-goerli-bedrock.easscan.org/)
-- [EAS scan user interface (Optimism Mainnet)](https://optimism.easscan.org/)
+- [EAS scan user interface (OP Mainnet)](https://optimism.easscan.org/)
+- [EAS scan user interface (OP Goerli)](https://optimism-goerli-bedrock.easscan.org/)
 - [JavaScript SDK](https://docs.attest.sh/docs/getting--started/javascript)
 - [Access directly onchain](https://github.com/ethereum-attestation-service/eas-contracts/blob/master/contracts/EAS.sol) (if you need to attest from a smart contract)
 
 Indexing is available via: 
-- [GraphQL endpoint (Optimism Goerli)](https://optimism-goerli-bedrock.easscan.org/graphql)
-- [GraphQL endpoint (Optimism Mainnet)](https://optimism.easscan.org/graphql)
+- [GraphQL endpoint (OP Mainnet)](https://optimism.easscan.org/graphql)
+- [GraphQL endpoint (OP Goerli)](https://optimism-goerli-bedrock.easscan.org/graphql)
 - [Ponder graph]( https://github.com/ethereum-attestation-service/eas-ponder-graph)
 - [Open source indexer]( https://github.com/ethereum-attestation-service/eas-indexing-service)
