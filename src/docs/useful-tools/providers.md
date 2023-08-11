@@ -134,6 +134,18 @@ On the platform, there are also [Public APIs](https://blastapi.io/public-api/opt
 - OP Mainnet
 
 
+## Nodies DLB
+
+### Description and pricing
+
+[Nodies DLB](https://nodies.app) is a leading managed node infrastructure and software consulting provider. Our expertise lies in offering top-notch managed blockchain services tailored to our client's needs. We offer RPC, concierge indexing API's, and managed account abstraction bundlers. 
+
+Claim your free endpoint without registration [here](https://nodies.app) and learn more about our solutions using our [docs](https://docs.nodies.app).
+
+### Supported Networks
+
+- OP Mainnet
+
 
 ## NOWNodes
 
