@@ -12,7 +12,7 @@ Luckily, OP Mainnet is [EVM equivalent](https://medium.com/ethereum-optimism/int
 If you're a bit more familiar with OP  and Ethereum, you can try walking through one of the various [tutorials](https://github.com/ethereum-optimism/optimism-tutorial) put together by the Optimism community.
 They'll help you get a headstart when building your first Optimistic project.
 
-If you need testnet ETH, you can use our [Superchain Faucet](https://app.optimism.io/faucet) or checkout these other [network faucets](../useful-tools/faucets.md) options.
+If you need testnet ETH, you can use our [Superchain Faucet](https://app.optimism.io/faucet) or check out these other [network faucets](../useful-tools/faucets.md) options.
 
 ## Guides
 
