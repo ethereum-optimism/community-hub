@@ -367,6 +367,7 @@ module.exports = {
             '/docs/useful-tools/explorers.md',
             '/docs/useful-tools/providers.md',
             '/docs/useful-tools/oracles.md',
+            '/docs/useful-tools/account-abstraction.md',
             '/docs/useful-tools/meta-tx.md',
             ['https://www.optimism.io/apps/tools', 'Third Party Tools'],
           ],
