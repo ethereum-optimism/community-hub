@@ -10,7 +10,6 @@ Did you know deploying a contract wallet on the OP Stack costs 34x less than Eth
 Use this docs page to learn how you can use use smart contract wallet primitives to build, onboard & scale.
 
 ## Why account abstraction?
-
 Account abstraction (and contract accounts) enables more opportunities for dapps and wallet developers to innovate on user experiences including the ability to:
 
 - Batch transactions together (e.g. approve and execute a swap in one go)
