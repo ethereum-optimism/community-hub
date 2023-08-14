@@ -207,7 +207,7 @@ cd ~/optimism/op-node
 
 
 
-### The initial synchornization
+### The initial synchronization
 
 The datadir provided by Optimism is not updated continuously, so before you can use the node you need a to synchronize it.
 
