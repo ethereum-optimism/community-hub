@@ -71,7 +71,7 @@ While we did QA on these instructions and they work, the QA that the docker imag
 
     ```bash
     cd ~
-    git clone https://github.com/ethereum-optimism/optimism.git
+    git clone https://github.com/ethereum-optimism/optimism.git --recurse-submodules
     ```
 
 1. Install required modules. 
@@ -79,14 +79,14 @@ While we did QA on these instructions and they work, the QA that the docker imag
 
     ```bash
     cd optimism
-    yarn install
+    pnpm install
     ```
 
 1. Build the various packages inside of the Optimism Monorepo.
 
     ```bash
     make op-node
-    yarn build
+    pnpm build
     ```
 
 ### Build op-geth
