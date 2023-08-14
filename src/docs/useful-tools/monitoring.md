@@ -15,7 +15,7 @@ You can see the current gas price [here](https://optimism.io/gas-tracker).
 
 ## Block explorers
 
-You can find a full list of OP Mainnet Block Explorers [here](https://www.alchemy.com/list-of/block-explorers-on-optimism). 
+You can find a non-exhaustive list of OP Mainnet Block Explorers [here](../useful-tools/explorers.md). 
 
 ### Etherscan
 

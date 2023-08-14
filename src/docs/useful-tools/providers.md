@@ -3,46 +3,10 @@ title: Node & API Providers
 lang: en-US
 ---
 
-## Alchemy
-
-
 ::: warning
 Some API calls, such as those in the [personal namespace](https://geth.ethereum.org/docs/rpc/ns-personal) make no sense in a shared environment.
 Such RPCs are either totally unsupported, or will return nonsensical values.
 :::
-
-::: tip
-
-**We strongly recommend all developers use [Alchemy](https://www.alchemy.com/optimism).** 
-**We’ve done extensive diligence and Alchemy powers our public API.** 
-
-We recommend Alchemy due to (a) the reliability, scalability and data correctness of its developer platform and (b) the comprehensive set of tooling and APIs they provide. You can run large applications on their massive free tier. 
-
-::: 
-### Alchemy's Description & Pricing
-
-[Alchemy](https://docs.alchemy.com/reference/optimism-api-quickstart/?a=818c11a8da) is our recommended OP Mainnet (and testnets) API provider and developer platform. Its robust, free tier offers access to (1) enhanced features like SDKs and enhanced APIs and (2) hosted OP Mainnet and testnet nodes.
-
-_(1) Alchemy's enhanced features_
-
-Alchemy's free private RPC endpoint provides a complementary suite of proprietary tools. 
-These include a custom-built [Ethers.js SDK](https://www.alchemy.com/sdk/?a=818c11a8da) (which are supersets of the Ethers.js Provider and Wallet libraries) and [enhanced APIs](https://www.alchemy.com/enhanced-apis/?a=818c11a8da) such as NFT, Transfers, and Notify APIs.
-
-https://www.alchemy.com/optimism/sdk
-
-_(2) Alchemy's hosted OP Mainnet (and testnet) nodes_
-
-Alchemy hosts our public API because of its data accuracy, reliability, and scalability. 
-It counts companies like OpenSea, dYdX, and Facebook among its customers. 
-Its API takes only a few lines of code to get up and running. Alchemy isn't just a node provider, but also a developer platform and API provider.
-
-
-### Alchemy's Supported Networks
-
-- OP Mainnet
-- OP Goerli
-
-[Sign up for a free Alchemy account here](https://www.alchemy.com/optimism).
 
 ## Ankr
 
@@ -51,6 +15,18 @@ Its API takes only a few lines of code to get up and running. Alchemy isn't just
 [Ankr](https://www.ankr.com/) provides a geo-distributed and decentralized (free) public and premium (Pay-as-you-go) [Optimism RPC](https://www.ankr.com/rpc/optimism/) comprised of many independent blockchain nodes running worldwide for low-latency and incredibly reliable connections. 
 
 Moreover, Ankr offers access to developer tooling on OP Mainnet (and testnets) like SDKs and [Advanced APIs](https://www.ankr.com/advanced-api/) such as NFT, Token and Query API. 
+
+### Supported Networks
+
+- OP Mainnet
+- OP Goerli
+
+## Alchemy
+
+### Alchemy's Description & Pricing
+
+[Alchemy](https://docs.alchemy.com/reference/optimism-api-quickstart/?a=818c11a8da) is a popular API provider and developer platform. Its robust, free tier offers access to enhanced features like SDKs and enhanced APIs and hosted OP Mainnet and testnet nodes.
+
 
 ### Supported Networks
 

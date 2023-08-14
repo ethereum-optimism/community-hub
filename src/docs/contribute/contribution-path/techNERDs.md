@@ -19,7 +19,7 @@ You can also see the [Slides for the TechNERD](https://docs.google.com/presentat
 
 | Lesson | Topic | Exercise | Link |
 |:-------|:------|:---------|:-----|
-| 1 | Getting an RPC Endpoint | Get an RPC endpoint. You will need this for all following exercises. | [Alchemy Endpoint](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/ecosystem/alchemy) |
+| 1 | Getting an RPC Endpoint | Get an RPC endpoint. You will need this for all following exercises. | [Provider Options](../../useful-tools/providers.md) |
 | 2 | Run an OP Goerli Node | Most developer questions we get are about running a node. Pay special attention to any issues you face or confusion you have. This can take up to 2 weeks (depending on your internet speed) to sync. | [Run a Node](https://community.optimism.io/docs/developers/build/run-a-node/) |
 | 3 | Setting up an OP Stack | The OP Stack is an incredible step towards the Superchain vision. As such you should be familiar with the standard OP Stack. | [Getting Started with the OP Stack](https://stack.optimism.io/docs/build/getting-started/)
 | 4 | Setting up an explorer for your OP Stack | Make your OP Stack feel more real with its own block explorer! | [Blockscout explorer guide](https://stack.optimism.io/docs/build/explorer/)
