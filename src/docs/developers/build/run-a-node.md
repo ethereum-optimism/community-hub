@@ -3,14 +3,11 @@ title: Running an OP Mainnet or testnet node
 lang: en-US
 ---
 
-If you're looking to build an app on OP Mainnet you'll need access to an OP Mainnet node. You have two options - use a hosted node from providers like Alchemy or run your own. 
+If you're looking to build an app on OP Mainnet you'll need access to an OP Mainnet node. You have two options - use a hosted node from a third-party provider or run your own. 
 
 ## Hosted node providers
 
-You can get a free, hosted one from [any of these providers](../../useful-tools/providers.md) to get up and building quickly. Of them, [Alchemy](https://www.alchemy.com/optimism) is our preferred node provider, and is used to power our [public endpoint](../../useful-tools/networks.md). 
-
-However, you might be interested in running your very own node.
-Here we'll go over the process of running an OP Mainnet or testnet node for yourself.
+You can get a free, hosted one from [any of these providers](../../useful-tools/providers.md) to get up and building quickly. However, you might be interested in running your very own node. Here we'll go over the process of running an OP Mainnet or testnet node for yourself.
 
 ## Upgrades
 
@@ -183,7 +180,7 @@ Later, for regular usage, you can remove that option to improve geth database in
 #### `op-node`
 
 - Change `<< URL to L1 >>` to a service provider's URL for the L1 network (either L1 Ethereum or Goerli).
-- Set `L1KIND` to the network provider you are using (alchemy, infura, etc.).
+- Set `L1KIND` to the network provider you are using (options: alchemy, quicknode, infura, parity, nethermind, debug_geth, erigon, basic, any).
 - Set `NET` to either `goerli` or `mainnet`.
 
 
@@ -191,7 +188,7 @@ Later, for regular usage, you can remove that option to improve geth database in
 #! /usr/bin/bash
 
 L1URL=  << URL to L1 >>
-L1KIND=alchemy
+L1KIND=basic
 NET=goerli
 
 cd ~/optimism/op-node
@@ -210,7 +207,7 @@ cd ~/optimism/op-node
 
 
 
-### The initial synchornization
+### The initial synchronization
 
 The datadir provided by Optimism is not updated continuously, so before you can use the node you need a to synchronize it.
 
