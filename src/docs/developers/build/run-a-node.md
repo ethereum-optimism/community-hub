@@ -197,7 +197,7 @@ NET=goerli
 cd ~/optimism/op-node
 
 ./bin/op-node \
-        --l1=$L1UL  \
+        --l1=$L1URL  \
         --l1.rpckind=$L1KIND \
         --l2=http://localhost:8551 \
         --l2.jwt-secret=./jwt.txt \
