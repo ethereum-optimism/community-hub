@@ -14,7 +14,7 @@ These fee discrepancies are an inherent result of the fact that OP Mainnet is a 
 OP Mainnet shares the [Ethereum JSON-RPC API](https://eth.wiki/json-rpc/API) with only [a few minor differences](../developers/build/json-rpc.md).
 You'll find all of the important information about OP Mainnet, as well as any test networks, on [our Networks page](../useful-tools/networks.md).
 You can choose to connect to OP Mainnet via our rate-limited public endpoints, [private endpoints from infrastructure providers](../useful-tools/networks.md), or [by running your own node](../developers/build/run-a-node/).
-Because of throughput limits, we recommend using private node providers or running your own node for production applications.
+Because of throughput limits, we recommend using private node [providers](../useful-tools/providers.md) or running your own node for production applications.
 
 ## Canonical token addresses
 
@@ -96,4 +96,4 @@ You **MUST** deduct both the L2 execution fee and the L1 data fee or the charged
 
 ### Displaying the gas prices
 
-If you want to display the current gas prices, you can use `eth_gasPrice`.
+If you want to display the current gas prices, you can use [`eth_gasPrice`](https://ethereum.org/en/developers/docs/apis/json-rpc/#eth_gasprice).

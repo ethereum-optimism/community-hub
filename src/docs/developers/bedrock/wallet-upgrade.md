@@ -16,7 +16,7 @@ These methods have been removed:
 
 - `eth_getBlockRange`: Use `eth_getBlockByNumber` in a batch request instead.
 - `rollup_getInfo`: None of the information returned by this method exists on Bedrock, so there is no replacement for this method.
-- `rollup_gasPrices`: Use `eth_gasPrice` instead for the L2 gas price. 
+- `rollup_gasPrices`: Use [`eth_gasPrice`](https://ethereum.org/en/developers/docs/apis/json-rpc/#eth_gasprice) instead for the L2 gas price. 
   For the L1 gas price, you can call the [`GasPriceOracle`'s `l1BaseFee` function](https://optimistic.etherscan.io/address/0x420000000000000000000000000000000000000F#readContract#F5).
   If you want to estimate the cost of a transaction, you can [use the SDK](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/sdk-estimate-gas).
 
@@ -30,9 +30,9 @@ Blocks (and the transactions within them) can be in one of the following states:
 - `safe`, meaning that the block has been submitted to L1. Safe blocks can also be reorged if L1 reorgs.
 - `finalized`, meaning that the block has reached sufficient depth to be considered final. Finalized blocks cannot be reorged.
 
-To get the status of a specific block, use `eth_getBlockByNumber` with the "block number" `finalized`.
+To get the status of a specific block, use [`eth_getBlockByNumber`](https://ethereum.org/en/developers/docs/apis/json-rpc/#eth_getblockbynumber) with the "block number" `finalized`.
 If the last finalized block is the same or greater than the block with the transaction whose status you need, then it is finalized.
-If not, use `eth_getBlockByNumber with the "block number" `safe`. If that block is the same or after the one with the transaction, then it is `safe` (highly unlikely to be reorganized, but it could happen). Otherwise, it is `unsafe`.
+If not, use [`eth_getBlockByNumber`](https://ethereum.org/en/developers/docs/apis/json-rpc/#eth_getblockbynumber) with the "block number" `safe`. If that block is the same or after the one with the transaction, then it is `safe` (highly unlikely to be reorganized, but it could happen). Otherwise, it is `unsafe`.
 
 
 ## Transaction fees

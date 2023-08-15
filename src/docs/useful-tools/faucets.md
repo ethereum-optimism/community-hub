@@ -24,7 +24,8 @@ Users of [Coinbase Wallet](https://www.coinbase.com/wallet) can get test ETH on 
 some testnet ETH for OP Goerli.
 
 ### Bridging testnet tokens to/from Ethereum L1
-Need another option? Alternatively you can get L1 Goerli ETH from an Ethereum testnet faucets and use the [Optimism Bridge interface](https://app.optimism.io/bridge) to bridge the testnet ETH to OP Goerli.
+
+Need another option? Alternatively you can get L1 Goerli ETH from an Ethereum testnet faucets and use the [Optimism Bridge interface](https://app.optimism.io/bridge) to bridge the testnet ETH to/from OP Goerli.
 
 
 ## Mainnet Faucets
