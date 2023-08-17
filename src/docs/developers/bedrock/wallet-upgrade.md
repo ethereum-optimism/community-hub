@@ -38,7 +38,7 @@ If not, use [`eth_getBlockByNumber`](https://ethereum.org/en/developers/docs/api
 ## Transaction fees
 
 In OP Mainnet (and most other OP Stack chain) transaction fees include both an [L1 data fee](../build/transaction-fees.md#estimating-the-l1-data-fee) and an [L2 execution fee](../build/transaction-fees.md#the-l2-execution-fee). 
-To display the entire estimated cost of a transaction to your users we recommend you [use the SDK](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/sdk-estimate-gas). 
+To display the entire estimated cost of a transaction to your users we recommend you [use the SDK](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/sdk-estimate-gas) or [@eth-optimism/fee-estimation](https://github.com/ethereum-optimism/optimism/tree/develop/packages/fee-estimation) if you need to optimize for JS performance. 
 
 In Bedrock we support [EIP 1559](https://eips.ethereum.org/EIPS/eip-1559).
 Therefore, the L2 execution fee is composed of two components: a fixed (per-block) base fee and a user selected priority fee.
@@ -60,7 +60,7 @@ That would be the value to put in the transaction, even though the L2 base fee (
 
 ::: info Up to date information
 
-You can get the current L2 base fee [in the gas tracker dashboard](https://optimism.io/gas-tracker).
+You can get the current L2 base fee [in the gas tracker dashboard](https://optimism.io/gas-tracker). We recommend setting your `Max Fee` to _at least_ 0.1 gwei. This value will get your user's transaction included in the next block 98% of the time.
 
 :::
 
@@ -68,7 +68,7 @@ You can get the current L2 base fee [in the gas tracker dashboard](https://optim
 ### Priority fee
 
 In contrast to the base fee, the priority fee in the transaction is the amount that the user pays, and therefore it makes sense to keep it as low as possible.
-If you already have estimating code you use for L1 Ethereum, you can just use that.
+For OP Chains, you can set the `Max Priority Fee` to as low as 0.0001 gwei.
 
 Note that on OP Mainnet the priority fee tends to be very low. 
 As I am writing this, a priority fee of 500 wei is sufficient ([see here](https://optimism.io/gas-tracker) to get the current values).
