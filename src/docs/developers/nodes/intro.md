@@ -8,6 +8,13 @@ Here are the instructions if you want to build you own read-only replica without
 Note: This is not the recommended configuration. While we did QA on these instructions and they work, the QA that the docker images undergo is much more extensive.
 
 # Prerequisites
+
+## Hardware requirements
+
+Replicas need to store the transaction history of OP Mainnet (or the relevant OP testnet) and to run Geth. They need to be relatively powerful machines (real or virtual). We recommend at least 16 GB RAM, and an SSD drive with at least 500 GB free (for OP Mainnet).
+
+## Software requirements
+
 You’ll need the following software installed to follow this tutorial:
 
 - [Git](https://git-scm.com/)
@@ -18,8 +25,6 @@ You’ll need the following software installed to follow this tutorial:
 
 - [Pnpm](https://pnpm.io/)
 
-- [yarn](https://classic.yarnpkg.com/lang/en/docs/install/)
-  
 - [Foundry](https://github.com/foundry-rs/foundry#installation)
 
 - [Make](https://linux.die.net/man/1/make)
@@ -38,7 +43,6 @@ This tutorial was checked on:
 | Go                              | 1.20            | `wget https://go.dev/dl/go1.20.linux-amd64.tar.gz`, <br/> `tar xvzf go1.20.linux-amd64.tar.gz`, <br/> `sudo cp go/bin/go /usr/bin/go`, <br/>`sudo mv go /usr/lib`, <br/>`echo export GOROOT=/usr/lib/go >> ~/.bashrc` |
 | Node                            | 16.19.0         | `curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -`, <br/> `sudo apt-get install -y nodejs`
 | pnpm                            | 8.5.6           | `sudo npm install -g pnpm` |
-| yarn                            | 1.22.19         | `sudo npm install -g yarn` |
 | Foundry                         | 0.2.0           | `curl -L https://foundry.paradigm.xyz | bash`, <br/> `. ~/.bashrc`, <br/> `foundryup` |
 
 ### Build the Optimism Monorepo
@@ -55,14 +59,14 @@ This tutorial was checked on:
 
     ```bash
     cd optimism
-    yarn install
+    pnpm install
     ```
 
 1. Build the various packages inside of the Optimism Monorepo.
 
     ```bash
     make op-node
-    yarn build
+    pnpm build
     ```
 
 ### Build op-geth
