@@ -107,7 +107,7 @@ While we did QA on these instructions and they work, the QA that the docker imag
 
 ### Get the data dir
 
-The next step is to download the data directory for `op-geth`.
+The next step is to download the data directory for `op-geth`. Note that for OP Sepolia, you do not need to donwload a data directory.
 
 1. Download the correct data directory snapshot.
 
@@ -136,13 +136,13 @@ The next step is to download the data directory for `op-geth`.
 
 #### `op-geth`
 
-This is the script for OP Goerli.
-For OP Mainnet (or other OP networks in the future, [get the sequencer URL here](../../useful-tools/networks.md)).
+This is the script for OP Sepolia.
+For OP Mainnet, OP Goerli (or other OP networks in the future, [get the sequencer URL here](../../useful-tools/networks.md)).
 
 ```
 #! /usr/bin/bash
 
-SEQUENCER_URL=https://goerli-sequencer.optimism.io/
+SEQUENCER_URL=https://sepolia-sequencer.optimism.io/
 
 cd ~/op-geth
 
@@ -179,9 +179,9 @@ Later, for regular usage, you can remove that option to improve geth database in
 
 #### `op-node`
 
-- Change `<< URL to L1 >>` to a service provider's URL for the L1 network (either L1 Ethereum or Goerli).
+- Change `<< URL to L1 >>` to the URL of an RPC endpoint for the L1 network (either L1 Ethereum or Goerli or Sepolia). E.g. for an OP Mainnet node, an Infura URL would look like https://mainnet.infura.io/v3/API_KEY
 - Set `L1KIND` to the network provider you are using (options: alchemy, quicknode, infura, parity, nethermind, debug_geth, erigon, basic, any).
-- Set `NET` to either `goerli` or `mainnet`.
+- Set `NET` to `goerli` or `mainnet` or `sepolia`.
 
 
 ```
@@ -189,7 +189,7 @@ Later, for regular usage, you can remove that option to improve geth database in
 
 L1URL=  << URL to L1 >>
 L1KIND=basic
-NET=goerli
+NET=sepolia
 
 cd ~/optimism/op-node
 
@@ -241,8 +241,9 @@ INFO [06-26|14:02:12.982] Starting work on payload                 id=0x5542117d
 
 To estimate how long the synchronization will take, you need to first find out how many blocks you synchronize in a minute. 
 
-You can use this script, which uses [Foundry](https://book.getfoundry.sh/). and the UNIX Note that this script is for OP Goerli. 
+You can use this script, which uses [Foundry](https://book.getfoundry.sh/). and the UNIX Note that this script is for OP Sepolia. 
 For OP Mainnet substitute `https://mainnet.optimism.io`
+For OP Goerli substitute `https://goerli.optimism.io`
 
 ```sh
 #! /usr/bin/bash
@@ -264,7 +265,7 @@ echo Progress per minute: $PROGRESS_PER_MIN
 
 
 # How many more blocks do we need?
-HEAD=`cast block --rpc-url https://goerli.optimism.io latest number`
+HEAD=`cast block --rpc-url https://sepolia.optimism.io latest number`
 BEHIND=`expr $HEAD - $T1` 
 MINUTES=`expr $BEHIND / $PROGRESS_PER_MIN`
 HOURS=`expr $MINUTES / 60`

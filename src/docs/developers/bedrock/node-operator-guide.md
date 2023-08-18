@@ -17,7 +17,7 @@ A Bedrock deployment consists of two core components:
 
 The Rollup Node and Execution Engine communicate with each other over JSON-RPC via the Engine API. This is similar to how regular Ethereum networks are deployed. The Rollup Node functions as Optimism's consensus client, and the Execution Engine as its execution client.
 
-For Goerli and mainnet, you may also need to run a third component called Legacy Geth. Legacy Geth is used to serve execution traces for transactions prior to the Bedrock upgrade, which we refer to as "historical transactions". When the Rollup Node encounters an RPC call that requires historical execution traces, it will forward the request to Legacy Geth. Note, however, that unlike our previous networks requests for historical _data_ will be served by the Execution Engine directly. This distinction will be clarified later on in this document.
+For Goerli and mainnet (but not Sepolia), you may also need to run a third component called Legacy Geth. Legacy Geth is used to serve execution traces for transactions prior to the Bedrock upgrade, which we refer to as "historical transactions". When the Rollup Node encounters an RPC call that requires historical execution traces, it will forward the request to Legacy Geth. Note, however, that unlike our previous networks requests for historical _data_ will be served by the Execution Engine directly. This distinction will be clarified later on in this document.
 
 The architecture of a typical Bedrock deployment looks like this:
 
@@ -30,7 +30,7 @@ The architecture of a typical Bedrock deployment looks like this:
 We recommend the following minimum system requirements to run Bedrock:
 
 - `op-node`: Minimum 2CPUs, 4GB RAM. No storage is necessary.
-- `op-geth`: Minimum 4 CPUs, 8GB RAM. At least 32GB of storage is required for Goerli. At least 600GB of storage is required for mainnet. Storage must be SSD. Requirements are significantly higher for archive nodes.
+- `op-geth`: Minimum 4 CPUs, 8GB RAM. At least 32GB of storage is required for Goerli or Sepolia. At least 600GB of storage is required for mainnet. Storage must be SSD. Requirements are significantly higher for archive nodes.
 
 ## Getting the Software
 
@@ -156,14 +156,14 @@ Consult [Geth's documentation](https://geth.ethereum.org/docs/) for more informa
 
 ### Configuring op-node
 
-`op-node` is a standalone, statically linked binary. It stores no state, and requires no initialization. It consumes configuration parameters either via the command line or environment variables. For some networks, the Rollup Node also requires a configuration file (called `rollup.json` or the "rollup config") that configures network-specific genesis parameters. For official networks like Goerli and mainnet, the genesis config is hardcoded in the `op-node` software and can be specified via a `--network` flag.
+`op-node` is a standalone, statically linked binary. It stores no state, and requires no initialization. It consumes configuration parameters either via the command line or environment variables. For some networks, the Rollup Node also requires a configuration file (called `rollup.json` or the "rollup config") that configures network-specific genesis parameters. For official networks like Goerli, Sepolia, and Mainnet, the genesis config is hardcoded in the `op-node` software and can be specified via a `--network` flag.
 
-A minimal valid configuration for a rollup node on our `beta-1` testnet looks like this:
+A minimal valid configuration for a rollup node on our `sepolia` testnet looks like this:
 
 ```bash
-op-node --l1=<goerli RPC url> \
+op-node --l1=<sepolia RPC url> \
         --l2=<op-geth authenticated RPC url> \
-        --network=beta-1 \
+        --network=sepolia \
         --rpc.addr=127.0.0.1 \
         --rpc.port=9545 \
         --l2.jwt-secret=<path to JWT secret>
@@ -183,7 +183,7 @@ The default port for the peer-to-peer network is `9003`. You will need to open t
 
 ### Legacy Geth
 
-If you are running a node for an upgraded network like Goerli or mainnet, you will also need to run Legacy Geth in order to serve historical execution traces. Fundamentally, Legacy Geth is our old `l2geth` binary running against a preconfigured data directory. To configure Legacy Geth, follow the instructions above for using a preconfigured data directory, then execute the following command:
+If you are running a node for an upgraded network like Goerli or Mainnet (but not Sepolia), you will also need to run Legacy Geth in order to serve historical execution traces. Fundamentally, Legacy Geth is our old `l2geth` binary running against a preconfigured data directory. To configure Legacy Geth, follow the instructions above for using a preconfigured data directory, then execute the following command:
 
 :::danger
 It is imperative that you specify the `USING_OVM=true` environment variable in the command below. Failing to specify this will cause `l2geth` to return invalid execution traces, or panic at startup.
