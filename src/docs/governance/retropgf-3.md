@@ -17,7 +17,7 @@ Work may be nominated in four categories
 ## How to get involved
 - If you’re a developer, check out the [Ecosystem Contributions board](https://github.com/ethereum-optimism/ecosystem-contributions#readme) for a range of ideas and projects to get started on. These may all be good candidates for RetroPGF funding! 
 - If you're working on a project you believe is aligned with our [Collective Intents](https://gov.optimism.io/t/collective-intents/5874/2), but need the grant to get started, you can find the guide to apply for a grant [here](https://community.optimism.io/docs/governance/get-a-grant/#collective-grants)
-- If you’re a community builder, check out the NERD program (support, onboarding) or [Ambassador program](https://community.optimism.io/docs/contribute/Ambassador-req/) (marketing, business development). 
+- If you’re a community builder, check out the NERD program (support, onboarding) or [Ambassador program](https://community.optimism.io/docs/contribute/contribution-path/Ambassador-req/) (marketing, business development). 
 - If you want to choose your own adventure, go ahead! 195 projects and people were rewarded in RetroPGF 2 – check out [this post](https://optimism.mirror.xyz/Upn_LtV2-3SviXgX_PE_LyA7YI00jQyoM1yf55ltvvI) for an overview of what was funded to get some ideas about how you can contribute. 
 
 
