@@ -12,32 +12,37 @@ The next step is to download the data directory for `op-geth`.
 1. Download the correct data directory snapshot.
 
    - [OP Mainnet](https://datadirs.optimism.io/mainnet-bedrock.tar.zst)
+   - Save it wherever you want `I.E. ~/Downloads/mainnet-bedrock.tar.zst`. 
+   - For this tutorial, `~/Downloads/mainnet-bedrock.tar.zst` = `<<PATH_TO_DATA>>`;
 
 2. Create the data directory in `op-geth` and fill it.
-   Note that these directions assume the data directory snapshot is at `~`, the home directory. Modify if needed.
 
+   Using a terminal in `op-geth`, run these commands:
    ```sh
-   cd ~/op-geth
    mkdir datadir
    cd datadir
-   tar xvf ~/mainnet-bedrock.tar.zst
+   tar xvf <<PATH_TO_DATA>>
    ```
 
 3. Create a shared secret with `op-node`:
 
-   ```sh
-   cd ~/op-geth
-   openssl rand -hex 32 > jwt.txt
-   cp jwt.txt ~/optimism/op-node
-   ```
+    ```sh
+    cd ~/op-geth
+    openssl rand -hex 32 > jwt.txt
+    cp jwt.txt ~/optimism/op-node
+    ```
 
    	
 
 ### Scripts to start the different components
 
+In the root of the `optimism-no-docker` directory create a new directory: `scripts`.
+
+It should read as `optimism-no-docker/scripts`.
+
 ### `op-geth`
 
-Using a terminal in `~/optimism-no-docker/scripts`:
+Using a terminal in `optimism-no-docker/scripts`:
    1. create a new file: `touch run-op-geth.sh`.
    2. Make it executable: `chmod +x run-op-geth.sh`.
    3. Copy and Paste this snippet of code into `run-op-geth.sh`.
@@ -74,7 +79,6 @@ cd op-geth
 ```
 Other Sequencer URLs can be found here: [Networks, Public RPC Endpoints, & APIs](../../useful-tools/networks.md).
 
-4. run the command `./run-op-geth.sh`
 
 ::: info Snapshots
 
@@ -83,9 +87,11 @@ Later, for regular usage, you can remove that option to improve geth database in
 
 :::
 
+4. run the command `./run-op-geth.sh`
+
 ### `op-node`
 
-Using a terminal in `~/optimism-no-docker/scripts`:
+Using a terminal in `optimism-no-docker/scripts`:
    1. create a new file: `touch run-op-node.sh`.
    2. Make it executable: `chmod +x run-op-node.sh`.
    3. Copy and Paste this snippet of code into `run-op-node.sh`.
@@ -111,7 +117,7 @@ cd optimism/op-node
 
 ```        
 
-- Change `<< URL to L1 >>` to a service provider's URL for the L1 network (L1 Goerli).
+- Change `<< URL to L1 >>` to a service provider's URL for the L1 network (L1 Ethereum).
 - Set `L1KIND` to the network provider you are using (options: alchemy, quicknode, infura, parity, nethermind, debug_geth, erigon, basic, any).
 - Set `NET` to `ethereum`.
 
