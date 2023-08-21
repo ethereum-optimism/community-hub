@@ -47,7 +47,7 @@ This tutorial was checked on:
 
 ### Build the Optimism Monorepo
 
-Create a directory in a location of your choice. This tutorial will call it `optimism-no-docker`.
+Create an empty directory (this tutorial will label it: `optimism-no-docker`) in a path of your choice.
 
 Using a terminal in `optimism-no-docker`:
 1. Clone the [Optimism Monorepo](https://github.com/ethereum-optimism/optimism).

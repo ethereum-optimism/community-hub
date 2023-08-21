@@ -101,7 +101,7 @@ Using a terminal in `optimism-no-docker/scripts`:
 
 L1URL=<< URL to L1 >>
 L1KIND=basic
-NET=goerli
+NET=etheruem
 
 cd ..
 cd optimism/op-node
@@ -119,7 +119,6 @@ cd optimism/op-node
 
 - Change `<< URL to L1 >>` to a service provider's URL for the L1 network (L1 Ethereum).
 - Set `L1KIND` to the network provider you are using (options: alchemy, quicknode, infura, parity, nethermind, debug_geth, erigon, basic, any).
-- Set `NET` to `ethereum`.
 
 4. run the command `./run-op-node.sh`  
 
@@ -159,6 +158,10 @@ To estimate how long the synchronization will take, you need to first find out h
 
 You can use this script, which uses [Foundry](https://book.getfoundry.sh/). 
 
+Using a terminal in `optimism-no-docker/scripts`:
+   1. create a new file: `touch run-estimate.sh`.
+   2. Make it executable: `chmod +x run-estimate.sh`.
+   3. Copy and Paste this snippet of code into `run-estimate.sh`.
 ```sh
 #! /usr/bin/bash
 
@@ -204,3 +207,5 @@ if [ $HOURS -gt 24 ] ; then
    echo Days until sync complete: $DAYS
 fi
 ```
+
+4. run the command `./run-estimate.sh`  
