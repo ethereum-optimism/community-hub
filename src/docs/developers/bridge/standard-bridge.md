@@ -58,7 +58,7 @@ There are two ways to check if a token can use the standard bridge:
     },
    ```
 
-   In the token exists in the token list but does not use the standard bridge, the `extensions.optimismBridgeAddress` value is different. For example, this entry shows that on OP Mainnet `DAI` uses a different bridge:
+   If the token exists in the token list but does not use the standard bridge, the `extensions.optimismBridgeAddress` value is different. For example, this entry shows that on OP Mainnet `DAI` uses a different bridge:
 
    ```json
        {
