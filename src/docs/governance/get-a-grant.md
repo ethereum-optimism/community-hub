@@ -30,7 +30,7 @@ Here are some examples of projects that received grants from the Grants Council 
 
 Missions are specific pieces of work proposed by contributors. The Token House votes on approving Missions once per Season (roughly once every four-six months). 
 
-[Mission](https://gov.optimism.io/t/token-house-missions/5881)s support a broader range of grants than the Grants Council. Any initiative that aligns with one of the [Collective Intents](https://gov.optimism.io/t/collective-intents/5874/2) can receive a grant! Missions should be specific initiatives that can be completed start-to-finish (marked done by the end of the Season). You can propose a Mission under Intent #1, Intent #3, or Intent #4. All proposals under Intent #2 should be grant applications that will be processed by the Grants Council as outlined above in 1. 
+[Missions](https://gov.optimism.io/t/token-house-missions/5881) support a broader range of grants than the Grants Council. Any initiative that aligns with one of the [Collective Intents](https://gov.optimism.io/t/collective-intents/5874) can receive a grant! Missions should be specific initiatives that can be completed start-to-finish (marked done by the end of the Season). You can propose a Mission under Intent #1, Intent #3, or Intent #4. All proposals under Intent #2 should be grant applications that will be processed by the Grants Council as outlined above in 1. 
 
 Here is a good [example](https://gov.optimism.io/t/superchain-governance-deep-dive/5920). 
 
