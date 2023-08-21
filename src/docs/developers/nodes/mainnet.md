@@ -20,7 +20,7 @@ The next step is to download the data directory for `op-geth`.
    cd ~/op-geth
    mkdir datadir
    cd datadir
-   tar xvf ~/*bedrock.tar
+   tar xvf ~/mainnet-bedrock.tar.zst
    ```
 
 3. Create a shared secret with `op-node`:
