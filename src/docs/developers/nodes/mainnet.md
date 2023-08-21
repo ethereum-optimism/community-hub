@@ -35,16 +35,20 @@ The next step is to download the data directory for `op-geth`.
 
 ### Scripts to start the different components
 
-#### `op-geth`
+### `op-geth`
 
-Other Sequencer URLs can be found here: [Networks, Public RPC Endpoints, & APIs](../../useful-tools/networks.md).
+Using a terminal in `~/optimism-no-docker/scripts`:
+   1. create a new file: `touch run-op-geth.sh`.
+   2. Make it executable: `chmod +x run-op-geth.sh`.
+   3. Copy and Paste this snippet of code into `run-op-geth.sh`.
 
 ```
 #! /usr/bin/bash
 
-SEQUENCER_URL=https://mainnet-sequencer.optimism.io/
+SEQUENCER_URL=https://goerli-sequencer.optimism.io/
 
-cd ~/op-geth
+cd ..
+cd op-geth
 
 ./build/bin/geth \
   --ws \
@@ -68,7 +72,9 @@ cd ~/op-geth
   --datadir=./datadir \
   --snapshot=false
 ```
+Other Sequencer URLs can be found here: [Networks, Public RPC Endpoints, & APIs](../../useful-tools/networks.md).
 
+4. run the command `./run-op-geth.sh`
 
 ::: info Snapshots
 
@@ -77,21 +83,22 @@ Later, for regular usage, you can remove that option to improve geth database in
 
 :::
 
-#### `op-node`
+### `op-node`
 
-- Change `<< URL to L1 >>` to a service provider's URL for the L1 network (L1 Ethereum).
-- Set `L1KIND` to the network provider you are using (options: alchemy, quicknode, infura, parity, nethermind, debug_geth, erigon, basic, any).
-- Set `NET` to `mainnet`.
-
-
+Using a terminal in `~/optimism-no-docker/scripts`:
+   1. create a new file: `touch run-op-node.sh`.
+   2. Make it executable: `chmod +x run-op-node.sh`.
+   3. Copy and Paste this snippet of code into `run-op-node.sh`.
+   
 ```
 #! /usr/bin/bash
 
-L1URL=  << URL to L1 >>
+L1URL=<< URL to L1 >>
 L1KIND=basic
-NET=mainnet
+NET=goerli
 
-cd ~/optimism/op-node
+cd ..
+cd optimism/op-node
 
 ./bin/op-node \
         --l1=$L1URL  \
@@ -103,6 +110,12 @@ cd ~/optimism/op-node
         --rpc.port=8547
 
 ```        
+
+- Change `<< URL to L1 >>` to a service provider's URL for the L1 network (L1 Goerli).
+- Set `L1KIND` to the network provider you are using (options: alchemy, quicknode, infura, parity, nethermind, debug_geth, erigon, basic, any).
+- Set `NET` to `ethereum`.
+
+4. run the command `./run-op-node.sh`  
 
 ### The initial synchronization
 

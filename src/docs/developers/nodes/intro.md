@@ -47,14 +47,16 @@ This tutorial was checked on:
 
 ### Build the Optimism Monorepo
 
+Create a directory in a location of your choice. This tutorial will call it `optimism-no-docker`.
+
+Using a terminal in `optimism-no-docker`:
 1. Clone the [Optimism Monorepo](https://github.com/ethereum-optimism/optimism).
 
     ```bash
-    cd ~
     git clone https://github.com/ethereum-optimism/optimism.git
     ```
 
-1. Install required modules. 
+2. Install required modules. 
    This is a slow process, while it is running you can already start building `op-geth`, as shown below.
 
     ```bash
@@ -62,7 +64,7 @@ This tutorial was checked on:
     pnpm install
     ```
 
-1. Build the various packages inside of the Optimism Monorepo.
+3. While still in `optimism-no-docker/optimism`, build the various packages inside of the Optimism Monorepo.
 
     ```bash
     make op-node
@@ -71,10 +73,11 @@ This tutorial was checked on:
 
 ### Build op-geth
 
+Using a terminal in `optimism-no-docker`:
+
 1. Clone [`op-geth`](https://github.com/ethereum-optimism/op-geth):
 
     ```bash
-    cd ~
     git clone https://github.com/ethereum-optimism/op-geth.git
     ```
 
