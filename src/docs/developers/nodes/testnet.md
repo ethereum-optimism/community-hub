@@ -3,7 +3,7 @@ title: Running a testnet node without Docker
 lang: en-US
 ---
 
-[Please follow these steps first if you have not done so already](./intro.md)
+#### [Please follow these steps first if you have not done so already.](./intro.md)
 
 ### Get the data dir
 
