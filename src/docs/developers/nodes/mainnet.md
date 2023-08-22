@@ -26,8 +26,8 @@ The next step is to download the data directory for `op-geth`.
 
 3. Create a shared secret with `op-node`:
 
+   Using a terminal in `op-geth`, run these commands:
     ```sh
-    cd ~/op-geth
     openssl rand -hex 32 > jwt.txt
     cp jwt.txt ~/optimism/op-node
     ```
