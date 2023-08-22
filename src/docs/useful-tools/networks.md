@@ -198,7 +198,7 @@ They are reproduced here for convenience
 | OptimismPortal | [`0x16Fc5058F25648194471939df75CF27A2fdC48BC`](https://sepolia.etherscan.io/address/0x16Fc5058F25648194471939df75CF27A2fdC48BC) | 
 | ProxyAdmin | [`0x189aBAAaa82DfC015A588A7dbaD6F13b1D3485Bc`](https://sepolia.etherscan.io/address/0x189aBAAaa82DfC015A588A7dbaD6F13b1D3485Bc)
 | SystemConfig | [`0x034edD2A225f7f429A63E0f1D2084B9E0A93b538`](https://sepolia.etherscan.io/address/0x034edD2A225f7f429A63E0f1D2084B9E0A93b538)
-| Batch Inbox Address | [`0xff00000000000000000000000000000011155420`](https://sepolia.etherscan.io/address/0xff00000000000000000000000000000000000420)
+| Batch Inbox Address | [`0xff00000000000000000000000000000011155420`](https://sepolia.etherscan.io/address/0xff00000000000000000000000000000011155420)
 
 ### Test ETH
 

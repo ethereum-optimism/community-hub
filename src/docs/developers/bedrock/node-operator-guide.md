@@ -30,7 +30,7 @@ The architecture of a typical Bedrock deployment looks like this:
 We recommend the following minimum system requirements to run Bedrock:
 
 - `op-node`: Minimum 2CPUs, 4GB RAM. No storage is necessary.
-- `op-geth`: Minimum 4 CPUs, 8GB RAM. At least 32GB of storage is required for Goerli or Sepolia. At least 600GB of storage is required for mainnet. Storage must be SSD. Requirements are significantly higher for archive nodes.
+- `op-geth`: Minimum 4 CPUs, 8GB RAM. At least 40GB of storage is required for Goerli or Sepolia. At least 600GB of storage is required for mainnet. Storage must be SSD. Requirements are significantly higher for archive nodes.
 
 ## Getting the Software
 

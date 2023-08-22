@@ -107,7 +107,7 @@ While we did QA on these instructions and they work, the QA that the docker imag
 
 ### Get the data dir
 
-The next step is to download the data directory for `op-geth`. Note that for OP Sepolia, you do not need to donwload a data directory.
+The next step is to download the data directory for `op-geth`. Note that for OP Sepolia, you do not need to download a data directory.
 
 1. Download the correct data directory snapshot.
 
