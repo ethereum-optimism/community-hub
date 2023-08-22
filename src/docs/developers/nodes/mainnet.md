@@ -104,7 +104,7 @@ Using a terminal in `optimism-no-docker/scripts`:
 
 L1URL=<< URL to L1 >>
 L1KIND=basic
-NET=etheruem
+NET=mainnet
 
 cd ..
 cd optimism/op-node
