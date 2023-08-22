@@ -8,14 +8,17 @@ lang: en-US
 ### Get the data dir
 
 The next step is to download the data directory for `op-geth`.
+You will need 500+ GB for this part alone.
 
 1. Download the correct data directory snapshot.
-
+   This will take some time so feel free to prepare your time accordingly.
    - [OP Mainnet](https://datadirs.optimism.io/mainnet-bedrock.tar.zst)
    - Save it wherever you want `I.E. ~/Downloads/mainnet-bedrock.tar.zst`. 
    - For this tutorial, `~/Downloads/mainnet-bedrock.tar.zst` = `<<PATH_TO_DATA>>`;
 
 2. Create the data directory in `op-geth` and fill it.
+
+   This will take some more time so feel free to prepare your time accordingly.
 
    Using a terminal in `op-geth`, run these commands:
    ```sh
