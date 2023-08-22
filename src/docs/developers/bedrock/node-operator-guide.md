@@ -61,24 +61,36 @@ Even though the Docker image for the Execution Engine is called `op-geth`, the a
 
 We'll start with `op-geth`'s configuration because it is more complex. As mentioned before, `op-geth` is a minimal fork of `go-ethereum`. As a result, it stores its state in a database that requires initialization. Initialization is done one of two ways, depending on which network you're deploying:
 
-1. **With a Genesis File:** This is used for testnets or internal deployments that are not migrated from a legacy network. In this case, you'll download the genesis file and initialize the data directory via `geth init`.
-2. **With a Data Directory:** This is used for networks that are migrated from a legacy network. In this case, you'll download a preconfigured data directory and extract it. No further initialization is necessary in this case, because the data directory contains the network's genesis information. 
+1. **With a Genesis File:** This is used for testnets or deployments that are not migrated from a legacy network. In this case, you'll download the genesis file and initialize the data directory via `geth init`.
+2. **With a Data Directory:** This is used for networks that are migrated from a legacy network. This would include OP Mainnet and OP Goerli. In this case, you'll download a preconfigured data directory and extract it. No further initialization is necessary in this case, because the data directory contains the network's genesis information. 
 
 Regardless of how `op-geth` is initialized, you'll need to ensure that you have sufficient disk space available to store the network's data. As of this writing, the mainnet data directory is ~100GB for a full node and ~1TB for an archival node. The Goerli data directory is ~6GB for a full node.
 
-Instructions for each initialization method are below.
+Instructions for each initialization method are below. If you're spinning up an OP Mainnet or Goerli node, use the [Initialization via Data Directory](#initialization-via-data-directory) path. If you're spinning up an OP Sepolia node, use the [Initialization via Genesis File](#initialization-via-genesis-file) path.
 
 #### Initialization via Genesis File
 
-`op-geth` uses JSON files to encode a network's genesis information. For networks that are initialized in this way, you'll receive a URL to the genesis JSON. You'll need to download the genesis JSON, then run the following command to initialize the data directory:
+`op-geth` uses JSON files to encode a network's genesis information. Unlike OP Mainnet and Goerli, the genesis for Sepolia is not currently included in the `op-geth` binary. For networks that are initialized in this way, you'll receive a URL to the genesis JSON. You'll need to download the genesis JSON, then run the following command to initialize the data directory:
 
 ```bash
-curl -o <path to genesis JSON> -sL <URL to genesis JSON>
+#!/bin/sh
+FILE=/$DATADIR/genesis.json
+OP_GETH_GENESIS_URL=https://storage.googleapis.com/oplabs-network-data/Sepolia/genesis.json
 
-geth init \
-	 --datadir="<your data directory>" \
-	 "<path to genesis JSON>"
+if [ ! -s $FILE ]; then
+  apk add curl
+  curl $OP_GETH_GENESIS_URL -o $FILE
+  geth init --datadir /db $FILE
+else
+  echo "Genesis file already exists. Skipping initialization."
+fi
 ```
+
+::: danger CLI Flag Requirements
+Required: `--sepolia`
+
+Do not set:   `--rollup.historicalrpc` and `rollup.historicalrpctimeout`
+:::
 
 #### Initialization via Data Directory
 

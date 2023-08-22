@@ -105,7 +105,16 @@ While we did QA on these instructions and they work, the QA that the docker imag
 
 
 
-### Get the data dir
+### Initializing `op-geth`
+
+Initialization is done one of two ways, depending on which network you're deploying:
+
+1. **With a Genesis File:** This is used for testnets or deployments that are not migrated from a legacy network. In this case, you'll download the genesis file and initialize the data directory via `geth init`.
+2. **With a Data Directory:** This is used for networks that are migrated from a legacy network. This would include OP Mainnet and OP Goerli. In this case, you'll download a preconfigured data directory and extract it. No further initialization is necessary in this case, because the data directory contains the network's genesis information.
+
+If you're spinning up an OP Mainnet or Goerli node, use the [Initialization via Data Directory](#initialization-via-data-directory) path. If you're spinning up an OP Sepolia node, use the [Initialization via Genesis File](#initialization-via-genesis-file) path.
+
+#### Initialization via Data Directory
 
 The next step is to download the data directory for `op-geth`. Note that for OP Sepolia, you do not need to download a data directory.
 
@@ -131,6 +140,30 @@ The next step is to download the data directory for `op-geth`. Note that for OP 
    openssl rand -hex 32 > jwt.txt
    cp jwt.txt ~/optimism/op-node
    ```
+
+#### Initialization via Genesis File
+
+`op-geth` uses JSON files to encode a network's genesis information. Unlike OP Mainnet and Goerli, the genesis for Sepolia is not currently included in the `op-geth` binary. For networks that are initialized in this way, you'll receive a URL to the genesis JSON. You'll need to download the genesis JSON, then run the following command to initialize the data directory:
+
+```bash
+#!/bin/sh
+FILE=/$DATADIR/genesis.json
+OP_GETH_GENESIS_URL=https://storage.googleapis.com/oplabs-network-data/Sepolia/genesis.json
+
+if [ ! -s $FILE ]; then
+  apk add curl
+  curl $OP_GETH_GENESIS_URL -o $FILE
+  geth init --datadir /db $FILE
+else
+  echo "Genesis file already exists. Skipping initialization."
+fi
+```
+
+::: danger CLI Flag Requirements
+Required: `--sepolia`
+
+Do not set:   `--rollup.historicalrpc` and `rollup.historicalrpctimeout`
+:::
 
 ### Scripts to start the different components
 
