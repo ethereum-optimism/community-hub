@@ -32,7 +32,7 @@ You will need 500+ GB for this part alone.
    Using a terminal in `op-geth`, run these commands:
     ```sh
     openssl rand -hex 32 > jwt.txt
-    cp jwt.txt ~/optimism/op-node
+    cp jwt.txt ../optimism/op-node
     ```
 
    	
@@ -53,7 +53,7 @@ Using a terminal in `optimism-no-docker/scripts`:
 ```
 #! /usr/bin/bash
 
-SEQUENCER_URL=https://goerli-sequencer.optimism.io/
+SEQUENCER_URL=https://mainnet-sequencer.optimism.io/
 
 cd ..
 cd op-geth

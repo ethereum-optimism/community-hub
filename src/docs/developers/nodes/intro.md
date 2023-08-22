@@ -11,7 +11,7 @@ Note: This is not the recommended configuration. While we did QA on these instru
 
 ## Hardware requirements
 
-Replicas need to store the transaction history of OP Mainnet (or the relevant OP testnet) and to run Geth. They need to be relatively powerful machines (real or virtual). We recommend at least 16 GB RAM, and an SSD drive with at least 500 GB free (for OP Mainnet).
+Replicas need to store the transaction history of OP Mainnet (or the relevant OP testnet) and to run Geth. They need to be relatively powerful machines (real or virtual). We recommend at least 16 GB RAM, and an SSD drive with at least 325GB + 446GB free (for OP Mainnet).
 
 ## Software requirements
 
