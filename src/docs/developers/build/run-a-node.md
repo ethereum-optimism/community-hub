@@ -109,10 +109,10 @@ While we did QA on these instructions and they work, the QA that the docker imag
 
 Initialization is done one of two ways, depending on which network you're deploying:
 
-1. **With a Genesis File:** This is used for testnets or deployments that are not migrated from a legacy network. In this case, you'll download the genesis file and initialize the data directory via `geth init`.
+1. **With a Genesis File:** This is for OP Sepolia, and other testnets or deployments that are not migrated from a legacy network. In this case, you'll download the genesis file and initialize the data directory via `geth init`.
 2. **With a Data Directory:** This is used for networks that are migrated from a legacy network. This would include OP Mainnet and OP Goerli. In this case, you'll download a preconfigured data directory and extract it. No further initialization is necessary in this case, because the data directory contains the network's genesis information.
 
-If you're spinning up an OP Mainnet or Goerli node, use the [Initialization via Data Directory](#initialization-via-data-directory) path. If you're spinning up an OP Sepolia node, use the [Initialization via Genesis File](#initialization-via-genesis-file) path.
+If you're spinning up an OP Mainnet or OP Goerli node, use the [Initialization via Data Directory](#initialization-via-data-directory) path. If you're spinning up an OP Sepolia node, use the [Initialization via Genesis File](#initialization-via-genesis-file) path.
 
 #### Initialization via Data Directory
 
@@ -143,7 +143,7 @@ The next step is to download the data directory for `op-geth`. Note that for OP 
 
 #### Initialization via Genesis File
 
-`op-geth` uses JSON files to encode a network's genesis information. Unlike OP Mainnet and Goerli, the genesis for Sepolia is not currently included in the `op-geth` binary. For networks that are initialized in this way, you'll receive a URL to the genesis JSON. You'll need to download the genesis JSON, then run the following command to initialize the data directory:
+`op-geth` uses JSON files to encode a network's genesis information. Unlike OP Mainnet and OP Goerli, the genesis for OP Sepolia is not currently included in the `op-geth` binary. For networks that are initialized in this way, you'll receive a URL to the genesis JSON. You'll need to download the genesis JSON, then run the following command to initialize the data directory:
 
 ```bash
 #!/bin/sh
