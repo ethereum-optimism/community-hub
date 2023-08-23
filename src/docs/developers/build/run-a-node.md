@@ -48,10 +48,6 @@ They include all the configuration settings.
 This is the recommended method because it is what we for our own systems.
 As such, the docker images go through a lot more tests than any other configuration.
 
-### Configuring and running the node
-
-Follow [these instructions](https://github.com/smartcontracts/simple-optimism-node) to build and run the node.
-
 
 ## Non-docker configuration
 
