@@ -105,9 +105,18 @@ While we did QA on these instructions and they work, the QA that the docker imag
 
 
 
-### Get the data dir
+### Initializing `op-geth`
 
-The next step is to download the data directory for `op-geth`.
+Initialization is done one of two ways, depending on which network you're deploying:
+
+1. **With a Genesis File:** This is for OP Sepolia, and other testnets or deployments that are not migrated from a legacy network. In this case, you'll download the genesis file and initialize the data directory via `geth init`.
+2. **With a Data Directory:** This is used for networks that are migrated from a legacy network. This would include OP Mainnet and OP Goerli. In this case, you'll download a preconfigured data directory and extract it. No further initialization is necessary in this case, because the data directory contains the network's genesis information.
+
+If you're spinning up an OP Mainnet or OP Goerli node, use the [Initialization via Data Directory](#initialization-via-data-directory) path. If you're spinning up an OP Sepolia node, use the [Initialization via Genesis File](#initialization-via-genesis-file) path.
+
+#### Initialization via Data Directory
+
+The next step is to download the data directory for `op-geth`. Note that for OP Sepolia, you do not need to download a data directory.
 
 1. Download the correct data directory snapshot.
 
@@ -132,17 +141,41 @@ The next step is to download the data directory for `op-geth`.
    cp jwt.txt ~/optimism/op-node
    ```
 
+#### Initialization via Genesis File
+
+`op-geth` uses JSON files to encode a network's genesis information. Unlike OP Mainnet and OP Goerli, the genesis for OP Sepolia is not currently included in the `op-geth` binary. For networks that are initialized in this way, you'll receive a URL to the genesis JSON. You'll need to download the genesis JSON, then run the following command to initialize the data directory:
+
+```bash
+#!/bin/sh
+FILE=/$DATADIR/genesis.json
+OP_GETH_GENESIS_URL=https://storage.googleapis.com/oplabs-network-data/Sepolia/genesis.json
+
+if [ ! -s $FILE ]; then
+  apk add curl
+  curl $OP_GETH_GENESIS_URL -o $FILE
+  geth init --datadir /db $FILE
+else
+  echo "Genesis file already exists. Skipping initialization."
+fi
+```
+
+::: danger CLI Flag Requirements
+Required: `--sepolia`
+
+Do not set:   `--rollup.historicalrpc` and `rollup.historicalrpctimeout`
+:::
+
 ### Scripts to start the different components
 
 #### `op-geth`
 
-This is the script for OP Goerli.
-For OP Mainnet (or other OP networks in the future, [get the sequencer URL here](../../useful-tools/networks.md)).
+This is the script for OP Sepolia.
+For OP Mainnet, OP Goerli (or other OP networks in the future, [get the sequencer URL here](../../useful-tools/networks.md)).
 
 ```
 #! /usr/bin/bash
 
-SEQUENCER_URL=https://goerli-sequencer.optimism.io/
+SEQUENCER_URL=https://sepolia-sequencer.optimism.io/
 
 cd ~/op-geth
 
@@ -179,9 +212,9 @@ Later, for regular usage, you can remove that option to improve geth database in
 
 #### `op-node`
 
-- Change `<< URL to L1 >>` to a service provider's URL for the L1 network (either L1 Ethereum or Goerli).
+- Change `<< URL to L1 >>` to the URL of an RPC endpoint for the L1 network (either L1 Ethereum or Goerli or Sepolia). E.g. for an OP Mainnet node, an Infura URL would look like https://mainnet.infura.io/v3/API_KEY
 - Set `L1KIND` to the network provider you are using (options: alchemy, quicknode, infura, parity, nethermind, debug_geth, erigon, basic, any).
-- Set `NET` to either `goerli` or `mainnet`.
+- Set `NET` to `goerli` or `mainnet` or `sepolia`.
 
 
 ```
@@ -189,7 +222,7 @@ Later, for regular usage, you can remove that option to improve geth database in
 
 L1URL=  << URL to L1 >>
 L1KIND=basic
-NET=goerli
+NET=sepolia
 
 cd ~/optimism/op-node
 
@@ -241,8 +274,9 @@ INFO [06-26|14:02:12.982] Starting work on payload                 id=0x5542117d
 
 To estimate how long the synchronization will take, you need to first find out how many blocks you synchronize in a minute. 
 
-You can use this script, which uses [Foundry](https://book.getfoundry.sh/). and the UNIX Note that this script is for OP Goerli. 
+You can use this script, which uses [Foundry](https://book.getfoundry.sh/). and the UNIX Note that this script is for OP Sepolia. 
 For OP Mainnet substitute `https://mainnet.optimism.io`
+For OP Goerli substitute `https://goerli.optimism.io`
 
 ```sh
 #! /usr/bin/bash
@@ -264,7 +298,7 @@ echo Progress per minute: $PROGRESS_PER_MIN
 
 
 # How many more blocks do we need?
-HEAD=`cast block --rpc-url https://goerli.optimism.io latest number`
+HEAD=`cast block --rpc-url https://sepolia.optimism.io latest number`
 BEHIND=`expr $HEAD - $T1` 
 MINUTES=`expr $BEHIND / $PROGRESS_PER_MIN`
 HOURS=`expr $MINUTES / 60`
