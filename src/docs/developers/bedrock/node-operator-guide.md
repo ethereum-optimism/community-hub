@@ -30,7 +30,7 @@ The architecture of a typical Bedrock deployment looks like this:
 We recommend the following minimum system requirements to run Bedrock:
 
 - `op-node`: Minimum 2CPUs, 4GB RAM. No storage is necessary.
-- `op-geth`: Minimum 4 CPUs, 8GB RAM. At least 40GB of storage is required for Goerli or Sepolia. At least 600GB of storage is required for mainnet. Storage must be SSD. Requirements are significantly higher for archive nodes.
+- `op-geth`: Minimum 4 CPUs, 8GB RAM. At least 40GB of storage is required for OP Goerli or OP Sepolia. At least 600GB of storage is required for mainnet. Storage must be SSD. Requirements are significantly higher for archive nodes.
 
 ## Getting the Software
 
@@ -64,9 +64,9 @@ We'll start with `op-geth`'s configuration because it is more complex. As mentio
 1. **With a Genesis File:** This is for OP Sepolia, and other testnets or deployments that are not migrated from a legacy network. In this case, you'll download the genesis file and initialize the data directory via `geth init`.
 2. **With a Data Directory:** This is used for networks that are migrated from a legacy network. This would include OP Mainnet and OP Goerli. In this case, you'll download a preconfigured data directory and extract it. No further initialization is necessary in this case, because the data directory contains the network's genesis information. 
 
-Regardless of how `op-geth` is initialized, you'll need to ensure that you have sufficient disk space available to store the network's data. As of this writing, the mainnet data directory is ~100GB for a full node and ~1TB for an archival node. The Goerli data directory is ~6GB for a full node.
+Regardless of how `op-geth` is initialized, you'll need to ensure that you have sufficient disk space available to store the network's data. As of this writing, the mainnet data directory is ~100GB for a full node and ~1TB for an archival node. The OP Goerli data directory is ~40GB for a full node.
 
-Instructions for each initialization method are below. If you're spinning up an OP Mainnet or Goerli node, use the [Initialization via Data Directory](#initialization-via-data-directory) path. If you're spinning up an OP Sepolia node, use the [Initialization via Genesis File](#initialization-via-genesis-file) path.
+Instructions for each initialization method are below. If you're spinning up an OP Mainnet or OP Goerli node, use the [Initialization via Data Directory](#initialization-via-data-directory) path. If you're spinning up an OP Sepolia node, use the [Initialization via Genesis File](#initialization-via-genesis-file) path.
 
 #### Initialization via Genesis File
 
@@ -168,9 +168,9 @@ Consult [Geth's documentation](https://geth.ethereum.org/docs/) for more informa
 
 ### Configuring op-node
 
-`op-node` is a standalone, statically linked binary. It stores no state, and requires no initialization. It consumes configuration parameters either via the command line or environment variables. For some networks, the Rollup Node also requires a configuration file (called `rollup.json` or the "rollup config") that configures network-specific genesis parameters. For official networks like Goerli, Sepolia, and Mainnet, the genesis config is hardcoded in the `op-node` software and can be specified via a `--network` flag.
+`op-node` is a standalone, statically linked binary. It stores no state, and requires no initialization. It consumes configuration parameters either via the command line or environment variables. For some networks, the Rollup Node also requires a configuration file (called `rollup.json` or the "rollup config") that configures network-specific genesis parameters. For official networks like OP Goerli, OP Sepolia, and OP Mainnet, the genesis config is hardcoded in the `op-node` software and can be specified via a `--network` flag.
 
-A minimal valid configuration for a rollup node on our `sepolia` testnet looks like this:
+A minimal valid configuration for a rollup node on our `op sepolia` testnet looks like this:
 
 ```bash
 op-node --l1=<sepolia RPC url> \
@@ -195,7 +195,7 @@ The default port for the peer-to-peer network is `9003`. You will need to open t
 
 ### Legacy Geth
 
-If you are running a node for an upgraded network like Goerli or Mainnet (but not Sepolia), you will also need to run Legacy Geth in order to serve historical execution traces. Fundamentally, Legacy Geth is our old `l2geth` binary running against a preconfigured data directory. To configure Legacy Geth, follow the instructions above for using a preconfigured data directory, then execute the following command:
+If you are running a node for an upgraded network like OP Mainnet or OP Goerli (but not OP Sepolia), you will also need to run Legacy Geth in order to serve historical execution traces. Fundamentally, Legacy Geth is our old `l2geth` binary running against a preconfigured data directory. To configure Legacy Geth, follow the instructions above for using a preconfigured data directory, then execute the following command:
 
 :::danger
 It is imperative that you specify the `USING_OVM=true` environment variable in the command below. Failing to specify this will cause `l2geth` to return invalid execution traces, or panic at startup.
