@@ -5,7 +5,7 @@ lang: en-US
 
 There is a lot going on inside the Optimism Collective. This doc aims to help you understand important terms and phrases. 
 
-If you have specific questions [join our Office Hours in Discord](https://discord.gg/optimism) (every 2nd week). If you want more support in creating Optimism content, check out our [Ambassador Program](./contribution-path/Ambassador-req.md)! 
+If you have specific questions, [join our Office Hours in Discord](https://discord.gg/optimism) (every 2nd week). If you want more support in creating Optimism content, check out our [Ambassador Program](./contribution-path/Ambassador-req.md)! 
 
 For media requests please see [project support options](../biz/README.md#marketing-requests-🦸🦸) or reach out to marketing@optimism.io.
 
@@ -17,7 +17,7 @@ An inclusive, open source Superchain that sustainably funds Public Goods, dispel
 
 ![](../../assets/docs/governance/retropgf/retropgf-fly-wheel.png)
 
-Optimism generates revenue through transaction fees paid on OP Mainnet and other OP Chains. Part of this revenue is directed by the Collective for the benefit of the Collective through RetroPGF. Better public goods means more development, which creates more revenue that can be directed to public goods. Read [more about the flywheel](https://app.optimism.io/retropgf).
+The Optimism Collective generates revenue through transaction fees paid on OP Mainnet and other OP Chains. Part of this revenue is directed by the Collective for the benefit of the Collective through RetroPGF. Better public goods means more development, which creates more revenue that can be directed to public goods. Read [more about the flywheel](https://app.optimism.io/retropgf).
 
 ### The Optimism Collective
 
@@ -25,7 +25,7 @@ Optimism generates revenue through transaction fees paid on OP Mainnet and other
 
 ## Brand Kit
 
-We are currently updating our brand kit, but you can find the current [Brand Kit here](https://github.com/ethereum-optimism/brand-kit)!
+We are currently updating our brand kit, but you can find the old [Brand Kit here](https://github.com/ethereum-optimism/brand-kit)!
 
 ## Networks & The Superchain
 
@@ -33,33 +33,29 @@ The Optimism ecosystem is a growing space. Here are the basic terms and concepts
 
 ### The Superchain
 
-The Superchain is a **vision** for a horizontally scalable network of chains that share security, a communication layer, and an open source development stack. Something to keep in mind is that the Superchain does not exist. A number of governance and technical milestones need to be achieved before we have a functioning interoperable network of chains. Because of this, it is best to talk about the Superchain as a “vision” for something we are working towards.
+The Superchain is a **vision** for a horizontally scalable network of chains that share security, a communication layer, and the OP Stack as an open source development stack. The Superchain does not yet exist. A number of governance and technical milestones need to be achieved before we have a functioning interoperable network of chains. Because of this, it is best to talk about the Superchain as a “vision” for something we are working towards.
 
-As of Aug 1, 2023, OP Mainnet, Base, Public Goods Network, and ZORA NETWORK have made public commitments to build their L2 network using the OP Stack and join the Superchain when we have an MVP.
+As of Aug 1, 2023, OP Mainnet, Base, Public Goods Network, and ZORA NETWORK have made public commitments to build their L2 network using the OP Stack and join the Superchain when the Superchain launches.
 
 [Read more about the Superchain](https://app.optimism.io/superchain). 
 
-### OP Mainnet
+### OP Chains
 
-OP Mainnet is a Layer 2 blockchain powered by Optimism's modular OP Stack. It is the first chain to commit to the Superchain vision.
+OP Chains are Layer 2 blockchains that run the governance-approved release of the OP Stack, and therefore will be upgraded based on decisions by Optimism’s governance and contribute sequencer revenue back to the Collective. OP Chains will automatically inherit Superchain features in the future.
+
+The benefit of opting into the Superchain and becoming an OP Chain is that users of OP Chains will have a convenient, homogenous experience bridging between OP Chains, and the OP Chain itself will share security and a governance standard ([Law of Chains](https://gov.optimism.io/t/law-of-chains-v0-1-section-by-section-overview/6515)).
 
 ### OP Stack
 
-The OP Stack is the standardized, shared, and MIT-licensed open-source development stack that powers the Optimism ecosystem and the Superchain, maintained by the Optimism Collective.
+The [OP Stack](https://stack.optimism.io/) is the modular, open source, MIT-licensed development stack that powers the OP Mainnet, OP Chains, and, in the future, theSuperchain. The OP Stack is maintained by the Optimism Collective.
 
-### OP Stack Chains
+### OP Stack Fork
 
-An **OP Stack Chain** refers to a Layer 2 blockchain that has been built using the MIT-licensed OP Stack, but has **not** opted in to joining the Superchain. This means OP Stack Chains won’t share security or interoperability with OP Chains in the Superchain.
+An **OP Stack Fork** refers to a Layer 2 blockchain that has been built using the MIT-licensed OP Stack, but is not governed by Optimism’s governance or contributing sequencer revenue back to the Collective (and therefore is not part of the Superchain). This means OP Stack Chains won’t necessarily share security or interoperability with OP Chains in the Superchain.
 
-Since the OP Stack is MIT-licensed, and open source code is one of the fundamental values of the Optimism Collective, builders will **always be able to** use the OP Stack to create and deploy their own L2 blockchain.
+### OP Mainnet
 
-### OP Chains
-
-An OP Chain refers to a Layer 2 blockchain that has committed to joining the Superchain.
-
-According to the [Law of Chains](https://gov.optimism.io/t/law-of-chains-v0-1-section-by-section-overview/6515), a framework that will guide the governance of all networks that opt-in to the Superchain, OP Chains will be governed by Optimism Governance. (NOTE: The Law of Chains is a social contract, **not** a legally binding document.) 
-
-The benefit of opting in to the Superchain and becoming an OP Chain is that users of OP Chains will have a convenient, homogenous experience bridging between OP Chains, and the OP Chain itself will share security and a governance standard (Law of Chains).
+OP Mainnet is a Layer 2 blockchain powered by Optimism's modular OP Stack. Previously known as just “Optimism,” OP Mainnet is where it all started, and the first chain to commit to the Superchain vision.
 
 ## OP Token
 
