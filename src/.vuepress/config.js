@@ -453,6 +453,7 @@ module.exports = {
         {
           title: '🫡 Marketing',
           children: [
+            '/docs/contribute/important-terms.md',
             '/docs/contribute/contribution-path/Ambassador-req.md',
             '/docs/contribute/demo-day.md'
           ],
