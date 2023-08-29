@@ -35,7 +35,7 @@ The Optimism ecosystem is a growing space. Here are the basic terms and concepts
 
 The Superchain is a **vision** for a horizontally scalable network of chains that share security, a communication layer, and the OP Stack as an open source development stack. The Superchain does not yet exist. A number of governance and technical milestones need to be achieved before we have a functioning interoperable network of chains. Because of this, it is best to talk about the Superchain as a “vision” for something we are working towards.
 
-As of Aug 1, 2023, OP Mainnet, Base, Public Goods Network, and ZORA NETWORK have made public commitments to build their L2 network using the OP Stack and join the Superchain when the Superchain launches.
+As of Aug 1, 2023, OP Mainnet, Base, Public Goods Network, and Zora Network have opted into the Superchain and will automatically inherit Superchain features when it launches.
 
 [Read more about the Superchain](https://app.optimism.io/superchain). 
 
