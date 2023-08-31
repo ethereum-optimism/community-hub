@@ -31,7 +31,7 @@ We export a package [`@eth-optimism/contracts-bedrock`](https://www.npmjs.com/pa
 Install the package as follows:
 
 ```
-npm install @eth-optimism/contracts-bedrock@0.15.0
+npm install @eth-optimism/contracts-bedrock
 ```
 
 ### Importing contracts
@@ -60,40 +60,29 @@ Just like when interacting from another contract, we've created a few packages t
 
 ### Installing via NPM or Yarn
 
-You can use the [`@eth-optimism/contracts-bedrock`](https://www.npmjs.com/package/@eth-optimism/contracts-bedrock) package to interact with the OP Mainnet system contracts from a JavaScript or TypeScript based project.
+You can use the [`@eth-optimism/contracts-ts`](https://www.npmjs.com/package/@eth-optimism/contracts-ts) package to interact with the OP Mainnet system contracts from a JavaScript or TypeScript based project.
 Install the package as follows:
 
 ```
-npm install @eth-optimism/contracts-bedrock@0.15.0
+npm install @eth-optimism/contracts-ts
 ```
 
-### Getting contract artifacts, interfaces, and ABIs
+### Getting ABI and Address constants 
 
-You can get the compiler artifact, bytecode, and ABI for any OP Mainnet contract as follows:
+Exports contract abis and address:
 
 ```ts
-import { getContractDefinition } from '@eth-optimism/contracts-bedrock'
+import {
+  l2OutputOracleABI,
+  l2OutputOracleAddress,
+} from '@eth-optimism/contracts-ts'
 
-const artifact = getContractDefinition('SomeOptimismContract')
-const abi = artifact.abi
-const bytecode = artifact.bytecode
-const deployedBytecode = artifact.deployedBytecode
+console.log(l2OutputOracleAddress[1], l2OutputOracleABI)
 ```
 
-Similarly, you can also get [ethers Interface objects](https://docs.ethers.io/v5/api/utils/abi/interface/) for any contract:
-
+Addresses are also exported as an object for convenience:
 ```ts
-import { getContractInterface } from '@eth-optimism/contracts-bedrock'
+import { addresses } from '@eth-optimism/contracts-ts'
 
-const iface = getContractInterface('SomeOptimismContract')
-```
-
-### Getting L2 contract addresses
-
-You can get the address of any L2 contract as follows:
-
-```ts
-import { predeploys } from '@eth-optimism/contracts-bedrock'
-
-const address = predeploys.CONTRACT_NAME_GOES_HERE
+console.log(addresses.L2OutputOracle[1])
 ```
