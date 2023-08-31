@@ -101,7 +101,11 @@ Later, for regular usage, you can remove that option to improve geth database in
 
 :::
 
-1. run the command `./run-op-geth.sh`
+5. Run the following command to start `op-geth`:
+   
+   ```bash
+   ./run-op-geth.sh
+   ```
 
 <details>
     <summary>Your standard output should look something like the following</summary>
@@ -182,14 +186,14 @@ Later, for regular usage, you can remove that option to improve geth database in
    ```
 1. Insert this snippet of code into `run-op-node.sh`:
    
-    ```
+    ```sh
     #! /usr/bin/bash
 
     L1URL=<< URL to L1 >>
     L1KIND=basic
     NET=mainnet
 
-    cd ..
+    cd <<Path to op-node directory>>
 
 
     ./bin/op-node \
@@ -203,10 +207,13 @@ Later, for regular usage, you can remove that option to improve geth database in
 
     ```        
 
-- Change `<< URL to L1 >>` to a service provider's URL for the L1 network (L1 Ethereum).
+- Change `<< URL to L1 >>` to your local L1 node or a service provider's URL for the L1 node (L1 Ethereum).
 - Set `L1KIND` to the network provider you are using (options: alchemy, quicknode, infura, parity, nethermind, debug_geth, erigon, basic, any).
 
-1. run the command `./run-op-node.sh`  
+5. Run the following command to start `op-node`:
+    ```bash
+    ./run-op-node.sh
+    ```
 
 ### The initial synchronization
 
@@ -244,10 +251,17 @@ To estimate how long the synchronization will take, you need to first find out h
 
 You can use this script, which uses [Foundry](https://book.getfoundry.sh/). 
 
-Using a terminal in `optimism-no-docker/scripts`:
-   1. create a new file: `touch run-estimate.sh`.
-   2. Make it executable: `chmod +x run-estimate.sh`.
-   3. Copy and Paste this snippet of code into `run-estimate.sh`.
+1. Navigate to your `scripts` directory
+2. Create a new file: 
+   ```sh
+   touch run-estimate.sh
+   ```
+3. Make it executable: 
+   ```sh
+   chmod +x run-estimate.sh
+   ```
+4. Insert this snippet of code into `run-estimate.sh`:
+   
 ```sh
 #! /usr/bin/bash
 
@@ -294,4 +308,7 @@ if [ $HOURS -gt 24 ] ; then
 fi
 ```
 
-4. run the command `./run-estimate.sh`  
+5. Run the following command to get an estimate:
+   ```sh
+   ./run-estimate.sh
+   ```  
