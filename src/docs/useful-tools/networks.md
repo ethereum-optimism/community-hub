@@ -3,10 +3,6 @@ title: Networks, Public RPC Endpoints, & APIs
 lang: en-US
 ---
 
-::: tip Developer Tip
-We recommend using [Alchemy](https://www.alchemy.com/optimism) for its scalability, reliability, and data accuracy. 
-:::
-
 ::: warning
 Some API calls, such as those in the [personal namespace](https://geth.ethereum.org/docs/rpc/ns-personal) make no sense in a shared environment.
 Such RPCs are either totally unsupported, or will return nonsensical values.
@@ -20,7 +16,7 @@ Such RPCs are either totally unsupported, or will return nonsensical values.
 | Description | **`Mainnet`** |
 | Chain ID | **`10`** |
 | Explorer | **[https://explorer.optimism.io](https://explorer.optimism.io)** |
-| HTTP Endpoint | We recommend [Alchemy](https://docs.alchemy.com/reference/optimism-api-quickstart/?a=818c11a8da). Optimism also provides this endpoint: **`https://mainnet.optimism.io`.** _But it is not for production systems and is rate limited._   |
+| HTTP Endpoint | Optimism also provides this endpoint: **`https://mainnet.optimism.io`.** _But it is not for production systems and is rate limited._   |
 | Sequencer URL<sup>1</sup> | **`https://mainnet-sequencer.optimism.io/`** |
 | L1 Contract Addresses | [link](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/deployments/mainnet#layer-1-contracts) |
 | L2 Contract Addresses | [link](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/deployments/mainnet#layer-2-contracts) |
@@ -29,7 +25,7 @@ Such RPCs are either totally unsupported, or will return nonsensical values.
 (1) The sequencer URL is write only, it only accepts `eth_sendRawTransaction` requests.
 
 ::: tip Developer Tip 
-If you are seeing rate limit issues when testing with the public end point, or if you need websocket functionality, we recommend signing up for [Alchemy's](https://www.alchemy.com/optimism) free trial.
+If you are seeing rate limit issues when testing with the public end point, or if you need websocket functionality, we recommend signing up for a third-party [provider](../useful-tools/providers.md).
 :::
 
 ### Contract addresses
@@ -50,16 +46,6 @@ They are reproduced here for convenience.
 | SystemConfig | [`0x229047fed2591dbec1eF1118d64F7aF3dB9EB290`](https://etherscan.io/address/0x229047fed2591dbec1eF1118d64F7aF3dB9EB290)
 | SystemDictator | [`0xB4453CEb33d2e67FA244A24acf2E50CEF31F53cB`](https://etherscan.io/address/0xB4453CEb33d2e67FA244A24acf2E50CEF31F53cB)
 | Batch Inbox Address | [`0xff00000000000000000000000000000000000010`](https://etherscan.io/address/0xff00000000000000000000000000000000000010)
-
-
-### API Options:
-
-1. Get free access to OP Mainnet through [Alchemy](https://www.alchemy.com/optimism)
-
-2. For small scale tests, you can use our public API:
-- HTTP endpoint: [https://mainnet.optimism.io](https://mainnet.optimism.io) (note, this is for testing. For production, use Alchemy) 
-
-You can run a large application for free using [Alchemy](https://www.alchemy.com/optimism). We’ve done extensive diligence and Alchemy is our recommendation due to reliability, scalability, and data correctness. They're the default API provider and developer platform for top projects like OpenSea and Facebook. 
 
 
 ### Parameters for node operators
@@ -104,7 +90,7 @@ If you want to decompress separately, we recommend `pzstd -d`  or `zstd -d` (pzs
 ## OP Goerli
 
 ::: tip Purpose
-This is our test network.
+This is our current test network. Note that OP Goerli is planned to be deprecated in Q4 2023. Please migrate to OP Sepolia before then.
 :::
 
 
@@ -131,32 +117,14 @@ They are reproduced here for convenience
 | L1CrossDomainMessenger | [`0x5086d1eEF304eb5284A0f6720f79403b4e9bE294`](https://goerli.etherscan.io/address/0x5086d1eEF304eb5284A0f6720f79403b4e9bE294)
 | L1ERC721Bridge | [`0x0F9C590b958002E8B10a7431979c1aF882772E88`](https://goerli.etherscan.io/address/0x0F9C590b958002E8B10a7431979c1aF882772E88)
 | L1StandardBridge | [`0x636Af16bf2f682dD3109e60102b8E1A089FedAa8`](https://goerli.etherscan.io/address/0x636Af16bf2f682dD3109e60102b8E1A089FedAa8)
-| L2OutputOracle | [`0xE6Dfba0953616Bacab0c9A8ecb3a9BBa77FC15c0`](https://goerli.etherscan.io/address/0xE6Dfba0953616Bacab0c9A8ecb3a9BBa77FC15c0) 
-| OptimismMintableERC20Factory | [`0x883dcF8B05364083D849D8bD226bC8Cb4c42F9C5`](https://goerli.etherscan.io/address/0x883dcF8B05364083D849D8bD226bC8Cb4c42F9C5) 
-| OptimismPortal | [`0x5b47E1A08Ea6d985D6649300584e6722Ec4B1383`](https://goerli.etherscan.io/address/0x5b47E1A08Ea6d985D6649300584e6722Ec4B1383) | 
+| L2OutputOracle | [`0xE6Dfba0953616Bacab0c9A8ecb3a9BBa77FC15c0`](https://goerli.etherscan.io/address/0xE6Dfba0953616Bacab0c9A8ecb3a9BBa77FC15c0)
+| OptimismMintableERC20Factory | [`0x883dcF8B05364083D849D8bD226bC8Cb4c42F9C5`](https://goerli.etherscan.io/address/0x883dcF8B05364083D849D8bD226bC8Cb4c42F9C5)
+| OptimismPortal | [`0x5b47E1A08Ea6d985D6649300584e6722Ec4B1383`](https://goerli.etherscan.io/address/0x5b47E1A08Ea6d985D6649300584e6722Ec4B1383)
 | PortalSender | [`0xe7FACd39531ee3C313330E93B4d7a8B8A3c84Aa4`](https://goerli.etherscan.io/address/0xe7FACd39531ee3C313330E93B4d7a8B8A3c84Aa4)
 | ProxyAdmin | [`0x01d3670863c3F4b24D7b107900f0b75d4BbC6e0d`](https://goerli.etherscan.io/address/0x01d3670863c3F4b24D7b107900f0b75d4BbC6e0d)
 | SystemConfig | [`0xAe851f927Ee40dE99aaBb7461C00f9622ab91d60`](https://goerli.etherscan.io/address/0xAe851f927Ee40dE99aaBb7461C00f9622ab91d60)
 | SystemDictator | [`0x1f0613A44c9a8ECE7B3A2e0CdBdF0F5B47A50971`](https://goerli.etherscan.io/address/0x1f0613A44c9a8ECE7B3A2e0CdBdF0F5B47A50971)
 | Batch Inbox Address | [`0xff00000000000000000000000000000000000420`](https://goerli.etherscan.io/address/0xff00000000000000000000000000000000000420)
-
-
-
-### API Options
-
-
-1. Get free access to OP Goerli through [Alchemy](https://www.alchemy.com/optimism)
-
-2. For small scale tests, you can use our public API:
-- HTTP endpoint: [https://goerli.optimism.io](https://goerli.optimism.io) (note, this is for testing. For production, use Alchemy) 
-
-You can run a large application for free using [Alchemy](https://www.alchemy.com/optimism). We’ve done extensive diligence and Alchemy is our recommendation due to reliability, scalability, and data correctness. 
-They're the default API provider and developer platform for top projects like OpenSea and Facebook. 
-They also support websocket functionality, which our public endpoint does not.
-
-To see the full list of providers visit [Node & API Providers](./providers.md). 
-
-
 
 ### Test ETH
 
@@ -193,3 +161,66 @@ These parameters are mostly useful to people responsible for running and adminis
 We recommend that users install the command line tool if it is not already installed on their system. 
 `tar -xf` will work without installing anything if you have an up to date version of `tar`. 
 If you want to decompress separately, we recommend `pzstd -d`  or `zstd -d` (pzstd will likely be faster).
+
+
+
+## OP Sepolia
+
+::: tip Purpose
+This is our latest test network. Note that OP Sepolia is new and still missing some core third-party infra.
+:::
+
+
+
+| Parameter | Value |
+| --------- | ----- |
+| Network Name | **`OP Sepolia`** |
+| Description | **`Testnet (public)`** |
+| Chain ID | **`11155420`** |
+| Explorer | (coming soon) |
+| HTTP Endpoint | **`https://sepolia.optimism.io`** |
+| Sequencer URL<sup>1</sup> | **`https://sepolia-sequencer.optimism.io/`** |
+
+(1) The sequencer URL is write only, it only accepts `eth_sendRawTransaction` requests.
+
+### Contract addresses
+
+The authoritative list of contract addresses is [in the monorepo](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts-bedrock/deployments/sepolia).
+They are reproduced here for convenience
+
+| Contract name | Address |
+| - | -
+| L1CrossDomainMessenger | [`0x58Cc85b8D04EA49cC6DBd3CbFFd00B4B8D6cb3ef`](https://sepolia.etherscan.io/address/0x58Cc85b8D04EA49cC6DBd3CbFFd00B4B8D6cb3ef)
+| L1ERC721Bridge | [`0xd83e03D576d23C9AEab8cC44Fa98d058D2176D1f`](https://sepolia.etherscan.io/address/0xd83e03D576d23C9AEab8cC44Fa98d058D2176D1f)
+| L1StandardBridge | [`0xFBb0621E0B23b5478B630BD55a5f21f67730B0F1`](https://sepolia.etherscan.io/address/0xFBb0621E0B23b5478B630BD55a5f21f67730B0F1)
+| L2OutputOracle | [`0x90E9c4f8a994a250F6aEfd61CAFb4F2e895D458F`](https://sepolia.etherscan.io/address/0x90E9c4f8a994a250F6aEfd61CAFb4F2e895D458F) 
+| OptimismMintableERC20Factory | [`0x868D59fF9710159C2B330Cc0fBDF57144dD7A13b`](https://sepolia.etherscan.io/address/0x868D59fF9710159C2B330Cc0fBDF57144dD7A13b) 
+| OptimismPortal | [`0x16Fc5058F25648194471939df75CF27A2fdC48BC`](https://sepolia.etherscan.io/address/0x16Fc5058F25648194471939df75CF27A2fdC48BC) | 
+| ProxyAdmin | [`0x189aBAAaa82DfC015A588A7dbaD6F13b1D3485Bc`](https://sepolia.etherscan.io/address/0x189aBAAaa82DfC015A588A7dbaD6F13b1D3485Bc)
+| SystemConfig | [`0x034edD2A225f7f429A63E0f1D2084B9E0A93b538`](https://sepolia.etherscan.io/address/0x034edD2A225f7f429A63E0f1D2084B9E0A93b538)
+| Batch Inbox Address | [`0xff00000000000000000000000000000011155420`](https://sepolia.etherscan.io/address/0xff00000000000000000000000000000011155420)
+
+### Test ETH
+
+If you already have Sepolia ETH, you can deposit it by sending it to the Optimism Portal on L1 Sepolia (`0x16Fc5058F25648194471939df75CF27A2fdC48BC`). To get L1 Sepolia ETH, check out our faucet options in [Network Faucets](./faucets.md).
+We are still building out Sepolia support in our [Bridge UI](https://app.optimism.io/bridge). 
+
+### Parameters for node operators
+
+These parameters are mostly useful to people responsible for running and administering network nodes.
+
+| Parameter      | Value |
+| -------------- | ----- |
+| L1 Chain ID    | 11155111 |
+| Rollup Config  | This network does not require a rollup config. Specify `--network=sepolia` on the command line
+| Withdrawal period | 12 seconds |
+
+
+
+#### Links
+
+- Note that there is no Bedrock Data Directory or Legacy Geth Data Directory required for running OP Sepolia nodes
+- [Configuration parameters](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/deploy-config/sepolia.json)
+- [Latest releases of `op-geth`](https://github.com/ethereum-optimism/op-geth/releases/latest)
+- [Latest release of `op-node`](https://github.com/ethereum-optimism/optimism/releases/latest)
+- Note: Unlike on OP Mainnet or OP Goerli, you do not need to run `legacy-geth` to run an archival OP Sepolia node.

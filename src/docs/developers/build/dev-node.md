@@ -9,7 +9,7 @@ A development environment is a local installation of the entire OP Mainnet syste
 Our default development environment includes both L1 and L2 development nodes.
 Running the OP Mainnet environment locally is a great way to test your code and see how your contracts will behave on OP Mainnet before you graduate to a testnet deployment (and eventually a mainnet deployment).
 
-Alternatively, you can get a hosted development node from [Alchemy](https://www.alchemy.com/optimism) or [any of these providers](../../useful-tools/providers.md).
+Alternatively, you can get a hosted development node from [any of these providers](../../useful-tools/providers.md).
 
 
 ## Do I need this?

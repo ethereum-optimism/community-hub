@@ -58,7 +58,7 @@ Processed L2 transactions exist in one of three states:
 - **safe** transactions are already processed and written to L1.
   However, they might be dropped due to a reorganization at the L1 level.
 
-- **finalized** transactions are written to L1 in an L1 block that is old enough to be [finalized](https://www.alchemy.com/overviews/ethereum-commitment-levels).
+- **finalized** transactions are written to L1 in an L1 block that is old enough to be extremely unlikely to be re-organized.
 
 ::: tip When are transactions irrevocable?
 

@@ -236,11 +236,7 @@ module.exports = {
               "Developing smart contracts on Optimism"
             ],            
             '/docs/guides/nft.md',            
-            '/docs/guides/testing.md',
-            [
-              'https://docs.alchemy.com/reference/optimism-sdk-examples',
-              'Using Alchemy to query the Optimism blockchain'
-            ]
+            '/docs/guides/testing.md'
           ],
           collapsable: true,
         },
@@ -367,6 +363,7 @@ module.exports = {
             '/docs/useful-tools/explorers.md',
             '/docs/useful-tools/providers.md',
             '/docs/useful-tools/oracles.md',
+            '/docs/useful-tools/account-abstraction.md',
             '/docs/useful-tools/meta-tx.md',
             ['https://www.optimism.io/apps/tools', 'Third Party Tools'],
           ],
@@ -378,8 +375,7 @@ module.exports = {
             [
               'https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts-bedrock',
               'Optimism Contracts'
-            ],
-            '/docs/sdk/alchemy-sdk.md'           
+            ]           
           ]
         },
         '/docs/developers/media.md',
@@ -457,6 +453,7 @@ module.exports = {
         {
           title: '🫡 Marketing',
           children: [
+            '/docs/contribute/important-terms.md',
             '/docs/contribute/contribution-path/Ambassador-req.md',
             '/docs/contribute/demo-day.md'
           ],

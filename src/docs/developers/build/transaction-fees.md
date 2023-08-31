@@ -42,8 +42,8 @@ As a result, in every block the base fee can be between 98% and 110% of the prev
 
 ::: info Base fee volatility
 
-As blocks are produced every two seconds, the base fee can be between 54% and 1,745% of the value a minute earlier.
-If it takes the user fourteen seconds to approve the transaction in the wallet, the base fee can almost double in that time.
+As blocks are produced every two seconds, the base fee can be between 54% and 1,745% of the value a minute earlier. If it takes the user fourteen seconds to approve the transaction in the wallet, the base fee can almost double in that time.
+For now, without protocol adjustments, we recommend setting your `Max Fee` to _at least_ 0.1 gwei. This value will get your user's transaction included in the next block 98% of the time.
 
 :::
 
@@ -61,8 +61,7 @@ You can get the current L2 base fee [in the gas tracker dashboard](https://optim
 ### Priority fee
 
 In contrast to the base fee, the priority fee in the transaction is the amount that the user pays, and therefore it makes sense to keep it as low as possible.
-To enable your users to select a priority fee, you can [build a priority fee estimator](https://docs.alchemy.com/docs/how-to-build-a-gas-fee-estimator-using-eip-1559).
-If you already have estimating code you use for L1 Ethereum, you can just use that.
+For OP Chains, you can set the `Max Priority Fee` to as low as 0.0001 gwei.
 
 
 ## The L1 data fee
