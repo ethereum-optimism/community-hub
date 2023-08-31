@@ -361,8 +361,9 @@ module.exports = {
           collapsable: true,
         },
         {
-          title: "Operating OP nodes",
+          title: "OP Node Operators",
           children: [
+            "/docs/developers/bedrock/node-operator-guide.md",
             "/docs/developers/nodes/intro.md",
             "/docs/developers/nodes/mainnet.md",
             "/docs/developers/nodes/testnet.md",

@@ -4,9 +4,7 @@ lang: en-US
 ---
 
 
-This document provides an overview of how to deploy a Bedrock node. To learn more about how Bedrock itself works and its motivations, please see [the specs on GitHub](https://github.com/ethereum-optimism/optimism/tree/65ec61dde94ffa93342728d324fecf474d228e1f/specs).
-
-This document is designed to be a general overview of how to deploy a Bedrock node. 
+This document provides an overview of how to deploy an OP node. To learn more about how Bedrock itself works and its motivations, please see [the specs on GitHub](https://github.com/ethereum-optimism/optimism/tree/65ec61dde94ffa93342728d324fecf474d228e1f/specs). If you want to skip ahead to building and running a node from source, please see [Building a Node from Source](../nodes/intro.md) 
 
 ## Deployment Overview
 
