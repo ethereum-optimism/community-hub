@@ -46,6 +46,19 @@ On the platform, there are also [Public APIs](https://blastapi.io/public-api/opt
 - OP Mainnet
 - OP Goerli
 
+
+## Blockin.ai
+
+### Description and Pricing
+
+[Blockin.ai](https://blockin.ai) provides services that include APIs for chains, protocols, users, tokens, NFTs, mirrors, subscriptions, and pricing. It supports major chains like Ethereum, BNB Chain, Polygon, Avalanche, Optimism, Base, Arbitrum, Avalance, Fantom, Cronos, Gnosis, Metis, Aurora, Canto, Celo, Linea, Mantle, Klaytn, KCC, Heco, Moonriver, OKC, Bitcoin, & Sui. Key features include portfolio tracking, on-chain analytics, trading analytics, NFT analytics, token analytics, portfolio analytics, and mirror trading.
+Free subscription plans are available to users.  For higher demanding tiers pricing averages from 100-200 USD / 1 million units.
+
+### Supported Networks
+
+- OP Mainnet
+
+
 ## BlockSpaces
 
 [BlockSpaces](https://www.blockspaces.com/web3-infrastructure) is a multiweb integration platform that is currently offering Web3 infrastructure for free, up to 10 million transactions supported DAILY. To get started, click [here](https://www.blockspaces.com/web3-infrastructure) and leave an email address. If being able to integrate your OP Mainnet dApp to other web2 business platforms (like Quickbooks) interestes you, make sure to sign up for our Multiweb integration waitlist.
