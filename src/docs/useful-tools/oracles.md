@@ -68,6 +68,16 @@ To learn more about using tellor please [read our docs](https://docs.tellor.io) 
 
 [Tellor contract addresses on OP Mainnet and the testnets can be found here.](https://docs.tellor.io/tellor/the-basics/contracts-reference#optimism)
 
+## DIA
+
+[DIA](https://www.diadata.org/) offers customizable oracles that are tailored to each dApp’s needs. Each oracle can be customized in several ways, including data sources, data cleansing filters, pricing and computational methodologies, update mechanisms (push & pull) and more. This ensures that the data and oracle remain robust and resilient to the market conditions and provide a global market price as well as specific individual or cross-chain market prices. [Request a Custom Oracle](https://docs.diadata.org/introduction/intro-to-dia-oracles/request-an-oracle)
+
+Token Price Feeds: DIA token price feeds provide smart contracts on Optimism with real-time price information for [3,000+ cryptocurrencies](https://www.diadata.org/app/price/), sourced transparently from [80+ trusted, high-volume DEXs and CEXs](https://www.diadata.org/app/source/defi/). 
+
+NFT Price Feeds: DIA NFT floor price feeds provide smart contracts on Optimism with real-time price information for [18,000+ NFT collections](https://www.diadata.org/app/floor-price/), sourced on-chain with 100% transparency from [multiple, cross-chain NFT marketplaces](https://www.diadata.org/app/source/nft/). 
+
+To learn more about using DIA please [read our docs](https://docs.diadata.org/introduction/readme)) or [get in touch](https://discord.com/invite/zFmXtPFgQj?utm_source=Website&utm_medium=side+menu).
+
 ### Verifiable Randomness Function (VRF)
 
 #### Band
