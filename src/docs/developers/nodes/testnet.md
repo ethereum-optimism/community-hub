@@ -3,6 +3,10 @@ title: Running OP Testnet from Source
 lang: en-US
 ---
 
+todo: OP Sepolia init from genesis file instructions
+todo: archive node instructions
+todo: general review
+
 #### [Please follow these steps first if you have not done so already.](./intro.md)
 
 ::: info Migrated vs Non-Migrated Networks

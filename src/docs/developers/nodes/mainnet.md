@@ -16,7 +16,7 @@ You will need 500+ GB for this part alone.
 Use a tool like [aria2](https://aria2.github.io/) to reduce the chance of your data directory being corrupted.
 :::
 
-1. Check the validity of your download. This is an important step. Corrupted data directories will make your node fail. So ensure your checksum matches.
+2. Check the validity of your download. This is an important step. Corrupted data directories will make your node fail. So ensure your checksum matches.
 
    ```sh
    sha256sum mainnet-bedrock.tar.zst
@@ -33,26 +33,64 @@ Use a tool like [aria2](https://aria2.github.io/) to reduce the chance of your d
    ```
    
 
-2. Create the data directory in `op-geth` and fill it. This will take time.
+3. Create the data directory in `op-geth` and fill it. This will take time.
 
-   Navigate into your `op-geth` direcotry and run these commands:
+   Navigate into your `op-geth` directory and run these commands:
    ```sh
    mkdir datadir
    cd datadir
    tar xvf <<PATH_TO_DATA_DIR>>
    ```
 
-3. Create a shared secret with `op-node`:
+#### (Optional - Archive Node) Get the data directory for `l2geth`
 
-   Navigate into your `op-geth` direcotry and run these commands:
-    ```sh
-    openssl rand -hex 32 > jwt.txt
-    cp jwt.txt ../optimism/op-node
-    ```
+1. Download the data directory snapshot. This is a large file so expect it to take some time. [Legacy Geth Data Directory (2.9TB)](https://datadirs.optimism.io/mainnet-legacy-archival.tar.zst)
+
+::: tip Protip
+Use a tool like [aria2](https://aria2.github.io/) to reduce the chance of your data directory being corrupted.
+:::
+
+2. Check the validity of your download. This is an important step. Corrupted data directories will make your node fail. So ensure your checksum matches.
+
+   ```sh
+   sha256sum mainnet-legacy-archival.tar.zst
+   # expected output
+   4adedb61125b81b55f9bdccc2e85092050c65ef2253c86e2b79569732b772829  mainnet-legacy-archival.tar.zst
+   ```
+
+   OR
+   
+   ```sh
+   sha512sum mainnet-legacy-archival.tar.zst
+   # expected output
+   e348488c458baa755510f23bbc8601619bc66bea78a89354c949ba7be3c6b39ed7dd2c50516621e38df6120299407da0d24445b96bf94a50364ed07bb8234b26 mainnet-legacy-archival.tar.zst
+   ```
+
+todo: verify this step
+
+3. Create the data directory in `l2geth` and fill it. This will take time.
+
+   Navigate into your `l2geth` directory and run these commands:
+   ```sh
+   mkdir datadir
+   cd datadir
+   tar xvf <<PATH_TO_DATA_DIR>>
+   ```
+
+### Create a shared secret between `op-geth` and `op-node`
+
+1. Navigate into your `op-geth` directory and run these commands:
+
+   ```sh
+   openssl rand -hex 32 > jwt.txt
+   cp jwt.txt ../optimism/op-node
+   ```
 
    	
 
 ### Scripts to start the different components
+
+todo: add archive node script
 
 In the root of your working directory create a new directory: `scripts`.
 
@@ -93,6 +131,8 @@ Navigate into your `scripts` directory:
       --maxpeers=0 \
       --snapshot=false
     ```
+
+todo: add note about the historical rpc flag for archive nodes
 
 ::: info Snapshots
 

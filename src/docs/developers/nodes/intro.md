@@ -91,6 +91,18 @@ This process will take some time, so you can move onto the next section while th
     make geth
     ```
 
+### (Optional - Archive Node) Build l2geth
+
+1. Navigate to your working directory
+
+1. Clone [`l2geth`](https://github.com/ethereum-optimism/optimism-legacy)
+
+    ```bash
+    git clone https://github.com/ethereum-optimism/optimism-legacy.git
+    ```
+
+1. todo: figure out how to build l2geth
+   
 <br/>
 
 The rest of the steps depend on whether you are building on OP Mainnet or OP Testnet node.
