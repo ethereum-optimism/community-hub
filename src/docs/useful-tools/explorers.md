@@ -5,7 +5,7 @@ lang: en-US
 
 ## Blockscout
 
-We have a Blockscout explorer for both [OP Mainnet](https://optimism.blockscout.com), [OP Goerli](https://optimism-goerli.blockscout.com), and [OP Sepolia](https://optimism-sepolia.blockscout.com/). It includes:
+We have a Blockscout explorer for [OP Mainnet](https://optimism.blockscout.com), [OP Goerli](https://optimism-goerli.blockscout.com), and [OP Sepolia](https://optimism-sepolia.blockscout.com/). It includes:
 
 - [Verified testnet contract source code, along with the ability to interact with it](https://optimism-goerli.blockscout.com/verified-contracts)
 - [Detailed testnet transaction information](https://optimism-goerli.blockscout.com/txs)
