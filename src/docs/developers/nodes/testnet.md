@@ -1,11 +1,17 @@
 ---
-title: Running a testnet node without Docker
+title: Running OP Testnet from Source
 lang: en-US
 ---
 
 #### [Please follow these steps first if you have not done so already.](./intro.md)
 
-### Get the data dir
+::: info Migrated vs Non-Migrated Networks
+Migrated Networks, *OP Mainnet* and *OP Goerli*, were running before the Bedrock upgrade. Non-Migrated Networks, *OP Sepolia*, have only existed in a post Bedrock world. The way transaction execution is handled is funadmentally different pre- vs post-bedrock. Migrated networks are required to initialize their nodes with a data directory and non-migrated networks can simply initialize from a genesis file.
+:::
+
+## OP Goerli
+
+### Get the data directory
 
 The next step is to download the data directory for `op-geth`.
 
