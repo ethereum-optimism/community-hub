@@ -93,6 +93,20 @@ ETH deposits into L2 can be triggered via the `depositETH` and `depositETHTo` fu
 ETH deposits can alternatively be triggered by sending ETH directly to the `L1StandardBridge`.
 Once your deposit is detected and finalized on OP Mainnet, your account will be funded with the corresponding amount of ETH on L2.
 
+### Depositing USDC
+
+USDC issued by Circle will be native to OP Mainnet and can be considered the official form of USDC for the ecosystem. Over time, native USDC liquidity may grow and replace the currently circulating bridged USDC liquidity that comes from Ethereum.
+
+::: danger USDC.e vs USDC
+
+These are different token contracts. If you're using `depositERC20` or `depositERC20To` make sure you're bridging to the correct destination address. Mixing up the mapping will result in your assets being stuck in the bridge.
+:::
+
+| Token Symbol  | Description | Token Address |
+| - | - | - |
+| `USDC.e`	| Bridged USDC from Ethereum   | [0x7f5c764cbc14f9669b88837ca1490cca17c31607](https://optimistic.etherscan.io/token/0x7f5c764cbc14f9669b88837ca1490cca17c31607) |
+| `USDC`	| Native USDC issued by Circle   | [0x0b2C639c533813f4Aa9D7837CAf62653d097Ff85](https://optimistic.etherscan.io/token/0x0b2c639c533813f4aa9d7837caf62653d097ff85) |
+
 ## Withdrawals
 
 ### Withdrawing ERC20s
