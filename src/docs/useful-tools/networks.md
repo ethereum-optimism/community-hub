@@ -177,7 +177,7 @@ This is our latest test network. Note that OP Sepolia is new and still missing s
 | Network Name | **`OP Sepolia`** |
 | Description | **`Testnet (public)`** |
 | Chain ID | **`11155420`** |
-| Explorer | (coming soon) |
+| Explorer | **[https://optimism-sepolia.blockscout.com/](https://optimism-sepolia.blockscout.com/)** |
 | HTTP Endpoint | **`https://sepolia.optimism.io`** |
 | Sequencer URL<sup>1</sup> | **`https://sepolia-sequencer.optimism.io/`** |
 
