@@ -275,10 +275,10 @@ For OP Mainnet substitute `https://mainnet.optimism.io`
 For OP Goerli substitute `https://goerli.optimism.io`
 
 ```sh
-#! /usr/bin/bash
+#!/bin/bash
 
 export ETH_RPC_URL=http://localhost:8545
-T0=`cast block latest number` ; sleep 60 ; T1=`cast block latest number`
+T0=`cast block latest -f number` ; sleep 60 ; T1=`cast block latest -f number`
 PER_MIN=`expr $T1 - $T0`
 echo Blocks per minute: $PER_MIN
 
@@ -294,7 +294,7 @@ echo Progress per minute: $PROGRESS_PER_MIN
 
 
 # How many more blocks do we need?
-HEAD=`cast block --rpc-url https://sepolia.optimism.io latest number`
+HEAD=`cast block --rpc-url https://sepolia.optimism.io latest -f number`
 BEHIND=`expr $HEAD - $T1` 
 MINUTES=`expr $BEHIND / $PROGRESS_PER_MIN`
 HOURS=`expr $MINUTES / 60`
