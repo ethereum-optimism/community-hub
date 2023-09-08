@@ -17,12 +17,12 @@ The Optimist Profile is built on attestations using the [Ethereum Attestation Se
 
 ![Logo](../../assets/docs/identity/profile.png)
 
-- **Profile schema UID:**  ​​0xac4c92fc5c7babed88f78a917cdbcdc1c496a8f4ab2d5b2ec29402736b2cf929
+- **Profile schema UID:**  `​​0xac4c92fc5c7babed88f78a917cdbcdc1c496a8f4ab2d5b2ec29402736b2cf929`
     - name: name of the profile
     - metadataPtrType: used to determine the protocol
     - metadataPtr: can be a URI, ipfs hash, etc. that points to any type of blob storage that stores the metadata of type shown below
 
-- **RetroPGF 3 Application schema UID:** 0x76e98cce95f3ba992c2ee25cef25f756495147608a3da3aa2e5ca43109fe77cc
+- **RetroPGF 3 Application schema UID:** `0x76e98cce95f3ba992c2ee25cef25f756495147608a3da3aa2e5ca43109fe77cc`
     - displayName: name of the application
     - metadataPtrType: used to determine the protocol 
     - metadataPtr: can be a URI, ipfs hash, etc. that points to any type of blob storage that stores the metadata of type shown below
@@ -31,12 +31,12 @@ The Optimist Profile is built on attestations using the [Ethereum Attestation Se
 
 **Q: How do I get the addresses for RetroPGF badgeholders?**
 
-**A:** Use the EAS SDK getAttestation to retrieve the onchain attestation where Schema UID: 0xfdcfdad2dbe7489e0ce56b260348b7f14e8365a8a325aef9834818c00d46b31b.
-Remember to verify the attester address is 0x60c5C9c98bcBd0b0F2fD89B24c16e533BaA8CdA3. 
+**A:** Use the EAS SDK `getAttestation` function to retrieve the onchain attestation where Schema UID: `0xfdcfdad2dbe7489e0ce56b260348b7f14e8365a8a325aef9834818c00d46b31b`.
+Remember to verify the attester address is `0x60c5C9c98bcBd0b0F2fD89B24c16e533BaA8CdA3`. 
 
 **Q: How do I get the addresses for Optimist Profiles?**
 
-**A:** Use the EAS SDK getAttestation to retrieve the onchain attestation where Schema UID: 0xac4c92fc5c7babed88f78a917cdbcdc1c496a8f4ab2d5b2ec29402736b2cf929.
+**A:** Use the EAS SDK `getAttestation` function to retrieve the onchain attestation where Schema UID: `0xac4c92fc5c7babed88f78a917cdbcdc1c496a8f4ab2d5b2ec29402736b2cf929`.
 
 
 
