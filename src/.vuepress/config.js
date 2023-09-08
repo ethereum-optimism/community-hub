@@ -136,6 +136,7 @@ module.exports = {
       '/docs/identity/': [
         '/docs/identity/intro',
         '/docs/identity/build',
+        '/docs/identity/profile',
         {
           title: "Technical details",
           children: [
