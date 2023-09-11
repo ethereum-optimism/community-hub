@@ -32,7 +32,7 @@ The Optimist Profile is built on attestations using the [Ethereum Attestation Se
 **Q: How do I get the addresses for RetroPGF badgeholders?**
 
 **A:** Use the EAS SDK `getAttestation` function to retrieve the onchain attestation where Schema UID: `0xfdcfdad2dbe7489e0ce56b260348b7f14e8365a8a325aef9834818c00d46b31b`.
-Remember to verify the attester address is `0x60c5C9c98bcBd0b0F2fD89B24c16e533BaA8CdA3`. 
+Remember to verify the attester address is `0x621477dBA416E12df7FF0d48E14c4D20DC85D7D9`. 
 
 **Q: How do I get the addresses for Optimist Profiles?**
 
