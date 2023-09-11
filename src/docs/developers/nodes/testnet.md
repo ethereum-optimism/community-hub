@@ -3,29 +3,41 @@ title: Running OP Testnet from Source
 lang: en-US
 ---
 
-todo: OP Sepolia init from genesis file instructions
-todo: archive node instructions
-todo: general review
-
 #### [Please follow these steps first if you have not done so already.](./intro.md)
 
 ::: info Migrated vs Non-Migrated Networks
 Migrated Networks, *OP Mainnet* and *OP Goerli*, were running before the Bedrock upgrade. Non-Migrated Networks, *OP Sepolia*, have only existed in a post Bedrock world. The way transaction execution is handled is funadmentally different pre- vs post-bedrock. Migrated networks are required to initialize their nodes with a data directory and non-migrated networks can simply initialize from a genesis file.
 :::
 
-## OP Goerli
+## OP Goerli initialization
 
 ### Get the data directory
 
 The next step is to download the data directory for `op-geth`.
 
-1. Download the correct data directory snapshot.
+1. Download the data directory snapshot. This is a large file so expect it to take some time. [Bedrock Data Directory (5.0GB)](https://datadirs.optimism.io/goerli-bedrock.tar.zst)
 
-   - [OP Goerli](https://datadirs.optimism.io/goerli-bedrock.tar.zst)
-   - Save it wherever you want `I.E. ~/Downloads/goerli-bedrock.tar.zst`. 
-   - For this tutorial, `~/Downloads/goerli-bedrock.tar.zst` = `<<PATH_TO_DATA>>`;
+::: tip Protip
+Use a tool like [aria2](https://aria2.github.io/) to reduce the chance of your data directory being corrupted.
+:::
 
-2. Create the data directory in `op-geth` and fill it.
+2. Check the validity of your download. This is an important step. Corrupted data directories will make your node fail. So ensure your checksum matches.
+   
+   ```sh
+   sha256sum goerli-bedrock.tar.zst
+   # expected output
+   1b2d3022e378ad1dcf1fb5abbb9ebcd3826db5d34fb53d0f1d0f8448648a5a6b  goerli-bedrock.tar.zst
+   ```
+
+   OR
+   
+   ```sh
+   sha512sum goerli-bedrock.tar.zst
+   # expected output
+   7d420ddf34ee5b157d60cf7a9612cb950b24ff1405e1ab944f8d7910c45e7a46907bdb86ea124a8069b15ad9e171776ab5f8ed0146c43b0ff12539f38f262f7d  goerli-bedrock.tar.zst
+   ```
+
+3. Create the data directory in `op-geth` and fill it. This will take time.
    
    Using a terminal in `op-geth`, run these commands:
    ```sh
@@ -34,9 +46,55 @@ The next step is to download the data directory for `op-geth`.
    tar xvf <<PATH_TO_DATA>>
    ```
 
-3. Create a shared secret with `op-node`:
+#### (Optional - Archive Node) Get the data directory for `l2geth`
+
+1. Download the data directory snapshot. This is a large file so expect it to take some time. [Legacy Geth Data Directory (2.9TB)](https://datadirs.optimism.io/mainnet-legacy-archival.tar.zst)
+
+::: tip Protip
+Use a tool like [aria2](https://aria2.github.io/) to reduce the chance of your data directory being corrupted.
+:::
+
+2. Check the validity of your download. This is an important step. Corrupted data directories will make your node fail. So ensure your checksum matches.
+
+   ```sh
+   sha256sum mainnet-legacy-archival.tar.zst
+   # expected output
+   4e6eccc4a5dff7eda1fc27d440496b48f3baab05add55daa0cb7b3558af21f59  goerli-legacy-archival.tar.zst
+   ```
+
+   OR
    
-   Using a terminal in `op-geth`, run these commands:
+   ```sh
+   sha512sum mainnet-legacy-archival.tar.zst
+   # expected output
+   5d78c1f2cd5bea062fb979b9d616a5fe4c55b27a444812b91a90340631d7a5f750c4e6e5a352513f3cf102d61586a4e2861f1aa3827e5be8fcae01e2ec291d2a  goerli-legacy-archival.tar.zst
+   ```
+
+3. Create the data directory in `l2geth` and fill it. This will take time.
+
+   Navigate into your `l2geth` directory and run these commands:
+   ```sh
+   mkdir datadir
+   cd datadir
+   tar xvf <<PATH_TO_DATA_DIR>>
+   ```
+
+## OP Sepolia initialization
+
+OP Sepolia is non-migrated network so it requires initialization via genesis file. `op-geth` uses JSON files to encode a network's genesis information. You'll need to download the genesis JSON, then run the following command to initialize the data directory:
+
+```bash
+curl -o <path to genesis JSON> -sL <URL to genesis JSON>
+
+geth init \
+	 --datadir="<your data directory>" \
+	 "<path to genesis JSON>"
+```
+
+### Create a shared secret between `op-geth` and `op-node`
+
+1. Navigate into your `op-geth` directory and run these commands:
+
    ```sh
    openssl rand -hex 32 > jwt.txt
    cp jwt.txt ../optimism/op-node
@@ -44,77 +102,124 @@ The next step is to download the data directory for `op-geth`.
 
 ### Scripts to start the different components
 
-In the root of the `optimism-no-docker` directory create a new directory: `scripts`.
+In the root of your working directory create a new directory: `scripts`.
 
-It should read as `optimism-no-docker/scripts`.
+### (Optional - Archive Node) `l2geth`
+
+1. Navigate into your `scripts` directory:
+
+2. Create a new file: 
+   ```sh
+   touch run-l2geth.sh
+   ```
+
+3. Make it executable: 
+   ```sh
+   chmod +x run-l2geth.sh
+   ```
+
+4. Insert this snippet of code into `run-l2geth.sh` and modify the path to the `l2geth` directory.
+
+   ```sh
+   #!/usr/bin/bash
+
+   cd ../optimism-legacy/l2geth
+
+   USING_OVM=true \
+     ETH1_SYNC_SERVICE_ENABLE=false \
+     RPC_API=eth,rollup,net,web3,debug \
+     RPC_ENABLE=true \
+     RPC_PORT=8546 \ # need to rebind port because op-geth uses the same default port
+     ./build/bin/geth --datadir ./datadir --goerli
+   ```
+
+5. Run the following command to start `l2geth`:
+   
+   ```sh
+   ./run-l2geth.sh
+   ```
 
 ### `op-geth`
 
-Using a terminal in `optimism-no-docker/scripts`:
-   1. create a new file: `touch run-op-geth.sh`.
-   2. Make it executable: `chmod +x run-op-geth.sh`.
-   3. Copy and Paste this snippet of code into `run-op-geth.sh`.
 
-```
-#! /usr/bin/bash
+2. Create a new file: 
+   ```sh
+   touch run-op-geth.sh
+   ```
 
-SEQUENCER_URL=https://goerli-sequencer.optimism.io/
+3. Make it executable: 
+   ```sh
+   chmod +x run-op-geth.sh
+   ```
 
-cd ..
-cd op-geth
+4. Insert this snippet of code into `run-op-geth.sh` and modify the path to the `op-geth` directory.
 
-./build/bin/geth \
-  --ws \
-  --ws.port=8546 \
-  --ws.addr=0.0.0.0 \
-  --ws.origins="*" \
-  --http \
-  --http.port=8545 \
-  --http.addr=0.0.0.0 \
-  --http.vhosts="*" \
-  --http.corsdomain="*" \
-  --authrpc.addr=localhost \
-  --authrpc.jwtsecret=./jwt.txt \
-  --authrpc.port=8551 \
-  --authrpc.vhosts="*" \
-  --verbosity=3 \
-  --rollup.sequencerhttp=$SEQUENCER_URL \
-  --nodiscover \
-  --syncmode=full \
-  --maxpeers=0 \
-  --datadir=./datadir \
-  --snapshot=false
-```
+    ```sh
+    #! /usr/bin/bash
+
+    SEQUENCER_URL=https://mainnet-sequencer.optimism.io/
+
+    cd <<Path to op-geth directory>>
+
+    ./build/bin/geth \
+      --datadir=./datadir \
+      --http \
+      --http.port=8545 \
+      --http.addr=0.0.0.0 \
+      --authrpc.addr=localhost \
+      --authrpc.jwtsecret=./jwt.txt \
+      --verbosity=3 \
+      --rollup.sequencerhttp=$SEQUENCER_URL \
+      --nodiscover \
+      --syncmode=full \
+      --maxpeers=0 \
+      --snapshot=false
+    ```
+
+::: info Archive Nodes
+You will need to point `op-geth` at `l2geth` with `--rollup.historicalrpc`: Enables the historical RPC endpoint. This endpoint is used to fetch historical execution data from Legacy Geth. This flag is only necessary for upgraded networks.
+
+You will also need to add `--gcmode archive`.
+:::
 
 ::: info Snapshots
-
 For the initial synchronization it's a good idea to disable snapshots (`--snapshot=false`) to speed it up. 
 Later, for regular usage, you can remove that option to improve geth database integrity.
-
 :::
 
 Other Sequencer URLs can be found here: [Networks, Public RPC Endpoints, & APIs](../../useful-tools/networks.md).
 
-4. run the command `./run-op-geth.sh`
+5. Run the following command to start `op-geth`:
+   
+   ```bash
+   ./run-op-geth.sh
+   ```
 
 ### `op-node`
 
-Using a terminal in `optimism-no-docker/scripts`:
-   1. create a new file: `touch run-op-node.sh`.
-   2. Make it executable: `chmod +x run-op-node.sh`.
-   3. Copy and Paste this snippet of code into `run-op-node.sh`.
+1. Navigate to the `scripts` directory you created.
    
-```
-#! /usr/bin/bash
+2. Create a new file: 
+   ```sh
+   touch run-op-node.sh
+   ```
+3. Make it executable: 
+   ```sh
+   chmod +x run-op-node.sh
+   ```
+4. Insert this snippet of code into `run-op-node.sh`:
+   
+    ```sh
+    #!/usr/bin/bash
 
-L1URL=<< URL to L1 >>
-L1KIND=basic
-NET=goerli
+    L1URL=<< URL to L1 >>
+    L1KIND=basic
+    NET=<< goerli OR sepolia >>
 
-cd ..
-cd optimism/op-node
+    cd <<Path to op-node directory>>
 
-./bin/op-node \
+
+    ./bin/op-node \
         --l1=$L1URL  \
         --l1.rpckind=$L1KIND \
         --l2=http://localhost:8551 \
@@ -123,13 +228,17 @@ cd optimism/op-node
         --rpc.addr=0.0.0.0 \
         --rpc.port=8547
 
-```        
+    ```     
 
 
-- Change `<< URL to L1 >>` to a service provider's URL for the L1 network (L1 Goerli).
+- Change `<< URL to L1 >>` to a service provider's URL for the L1 network (L1 Goerli or Sepolia).
 - Set `L1KIND` to the network provider you are using (options: alchemy, quicknode, infura, parity, nethermind, debug_geth, erigon, basic, any).
 
-4. run the command `./run-op-node.sh`
+5. Run the following command to start `op-node`:
+   
+    ```bash
+    ./run-op-node.sh
+    ```
 
 ### The initial synchronization
 
@@ -188,6 +297,9 @@ if [ $CHAIN_ID -eq 420 ]; then
   L2_URL=https://goerli.optimism.io
 fi
 
+if [ $CHAIN_ID -eq 11155111 ]; then
+  L2_URL=https://sepolia.optimism.io
+fi
 
 T0=`cast block-number` ; sleep 60 ; T1=`cast block-number`
 PER_MIN=`expr $T1 - $T0`

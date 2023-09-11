@@ -47,6 +47,8 @@ This tutorial was checked on:
 | pnpm                            | 8.6.12           | `sudo npm install -g pnpm` |
 | Foundry                         | 0.2.0           | `curl -L https://foundry.paradigm.xyz | bash`, <br/> `. ~/.bashrc`, <br/> `foundryup` |
 
+## Building the software
+
 ### Build the Optimism Monorepo
 
 1. Navigate to your working directory.
@@ -101,7 +103,12 @@ This process will take some time, so you can move onto the next section while th
     git clone https://github.com/ethereum-optimism/optimism-legacy.git
     ```
 
-1. todo: figure out how to build l2geth
+1. Build `l2geth`:
+   
+   ```bash
+   cd optimism-legacy/l2geth
+   make
+   ```
    
 <br/>
 

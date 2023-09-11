@@ -18,7 +18,7 @@ Use a tool like [aria2](https://aria2.github.io/) to reduce the chance of your d
 
 2. Check the validity of your download. This is an important step. Corrupted data directories will make your node fail. So ensure your checksum matches.
 
-   ```sh
+   ```bash
    sha256sum mainnet-bedrock.tar.zst
    # expected output
    ec4baf47e309a14ffbd586dc85376833de640c0f2a8d7355cb8a9e64c38bfcd1  mainnet-bedrock.tar.zst
@@ -26,7 +26,7 @@ Use a tool like [aria2](https://aria2.github.io/) to reduce the chance of your d
 
    OR
    
-   ```sh
+   ```bash
    sha512sum mainnet-bedrock.tar.zst
    # expected output
    c17067b7bc39a6daa14f71d448c6fa0477834c3e68a25e96f26fe849c12a09bffe510e96f7eacdef19e93e3167d15250f807d252dd6f6f9053d0e4457c73d5fb mainnet-bedrock.tar.zst
@@ -66,8 +66,6 @@ Use a tool like [aria2](https://aria2.github.io/) to reduce the chance of your d
    e348488c458baa755510f23bbc8601619bc66bea78a89354c949ba7be3c6b39ed7dd2c50516621e38df6120299407da0d24445b96bf94a50364ed07bb8234b26 mainnet-legacy-archival.tar.zst
    ```
 
-todo: verify this step
-
 3. Create the data directory in `l2geth` and fill it. This will take time.
 
    Navigate into your `l2geth` directory and run these commands:
@@ -86,31 +84,62 @@ todo: verify this step
    cp jwt.txt ../optimism/op-node
    ```
 
-   	
-
 ### Scripts to start the different components
-
-todo: add archive node script
 
 In the root of your working directory create a new directory: `scripts`.
 
+### (Optional - Archive Node) `l2geth`
+
+1. Navigate into your `scripts` directory:
+
+2. Create a new file: 
+   ```sh
+   touch run-l2geth.sh
+   ```
+
+3. Make it executable: 
+   ```sh
+   chmod +x run-l2geth.sh
+   ```
+
+4. Insert this snippet of code into `run-l2geth.sh` and modify the path to the `l2geth` directory.
+
+   ```sh
+   #!/usr/bin/bash
+
+   cd ../optimism-legacy/l2geth
+
+   USING_OVM=true \
+     ETH1_SYNC_SERVICE_ENABLE=false \
+     RPC_API=eth,rollup,net,web3,debug \
+     RPC_ENABLE=true \
+     RPC_PORT=8546 \ # need to rebind port because op-geth uses the same default port
+     ./build/bin/geth --datadir ./datadir
+   ```
+
+5. Run the following command to start `l2geth`:
+   
+   ```sh
+   ./run-l2geth.sh
+   ```
+
 ### `op-geth`
 
-Navigate into your `scripts` directory:
+1. Navigate into your `scripts` directory:
 
-1. Create a new file: 
+2. Create a new file: 
    ```sh
    touch run-op-geth.sh
    ```
 
-1. Make it executable: 
+3. Make it executable: 
    ```sh
    chmod +x run-op-geth.sh
    ```
 
-1. Insert this snippet of code into `run-op-geth.sh` and modify the path to the `op-geth` directory.
+4. Insert this snippet of code into `run-op-geth.sh` and modify the path to the `op-geth` directory.
 
-    ```
+    ```sh
     #! /usr/bin/bash
 
     SEQUENCER_URL=https://mainnet-sequencer.optimism.io/
@@ -132,13 +161,15 @@ Navigate into your `scripts` directory:
       --snapshot=false
     ```
 
-todo: add note about the historical rpc flag for archive nodes
+::: info Archive Nodes
+You will need to point `op-geth` at `l2geth` with `--rollup.historicalrpc`: Enables the historical RPC endpoint. This endpoint is used to fetch historical execution data from Legacy Geth. This flag is only necessary for upgraded networks.
+
+You will also need to add `--gcmode archive`.
+:::
 
 ::: info Snapshots
-
 For the initial synchronization it's a good idea to disable snapshots (`--snapshot=false`) to speed it up. 
 Later, for regular usage, you can remove that option to improve geth database integrity.
-
 :::
 
 5. Run the following command to start `op-geth`:
@@ -147,87 +178,22 @@ Later, for regular usage, you can remove that option to improve geth database in
    ./run-op-geth.sh
    ```
 
-<details>
-    <summary>Your standard output should look something like the following</summary>
-
-    INFO [08-31|15:42:54.888] Starting Geth on Ethereum mainnet... 
-    INFO [08-31|15:42:54.888] Bumping default cache on mainnet         provided=1024 updated=4096
-    INFO [08-31|15:42:54.893] Maximum peer count                       ETH=0 LES=0 total=0
-    INFO [08-31|15:42:54.894] Smartcard socket not found, disabling    err="stat /run/pcscd/pcscd.comm: no such file or directory"
-    INFO [08-31|15:42:54.896] Set global gas cap                       cap=50,000,000
-    INFO [08-31|15:42:54.897] Initializing the KZG library             backend=gokzg
-    INFO [08-31|15:42:54.917] Allocated trie memory caches             clean=1023.00MiB dirty=1024.00MiB
-    INFO [08-31|15:42:55.009] Using leveldb as the backing database 
-    INFO [08-31|15:42:55.009] Allocated cache and file handles         database=/media/soyboy/sdb/op-geth/datadir/geth/chaindata cache=2.00GiB handles=524,288
-    INFO [08-31|15:42:55.786] Using LevelDB as the backing database 
-    INFO [08-31|15:42:55.786] Found legacy ancient chain path          location=/media/soyboy/sdb/op-geth/datadir/geth/chaindata/ancient
-    INFO [08-31|15:42:55.792] Opened ancient database                  database=/media/soyboy/sdb/op-geth/datadir/geth/chaindata/ancient readonly=false
-    INFO [08-31|15:42:56.030]  
-    INFO [08-31|15:42:56.030] --------------------------------------------------------------------------------------------------------------------------------------------------------- 
-    INFO [08-31|15:42:56.030] Chain ID:  10 (OP-Mainnet) 
-    INFO [08-31|15:42:56.030] Consensus: Optimism 
-    INFO [08-31|15:42:56.030]  
-    INFO [08-31|15:42:56.030] Pre-Merge hard forks (block based): 
-    INFO [08-31|15:42:56.030]  - Homestead:                   #0        (https://github.com/ethereum/execution-specs/blob/master/network-upgrades/mainnet-upgrades/homestead.md) 
-    INFO [08-31|15:42:56.030]  - Tangerine Whistle (EIP 150): #0        (https://github.com/ethereum/execution-specs/blob/master/network-upgrades/mainnet-upgrades/tangerine-whistle.md) 
-    INFO [08-31|15:42:56.030]  - Spurious Dragon/1 (EIP 155): #0        (https://github.com/ethereum/execution-specs/blob/master/network-upgrades/mainnet-upgrades/spurious-dragon.md) 
-    INFO [08-31|15:42:56.030]  - Spurious Dragon/2 (EIP 158): #0        (https://github.com/ethereum/execution-specs/blob/master/network-upgrades/mainnet-upgrades/spurious-dragon.md) 
-    INFO [08-31|15:42:56.030]  - Byzantium:                   #0        (https://github.com/ethereum/execution-specs/blob/master/network-upgrades/mainnet-upgrades/byzantium.md) 
-    INFO [08-31|15:42:56.030]  - Constantinople:              #0        (https://github.com/ethereum/execution-specs/blob/master/network-upgrades/mainnet-upgrades/constantinople.md) 
-    INFO [08-31|15:42:56.030]  - Petersburg:                  #0        (https://github.com/ethereum/execution-specs/blob/master/network-upgrades/mainnet-upgrades/petersburg.md) 
-    INFO [08-31|15:42:56.030]  - Istanbul:                    #0        (https://github.com/ethereum/execution-specs/blob/master/network-upgrades/mainnet-upgrades/istanbul.md) 
-    INFO [08-31|15:42:56.030]  - Muir Glacier:                #0        (https://github.com/ethereum/execution-specs/blob/master/network-upgrades/mainnet-upgrades/muir-glacier.md) 
-    INFO [08-31|15:42:56.030]  - Berlin:                      #3950000  (https://github.com/ethereum/execution-specs/blob/master/network-upgrades/mainnet-upgrades/berlin.md) 
-    INFO [08-31|15:42:56.030]  - London:                      #105235063 (https://github.com/ethereum/execution-specs/blob/master/network-upgrades/mainnet-upgrades/london.md) 
-    INFO [08-31|15:42:56.030]  - Arrow Glacier:               #105235063 (https://github.com/ethereum/execution-specs/blob/master/network-upgrades/mainnet-upgrades/arrow-glacier.md) 
-    INFO [08-31|15:42:56.030]  - Gray Glacier:                #105235063 (https://github.com/ethereum/execution-specs/blob/master/network-upgrades/mainnet-upgrades/gray-glacier.md) 
-    INFO [08-31|15:42:56.030]  
-    INFO [08-31|15:42:56.030] Merge configured: 
-    INFO [08-31|15:42:56.030]  - Hard-fork specification:    https://github.com/ethereum/execution-specs/blob/master/network-upgrades/mainnet-upgrades/paris.md 
-    INFO [08-31|15:42:56.030]  - Network known to be merged: true 
-    INFO [08-31|15:42:56.030]  - Total terminal difficulty:  0 
-    INFO [08-31|15:42:56.030]  - Merge netsplit block:       #105235063 
-    INFO [08-31|15:42:56.030]  
-    INFO [08-31|15:42:56.030] Post-Merge hard forks (timestamp based): 
-    INFO [08-31|15:42:56.030]  - Regolith:                    @0          
-    INFO [08-31|15:42:56.030]  
-    INFO [08-31|15:42:56.030] --------------------------------------------------------------------------------------------------------------------------------------------------------- 
-    INFO [08-31|15:42:56.030]  
-    INFO [08-31|15:42:56.030] Loaded most recent local block           number=105,235,063 hash=dbf6a8..c2afd3 td=0 age=2mo3w5d
-    INFO [08-31|15:42:56.030] Loaded most recent local finalized block number=105,235,063 hash=dbf6a8..c2afd3 td=0 age=2mo3w5d
-    INFO [08-31|15:42:56.031] Initialising Ethereum protocol           network=10 dbversion=8
-    INFO [08-31|15:42:56.031] Loaded local transaction journal         transactions=0 dropped=0
-    INFO [08-31|15:42:56.031] Regenerated local transaction journal    transactions=0 accounts=0
-    INFO [08-31|15:42:56.031] Chain post-merge, sync via beacon client 
-    INFO [08-31|15:42:56.031] Gasprice oracle is ignoring threshold set threshold=2
-    WARN [08-31|15:42:56.031] Sanitizing invalid optimism gasprice oracle min priority fee suggestion provided=<nil> updated=100,000,000
-    WARN [08-31|15:42:56.031] Unclean shutdown detected                booted=2023-08-31T15:30:57-0700 age=11m59s
-    WARN [08-31|15:42:56.031] Engine API enabled                       protocol=eth
-    INFO [08-31|15:42:56.031] Starting peer-to-peer node               instance=Geth/v0.1.0-unstable-ee5b962f-20230828/linux-amd64/go1.20.6
-    INFO [08-31|15:42:56.140] IPC endpoint opened                      url=/media/soyboy/sdb/op-geth/datadir/geth.ipc
-    INFO [08-31|15:42:56.141] Loaded JWT secret file                   path=jwt.txt crc32=0x9ef4fdba
-    INFO [08-31|15:42:56.141] HTTP server started                      endpoint=[::]:8545 auth=false prefix= cors= vhosts=localhost
-    INFO [08-31|15:42:56.141] WebSocket enabled                        url=ws://127.0.0.1:8551
-    INFO [08-31|15:42:56.141] HTTP server started                      endpoint=127.0.0.1:8551 auth=true  prefix= cors=localhost vhosts=localhost
-    INFO [08-31|15:42:56.141] New local node record                    seq=1,693,521,776,139 id=65199d8d69f9b69b ip=127.0.0.1 udp=0 tcp=30303
-    INFO [08-31|15:42:56.141] Started P2P networking                   self="enode://f530929400b47346b0e01c170d294fc2affcf64afafe95d9bd31870470230ef703f1583c3a756f61b88663d94b85238a6e71b66934395e2240fd5ff5af5c9cbc@127.0.0.1:30303?discport=0"
-</details>
-
 ### `op-node`
 
 1. Navigate to the `scripts` directory you created.
-1. Create a new file: 
+   
+2. Create a new file: 
    ```sh
    touch run-op-node.sh
    ```
-1. Make it executable: 
+3. Make it executable: 
    ```sh
    chmod +x run-op-node.sh
    ```
-1. Insert this snippet of code into `run-op-node.sh`:
+4. Insert this snippet of code into `run-op-node.sh`:
    
     ```sh
-    #! /usr/bin/bash
+    #!/usr/bin/bash
 
     L1URL=<< URL to L1 >>
     L1KIND=basic
@@ -251,6 +217,7 @@ Later, for regular usage, you can remove that option to improve geth database in
 - Set `L1KIND` to the network provider you are using (options: alchemy, quicknode, infura, parity, nethermind, debug_geth, erigon, basic, any).
 
 5. Run the following command to start `op-node`:
+   
     ```bash
     ./run-op-node.sh
     ```
@@ -303,7 +270,7 @@ You can use this script, which uses [Foundry](https://book.getfoundry.sh/).
 4. Insert this snippet of code into `run-estimate.sh`:
    
 ```sh
-#! /usr/bin/bash
+#!/usr/bin/bash
 
 export ETH_RPC_URL=http://localhost:8545
 CHAIN_ID=`cast chain-id`
