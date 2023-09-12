@@ -38,6 +38,8 @@ Remember to verify the attester address is `0x621477dBA416E12df7FF0d48E14c4D20DC
 
 **A:** Use the EAS SDK `getAttestation` function to retrieve the onchain attestation where Schema UID: `0xac4c92fc5c7babed88f78a917cdbcdc1c496a8f4ab2d5b2ec29402736b2cf929`.
 
+**Q: What other schemas are being used?**
 
+**A:** Check the [schemas](./schemas.md) page for a list of other schemas being used.
 
 
