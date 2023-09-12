@@ -9,8 +9,8 @@ Anyone can create an Optimist Profile and anyone is able to use the Optimist Pro
 ## Overview
 The Optimist Profile is built using the variety of onchain reputation data on OP Mainnet and has the following elements:
 
-**Profile Schema:** An onchain self-attestation using the profile schema that represents an individual or organization.
-**Contributions:** Each Optimist Profile can create onchain attestations about their contributions to the Optimism Collective. Optimist Profiles can also be used to create onchan peer-to-peer (p2p) attestations about the contributions of other contributors. Peer to peer attestations help the Optimism Collective create a contribution web of trust.
+- **Profile Schema:** An onchain self-attestation using the profile schema that represents an individual or organization.
+- **Contributions:** Each Optimist Profile can create onchain attestations about their contributions to the Optimism Collective. Optimist Profiles can also be used to create onchan peer-to-peer (p2p) attestations about the contributions of other contributors. Peer to peer attestations help the Optimism Collective create a contribution web of trust.
 
 ## Technical details
 The Optimist Profile is built on attestations using the [Ethereum Attestation Service](./atst-v1.md). 
