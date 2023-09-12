@@ -5,7 +5,7 @@ lang: en-US
 
 ::: warning Deprecated
 
-This contract is not actively being supported, we recommend using [AttestationStation v1](atst-v1).
+This contract is not actively being supported, we recommend using [AttestationStation v1](./atst-v1.md).
 
 :::
 
