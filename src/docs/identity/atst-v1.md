@@ -22,6 +22,3 @@ Indexing is available via:
 - [GraphQL endpoint (OP Goerli)](https://optimism-goerli-bedrock.easscan.org/graphql)
 - [Ponder graph]( https://github.com/ethereum-attestation-service/eas-ponder-graph)
 - [Open source indexer]( https://github.com/ethereum-attestation-service/eas-indexing-service)
-
-Relevant schemas:
-- [RetroPGF badgeholders (0xfdcfdad2dbe7489e0ce56b260348b7f14e8365a8a325aef9834818c00d46b31b)](https://optimism.easscan.org/schema/view/0xfdcfdad2dbe7489e0ce56b260348b7f14e8365a8a325aef9834818c00d46b31b)
