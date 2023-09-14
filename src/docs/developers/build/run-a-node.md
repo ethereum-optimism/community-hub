@@ -195,14 +195,16 @@ cd ~/op-geth
   --syncmode=full \
   --maxpeers=0 \
   --datadir=./datadir \
-  --snapshot=false
 ```
 
 
 ::: info Snapshots
 
-For the initial synchronization it's a good idea to disable snapshots (`--snapshot=false`) to speed it up. 
-Later, for regular usage, you can remove that option to improve geth database integrity.
+Snapshots should be enabled by default, but if the node is syncing at the same time as generating the snapshot, both the snapshot generation process & syncing will be slowed down.
+The datadirs provided by OP Labs have a pre-generated snapshot. If the node is using a datadir without a snapshot, the two options are to disable snapshots until the node is synced or
+to disable peering until snapshots are created and then let the node sync to tip.
+
+If a node is synced using snap sync, it will automatically have snapshots.
 
 :::
 
