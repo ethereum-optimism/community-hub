@@ -7,10 +7,16 @@ lang: en-US
 
 We have a Blockscout explorer for [OP Mainnet](https://optimism.blockscout.com), [OP Goerli](https://optimism-goerli.blockscout.com), and [OP Sepolia](https://optimism-sepolia.blockscout.com/). It includes:
 
-- [Verified testnet contract source code, along with the ability to interact with it](https://optimism-goerli.blockscout.com/verified-contracts)
-- [Detailed testnet transaction information](https://optimism-goerli.blockscout.com/txs)
+- [Verified testnet contract source code, along with the ability to interact with it](https://optimism.blockscout.com/verified-contracts)
+- [Detailed testnet transaction information](https://optimism.blockscout.com/tx/0xa1b04233084d4067ec0bb3e09301012900f0e209f14a3d406f3d6dc696eea138)
 
-
+Blockscout also has some OP-Mainnet-specific features:
+- [An interactive list of deposits (L1-L2)](https://optimism.blockscout.com/l2-deposits)
+- [An interactive list of withdrawals (L2-L1)](https://optimism.blockscout.com/l2-withdrawals)
+- [Transaction batches](https://optimism.blockscout.com/l2-txn-batches)
+- [Output roots](https://optimism.blockscout.com/l2-output-roots)
+- [Dapp marketplace](https://optimism.blockscout.com/apps)
+- And much more!
 
 ## Etherscan
 
