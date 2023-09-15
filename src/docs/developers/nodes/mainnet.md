@@ -257,7 +257,20 @@ INFO [06-26|14:02:12.982] Starting work on payload                 id=0x5542117d
 
 To estimate how long the synchronization will take, you need to first find out how many blocks you synchronize in a minute. 
 
-You can use this script, which uses [Foundry](https://book.getfoundry.sh/). 
+
+
+
+
+
+### Operations
+
+It is best to start `op-geth` first and shut it down last.
+
+#### How long will the synchronization take?
+
+To estimate how long the synchronization will take, you need to first find out how many blocks you synchronize in a minute. 
+
+You can use this [Foundry](https://book.getfoundry.sh/) script to get an estimated sync time.
 
 1. Navigate to your `scripts` directory
 2. Create a new file: 
@@ -269,7 +282,7 @@ You can use this script, which uses [Foundry](https://book.getfoundry.sh/).
    chmod +x run-estimate.sh
    ```
 4. Insert this snippet of code into `run-estimate.sh`:
-   
+  
 ```sh
 #!/usr/bin/bash
 
@@ -288,7 +301,11 @@ if [ $CHAIN_ID -eq 420 ]; then
 fi
 
 
-T0=`cast block-number` ; sleep 60 ; T1=`cast block-number`
+if [ $CHAIN_ID -eq 11155420 ]; then
+  L2_URL=https://sepolia.optimism.io
+fi
+
+T0=`cast block-number --rpc-url $ETH_RPC_URL` ; sleep 60 ; T1=`cast block-number --rpc-url $ETH_RPC_URL`
 PER_MIN=`expr $T1 - $T0`
 echo Blocks per minute: $PER_MIN
 
@@ -314,7 +331,7 @@ if [ $HOURS -gt 24 ] ; then
    DAYS=`expr $HOURS / 24`
    echo Days until sync complete: $DAYS
 fi
-```
+```  
 
 5. Run the following command to get an estimate:
    ```sh
