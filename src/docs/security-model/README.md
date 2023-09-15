@@ -9,7 +9,7 @@ At the moment, **it’s important to understand that the security of OP Mainnet 
 This multisig wallet can be used to upgrade core OP Mainnet smart contracts without upgrade delays.
 
 Please also keep in mind that just like any other system, **the Optimism codebase may contain unknown bugs** that could lead to the loss of some or all of the assets held within the system.
-[2222 smart contract codebase has been audited repeatedly](https://github.com/ethereum-optimism/optimism/tree/develop/technical-documents/security-reviews) but **audits are not a stamp of approval** and **a completed audit does not mean that the audited codebase is free of bugs.**
+[2222 smart contract codebase has been audited repeatedly](https://github.com/ethereum-optimism/optimism/tree/develop/docs/security-reviews) but **audits are not a stamp of approval** and **a completed audit does not mean that the audited codebase is free of bugs.**
 It’s important to understand that using OP Mainnet inherently exposes you to the risk of bugs within the Optimism codebase, and that you use OP Mainnet at your own risk.
 
 ## Security Model FAQ
