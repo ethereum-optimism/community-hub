@@ -7,7 +7,7 @@ Certain interactions, like transferring ETH and ERC20 tokens between the two net
 
 The standard bridge functionality provides a method for an ERC20 token to be deposited and locked on L1 in exchange of the same amount of an equivalent token on L2. This process is known as "bridging a token", e.g. depositing 100 USDC on L1 in exchange for 100 USDC on L2 and also the reverse - withdrawing 100 USDC on L2 in exchange for the same amount on L1. In addition to bridging tokens the standard bridge is also used for ETH.
 
-The Standard Bridge is composed of two main contracts the [`L1StandardBridge`](https://github.com/ethereum-optimism/optimism/blob/65ec61dde94ffa93342728d324fecf474d228e1f/packages/contracts-bedrock/contracts/L1/L1StandardBridge.sol) (for Layer 1) and the [`L2StandardBridge`](https://github.com/ethereum-optimism/optimism/blob/65ec61dde94ffa93342728d324fecf474d228e1f/packages/contracts-bedrock/contracts/L2/L2StandardBridge.sol) (for Layer 2).
+The Standard Bridge is composed of two main contracts the [`L1StandardBridge`](https://github.com/ethereum-optimism/optimism/blob/65ec61dde94ffa93342728d324fecf474d228e1f/packages/contracts-bedrock/contracts/L1/L1StandardBridge.sol) (for Layer 1) and the [`L2StandardBridge`](https://github.com/ethereum-optimism/optimism/blob/65ec61dde94ffa93342728d324fecf474d228e1f/packages/contracts-bedrock/contracts/L2/L2StandardBridge.sol) (for Layer 2). The contract addresses can be found [here](../../useful-tools/networks/#contract-addresses).
 
 Here we'll go over the basics of using this bridge to move ERC20 assets between Layer 1 and Layer 2.
 
