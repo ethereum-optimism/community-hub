@@ -20,8 +20,7 @@ We cannot always provide direct help, but we strive to help everyone succeed on 
 Steps to take if you would like developer support immediately, ranked in order of response times. 
 
 1. See our [Developer Documentation](../developers/), [Tutorials](https://github.com/ethereum-optimism/optimism-tutorial), and [Help Center](https://help.optimism.io)
-1. Head over to [**#dev-support**](https://discord.com/channels/667044843901681675/887914409207414785) on discord for the fastest help 
-1. Join [this TG group](https://t.me/+Cb7q0a1YqItkZTRk) and ask for help there
+2. Head over to [**#dev-support**](https://discord.com/channels/667044843901681675/887914409207414785) on discord 
 
 
 ## Marketing Requests 🦸🦸
@@ -60,8 +59,8 @@ Grants are mainly handled by [The Optimism Collective](https://app.optimism.io/a
   - Head over to [our discord](https://discord-gateway.optimism.io/) and check out [#showandtell](https://discord.com/channels/667044843901681675/819333988719263774) or [#demoday](https://discord.com/channels/667044843901681675/960493820674465883).
   Demo Day is an AMA about your product to our community. Apply in Discord. 
   - Seek synergies – look at other teams already deployed on OP Mainnet that could work with your product and reach out to them.
-- Once you have done the above, check out our [governance grant process](https://gov.optimism.io/t/grant-proposal-template/3233).
-- To get reviews in real time from governance delegates go to discord and post about your project in [#temp-check](https://discord.com/channels/667044843901681675/1011238484373159956).
+- Once you have done the above, check out our [governance grant process](https://app.charmverse.io/op-grants/page-701220845245208).
+- To get reviews in real time from governance delegates go to discord and post about your project in [#gov-general](https://discord.com/channels/667044843901681675/968498307913637919).
  
 
 ## Other Helpful Links
@@ -78,8 +77,6 @@ Check out [Bedrock](https://dev.optimism.io/introducing-optimism-bedrock/) and [
 
 Want to see the first ever step forward into a modular rollup architecture? We are making it easy for anyone to deploy their own app-specific rollup via the [OP Stack](https://optimism.mirror.xyz/fLk5UGjZDiXFuvQh6R_HscMQuuY9ABYNF7PI76-qJYs). 
 **Fun fact:** A team has already launched [a Voxel Game on the OP Stack](https://dev.optimism.io/opcraft-autonomous-world/)! 
-Interested in exploring more? 
-[Fill out this form](https://wkf.ms/3XTdpLl).
 
 **Last note:** [We’re hiring](https://jobs.optimism.io/)! 
 Join our community! 
@@ -88,7 +85,6 @@ Enjoy life!
 Don’t worry so much! 
 Brush your teeth! 
 Eat apples! 
-Eat bacon! 
 Research the origins of public relations! 
 Give back to your community! 
 Tweet things you don’t actually believe! 
