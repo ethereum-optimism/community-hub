@@ -296,7 +296,7 @@ echo Progress per minute: $PROGRESS_PER_MIN
 
 # How many more blocks do we need?
 HEAD=`cast block-number --rpc-url $REF_RPC_URL`
-BEHIND=`expr $HEAD - $T1` 
+BEHIND=`expr $HEAD - $T1`
 MINUTES=`expr $BEHIND / $PROGRESS_PER_MIN`
 HOURS=`expr $MINUTES / 60`
 echo Hours until sync completed: $HOURS
