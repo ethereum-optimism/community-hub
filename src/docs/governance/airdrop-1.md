@@ -3,10 +3,9 @@ title: Airdrop 1
 lang: en-US
 ---
 
-::: info You can still claim your tokens
+::: info Airdrop 1 has been distributed to all eligible addresses
 
-If you are eligible to claim tokens from this airdrop and haven't claimed them yet, you can still do it at least until 1 July 2024.
-[Click here to see if you have any tokens to claim](https://app.optimism.io/airdrop/check).
+On September 15, 2023, any unclaimed OP from Airdrop 1 was sent directly to addresses eligible to claim. This means all OP from Airdrop 1 has been distributed.
 
 :::
 
