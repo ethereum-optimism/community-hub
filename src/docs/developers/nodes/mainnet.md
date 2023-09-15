@@ -255,22 +255,7 @@ INFO [06-26|14:02:12.982] Starting work on payload                 id=0x5542117d
 
 #### How long will the synchronization take?
 
-To estimate how long the synchronization will take, you need to first find out how many blocks you synchronize in a minute. 
-
-
-
-
-
-
-### Operations
-
-It is best to start `op-geth` first and shut it down last.
-
-#### How long will the synchronization take?
-
-To estimate how long the synchronization will take, you need to first find out how many blocks you synchronize in a minute. 
-
-You can use this [Foundry](https://book.getfoundry.sh/) script to get an estimated sync time.
+To estimate how long the synchronization will take, you need to first find out how many blocks you synchronize in a minute. You can use this [Foundry](https://book.getfoundry.sh/) script to get an estimated sync time.
 
 1. Navigate to your `scripts` directory
 2. Create a new file: 
@@ -337,3 +322,7 @@ fi
    ```sh
    ./run-estimate.sh
    ```  
+
+### Operations
+
+It is best to start `op-geth` first and shut it down last.
