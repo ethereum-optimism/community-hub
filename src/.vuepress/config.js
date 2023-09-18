@@ -165,7 +165,8 @@ module.exports = {
             '/docs/governance/howto-delegate.md',
             '/docs/governance/economics.md',
             '/docs/governance/allocations.md',
-            '/docs/governance/airdrop-2.md',                         
+            '/docs/governance/airdrop-3.md',
+            '/docs/governance/airdrop-2.md',
             '/docs/governance/airdrop-1.md'
           ],
           collapsable: true,
