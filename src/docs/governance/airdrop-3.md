@@ -28,6 +28,8 @@ Airdrop #3 is disbursed directly to eligible wallets. There is no need to claim 
 
 (2) Delegate must have voted onchain in OP Governance during the snapshot period (01-20-2023 at 0:00 UTC and 07-20-2023 0:00 UTC )
 
+- See the list of addresses and allocation amounts [here](https://github.com/ethereum-optimism/op-analytics/blob/main/reference_data/address_lists/op_airdrop3_simple_list.csv)
+
 ### Cutoff Criteria
 
 - Addresses with fewer than 18,000 `OP Delegated x Days` (or 9,000 if delegated to a voting delegate) were not eligible for this airdrop.
