@@ -3,7 +3,7 @@ title: Building a Node from Source
 lang: en-US
 ---
 
-Here are the instructions if you want to build you own read-only replica without relying on our images. These instructions were generated on an Ubuntu 20.04 LTS box, but they should work with other systems too.
+Here are the instructions if you want to build you own node without relying on our images. These instructions were generated on an Ubuntu 20.04 LTS box, but they should work with other systems too.
 
 Note: This is not the recommended configuration. While we did QA on these instructions and they work, the QA that the docker images undergo is much more extensive.
 
@@ -112,7 +112,7 @@ This process will take some time, so you can move onto the next section while th
    
 <br/>
 
-The rest of the steps depend on whether you are building on OP Mainnet or OP Testnet node.
+The rest of the steps depend on whether you want to run an OP Mainnet or OP Sepolia node.
 
 [Click here to continue building on OP Mainnet](./mainnet.md)
 
