@@ -5,7 +5,7 @@ lang: en-US
 
 Airdrop 3 took place on Monday, September 18. The airdrop allocated 19,411,313 OP to 31,870 unique addresses. 
 
-Similar to Airdrop 2, this drop rewards positive sum governance participation. Users who have delegated tokens between 01-20-2023 at 0:00 UTC and 07-20-2023 0:00 UTC received tokens in this airdrop. A bonus is given to addresses who delegated to a delegate who voted in Optimism Governance. 
+Similar to Airdrop 2, this drop rewards positive sum governance participation. Users who have delegated tokens between 2023-01-20 at 0:00 UTC and 2023-07-20 0:00 UTC received tokens in this airdrop. A bonus is given to addresses who delegated to a delegate who voted in Optimism Governance. 
 
 Read on for more detail about eligibility criteria and allocations.
 
