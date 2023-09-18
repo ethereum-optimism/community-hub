@@ -9,76 +9,6 @@ lang: en-US
 Migrated Networks, *OP Mainnet* and *OP Goerli*, were running before the Bedrock upgrade. Non-Migrated Networks, *OP Sepolia*, have only existed in a post Bedrock world. The way transaction execution is handled is funadmentally different pre- vs post-bedrock. Migrated networks are required to initialize their nodes with a data directory and non-migrated networks can simply initialize from a genesis file.
 :::
 
-## OP Goerli initialization
-
-### Get the data directory
-
-The next step is to download the data directory for `op-geth`.
-
-1. Download the data directory snapshot. This is a large file so expect it to take some time. [Bedrock Data Directory (5.0GB)](https://datadirs.optimism.io/goerli-bedrock.tar.zst)
-
-::: tip Protip
-Use a tool like [aria2](https://aria2.github.io/) to reduce the chance of your data directory being corrupted.
-:::
-
-2. Check the validity of your download. This is an important step. Corrupted data directories will make your node fail. So ensure your checksum matches.
-   
-   ```sh
-   sha256sum goerli-bedrock.tar.zst
-   # expected output
-   1b2d3022e378ad1dcf1fb5abbb9ebcd3826db5d34fb53d0f1d0f8448648a5a6b  goerli-bedrock.tar.zst
-   ```
-
-   OR
-   
-   ```sh
-   sha512sum goerli-bedrock.tar.zst
-   # expected output
-   7d420ddf34ee5b157d60cf7a9612cb950b24ff1405e1ab944f8d7910c45e7a46907bdb86ea124a8069b15ad9e171776ab5f8ed0146c43b0ff12539f38f262f7d  goerli-bedrock.tar.zst
-   ```
-
-3. Create the data directory in `op-geth` and fill it. This will take time.
-   
-   Using a terminal in `op-geth`, run these commands:
-   ```sh
-   mkdir datadir
-   cd datadir
-   tar xvf <<PATH_TO_DATA>>
-   ```
-
-#### (Optional - Archive Node) Get the data directory for `l2geth`
-
-1. Download the data directory snapshot. This is a large file so expect it to take some time. [Legacy Geth Data Directory (2.9TB)](https://datadirs.optimism.io/mainnet-legacy-archival.tar.zst)
-
-::: tip Protip
-Use a tool like [aria2](https://aria2.github.io/) to reduce the chance of your data directory being corrupted.
-:::
-
-2. Check the validity of your download. This is an important step. Corrupted data directories will make your node fail. So ensure your checksum matches.
-
-   ```sh
-   sha256sum mainnet-legacy-archival.tar.zst
-   # expected output
-   4e6eccc4a5dff7eda1fc27d440496b48f3baab05add55daa0cb7b3558af21f59  goerli-legacy-archival.tar.zst
-   ```
-
-   OR
-   
-   ```sh
-   sha512sum mainnet-legacy-archival.tar.zst
-   # expected output
-   5d78c1f2cd5bea062fb979b9d616a5fe4c55b27a444812b91a90340631d7a5f750c4e6e5a352513f3cf102d61586a4e2861f1aa3827e5be8fcae01e2ec291d2a  goerli-legacy-archival.tar.zst
-   ```
-
-3. Create the data directory in `l2geth` and fill it. This will take time.
-
-   Navigate into your `l2geth` directory and run these commands:
-   ```sh
-   mkdir datadir
-   cd datadir
-   tar xvf <<PATH_TO_DATA_DIR>>
-   ```
-
 ## OP Sepolia initialization
 
 OP Sepolia is non-migrated network so it requires initialization via genesis file. `op-geth` uses JSON files to encode a network's genesis information. You'll need to download the genesis JSON, then run the following command to initialize the data directory:
@@ -104,41 +34,6 @@ geth init \
 
 In the root of your working directory create a new directory: `scripts`.
 
-### (Optional - Archive Node) `l2geth`
-
-1. Navigate into your `scripts` directory:
-
-2. Create a new file: 
-   ```sh
-   touch run-l2geth.sh
-   ```
-
-3. Make it executable: 
-   ```sh
-   chmod +x run-l2geth.sh
-   ```
-
-4. Insert this snippet of code into `run-l2geth.sh` and modify the path to the `l2geth` directory.
-
-   ```sh
-   #!/usr/bin/bash
-
-   cd ../optimism-legacy/l2geth
-
-   USING_OVM=true \
-     ETH1_SYNC_SERVICE_ENABLE=false \
-     RPC_API=eth,rollup,net,web3,debug \
-     RPC_ENABLE=true \
-     RPC_PORT=8546 \ # need to rebind port because op-geth uses the same default port
-     ./build/bin/geth --datadir ./datadir --goerli
-   ```
-
-5. Run the following command to start `l2geth`:
-   
-   ```sh
-   ./run-l2geth.sh
-   ```
-
 ### `op-geth`
 
 
@@ -157,7 +52,7 @@ In the root of your working directory create a new directory: `scripts`.
     ```sh
     #! /usr/bin/bash
 
-    SEQUENCER_URL=https://mainnet-sequencer.optimism.io/
+    SEQUENCER_URL=https://sepolia-sequencer.optimism.io/
 
     cd <<Path to op-geth directory>>
 
@@ -181,16 +76,9 @@ You will need to point `op-geth` at `l2geth` with `--rollup.historicalrpc`: Enab
 You will also need to add `--gcmode archive`.
 :::
 
-::: info Snapshots
-Snapshots should be enabled by default, but if the node is syncing at the same time as generating the snapshot, both the snapshot generation process & syncing will be slowed down.
-The datadirs provided by OP Labs have a pre-generated snapshot. If the node is using a datadir without a snapshot, the two options are to disable snapshots until the node is synced or
-to disable peering until snapshots are created and then let the node sync to tip.
-If a node is synced using snap sync, it will automatically have snapshots.
-:::
-
 Other Sequencer URLs can be found here: [Networks, Public RPC Endpoints, & APIs](../../useful-tools/networks.md).
 
-5. Run the following command to start `op-geth`:
+1. Run the following command to start `op-geth`:
    
    ```bash
    ./run-op-geth.sh
@@ -213,7 +101,7 @@ Other Sequencer URLs can be found here: [Networks, Public RPC Endpoints, & APIs]
     ```sh
     #!/usr/bin/bash
 
-    L1URL=<< URL to L1 >>
+    L1URL=<< L1 RPC URL >>
     L1KIND=basic
     NET=<< goerli OR sepolia >>
 
@@ -232,7 +120,7 @@ Other Sequencer URLs can be found here: [Networks, Public RPC Endpoints, & APIs]
     ```     
 
 
-- Change `<< URL to L1 >>` to a service provider's URL for the L1 network (L1 Goerli or Sepolia).
+- Change `<< L1 RPC URL >>` to your local L1 node or a service provider's URL for the L1 node (L1 Ethereum). E.g. for Infura, `https://sepolia.infura.io/v3/API_KEY`.
 - Set `L1KIND` to the network provider you are using (options: alchemy, quicknode, infura, parity, nethermind, debug_geth, erigon, basic, any).
 
 5. Run the following command to start `op-node`:

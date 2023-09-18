@@ -5,8 +5,6 @@ lang: en-US
 
 Here are the instructions if you want to build you own node without relying on our images. These instructions were generated on an Ubuntu 20.04 LTS box, but they should work with other systems too.
 
-Note: This is not the recommended configuration. While we did QA on these instructions and they work, the QA that the docker images undergo is much more extensive.
-
 # Prerequisites
 
 ## Hardware requirements
@@ -93,17 +91,23 @@ This process will take some time, so you can move onto the next section while th
     make geth
     ```
 
-### (Optional - Archive Node) Build l2geth
+### (Optional - OP Mainnet Archive Node) Build l2geth
+
+::: info OP Mainnet Archive Node
+
+This step is only necessary for OP Mainnet archive nodes. If you're building a OP Testnet archive node, you do not need to do this step.
+
+:::
 
 1. Navigate to your working directory
 
-1. Clone [`l2geth`](https://github.com/ethereum-optimism/optimism-legacy)
+2. Clone [`l2geth`](https://github.com/ethereum-optimism/optimism-legacy)
 
     ```bash
     git clone https://github.com/ethereum-optimism/optimism-legacy.git
     ```
 
-1. Build `l2geth`:
+3. Build `l2geth`:
    
    ```bash
    cd optimism-legacy/l2geth

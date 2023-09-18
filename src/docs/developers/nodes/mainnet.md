@@ -42,7 +42,7 @@ Use a tool like [aria2](https://aria2.github.io/) to reduce the chance of your d
    tar xvf <<PATH_TO_DATA_DIR>>
    ```
 
-#### (Optional - Archive Node) Get the data directory for `l2geth`
+#### (Optional - OP Mainnet Archive Node) Get the data directory for `l2geth`
 
 1. Download the data directory snapshot. This is a large file so expect it to take some time. [Legacy Geth Data Directory (2.9TB)](https://datadirs.optimism.io/mainnet-legacy-archival.tar.zst)
 
@@ -166,14 +166,7 @@ You will need to point `op-geth` at `l2geth` with `--rollup.historicalrpc`: Enab
 You will also need to add `--gcmode archive`.
 :::
 
-::: info Snapshots
-Snapshots should be enabled by default, but if the node is syncing at the same time as generating the snapshot, both the snapshot generation process & syncing will be slowed down.
-The datadirs provided by OP Labs have a pre-generated snapshot. If the node is using a datadir without a snapshot, the two options are to disable snapshots until the node is synced or
-to disable peering until snapshots are created and then let the node sync to tip.
-If a node is synced using snap sync, it will automatically have snapshots.
-:::
-
-5. Run the following command to start `op-geth`:
+1. Run the following command to start `op-geth`:
    
    ```bash
    ./run-op-geth.sh
@@ -196,7 +189,7 @@ If a node is synced using snap sync, it will automatically have snapshots.
     ```sh
     #!/usr/bin/bash
 
-    L1URL=<< URL to L1 >>
+    L1URL=<< L1 RPC URL >>
     L1KIND=basic
     NET=mainnet
 
@@ -214,7 +207,7 @@ If a node is synced using snap sync, it will automatically have snapshots.
 
     ```        
 
-- Change `<< URL to L1 >>` to your local L1 node or a service provider's URL for the L1 node (L1 Ethereum).
+- Change `<< L1 RPC URL >>` to your local L1 node or a service provider's URL for the L1 node (L1 Ethereum). E.g. for Infura, `https://mainnet.infura.io/v3/API_KEY`.
 - Set `L1KIND` to the network provider you are using (options: alchemy, quicknode, infura, parity, nethermind, debug_geth, erigon, basic, any).
 
 5. Run the following command to start `op-node`:
