@@ -38,3 +38,11 @@ Airdrop #3 is disbursed directly to eligible wallets. There is no need to claim 
 - Each reward type had a maximum reward of 10,000 OP per address.
 
 *Note: A small set of delegation activity was not included in Airdrop #2. The eligible amounts were added to this allocation, resulting in 341 additional addresses.*
+
+### How it works:
+
+- To work out your `Cummultive Delegated OP`, multiply your OP delegated by the time delegated: `OP delegated x Days` = `Cummultive Delegated OP`. To qualify for the airdrop your `Cummultive Delegated OP` needs to be larger than 18,000. If you delegated to a “Voting Delegate” the `Cummultive Delegated OP` only needs to be above 9,000. For example, if you delegated 80 OP tokens for 180 days that would make a `Cummultive Delegated OP` of 14,400 which would NOT qualify for the airdrop. However, if the delegate you delegated to was active, then your 14,400 is above the 9,000 required for a voting delegate and you WOULD receive the airdrop.
+    - Addresses who delegated for less than 7 days are not eligible.
+    - Known delegation program wallets were not eligible for this airdrop.
+    - Each reward type had a maximum reward of 10,000 OP per address.
+- For the Voting Delegate Bonus the address you have delegated to MUST have voted onchain in OP Governance during the snapshot period (2023-01-20 at 0:00 UTC and 2023-07-20 0:00 UTC)
