@@ -20,7 +20,7 @@ Airdrop #3 is disbursed directly to eligible wallets. There is no need to claim 
 | Reward Type | Criteria | Number of qualifying addresses | Reward allocation
 | - | -: | -: | -:
 | Governance Delegation Reward | Delegated OP above the minimum threshold | 31,529 | 0.67 ⁄ 365 OP per `OP Delegated x Day`(1), max 10,000 OP per address
-| Voting Delegate Bonus | Delegated to an address that voted onchain at least once (2) | 25,561 | (0.67 ⁄ 365)*2 OP per `OP Delegated x Day`, max 10,000 OP per address
+| Voting Delegate Bonus | Delegated to an address that voted onchain at least once (2) | 25,561 | (0.67 ⁄ 365)*2 OP per `OP Delegated x Day to a voting delegate`, max 10,000 OP per address
 
 ### Details
 
