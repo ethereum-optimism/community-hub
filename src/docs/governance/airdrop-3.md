@@ -46,3 +46,8 @@ Airdrop #3 is disbursed directly to eligible wallets. There is no need to claim 
     - Known delegation program wallets were not eligible for this airdrop.
     - Each reward type had a maximum reward of 10,000 OP per address.
 - For the Voting Delegate Bonus the address you have delegated to MUST have voted onchain in OP Governance during the snapshot period (2023-01-20 at 0:00 UTC and 2023-07-20 0:00 UTC)
+
+## References
+- **OP Airdrop 3 Check:** [https://op-airdrop-check.vercel.app/](https://op-airdrop-check.vercel.app/)
+
+
