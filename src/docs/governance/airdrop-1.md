@@ -164,4 +164,4 @@ As always: stay safe and stay Optimistic.
 - **OP Token Address:** [0x4200000000000000000000000000000000000042](https://explorer.optimism.io/address/0x4200000000000000000000000000000000000042)
 - **Optimism on Twitter:** [https://twitter.com/optimismFND](https://twitter.com/optimismFND)
 - **Join the Optimism Discord:** [https://discord-gateway.optimism.io/](https://discord-gateway.optimism.io/)
-- **CSV with the list of airdropped addresses:** [op_airdrop1_addresses.csv](https://github.com/ethereum-optimism/op-analytics/blob/main/reference_data/address_lists/op_airdrop1_addresses.csv)
+- **CSV with the list of airdropped addresses:** [op_airdrop1_addresses_detailed_list.csv](https://github.com/ethereum-optimism/op-analytics/blob/main/reference_data/address_lists/op_airdrop1_addresses_detailed_list.csv)
