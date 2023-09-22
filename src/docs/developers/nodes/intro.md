@@ -9,7 +9,7 @@ Here are the instructions if you want to build you own node without relying on o
 
 ## Hardware requirements
 
-Replicas need to store the transaction history of OP Mainnet (or the relevant OP testnet) and to run Geth. They need to be relatively powerful machines (real or virtual). We recommend at least 16 GB RAM, and an SSD drive with at least 325GB + 446GB free (for OP Mainnet).
+Nodes need to process and store the transaction history of OP Mainnet or OP Sepolia. They need to be relatively powerful machines (real or virtual). We recommend at least 16 GB RAM. We recommend a 2TB SSD for OP Mainnet, our current archive node usage is ~1TB. We recommend a 256GB SSD for OP Sepolia, or current full node usage is ~1.6GB and archive node usage is ~5.6GB.
 
 ## Software requirements
 
