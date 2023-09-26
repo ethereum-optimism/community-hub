@@ -149,13 +149,14 @@ The URL format is `https://optimism.nownodes.io/?API_key=<API key from NOWNodes`
 
 ### Description and Pricing
 
-[QuickNode](https://www.quicknode.com/) offers access to hosted OP Mainnet (and testnet) nodes for $9/month at its cheapest tier.
-You can select addons, like "Archive Mode" or "Trace Mode" for an additional cost.
+[QuickNode](https://www.quicknode.com/) offers access to hosted OP Mainnet (and testnet) nodes for free.
+You can select add-ons, like "Archive Mode" or "Trace Mode" with any paid plan.
 
 ### Supported Networks
 
 - OP Mainnet
 - OP Goerli
+- OP Sepolia
 
 
 
