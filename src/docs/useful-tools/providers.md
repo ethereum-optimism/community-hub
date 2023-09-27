@@ -149,8 +149,7 @@ The URL format is `https://optimism.nownodes.io/?API_key=<API key from NOWNodes`
 
 ### Description and Pricing
 
-[QuickNode](https://www.quicknode.com/) offers access to hosted OP Mainnet (and testnet) nodes for free.
-You can select add-ons, like "Archive Mode" or "Trace Mode" with any paid plan.
+[QuickNode](https://www.quicknode.com/) offers access to hosted OP Mainnet (and testnet) nodes for free. With the option to upgrade to a premium plan for additional features, we allow you to focus solely on optimizing your application while we manage the complex infrastructure.
 
 ### Supported Networks
 
