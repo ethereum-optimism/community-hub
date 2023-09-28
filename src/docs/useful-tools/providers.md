@@ -46,6 +46,18 @@ On the platform, there are also [Public APIs](https://blastapi.io/public-api/opt
 - OP Mainnet
 - OP Goerli
 
+
+## Blockpi
+
+### Description and Pricing
+
+[Blockpi](https://blockpi.io/) Network ships scalable, high performance and globally distributed infrastructure with the most flexible and developer-first pricing in the industry. Build from scratch all the way to enterprise without monthly subscription. Register at [dashboard](https://dashboard.blockpi.io/) and get Free 100M RU every month!
+
+### Supported Networks
+
+- OP Mainnet
+- OP Goerli
+
 ## BlockSpaces
 
 [BlockSpaces](https://www.blockspaces.com/web3-infrastructure) is a multiweb integration platform that is currently offering Web3 infrastructure for free, up to 10 million transactions supported DAILY. To get started, click [here](https://www.blockspaces.com/web3-infrastructure) and leave an email address. If being able to integrate your OP Mainnet dApp to other web2 business platforms (like Quickbooks) interestes you, make sure to sign up for our Multiweb integration waitlist.
