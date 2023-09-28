@@ -7,7 +7,7 @@ Certain interactions, like transferring ETH and ERC20 tokens between the two net
 
 The standard bridge functionality provides a method for an ERC20 token to be deposited and locked on L1 in exchange of the same amount of an equivalent token on L2. This process is known as "bridging a token", e.g. depositing 100 USDC on L1 in exchange for 100 USDC on L2 and also the reverse - withdrawing 100 USDC on L2 in exchange for the same amount on L1. In addition to bridging tokens the standard bridge is also used for ETH.
 
-The Standard Bridge is composed of two main contracts the [`L1StandardBridge`](https://github.com/ethereum-optimism/optimism/blob/65ec61dde94ffa93342728d324fecf474d228e1f/packages/contracts-bedrock/contracts/L1/L1StandardBridge.sol) (for Layer 1) and the [`L2StandardBridge`](https://github.com/ethereum-optimism/optimism/blob/65ec61dde94ffa93342728d324fecf474d228e1f/packages/contracts-bedrock/contracts/L2/L2StandardBridge.sol) (for Layer 2).
+The Standard Bridge is composed of two main contracts the [`L1StandardBridge`](https://github.com/ethereum-optimism/optimism/blob/65ec61dde94ffa93342728d324fecf474d228e1f/packages/contracts-bedrock/contracts/L1/L1StandardBridge.sol) (for Layer 1) and the [`L2StandardBridge`](https://github.com/ethereum-optimism/optimism/blob/65ec61dde94ffa93342728d324fecf474d228e1f/packages/contracts-bedrock/contracts/L2/L2StandardBridge.sol) (for Layer 2). The contract addresses can be found [here](../../useful-tools/networks/#contract-addresses).
 
 Here we'll go over the basics of using this bridge to move ERC20 assets between Layer 1 and Layer 2.
 
@@ -58,7 +58,7 @@ There are two ways to check if a token can use the standard bridge:
     },
    ```
 
-   In the token exists in the token list but does not use the standard bridge, the `extensions.optimismBridgeAddress` value is different. For example, this entry shows that on OP Mainnet `DAI` uses a different bridge:
+   If the token exists in the token list but does not use the standard bridge, the `extensions.optimismBridgeAddress` value is different. For example, this entry shows that on OP Mainnet `DAI` uses a different bridge:
 
    ```json
        {
@@ -92,6 +92,20 @@ There are two ways to check if a token can use the standard bridge:
 ETH deposits into L2 can be triggered via the `depositETH` and `depositETHTo` functions on the [`L1StandardBridge`](https://github.com/ethereum-optimism/optimism/blob/65ec61dde94ffa93342728d324fecf474d228e1f/packages/contracts-bedrock/contracts/L1/L1StandardBridge.sol#L110-L143).
 ETH deposits can alternatively be triggered by sending ETH directly to the `L1StandardBridge`.
 Once your deposit is detected and finalized on OP Mainnet, your account will be funded with the corresponding amount of ETH on L2.
+
+### Depositing USDC
+
+USDC issued by Circle will be native to OP Mainnet and can be considered the official form of USDC for the ecosystem. Over time, native USDC liquidity may grow and replace the currently circulating bridged USDC liquidity that comes from Ethereum.
+
+::: danger USDC.e vs USDC
+
+These are different token contracts. If you're using `depositERC20` or `depositERC20To` make sure you're bridging to the correct destination address. Mixing up the mapping will result in your assets being stuck in the bridge.
+:::
+
+| Token Symbol  | Description | Token Address |
+| - | - | - |
+| `USDC.e`	| Bridged USDC from Ethereum   | [0x7f5c764cbc14f9669b88837ca1490cca17c31607](https://optimistic.etherscan.io/token/0x7f5c764cbc14f9669b88837ca1490cca17c31607) |
+| `USDC`	| Native USDC issued by Circle   | [0x0b2C639c533813f4Aa9D7837CAf62653d097Ff85](https://optimistic.etherscan.io/token/0x0b2c639c533813f4aa9d7837caf62653d097ff85) |
 
 ## Withdrawals
 

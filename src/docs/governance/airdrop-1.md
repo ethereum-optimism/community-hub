@@ -3,10 +3,9 @@ title: Airdrop 1
 lang: en-US
 ---
 
-::: info You can still claim your tokens
+::: info Airdrop 1 has been distributed to all eligible addresses
 
-If you are eligible to claim tokens from this airdrop and haven't claimed them yet, you can still do it at least until 1 July 2024.
-[Click here to see if you have any tokens to claim](https://app.optimism.io/airdrop/check).
+On September 15, 2023, any unclaimed OP from Airdrop 1 was sent directly to addresses eligible to claim. This means all OP from Airdrop 1 has been distributed.
 
 :::
 
@@ -165,4 +164,4 @@ As always: stay safe and stay Optimistic.
 - **OP Token Address:** [0x4200000000000000000000000000000000000042](https://explorer.optimism.io/address/0x4200000000000000000000000000000000000042)
 - **Optimism on Twitter:** [https://twitter.com/optimismFND](https://twitter.com/optimismFND)
 - **Join the Optimism Discord:** [https://discord-gateway.optimism.io/](https://discord-gateway.optimism.io/)
-- **CSV with the list of airdropped addresses:** [publish_op_airdrop1.csv](https://drive.google.com/file/d/1VVcHGHNMLeyRQMHcfkzT4fVbU2xPeT1X/view?usp=sharing)
+- **CSV with the list of airdropped addresses:** [op_airdrop1_addresses_detailed_list.csv](https://github.com/ethereum-optimism/op-analytics/blob/main/reference_data/address_lists/op_airdrop1_addresses_detailed_list.csv)

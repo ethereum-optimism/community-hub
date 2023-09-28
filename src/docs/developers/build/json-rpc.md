@@ -21,7 +21,7 @@ This method is documented in [the specifications](https://github.com/ethereum-op
 
 ```sh
 curl -X POST -H "Content-Type: application/json" --data  \
-   '{"jsonrpc":"2.0","method":"optimism_outputAtBlock","params":["latest"],"id":1}' \
+   '{"jsonrpc":"2.0","method":"optimism_outputAtBlock","params":["<block_number>"],"id":1}' \
    http://localhost:9545
 ```
 

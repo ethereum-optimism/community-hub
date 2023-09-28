@@ -154,11 +154,13 @@ module.exports = {
         ],
       },
     ],
-    searchPlaceholder: "Search the docs",
-    sidebar: {
-      "/docs/identity/": [
-        "/docs/identity/intro",
-        "/docs/identity/build",
+    searchPlaceholder: 'Search the docs',
+    sidebar: {    
+      '/docs/identity/': [
+        '/docs/identity/intro',
+        '/docs/identity/build',
+        '/docs/identity/profile',
+        '/docs/identity/schemas',
         {
           title: "Technical details",
           children: ["/docs/identity/atst-v1", "/docs/identity/atst-v0"],
@@ -174,11 +176,12 @@ module.exports = {
         {
           title: "OP Holders",
           children: [
-            "/docs/governance/howto-delegate.md",
-            "/docs/governance/economics.md",
-            "/docs/governance/allocations.md",
-            "/docs/governance/airdrop-2.md",
-            "/docs/governance/airdrop-1.md",
+            '/docs/governance/howto-delegate.md',
+            '/docs/governance/economics.md',
+            '/docs/governance/allocations.md',
+            '/docs/governance/airdrop-3.md',
+            '/docs/governance/airdrop-2.md',
+            '/docs/governance/airdrop-1.md'
           ],
           collapsable: true,
         },
@@ -454,8 +457,14 @@ module.exports = {
         {
           title: "🫡 Marketing",
           children: [
+<<<<<<< HEAD
             "/docs/contribute/contribution-path/Ambassador-req.md",
             "/docs/contribute/demo-day.md",
+=======
+            '/docs/contribute/important-terms.md',
+            '/docs/contribute/contribution-path/Ambassador-req.md',
+            '/docs/contribute/demo-day.md'
+>>>>>>> main
           ],
           collapsable: true,
         },
