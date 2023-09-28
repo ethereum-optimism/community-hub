@@ -70,12 +70,6 @@ In the root of your working directory create a new directory: `scripts`.
       --maxpeers=0
     ```
 
-::: info Archive Nodes
-You will need to point `op-geth` at `l2geth` with `--rollup.historicalrpc`: Enables the historical RPC endpoint. This endpoint is used to fetch historical execution data from Legacy Geth. This flag is only necessary for upgraded networks.
-
-You will also need to add `--gcmode archive`.
-:::
-
 Other Sequencer URLs can be found here: [Networks, Public RPC Endpoints, & APIs](../../useful-tools/networks.md).
 
 1. Run the following command to start `op-geth`:
