@@ -58,4 +58,4 @@ Here are some best practices to avoid violating users’ privacy:
 
 **Q: Why attestations instead of soulbound / non-transferable tokens?**
 
-**A:** Attestations have two key benefits over soulbound / non-transferable tokens: flexibility of whether the attestations is onchain or offchain and composability. While there is a canonical [decentralized schema registry for attestations](https://optimism-goerli.easscan.org/schemas), there is no central registry or specification for soulbound / non-transferable tokens which can lead to poor interoperability between systems and protocols.
+**A:** Attestations have two key benefits over soulbound / non-transferable tokens: flexibility of whether the attestations is onchain or offchain and composability. While there is a canonical [decentralized schema registry for attestations](https://optimism-goerli-bedrock.easscan.org/schemas), there is no central registry or specification for soulbound / non-transferable tokens which can lead to poor interoperability between systems and protocols.
