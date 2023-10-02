@@ -6,10 +6,9 @@ lang: en-US
 ## Seasons and voting cycles
 
 Token House governance operates on a seasonal schedule.
-Season three began on January 26th, 2023, with Voting Cycle Ten.
 Seasons are separated with a Reflection Period. Reflection Periods may be followed by Special Voting Cycles to adopt proposals that come out of the previous Reflection Period.
 
-During each Season, Token House voting occurs via five-week voting cycles. 
+In Season 5, Token House voting will occur via three-week voting cycles. 
 Voting Cycles begin on Thursday at 19:00p GMT (12p PST) and end on Wednesday at 19:00 GMT (12p PST).
 
 
@@ -20,10 +19,29 @@ Reflection periods are expected to be followed by Special Voting Cycles during w
 You can see up to date information about the seasons and voting cycles in [the governance calendar](https://calendar.google.com/calendar/u/0/r?cid=Y180aHVpNzBpdG0wODllN3Q4cTUwaGVoMWtub0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t).
 
 
-::: tip At the time of writing we in Season #3: January 26th - March 1st, 2023
+::: tip At the time of writing we are in Reflection Period #4: September 28th - December 22nd, 2023
+
 :::
 
 ## History
+
+### Season #4: June 8th, 2023 - September 20th, 2023
+
+* Voting cycle #15 (August 17th - September 20th)
+* Voting cycle #14 (July 13th - August 16th)
+* Voting cycle #13 (June 8th - July 12th)
+
+### Reflection Period #3 (+ Special Voting Cycle #12a and #12b)
+
+* [Council Reviewer Elections: Growth Experiments Grants](https://vote.optimism.io/proposals/103713749716503028671815481721039004389156473487450783632177114353117435138377)
+* [Council Reviewer Elections: Builders Grants](https://vote.optimism.io/proposals/2808108363564117434228597137832979672586627356483314020876637262618986508713)
+* [Treasury Appropriation (Foundation Year 2 Budget Approval)](https://vote.optimism.io/proposals/29831001453379581627736734765818959389842109811221412662144194715522205098015)
+* [Inflation Adjustment Proposal](https://vote.optimism.io/proposals/80982553847843251343725022866904947381762263529096361834044805234222094077710)
+* [Protocol Delegation Program Renewal](https://vote.optimism.io/proposals/64930538748268257621925093712454552173772860987977453334165023026835711650357)
+* [Intent #1 Budget Proposal](https://vote.optimism.io/proposals/51738314696473345172141808043782330430064117614433447104828853768775712054864)
+* [Intent #2 - Council Intent Budget Proposal](https://vote.optimism.io/proposals/32970701904870446614408373011942917680422376755229075190214017021915019093516)
+* [Intent #3 Budget Proposal](https://vote.optimism.io/proposals/94365805422398770067924881378455503928423439630602149628781926844759467250082)
+* [Intent #4 Budget Proposal](https://vote.optimism.io/proposals/103695324913424597802389181312722993037601032681914451632412140667432224173014)
 
 ### Season #3: January 26th, 2023 - April 5th, 2023
 
@@ -49,7 +67,7 @@ You can see up to date information about the seasons and voting cycles in [the g
 
 ### Reflection Period #1 
 
-The reflection period was a break between season 1 and season 2 where the Optimism foundation, with the help of delegates and community members, updated and improved the governance process.
+The reflection period was a break between Season 1 and Season 2 where the Optimism foundation, with the help of delegates and community members, updated and improved the governance process.
 
 Document changes:
 
