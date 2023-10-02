@@ -9,7 +9,6 @@ As a delegate, you should:
 
 - Join the conversation in the below channels in our [Discord](https://discord-gateway.optimism.io/):
   - [#gov-general](https://discord.com/channels/667044843901681675/968498307913637919): This channel is for general governance discussions.
-  - [#token-house-gov](https://discord.com/channels/667044843901681675/991340698995544176): This announcement channel will help you keep up to date with big events in the governance process, such as when voting starts, meta-governance updates, etc
   - [#grants](https://discord.com/channels/667044843901681675/1069653708369047623): This channel is for discussion about the grants process and for delegates to provide feedback to grant applicants
   - [#delegate-discussion](https://discord.com/channels/667044843901681675/989611992295813241): If you are a delegate with more than 0.5% delegated voting power, join the conversation with other larger delegates to discuss proposals & the governance process.
 
