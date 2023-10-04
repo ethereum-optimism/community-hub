@@ -136,7 +136,7 @@ You may also want to specify the following flags based on your configuration:
 
 #### Working Base Configuration
 
-A valid command that runs `op-geth` on our `beta-1` network and enables RPC over HTTP and WebSockets looks like:
+A valid command that runs `op-geth` and enables RPC over HTTP and WebSockets looks like:
 
 ```bash
 geth \
@@ -156,7 +156,7 @@ geth \
   --datadir=/data \
   --verbosity=3 \
   --rollup.disabletxpoolgossip=true \
-  --rollup.sequencerhttp=https://bedrock-beta-1-sequencer.optimism.io \
+  --rollup.sequencerhttp=https://mainnet-sequencer.optimism.io/ \
   --nodiscover \
   --syncmode=full \
   --maxpeers=0
