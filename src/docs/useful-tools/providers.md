@@ -169,6 +169,15 @@ The URL format is `https://optimism.nownodes.io/?API_key=<API key from NOWNodes`
 - OP Goerli
 - OP Sepolia
 
+## Stackup
+
+### Description and Pricing
+[Stackup](https://www.stackup.sh/) provides ERC-4337 account abstraction infrastructure, including nodes, on EVM-compatible blockchains.
+
+### Supported Networks
+
+- OP Mainnet
+- OP Goerli
 
 
 ## Don't see your company here?
