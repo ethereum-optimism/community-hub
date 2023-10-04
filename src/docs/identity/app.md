@@ -8,7 +8,8 @@ These are some of the applications that use the AttestationStation:
 ## AttestationStation v1
 
 - [EAS Scan](https://optimism.easscan.org/). This no-code interface lets you build schemas, query, and submit attestations.
-
+- [Citizen Attestations](https://citizen-attestations.xyz). An attestation explorer for Optimism focusing on attestations that are relevant for the OP Citizens eligibility process.
+- [Attest Fest](https://attest-fest.party). Create multiple EAS attestations using the power of CSV and Safe multisig wallets. It's an attest fest, yaay!
 
 ## AttestationStation v0
 
