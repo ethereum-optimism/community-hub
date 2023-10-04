@@ -46,7 +46,7 @@ In OP Mainnet blocks are produced every two seconds, regardless of whether they 
 Transactions get to the sequencer in two ways:
 
 1. Transactions submitted on L1 (called *deposits* whether they have assets attached or not) are included in the chain in the appropriate L2 block.
-   Every L2 block is identified by the "epoch" (the L1 block to which it corresponds, which typically has happened a few minutes before the L2 block) and its serial number within that epoch.
+   Every L2 block is identified by the "epoch" (the L1 block to which it corresponds, which typically has happened a few minutes before the L2 block) and its sequence number within that epoch.
    The first block of the epoch includes all the deposits that happened in the L1 block to which it corresponds.
    If the sequencer attempts to ignore a legitimate L1 transaction it ends up with a state that is inconsistent with the verifiers, same as if the sequencer tried to fake the state by other means.
    This provides OP Mainnet with L1 Ethereum level censorship resistance.
