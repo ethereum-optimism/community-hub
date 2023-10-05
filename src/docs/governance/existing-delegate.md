@@ -13,7 +13,7 @@ As a delegate, you should:
   - [#delegate-discussion](https://discord.com/channels/667044843901681675/989611992295813241): If you are a delegate with more than 0.5% delegated voting power, join the conversation with other larger delegates to discuss proposals & the governance process.
 
 - Provide feedback on draft proposals in the [Proposals Discussion](https://gov.optimism.io/c/proposals/38) section of the Forum
-     - If you have more than 0.5% of voting supply then you can also approve non-grant proposals.
+     - If you have more than 0.25% of voting supply then you can also approve non-grant proposals.
        Non-grant proposals need at least 4 approvals to move to a vote. 
        To approve a proposal post this phrase in a forum comment on Discourse:
        > **I am an Optimism delegate with sufficient voting power and I believe this proposal is ready to move to a vote.**
