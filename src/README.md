@@ -35,6 +35,11 @@ features:
     icon: hammer
     details: Useful third-party tools for easier development and deployment.
     link: /docs/useful-tools/
+  
+  - title: Superchain Explainer
+    icon: link
+    details: Technical explainer for the OP Stack and Superchain.
+    link: https://stack.optimism.io/docs/understand/explainer/
 
   - title: Contribute
     icon: hands-helping
