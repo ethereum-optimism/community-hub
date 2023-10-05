@@ -61,9 +61,6 @@ In the root of your working directory create a new directory: `scripts`.
       --http \
       --http.port=8545 \
       --http.addr=0.0.0.0 \
-      --ws \
-      --ws.port=8546 \
-      --ws.addr=0.0.0.0 \ 
       --authrpc.addr=localhost \
       --authrpc.jwtsecret=./jwt.txt \
       --verbosity=3 \
@@ -108,7 +105,7 @@ Other Sequencer URLs can be found here: [Networks, Public RPC Endpoints, & APIs]
     ./bin/op-node \
         --l1=$L1URL  \
         --l1.rpckind=$L1KIND \
-        --l2=ws://localhost:8546 \
+        --l2=ws://localhost:8551 \
         --l2.jwt-secret=./jwt.txt \
         --network=$NET \
         --rpc.addr=0.0.0.0 \
