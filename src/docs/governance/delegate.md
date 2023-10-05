@@ -11,7 +11,7 @@ Being a delegate is an important job that comes with a lot of responsibility. Th
 
 * The [Working Constitution](https://gov.optimism.io/t/working-constitution-of-the-optimism-collective/55).
 * The [Operating Manual](https://github.com/ethereum-optimism/OPerating-manual/blob/main/manual.md).
-* The [Delegate Code of Conduct](https://gov.optimism.io/t/delegate-code-of-conduct/3943)
+* The [Code of Conduct](https://gov.optimism.io/t/code-of-conduct/5751)
 
 
 ## Ready to be a delegate?
