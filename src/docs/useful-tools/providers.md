@@ -178,9 +178,3 @@ The URL format is `https://optimism.nownodes.io/?API_key=<API key from NOWNodes`
 
 - OP Mainnet
 - OP Goerli
-
-
-## Don't see your company here?
-
-We try to keep this list up to date as we find out about more infrastructure providers who maintain OP Mainnet (and testnet) nodes.
-If you're a node provider and you'd like to be included in this list, please message us in our [Discord](https://discord-gateway.optimism.io) or [make a PR](https://github.com/ethereum-optimism/community-hub/pulls). 
