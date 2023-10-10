@@ -3,6 +3,10 @@ title: What is the Optimism Collective?
 lang: en-US
 ---
 
+::: info Reflection Period
+Optimism Governance is currently in a reflection period until the 15th of November. These docs are being updated but are currently out of date. Please check back after the reflection period.
+:::
+
 The [Optimism Collective](https://app.optimism.io/announcement) is a band of companies, communities, and citizens working together to reward public goods and build a sustainable future for Ethereum.
     
 Together we will dispel the myth that public goods cannot be profitable. 
