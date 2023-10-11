@@ -40,7 +40,7 @@ Remember to verify the attester address is `0x621477dBA416E12df7FF0d48E14c4D20DC
 
 **Q: Why do I see multiple applications associated with a single Optimist Profile?**
 
-**A:** This happens if the user has updated their `displayName`. To return the most accurate data, look at the latest application attestation.
+**A:** This happens if the user has updated their `displayName`. To return the most accurate data, look at the most recent application attestation.
 
 **A:** Use the EAS SDK `getAttestation` function to retrieve the onchain attestation where Schema UID: `0xac4c92fc5c7babed88f78a917cdbcdc1c496a8f4ab2d5b2ec29402736b2cf929`.
 
