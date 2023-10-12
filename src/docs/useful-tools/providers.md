@@ -178,3 +178,12 @@ The URL format is `https://optimism.nownodes.io/?API_key=<API key from NOWNodes`
 
 - OP Mainnet
 - OP Goerli
+
+  ## 1RPC
+
+### Description and Pricing
+[1RPC](https://1rpc.io/) is the first and only on-chain attested privacy preserving RPC that eradicate metadata exposure and leakage when interacting with blockchains.
+
+### Supported Networks
+
+- OP Mainnet
