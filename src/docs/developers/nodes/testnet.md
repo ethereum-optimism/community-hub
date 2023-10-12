@@ -11,7 +11,7 @@ Migrated Networks, *OP Mainnet* and *OP Goerli*, were running before the Bedrock
 
 ## OP Sepolia initialization
 
-OP Sepolia is non-migrated network so it requires initialization via genesis file. `op-geth` uses JSON files to encode a network's genesis information. You'll need to download the genesis JSON, then run the following command to initialize the data directory:
+OP Sepolia is non-migrated network so it requires [initialization via genesis file](../bedrock/node-operator-guide.md/#initialization-via-genesis-file). `op-geth` uses JSON files to encode a network's genesis information. You'll need to download the genesis JSON, then run the following command to initialize the data directory:
 
 ```bash
 curl -o <path to genesis JSON> -sL <URL to genesis JSON>
