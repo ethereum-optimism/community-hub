@@ -83,7 +83,7 @@ This fee is based on four factors:
 Here's the math:
 
 ```
-l1_data_fee = l1_gas_price * (tx_data_gas + fixed_overhead) * dynamic_overhead
+l1_data_fee = l1_gas_price * (tx_data_gas + fixed_overhead + noncalldata_gas) * dynamic_overhead
 ```
 
 Where `tx_data_gas` is:
