@@ -221,6 +221,7 @@ These parameters are mostly useful to people responsible for running and adminis
 
 - Note that there is no Bedrock Data Directory or Legacy Geth Data Directory required for running OP Sepolia nodes
 - [Configuration parameters](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/deploy-config/sepolia.json)
+- todo: update link [Genesis.json File]()
 - [Latest releases of `op-geth`](https://github.com/ethereum-optimism/op-geth/releases/latest)
 - [Latest release of `op-node`](https://github.com/ethereum-optimism/optimism/releases/latest)
 - Note: Unlike on OP Mainnet or OP Goerli, you do not need to run `legacy-geth` to run an archival OP Sepolia node.

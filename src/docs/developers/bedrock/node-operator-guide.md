@@ -59,7 +59,7 @@ Even though the Docker image for the Execution Engine is called `op-geth`, the a
 
 We'll start with `op-geth`'s configuration because it is more complex. As mentioned before, `op-geth` is a minimal fork of `go-ethereum`. As a result, it stores its state in a database that requires initialization. Initialization is done one of two ways, depending on which network you're deploying:
 
-1. **With a Genesis File:** This is for OP Sepolia, and other testnets or deployments that are not migrated from a legacy network. In this case, you'll download the genesis file and initialize the data directory via `geth init`.
+1. **With a Genesis File:** This is for OP Sepolia, and other testnets or deployments that are not migrated from a legacy network. In this case, you'll download the todo: update with link [genesis file]() and initialize the data directory via `geth init`.
 2. **With a Data Directory:** This is used for networks that are migrated from a legacy network. This would include OP Mainnet and OP Goerli. In this case, you'll download a preconfigured data directory and extract it. No further initialization is necessary in this case, because the data directory contains the network's genesis information. 
 
 Regardless of how `op-geth` is initialized, you'll need to ensure that you have sufficient disk space available to store the network's data. As of this writing, the mainnet data directory is ~100GB for a full node and ~1TB for an archival node. The OP Goerli data directory is ~40GB for a full node.
@@ -73,6 +73,7 @@ Instructions for each initialization method are below. If you're spinning up an 
 ```bash
 #!/bin/sh
 FILE=/$DATADIR/genesis.json
+todo: update url
 OP_GETH_GENESIS_URL=https://storage.googleapis.com/oplabs-network-data/Sepolia/genesis.json
 
 if [ ! -s $FILE ]; then
@@ -84,10 +85,11 @@ else
 fi
 ```
 
-::: danger CLI Flag Requirements
-Required: `--sepolia`
+::: danger OP Sepolia CLI Flag Requirements
 
-Do not set:   `--rollup.historicalrpc` and `rollup.historicalrpctimeout`
+- `op-node` requires: `--network=op-sepolia`
+- `op-geth` requires: `--beta.op-network=op-sepolia`
+- Do not set: `--rollup.historicalrpc` or `rollup.historicalrpctimeout`
 :::
 
 #### Initialization via Data Directory
