@@ -39,9 +39,9 @@ The journey to become an supNERD follow the following steps:
 
 **To ensure that our support NERDs are only the highest quality nerds we have the following requirements before you can start a NERD trial**
 
-1. Fill in the [wannabe-NERD form](https://optimismpbc.typeform.com/become-a-nerd).
+1. Fill in the [wannabe-NERD form](https://forms.gle/YCirMCzagW64BNLu7).
     This helps us know all our NERDs and their languages. L2 is global after all 🌍🌎🌏
-    [NERDs](https://optimismpbc.typeform.com/become-a-nerd)
+    [NERDs](https://forms.gle/YCirMCzagW64BNLu7)
 1. Be in the Optimism Discord for at least 2 months.
     We need to know you are serious 👀
 1.  Be actively offering support in the Discord for at least 2 months. 
