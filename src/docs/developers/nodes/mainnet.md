@@ -199,7 +199,7 @@ You will also need to add `--gcmode archive`.
     ./bin/op-node \
         --l1=$L1URL  \
         --l1.rpckind=$L1KIND \
-        --l2=http://localhost:8551 \
+        --l2=ws://localhost:8551 \
         --l2.jwt-secret=./jwt.txt \
         --network=$NET \
         --rpc.addr=0.0.0.0 \
