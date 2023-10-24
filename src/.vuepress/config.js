@@ -383,6 +383,7 @@ module.exports = {
             "/docs/useful-tools/monitoring.md",
             "/docs/useful-tools/explorers.md",
             "/docs/useful-tools/providers.md",
+             '/docs/useful-tools/indexing.md',
             "/docs/useful-tools/oracles.md",
             "/docs/useful-tools/account-abstraction.md",
             "/docs/useful-tools/meta-tx.md",
