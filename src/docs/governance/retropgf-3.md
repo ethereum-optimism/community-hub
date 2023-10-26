@@ -13,17 +13,12 @@ RetroPGF 3 will allocate 30m OP tokens to **reward contributions that have suppo
 
 ## Project Applications
 
-👉 **Applications for RetroPGF Round 3 are open! You can apply [**here**](http://app.optimism.io/retropgf-signup) until 23:00 PT on October 23rd.** 
+👉 **Applications for RetroPGF Round 3 are closed! You can see applications on the voting applications from [Agora](https://vote.optimism.io/retropgf/3) and [West](https://round3.optimism.io/)** 
 
-Every type of contributor to the Optimism ecosystem is eligible for RetroPGF. Whether you’re a developer working on an Ethereum execution client or an educator creating Optimism-inspired video content, if you’re providing impact, you’re eligible! RetroPGF is open to all Optimism artists, creators, writers, builders, and evangelists.
+Every type of contribution to the Optimism ecosystem is eligible for RetroPGF. Whether you’re a developer working on an Ethereum execution client or an educator creating Optimism-inspired video content, if you’re providing impact, you’re eligible! 
+RetroPGF is open to all Optimism artists, creators, writers, builders, and evangelists.
+If you're looking for inspiration on what you could contribute to the Optimism Collective, check out the [Ecosystem Contributions Board](https://github.com/ethereum-optimism/ecosystem-contributions)
 
-If your work has made an impact in any of the four categories below, you should submit an application for RetroPGF.
-- **OP Stack**: Work that enhanced the efficiency, security, resilience, and awareness of the OP Stack
-- **Collective Governance**: Work that provided impact to governance participants of the Optimism Collective, or helped bring new governance participants into the Collective
-- **Developer Ecosystem**: Work that provided impact to application developers in the Optimism Collective, or helped bring new developers into the Collective.
-- **End User Experience & Adoption**: Work that provided impact to end users in the Optimism Collective, or helped bring new end users into the Collective
-
-<img width="70%" alt="Optimism Identity" src="https://github.com/ethereum-optimism/community-hub/assets/43515441/cc322715-ca46-4338-870d-967098bd242a">
 
 ## Badgeholders & Voting
 - Voting badges for Round 3 have been distributed. Find out more details about this process [here](https://gov.optimism.io/t/retropgf-3-voting-badge-distribution/6557).
