@@ -47,11 +47,11 @@ On the platform, there are also [Public APIs](https://blastapi.io/public-api/opt
 - OP Goerli
 
 
-## Blockpi
+## BlockPI
 
 ### Description and Pricing
 
-[Blockpi](https://blockpi.io/) Network ships scalable, high performance and globally distributed infrastructure with the most flexible and developer-first pricing in the industry. Build from scratch all the way to enterprise without monthly subscription. Register at [dashboard](https://dashboard.blockpi.io/) and get Free 100M RU every month!
+[BlockPI](https://blockpi.io/) Network ships scalable, high performance and globally distributed infrastructure with the most flexible and developer-first pricing in the industry. Build from scratch all the way to enterprise without monthly subscription. Register at [dashboard](https://dashboard.blockpi.io/) and get Free 100M RU every month!
 
 ### Supported Networks
 
