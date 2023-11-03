@@ -18,8 +18,8 @@ Such RPCs are either totally unsupported, or will return nonsensical values.
 | Explorer | **[https://explorer.optimism.io](https://explorer.optimism.io)** |
 | HTTP Endpoint | Optimism also provides this endpoint: **`https://mainnet.optimism.io`.** _But it is not for production systems and is rate limited._   |
 | Sequencer URL<sup>1</sup> | **`https://mainnet-sequencer.optimism.io/`** |
-| L1 Contract Addresses | [link](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/deployments/mainnet#layer-1-contracts) |
-| L2 Contract Addresses | [link](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts/deployments/mainnet#layer-2-contracts) |
+| L1 Contract Addresses | [link](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts-bedrock/deployments/optimism-mainnet) |
+| L2 Contract Addresses | [link](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts-bedrock/deployments/optimism-mainnet) |
 | chainid.link | [https://chainid.link/?network=optimism](https://chainid.link/?network=optimism)
 
 (1) The sequencer URL is write only, it only accepts `eth_sendRawTransaction` requests.
