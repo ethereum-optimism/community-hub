@@ -3,33 +3,34 @@ title: Network Faucets
 lang: en-US
 ---
 
-## Testnet Faucets
-Testnet faucets are services that distribute testnet ETH on test networks like OP Goerli and Ethereum Goerli for development and testing purposes.
+In order to deploy a smart contract to a test network like OP Sepolia you will need some testnet Ether (ETH).
 
-#### Superchain Faucet
-[Superchain Faucet](https://app.optimism.io/faucet) is a developer tool that allows you to claim free testnet Ether (ETH) to test apps on testnet OP Chains like OP Goerli. Testnet faucets for other OP Chains, such as Base Goerli, will be added soon!
+You can get testnet ETH to pay for testnet transactions from a faucet. Faucets are developer tools to get free testnet ETH in order to test and troubleshoot your decentralized application or protocol before going live on mainnet.
 
-#### Paradigm MultiFaucet
+::: info Testnet Tokens
+Tokens on testnet networks like OP Sepolia have no value as they are only used for testing purposes.
+:::
 
-[Paradigm's MultiFaucet](https://faucet.paradigm.xyz/) is an easy way to get ETH on many different testnets at the same time.
-One of those networks is OP Goerli.
+## Superchain Faucet
+[Superchain Faucet](https://app.optimism.io/faucet?utm_source=docs) is a developer tool hosted by OP Labs that allows developers to get free testnet ETH to test apps on testnet OP Chains like Base Sepolia, OP Sepolia, PGN Sepolia, Zora Sepolia, and other OP Chains in the Superchain. 
 
-#### Coinbase
+## Additional Faucets
+A list of additional faucets is below:
 
-Users of [Coinbase Wallet](https://www.coinbase.com/wallet) can get test ETH on OP Goerli directly from the Coinbase Wallet extension or via the [Coinbase Faucet website](https://coinbase.com/faucets/optimism-goerli-faucet).
-
-#### QuickNode
-
-[Optimism Faucet for Goerli by QuickNode](https://faucet.quicknode.com/optimism/goerli) is another easy way to acquire
-some testnet ETH for OP Goerli.
-
-### Bridging testnet tokens to/from Ethereum L1
-
-Need another option? Alternatively you can get L1 Goerli ETH from an Ethereum testnet faucets and use the [Optimism Bridge interface](https://app.optimism.io/bridge) to bridge the testnet ETH to/from OP Goerli.
+|                       FAUCET                        |                                           DESCRIPTION                                            |    NETWORKS    |
+|-----------------------------------------------------|--------------------------------------------------------------------------------------------------|--------------|
+| [Paradigm's MultiFaucet](https://faucet.paradigm.xyz/)    | Paradigm offers an easy way to get ETH on many different testnets at the same time. | OP Goerli  |
+| [Coinbase Faucet](https://coinbase.com/faucets/optimism-goerli-faucet)    | Get test ETH on OP Goerli directly from the Coinbase Wallet extension or Coinbase Faucet. | OP Goerli  |
+| [QuickNode Faucet](https://faucet.quicknode.com/optimism/)    | Another easy way to acquire some testnet ETH for OP Goerli and OP Sepolia. | OP Goerli, OP Sepolia  |
 
 
-## Mainnet Faucets
+## Bridge from Ethereum Testnet
 
-If you need to get ETH on OP Mainnet for a contract deployment, you can [bridge ETH from Ethereum Mainnet to OP Mainnet](https://app.optimism.io/bridge). This process takes about ~1 minute to complete.
+Need another option? Alternatively, you can get testnet ETH from an [Ethereum Sepolia faucet](https://sepoliafaucet.com/) and bridge the testnet ETH to/from OP Chain testnets using the L1StandardBridge. 
 
-You can also get some ETH for expenses by [bridging enough USDC](https://optifaucet.com/) courtesy of [Perpetual Protocol](https://perp.com/).
+Once you have the testnet ETH on Ethereum Sepolia you can use [Superchain Testnet Tools](https://www.superchain.tools/) if you need to bridge to multiple OP Chain testnets at once.
+
+## Next Steps
+
+- If you're new to onchain development, check out [Optimism Unleashed](https://cryptozombies.io/en/optimism) by CryptoZombies and [Superchain Builder NFT](https://blog.thirdweb.com/optimism-superchain-faucet-nft) by ThirdWeb.
+- If you're familiar with onchain development, check out the [Optimism Ecosystem’s Contributions Dashboard](https://optimism.io/ideas/) for project ideas that the Optimism Collective is looking for.
