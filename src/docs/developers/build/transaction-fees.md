@@ -121,7 +121,7 @@ As a result, you should display the sum of both of these fees to give users the 
 
 [See here for a code sample using the JavaScript SDK](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/sdk-estimate-gas)
 
-#### Estimating the L2 execution fee
+####  the L2 execution fee
 
 You can estimate the L2 execution fee by multiplying the gas price by the gas limit, just like on Ethereum.
 
@@ -129,7 +129,7 @@ You can estimate the L2 execution fee by multiplying the gas price by the gas li
 
 You can use the SDK [(see here)](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/sdk-estimate-gas).
 Alternatively, you can estimate the L1 data fee using the `GasPriceOracle` predeployed smart contract located at [`0x420000000000000000000000000000000000000F`](https://explorer.optimism.io/address/0x420000000000000000000000000000000000000F).
-[The `GasPriceOracle` contract](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/L2/predeploys/OVM_GasPriceOracle.sol) is located at the same address on every Optimism network (mainnet and testnet).
+[The `GasPriceOracle` contract](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/src/L2/GasPriceOracle.sol) is located at the same address on every Optimism network (mainnet and testnet).
 To do so, call `GasPriceOracle.getL1Fee(<unsigned RLP encoded transaction>)`.
 
 #### Estimating the total fee
