@@ -5,7 +5,7 @@ lang: en-US
 
 Welcome! We're stoked that you're launching on OP Mainnet. 
 
-If you have not filled out the [connect with OPLabs form](https://airtable.com/appQ2S9IatldkoNQw/shr2e75GnXRqi6yTM) please do so prior to reading this.
+If you have not filled out the [connect with OPLabs form](https://airtable.com/appQ2S9IatldkoNQw/pagiw2NJAcOXn5Wd9/form) please do so prior to reading this.
 
 We are excited for your deployment onto OP Mainnet! 
 You will be welcomed by [the following metrics](https://dune.com/optimismfnd/Optimism) 📈📈 (up and to the right!), [a budding community](https://discord-gateway.optimism.io/) 🫂🫂, and some great exclusive [Telegram Channels](https://t.me/+Cb7q0a1YqItkZTRk) ⚙️⚙️ for builders.

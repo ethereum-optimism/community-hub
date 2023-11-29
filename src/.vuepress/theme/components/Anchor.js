@@ -63,7 +63,7 @@ export default Vue.extend({
                                     " Discord community"
                                 ])
                             ]),
-                            h("a", { attrs: { href: "https://airtable.com/appQ2S9IatldkoNQw/shr2e75GnXRqi6yTM", target: "_blank" } }, [
+                            h("a", { attrs: { href: "https://airtable.com/appQ2S9IatldkoNQw/pagiw2NJAcOXn5Wd9/form", target: "_blank" } }, [
                                 h("div", [
                                     h("i", { attrs: { class: "far fa-comment-dots" } }),
                                     " Get support for going live"

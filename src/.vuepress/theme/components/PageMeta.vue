@@ -33,7 +33,7 @@
             </a>
           </li>
           <li>
-            <a href="https://airtable.com/appQ2S9IatldkoNQw/shr2e75GnXRqi6yTM" target="_blank" rel="noopener noreferrer">
+            <a href="https://airtable.com/appQ2S9IatldkoNQw/pagiw2NJAcOXn5Wd9/form" target="_blank" rel="noopener noreferrer">
               <i class="far fa-comment-dots"></i> Get support for going live
             </a>
           </li>
