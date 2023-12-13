@@ -74,7 +74,7 @@ Comment on the [Forum](https://gov.optimism.io/) and provide feedback on proposa
 
 ::: tip        
              
-Make sure you understand and follow the [delegate code of conduct](https://gov.optimism.io/t/delegate-code-of-conduct/3943)
+Make sure you understand and follow the [code of conduct](https://gov.optimism.io/t/code-of-conduct/5751)
 
 :::
 
