@@ -4,9 +4,10 @@
   "description": "The Optimism Community Hub",
   "main": "index.js",
   "scripts": {
-    "dev": "vuepress dev src",
-    "build": "vuepress build src",
-    "preview": "yarn build && serve -s src/.vuepress/dist -p 8080"
+    "dev": "yarn redirects && vuepress dev src",
+    "build": "yarn redirects && vuepress build src",
+    "preview": "yarn build && serve -s src/.vuepress/dist -p 8080",
+    "redirects": "node scripts/redirects.js"
   },
   "license": "MIT",
   "devDependencies": {
