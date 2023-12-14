@@ -11,7 +11,7 @@ Being a delegate is an important job that comes with a lot of responsibility. Th
 
 * The [Working Constitution](https://gov.optimism.io/t/working-constitution-of-the-optimism-collective/55).
 * The [Operating Manual](https://github.com/ethereum-optimism/OPerating-manual/blob/main/manual.md).
-* The [Delegate Code of Conduct](https://gov.optimism.io/t/delegate-code-of-conduct/3943)
+* The [Code of Conduct]([https://gov.optimism.io/t/delegate-code-of-conduct/3943](https://gov.optimism.io/t/code-of-conduct/5751/13))
 
 
 ## Ready to be a delegate?
@@ -26,5 +26,4 @@ This is the process to become a delegate:
 ### Step 2: Set up your profile  
 
 * Register to be a delegate on the [Optimism Governance Portal (Optimism Agora)](https://vote.optimism.io/) following the [delegate commitment form](https://gov.optimism.io/t/delegate-commitments/235).
-* It is not required, but you probably also want to [delegate your OP tokens' voting power to yourself](https://vote.optimism.io/).
-  Please note that the expectation is that token grants **will not be** self-delegated to grant recipients.
+* It is not required, but you probably also want to [delegate your OP tokens' voting power to yourself](https://vote.optimism.io/). Please note self-delegation of growth experiments grants is a violation of the https://gov.optimism.io/t/collective-grant-policies/5833.
