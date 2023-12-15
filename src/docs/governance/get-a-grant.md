@@ -7,7 +7,9 @@ There are several ways the Optimism Collective supports builders with grants. Th
 
 # Collective Grants
 
-Collective Grants are made in OP and support specific projects to be completed in the future. All Mission grants are locked for one year, except growth experiments grants which may pass OP directly through to the end-users. Grants will only be distributed upon completion of specified  milestones. All Collective Grants are subject to the [Collective Grant Policies](https://gov.optimism.io/t/collective-grant-policies/5833). 
+Collective Grants are made in OP and support specific projects to be completed in the future. **All Mission Grants are locked for one year,** except growth experiments Grants which must pass OP directly through to the end-users. 
+
+Grants will only be distributed upon completion of specified milestones. All Collective Grants are subject to the [Collective Grant Policies](https://gov.optimism.io/t/collective-grant-policies/5833). 
 
 There are two main sources of Collective Grants. 
 
