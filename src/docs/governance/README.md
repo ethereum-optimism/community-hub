@@ -11,7 +11,7 @@ The [Optimism Collective](https://app.optimism.io/announcement) is a band of com
     
 Together we will dispel the myth that public goods cannot be profitable. 
 Public goods (including public goods for Optimism and Ethereum) often go underfunded when incentives aren't properly aligned, forcing many to make trade-offs between earning a profit and building for the common good.
-The Optimism Collective is bound by a mutually beneficial pact, [a vision](https://www.optimism.io/vision) that can be summed up with the equation **Impact = Profit**.
+The Optimism Collective is bound by a mutually beneficial pact, [a vision](https://www.optimism.io/vision) that can be summed up with the equation **[Impact = Profit](https://www.notion.so/Impact-Profit-Framework-f71c54fc0c3242d190eb7ab06807712c)**.
     
 ### Impact = Profit
 
@@ -26,27 +26,23 @@ The possibility of an eventual exit payment can also encourage investors to fund
 
 The Optimism Collective takes [an experimental and agile approach to governance](https://optimism.mirror.xyz/r888e4B5iiNQi-3_mO26ixgv-plQ099XWgqEOv9iWKA) relentlessly iterating towards a system which stands the test of time.
 Initially, the Collective's model of digital democratic governance will consist of two houses: the *Token House* and the *Citizens' House*. 
+
+### What are the Collective's Values? 
+
+![image](https://github.com/ethereum-optimism/community-hub/assets/111033022/4bd5479a-fa4c-4725-b737-ee8b6166796b)
     
 
 ## Token House
 
 Governance of the Optimism Collective began with the launch of the OP token and the Token House. 
-OP was distributed to hundreds of thousands of addresses that engaged in positive-sum, community-oriented behavior with [Airdrop #1](airdrop-1.md). 
-You can read more about the [distribution criteria here](airdrop-1.md). 
+OP is being distributed to hundreds of thousands of addresses that engage in positive-sum, community-oriented behavior via a series of airdrops.
 
 As Token House members, OP holders are responsible for submitting, deliberating, and voting on various types of governance proposals. 
 In carrying out these functions, OP holders may either [vote directly, or delegate their OP voting power to an eligible third party](delegate.md).
 
-The Token House votes on these proposal types:
+The Token House votes on on the proposal types outlined in the [Operating Manual](https://github.com/ethereum-optimism/OPerating-manual/blob/main/manual.md#valid-proposal-types).
 
-- [Governance fund](gov-fund.md) grants
-- Protocol upgrades
-- Inflation adjustment
-- Director removal
-- Treasury appropriations
-- Rights protection
-
-[Read here for more details](https://github.com/ethereum-optimism/OPerating-manual/blob/main/manual.md#valid-proposal-types).
+You can learn more in the [Token House Onboarding Hub](https://plaid-cement-e44.notion.site/Token-House-Governance-Hub-decae75a0fa248e38f969abe8edef565?pvs=4). 
  
     
 ## Citizens' House
