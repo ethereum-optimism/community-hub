@@ -3,7 +3,6 @@ title: OP Allocations
 lang: en-US
 ---
 
-
 ## Allocations at a glance
 
 ![](../../assets/docs/governance/allocations/pie2.jpeg)
@@ -16,8 +15,6 @@ lang: en-US
 | Core contributors | 19% | The people who’ve been working tirelessly to bring the Optimism Collective into existence |
 | Sugar xaddies | 17% | Investors |
 
-
-
 ## User Airdrops
 
 ***Allocation: 19%***
@@ -26,17 +23,32 @@ The Optimism Foundation will distribute a portion of the OP allocation to member
 
 ### Airdrop #1
 
-The first user airdrop will distribute **5%** of the OP token supply. 
-This airdrop is targeted towards people who:
+The first user airdrop distributed **5%** of the OP token supply to **248,699 unique addresses.** 
+This airdrop was targeted towards people who:
 
 - Behave in positive-sum ways.
 - Contribute actively to their communities.
 - Have been priced out of Ethereum.
 
 The addresses and amounts were chosen to reward Optimism users, as well as attract core Ethereum users to the OP family. 
-Airdrop #1 cast a wide net to distribute OP to more than 250k addresses. See the [Airdrop #1 documentation](airdrop-1.md) for a detailed breakdown of eligibility criteria.  
+Airdrop #1 cast a wide net to distribute OP to more than 250k addresses. 
 
-### Future airdrops (#2, 3, …)
+See the [Airdrop #1 documentation](airdrop-1.md) for a detailed breakdown of eligibility criteria.  
+
+### Airdrop #2 
+
+Optimism’s Airdrop #2 distributes **11,742,277.10 OP to 307,965 unique addresses** to reward **positive-sum governance participation** and **power users of OP Mainnet**. 
+A snapshot of addresses was taken on 01-20-2023 0:00 UTC.
+
+See the [Airdrop #2 documentation](airdrop-2.md) for a detailed breakdown of eligibility criteria.  
+
+### Airdrop #3
+
+Airdrop 3 took place on Monday, September 18. The airdrop allocated **19,411,313 OP to 31,870 unique addresses.** Similar to Airdrop 2, this drop rewards **positive sum governance participation.** Users who have delegated tokens between 2023-01-20 at 0:00 UTC and 2023-07-20 0:00 UTC received tokens in this airdrop. A bonus is given to addresses who delegated to a delegate who voted in Optimism Governance. 
+
+See the [Airdrop #3 documentation](airdrop-3.md) for a detailed breakdown of eligibility criteria. 
+
+### Future airdrops (#4, 5, …)
 
 An allocation of **14%** of the OP token supply will be held in reserve for future user airdrops. 
 As a result of the game-able nature of airdrops, the Optimism Foundation will be responsible for determining airdrop metrics as fairly as possible. 
@@ -78,12 +90,11 @@ These funds will be distributed strategically by the Optimism Foundation to grow
 
 ### Seed Fund
 
-An allocation of **5.4%** of the OP token supply will be dedicated to the Seed Fund, a fund for early stage projects launching in and adjacent to the Optimism ecosystem. 
+An allocation of **5.4%** of the OP token supply will be dedicated to the Seed Fund, which is focused on supporting projects & teams from 0 → 1, particularly projects that are entirely focused on building Optimism.
 
 ### Unspent allocation for future growth programs
 
-
-An allocation of **8.8%** of the OP token supply will be held in reserve for future programs, to be determined by the Foundation and/or the governance community as appropriate.
+An allocation of **8.8%** of the OP token supply will be held in reserve for future programs and/or operational services to the Collective, to be determined by the Foundation and/or the governance community as appropriate. 
 
 ## Retroactive Public Goods Funding
 
@@ -115,7 +126,6 @@ They funded us and our crazy vision for the future.
 Couldn’t-a done it without ya. 
 All tokens distributed as part of the Sugar Xaddies allocation will be subject to a lockup period.
 
-
 ## Token Distribution Details
 
 At genesis there will be an initial total supply of 4,294,967,296 OP tokens. 
@@ -135,7 +145,3 @@ Taken together, the Foundation estimates the total supply of circulating OP toke
 
 **Available supply** is the amount of OP tokens that are (a) part of the circulating supply, or (b) are subject to some governing body to determine the pace at which they are distributed. This includes all Ecosystem Funding indicated in the pie chart above.
 
-
-The graph below shows the available supply of OP. Note this graph is for illustration only, and actual circulating supply will depend on governance and the rate that OP is allocated across user airdrops, the Ecosystem Fund, and RetroPGF.
-
-![](../../assets/docs/governance/allocations/alloc-by-time.png)
