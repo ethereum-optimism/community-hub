@@ -3,17 +3,9 @@ title: How do I get project support (marketing / integrations / etc.)?
 lang: en-US
 ---
 
-Welcome! We're stoked that you're launching on OP Mainnet. 
+Welcome! We're stoked that you're launching on OP Mainnet.
 
-If you have not filled out the [connect with OPLabs form](https://airtable.com/appQ2S9IatldkoNQw/pagiw2NJAcOXn5Wd9/form) please do so prior to reading this.
-
-We are excited for your deployment onto OP Mainnet! 
 You will be welcomed by [the following metrics](https://dune.com/optimismfnd/Optimism) 📈📈 (up and to the right!), [a budding community](https://discord-gateway.optimism.io/) 🫂🫂, and some great exclusive [Telegram Channels](https://t.me/+Cb7q0a1YqItkZTRk) ⚙️⚙️ for builders.
-
-The business development team gets a flurry of inbound messages and calls every day and we reply to them as efficiently as possible, but we are only human! 
-Please be patient if you are in need of direct support. 
-We cannot always provide direct help, but we strive to help everyone succeed on OP Mainnet through the various resources we provide to projects. 
-
 
 ## Developer Support 🙋💻
 
