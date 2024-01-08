@@ -16,7 +16,7 @@ There are two main sources of Collective Grants.
 
 ### 1. Mission Grants 
 
-[Missions](https://gov.optimism.io/t/token-house-missions/5881) are grants aligned with one of the [Collective Intents](https://gov.optimism.io/t/collective-intents/5874](https://gov.optimism.io/t/collective-intents-season-5/6883)). Mission Requests are specified initiatives that can be completed start-to-finish (marked done within 12 months). Each Mission Request has a bounty of OP attached. The Foundation and the Top 100 Token House Delegates can issue Mission Requests. Any team can submit a Mission Application to fulfill a Request. 
+[Missions](https://gov.optimism.io/t/token-house-missions/5881) are grants aligned with one of the [Collective Intents](https://gov.optimism.io/t/collective-intents-season-5/6883). Mission Requests are specified initiatives that can be completed start-to-finish (marked done within 12 months). Each Mission Request has a bounty of OP attached. The Foundation and the Top 100 Token House Delegates can issue Mission Requests. Any team can submit a Mission Application to fulfill a Request. 
 
 - You can view the full list of Mission Requests **[here](https://github.com/ethereum-optimism/ecosystem-contributions/issues?q=is%3Aissue+is%3Aopen+RFP)** (Delegate Mission Requests will be added after the Token House approves them on January 24th.)
 - Find an open Mission Request on the list that you’d like to work on.
