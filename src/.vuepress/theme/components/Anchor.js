@@ -63,10 +63,10 @@ export default Vue.extend({
                                     " Discord community"
                                 ])
                             ]),
-                            h("a", { attrs: { href: "https://airtable.com/appQ2S9IatldkoNQw/pagiw2NJAcOXn5Wd9/form", target: "_blank" } }, [
+                            h("a", { attrs: { href: "https://airtable.com/appQ2S9IatldkoNQw/pagyJSUyxJA2SQKO3/form", target: "_blank" } }, [
                                 h("div", [
                                     h("i", { attrs: { class: "far fa-comment-dots" } }),
-                                    " Get support for going live"
+                                    " Get support from OP teams"
                                 ])
                             ]),
                             h("a", { attrs: { href: "https://github.com/ethereum-optimism/optimism/issues", target: "_blank" } }, [
