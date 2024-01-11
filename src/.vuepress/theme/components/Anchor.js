@@ -66,7 +66,7 @@ export default Vue.extend({
                             h("a", { attrs: { href: "https://airtable.com/appQ2S9IatldkoNQw/pagyJSUyxJA2SQKO3/form", target: "_blank" } }, [
                                 h("div", [
                                     h("i", { attrs: { class: "far fa-comment-dots" } }),
-                                    " Get support from OP teams"
+                                    " Connect with Optimism"
                                 ])
                             ]),
                             h("a", { attrs: { href: "https://github.com/ethereum-optimism/optimism/issues", target: "_blank" } }, [
