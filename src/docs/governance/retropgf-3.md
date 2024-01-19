@@ -12,11 +12,11 @@ The Optimism Collective’s third round of Retroactive Public Goods Funding (Ret
 3. Results & Token Disbursement: January, 2024
 
 ## Results
-👉 You can view our Mirror post announcing the RetroPGF Round 3 recipients [here](https://optimism.mirror.xyz/37Bgum6MfTJWDuE41CH9RXSH5KBm_RCL5zsSFeRZl4E) and the official results on [Agora](https://vote.optimism.io/retropgf/3).
+👉 You can view the Mirror post announcing the RetroPGF Round 3 recipients [here](https://optimism.mirror.xyz/37Bgum6MfTJWDuE41CH9RXSH5KBm_RCL5zsSFeRZl4E) and the official results on [Agora](https://vote.optimism.io/retropgf/3).
 
-Recipients of RetroPGF must complete the KYC process via the Optimism Foundation. Any ongoing questions or concerns can be directed to compliance@optimism.io.
+RetroPGF recipients must complete a KYC process with the Optimism Foundation. If you're a recipient, please direct questions or problems with the KYC & grant delivery process to compliance@optimism.io.
 
-Check back in soon for more information about the full RetroPGF Round 3 retrospective.  
+A written retrospective with the learnings & reflections on RetroPGF 3 will follow. 
 
 ## Voting
 👉 Voting was live from November 6th - December 7th. There were two applications badgeholders could use to vote in RetroPGF 3:
