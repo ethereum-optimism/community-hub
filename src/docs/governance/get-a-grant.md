@@ -44,7 +44,7 @@ RetroPGF stands for Retroactive Public Goods Funding. RetroPGF rewards are alloc
 If you’re working on something you believe is aligned with the Collective and you don’t need as much upfront certainty around scope of work, reward amount, or timing of rewards, you could be a good candidate for RetroPGF rewards.
 
 - Decisions on which projects receive rewards are made by the Citizens’ House based on their assessment of each projects’ positive impact to the Collective.
-- The last round of RetroPGF rewarded developer tooling, community programs, solo builders, educational work, client teams, and much more. For more detail on past recipients, see this **[post](https://optimism.mirror.xyz/Upn_LtV2-3SviXgX_PE_LyA7YI00jQyoM1yf55ltvvI)**. The next results of the Round will be announced shortly.
+- The last round of RetroPGF rewarded developer tooling, community programs, solo builders, educational work, client teams, and much more. For more detail on past recipients, see this **[post](https://optimism.mirror.xyz/37Bgum6MfTJWDuE41CH9RXSH5KBm_RCL5zsSFeRZl4E)**. The next results of the Round will be announced shortly.
 
 **How to apply**:
 
