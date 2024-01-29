@@ -19,7 +19,7 @@ Make sure you check all these boxes before applying for demoing, or you will not
 
 ### Pre-demo check list
 
-1. Your dApp deployed & **live on Optimism** 
+1. Your dApp deployed & **live on OP Mainnet** 
 1. All **presenters must be in the Optimism Discord server** as the event is held as an event in the Discord Server.  Make sure to tag the team member(s) who are presenting in the demo day channel.
 1. Must be **available 24 hours prior to Demo Day** to do a quick audio/video check to ensure all your settings are correct. 
 1. If you have not presented in a Discord channel before, please watch this tutorial before your AV check. This makes everything faster! [Discord Basics: How To Setup Audio and Video Settings](https://www.youtube.com/watch?v=fnMKZB6zTcQ)
