@@ -10,7 +10,7 @@ Demo day was started by the Optimism Ambassador Program as a way for users to se
 
 To apply to be featured in our next Demo Day, head over to the [Demo-day channel](https://discord.com/channels/667044843901681675/960493820674465883) in our Discord (it's under events). 
 
-For further visibility projects are encouraged to add their project into our developers show and tell section here on [GitHub] https://github.com/ethereum-optimism/developers/discussions/categories/show-and-tell
+For further visibility projects are encouraged to add their project into our developers show and tell section here on [GitHub](https://github.com/ethereum-optimism/developers/discussions/categories/show-and-tell)
 
 
 ## Getting a Slot
