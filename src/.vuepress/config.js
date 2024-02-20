@@ -123,7 +123,7 @@ module.exports = {
             iconPrefix: "fab fa-",
             iconClass: "color-twitter",
             text: "Twitter",
-            link: "https://twitter.com/optimismFND",
+            link: "https://twitter.com/Optimism",
           },
           {
             icon: "twitch",
