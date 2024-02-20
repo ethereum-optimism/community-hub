@@ -49,7 +49,7 @@ In the long-term, the Foundation expects this mechanism to drive a wide range of
 ## Value from public goods drives demand for blockspace
 
 Funding public goods drives growth — and therefore network revenues — from the ground up. 
-In our [first round](https://vitalik.ca/general/2021/11/16/retro1.html) of RetroPGF, Optimism funded a set of hugely valuable developer tools and core infrastructure. 
+In our [first round](https://vitalik.eth.limo/general/2021/11/16/retro1.html) of RetroPGF, Optimism funded a set of hugely valuable developer tools and core infrastructure. 
 The aggregate effect is an ecosystem that is easier to build on, learn about, and connect to, in turn driving application usage and generating more demand for blockspace.
 
 But what value do these public goods provide, and for whom is it valuable? 

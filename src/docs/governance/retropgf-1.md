@@ -12,7 +12,7 @@ In the first round of RetroPGF, 76 projects were nominated, and 58 were awarded 
 The median funding received by a project in RetroPGF 1 was $14,670, while the top 10% of projects received more than $36,919.
 
 - You can find a sheet with all projects and their funding allocations [**here**](https://docs.google.com/spreadsheets/d/1g4ilAByMNQsmlBC8cskQip7Ojd_qK6IhozJCyoVfU9k).
-- You can find Vitalik's review of the round [**here**](https://vitalik.ca/general/2021/11/16/retro1.html)
+- You can find Vitalik's review of the round [**here**](https://vitalik.eth.limo/general/2021/11/16/retro1.html)
 
 ## Process and timeline overview
 1. Badgeholder selection - In RetroPGF Round 1, 24 badgeholders, made up of 8 Optimists and 16 Ethereum community members, were selected to vote on distributing retrofunding to nominated projects.
