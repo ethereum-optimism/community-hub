@@ -18,14 +18,14 @@ There are two main sources of Collective Grants.
 
 [Missions](https://gov.optimism.io/t/token-house-missions/5881) are grants aligned with one of the [Collective Intents](https://gov.optimism.io/t/collective-intents-season-5/6883). Mission Requests are specified initiatives that can be completed start-to-finish (marked done within 12 months). Each Mission Request has a bounty of OP attached. The Foundation and the Top 100 Token House Delegates can issue Mission Requests. Any team can submit a Mission Application to fulfill a Request. 
 
-- You can view the full list of Mission Requests **[here](https://github.com/ethereum-optimism/ecosystem-contributions/issues?q=is%3Aissue+is%3Aopen)** 
+- You can view the full list of Mission Requests **[here](https://github.com/ethereum-optimism/ecosystem-contributions/issues?page=1&q=is%3Aissue+is%3Aopen+label%3A%22Delegate+Mission+Request%22)** 
 - Find an open Mission Request on the list that you’d like to work on.
-- Submit your application via the application link or directly as a comment, as specified, on the **[Github Issue](https://github.com/ethereum-optimism/ecosystem-contributions/issues?q=is%3Aissue+is%3Aopen+RFP).** Each Mission Request will specify a submission and selection deadline.
+- Submit your application via the application link or directly as a comment, as specified, on the **[Github Issue](https://github.com/ethereum-optimism/ecosystem-contributions/issues?page=1&q=is%3Aissue+is%3Aopen+label%3A%22Delegate+Mission+Request%22).** Each Mission Request will specify a submission and selection deadline.
 - Delegate Mission Applications will be evaluated and selected by the Grants Council, with the help of the Developer Advisory Board. Foundation Mission Requests will be evaluated and selected by the Optimism Foundation.
 
 **How to apply**:
 
-- See the [Mission Application Guide](https://gov.optimism.io/t/mission-applicant-guide-how-to-submit-a-mission-application/6899) and visit the [Github](https://github.com/ethereum-optimism/ecosystem-contributions/issues?q=is%3Aissue+is%3Aopen+RFP)
+- See the [Mission Application Guide](https://gov.optimism.io/t/mission-applicant-guide-how-to-submit-a-mission-application/6899) and visit the [Github](https://github.com/ethereum-optimism/ecosystem-contributions/issues?page=1&q=is%3Aissue+is%3Aopen+label%3A%22Delegate+Mission+Request%22)
 - Ask any questions you have about Delegate Mission Requests in the # grants channel of our [Discord](https://discord-gateway.optimism.io/) 
 
 ### 2. Foundation Funds
