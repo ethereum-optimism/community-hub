@@ -48,9 +48,16 @@ Airdrop 3 took place on Monday, September 18. The airdrop allocated **19,411,313
 
 See the [Airdrop #3 documentation](airdrop-3.md) for a detailed breakdown of eligibility criteria. 
 
-### Future airdrops (#4, 5, …)
+### Airdrop #4
 
-An allocation of **14%** of the OP token supply will be held in reserve for future user airdrops. 
+Airdrop 4 distributes **10,343,757.81 OP to 22,998 unique addresses** as a ‘thank you’ to the artists, creators, and pioneers who have played a role in creating culture across the Superchain and across the crypto ecosystem as a whole.
+Creators with addresses that deployed NFT contracts on Ethereum L1, Base, OP Mainnet and Zora before 2024-01-10 00:00:00 UTC were considered in this airdrop.
+
+See the [Airdrop #4 documentation](airdrop-4.md) for a detailed breakdown of eligibility criteria. 
+
+### Future airdrops (#5, #6, …)
+
+Roughly **560M OP** remains for future user airdrops.
 As a result of the game-able nature of airdrops, the Optimism Foundation will be responsible for determining airdrop metrics as fairly as possible. 
 The intent behind airdrops is to distribute them to addresses which positively impact the Optimism community. Participation on governance forums will not be used as a criteria for future airdrops. The best way to improve your odds of receiving future airdrops is to get meaningfully involved!
 
