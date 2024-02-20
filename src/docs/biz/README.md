@@ -52,7 +52,7 @@ Grants are mainly handled by [The Optimism Collective](https://app.optimism.io/a
   - Head over to [our discord](https://discord-gateway.optimism.io/) and check out [#showandtell](https://discord.com/channels/667044843901681675/819333988719263774) or [#demoday](https://discord.com/channels/667044843901681675/960493820674465883).
   Demo Day is an AMA about your product to our community. Apply in Discord. 
   - Seek synergies – look at other teams already deployed on OP Mainnet that could work with your product and reach out to them.
-- Once you have done the above, check out our [governance grant process](https://app.charmverse.io/op-grants/page-701220845245208).
+- Once you have done the above, check out our [governance grant process](https://gov.optimism.io/t/mission-applicant-guide-how-to-submit-a-mission-application/6899).
 - To get reviews in real time from governance delegates go to discord and post about your project in [#gov-general](https://discord.com/channels/667044843901681675/968498307913637919).
  
 

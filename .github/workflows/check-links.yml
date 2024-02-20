@@ -1,13 +1,16 @@
 name: Check for Dead Links
-on: push
+
+on: [push, pull_request]
+
 jobs:
   check-links:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-    - name: Run the test
-      run: |
-         cd $GITHUB_WORKSPACE
-         yarn
-         yarn check-md
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Install Dependencies
+        run: yarn
+
+      - name: Check Links
+        run: yarn check-md
