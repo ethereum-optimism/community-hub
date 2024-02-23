@@ -41,7 +41,7 @@ There were 5 attributes that addresses could earn multiplier bonuses for:
 | - | -: | -: |
 | Early creator | You created your first NFT contract before Jan 1, 2023 | 7,443
 | Rising creator | An NFT you created was transferred after Nov 11, 2023 | 14,927
-| Superchain power user Active Onchain | You’ve been active on the Superchain or L1 since Nov 11, 2023 | 12,316
+| Active onchain | You’ve been active on the Superchain or L1 since Nov 11, 2023 | 12,316
 | Popular creator | Total gas fees spent in transactions involving transfers of NFTs you created was >= 0.005 ETH in the 180 days prior to cutoff | 16,941
 | We <3 the Art creators that qualified for the airdrop | In addition to qualifying for the drop, you participated in WLTA | 338
 
