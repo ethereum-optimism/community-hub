@@ -16,7 +16,7 @@ The Optimism Collective’s third round of Retroactive Public Goods Funding (Ret
 
 RetroPGF recipients must complete a KYC process with the Optimism Foundation. If you're a recipient, please direct questions or problems with the KYC & grant delivery process to compliance@optimism.io.
 
-A written retrospective with the learnings & reflections on RetroPGF 3 will follow. 
+You can view the written retrospective with the learnings & reflections on RetroPGF 3 [here](https://optimism.mirror.xyz/Bbu5M1mTNV2Z637QxOiF7Qt7R9hy6nxghbZiFbtZOBA). 
 
 ## Voting
 👉 Voting was live from November 6th - December 7th. There were two applications badgeholders could use to vote in RetroPGF 3:
