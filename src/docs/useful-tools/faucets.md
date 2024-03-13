@@ -22,6 +22,7 @@ A list of additional faucets is below:
 | [Paradigm's MultiFaucet](https://faucet.paradigm.xyz/)    | Paradigm offers an easy way to get ETH on many different testnets at the same time. | OP Goerli  |
 | [Coinbase Faucet](https://coinbase.com/faucets/optimism-goerli-faucet)    | Get test ETH on OP Goerli directly from the Coinbase Wallet extension or Coinbase Faucet. | OP Goerli  |
 | [QuickNode Faucet](https://faucet.quicknode.com/optimism/)    | Another easy way to acquire some testnet ETH for OP Goerli and OP Sepolia. | OP Goerli, OP Sepolia  |
+| [L2Faucet by Automata](https://www.l2faucet.com/optimism)    | Attest your device to acquire testnet ETH on OP Sepolia, backed by Proof of Machinehood. No account sign-ups, social verification or tasklist.  | OP Sepolia  |
 
 
 ## Bridge from Ethereum Testnet
