@@ -26,6 +26,7 @@ Ready to enable account abstraction experiences in your dapp? Here's some helpfu
 - [CyberConnect](https://docs.cyberconnect.me/)
 - [Pimlico](https://docs.pimlico.io/)
 - [Stackup](https://docs.stackup.sh/docs)
+- [Particle Network](https://docs.particle.network/developers/account-abstraction)
 
 ## Helpful tips
 - [EIP-1271 Signature Validation](https://eip1271.io/)
