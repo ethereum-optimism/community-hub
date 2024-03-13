@@ -39,7 +39,7 @@ Use a tool like [aria2](https://aria2.github.io/) to reduce the chance of your d
    ```sh
    mkdir datadir
    cd datadir
-   tar xvf <<PATH_TO_DATA_DIR>>
+   zstd -dc mainnet-bedrock.tar.zst | tar -xvf -
    ```
 
 #### (Optional - OP Mainnet Archive Node) Get the data directory for `l2geth`
