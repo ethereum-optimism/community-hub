@@ -146,6 +146,12 @@ module.exports = {
             link: "https://www.optimism.io/apps/all",
           },
           {
+            icon: "external-link-square",
+            iconClass: "color-ethereum-ecosystem",
+            text: "Ethereum Ecosystem",
+            link: "https://www.ethereum-ecosystem.com/blockchains/optimism",
+          },
+          {
             icon: "globe",
             iconClass: "color-optimism",
             text: "optimism.io",
