@@ -14,7 +14,7 @@ Funding for RetroPGF can come from:
 - Allocation of surplus protocol revenue 
 
 In future stages, the Citizens’ House role will expand beyond RetroPGF. 
-For example, in addition to voting on RetroPGF, the Citizens’ House will work alongside the Token House to govern allocation of surplus protocol revenue, collaborate on criteria for participation in the Citizens’ House, and engage in a system of checks and balances to enforce the Collective’s Codes of Conduct. You can read more about this transition [here](https://optimism.mirror.xyz/PLrAQgE1EGRo7GRrFoztplFChnUZda4DFGW3dkQayxY)
+For example, in addition to voting on RetroPGF, the Citizens’ House will work alongside the Token House to govern allocation of surplus protocol revenue, collaborate on criteria for participation in the Citizens’ House, and engage in a system of checks and balances to enforce the Collective’s Codes of Conduct. During Season 5, the Citizens’ House will gain the ability to veto Protocol Upgrades that are approved by the Token House. More governance responsibilities will come online for the Citizens' House over time. You can read more about this transition [here](https://optimism.mirror.xyz/PLrAQgE1EGRo7GRrFoztplFChnUZda4DFGW3dkQayxY)
 
 
 ## How RetroPGF Works
