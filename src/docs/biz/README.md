@@ -18,9 +18,9 @@ Steps to take if you would like developer support immediately, ranked in order o
 
 ## Marketing Requests 🦸🦸
 
-When your project is deployed on OP Mainnet, you can be added to [our ecosystem page](https://www.optimism.io/apps/all). 
-Simply [fill out this form](https://airtable.com/appQ2S9IatldkoNQw/pagbXXIbgWW3V35vz/form) to be included. Inclusion is at our discretion. 
-We add new projects live on OP Mainnet [here](https://www.optimism.io/apps/all) once a week.
+When your project is deployed on the Superchain, you can be added to [our Superchain Dapps page](https://www.optimism.io/dapps). 
+Simply [fill out this form](https://share.hsforms.com/1hUEaGvsySTK9ccNBcNmjkwqoshb) to be included. Inclusion is at our discretion. 
+To amplify your Dapp launch through Superchain marketing channels [fill out this form](https://share.hsforms.com/1XHQ9Io_lT0-vf9nSVoUahQqoshb)
 
 
 ### Promoting Values before anything else

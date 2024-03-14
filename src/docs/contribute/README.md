@@ -76,5 +76,5 @@ The Optimism Collectives governance is an incredibly collective and exciting spa
 The Optimism Vision is big! And Visions this big need to be amplified by a diverse & aligned group to help make it real. 
 
 * The [Ambassadors program](./contribution-path/Ambassador-req.md) enables community members to create focused content to bring the Vision closer to reality. If you have a talent for writing, design or visuals, come get involved! 
-* If your project wants some marketing love, you have options! Get your dapp in front of the Optimism community with our [Demo Day (once every two weeks)](./demo-day.md).
-* If is deployed on OP Mainnet, you can be added to our [ecosystem page](https://www.optimism.io/apps/all). Simply [fill out this form](https://optimismfnd.typeform.com/optimism-mktg) to be included. Inclusion is at our discretion. We add new projects live on OP Mainnet once a week.
+* If your project wants some marketing love, you have options! Get your dapp in front of the Optimism community with our [Demo Day (every Thursday)](./demo-day.md).
+* If your Dapp is deployed on the Superchain, you can be added to our [our Superchain Dapps page](https://www.optimism.io/dapps). Simply [fill out this form](https://share.hsforms.com/1hUEaGvsySTK9ccNBcNmjkwqoshb) to be included. Inclusion is at our discretion. To amplify your Dapp launch through Superchain marketing channels [fill out this form](https://share.hsforms.com/1XHQ9Io_lT0-vf9nSVoUahQqoshb)
