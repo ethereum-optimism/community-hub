@@ -3,7 +3,7 @@ title: Overview
 lang: en-US
 ---
 
-The Citizens' House is a large-scale experiment in [non-plutocratic governance](https://vitalik.ca/general/2021/08/16/voting3.html) and retroactive funding of public goods. 
+The Citizens' House is a large-scale experiment in [non-plutocratic governance](https://vitalik.eth.limo/general/2021/08/16/voting3.html) and retroactive funding of public goods. 
 The Citizens’ House will work alongside the Token House to govern the Optimism Collective. 
 
 **In its first stage, the Citizens’ House is solely responsible for voting on the allocation of Retroactive Public Goods Funding (RetroPGF)**. 

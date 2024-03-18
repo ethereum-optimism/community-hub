@@ -19,7 +19,7 @@ In this second round of RetroPGF, 195 people and projects were nominated, and al
 
 ## Process and timeline overview
 1. Badgeholder selection - badgeholders have the power to distribute OP tokens to projects. They’re instrumental in running an effective RetroPGF round. For RetroPGF Round 2, badgeholders were selected across four different criteria.
-   1. 14 badgeholders were selected based on their participation as badgeholders in [round one of RetroPGF](https://vitalik.ca/general/2021/11/16/retro1.html)
+   1. 14 badgeholders were selected based on their participation as badgeholders in [round one of RetroPGF](https://vitalik.eth.limo/general/2021/11/16/retro1.html)
    2. 21 badgeholders were selected by the Optimism Foundation
    3. 10 badgeholders were [elected by Optimism’s Token House](https://snapshot.org/#/opcollective.eth/proposal/0x22d4c3ab56832de58c1774d1a0aeb61ba6dde8b16c0f8382f85d8935f3ee1f11)
    4. 29 badge holders were nominated by badgeholders from the three categories above
