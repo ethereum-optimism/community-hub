@@ -218,7 +218,7 @@ Visualized, this flow looks like this:
 By posting the proof upfront, it gives onchain monitoring tools enough time to detect a fraudulent withdrawal proof and attempt corrective action. 
 Regular users can do this monitoring too. For example, an exchange could halt withdrawals in the event of a fraudulent proof.
 
-Since this change fundamentally changes the way withdrawals are handled, it is **not** backwards-compatible with the old network. If you are performing withdrawals outside our standard bridge interface, you will need to update your software. The easiest way to to do this is to use our [TypeScript SDK](https://github.com/ethereum-optimism/optimism/tree/65ec61dde94ffa93342728d324fecf474d228e1f/packages/sdk), which includes two-phase withdrawals support out of the box.
+Since this change fundamentally changes the way withdrawals are handled, it is **not** backwards-compatible with the old network. If you are performing withdrawals outside our standard bridge interface, you will need to update your software. The easiest way to do this is to use our [TypeScript SDK](https://github.com/ethereum-optimism/optimism/tree/65ec61dde94ffa93342728d324fecf474d228e1f/packages/sdk), which includes two-phase withdrawals support out of the box.
 
 For more information on two-phase withdrawals, see the withdrawals specification on [GitHub](https://github.com/ethereum-optimism/optimism/blob/65ec61dde94ffa93342728d324fecf474d228e1f/specs/withdrawals.md).
 
@@ -344,7 +344,7 @@ To create a deposit we recommend that you use the pre-Bedrock contracts [`L1Stan
 
 With the OptimismPortal’s `depositTransaction` function you can do from L1 anything you can do by contacting L2 directly: send transactions, send payments, create contracts, etc.
 This provides an uncensorable alternative in case the sequencer is down. 
-Even though the sequencer is down, verifiers (nodes that synchronize the Optimism state from L1) are still going to receive such transactions and modify the state accordingly. 
+Even though the sequencer is down, verifiers (nodes that synchronize the Optimism state from L1) are still going to receive such transactions and to modify the state accordingly. 
 When the sequencer is back up it has to process the transactions in the same order to have a valid state.
 
 
