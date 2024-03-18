@@ -18,9 +18,9 @@ Steps to take if you would like developer support immediately, ranked in order o
 
 ## Marketing Requests 🦸🦸
 
-When your project is deployed on the Superchain, you can be added to [our Superchain Dapps page](https://www.optimism.io/dapps). 
+When your project is deployed on the Superchain, you can be added to [our Superchain apps page](https://www.optimism.io/apps). 
 Simply [fill out this form](https://share.hsforms.com/1hUEaGvsySTK9ccNBcNmjkwqoshb) to be included. Inclusion is at our discretion. 
-To amplify your Dapp launch through Superchain marketing channels [fill out this form](https://share.hsforms.com/1XHQ9Io_lT0-vf9nSVoUahQqoshb)
+To amplify your app launch through Superchain marketing channels [fill out this form](https://share.hsforms.com/1XHQ9Io_lT0-vf9nSVoUahQqoshb)
 
 
 ### Promoting Values before anything else
