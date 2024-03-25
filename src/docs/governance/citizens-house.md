@@ -46,7 +46,7 @@ The Collective will conduct regular rounds of RetroPGF, each different from the 
 This is an emergent process that will take community participation to grow and prune. 
 1. [RetroPGF round 1](./retropgf-1.md) took place at the end of 2021 and allocated $1 million across 58 projects. 
 2. [RetroPGF round 2](./retropgf-2.md) took place in Q1 2023 and allocated 10m OP token across 195 projects.
-3. [RetroPGF round 3](./retropgf-3.md) will take place in Q3/Q4 2023 and will allocate 30m OP to contributions that have supported the development and adoption of Optimism.
+3. [RetroPGF round 3](./retropgf-3.md) took place in Q3/Q4 2023 and allocated 30m OP to contributions that have supported the development and adoption of Optimism.
 
 ### Experimentation Framework
 RetroPGF has three core components, each with substantial surface area for experimentation. 
