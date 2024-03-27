@@ -1,0 +1,94 @@
+{  
+  "index": {
+    "title": "Getting Started",
+    "display": "hidden",
+    "theme": {
+      "breadcrumb": false,
+      "footer": true,
+      "sidebar": true,
+      "toc": true,
+      "pagination": false
+    }
+  },
+
+  "404": {
+    "title": "404",
+    "display": "hidden",
+    "theme": {
+      "layout": "full",
+      "breadcrumb": false,
+      "footer": true,
+      "sidebar": true,
+      "toc": false,
+      "pagination": false
+    }
+  },
+
+  "500": {
+    "title": "500",
+    "display": "hidden",
+    "theme": {
+      "layout": "full",
+      "breadcrumb": false,
+      "footer": true,
+      "sidebar": true,
+      "toc": false,
+      "pagination": false
+    }
+  },
+
+  "faucet": {
+    "title": "Governance Forum",
+    "type": "page",
+    "href": "https://gov.optimism.io/",
+    "newWindow": true
+  },
+
+  "--- GOVERNANCE": {
+    "title": "GOVERNANCE",
+    "type": "separator"
+  },
+  "governance": {
+    "title": "Governance",
+    "display": "children"
+  },
+
+  "+++ CONTRIBUTE": {
+    "title": "",
+    "type": "separator"
+  },
+  "--- CONTRIBUTE": {
+    "title": "CONTRIBUTE",
+    "type": "separator"
+  },
+  "contribute": {
+    "title": "Contribute",
+    "display": "children"
+  },
+
+  "+++ PARTNERSHIPS": {
+    "title": "",
+    "type": "separator"
+  },
+  "--- PARTNERSHIPS": {
+    "title": "PARTNERSHIPS",
+    "type": "separator"
+  },
+  "partnerships": {
+    "title": "Partnerships",
+    "display": "children"
+  },
+
+  "+++ CONNECT": {
+    "title": "",
+    "type": "separator"
+  },
+  "--- CONNECT": {
+    "title": "CONNECT",
+    "type": "separator"
+  },
+  "connect": {
+    "title": "Connect",
+    "display": "children"
+  }
+}

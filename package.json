@@ -4,21 +4,23 @@
   "description": "The Optimism Community Hub",
   "main": "index.js",
   "scripts": {
-    "dev": "yarn redirects && vuepress dev src",
-    "build": "yarn redirects && vuepress build src",
-    "preview": "yarn build && serve -s src/.vuepress/dist -p 8080",
-    "redirects": "node scripts/redirects.js"
+    "lint": "eslint . --ext mdx --max-warnings 0 && pnpm spellcheck:lint",
+    "fix": "eslint . --ext mdx --fix && pnpm spellcheck:fix",
+    "spellcheck:lint": "cspell lint \"**/*.mdx\"",
+    "spellcheck:fix": "cspell --words-only --unique \"**/*.mdx\" | sort --ignore-case | uniq > words.txt",
+    "linkcheck": "lychee --config ./lychee.toml --quiet \"./pages\"",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "postbuild": "next-sitemap"
   },
   "license": "MIT",
-  "devDependencies": {
-    "@vuepress/plugin-medium-zoom": "^1.8.2",
-    "@vuepress/plugin-pwa": "^1.9.7",
-    "serve": "^14.2.0",
-    "vuepress": "^1.8.2",
-    "vuepress-plugin-plausible-analytics": "^0.2.1",
-    "vuepress-theme-hope": "^1.22.0"
-  },
   "dependencies": {
-    "check-md": "^1.0.2"
+    "next": "13.5.1",
+    "next-sitemap": "^4.2.3",
+    "nextra": "latest",
+    "nextra-theme-docs": "latest",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }
