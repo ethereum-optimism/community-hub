@@ -3,13 +3,13 @@ title: RetroPGF Round 1
 lang: en-US
 ---
 
-The Optimism Collective’s first round of Retroactive Public Goods Funding (RetroPGF) took place in Q4 of 2021. 
-This round was the first RetroPGF experiment of the collective and was [announced](https://medium.com/ethereum-optimism/retropgf-experiment-1-1-million-dollars-for-public-goods-f7e455cbdca) in the months following the [initial blog post on Retroactive Public Goods Funding](https://medium.com/ethereum-optimism/retroactive-public-goods-funding-33c9b7d00f0c). 
-RetroPGF 1 allocated $1M to **fund projects that have provided value to the Optimistic Ethereum ecosystem.** 
+The Optimism Collective’s first round of Retroactive Public Goods Funding (Retro Funding) took place in Q4 of 2021. 
+This round was the first Retro Funding  experiment of the collective and was [announced](https://medium.com/ethereum-optimism/retropgf-experiment-1-1-million-dollars-for-public-goods-f7e455cbdca) in the months following the [initial blog post on Retroactive Public Goods Funding](https://medium.com/ethereum-optimism/retroactive-public-goods-funding-33c9b7d00f0c). 
+Retro Funding 1 allocated $1M to **fund projects that have provided value to the Optimistic Ethereum ecosystem.** 
 
 ## Results
-In the first round of RetroPGF, 76 projects were nominated, and 58 were awarded funding by the badgeholders!
-The median funding received by a project in RetroPGF 1 was $14,670, while the top 10% of projects received more than $36,919.
+In the first round of Retro Funding, 76 projects were nominated, and 58 were awarded funding by the badgeholders!
+The median funding received by a project in Retro Funding 1 was $14,670, while the top 10% of projects received more than $36,919.
 
 - You can find a sheet with all projects and their funding allocations [**here**](https://docs.google.com/spreadsheets/d/1g4ilAByMNQsmlBC8cskQip7Ojd_qK6IhozJCyoVfU9k).
 - You can find Vitalik's review of the round [**here**](https://vitalik.ca/general/2021/11/16/retro1.html)
