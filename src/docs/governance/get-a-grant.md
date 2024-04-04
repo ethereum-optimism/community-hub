@@ -3,7 +3,7 @@ title: Get a Grant
 lang: en-US
 ---
 
-There are several ways the Optimism Collective supports builders with grants. There are two main types of grants: Collective grants, which are upfront grants for projects to be completed in the future, and RetroPGF, which are grants for projects that have already been completed based on their impact.
+There are several ways the Optimism Collective supports builders with grants. There are two main types of grants: Collective grants, which are upfront grants for projects to be completed in the future, and Retro Funding, which are grants for projects that have already been completed based on their impact.
 
 # Collective Grants
 
@@ -38,15 +38,15 @@ The Seed Fund may be used to bring projects/teams from 0 → 1, particularly for
 The Partner Fund may make grants used to provide tooling to the Optimism community, bring applications to OP Mainnet, promote education, experiment with liquidity mining programs, drive consumer usage, and/or support Optimism’s governance system.
 
 
-# Retroactive Grants (RetroPGF)
+# Retroactive Grants (Retro Funding)
 
-RetroPGF stands for Retroactive Public Goods Funding. RetroPGF rewards are allocated by the Citizens’ House to reward work that has already been completed for its impact.
+Retro Funding stands for Retroactive Public Goods Funding. Retro Funding rewards are allocated by the Citizens’ House to reward work that has already been completed for its impact.
 
-If you’re working on something you believe is aligned with the Collective and you don’t need as much upfront certainty around scope of work, reward amount, or timing of rewards, you could be a good candidate for RetroPGF rewards.
+If you’re working on something you believe is aligned with the Collective and you don’t need as much upfront certainty around scope of work, reward amount, or timing of rewards, you could be a good candidate for Retro Funding rewards.
 
 - Decisions on which projects receive rewards are made by the Citizens’ House based on their assessment of each projects’ positive impact to the Collective.
-- The last round of RetroPGF rewarded developer tooling, community programs, solo builders, educational work, client teams, and much more. For more detail on past recipients, see this **[post](https://optimism.mirror.xyz/Upn_LtV2-3SviXgX_PE_LyA7YI00jQyoM1yf55ltvvI)**. The next results of the Round will be announced shortly.
+- The last round of Retro Funding (RetroPGF Round 3) rewarded developer tooling, community programs, builders, educational work, client teams, and much more. For more detail on past recipients, see this **[post](https://optimism.mirror.xyz/37Bgum6MfTJWDuE41CH9RXSH5KBm_RCL5zsSFeRZl4E)**.
 
 **How to apply**:
 
-- Build something that provides positive impact to the Collective and stay tuned for more information about Round 4! It’s that simple.
+- Build something that provides positive impact to the Collective and stay tuned for more information about the next round of Retro Funding! It’s that simple.
