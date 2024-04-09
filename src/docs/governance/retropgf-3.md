@@ -3,7 +3,7 @@ title: RetroPGF Round 3
 lang: en-US
 ---
 
-The Optimism Collective’s third round of Retroactive Public Goods Funding (RetroPGF) took place in the fall of 2023. RetroPGF 3 allocated 30m OP tokens to **reward contributions that have supported the development and adoption of Optimism.** 
+The Optimism Collective’s third round of Retroactive Public Goods Funding (Retro Funding) took place in the fall of 2023. RetroPGF 3 allocated 30m OP tokens to **reward contributions that have supported the development and adoption of Optimism.** 
 
 
 ### Process Overview
@@ -14,7 +14,7 @@ The Optimism Collective’s third round of Retroactive Public Goods Funding (Ret
 ## Results
 👉 You can view the Mirror post announcing the RetroPGF Round 3 recipients [here](https://optimism.mirror.xyz/37Bgum6MfTJWDuE41CH9RXSH5KBm_RCL5zsSFeRZl4E) and the official results on [Agora](https://vote.optimism.io/retropgf/3).
 
-RetroPGF recipients must complete a KYC process with the Optimism Foundation. If you're a recipient, please direct questions or problems with the KYC & grant delivery process to compliance@optimism.io.
+Retro Funding recipients must complete a KYC process with the Optimism Foundation. If you're a recipient, please direct questions or problems with the KYC & grant delivery process to compliance@optimism.io.
 
 You can view the written retrospective with the learnings & reflections on RetroPGF 3 [here](https://optimism.mirror.xyz/Bbu5M1mTNV2Z637QxOiF7Qt7R9hy6nxghbZiFbtZOBA). 
 
@@ -25,7 +25,7 @@ You can view the written retrospective with the learnings & reflections on Retro
 
 In addition, there's useful tooling that has been built to support badgeholders:
 - [Pairwise](https://www.pairwise.vote/) - Gamifying list creation by categorizing applicants into small groups for experts' pairwise comparison.
-- [OpenSource Observer](https://www.opensource.observer/) - An Analytics platform for impact metrics on RetroPGF applications
+- [OpenSource Observer](https://www.opensource.observer/) - An Analytics platform for impact metrics on Retro Funding applications
 
 Badgeholders can find all the information relevant for voting in the [Badgeholder Manual ](https://www.optimism.io/badgeholder-manual) 
 
@@ -33,9 +33,9 @@ Badgeholders can find all the information relevant for voting in the [Badgeholde
 
 👉 **You can see applications on the voting applications from [Agora](https://vote.optimism.io/retropgf/3) and [West](https://round3.optimism.io/)** 
 
-Every type of contribution to the Optimism ecosystem is eligible for RetroPGF. Whether you’re a developer working on an Ethereum execution client or an educator creating Optimism-inspired video content, if you’re providing impact, you’re eligible! 
+Every type of contribution to the Optimism ecosystem is eligible for Retro Funding. Whether you’re a developer working on an Ethereum execution client or an educator creating Optimism-inspired video content, if you’re providing impact, you’re eligible! 
 
-RetroPGF is open to all Optimism artists, creators, writers, builders, and evangelists.
+Retro Funding is open to all Optimism artists, creators, writers, builders, and evangelists.
 If you're looking for inspiration on what you could contribute to the Optimism Collective, check out the [Ecosystem Contributions Board](https://github.com/ethereum-optimism/ecosystem-contributions)
 
 ## Badgeholders 
@@ -58,7 +58,7 @@ A: There was no nomination process, instead projects directly applied for RetroP
 </details>
 
 <details>
-  <summary>Q:Are VC funded teams or teams that received a grant from the Optimism Token House eligible for RetroPGF?
+  <summary>Q:Are VC funded teams or teams that received a grant from the Optimism Token House eligible for Retro Funding?
  </summary>
 Yes, both VC funded teams as well as teams that received a grant from the Token House are eligble. Badgeholders uphold the principle of "impact = profit", where individuals should receive profit equal to the impact they provided to the Optimism Collective.    
 </details>
@@ -71,19 +71,19 @@ Yes, you were able to apply again with the same contribution. We asked that you 
 
 
 <details>
-  <summary>Q: Are RetroPGF rewards subject to a 1 year lock-up?
+  <summary>Q: Are Retro Funding rewards subject to a 1 year lock-up?
  </summary>
-No, RetroPGF rewards are not subject to a 1 year lock-up. After the round concludes, projects will need to complete a KYC process with the Optimism Foundation and will then gradually receive their RetroPGF rewards over a 90 day period. 
+No, Retro Funding rewards are not subject to a 1 year lock-up. After the round concludes, projects will need to complete a KYC process with the Optimism Foundation and will then gradually receive their Retro Funding rewards over a 90 day period. 
 </details>
 
 <details>
-  <summary>Q: Are RetroPGF 3 rewards sourced from sequencer revenue or RetroPGF token allocation?
+  <summary>Q: Are RetroPGF 3 rewards sourced from sequencer revenue or Retro Funding token allocation?
  </summary>
-Round 3 rewards are sourced from the [RetroPGF token allocation](https://community.optimism.io/docs/governance/allocations/). Future rounds of RetroPGF may allocate surplus protocol revenue.  
+Round 3 rewards are sourced from the [Retro Funding token allocation](https://community.optimism.io/docs/governance/allocations/). Future rounds of Retro Funding may allocate surplus protocol revenue.  
 </details>
 
 <details>
   <summary>Q: Does my Project need to be on OP mainnet to be eligible? 
  </summary>
-    No, your project does not need to be on OP mainnet. As long as you’re providing impact to the Optimism Collective, you are eligible for RetroPGF!
+    No, your project does not need to be on OP mainnet. As long as you’re providing impact to the Optimism Collective, you are eligible for Retro Funding!
 </details>
