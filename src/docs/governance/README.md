@@ -3,10 +3,6 @@ title: What is the Optimism Collective?
 lang: en-US
 ---
 
-::: info Reflection Period
-Optimism Governance is currently in a reflection period until the 15th of November. These docs are being updated but are currently out of date. Please check back after the reflection period.
-:::
-
 The [Optimism Collective](https://app.optimism.io/announcement) is a band of companies, communities, and citizens working together to reward public goods and build a sustainable future for Ethereum.
     
 Together we will dispel the myth that public goods cannot be profitable. 
@@ -49,9 +45,9 @@ You can learn more in the [Token House Onboarding Hub](https://plaid-cement-e44.
 
 The Citizens' House is a large-scale experiment in [non-plutocratic governance](https://vitalik.ca/general/2021/08/16/voting3.html) and retroactive funding of public goods. 
 
-The Citizens' House is responsible for [retroactive public goods funding (RPGF)](https://medium.com/ethereum-optimism/retroactive-public-goods-funding-33c9b7d00f0c). 
+The Citizens' House is responsible for [Retroactive Public Goods Funding (Retro Funding)](https://medium.com/ethereum-optimism/retroactive-public-goods-funding-33c9b7d00f0c). 
 For more information about the Citizens' House, read [the Overview](./citizens-house.md).
-For details about Retro Funding 2, visit [the Retro Funding 2 program details](./retropgf-2.md).
+For details about Retro Funding 3, visit [the Retro Funding 3 program details](./retropgf-3.md).
 For plans around identity and governance, see [the Citizenship page](./citizenship.md).  
 
 **What is described here is an initial experiment**. 
