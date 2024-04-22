@@ -429,7 +429,10 @@ module.exports = {
         },
         {
           title: "📈 Data & Analytics",
-          children: ["/docs/contribute/contribution-path/numbaNERDs.md"],
+          children: [
+            "/docs/contribute/contribution-path/numbaNERDs.md",
+            "/docs/contribute/contribution-path/attestation-identity.md"
+          ],
           collapsable: true,
         },
         {
