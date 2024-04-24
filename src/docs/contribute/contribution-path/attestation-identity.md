@@ -1,5 +1,5 @@
 ---
-title: Attestation Identity
+title: Identity and Attestations
 lang: en-US
 ---
 
