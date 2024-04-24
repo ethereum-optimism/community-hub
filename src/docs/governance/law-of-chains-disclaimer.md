@@ -3,9 +3,6 @@ title: Law of Chains Disclaimer
 lang: en-US
 ---
 
-# Important Disclaimer about the Law of Chains
-
-NOTE: Along with v0.1 of the Law of Chains, this disclaimer is currently in [DRAFT] form.  
 
 ::: tip Important
 
