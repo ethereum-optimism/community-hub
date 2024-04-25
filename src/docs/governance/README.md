@@ -3,7 +3,7 @@ title: What is the Optimism Collective?
 lang: en-US
 ---
 
-The [Optimism Collective](https://app.optimism.io/announcement) is a band of companies, communities, and citizens working together to reward public goods and build a sustainable future for Ethereum.
+The [Optimism Collective](https://app.optimism.io/announcement) is a band of companies, communities, and citizens working together to reward public goods and build a sustainable future for Ethereum. This is a test.
     
 Together we will dispel the myth that public goods cannot be profitable. 
 Public goods (including public goods for Optimism and Ethereum) often go underfunded when incentives aren't properly aligned, forcing many to make trade-offs between earning a profit and building for the common good.
