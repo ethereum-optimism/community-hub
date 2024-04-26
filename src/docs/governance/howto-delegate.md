@@ -14,7 +14,7 @@ If you do not wish to delegate your voting power to a representative, you will s
 
 ### How do I delegate my votes to a representative?
 
-1. [Choose a delegate](https://vote.optimism.io/). 
+1. [Choose a delegate](https://vote.optimism.io/delegates). 
    
    Take the time to read through delegate statements of interest, choosing your delegate is an important decision! 
    A healthy governance system is good for Optimism and for all OP holders. Choosing a good delegate is in each OP token holder's best interest.
