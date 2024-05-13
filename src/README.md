@@ -16,7 +16,7 @@ features:
     details: Check out the Optimism community and join the conversation.
     link: /docs/contribute/
 
-  - title: Developer docs
+  - title: Developer Documentation
     icon: code
     details: Technical documentation website and information about the OP Stack.
     link: https://docs.optimism.io/
