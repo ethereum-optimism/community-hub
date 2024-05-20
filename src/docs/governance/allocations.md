@@ -134,8 +134,7 @@ All tokens distributed as part of the Sugar Xaddies allocation will be subject t
 
 ## Token Distribution Details
 
-At genesis there will be an initial total supply of 4,294,967,296 OP tokens. 
-The total token supply will inflate at a rate of 2% per year.
+At genesis there will be an initial total supply of 4,294,967,296 OP tokens. The token supply will inflate at the latest rate approved by governance. 
 
 64% of the initial token supply (i.e., the aggregate amount of OP **not** reserved for core contributors or sugar xaddies) will be distributed to the community as described above. 
 These distributions will be administered over time by the Optimism Foundation in its role as steward of the Optimism Collective.
