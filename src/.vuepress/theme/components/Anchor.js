@@ -69,7 +69,7 @@ export default Vue.extend({
                                     " Connect with Optimism"
                                 ])
                             ]),
-                            h("a", { attrs: { href: "https://github.com/ethereum-optimism/optimism/issues", target: "_blank" } }, [
+                            h("a", { attrs: { href: "https://github.com/ethereum-optimism/community-hub/issues", target: "_blank" } }, [
                                 h("div", [
                                     h("i", { attrs: { class: "fab fa-github" } }),
                                     " Make an issue on GitHub"

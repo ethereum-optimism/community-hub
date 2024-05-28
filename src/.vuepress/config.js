@@ -70,36 +70,22 @@ module.exports = {
       /* When you update here, don't forget to update the tiles
          in src/README.md */
       {
-        text: "Quick Start",
-        link: "/docs/guides/",
-      },
-      {
-        text: "How Optimism Works",
-        link: "/docs/protocol/",
-      },
-      {
-        text: "Support",
-        link: "/docs/biz/",
-      },
-      {
-        text: "Security",
-        link: "/docs/security-model/",
-      },
-      {
-        text: "Dev Docs",
-        link: "/docs/developers/",
-      },
-      {
-        text: "Identity",
-        link: "/docs/identity/",
-      },
-      {
         text: "Governance",
         link: "/docs/governance/",
       },
       {
         text: "Contribute",
         link: "/docs/contribute/",
+      },
+      {
+        text: "Support",
+        link: "/docs/biz/",
+      },
+      {
+        text: "Technical Docs",
+        link: "https://docs.optimism.io/",
+        target: '_blank', 
+        rel: 'noopener noreferrer' 
       },
       {
         text: "Community",
