@@ -49,4 +49,5 @@ If you’re working on something you believe is aligned with the Collective and 
 
 **How to apply**:
 
+- Visit retrofunding.optimism.io to apply!
 - Build something that provides positive impact to the Collective and stay tuned for more information about the next round of Retro Funding! It’s that simple.
