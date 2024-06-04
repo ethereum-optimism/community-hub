@@ -43,7 +43,7 @@ You can learn more in the [Token House Onboarding Hub](https://plaid-cement-e44.
     
 ## Citizens' House
 
-The Citizens' House is a large-scale experiment in [non-plutocratic governance](https://vitalik.ca/general/2021/08/16/voting3.html) and retroactive funding of public goods. 
+The Citizens' House is a large-scale experiment in [non-plutocratic governance](https://vitalik.eth.limo/general/2021/08/16/voting3.html) and retroactive funding of public goods. 
 
 The Citizens' House is responsible for [Retroactive Public Goods Funding (Retro Funding)](https://medium.com/ethereum-optimism/retroactive-public-goods-funding-33c9b7d00f0c). 
 For more information about the Citizens' House, read [the Overview](./citizens-house.md).
