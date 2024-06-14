@@ -27,7 +27,7 @@ The architecture of a typical Bedrock deployment looks like this:
 
 We recommend the following minimum system requirements to run Bedrock:
 
-- `op-node`: Minimum 2CPUs, 4GB RAM. No storage is necessary.
+- `op-node`: Minimum 2 CPUs, 4GB RAM. No storage is necessary.
 - `op-geth`: Minimum 4 CPUs, 8GB RAM. At least 40GB of storage is required for OP Goerli or OP Sepolia. At least 600GB of storage is required for mainnet. Storage must be SSD. Requirements are significantly higher for archive nodes.
 
 ## Getting the Software
@@ -54,7 +54,7 @@ To configure your node, you will need to do the following:
 ### Configuring op-geth
 
 :::tip
-Even though the Docker image for the Execution Engine is called `op-geth`, the actually binary is still called `geth` in order to minimize differences between `op-geth` and `go-ethereum`.
+Even though the Docker image for the Execution Engine is called `op-geth`, the actual binary is still called `geth` in order to minimize differences between `op-geth` and `go-ethereum`.
 :::
 
 We'll start with `op-geth`'s configuration because it is more complex. As mentioned before, `op-geth` is a minimal fork of `go-ethereum`. As a result, it stores its state in a database that requires initialization. Initialization is done one of two ways, depending on which network you're deploying:
