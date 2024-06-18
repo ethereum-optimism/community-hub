@@ -75,7 +75,7 @@ module.exports = {
       },
       {
         text: "Get a Grant",
-        link: "/docs/governance/get-a-grant.md",
+        link: "/docs/grant/",
       },
       {
         text: "Token House",
@@ -164,6 +164,9 @@ module.exports = {
     sidebar: {   
       '/docs/welcome' : [
         ["/docs/welcome/", "Overview"]
+      ],
+      '/docs/grant' : [
+        ["/docs/grant/", "Overview"]
       ],
       '/docs/token-house' : [
         ["/docs/token-house/", "Overview"],
