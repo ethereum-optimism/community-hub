@@ -19,6 +19,7 @@ Go to [https://app.optimism.io/airdrops](https://app.optimism.io/airdrops) to cl
 | You created engaging NFTs on the Superchain | Total gas on OP Chains (OP Mainnet, Base, Zora) in transactions involving transfers<sup>2</sup> of NFTs created by your address<sup>1</sup>. Measured during the trailing 365 days before the airdrop cutoff (Jan 10, 2023 - Jan 10, 2024) | 9,294 | 5,000 OP per 1 ETH of gas on the Superchain (i.e. 0.002 ETH of gas fees = 10 OP)
 | You created engaging NFTs on Ethereum Mainnet | Total gas on Ethereum L1 in transactions involving transfers<sup>2</sup> of NFTs created by your address<sup>1</sup>. Measured during the trailing 365 days before the airdrop cutoff (Jan 10, 2023 - Jan 10, 2024) | 15,073 | 50 OP per 1 ETH of gas on Ethereum L1 (i.e. 0.2 ETH of gas fees = 10 OP)
 
+
 1. “Creator addresses” were identified as the transaction sender (`from` address) in the transaction where the NFT (ERC721 & ERC1155) contract was created.
 1. “Transactions with NFT transfers” excluded transfers to the creators' address (i.e. mint to themselves) and transfers to a burn address. While transfers were measured over the 365 days before cutoff, the NFT contract could’ve been created at any time.
 
