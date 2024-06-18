@@ -1,0 +1,110 @@
+---
+title: Project and individual identity in the Collective
+lang: en-US
+---
+
+This document outlines the Optimism Foundation's approach to the identity and reputation of individuals and projects within the Optimism Collective. The identity stack framework, including an explanation of how the identity layer relates to other components, is outlined in [this document](/HJ55ibKm0).
+
+## What does identity and reputation mean?
+
+'Identity' and 'reputation' are imprecise terms, often meaning different things depending on the context, industry or personal interpretation. In the context of the Optimism Collective and Citizenship, what we're talking about is associating data to individuals, and interpreting that data to make judgments. We often use the term 'reputation' to describe a certain class of these judgments, but it is often more effective to use precise language. 
+
+Instead of 'reputation' perhaps what we're really trying to judge is:
+
+* The probability that someone is a Sybil, meaning they have created duplicate accounts to pose as real users 
+* The perceived quality of the content posted by a social account
+* The likelihood that a team will successfully complete a mission request
+* The competence-level of an individual in a specific domain
+
+### Building a digital identity
+
+In order for individuals to build up the kinds of specific 'reputation' mentioned above, relevant data needs to be accrued to their digital identity. Those data points and their aggregation and interpretation are part of the data and data interpretation layers in the [identity stack](/HJ55ibKm0). 
+
+While having many different data interpreters and data producers is valuable, the identity layer must be narrow to serve its purpose. If individuals have a unique identity for every interaction they have with the Optimism Collective, it is much more difficult for data interpreters to make judgments about them and user interfaces to unify all the relevant signals about a single individual.
+
+As such, the Optimism Foundation is taking an opinionated approach to set a common standard for representing individuals in the Optimism Collective. This standard will be used in initiatives run by the Foundation, including Retroactive Public Goods Funding (Retro Funding) and Citizen selection, and builders are encouraged to adopt the same principles to collectively build up identity within the Optimism Collective.
+
+### People and projects
+
+There are two entities in the Collective: people and projects. People are unique human individuals and are associated with a particular [Farcaster account id](https://docs.farcaster.xyz/learn/what-is-farcaster/accounts). Projects are things created by individuals or groups of people, and are identified by an attestation UID from the [project schema](https://docs.optimism.io/chain/identity/schemas#project-identifier). 
+
+### People
+
+Historically, onchain apps have managed user identity via an Ethereum address. Another wave of apps has prioritized user experience and embraced Web2 sign-in methods, or Web2.5 methods that create Ethereum accounts for users. None of these approaches satisfies the needs of the Optimism Collective. 
+
+The Collective needs a shared user identifier that persists even with key rotation, is permissionless, onchain and can be adopted by any builder or application and used across many applications. We plan to use this identifier to build a rich social network of Optimism builders, users, delegates, citizens and other participants in the Collective. Instead of building a new 'Optimist Id' we made the decision to use Farcaster accounts for this purpose. 
+
+Here are some of the reasons behind this decision:
+
+* We believe in building on top of shared standards and open-source protocols
+* The Farcaster protocol already has a vibrant social graph - bootstrapping a new social network for the Optimism Collective would be difficult and redundant
+* Farcaster accounts solve the problem of key rotation via the custody and recovery addresses
+* The Farcaster protocol is Optimism-native
+* Farcaster accounts are registered onchain and can be created permissionlessly via the contracts
+* Anyone can build a Farcaster client and integrate with the protocol
+* Ethereum accounts and ENS names can be verified with the protocol to connect these identities
+
+#### People and 'reputation'
+
+The Optimism Collective uses attestations via the [Ethereum Attestation Service](https://optimism.easscan.org/) (EAS) to issue signed statements about individuals. Thus far, these attestations have been issued about and to a recipient represented as an Ethereum address. Farcaster users are able to link their Ethereum addresses to their Farcaster account via the [verifications feature](https://docs.farcaster.xyz/developers/guides/writing/verify-address), preserving the value of attestations issued to Ethereum accounts. However, attestations can also be issued with a Farcaster account id in the metadata and without a recipient address. This enables issuers to make attestations about Farcaster accounts.
+
+
+### Projects
+
+While the need for individual identity in the Collective has been widely discussed, the need for persistent project identity is less obvious. 
+
+Projects are important because a large set of data points about projects are highly relevant to the people who contribute to them. For example, projects can successfully complete a Mission Request or be rewarded via Retro Funding. The contributors to those projects may enjoy a boost in their perceived trustworthiness or competence based on the achievements of the projects they contribute to.
+
+Maintaining a persistent project identity is also essential for the proper functioning of impact tracking and improving the operations around Retro Funding and grants. 
+
+#### What is a 'project'?
+
+Projects are submitted for consideration in Retro Funding applications.
+
+#### What is not a project:
+
+* A project is not a person, but it can have a single contributor.
+* A project is not a team or organization
+
+#### What is a project:
+
+* A specific product built by a company is a project
+* A specific contribution made to the Optimism Collective, like a Dune Dashboard, is a project
+* A ongoing service is a project
+* A hackathon build is a project
+* An event is a project
+* A YouTube channel is a project
+
+#### The project entity
+
+The identity layer of the Optimism Collective isn't complete without persistent project identity. As part of Retro Funding 4, we introduced the concept of an evergreen project that is represented onchain by the [Project Attestation](https://docs.optimism.io/chain/identity/schemas#project-identifier). The attestation UID is the project identifier. Project metadata is stored off-chain and updated via the [Project Metadata Attestation](https://docs.optimism.io/chain/identity/schemas#project-metadata).
+
+Attestations are an effective way to represent projects onchain, because they can be created permissionlessly, and it is easy to create other attestations referencing the project via the refUID field in the EAS. This creates an infinitely composable data structure representing projects, their contributors, achievements and metadata.
+
+You can find more detailed information about the schemas in the [developer docs](https://docs.optimism.io/chain/identity/schemas#project-metadata).
+
+#### Project core concepts
+
+The project attestation architecture is simple, flexible and unopinionated. However, there are some core concepts to projects.
+
+#### Mutability
+
+The project attestation architecture is designed so the primary project attestation contains no mutable data - the identifier therefore doesn't change with changes to project information. The project metadata attestation, on the other hand, is re-issued any time there are changes to the project metadata. The most recent project metadata attestation can be relied on to represent the current state of the project.
+
+#### Parent projects
+
+Projects can have a nested structure via the 'parent project' field on the project metadata attestation. This creates a highly flexible architecture that can represent all types of contributions to the Optimism Collective.
+
+Each parent or sub-project can independently apply for Retro Funding or grants, and they can have different sets of contributors.
+
+#### Contributors
+
+The contributors to a project are one of the most important data points about the project. For the purposes of Retro Funding 4 sign-up, contributor data is nested within the offchain project metadata. This decision was made to expedite the release of the sign-up form. In future, we plan to represent contributors to a project onchain via a separate attestation. Contributors will continue to be identified by their Farcaster account id rather than an Ethereum account. The contributors to a project can change over time.
+
+#### Project verifications
+
+In Retro Funding 4 sign-up, projects are invited to verify their GitHub repositories and contracts to better enable impact tracking. In the MVP release, these connections are stored off-chain as part of the project metadata. In future, we imagine that various apps and utilities will enable project admins to verify their project's GitHub, contracts and other data, and will issue specific verification attestations as a result. Other apps will consume these attestations so long as they trust the source and methodology whereby the attestations were generated.
+
+## Conclusion
+
+The purpose of this document is to outline the Optimism Foundation's approach to individual and project identity within the Collective, and invite builders to contribute to building out these fundamental building blocks. If you are a builder and you are looking for ways to add value to the Collective, check out the [Builder's Ideas List](https://contribute.optimism.io). To participate in the conversation about this topic, head over to the [Optimism Governance Forum](https://gov.optimism.io). For specific questions not answered here, email identity@optimism.io.

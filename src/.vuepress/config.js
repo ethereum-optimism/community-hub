@@ -181,16 +181,10 @@ module.exports = {
         ["/docs/citizen-house/experimentation-with-citizenship.md", "Experimentation with Citizenship"],
       ],
       '/docs/identity/': [
-        '/docs/identity/intro',
-        '/docs/identity/build',
-        '/docs/identity/profile',
-        '/docs/identity/schemas',
-        {
-          title: "Technical details",
-          children: ["/docs/identity/atst-v1", "/docs/identity/atst-v0"],
-        },
-        "/docs/identity/app",
-        "/docs/identity/glossary",
+        ["/docs/identity/", "Overview"],
+        ["/docs/identity/identity-and-rep.md", "Identity and Reputation"],
+        ["/docs/identity/attestations-best-practices.md", "Attestations Best Practices"],
+        ["/docs/identity/project-and-individual-identity-in-the-collective.md", "Project and individual identity in the Collective"]
       ],
       '/docs/op-token' : [
         ["/docs/op-token/", "Overview"],
