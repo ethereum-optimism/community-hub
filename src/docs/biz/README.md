@@ -12,7 +12,7 @@ You will be welcomed by [the following metrics](https://dune.com/optimismfnd/Opt
 
 Steps to take if you would like developer support immediately, ranked in order of response times. 
 
-1. See our [Developer Documentation](../developers/), [Tutorials](https://github.com/ethereum-optimism/optimism-tutorial), and [Help Center](https://help.optimism.io)
+1. See our [Developer Documentation](https://docs.optimism.io/), [Tutorials](https://github.com/ethereum-optimism/optimism-tutorial), and [Help Center](https://help.optimism.io)
 2. Head over to [**#dev-support**](https://discord.com/channels/667044843901681675/887914409207414785) on discord 
 
 
@@ -63,7 +63,7 @@ Listen to [this OPRadio Episode](https://twitter.com/optimismFND/status/15850159
 
 What do the next 100 years have in store for crypto? [@Karl_dot_tech](https://twitter.com/karl_dot_tech) shares his vision in [this chat with Bankless](https://www.youtube.com/watch?v=60F2wtjZO5M).
 
-Want to see what we are doing with Retroactive Public Goods? [See here](../governance/retropgf-2.md)
+Want to see what we are doing with Retroactive Public Goods? [See here](../citizen-house/how-retro-funding-works.md)
 
 Changes to the protocol coming in the near term include multi-client architecture, and the world’s next generation fault proof. 
 Check out [Bedrock](https://dev.optimism.io/introducing-optimism-bedrock/) and [Cannon](https://medium.com/ethereum-optimism/cannon-cannon-cannon-introducing-cannon-4ce0d9245a03). 
