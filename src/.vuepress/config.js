@@ -170,7 +170,7 @@ module.exports = {
       ],
       '/docs/token-house' : [
         ["/docs/token-house/", "Overview"],
-        ["/docs/token-house", "How to Delegate OP Tokens"]
+        ["/docs/token-house/how-to-delegate.md", "How to Delegate OP Tokens"]
       ],
       '/docs/citizen-house' : [
         ["/docs/citizen-house/", "Overview"],

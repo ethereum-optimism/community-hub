@@ -3,7 +3,7 @@ title: How to Delegate OP Tokens
 lang: en-US
 ---
 
-### Why Delegate?
+## Why Delegate?
 
 OP tokens allow holders to vote on *some of the most important decisions for the Collective.* This empowers everyday users to have a say in the development of the system! But it's also a big responsibility, which requires a serious time commitment. 
 
@@ -11,7 +11,7 @@ For this reason, people are able to delegate the voting power of their OP tokens
 
 These volunteers are called **delegates.**
 
-### Would you like to exercise your governance power and vote yourself? 
+## Would you like to exercise your governance power and vote yourself? 
 
 Before becoming a delegate, review the [Prospective Delegate Gov Onboarding Hub](https://plaid-cement-e44.notion.site/Prospective-Delegate-Gov-Onboarding-Hub-7cb72c3376c349a2ab402c4badd52f39) for helpful information and guidance. 
 
@@ -24,7 +24,7 @@ Before becoming a delegate, review the [Prospective Delegate Gov Onboarding Hub]
 3. Once you’ve been added as a delegate in the next voting cycle, you can start [voting](https://vote.optimism.io/)!
     - Go to the [Optimism voting app](https://vote.optimism.io/), connect your wallet, and vote! There is no minimum OP to begin voting requirement, but you will need to have the OP tokens you wish to delegate or vote with in your wallet when the voting measurement is taken. Tokens that are staked or LP’d at the time of measurement do not carry voting power.
 
-### Would you like to delegate your voting power to a representative? 
+## Would you like to delegate your voting power to a delegate? 
 
 1. [Choose a delegate](https://vote.optimism.io/delegates). 
    
