@@ -43,7 +43,7 @@ For more information about the Citizens' House, view the [Citizens' House sectio
 
 For details about Retro Funding and future Retro Funing Rounds, visit [retrofunding.optimism.io](https://retrofunding.optimism.io/).
 
-For details around identity and reputation in the Citizens' House, view [identity and reputation section](link to identity section). 
+For details around identity and reputation in the Citizens' House, view [identity and reputation section](../identity/README.md). 
 
 ## How do these houses work together?
 The Token House and the Citizens House work together to ensure the Collective achieves its vision. 

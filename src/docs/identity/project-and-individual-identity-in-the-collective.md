@@ -3,7 +3,7 @@ title: Project and individual identity in the Collective
 lang: en-US
 ---
 
-This document outlines the Optimism Foundation's approach to the identity and reputation of individuals and projects within the Optimism Collective. The identity stack framework, including an explanation of how the identity layer relates to other components, is outlined in [this document](/HJ55ibKm0).
+This document outlines the Optimism Foundation's approach to the identity and reputation of individuals and projects within the Optimism Collective. The identity stack framework, including an explanation of how the identity layer relates to other components, is outlined in [this document](https://docs.optimism.io/chain/identity/overview).
 
 ## What does identity and reputation mean?
 
@@ -18,7 +18,7 @@ Instead of 'reputation' perhaps what we're really trying to judge is:
 
 ### Building a digital identity
 
-In order for individuals to build up the kinds of specific 'reputation' mentioned above, relevant data needs to be accrued to their digital identity. Those data points and their aggregation and interpretation are part of the data and data interpretation layers in the [identity stack](/HJ55ibKm0). 
+In order for individuals to build up the kinds of specific 'reputation' mentioned above, relevant data needs to be accrued to their digital identity. Those data points and their aggregation and interpretation are part of the data and data interpretation layers in the [identity stack](https://docs.optimism.io/chain/identity/overview). 
 
 While having many different data interpreters and data producers is valuable, the identity layer must be narrow to serve its purpose. If individuals have a unique identity for every interaction they have with the Optimism Collective, it is much more difficult for data interpreters to make judgments about them and user interfaces to unify all the relevant signals about a single individual.
 

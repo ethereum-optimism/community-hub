@@ -31,7 +31,7 @@ Communities benefit from all sorts of public goods, from education to city infra
 
 It’s here that Optimism takes a step forward, by building a sustainable reward source into the mechanisms of the network itself.
 
-Direct or auctioned sequencer revenue is distributed back to the ecosystem primarily through Retroactive Public Goods Funding ([Retro Funding](link to retro funding section).
+Direct or auctioned sequencer revenue is distributed back to the ecosystem primarily through Retroactive Public Goods Funding ([Retro Funding](../citizen-house/how-retro-funding-works.md)).
 
 This creates strong incentives for individuals to build for the public good of the Optimism Collective.
 
@@ -169,7 +169,7 @@ An allocation of **8.8%** of the OP token supply will be held in reserve for fut
 
 ***Allocation: 20%***
 
-[Retroactive Public Goods Funding (Retro Funding)](link to rpgf page) will initially be distributed by the [Citizens' House](link to ch page). 
+[Retroactive Public Goods Funding (Retro Funding)](../citizen-house/how-retro-funding-works.md) will initially be distributed by the [Citizens' House](../citizen-house/README.md). 
 
 Retro Funding will be supported by several revenue sources:
 

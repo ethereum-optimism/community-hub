@@ -2,7 +2,7 @@
 title: What is the Optimism Foundation?
 lang: en-US
 ---
-The Optimism Foundation is a Cayman Islands foundation company.  It operates to support the establishment of the [Optimism Collective](../governance/), the development of the Optimism ecosystem, and the technology that powers it.    
+The Optimism Foundation is a Cayman Islands foundation company.  It operates to support the establishment of the [Optimism Collective](../welcome/README.md), the development of the Optimism ecosystem, and the technology that powers it.    
 
 The Foundation is one component in a large, evolving and ever-growing web of companies, groups, and individuals driving towards actualization of the [Optimistic Vision](https://www.optimism.io/vision). 
 
