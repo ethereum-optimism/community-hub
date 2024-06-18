@@ -163,20 +163,7 @@ module.exports = {
     searchPlaceholder: 'Search the docs',
     sidebar: {   
       '/docs/welcome' : [
-        ["/docs/welcome/", "Overview"],
-        "/docs/governance/law-of-chains-disclaimer.md",
-        [
-          "https://docs.google.com/spreadsheets/d/1Ul8iMTsOFUKUmqz6MK0zpgt8Ki8tFtoWKGlwXj-Op34",
-          "Governance Fund Tracker",
-        ],
-        [
-          "https://gov.optimism.io/t/working-constitution-of-the-optimism-collective/55",
-          "Working Constitution",
-        ],
-        [
-          "https://github.com/ethereum-optimism/OPerating-manual/blob/main/manual.md",
-          "Operating Manual",
-        ],
+        ["/docs/welcome/", "Overview"]
       ],
       '/docs/token-house' : [
         ["/docs/token-house/", "Overview"],

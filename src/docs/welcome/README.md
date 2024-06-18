@@ -7,12 +7,12 @@ The Optimism Collective is a band of companies, communities, and citizens workin
 
 The Optimism Collective is bound by a mutually beneficial pact, [a vision](https://www.optimism.io/vision) that can be summed up with the axiom Impact=Profit. 
     
-### Impact=Profit
+## Impact=Profit
 
 The Optimism Collective's mission is to create an internet that benefits all and is owned by none. To do so, the Collective is creating a new economic paradigm, where impact is rewarded. The Collective calls this future [Ether’s Phoenix](https://optimism.mirror.xyz/x4LGFwa6RJ_opOaCOwr_VGk04Lp3of41H8ynWaFB27E).
 ![Retro Impact Gap](../../assets/docs/welcome/retro-impact-gap.png)
 
-### Governance Overview
+## Governance Overview
 
 The Optimism Collective and the Superchain take an experimental and agile approach to governance, relentlessly iterating towards a system which stands the test of time.
 
@@ -22,7 +22,7 @@ The Collective's model of digital democratic governance  consists of two houses
 
 ![High Level Collective Houses](../../assets/docs/welcome/high-level-gov-houses.svg)
 
-## Token House
+### Token House
 
 Governance of the Optimism Collective began with the launch of the OP token and the Token House. 
 
@@ -33,7 +33,7 @@ The Token House votes on on the proposal types outlined in the [Operating Manual
 
 You can learn more in the [Token House section](../token-house/README.md).
     
-## Citizens' House
+### Citizens' House
 
 The Citizens' House is a large-scale experiment in reputation-based, one person = one vote governance, and is responsible for [Retroactive Public Goods Funding (Retro Funding)](https://medium.com/ethereum-optimism/retroactive-public-goods-funding-33c9b7d00f0c). 
 
