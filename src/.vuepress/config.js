@@ -79,19 +79,19 @@ module.exports = {
       },
       {
         text: "Token House",
-        link: "/docs/governance/",
+        link: "/docs/token-house/",
       },
       {
         text: "Citizen House",
-        link: "/docs/governance/",
+        link: "/docs/citizen-house/",
       },
       {
         text: "Identity",
-        link: "/docs/governance/",
+        link: "/docs/identity/",
       },
       {
         text: "OP Token Info",
-        link: "/docs/governance/",
+        link: "/docs/op-token/",
       },
       {
         text: "Contribute",
