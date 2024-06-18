@@ -19,7 +19,6 @@ As a delegate, you should:
 
 - Vote on non-grant proposals via the [Optimism Governance Portal](https://vote.optimism.io/). 
   
-
 - Post your voting rationale in a [Delegate Communications Thread](https://gov.optimism.io/c/governance/41)
 
 - Join the community calls, which occur every other Tuesday at 1pm ET. 

@@ -163,7 +163,8 @@ module.exports = {
     searchPlaceholder: 'Search the docs',
     sidebar: {   
       '/docs/welcome' : [
-        ["/docs/welcome/", "Overview"]
+        ["/docs/welcome/", "Overview"],
+        ["/docs/welcome/what-is-the-optimism-foundation.md", "What is the Optimism Foundation"]
       ],
       '/docs/grant' : [
         ["/docs/grant/", "Overview"]
