@@ -71,7 +71,7 @@ module.exports = {
          in src/README.md */
       {
         text: "Welcome",
-        link: "/docs/governance/",
+        link: "/docs/welcome/",
       },
       {
         text: "Get a Grant",
