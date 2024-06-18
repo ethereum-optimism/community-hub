@@ -176,6 +176,9 @@ module.exports = {
       ],
       '/docs/citizen-house' : [
         ["/docs/citizen-house/", "Overview"],
+        ["/docs/citizen-house/how-retro-funding-works.md", "How Retro Funding Works"],
+        ["/docs/citizen-house/citizenship-selection.md", "Citizenship Selection"],
+        ["/docs/citizen-house/experimentation-with-citizenship.md", "Experimentation with Citizenship"],
       ],
       '/docs/identity/': [
         '/docs/identity/intro',

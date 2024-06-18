@@ -10,7 +10,6 @@ Token House governance operates on a seasonal schedule. Seasons happen roughly e
 During each Season, Token House voting occurs via three-week voting cycles. 
 Voting Cycles begin on Thursday at 19:00p GMT (12p PST) and end on Wednesday at 19:00 GMT (12p PST).
 
-
 During Reflection Periods, the Optimism Foundation will publish a proposed changelog to the Operating Manual and a set of governance proposals aimed at addressing the feedback received in the previous season. 
 
 Seasons are separated with a Reflection Period. Reflection Periods may be followed by Special Voting Cycles to adopt proposals that come out of the Reflection Period.
