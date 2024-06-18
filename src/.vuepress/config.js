@@ -161,7 +161,30 @@ module.exports = {
       },
     ],
     searchPlaceholder: 'Search the docs',
-    sidebar: {    
+    sidebar: {   
+      '/docs/welcome' : [
+        ["/docs/welcome/", "Overview"],
+        "/docs/governance/law-of-chains-disclaimer.md",
+        [
+          "https://docs.google.com/spreadsheets/d/1Ul8iMTsOFUKUmqz6MK0zpgt8Ki8tFtoWKGlwXj-Op34",
+          "Governance Fund Tracker",
+        ],
+        [
+          "https://gov.optimism.io/t/working-constitution-of-the-optimism-collective/55",
+          "Working Constitution",
+        ],
+        [
+          "https://github.com/ethereum-optimism/OPerating-manual/blob/main/manual.md",
+          "Operating Manual",
+        ],
+      ],
+      '/docs/token-house' : [
+        ["/docs/token-house/", "Overview"],
+        ["/docs/token-house", "How to Delegate OP Tokens"]
+      ],
+      '/docs/citizen-house' : [
+        ["/docs/citizen-house/", "Overview"],
+      ],
       '/docs/identity/': [
         '/docs/identity/intro',
         '/docs/identity/build',
@@ -173,6 +196,9 @@ module.exports = {
         },
         "/docs/identity/app",
         "/docs/identity/glossary",
+      ],
+      '/docs/op-token' : [
+        ["/docs/op-token/", "Overview"],
       ],
       "/docs/governance/": [
         ["/docs/governance/", "What is the Optimism Collective?"],
@@ -217,20 +243,7 @@ module.exports = {
           children: [
             "/docs/governance/token-house.md",
             "/docs/governance/token-house-history.md",
-            "/docs/governance/gov-fund.md",
-            "/docs/governance/law-of-chains-disclaimer.md",
-            [
-              "https://docs.google.com/spreadsheets/d/1Ul8iMTsOFUKUmqz6MK0zpgt8Ki8tFtoWKGlwXj-Op34",
-              "Governance Fund Tracker",
-            ],
-            [
-              "https://gov.optimism.io/t/working-constitution-of-the-optimism-collective/55",
-              "Working Constitution",
-            ],
-            [
-              "https://github.com/ethereum-optimism/OPerating-manual/blob/main/manual.md",
-              "Operating Manual",
-            ],
+            "/docs/governance/gov-fund.md"
           ],
           collapsable: true,
         },
@@ -252,7 +265,7 @@ module.exports = {
         "/docs/governance/what-is-the-optimism-foundation.md",
       ],
       "/docs/contribute/": [
-        ["/docs/contribute/", "Contributions Home"],
+        ["/docs/contribute/", "Overview"],
         [
           "https://calendar.google.com/calendar/embed?src=c_4hui70itm089e7t8q50heh1kno%40group.calendar.google.com",
           "Upcoming Events",
