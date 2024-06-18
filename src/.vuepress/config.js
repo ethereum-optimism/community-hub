@@ -70,7 +70,27 @@ module.exports = {
       /* When you update here, don't forget to update the tiles
          in src/README.md */
       {
-        text: "Governance",
+        text: "Welcome",
+        link: "/docs/governance/",
+      },
+      {
+        text: "Get a Grant",
+        link: "/docs/governance/get-a-grant.md",
+      },
+      {
+        text: "Token House",
+        link: "/docs/governance/",
+      },
+      {
+        text: "Citizen House",
+        link: "/docs/governance/",
+      },
+      {
+        text: "Identity",
+        link: "/docs/governance/",
+      },
+      {
+        text: "OP Token Info",
         link: "/docs/governance/",
       },
       {
