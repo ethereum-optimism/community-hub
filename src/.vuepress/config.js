@@ -98,66 +98,10 @@ module.exports = {
         link: "/docs/contribute/",
       },
       {
-        text: "Support",
-        link: "/docs/biz/",
-      },
-      {
         text: "Technical Docs",
         link: "https://docs.optimism.io/",
         target: '_blank', 
         rel: 'noopener noreferrer' 
-      },
-      {
-        text: "Community",
-        items: [
-          {
-            icon: "discord",
-            iconPrefix: "fab fa-",
-            iconClass: "color-discord",
-            text: "Discord",
-            link: "https://discord.optimism.io",
-          },
-          {
-            icon: "github",
-            iconPrefix: "fab fa-",
-            iconClass: "color-github",
-            text: "GitHub",
-            link: "https://github.com/ethereum-optimism/optimism",
-          },
-          {
-            icon: "twitter",
-            iconPrefix: "fab fa-",
-            iconClass: "color-twitter",
-            text: "Twitter",
-            link: "https://twitter.com/optimismFND",
-          },
-          {
-            icon: "twitch",
-            iconPrefix: "fab fa-",
-            iconClass: "color-twitch",
-            text: "Twitch",
-            link: "https://www.twitch.tv/optimismpbc",
-          },
-          {
-            icon: "medium",
-            iconPrefix: "fab fa-",
-            iconClass: "color-medium",
-            text: "Blog",
-            link: "https://optimismpbc.medium.com/",
-          },
-          {
-            icon: "computer-classic",
-            iconClass: "color-ecosystem",
-            text: "Ecosystem",
-            link: "https://www.optimism.io/apps/all",
-          },
-          {
-            icon: "globe",
-            iconClass: "color-optimism",
-            text: "optimism.io",
-            link: "https://www.optimism.io/",
-          },
-        ],
       },
     ],
     searchPlaceholder: 'Search the docs',
@@ -167,7 +111,8 @@ module.exports = {
         ["/docs/welcome/what-is-the-optimism-foundation.md", "What is the Optimism Foundation"]
       ],
       '/docs/grant' : [
-        ["/docs/grant/", "Overview"]
+        ["/docs/grant/", "Overview"],
+        ["/docs/grant/get-support.md", "Additional Support"]
       ],
       '/docs/token-house' : [
         ["/docs/token-house/", "Overview"],
