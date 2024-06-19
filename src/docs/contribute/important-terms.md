@@ -7,7 +7,7 @@ There is a lot going on inside the Optimism Collective. This doc aims to help yo
 
 If you have specific questions, [join our Office Hours in Discord](https://discord.gg/optimism) (every 2nd week). If you want more support in creating Optimism content, check out our [Ambassador Program](./contribution-path/Ambassador-req.md)! 
 
-For press and media inquiries, reach out to marketing@optimism.io. For amplification or marketing of your project, please see [project support options](../biz/README.md#marketing-requests-🦸🦸).
+For press and media inquiries, reach out to marketing@optimism.io. For amplification or marketing of your project, please see [project support options](../grant/get-support.md).
 
 ## The Optimistic Vision
 
@@ -15,7 +15,7 @@ An inclusive, open source Superchain that sustainably funds Public Goods, dispel
 
 ### The RetroPGF Flywheel
 
-![](../../assets/docs/governance/retropgf/retropgf-fly-wheel.png)
+![](../../assets/docs/citizen-house/how-retro-funding-works.png)
 
 Optimism generates revenue through transaction fees paid on OP Mainnet and other OP Chains. Part of this revenue is directed by the Optimism Collective through RetroPGF. Better public goods means more development, which creates more revenue that can be directed to public goods. Read [more about the flywheel](https://app.optimism.io/retropgf).
 

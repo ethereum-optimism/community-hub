@@ -15,7 +15,7 @@ This key ingredient to the [Optimistic vision](https://www.optimism.io/vision) i
 
 This means public goods funding is a critical growth strategy. For Optimism, well-funded public goods means better developer tooling, widespread user education, safer infrastructure, and industry-leading research. It means Optimism can last and thrive.
 
-Once we show that this model can drive a successful economy for the Optimism Collective, we can scale the principle of **`impact = profit`** to the world!
+Once we show that this model can drive a successful economy for the Optimism Collective, we can scale the principle of **`impact=profit`** to the world!
 
 RetroPGF is a core part of Optimism’s vision. If done right, it will form the backbone for a new type of economy. As with any complex system, though, this new process can’t be centrally planned or designed all at once. **The only way to build it *well* is to build it *together*.** This journey will require care, open-mindedness, patience, and, of course, optimism!
 

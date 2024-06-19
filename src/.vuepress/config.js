@@ -82,7 +82,7 @@ module.exports = {
         link: "/docs/token-house/",
       },
       {
-        text: "Citizen House",
+        text: "Citizens House",
         link: "/docs/citizen-house/",
       },
       {
@@ -108,6 +108,14 @@ module.exports = {
     sidebar: {   
       '/docs/welcome' : [
         ["/docs/welcome/", "Overview"],
+        [
+          "https://gov.optimism.io/t/working-constitution-of-the-optimism-collective/55",
+          "Working Constitution",
+        ],
+        [
+          "https://github.com/ethereum-optimism/OPerating-manual/blob/main/manual.md",
+          "OPerating Manual",
+        ],
         ["/docs/welcome/what-is-the-optimism-foundation.md", "What is the Optimism Foundation"]
       ],
       '/docs/grant' : [
@@ -134,6 +142,16 @@ module.exports = {
       ],
       '/docs/op-token' : [
         ["/docs/op-token/", "Overview"],
+        {
+          title: "Airdrops",
+          children: [
+            "/docs/op-token/airdrop-1.md",
+            "/docs/op-token/airdrop-2.md",
+            "/docs/op-token/airdrop-3.md",
+            "/docs/op-token/airdrop-4.md",
+          ],
+          collapsable: true,
+        },
       ],
       "/docs/contribute/": [
         ["/docs/contribute/", "Overview"],

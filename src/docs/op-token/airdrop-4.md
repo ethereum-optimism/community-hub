@@ -7,7 +7,7 @@ Airdrop #4 celebrates the vibrant creative energy that artists introduce to the 
 
 Read on for more detail about eligibility criteria and allocations.
 
-::: info Airdrop #4 does need to be claimed 
+::: info Airdrop #4 needs to be claimed 
 Go to [https://app.optimism.io/airdrops](https://app.optimism.io/airdrops) to claim.
 
 :::
