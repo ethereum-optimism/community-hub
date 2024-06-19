@@ -63,7 +63,13 @@ export default Vue.extend({
                                     " Discord community"
                                 ])
                             ]),
-                            h("a", { attrs: { href: "https://airtable.com/appQ2S9IatldkoNQw/pagyJSUyxJA2SQKO3/form", target: "_blank" } }, [
+                            h("a", { attrs: { href: "https://x.com/Optimism", target: "_blank" } }, [
+                                h("div", [
+                                    h("i", { attrs: { class: "fab fa-twitter" } }),
+                                    " Follow us on Twitter"
+                                ])
+                            ]),
+                            h("a", { attrs: { href: "https://share.hsforms.com/1yENj8CV9TzGYBASD0JC8_gqoshb", target: "_blank" } }, [
                                 h("div", [
                                     h("i", { attrs: { class: "far fa-comment-dots" } }),
                                     " Connect with Optimism"
@@ -75,7 +81,7 @@ export default Vue.extend({
                                     " Make an issue on GitHub"
                                 ])
                             ]),
-                            h("a", { attrs: { href: "https://github.com/ethereum-optimism/optimism/contribute", target: "_blank" } }, [
+                            h("a", { attrs: { href: "https://contribute.optimism.io/", target: "_blank" } }, [
                                 h("div", [
                                     h("i", { attrs: { class: "far fa-hands-helping" } }),
                                     " Contribute to Optimism"

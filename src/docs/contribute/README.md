@@ -15,7 +15,7 @@ This key ingredient to the [Optimistic vision](https://www.optimism.io/vision) i
 
 This means public goods funding is a critical growth strategy. For Optimism, well-funded public goods means better developer tooling, widespread user education, safer infrastructure, and industry-leading research. It means Optimism can last and thrive.
 
-Once we show that this model can drive a successful economy for the Optimism Collective, we can scale the principle of **`impact = profit`** to the world!
+Once we show that this model can drive a successful economy for the Optimism Collective, we can scale the principle of **`impact=profit`** to the world!
 
 RetroPGF is a core part of Optimism’s vision. If done right, it will form the backbone for a new type of economy. As with any complex system, though, this new process can’t be centrally planned or designed all at once. **The only way to build it *well* is to build it *together*.** This journey will require care, open-mindedness, patience, and, of course, optimism!
 
@@ -31,7 +31,7 @@ Most importantly, make sure that your contributions align with the [Collective I
 
 You can contribute towards the collective in a million different ways, and there is no way we could make processes for all of these contributions. Nor would we want to! However, getting from 0 to 1 is the hardest step. So we have made a few ways to get you up to speed and contributing in no time! 
 
-If you are looking for what is happening right now, add the [Optimism Public calender](https://calendar.google.com/calendar/embed?src=c_4hui70itm089e7t8q50heh1kno%40group.calendar.google.com) to see upcoming events! We also have a [“Get a Grant”](../governance/get-a-grant.md) page if you already have an idea on how you want to contribute. 
+If you are looking for what is happening right now, add the [Optimism Public calender](https://calendar.google.com/calendar/embed?src=c_4hui70itm089e7t8q50heh1kno%40group.calendar.google.com) to see upcoming events! We also have a [“Get a Grant”](../grant/README.md) page if you already have an idea on how you want to contribute. 
 
 ## 🌍 Accessibility
 
@@ -54,7 +54,7 @@ Data is an essential ingredient to good decision making. We take our data seriou
 
 As a developer you have a few options to get contributing! Build on us, with us, or help move the whole space forward. We are happy to have you <3.
 
-* If you are a dapp developer, check out our [developer docs to get started](../developers/README.md). 
+* If you are a dapp developer, check out our [developer docs to get started](https://docs.optimism.io/). 
 * If you want to get a little deeper into the [OP Stack](https://stack.optimism.io/), we have great docs for [Getting Started with the OP Stack](https://stack.optimism.io/docs/build/getting-started/). 
 * If you are looking for inspiration on what to build then check out the [Ideas List](https://github.com/orgs/ethereum-optimism/projects/31/views/3) which has a wide range of ideas from quick builds to mad science innovations. Go poke around! 
 * If you want to contribute directly to the Optimism codebase please [read this doc](./technical-contributions.md).
@@ -65,10 +65,10 @@ As a developer you have a few options to get contributing! Build on us, with us,
 
 The Optimism Collectives governance is an incredibly collective and exciting space that is growing and evolving. Plenty of opportunities to have impact! All work supported or executed by the Collective should be in pursuit of our [Collective Intents](https://gov.optimism.io/t/collective-intents/5874).
 
-* An easy place to start is to look at the [Get a Grant](../governance/get-a-grant.md) page. This is an easy way to see what governance is looking for.
-* Before getting into our governance its highly recommended to [understand our unique governance set up](../governance/README.md).
-* If you are serious about getting into governance you can get involved in the Token House by [becoming a Delegate](../governance/delegate.md). This is a serious responsibility, so make sure you [understand what is required of you](../governance/existing-delegate.md).
-* There is also the [Citizens House](../governance/citizens-house.md). You can read more about [Citizenship here](../governance/citizenship.md). 
+* An easy place to start is to look at the [Get a Grant](../grant/README.md) page. This is an easy way to see what governance is looking for.
+* Before getting into our governance its highly recommended to [understand our unique governance set up](../welcome/README.md).
+* If you are serious about getting into governance you can get involved in the Token House by [becoming a Delegate](../token-house/how-to-delegate.md). This is a serious responsibility, so make sure you [understand what is required of you](../token-house/how-to-delegate.md).
+* There is also the [Citizens House](../citizen-house/README.md). You can read more about [Citizenship here](../citizen-house/README.md). 
 * If you are a delegate already involved and voting, looking for additional ways to help the Collective, reach out to lavande@optimism.io.
 
 ## 🫡 Marketing

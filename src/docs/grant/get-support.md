@@ -1,0 +1,54 @@
+---
+title: How do I get my project support?
+lang: en-US
+---
+
+Welcome! If you have not filled out the connect with [Optimism form](https://share.hsforms.com/1yENj8CV9TzGYBASD0JC8_gqoshb) please do so prior to reading this.
+
+We are excited for your deployment onto OP Mainnet!
+You will be welcomed by [insightful metrics](https://dune.com/optimismfnd/Optimism), [a budding community](https://discord-gateway.optimism.io/) 🫂🫂, and some great exclusive [Telegram Channels](https://t.me/+Cb7q0a1YqItkZTRk) ⚙️⚙️ for builders.
+
+## Developer Support 🙋💻
+
+Steps to take if you would like developer support immediately, ranked in order of response times. 
+
+1. Get help quickly in our [Developer Support repo](https://github.com/ethereum-optimism/developers/discussions).
+1. See our [Developer Documentation](https://docs.optimism.io/) & [Tutorials](https://github.com/ethereum-optimism/optimism-tutorial).
+
+## Marketing Requests 🦸🦸
+
+When your project is deployed on the Superchain, you can be added to [our Superchain apps page](https://www.optimism.io/apps). Simply [fill out this form](https://share.hsforms.com/1hUEaGvsySTK9ccNBcNmjkwqoshb) to be included. Inclusion is at our discretion. 
+
+### Promoting Values before anything else
+
+We love to promote values-aligned projects as part of our broader content program.
+
+### Tweeting
+
+We do the occasional retweet but the bar for these is kept quite high in order to keep our Twitter feed as valuable/high signal as possible. 
+
+Other than RT's, we may like or reply to a tweet or include it in our weekly wrap up thread. 
+You're welcome to submit your tweet for amplification but please keep in mind if and how we interact with it is at our sole discretion.
+ 
+## Other Helpful Links
+
+* Curious about our Optimistic Origins? Listen to [this OPRadio Episode](https://twitter.com/optimismFND/status/1585015947626426368) with one of our founders, [@JingleJam](https://twitter.com/jinglejamOP).
+* What do the next 100 years have in store for crypto? [@Karl_dot_tech](https://twitter.com/karl_dot_tech) shares his vision in [this chat with Bankless](https://www.youtube.com/watch?v=60F2wtjZO5M).
+* Want to see what we are doing with Retroactive Public Goods? [See here](../citizen-house/how-retro-funding-works.md)
+
+**Last note:** [We’re hiring](https://jobs.optimism.io/)! 
+Join our community! 
+Have fun! 
+Enjoy life! 
+Don’t worry so much! 
+Brush your teeth! 
+Eat apples! 
+Research the origins of public relations! 
+Give back to your community! 
+Tweet things you don’t actually believe! 
+Download free music using your library card! 
+Don’t download a car! 
+Don’t listen to anyone except for your parents, and even then, with a grain of salt!
+ 
+## WELCOME TO THE COLLECTIVE 🔴✨
+ 
