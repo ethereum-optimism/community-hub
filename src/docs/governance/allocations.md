@@ -106,7 +106,7 @@ An allocation of **8.8%** of the OP token supply will be held in reserve for fut
 
 ***Allocation: 20%***
 
-[Retroactive Public Goods Funding (RetroPGF)](https://medium.com/ethereum-optimism/retroactive-public-goods-funding-33c9b7d00f0c) will initially be distributed by the [Citizens' House](citizens-house.md). 
+[Retroactive Public Goods Funding (RetroPGF)](https://medium.com/ethereum-optimism/retroactive-public-goods-funding-33c9b7d00f0c) will initially be distributed by the [Citizens' House](../citizen-house/README.md). 
 RetroPGF rounds are expected to occur on a quarterly basis with the objective of ensuring that all OPCOs are rewarded adequately, appropriately, and reliably based on their impact to the Collective—key to our [vision](https://optimism.io/vision).
 
 RetroPGF will be funded by several revenue sources:

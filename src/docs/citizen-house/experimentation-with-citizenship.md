@@ -1,0 +1,67 @@
+---
+title: Experimentation with Citizenship
+lang: en-US
+---
+
+The Citizens' House is half of the Optimism Collective's bicameral governance system, designed to work alongside the pure token-voting based Token House. 
+
+The purpose of the Citizens' House is to:
+- Reduce the concentration of power in the Collective
+- Safeguard against the capture of the Token House
+- Allocate resources according to the long-term benefit to the Collective
+
+Any changes to the Citizens' House, including changes to Citizen selection, should be evaluated based on their contribution to these objectives.
+
+## Taking an experimental approach to Citizen selection
+
+An experimental approach to Citizen selection ensures that changes are made based on evidence rather than gut feeling. Guesswork and informed opinions play a part in the formation of hypotheses, but diverging opinions are settled through hypothesis-testing. This process ensures that as Citizen selection evolves over time, it is always evolving in the direction of progress towards the objectives. Changes that have an undesirable effect are rolled back, and mistakes are learned from to inform future improvements.
+
+Disclaimer: *The types of experiments run in the name of Citizen selection are unlikely to be double-blind controlled trials. We seek to use the principles and practices of experimentation to the maximum extent feasible, with the aim of growing the amount of high-confidence knowledge about Citizen selection that the Collective has access to.*
+
+## Experimentation on Citizen selection in practice
+
+Effective experimentation with Citizen selection has several prerequisites:
+
+1. The ability to measure both input and outcome variables
+1. Short feedback cycles
+1. Reversibility
+
+### Measuring both input and outcome variables
+
+To run effective experiments, the inputs and outcomes of those experiments must be measurable. Inputs (independent variables) are the aspects of Citizen selection that we want to change or influence, and outcomes (dependent variables) are the measurable effects of the experiment, usually tied to the overall objective we want to achieve. A large effort is underway to improve our ability to measure key aspects of Retroactive Public Goods Funding (Retro Funding), Citizens' House performance and other aspects of the Citizenry.
+
+### Short feedback cycles
+
+Effective experimentation often involves testing many different variables in different conditions. In order to make efficient progress, we need to be able to run a lot of experiments and learn from them quickly. Increasing the number of Retro Funding iterations per year and introducing new opportunities for experiments can allow us to shorten feedback cycles.
+
+### Reversibility
+
+The primary objective of experimentation is to learn. Experiments are a risk - we are never sure what the outcome will be, otherwise there would be no need for an experiment. Any changes made to Citizen selection in the name of experimentation must therefore be reversible. The concept of guest voters in Retro Funding experiments is one way to ensure reversibility of experiments.
+
+### Citizen selection experiments
+
+The purpose of experimentation with Citizen selection is to increase the Collective's knowledge about the effectiveness of various different selection mechanisms to ultimately enable effective future decisions. Experiments are currently run as part of the planned Retro Funding iterations that happen multiple times per year, with experiment outcomes being shared publicly at the end of each experiment.
+
+For each Retro Funding iteration, a different selection mechanism may be tested by selecting a limited number of guest voters to participate in the round. Guest voters are temporary participants in Retro Funding votes, and should not be confused with Citizens who participate in protocol upgrade proposal vetoes in addition to Retro Funding votes. The purpose of introducing guest voters is to increase the reversibility of experiments.
+
+Increased data collection around Retro Funding votes and their participants is also an essential component of measuring experiment outcomes, and may take several forms:
+* Surveys distributed to voters, builders and other stakeholders
+* An analysis of voting behavior within and across Retro Funding votes
+* Measuring the concentration of power through social graph analysis
+
+Another essential type of data required for experimentation with Citizen selection is identity and 'reputation' data. This forms an important input into selection mechanisms themselves and is therefore essential to the Collective's ability to experiment with various approaches.
+
+## Identity, reputation and Citizen selection
+
+There are a myriad of variations of the above approaches to Citizen selection that may be tested experimentally. Many such selection mechanisms rely on information about prospective Citizens to make selection decisions. Building a rich identity layer within the Collective allows these kinds of selection mechanisms to function.
+
+By enabling individual members of the Collective to build and maintain their identity as a Collective participant, potentially relevant information about the individual can be factored into the selection process. For example, some selection mechanisms may use someone's professional contributions to the Collective as a deciding factor in whether they should be Citizens. Another might use the duration and depth of engagement with apps built on the Superchain. These are just hypothetical examples, but they illustrate the importance of individual identity in being able to test all selection mechanisms.
+
+Building out [the identity stack](https://hackmd.io/aVobj2ZKRoGZo5hKbvneiA) ensures that the Optimism Collective is able to effectively experiment with all possible selection mechanisms to identify those with the best performance. It is therefore a core building block in the development of Citizenship. Without adequate data on potential candidate Citizens and the performance of the Citizenry on its objectives, it is impossible to experiment with selection criteria.
+
+## To recap 
+
+* A solid and shared foundation of knowledge and data from open-sourced experiments is essential for the Collective's decision-making ability. 
+* Experimentation with selection criteria is the most effective way to increase knowledge around the effectiveness of various approaches to Citizen selection.
+* Measurement of inputs and outcomes of Citizen selection, short feedback loops and reversible changes are essential prerequisites for the Collective to build up a reliable process for experimentation.
+* The Optimism Foundation currently runs experiments on Citizen selection using guest voters in Retro Funding iterations with the help of surveys, voting analysis and other methods to measure experiment outcomes.

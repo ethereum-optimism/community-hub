@@ -68,7 +68,7 @@ The Optimism Collectives governance is an incredibly collective and exciting spa
 * An easy place to start is to look at the [Get a Grant](../governance/get-a-grant.md) page. This is an easy way to see what governance is looking for.
 * Before getting into our governance its highly recommended to [understand our unique governance set up](../governance/README.md).
 * If you are serious about getting into governance you can get involved in the Token House by [becoming a Delegate](../governance/delegate.md). This is a serious responsibility, so make sure you [understand what is required of you](../governance/existing-delegate.md).
-* There is also the [Citizens House](../governance/citizens-house.md). You can read more about [Citizenship here](../governance/citizenship.md). 
+* There is also the [Citizens House](../citizen-house/README.md). You can read more about [Citizenship here](../citizen-house/experimentation-with-citizenship.md). 
 * If you are a delegate already involved and voting, looking for additional ways to help the Collective, reach out to lavande@optimism.io.
 
 ## 🫡 Marketing
