@@ -1,0 +1,20 @@
+---
+title: Citizens House Overview
+lang: en-US
+---
+
+The Citizens' House is a large-scale experiment in non-plutocratic governance, meaning one person = one vote. The Citizens’ House works alongside the Token House to govern the Optimism Collective, and is responsible for the retroactive funding of public goods.
+
+The goals of the Citizens' House are to:
+* Reduce concentration of power
+* Safeguard against capture of Token House
+* Allocate resources according to the long-term benefit to the Collective
+
+## Responsibilities
+In its current phase, the Citizens' House is responsible for voting on the allocation of Retroactive Public Goods Funding (Retro Funding), and has the power to veto protocol upgrade proposals made by the Token House. 
+
+The Citizens' House is in an initial bootstrapping phase, and will take on progressively more governance responsibilities over tme, such as determining scope and round sizing. Holding a voting badge in this initial stage does not guarantee permanent participation in the Citizens’ House and future iterations of Retro Funding.
+
+## Moving Forward
+
+In future phases, the Citizens’ House may gain additional governance powers. For example, in addition to voting on Retro Funding and protocol upgrade vetos, the Citizens’ House may work alongside the Token House to govern allocation of surplus protocol revenue and collaborate on criteria for participation in the Citizens’ House. You can [read more about this transition here](https://optimism.mirror.xyz/PLrAQgE1EGRo7GRrFoztplFChnUZda4DFGW3dkQayxY).
