@@ -235,17 +235,6 @@ module.exports = {
           ],
           collapsable: true,
         },
-        {
-          title: "Citizen House Governance",
-          children: [
-            "/docs/governance/citizens-house.md",
-            "/docs/governance/citizenship.md",
-            "/docs/governance/retropgf-1.md",
-            "/docs/governance/retropgf-2.md",
-            "/docs/governance/retropgf-3.md",
-          ],
-          collapsable: true,
-        },
         [
           "https://calendar.google.com/calendar/u/0?cid=Y19mbm10Z3VoNm5vbzZxZ2JuaTJncGVyaWQ0a0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t",
           "Governance Calendar",
@@ -437,8 +426,7 @@ module.exports = {
         {
           title: "📈 Data & Analytics",
           children: [
-            "/docs/contribute/contribution-path/numbaNERDs.md",
-            "/docs/contribute/contribution-path/attestation-identity.md"
+            "/docs/contribute/contribution-path/numbaNERDs.md"
           ],
           collapsable: true,
         },
