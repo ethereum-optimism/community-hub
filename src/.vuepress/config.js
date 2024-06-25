@@ -74,6 +74,14 @@ module.exports = {
         link: "/docs/governance/",
       },
       {
+        text: "Citizens House",
+        link: "/docs/citizen-house/",
+      },
+      {
+        text: "Identity",
+        link: "/docs/identity/",
+      },
+      {
         text: "Contribute",
         link: "/docs/contribute/",
       },
@@ -95,7 +103,7 @@ module.exports = {
             iconPrefix: "fab fa-",
             iconClass: "color-discord",
             text: "Discord",
-            link: "https://discord.optimism.io",
+            link: "https://discord.gg/optimism",
           },
           {
             icon: "github",
@@ -143,16 +151,29 @@ module.exports = {
     searchPlaceholder: 'Search the docs',
     sidebar: {    
       '/docs/identity/': [
-        '/docs/identity/intro',
-        '/docs/identity/build',
-        '/docs/identity/profile',
-        '/docs/identity/schemas',
+        ["/docs/identity/", "Identity Overview"],
+        '/docs/identity/identity-and-rep',
+        '/docs/identity/project-and-individual-identity-in-the-collective',
+        '/docs/identity/attestations-best-practices',
+        [
+          "https://docs.optimism.io/chain/identity/about-attestations",
+          "Build with Attestations"
+        ]
+      ],
+      '/docs/citizen-house/': [
+        ["/docs/citizen-house/", "Citizens House Overview"],
+        '/docs/citizen-house/how-retro-funding-works',
         {
-          title: "Technical details",
-          children: ["/docs/identity/atst-v1", "/docs/identity/atst-v0"],
+          title: "Past Retro Funding Rounds",
+          children: [
+            "/docs/citizen-house/retropgf-1.md",
+            "/docs/citizen-house/retropgf-2.md",
+            "/docs/citizen-house/retropgf-3.md"
+          ],
+          collapsable: true,
         },
-        "/docs/identity/app",
-        "/docs/identity/glossary",
+        '/docs/citizen-house/citizenship-selection',
+        '/docs/citizen-house/experimentation-with-citizenship'
       ],
       "/docs/governance/": [
         ["/docs/governance/", "What is the Optimism Collective?"],
