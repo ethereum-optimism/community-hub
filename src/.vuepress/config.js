@@ -448,6 +448,7 @@ module.exports = {
           title: "🏛️ Governance",
           children: [
             "/docs/governance/get-a-grant.md",
+            "/docs/contribute/contribution-path/govNERDs.md",
             ["/docs/governance/delegate.md", "Token House"],
             ["/docs/governance/citizens-house.md", "Citizen House"],
           ],
