@@ -168,7 +168,8 @@ module.exports = {
           children: [
             "/docs/citizen-house/retropgf-1.md",
             "/docs/citizen-house/retropgf-2.md",
-            "/docs/citizen-house/retropgf-3.md"
+            "/docs/citizen-house/retropgf-3.md",
+            "/docs/citizen-house/retropgf-4.md"
           ],
           collapsable: true,
         },
