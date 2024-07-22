@@ -15,14 +15,14 @@ Each Retro Funding round will have its own scope, specific criteria for eligibil
 
 If you’re a builder who is creating impact, or doing high impact work, that you believe is aligned with the Collective and within the scope of a Retro Funding round - you should apply for Retro Funding! Builders across the Superchain are all eligible.
 
-You can sign up for current rounds, and keep up with information about upcoming rounds, via [retrofunding.optimism.io](retrofunding.optimism.io). 
+You can sign up for current rounds, and keep up with information about upcoming rounds, via [retrofunding.optimism.io](https://retrofunding.optimism.io/). 
 
 So far, over 50,000,000 OP has been rewarded to high impact projects across the Optimism Collective, with nearly 800,000,000 OP dedicated to future rounds of Retro Funding!
 
 **How to apply**:
 
 1. Build something that provides positive impact to the Collective or Superchain, and is within scope of a specific Retro Funding round, and sign up for rounds at retrofunding.optimism.io. 
-    - Not sure what to build for Retro Funding? Checkout the Builders Ideas list for inspiration at [contribute.optimism.io](contribute.optimism.io).
+    - Not sure what to build for Retro Funding? Checkout the Builders Ideas list for inspiration at [contribute.optimism.io](https://contribute.optimism.io/).
 
 
 3. Start building impact *today* for future rounds! These include:
