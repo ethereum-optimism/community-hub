@@ -161,7 +161,7 @@ In the root of your working directory create a new directory: `scripts`.
     ```
 
 ::: info Archive Nodes
-You will need to point `op-geth` at `l2geth` with `--rollup.historicalrpc`: Enables the historical RPC endpoint. This endpoint is used to fetch historical execution data from Legacy Geth from before the [Bedrock upgrade](https://twitter.com/optimismFND/status/1666850591669202965). This flag is only necessary for OP Mainnet.
+You will need to point `op-geth` at `l2geth` with `--rollup.historicalrpc`: Enables the historical RPC endpoint. This endpoint is used to fetch historical execution data from Legacy Geth from before the [Bedrock upgrade](https://x.com/Optimism/status/1666850591669202965). This flag is only necessary for OP Mainnet.
 
 You will also need to add `--gcmode archive`.
 :::
