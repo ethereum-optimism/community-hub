@@ -15,19 +15,17 @@ Each Retro Funding round will have its own scope, specific criteria for eligibil
 
 If you’re a builder who is creating impact, or doing high impact work, that you believe is aligned with the Collective and within the scope of a Retro Funding round - you should apply for Retro Funding! Builders across the Superchain are all eligible.
 
-You can sign up for current rounds, and keep up with information about upcoming rounds, via retrofunding.optimism.io. 
+You can sign up for current rounds, and keep up with information about upcoming rounds, via [retrofunding.optimism.io](https://retrofunding.optimism.io/). 
 
-So far, over 40,000,000 OP has been rewarded to high impact projects across the Optimism Collective, with nearly 800,000,000 OP dedicated to future rounds of Retro Funding!
+So far, over 50,000,000 OP has been rewarded to high impact projects across the Optimism Collective, with nearly 800,000,000 OP dedicated to future rounds of Retro Funding!
 
 **How to apply**:
 
 1. Build something that provides positive impact to the Collective or Superchain, and is within scope of a specific Retro Funding round, and sign up for rounds at retrofunding.optimism.io. 
-    - Not sure what to build for Retro Funding? Checkout the Builders Ideas list for inspiration at contribute.optimism.io.
+    - Not sure what to build for Retro Funding? Checkout the Builders Ideas list for inspiration at [contribute.optimism.io](https://contribute.optimism.io/).
 
 
 3. Start building impact *today* for future rounds! These include:
-    -  Retro Funding 4: Onchain Builders
-        -  This round is rewarding onchain builders who have deployed contracts to the following OP chains: OP Mainnet, Base, Zora, Mode, Frax and Metal and contributed to the success of the Superchain. Submit your application until June 6th!
     -  Retro Funding 5: OP Stack
         -  Contributions to the OP Stack and improvements to the foundational elements of Optimism's infrastructure will be rewarded in this round. Submit your application August, 2024!
     -  Retro Funding 6: Governance
@@ -68,14 +66,14 @@ Ask any questions about Foundation Missions by commenting directly on the Github
 
 
 **How to apply for a Token House Mission**:
-1. Visit the [Token House Mission Requests](https://github.com/ethereum-optimism/ecosystem-contributions/issues?page=1&q=is%3Aissue+is%3Aopen+label%3A%22Delegate+Mission+Request%22) and find an open Mission Request on the list that you’d like to work on. All Token House Mission applications will open on July 18th and run every 3 weeks through December.
+1. Visit the [Token House Mission Requests](https://github.com/ethereum-optimism/ecosystem-contributions/issues?page=1&q=is%3Aissue+is%3Aopen+label%3A%22Delegate+Mission+Request%22) and find an open Mission Request on the list that you’d like to work on. All Token House Mission applications open on July 18th and run every 3 weeks through December.
 
 3. Submit your application by following the link in the issue to Charmverse. All Token House Mission grants are completed by via Charmverse. 
    -  The OP amount requested to complete the Mission Request should reflect the minimum amount required to execute the Mission. Additional rewards may be received via Retro Funding, based on the impact of the executed Mission. Eventually - all work within the Collective can be rewarded via Retro Funding! You can view the [Mission Application Guide](https://gov.optimism.io/t/season-6-mission-application-guide/8114) for Season 6 for more information.
 4. Token House Mission Applications will be evaluated and selected by the Token House's Grants Council, with the help of the Developer Advisory Board. 
 5. If you're selected, you will be notified and required to complete the Foundation's KYC process. Once you start completing the Mission, make sure to update your milestone progress monthly (or as directed) in Charmverse.
 
-Ask any questions you have about Token House Missions in the #grants channel of the [Optimism Discord](https://discord-gateway.optimism.io/).
+Ask any questions you have about Token House Missions in the #grants channel of the [Optimism Discord](https://discord-gateway.optimism.io/). You can also visit the Grants Council Office Hours on Mondays from 12pm-1pm ET / 4-5pm GMT via the [OP Governance Calendar](https://calendar.google.com/calendar/u/0/r?cid=Y19mbm10Z3VoNm5vbzZxZ2JuaTJncGVyaWQ0a0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t). 
 
 ### Other Foundation Grants
 
