@@ -7,6 +7,8 @@ The Optimism Collective’s first round of Retroactive Public Goods Funding (Ret
 This round was the first Retro Funding  experiment of the collective and was [announced](https://medium.com/ethereum-optimism/retropgf-experiment-1-1-million-dollars-for-public-goods-f7e455cbdca) in the months following the [initial blog post on Retroactive Public Goods Funding](https://medium.com/ethereum-optimism/retroactive-public-goods-funding-33c9b7d00f0c). 
 Retro Funding 1 allocated $1M to **fund projects that have provided value to the Optimistic Ethereum ecosystem.** 
 
+
+
 ## Results
 In the first round of Retro Funding, 76 projects were nominated, and 58 were awarded funding by the badgeholders!
 The median funding received by a project in Retro Funding 1 was $14,670, while the top 10% of projects received more than $36,919.
