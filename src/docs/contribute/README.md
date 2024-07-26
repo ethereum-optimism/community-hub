@@ -9,7 +9,7 @@ So you want to get involved in the Optimism Collective?? We are so happy to have
 
 :::
 
-The Optimism Collective believes that **building public goods should be rewarded.**
+The Optimism Collective believes that **building public goods should be rewarded.** 
 
 This key ingredient to the [Optimistic vision](https://www.optimism.io/vision) is more than just altruism – it’s core to our success. Optimism’s codebase itself is an open-source project, and builds on the shoulders of countless OSS giants which came before it.
 
