@@ -315,7 +315,7 @@ These are contracts that are no longer relevant, but are kept as part of the sta
 
 
 - [DeployerWhitelist](https://github.com/ethereum-optimism/optimism/blob/65ec61dde94ffa93342728d324fecf474d228e1f/packages/contracts-bedrock/contracts/legacy/DeployerWhitelist.sol):
-  The `DeployerWhitelist` contract used to manage the whitelist before [OP Mainnet moved out of beta](https://twitter.com/optimismFND/status/1471571415774023682).
+  The `DeployerWhitelist` contract used to manage the whitelist before [OP Mainnet moved out of beta](https://x.com/Optimism/status/1471571415774023682).
 
 - [OVM_ETH](https://github.com/ethereum-optimism/optimism/blob/65ec61dde94ffa93342728d324fecf474d228e1f/packages/contracts-bedrock/contracts/legacy/LegacyERC20ETH.sol):
   The `OVM_ETH` contract used to manage users ETH balances prior to Bedrock.

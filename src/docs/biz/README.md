@@ -59,7 +59,7 @@ Grants are mainly handled by [The Optimism Collective](https://app.optimism.io/a
 ## Other Helpful Links
 
 Curious about our Optimistic Origins? 
-Listen to [this OPRadio Episode](https://twitter.com/optimismFND/status/1585015947626426368) with one of our founders, [@JingleJam](https://twitter.com/jinglejamOP).
+Listen to [this OPRadio Episode](https://x.com/Optimism/status/1585015947626426368) with one of our founders, [@JingleJam](https://twitter.com/jinglejamOP).
 
 What do the next 100 years have in store for crypto? [@Karl_dot_tech](https://twitter.com/karl_dot_tech) shares his vision in [this chat with Bankless](https://www.youtube.com/watch?v=60F2wtjZO5M).
 
