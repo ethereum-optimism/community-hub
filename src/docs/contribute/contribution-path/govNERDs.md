@@ -72,7 +72,7 @@ In order to progress to a `GovNERDs-in-training` you will need to meet the follo
 
 ### Required Context
 
-- All context from the wannabe role.
+- All context from the `wannabe-govNERDs` role.
 - Deepening understanding of how grants work, where people can apply, RetroFunding and associated applications and scope.
 - Deeply understanding proposal life cycles, templates, and proposal types.
 - If specialising, going into the history of that specialty, previous changes and reasoning.
