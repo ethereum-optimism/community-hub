@@ -1,0 +1,315 @@
+:root {
+    font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-weight: 440;    
+
+    .nx-rounded-xl {
+        border-radius: 5px;
+    }
+    
+    .nx-text-gray-100 {
+        color: var(--op-neutral-100);
+    }
+    
+    .nx-text-gray-200 {
+        color: var(--op-neutral-200);
+    }
+    
+    .nx-text-gray-300 {
+        color: var(--op-neutral-300);
+    }
+    
+    .nx-text-gray-400 {
+        color: var(--op-neutral-400);
+    }
+    
+    .nx-text-gray-500 {
+        color: var(--op-neutral-500);
+    }
+    
+    .nx-text-gray-600 {
+        color: var(--op-neutral-600);
+    }
+    
+    .nx-text-gray-700 {
+        color: var(--op-neutral-700);
+    }
+    
+    .nx-text-gray-800 {
+        color: var(--op-neutral-800);
+    }
+    
+    .nx-text-gray-900 {
+        color: var(--op-neutral-900);
+    }
+    
+    .nx-text-slate-900 {
+        color: var(--op-neutral-900);
+    }
+    
+    .nx-bg-gray-100 {
+        color: var(--op-neutral-100);
+    }
+    
+    .nx-bg-gray-200 {
+        color: var(--op-neutral-200);
+    }
+    
+    .nx-bg-gray-300 {
+        color: var(--op-neutral-300);
+    }
+    
+    .nx-bg-gray-400 {
+        color: var(--op-neutral-400);
+    }
+    
+    .nx-bg-gray-500 {
+        color: var(--op-neutral-500);
+    }
+    
+    .nx-bg-gray-600 {
+        color: var(--op-neutral-600);
+    }
+    
+    .nx-bg-gray-800 {
+        color: var(--op-neutral-800);
+    }
+    
+    .nx-bg-gray-900 {
+        color: var(--op-neutral-900);
+    }
+    
+    .nx-bg-primary-100 {
+        background-color:var(--op-blue-100);
+    }
+    
+    .nx-bg-primary-200 {
+        background-color:var(--op-blue-200);
+    }
+    
+    .nx-bg-primary-300 {
+        background-color:var(--op-blue-300);
+    }
+    
+    .nx-bg-primary-400 {
+        background-color:var(--op-blue-400);
+    }
+    
+    .nx-bg-primary-500 {
+        background-color:var(--op-blue-500);
+    }
+    
+    .nx-bg-primary-600 {
+        background-color:var(--op-blue-600);
+    }
+    
+    .nx-bg-primary-800 {
+        background-color:var(--op-blue-700);
+    }
+    
+    .nx-bg-primary-800 {
+        background-color:var(--op-blue-800);
+    }
+    
+    .nx-bg-primary-900 {
+        background-color:var(--op-blue-900);
+    }
+    
+    .nx-bg-primary-700\/5 {
+        background-color:var(--op-neutral-100);
+    }
+}
+
+/* Main nav */
+nav a span {
+    font-weight: 600;
+}
+
+/* Links */
+a.nx-underline {
+    text-decoration: none;
+}
+
+
+/* Headings */
+h2 {
+    border: none;
+    font-weight:700 !important;
+}
+
+h3 {
+    font-size: 1.25rem !important;
+    font-weight:700 !important;
+}
+
+h4 {
+    font-size: 1rem !important;
+    font-weight:700;
+}
+
+
+/* Override Nextra for headings in-content */
+.nextra-content h1 {
+    margin-top: 1.5rem;
+}
+
+.nextra-content h2 ~ p {
+    margin-top: .3rem
+}
+
+.nextra-content h3 ~ p {
+    margin-top: .3rem;
+}
+
+
+/* Set colors for common text elements */
+p, table, ol, ul {
+    color: var(--op-neutral-800);
+}
+
+:is(html[class~=dark]) p {
+    color: var(--op-neutral-200);
+}
+
+:is(html[class~=dark]) table {
+    color: var(--op-neutral-200);
+}
+
+:is(html[class~=dark]) ol {
+    color: var(--op-neutral-200);
+}
+
+:is(html[class~=dark]) ul {
+    color: var(--op-neutral-200);
+}
+
+
+/* Restyle Nextra Steps */
+.nextra-steps h3:before {
+    margin-top: -1px !important;
+    color: var(--op-neutral-600) !important;
+}
+
+:is(html[class~=dark]) .nextra-steps h3:before {
+    color: var(--op-neutral-300) !important;
+}
+
+
+/* Callouts */
+.nextra-callout svg {
+    /* margin-top: 4px; */
+}
+
+
+/* Customize code styles to match Optimism */
+code,kbd,samp,pre {
+    font-family:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace !important;
+    font-weight:420 !important;
+}
+
+code {
+    background-color: var(--op-neutral-100) !important;
+    border-radius: 5px!important;
+}
+
+:is(html[class~=dark]) code {
+    background-color: var(--op-neutral-700) !important;
+}
+
+pre {
+    border:1px solid var(--op-neutral-200);
+    background-color: var(--op-neutral-100) ;
+}
+
+:is(html[class~=dark]) pre {
+    border:1px solid var(--op-neutral-600);
+    background-color: var(--op-neutral-800) ;
+}
+
+
+/* External links styling */
+/* Style nav external links */
+.nextra-nav-container nav a[target="_blank"]:nth-child(2):after,
+.nextra-nav-container nav a[target="_blank"]:nth-child(3):after,
+.nextra-nav-container nav a[target="_blank"]:nth-child(4):after {
+    content: url("data:image/svg+xml,%3Csvg width='8' height='8' viewBox='0 0 10 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.33622 2.84025L1.17647 10L0 8.82354L7.15975 1.66378H0.849212V0H10V9.15081H8.33622V2.84025Z' fill='%239195A6'/%3E%3C/svg%3E%0A ");
+    padding-left: 20px;
+}
+
+/* sidebar external links */
+.nextra-sidebar-container a[target="_blank"]:after {
+    content: url("data:image/svg+xml,%3Csvg width='8' height='8' viewBox='0 0 10 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.33622 2.84025L1.17647 10L0 8.82354L7.15975 1.66378H0.849212V0H10V9.15081H8.33622V2.84025Z' fill='%239195A6'/%3E%3C/svg%3E%0A ");
+    padding-left: 6px;
+}
+
+/* in-content external links */
+.nextra-content a[target="_blank"]:after {
+    content: url('data:image/svg+xml,<svg width="8" height="8" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.33622 2.84025L1.17647 10L0 8.82354L7.15975 1.66378H0.849212V0H10V9.15081H8.33622V2.84025Z" fill="%233374DB"/></svg>');
+    padding-left: 5px;
+    margin-right: 2px;
+}
+
+
+/* Tables */ 
+table tr {
+    background-color: transparent !important;
+}
+
+
+/* Feedback Widget */
+.feelback-container {
+    padding-top: .1em;
+}
+
+.feelback-q {
+    padding-left: 0 !important;
+}
+
+.feelback-text {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--op-neutral-500);
+}
+
+.feelback-buttons button:hover {
+    background: var(--op-neutral-100) !important;
+}
+
+.feelback-icon svg {
+    fill: var(--op-neutral-500);
+}
+
+.feelback-buttons button:hover svg {
+    fill: var(--op-neutral-900);
+}
+
+:is(html[class~=dark]) .feelback-text {
+    font-weight: 500;
+    color: var(--op-neutral-400);
+}
+
+:is(html[class~=dark]) .feelback-icon svg {
+    fill: var(--op-neutral-400);
+}
+
+:is(html[class~=dark]) .feelback-buttons button:hover {
+    background: var(--op-neutral-700) !important;
+}
+
+:is(html[class~=dark]) .feelback-buttons button:hover svg {
+    fill: var(--op-neutral-100);
+}
+
+.nextra-toc .divider {
+    display: block;
+    width: 100%;
+    margin-top: .1em;
+    border-top: 1px solid var(--op-neutral-200);
+} 
+
+.nextra-toc .top-divider {
+    margin-top: 1.5em;
+}
+
+:is(html[class~=dark]) .nextra-toc .divider {
+    border-top: 1px solid var(--op-neutral-700);
+} 

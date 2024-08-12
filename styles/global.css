@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400..700&display=swap');
+@import url("colors.css");
+@import url("theme.css");
+
+/* Override Nextra so content gets more breathing room */
+.nextra-content h2 ~ p,
+.nextra-content h3 ~ p {
+  margin-top: 1.0rem;
+}
+
+/* Custom div that can contain Nextra images */
+div.md-img p {
+  height: 100%;
+}
+div.md-img img {
+  max-height: 100%;
+  width: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Sidebar links being bold can cause word wrap when selected */
+.nextra-sidebar-container li.active > a {
+  font-weight: normal;
+}
+
+/* Give sidebar separators a little less room */
+.nextra-sidebar-container li.nx-my-4 {
+  margin-bottom: 0;
+}
+
+/* Nextra logic for removing footer isn't working right now */
+footer {
+  display: none;
+}
+
+/* Make shasums actually legible */
+span.shasum {
+  display: block;
+  max-width: 300px;
+  background-color: var(--op-neutral-100) !important;
+  border-radius: 4px;
+  padding: 0.5rem;
+}
+html.dark span.shasum {
+  background-color: var(--op-neutral-700) !important;
+}
+span.shasum code {
+  padding-left: 0;
+  padding-right: 0;
+  border: none;
+  background-color: transparent !important;
+}
+

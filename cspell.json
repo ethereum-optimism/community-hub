@@ -1,0 +1,28 @@
+{
+  "$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/packages/cspell-types/cspell.schema.json",
+  "version": "0.2",
+  "dictionaryDefinitions": [
+    {
+      "name": "words",
+      "path": "./words.txt",
+      "addWords": true
+    }
+  ],
+  "dictionaries": [
+    "words"
+  ],
+  "ignorePaths": [
+    "node_modules",
+    "./words.txt"
+  ],
+  "overrides": [
+    {
+      "filename": "**/*.mdx",
+      "ignoreRegExpList": [
+        "/`[^`]*`/",
+        "/```[\\s\\S]*?```/",
+        "/\\([^)]*\\)/"
+      ]
+    }
+  ]
+}

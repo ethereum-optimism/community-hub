@@ -1,0 +1,17 @@
+{
+    "gov-forum": {
+        "title": "Governance Forum",
+        "href": "https://gov.optimism.io/",
+        "newWindow": true
+    },
+    "discord": {
+        "title": "Discord",
+        "href": "https://discord.gg/optimism",
+        "newWindow": true
+    },
+    "gov-cal": {
+        "title": "Governance Calender",
+        "href": "https://calendar.google.com/calendar/embed?src=c_fnmtguh6noo6qgbni2gperid4k%40group.calendar.google.com&ctz=Europe%2FBerlin",
+        "newWindow": true
+    }
+}

@@ -1,0 +1,16 @@
+diff --git a/dist/index.js b/dist/index.js
+index 602dc3851aa1c8499a8c5ae2d810d5e4ee8e87a9..5dd03a2ea17272b8779341ecfd73e2dfe0bb6e30 100644
+--- a/dist/index.js
++++ b/dist/index.js
+@@ -256,6 +256,11 @@ const remarkFrontmatterSchema = lintRule({
+         const frontmatter = ast.children.find((child) => child.type === 'yaml');
+         if (frontmatter?.type === 'yaml') {
+             await validateFrontmatter(frontmatter, vFile, settings);
++        } else {
++            // Specific logic for the ethereum-optimism/docs repository. We
++            // always want to have a frontmatter section. Working on getting
++            // this fixed in the upstream plugin so we don't need this hack.
++            throw new Error('Missing frontmatter')
+         }
+     }
+ });

@@ -1,0 +1,20 @@
+[context.production]
+  command = "rm -rf .next && pnpm run build"
+  publish = ".next"
+
+  [[plugins]]
+    package = "@netlify/plugin-nextjs"
+
+[context.deploy-preview]
+  command = "rm -rf .next && pnpm run build"
+  publish = ".next"
+
+  [[plugins]]
+    package = "@netlify/plugin-nextjs"
+
+[context."refresh-staging"]
+  command = "rm -rf .next && pnpm run build"
+  publish = ".next"
+
+  [[plugins]]
+    package = "@netlify/plugin-nextjs"

@@ -1,0 +1,11 @@
+{
+    "govnerds": "GovNERDs: Governance Operations",
+    "technerds": "TechNERDs: Dev support",
+    "supnerd-requirements": "Support NERDs: Onboarding & Moderation",
+    "numbanerds": "NumbaNERDs: Community analytics",
+    "ambassador-req": "Ambassadors: Community Educational Content",
+    "translators": "Translators: Doc Localisation",
+    "local-optimists": {
+        "display": "hidden"
+    }
+}
