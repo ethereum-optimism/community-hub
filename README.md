@@ -1,6 +1,6 @@
-#  Optimism Docs
+# Optimism Community Hub
 
-This repo houses the Optimism Docs located at [docs.optimism.io](https://docs.optimism.io/). All documentation-related updates and new content will be tracked and maintained in this repo. 
+This repo houses the Optimism Community Hub located at [community.optimism.io](https://community.optimism.io/). All documentation-related updates and new content will be tracked and maintained in this repo.
 
 ## Local Development
 
@@ -16,7 +16,7 @@ Please see the [CONTRIBUTING.md](CONTRIBUTING.md) page for specifics on how to w
 
 ## Project Board
 
-You can track documentation [issues](https://github.com/ethereum-optimism/docs/issues) or submit documentation [requests](https://github.com/ethereum-optimism/docs/issues/new/choose) directly from this repo.
+You can track documentation [issues](https://github.com/ethereum-optimism/community-hub/issues) or submit documentation [requests](https://github.com/ethereum-optimism/community-hub/issues/new/choose) directly from this repo.
 
 ## License
 

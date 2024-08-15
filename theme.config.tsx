@@ -16,9 +16,9 @@ const config: DocsThemeConfig = {
   ),
   darkMode: true,
   project: {
-    link: 'https://github.com/ethereum-optimism/docs',
+    link: 'https://github.com/ethereum-optimism/community-hub',
   },
-  docsRepositoryBase: 'https://github.com/ethereum-optimism/docs/blob/main/',
+  docsRepositoryBase: 'https://github.com/ethereum-optimism/community-hub/blob/main/',
   footer: {
     text: 'OP Documentation',
   },
@@ -66,7 +66,7 @@ const config: DocsThemeConfig = {
     const { asPath, defaultLocale, locale } = useRouter()
     const { frontMatter } = useConfig()
     const url =
-      'https://docs.optimism.io' +
+      'https://community.optimism.io' +
       (defaultLocale === locale ? asPath : `/${locale}${asPath}`)
  
     return (

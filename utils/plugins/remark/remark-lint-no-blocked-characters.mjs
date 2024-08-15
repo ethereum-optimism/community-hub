@@ -9,7 +9,7 @@ import { lintRule } from 'unified-lint-rule'
  */
 const remarkLintNoBlockedCharacters = lintRule(
   {
-    url: 'https://github.com/ethereum-optimism/docs',
+    url: 'https://github.com/ethereum-optimism/community-hub',
     origin: 'remark-lint:no-blocked-characters'
   },
   (tree, file) => {

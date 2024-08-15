@@ -12,7 +12,7 @@ patchedDependencies:
     hash: heylvfasxh3ubj2edns2svea2m
     path: patches/remark-code-import@1.2.0.patch
   remark-lint-frontmatter-schema@3.15.4:
-    hash: jaxvkozlhcbn7zjsiti5ocoubi
+    hash: ohro63yoyznnuo76bvqbwdxhhi
     path: patches/remark-lint-frontmatter-schema@3.15.4.patch
 
 importers:
@@ -21,7 +21,7 @@ importers:
     dependencies:
       '@eth-optimism/contracts-ts':
         specifier: ^0.17.0
-        version: 0.17.2(typescript@5.5.2)
+        version: 0.17.2(typescript@5.5.2)(zod@3.23.8)
       '@eth-optimism/tokenlist':
         specifier: ^9.0.9
         version: 9.0.51
@@ -30,16 +30,16 @@ importers:
         version: 0.3.4(react@18.3.1)
       next:
         specifier: 14.1.1
-        version: 14.1.1(react-dom@18.3.1)(react@18.3.1)
+        version: 14.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       next-sitemap:
         specifier: ^4.2.3
-        version: 4.2.3(next@14.1.1)
+        version: 4.2.3(next@14.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
       nextra:
         specifier: 2.13.2
-        version: 2.13.2(patch_hash=a4rp2hgojklggjmthmkiyqaek4)(next@14.1.1)(react-dom@18.3.1)(react@18.3.1)
+        version: 2.13.2(patch_hash=a4rp2hgojklggjmthmkiyqaek4)(next@14.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       nextra-theme-docs:
         specifier: 2.13.2
-        version: 2.13.2(next@14.1.1)(nextra@2.13.2)(react-dom@18.3.1)(react@18.3.1)
+        version: 2.13.2(next@14.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(nextra@2.13.2(patch_hash=a4rp2hgojklggjmthmkiyqaek4)(next@14.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react:
         specifier: ^18.2.0
         version: 18.3.1
@@ -85,7 +85,7 @@ importers:
         version: 3.0.1
       remark-lint-frontmatter-schema:
         specifier: ^3.15.4
-        version: 3.15.4(patch_hash=jaxvkozlhcbn7zjsiti5ocoubi)
+        version: 3.15.4(patch_hash=ohro63yoyznnuo76bvqbwdxhhi)
       remark-lint-heading-style:
         specifier: ^3.1.2
         version: 3.1.2
@@ -3729,14 +3729,14 @@ snapshots:
 
   '@eslint/js@8.57.0': {}
 
-  '@eth-optimism/contracts-ts@0.17.2(typescript@5.5.2)':
+  '@eth-optimism/contracts-ts@0.17.2(typescript@5.5.2)(zod@3.23.8)':
     dependencies:
-      '@testing-library/react': 14.3.1(react-dom@18.3.1)(react@18.3.1)
+      '@testing-library/react': 14.3.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@types/change-case': 2.3.1
       change-case: 4.1.2
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
-      viem: 2.16.1(typescript@5.5.2)
+      viem: 2.16.1(typescript@5.5.2)(zod@3.23.8)
     transitivePeerDependencies:
       - bufferutil
       - typescript
@@ -4082,9 +4082,9 @@ snapshots:
       '@feelback/js': 0.3.4
       react: 18.3.1
 
-  '@headlessui/react@1.7.19(react-dom@18.3.1)(react@18.3.1)':
+  '@headlessui/react@1.7.19(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@tanstack/react-virtual': 3.7.0(react-dom@18.3.1)(react@18.3.1)
+      '@tanstack/react-virtual': 3.7.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       client-only: 0.0.1
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
@@ -4297,7 +4297,7 @@ snapshots:
     dependencies:
       tslib: 2.6.3
 
-  '@tanstack/react-virtual@3.7.0(react-dom@18.3.1)(react@18.3.1)':
+  '@tanstack/react-virtual@3.7.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@tanstack/virtual-core': 3.7.0
       react: 18.3.1
@@ -4316,7 +4316,7 @@ snapshots:
       lz-string: 1.5.0
       pretty-format: 27.5.1
 
-  '@testing-library/react@14.3.1(react-dom@18.3.1)(react@18.3.1)':
+  '@testing-library/react@14.3.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@babel/runtime': 7.24.7
       '@testing-library/dom': 9.3.4
@@ -4426,9 +4426,10 @@ snapshots:
 
   abbrev@2.0.0: {}
 
-  abitype@1.0.4(typescript@5.5.2):
-    dependencies:
+  abitype@1.0.4(typescript@5.5.2)(zod@3.23.8):
+    optionalDependencies:
       typescript: 5.5.2
+      zod: 3.23.8
 
   acorn-jsx@5.3.2(acorn@8.12.0):
     dependencies:
@@ -4439,7 +4440,7 @@ snapshots:
   aes-js@3.0.0: {}
 
   ajv-formats@2.1.1(ajv@8.12.0):
-    dependencies:
+    optionalDependencies:
       ajv: 8.12.0
 
   ajv@6.12.6:
@@ -6655,7 +6656,7 @@ snapshots:
 
   natural-compare@1.4.0: {}
 
-  next-mdx-remote@4.4.1(react-dom@18.3.1)(react@18.3.1):
+  next-mdx-remote@4.4.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
       '@mdx-js/mdx': 2.3.0
       '@mdx-js/react': 2.3.0(react@18.3.1)
@@ -6666,27 +6667,27 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  next-seo@6.5.0(next@14.1.1)(react-dom@18.3.1)(react@18.3.1):
+  next-seo@6.5.0(next@14.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
-      next: 14.1.1(react-dom@18.3.1)(react@18.3.1)
+      next: 14.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
-  next-sitemap@4.2.3(next@14.1.1):
+  next-sitemap@4.2.3(next@14.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)):
     dependencies:
       '@corex/deepmerge': 4.0.43
       '@next/env': 13.5.6
       fast-glob: 3.3.2
       minimist: 1.2.8
-      next: 14.1.1(react-dom@18.3.1)(react@18.3.1)
+      next: 14.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
 
-  next-themes@0.2.1(next@14.1.1)(react-dom@18.3.1)(react@18.3.1):
+  next-themes@0.2.1(next@14.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
-      next: 14.1.1(react-dom@18.3.1)(react@18.3.1)
+      next: 14.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
-  next@14.1.1(react-dom@18.3.1)(react@18.3.1):
+  next@14.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
       '@next/env': 14.1.1
       '@swc/helpers': 0.5.2
@@ -6711,9 +6712,9 @@ snapshots:
       - '@babel/core'
       - babel-plugin-macros
 
-  nextra-theme-docs@2.13.2(next@14.1.1)(nextra@2.13.2)(react-dom@18.3.1)(react@18.3.1):
+  nextra-theme-docs@2.13.2(next@14.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(nextra@2.13.2(patch_hash=a4rp2hgojklggjmthmkiyqaek4)(next@14.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
-      '@headlessui/react': 1.7.19(react-dom@18.3.1)(react@18.3.1)
+      '@headlessui/react': 1.7.19(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@popperjs/core': 2.11.8
       clsx: 2.1.1
       escape-string-regexp: 5.0.0
@@ -6722,18 +6723,18 @@ snapshots:
       git-url-parse: 13.1.1
       intersection-observer: 0.12.2
       match-sorter: 6.3.4
-      next: 14.1.1(react-dom@18.3.1)(react@18.3.1)
-      next-seo: 6.5.0(next@14.1.1)(react-dom@18.3.1)(react@18.3.1)
-      next-themes: 0.2.1(next@14.1.1)(react-dom@18.3.1)(react@18.3.1)
-      nextra: 2.13.2(patch_hash=a4rp2hgojklggjmthmkiyqaek4)(next@14.1.1)(react-dom@18.3.1)(react@18.3.1)
+      next: 14.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      next-seo: 6.5.0(next@14.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      next-themes: 0.2.1(next@14.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      nextra: 2.13.2(patch_hash=a4rp2hgojklggjmthmkiyqaek4)(next@14.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
       scroll-into-view-if-needed: 3.1.0
       zod: 3.23.8
 
-  nextra@2.13.2(patch_hash=a4rp2hgojklggjmthmkiyqaek4)(next@14.1.1)(react-dom@18.3.1)(react@18.3.1):
+  nextra@2.13.2(patch_hash=a4rp2hgojklggjmthmkiyqaek4)(next@14.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
-      '@headlessui/react': 1.7.19(react-dom@18.3.1)(react@18.3.1)
+      '@headlessui/react': 1.7.19(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@mdx-js/mdx': 2.3.0
       '@mdx-js/react': 2.3.0(react@18.3.1)
       '@napi-rs/simple-git': 0.1.16
@@ -6745,8 +6746,8 @@ snapshots:
       gray-matter: 4.0.3
       katex: 0.16.10
       lodash.get: 4.4.2
-      next: 14.1.1(react-dom@18.3.1)(react@18.3.1)
-      next-mdx-remote: 4.4.1(react-dom@18.3.1)(react@18.3.1)
+      next: 14.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      next-mdx-remote: 4.4.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       p-limit: 3.1.0
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
@@ -7097,7 +7098,7 @@ snapshots:
       unified: 10.1.2
       unified-lint-rule: 2.1.2
 
-  remark-lint-frontmatter-schema@3.15.4(patch_hash=jaxvkozlhcbn7zjsiti5ocoubi):
+  remark-lint-frontmatter-schema@3.15.4(patch_hash=ohro63yoyznnuo76bvqbwdxhhi):
     dependencies:
       '@apidevtools/json-schema-ref-parser': 11.1.0
       ajv: 8.12.0
@@ -7943,17 +7944,18 @@ snapshots:
       unist-util-stringify-position: 4.0.0
       vfile-message: 4.0.2
 
-  viem@2.16.1(typescript@5.5.2):
+  viem@2.16.1(typescript@5.5.2)(zod@3.23.8):
     dependencies:
       '@adraffy/ens-normalize': 1.10.0
       '@noble/curves': 1.2.0
       '@noble/hashes': 1.3.2
       '@scure/bip32': 1.3.2
       '@scure/bip39': 1.2.1
-      abitype: 1.0.4(typescript@5.5.2)
+      abitype: 1.0.4(typescript@5.5.2)(zod@3.23.8)
       isows: 1.0.4(ws@8.17.1)
-      typescript: 5.5.2
       ws: 8.17.1
+    optionalDependencies:
+      typescript: 5.5.2
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
