@@ -1,3 +1,7 @@
+// Script exists to clear the service worker cache from the old website. Please keep this script
+// around until we're confident that users have the latest version of the site. Since Next doesn't
+// use service workers it should be safe to keep this around indefinitely if needed.
+
 self.addEventListener('install', (event) => {
   // Force the service worker to take control immediately
   self.skipWaiting()
