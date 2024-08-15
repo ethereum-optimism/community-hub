@@ -1,0 +1,28 @@
+{
+    "operating-manual": {
+        "title": "Operating Manual",
+        "href": "https://github.com/ethereum-optimism/OPerating-manual/blob/main/manual.md",
+        "newWindow": true
+    },
+    "working-constitution": {
+        "title": "Working Constitution",
+        "href": "https://gov.optimism.io/t/working-constitution-of-the-optimism-collective/55",
+        "newWindow": true
+    },
+    "code-of-conduct": {
+        "title": "Code of Conduct",
+        "href": "https://gov.optimism.io/t/code-of-conduct/5751/17",
+        "newWindow": true
+    },
+    "rules-of-engagement": {
+        "title": "Rules of Engagement",
+        "href": "https://gov.optimism.io/t/rules-of-engagement-2-0/5728",
+        "newWindow": true
+    },
+    "law-of-chains": {
+        "title": "Law of Chains",
+        "href": "https://gov.optimism.io/t/final-law-of-chains-v0-1/6514",
+        "newWindow": true
+    },
+    "law-of-chains-disclaimer": "Law of Chains Disclaimer"
+}

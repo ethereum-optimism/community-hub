@@ -1,0 +1,21 @@
+diff --git a/dist/normalize-pages.js b/dist/normalize-pages.js
+index db97af203d09cdab91be98d520efa82451b5bfc3..87b36b81df6ea55ca4326c99c927a7ed4e0b2501 100644
+--- a/dist/normalize-pages.js
++++ b/dist/normalize-pages.js
+@@ -273,8 +273,14 @@ function normalizePages({
+     }
+     if (type === "doc" && display === "children") {
+       if (docsItem.children) {
+-        directories.push(...docsItem.children);
+-        docsDirectories.push(...docsItem.children);
++        const children = docsItem.children.map((child) => {
++          return {
++            ...child,
++            name: `${docsItem.name}-${child.name}`,
++          }
++        })
++        directories.push(...children);
++        docsDirectories.push(...children);
+       }
+     } else {
+       directories.push(item);

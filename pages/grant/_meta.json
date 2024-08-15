@@ -1,0 +1,23 @@
+{
+    "grant-overview": "Get a Grant",
+    "collective-grant-policy": {
+        "title": "Collective Grant Policies",
+        "href": "https://gov.optimism.io/t/collective-grant-policies/5833",
+        "newWindow": true
+    },
+    "--- ADDITIONAL SUPPORT": {
+        "title": "ADDITIONAL SUPPORT",
+        "type": "separator"
+    },
+    "get-support": "Additional Support",
+    "live-dev-support": {
+        "title": "Developer Support",
+        "href": "https://github.com/ethereum-optimism/developers/discussions",
+        "newWindow": true
+    },
+    "app-page": {
+        "title": "Get in Contact",
+        "href": "https://share.hsforms.com/1yENj8CV9TzGYBASD0JC8_gqoshb",
+        "newWindow": true
+    }
+}

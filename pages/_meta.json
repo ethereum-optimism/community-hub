@@ -1,0 +1,79 @@
+{  
+  "index": {
+    "title": "Getting Started",
+    "display": "hidden",
+    "theme": {
+      "breadcrumb": false,
+      "footer": true,
+      "sidebar": true,
+      "toc": true,
+      "pagination": false
+    }
+  },
+  "404": {
+    "title": "404",
+    "display": "hidden",
+    "theme": {
+      "layout": "full",
+      "breadcrumb": false,
+      "footer": true,
+      "sidebar": true,
+      "toc": false,
+      "pagination": false
+    }
+  },
+  "500": {
+    "title": "500",
+    "display": "hidden",
+    "theme": {
+      "layout": "full",
+      "breadcrumb": false,
+      "footer": true,
+      "sidebar": true,
+      "toc": false,
+      "pagination": false
+    }
+  },
+
+  "welcome": {
+    "title": "WELCOME",
+    "type": "page"
+  },
+  "grant": {
+    "title": "GET A GRANT",
+    "type": "page"
+  },
+  "token-house": {
+    "title": "TOKEN HOUSE",
+    "type": "page"
+  },
+  "op-token": {
+    "title": "OP TOKEN",
+    "type": "page"
+  },
+  "citizens-house": {
+    "title": "CITIZENS HOUSE",
+    "type": "page"
+  },
+  "identity": {
+    "title": "IDENTITY",
+    "type": "page"
+  },
+  "contribute": {
+    "title": "CONTRIBUTE",
+    "type": "page"
+  },
+  
+  "+++ CONNECT": {
+    "title": "",
+    "type": "separator"
+  },
+  "--- CONNECT": {
+    "title": "CONNECT",
+    "type": "separator"
+  },
+  "connect": {
+    "title": "Connect",
+    "display": "children"
+  }
+}

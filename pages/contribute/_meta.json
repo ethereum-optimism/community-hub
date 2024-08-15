@@ -1,0 +1,36 @@
+{
+    "contribute-overview": "Overview",
+    "--- DAPPS & DEVS": {
+        "title": "DAPPS & DEVS",
+        "type": "separator"
+    },
+    "demo-day": "Demo Day",
+    "technerds": {
+        "title": "Tech Support Program",
+        "href": "/contribute/contribution-path/technerds",
+        "newWindow": false
+    },
+    "technical-contributions": "Technical Contributions to the Optimism Collective",
+
+    "--- COMMS & MEDIA": {
+        "title": "COMMS & MEDIA",
+        "type": "separator"
+    },
+    "important-terms": "Optimism Important Terms",
+    "ambassadors": {
+        "title": "Ambassadors",
+        "href": "/contribute/contribution-path/ambassador-req",
+        "newWindow": false
+    },
+    "translators": {
+        "title": "Doc Translation",
+        "href": "/contribute/contribution-path/translators",
+        "newWindow": false
+    },
+
+    "--- CONTRIBUTION PATHS": {
+        "title": "CONTRIBUTION PATHS",
+        "type": "separator"
+    },
+    "contribution-path": "Contribution Paths"
+}

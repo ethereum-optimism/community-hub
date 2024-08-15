@@ -1,0 +1,43 @@
+#############################  Display  #############################
+
+# Verbose program output
+verbose = "info"
+
+# Don't show interactive progress bar while checking links.
+no_progress = true
+
+#############################  Requests  ############################
+
+# URL remapping rules.
+remap = [
+    "file:///(.*?)/pages/img/(.*) file:///$1/public/img/$2",
+    "file:///(.*?)/pages/resources/(.*) file:///$1/public/resources/$2",
+    "file:///([^#.?]+)(#.*)?$ file:///$1.mdx$2",
+    "\\\\& &"
+]
+
+# Base URL or website root directory to check relative URLs.
+base = "./pages"
+
+#############################  Exclusions  ##########################
+
+# Exclude loopback IP address range and localhost from checking.
+exclude_loopback = true
+
+# Exclude all mail addresses from checking.
+exclude_mail = true
+
+# Exclude RPC URLs from checking.
+exclude = [
+    'https://mainnet.optimism.io',
+    'https://mainnet-sequencer.optimism.io',
+    'https://sepolia.optimism.io',
+    'https://sepolia-sequencer.optimism.io',
+    'https://archive.org',
+    'https://web.archive.org',
+    'https://mainnet.base.org',
+    'https://sepolia.base.org'
+]
+
+# Accept these status codes
+accept = ["100..=103", "200..=299", "403..=403", "502..=502"]

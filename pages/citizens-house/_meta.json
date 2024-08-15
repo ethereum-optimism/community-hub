@@ -1,0 +1,15 @@
+{
+    "citizen-house-overview": "Overview",
+    "--- RETRO FUNDING": {
+        "title": "RETRO FUNDING",
+        "type": "separator"
+    },
+    "how-retro-funding-works": "How Retro Funding Works",
+    "rounds": "Past Rounds",
+    "--- CITIZENS": {
+        "title": "CITIZENS",
+        "type": "separator"
+    },
+    "citizenship-selection": "Citizenship Selection",
+    "experimentation-with-citizenship": "Experimentation with Citizenship"
+}

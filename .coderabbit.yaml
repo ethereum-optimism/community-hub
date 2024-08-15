@@ -1,0 +1,26 @@
+language: "en"
+early_access: false
+reviews:
+  high_level_summary: false
+  poem: false
+  review_status: false
+  collapse_walkthrough: false
+  path_instructions:
+    - path: "**/*.mdx"
+      instructions: |
+        "ALWAYS review Markdown content THOROUGHLY with the following criteria:
+        - Use proper nouns in place of personal pronouns like 'We' and 'Our' to maintain consistency in communal documentation.
+        - Avoid gender-specific language and use the imperative form.
+        - Monitor capitalization for emphasis. Use **bold** for prominence instead of all caps or italics.
+        - Ensure proper nouns are capitalized in sentences.
+        - Apply the Oxford comma.
+        - Use proper title case for headers, buttons, tab names, page names, and links. Sentence case should be used for body content and short phrases, even in links.
+        - Use correct spelling and grammar at all times (IMPORTANT).
+        "
+  auto_review:
+    enabled: true
+    drafts: false
+    base_branches:
+      - "main"
+chat:
+  auto_reply: true

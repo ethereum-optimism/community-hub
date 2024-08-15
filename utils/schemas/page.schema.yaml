@@ -1,0 +1,14 @@
+title: Page
+
+properties:
+  title:
+    type: string
+  lang:
+    type: string
+  description:
+    type: string
+
+required:
+  - title
+  - lang
+  - description

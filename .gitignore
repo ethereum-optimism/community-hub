@@ -1,15 +1,14 @@
-pids
-logs
+# packages
 node_modules
-npm-debug.log
-coverage/
-run
-dist
-.env
+
+# os specific files
 .DS_Store
-.nyc_output
-.basement
-config.local.js
-basement_dist
-yarn.lock
-src/.vuepress/redirects.js
+
+# build artifacts
+.next
+public/robots.txt
+public/sitemap-0.xml
+public/sitemap.xml
+
+# log files
+*.log

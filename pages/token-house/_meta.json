@@ -1,0 +1,39 @@
+{
+    "token-house-overview": "Overview",
+    "--- DELEGATES": {
+        "title": "DELEGATES",
+        "type": "separator"
+    },
+    "how-to-delegate": "How to Delegate OP Tokens",
+    "delegate-expectations": "Delegate Expectations",
+    "optimist-expectations": {
+        "title": "Optimist Expectations",
+        "href": "https://gov.optimism.io/t/optimist-expectations/7241",
+        "newWindow": true
+    },	
+    "--- GOV FUND": {
+        "title": "GOV FUND",
+        "type": "separator"
+    },
+    "gov-fund-overview": "Governance Fund",
+    "gov-fund-charter": {
+        "title": "Gov Fund Charter",
+        "href": "https://gov.optimism.io/t/governance-fund-charter/3944",
+        "newWindow": true
+    },
+    "gov-fund-allocation": {
+        "title": "Gov Fund Allocations",
+        "href": "https://docs.google.com/spreadsheets/d/1Ul8iMTsOFUKUmqz6MK0zpgt8Ki8tFtoWKGlwXj-Op34/edit?gid=590972026#gid=590972026",
+        "newWindow": true
+    },	
+    "--- HISTORY": {
+        "title": "HISTORY & DATA",
+        "type": "separator"
+    },
+    "token-house-history": "Token House Season History",
+    "token-house-data": {
+        "title": "Delegate Vote Weight (Dune)",
+        "href": "https://dune.com/optimismfnd/optimism-op-token-house",
+        "newWindow": true
+    }
+}

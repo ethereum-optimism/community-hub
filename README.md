@@ -1,31 +1,24 @@
-# The Optimism Community Hub
+#  Optimism Docs
 
-[![Discord](https://img.shields.io/discord/667044843901681675.svg?color=768AD4&label=discord&logo=https%3A%2F%2Fdiscordapp.com%2Fassets%2F8c9701b98ad4372b58f13fd9f65f966e.svg)](https://discord-gateway.optimism.io)
-[![Twitter Follow](https://img.shields.io/twitter/follow/OptimismFND.svg?label=OptimismFND&style=social)](https://twitter.com/OptimismFND)
+This repo houses the Optimism Docs located at [docs.optimism.io](https://docs.optimism.io/). All documentation-related updates and new content will be tracked and maintained in this repo. 
 
-OP Mainnet is a Layer 2 platform for Ethereum.
+## Local Development
 
-OP Mainnet is, in a nutshell, an application inside of Ethereum that executes transactions more efficiently than Ethereum itself. It's based on the concept of the [Optimistic Rollup](https://research.paradigm.xyz/rollups), a construction that allows us to "optimistically" publish transaction results without actually executing those transactions on Ethereum (most of the time). OP Mainnet makes transactions cheaper, faster, and smarter.
+How to [install pnpm](https://pnpm.io/installation)
 
-Please note that this repository is undergoing rapid development.
+First, run `pnpm i` to install the dependencies.
 
-------
+Then, run `pnpm dev` to start the development server and visit localhost:3000.
 
-This is the source for the [community hub](https://community.optimism.io/).
+## Contributions
 
-# Usage
-## Serve Locally
-```shell
-yarn dev
-```
+Please see the [CONTRIBUTING.md](CONTRIBUTING.md) page for specifics on how to write PRs, use the linter, run spellcheck, add dictionary terms, etc. You should also review the [Optimism Documentation Style Guide](/pages/connect/contribute/style-guide.mdx) for additional guidelines, especially if you are writing entirely brand new pages to the developer docs, as opposed to smaller edits and/or revisions.
 
-Then navigate to http://localhost:8080.
-If that link doesn't work, double check the output of `yarn dev`. 
-You might already be serving something on port 8080 and the site may be on port 8081.
+## Project Board
 
-## Build for Production
-```shell
-yarn build
-```
+You can track documentation [issues](https://github.com/ethereum-optimism/docs/issues) or submit documentation [requests](https://github.com/ethereum-optimism/docs/issues/new/choose) directly from this repo.
 
-You probably don't need to run this command, but now you know.
+## License
+
+This project is licensed under the MIT License.
+

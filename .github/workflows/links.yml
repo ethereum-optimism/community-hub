@@ -1,0 +1,21 @@
+name: Check Links
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-run-lychee:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v2
+
+    - name: Run Lychee
+      uses: lycheeverse/lychee-action@v1
+      with:
+        args: --config lychee.toml --quiet ./pages
+        fail: true
