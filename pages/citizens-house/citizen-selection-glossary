@@ -1,0 +1,17 @@
+---
+title: Citizen Selection Glossary
+lang: en-US
+description: 
+---
+
+# Web of Trust
+This selection method was used to create the early Badgeholder groups for Retro Rounds 1, 2, and 3. In the "Web of Trust" approach, a small, trusted group is initially invited to participate. Each member of this group is then asked to invite one new person of their choice. This process causes the group size to double with each round of invitations. As the group grows, it is likely to maintain strong social connections and remain relatively homogeneous.
+
+# Proof of Work
+This method involves selecting participants based on their contributions of value to the Collective. The "value" can be measured in various ways, and there may be different thresholds for the amount of value required. The term "Proof of Work" is borrowed from a consensus mechanism used in blockchains, where it is costly for participants to attack the system. Similarly, in this application, it would be costly for individuals to undermine the governance system, as they must contribute significant value to the Collective to gain Citizenship.
+
+# Random Selection
+This method involves defining a group of potential participants and then randomly choosing a specified number of individuals from that group. Often referred to as "random sampling," this approach is effective for obtaining a representative sample from a larger population. In contrast to self-selection, which often results in a biased sample, random selection helps ensure that the sample accurately reflects the broader population. The key subjective aspect of random selection is deciding which population to include in the sample.
+
+# Self-Selection
+This method allows individuals to choose to participate on their own. It can be used alongside a defined population from which individuals can opt in. Typically, self-selection results in a group of participants who are highly motivated to be involved. However, if there are perverse incentives present, this method might attract individuals whose interests don't align with the system's needs. Moreover, when self-selection is combined with a specific population definition, it often leads to a biased sample rather than a representative one.
