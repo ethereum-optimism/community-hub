@@ -47,10 +47,10 @@ const config: DocsThemeConfig = {
     text: '✏️ Edit this page on GitHub'
   },
   banner: {
-    key: 'fp-mainnet-release',
+    key: 'airdrop-5',
     text: (
-      <a href="https://gov.optimism.io/" target="_blank" rel="noopener noreferrer" aria-label="label for banner">
-      <strong><i>Season 6 runs from June 27th to December 11th 2024</i></strong> See the gov forum for more info.
+      <a href="/op-token/airdrops/airdrop-5">
+        🎉 Airdrop 5 is live and supports power users growing the Superchain Ecosystem . Read more →
       </a>
     )
   },
