@@ -1,4 +1,9 @@
 {
+    "delegate-op": {
+        "title": "How do I delegate my OP?",
+        "href": "/token-house/how-to-delegate",
+        "newWindow": false
+    },
     "delegate-expectations": {
         "title": "What are Missions?",
         "href": "/grant/grant-overview#mission-grants",
@@ -8,5 +13,7 @@
         "title": "Where are Foundation Missions?",
         "href": "https://github.com/ethereum-optimism/ecosystem-contributions/issues?q=is%3Aissue+is%3Aopen+label%3A%22Foundation+Mission+Request%22",
         "newWindow": true
-     }
+     },
+    "dashboard-trackers": "Dashboard Trackers",   
+    "what-is-the-optimism-foundation": "What is the Optimism Foundation?"
 }
