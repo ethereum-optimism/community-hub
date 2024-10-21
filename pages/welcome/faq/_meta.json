@@ -14,10 +14,6 @@
         "href": "https://github.com/ethereum-optimism/ecosystem-contributions/issues?q=is%3Aissue+is%3Aopen+label%3A%22Foundation+Mission+Request%22",
         "newWindow": true
      },
-    "Optimism-Onchain-Net-Revenue-Tracker": {
-        "title": "Optimism Onchain Net Revenue Tracker",
-        "href": "https://docs.google.com/spreadsheets/d/1XtyBu5lvCI6MtMBQPC6ZOnjZ5nbbPw4bOH7WO2Pn7cI/edit?gid=0#gid=0",
-        "newWindow": true
-    },
+    "relevant-dashboards-trackers-addresses": "Relevant Dashboards, Trackers, and Addresses",   
     "what-is-the-optimism-foundation": "What is the Optimism Foundation?"
 }
