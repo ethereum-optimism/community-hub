@@ -14,7 +14,6 @@
         "href": "https://github.com/ethereum-optimism/ecosystem-contributions/issues?q=is%3Aissue+is%3Aopen+label%3A%22Foundation+Mission+Request%22",
         "newWindow": true
      },
-    "relevant-dashboards-trackers-addresses": "Relevant Dashboards, Trackers, and Addresses",   
-    "what-is-the-optimism-foundation": "What is the Optimism Foundation?",
-    "Testing nav": "test nav"
+    "dashboard-trackers": "Dashboard Trackers",   
+    "what-is-the-optimism-foundation": "What is the Optimism Foundation?"
 }
