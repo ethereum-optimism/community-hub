@@ -1,0 +1,93 @@
+---
+title: Research and Experimentation at Optimism
+lang: en-US
+description: Overview of research and experimentation at Optimism
+---
+
+# Why We Experiment: Building a Culture of Experimentation
+
+At Optimism, we’re committed to a bold vision: **Build an equitable internet, where ownership and decision-making power is decentralize**d across developers, users, and creators. We’ve realized that if we want to achieve this goal and pioneer a new model of digital democratic governance, we need to understand what works and what doesn’t. And just like clinical drug trials, or impact evaluations in developmental economics, running **controlled experiments is how we truly learn** about cause and effect**.** 
+
+Designing a successful decentralized governance system is uncharted territory, so there’s no shortage of open questions about cause and effect that we need to understand. For instance: *Do delegation reward programs improve delegation? Do prediction markets make better decisions than councils? Do veto powers increase legitimacy?  Do various voting mechanisms decrease collusion? Does deliberation increase consensus? Do airdrops increase engagement?* To name just a few. 
+
+With the amount of talent and energy across the Collective, there’s also no shortage of interesting ideas and initiatives to implement. In Optimism’s early days, tackling open design questions sometimes involved a less-scientific, trial-and-error approach — for example, trying multiple things at once with no clear way to measure impact other than anecdotal feedback. We’ve always been committed to taking an [iterative approach](https://gov.optimism.io/t/the-path-to-open-metagovernance/7728) to learning and governance design, but we’ve realized along the way that we need a more rigorous, data-driven approach to truly understand how to build the best system. 
+
+This document provides an overview of Optimism’s approach to research and experimentation, highlighting (1) our experimental design principles, (2) our research prioritization framework, and (3) some examples of ongoing experiments as well as other important non-experimental research topics we’re working on. 
+
+# How We Experiment: Principles for Designing Experiments
+
+Below are the key principles guiding our approach to experimental design. Our goal behind each of these principles is to take a thoughtful, data-driven approach as we iteratively design a resilient governance system. 
+
+![Principles for Designing Experiments.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/4b8b38c3-9876-41aa-bbe3-0f23be2b6ab4/6c14bffb-0a70-4dd8-8000-f88f96a1d262/Principles_for_Designing_Experiments.png)
+
+*A note on the principle that **randomization = causal learning**:* Across disciplines and settings, causal learning requires randomization, because random assignment to treatment group ensures that the observed and unobserved characteristics are balanced evenly between treatment and control groups. Importantly, this removes selection bias (or other types of omitted variable bias) that otherwise influences results. Because of this, when possible, we aim to randomly select treatment and control group participants in our experiments. 
+
+In practice, however, it’s sometimes impractical or even unethical to randomly assign participants to an intervention. If this is the case and we still want to understand cause and effect, we can leverage a **quasi-experiment** to evaluate the effects of an intervention even without random assignment. 
+
+Examples of quasi-experimental approaches to teasing out causal learning might include: 
+
+- Pre/post comparisons of treatment/ control (e.g., [difference-in-difference](https://engineering.atspotify.com/2023/09/how-to-accurately-test-significance-with-difference-in-difference-models/) model)
+- Exploit another criterion like an eligibility cutoff mark (e.g., [regression discontinuity](https://www.gsb.stanford.edu/faculty-research/working-papers/what-kinds-incentives-encourage-participation-democracy-evidence) design)
+
+If teasing out causation via a quasi-experiment is also not possible, then we simply interpret accordingly (i.e., inferring correlation rather than causation).  
+
+# When We Experiment: Prioritization Framework
+
+As we’ve discussed above, experiments are well-suited for a specific type of question (i.e., about cause and effect), though it’s sometime impractical to experiment with human behavior. And finally, experiments also take resources and time to execute well. With this in mind, here’s how we think about when to experiment: 
+
+![Should this be an experiment_.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/4b8b38c3-9876-41aa-bbe3-0f23be2b6ab4/398b17a4-6543-402d-87e9-990df8dd0623/Should_this_be_an_experiment_.png)
+
+1. **Is this mission-critical?**
+    1. ***If yes, the research question is about existential parameters, then we want to experiment (if the next two answers are also “yes”)***
+    2. If no: 
+        1. If the research question is of medium importance, we take a trial and error approach and make sure to have clear outcome measurements 
+        2. If the research question is of low importance, we go ahead and ship 
+2. **Is this causal?**
+    1. ***If yes, we are testing a hypothesis about cause & effect, then we want to experiment (if the next answer is also “yes”)***
+    2. If no, we use different research tools for non-causal mission-critical research questions (e.g. deep research or data analysis) as described in a later section
+3. **Is this feasible?** 
+    1. ***If yes, it makes sense to run an experiment given practical constraints, then we design an experiment!*** 
+    2. If no, but this is a mission-critical question about cause and effect, we either
+        1. Redefine the research question (tackle a piece of the topic that lends itself to behavioral experimentation) OR
+        2. Redefine the research method (answer the question via non-experimental methods such as running simulations, analyzing existing data, collecting user research, or conducting deep research workstreams)
+
+# What We Experiment: Ongoing Studies at Optimism
+
+We’ll continue to update this section as we analyze and publish ongoing studies. Some questions we’re currently studying experimentally include: 
+
+- ***Does a deliberative process increase informed decision-making, social trust, or consensus on a contested topic?***
+    - Link to forum post summary **here**
+    - Link to full academic paper (coming soon!)
+- ***Does a sample of guest voters allocate resources differently than web-of-trust voters? What is the relationship between social graph connections, vote clustering, and survey data on self-dealing and collusion?***
+    - Analysis and intervention underway — see forum post on R5 [here](https://gov.optimism.io/t/retro-funding-5-expert-voting-experiment/8613) and R6 [here](https://gov.optimism.io/t/retro-funding-6-announcing-guest-voter-participation/8816/3)
+- ***Does civic duty, system security, or economic self-interest motivate participation in governance?***
+    - Intervention underway
+- ***Do airdrop 5 recipients exhibit a higher retention rate than non-participants? Does receiving the delegation bonus increase the median delegation time compared to non-recipients?***
+    - Full analysis coming soon
+- ***Are prediction markets a more accurate mechanism for capital allocation decisions than the council structure?***
+    - Uniswap Foundation collaborative experiment announcement [here](https://x.com/UniswapFND/status/1847307628315308270)
+
+# When We Don’t Experiment: Other Non-Experimental Research is Important, Too
+
+While experiments let us answer causal questions without confounding, there is a significant amount of important non-causal research that we need to learn how to design the best governance system. Fortunately for us, many of these non-experimental studies are collaborations with very smart research partners. And often, these techniques can lay the groundwork for further experimental research. 
+
+Some of these non-experimental approaches (and specific examples) include: 
+
+| **Research approach** | **Ongoing study (selected examples)** |
+| --- | --- |
+| Deep “desk research” workstreams | — Designing a system with checks and balances 
+
+— Tradeoffs of different veto designs  |
+| Modeling & simulations | — Evaluating Voting Design Tradeoffs for Retro Funding [Mission Request](https://github.com/orgs/ethereum-optimism/projects/31/views/1?pane=issue&itemId=61734498) |
+| Network analysis | — Social graph data analysis (Github, Twitter, and Farcaster) across the Collective
+
+— Measuring the Concentration of Power in the Collective [Mission Request](https://github.com/orgs/ethereum-optimism/projects/31/views/1?pane=issue&itemId=61734705) |
+| Performance tracking  | — OP Labs data team’s [OP Superchain Health dashboard](https://docs.google.com/spreadsheets/d/1f-uIW_PzlGQ_XFAmsf9FYiUf0N9l_nePwDVrw0D5MXY/edit?gid=915250487#gid=915250487) |
+| Recurring survey data | — Badgeholder post-voting survey
+
+— Collective Feedback Commission participant survey |
+| Voting behavior analysis | — Analysis of Retro Funding vote clustering 
+
+— Analysis of Retro Funding [capital allocation](https://gov.optimism.io/t/new-rpgf3-distribution-disparity-data/7521) distributions and [growth grants](https://github.com/ethereum-optimism/ecosystem-contributions/issues/244) |
+
+Does any of this sound interesting and you’d like to be involved? Please visit our [Foundation Mission Requests](https://community.optimism.io/grant/grant-overview) page with RFPs that we are looking for collaborators to help us with.
