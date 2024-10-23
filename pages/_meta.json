@@ -36,31 +36,31 @@
   },
 
   "welcome": {
-    "title": "WELCOME",
+    "title": "Welcome",
     "type": "page"
   },
   "grant": {
-    "title": "GET A GRANT",
+    "title": "Get a Grant",
     "type": "page"
   },
   "token-house": {
-    "title": "TOKEN HOUSE",
+    "title": "Token House",
     "type": "page"
   },
   "op-token": {
-    "title": "OP TOKEN",
+    "title": "OP Token",
     "type": "page"
   },
   "citizens-house": {
-    "title": "CITIZENS HOUSE",
+    "title": "Citizens House",
     "type": "page"
   },
   "identity": {
-    "title": "IDENTITY",
+    "title": "Identity",
     "type": "page"
   },
   "contribute": {
-    "title": "CONTRIBUTE",
+    "title": "Contribute",
     "type": "page"
   },
   
@@ -69,7 +69,7 @@
     "type": "separator"
   },
   "--- CONNECT": {
-    "title": "CONNECT",
+    "title": "Connect",
     "type": "separator"
   },
   "connect": {
