@@ -55,6 +55,10 @@
     "title": "Citizens House",
     "type": "page"
   },
+  "research": {
+    "title": "Research",
+    "type": "page"
+  },
   "identity": {
     "title": "Identity",
     "type": "page"
