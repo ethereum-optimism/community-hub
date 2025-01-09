@@ -30,11 +30,6 @@ div.md-img img {
   margin-bottom: 0;
 }
 
-/* Nextra logic for removing footer isn't working right now */
-footer {
-  display: none;
-}
-
 /* Make shasums actually legible */
 span.shasum {
   display: block;
