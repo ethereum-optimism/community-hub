@@ -4,7 +4,7 @@ lang: en-US
 description: This document outlines the Optimism Foundation's approach to the identity and reputation of individuals and projects within the Optimism Collective.
 ---
 
-# Project and individual identity in the Collective
+# Project and individual identity
 
 This document outlines the Optimism Foundation's approach to the identity and reputation of individuals and projects within the Optimism Collective. The identity stack framework, including an explanation of how the identity layer relates to other components, is outlined in [this document](https://docs.optimism.io/chain/identity/overview).
 
@@ -47,7 +47,7 @@ Here are some of the reasons behind this decision:
 * Anyone can build a Farcaster client and integrate with the protocol
 * Ethereum accounts and ENS names can be verified with the protocol to connect these identities
 
-#### People and 'reputation'
+### People and 'reputation'
 
 The Optimism Collective uses attestations via the [Ethereum Attestation Service](https://optimism.easscan.org/) (EAS) to issue signed statements about individuals. Thus far, these attestations have been issued about and to a recipient represented as an Ethereum address. Farcaster users are able to link their Ethereum addresses to their Farcaster account via the [verifications feature](https://docs.farcaster.xyz/developers/guides/writing/verify-address), preserving the value of attestations issued to Ethereum accounts. However, attestations can also be issued with a Farcaster account id in the metadata and without a recipient address. This enables issuers to make attestations about Farcaster accounts.
 
@@ -60,16 +60,16 @@ Projects are important because a large set of data points about projects are hig
 
 Maintaining a persistent project identity is also essential for the proper functioning of impact tracking and improving the operations around Retro Funding and grants. 
 
-#### What is a 'project'?
+### What is a 'project'?
 
 Projects are submitted for consideration in Retro Funding applications.
 
-#### What is not a project:
+### What is not a project:
 
 * A project is not a person, but it can have a single contributor.
 * A project is not a team or organization
 
-#### What is a project:
+### What is a project:
 
 * A specific product built by a company is a project
 * A specific contribution made to the Optimism Collective, like a Dune Dashboard, is a project
@@ -78,33 +78,33 @@ Projects are submitted for consideration in Retro Funding applications.
 * An event is a project
 * A YouTube channel is a project
 
-#### The project entity
+### The project entity
 
 The identity layer of the Optimism Collective isn't complete without persistent project identity. As part of Retro Funding 4, we introduced the concept of an evergreen project that is represented onchain by the [Project Attestation](https://docs.optimism.io/chain/identity/schemas#project-identifier). The attestation UID is the project identifier. Project metadata is stored off-chain and updated via the [Project Metadata Attestation](https://docs.optimism.io/chain/identity/schemas#project-metadata).
 
 Attestations are an effective way to represent projects onchain, because they can be created permissionlessly, and it is easy to create other attestations referencing the project via the refUID field in the EAS. This creates an infinitely composable data structure representing projects, their contributors, achievements and metadata.
 
-You can find more detailed information about the schemas in the [developer docs](https://docs.optimism.io/chain/identity/schemas#project-metadata).
+You can find more detailed information about [schemas](/schemas#project-metadata).
 
-#### Project core concepts
+### Project core concepts
 
 The project attestation architecture is simple, flexible and unopinionated. However, there are some core concepts to projects.
 
-#### Mutability
+### Mutability
 
 The project attestation architecture is designed so the primary project attestation contains no mutable data - the identifier therefore doesn't change with changes to project information. The project metadata attestation, on the other hand, is re-issued any time there are changes to the project metadata. The most recent project metadata attestation can be relied on to represent the current state of the project.
 
-#### Parent projects
+### Parent projects
 
 Projects can have a nested structure via the 'parent project' field on the project metadata attestation. This creates a highly flexible architecture that can represent all types of contributions to the Optimism Collective.
 
 Each parent or sub-project can independently apply for Retro Funding or grants, and they can have different sets of contributors.
 
-#### Contributors
+### Contributors
 
 The contributors to a project are one of the most important data points about the project. For the purposes of Retro Funding 4 sign-up, contributor data is nested within the offchain project metadata. This decision was made to expedite the release of the sign-up form. In future, we plan to represent contributors to a project onchain via a separate attestation. Contributors will continue to be identified by their Farcaster account id rather than an Ethereum account. The contributors to a project can change over time.
 
-#### Project verifications
+### Project verifications
 
 In Retro Funding 4 sign-up, projects are invited to verify their GitHub repositories and contracts to better enable impact tracking. In the MVP release, these connections are stored off-chain as part of the project metadata. In future, we imagine that various apps and utilities will enable project admins to verify their project's GitHub, contracts and other data, and will issue specific verification attestations as a result. Other apps will consume these attestations so long as they trust the source and methodology whereby the attestations were generated.
 

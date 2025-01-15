@@ -1,0 +1,15 @@
+---
+title: Organizations
+lang: en-US
+description: Learn about the organization entity within the Optimism Collective's identity stack.
+---
+
+## Organizations
+
+Within the Optimism Collective, the organization entity is used to represent teams, squads, DAOs and other organizations that may work on multiple projects. Organizations can apply to Retroactive Public Goods Funding (Retro Funding) with specific [projects](https://docs.optimism.io/chain/identity/projects), never with just the organization. This is because projects represent contributions that created impact in the Collective, and Retro Rounds award OP to past impact.
+
+The organization entity is represented onchain by an attestation. The attestation UID is the organization's unique identifier for its lifecycle in the Collective. To create a new organization, an attestation is issued using [this schema](https://optimism.easscan.org/schema/view/0xff0b916851c1c5507406cfcaa60e5d549c91b7f642eb74e33b88143cae4b47d0). The only metadata included in the schema is the Farcaster Id of the person who created the organization, and the entity type (in this case "organization").
+
+All other organization metadata is stored or referenced in the [Organization Metadata Attestation](https://optimism.easscan.org/schema/view/0xc2b376d1a140287b1fa1519747baae1317cf37e0d27289b86f85aa7cebfd649f). The Organization Metadata Attestation is re-issued anytime there is a change in metadata. Apps displaying organization metadata should look to the most recent attestation for the up-to-date metadata.
+
+See the [attestation schemas page](https://docs.optimism.io/chain/identity/schemas) for more details on the schemas and their metadata.
