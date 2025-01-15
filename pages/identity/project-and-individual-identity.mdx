@@ -6,7 +6,7 @@ description: This document outlines the Optimism Foundation's approach to the id
 
 # Project and individual identity
 
-This document outlines the Optimism Foundation's approach to the identity and reputation of individuals and projects within the Optimism Collective. The identity stack framework, including an explanation of how the identity layer relates to other components, is outlined in [this document](https://docs.optimism.io/chain/identity/overview).
+This document outlines the Optimism Foundation's approach to the identity and reputation of individuals and projects within the Optimism Collective. The identity stack framework, including an explanation of how the identity layer relates to other components, is outlined in [this document](/identity/overview/).
 
 ## What does identity and reputation mean?
 
@@ -21,7 +21,7 @@ Instead of 'reputation' perhaps what we're really trying to judge is:
 
 ### Building a digital identity
 
-In order for individuals to build up the kinds of specific 'reputation' mentioned above, relevant data needs to be accrued to their digital identity. Those data points and their aggregation and interpretation are part of the data and data interpretation layers in the [identity stack](https://docs.optimism.io/chain/identity/overview). 
+In order for individuals to build up the kinds of specific 'reputation' mentioned above, relevant data needs to be accrued to their digital identity. Those data points and their aggregation and interpretation are part of the data and data interpretation layers in the [identity stack](/identity/overview). 
 
 While having many different data interpreters and data producers is valuable, the identity layer must be narrow to serve its purpose. If individuals have a unique identity for every interaction they have with the Optimism Collective, it is much more difficult for data interpreters to make judgments about them and user interfaces to unify all the relevant signals about a single individual.
 
@@ -29,7 +29,7 @@ As such, the Optimism Foundation is taking an opinionated approach to set a comm
 
 ### People and projects
 
-There are two entities in the Collective: people and projects. People are unique human individuals and are associated with a particular [Farcaster account id](https://docs.farcaster.xyz/learn/what-is-farcaster/accounts). Projects are things created by individuals or groups of people, and are identified by an attestation UID from the [project schema](https://docs.optimism.io/chain/identity/schemas#project-identifier). 
+There are two entities in the Collective: people and projects. People are unique human individuals and are associated with a particular [Farcaster account id](https://docs.farcaster.xyz/learn/what-is-farcaster/accounts). Projects are things created by individuals or groups of people, and are identified by an attestation UID from the [project schema](/identity/schemas#project-identifier). 
 
 ### People
 
@@ -80,11 +80,11 @@ Projects are submitted for consideration in Retro Funding applications.
 
 ### The project entity
 
-The identity layer of the Optimism Collective isn't complete without persistent project identity. As part of Retro Funding 4, we introduced the concept of an evergreen project that is represented onchain by the [Project Attestation](https://docs.optimism.io/chain/identity/schemas#project-identifier). The attestation UID is the project identifier. Project metadata is stored off-chain and updated via the [Project Metadata Attestation](https://docs.optimism.io/chain/identity/schemas#project-metadata).
+The identity layer of the Optimism Collective isn't complete without persistent project identity. As part of Retro Funding 4, we introduced the concept of an evergreen project that is represented onchain by the [Project Attestation](/identity/schemas#project-identifier). The attestation UID is the project identifier. Project metadata is stored off-chain and updated via the [Project Metadata Attestation](/identity/schemas#project-metadata).
 
 Attestations are an effective way to represent projects onchain, because they can be created permissionlessly, and it is easy to create other attestations referencing the project via the refUID field in the EAS. This creates an infinitely composable data structure representing projects, their contributors, achievements and metadata.
 
-You can find more detailed information about [schemas](/schemas#project-metadata).
+You can find more detailed information about [schemas](/identity/schemas#project-metadata).
 
 ### Project core concepts
 
