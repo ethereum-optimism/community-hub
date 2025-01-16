@@ -1,33 +1,33 @@
 #############################  Display  #############################
-
-# Verbose program output
-verbose = "info"
-
+# Use error level to only show failed requests
+verbose = "error"
 # Don't show interactive progress bar while checking links.
 no_progress = true
+# Don't show the source file of links
+no_show_source = false
 
 #############################  Requests  ############################
-
 # URL remapping rules.
 remap = [
-    "file:///(.*?)/pages/img/(.*) file:///$1/public/img/$2",
-    "file:///(.*?)/pages/resources/(.*) file:///$1/public/resources/$2",
-    "file:///([^#.?]+)(#.*)?$ file:///$1.mdx$2",
-    "\\\\& &"
+    # Handle resource files without adding .mdx extension
+    "file:///pages/(.*?)\\.(pdf|png|jpg|jpeg|gif|svg|json)$ file:///./pages/$1.$2",
+    # Handle URL-encoded anchors (%23) for mdx files
+    "file:///([^%\\.]+)%23(.*) file:///./pages/$1.mdx#$2",
+    # Handle regular anchors (#) for mdx files
+    "file:///([^#\\.]+)#(.*) file:///./pages/$1.mdx#$2",
+    # Handle regular mdx files without anchors
+    "file:///([^#%\\.]+)$ file:///./pages/$1.mdx",
 ]
 
-# Base URL or website root directory to check relative URLs.
-base = "./pages"
+# Base URL or website root directory to check relative URLs
+base = "."
 
 #############################  Exclusions  ##########################
-
 # Exclude loopback IP address range and localhost from checking.
 exclude_loopback = true
-
 # Exclude all mail addresses from checking.
 exclude_mail = true
-
-# Exclude RPC URLs from checking.
+# Exclude RPC URLs from checking
 exclude = [
     'https://mainnet.optimism.io',
     'https://mainnet-sequencer.optimism.io',
@@ -36,8 +36,22 @@ exclude = [
     'https://archive.org',
     'https://web.archive.org',
     'https://mainnet.base.org',
-    'https://sepolia.base.org'
+    'https://sepolia.base.org',
+    'https://optimism.easscan.org',
+    '\.(pdf|zip|png|jpg|jpeg|gif|svg|json)$'
 ]
 
-# Accept these status codes
-accept = ["100..=103", "200..=299", "403..=403", "502..=502"]
+# Accept all status codes except 404
+accept = [
+    "100..=399",
+    "401..=403",
+    "405..=999"
+]
+
+# Use compact format for cleaner output
+
+format = "Compact"
+
+#############################  Anchors  #############################
+# Enable checking for anchors in local files
+check_anchors = true
