@@ -1,17 +1,13 @@
 {
-    "identity-overview": {
-        "display": "hidden"
-      },
+
+    "overview": "Overview",
     "identity-and-rep": "Identity and Reputation",
-    "project-and-individual-identity-in-the-collective": "Project and individual identity in the Collective",
-    "--- ATTESTATIONS": {
-        "title": "ATTESTATIONS",
-        "type": "separator"
-    },
+    "about-attestations": "About attestations",
     "attestations-best-practices": "Attestations Best Practices",
-    "build-with-attestations": {
-        "title": "Build with Attestations",
-        "href": "https://docs.optimism.io/chain/identity/about-attestations",
-        "newWindow": true
-    }
+    "contracts-eas": "Contracts (EAS)",
+    "schemas": "Schemas",
+    "applications": "Apps",
+    "organizations": "Organization",
+    "project-and-individual-identity": "Project and individual identity in the Collective",
+    "projects": "Projects"
 }

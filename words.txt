@@ -1,6 +1,7 @@
 Avello
 Badgeholder
 badgeholder
+Badgeholder's
 badgeholder's
 Badgeholders
 badgeholders
@@ -9,6 +10,7 @@ Blockscout
 blockspace
 Charmverse
 Farcaster
+farcaster
 Flipside
 Fraxtal
 Gamifying
@@ -16,6 +18,7 @@ hackathon
 Haus
 Insta
 intersubjective
+ipfs
 Jing
 judgements
 Lisk
@@ -28,13 +31,19 @@ Numba
 numba
 offchain
 Ostrom
+Permissionless
 permissionless
 permissionlessly
+personhood
+predeploy
 quadraticvote
 redelegate
 Relatedly
 retrofunding
+Rpgf
+rpgf
 Solana
+soulbound
 Superchain
 superchain
 sybils
@@ -46,9 +55,10 @@ unwrappping
 upvoted
 Vitalik
 Vitalik's
+Warpcast
 WLTA
+workstreams
 Xaddies
 xaddies
 Xterio
 Zora
-workstreams

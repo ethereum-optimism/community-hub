@@ -1,0 +1,40 @@
+---
+title: Contracts (EAS)
+lang: en-US
+description: Learn the basics of contracts for EAS, EAS contract addresses, and how to read and write attestations.
+---
+
+# EAS contracts
+
+This guide covers [Ethereum Attestation Service ("EAS")](https://attest.sh/), an open-source public good that is included as a predeploy in the OP Stack.
+It also covers EAS contract addresses, how to read and write attestations, and indexing.
+
+## EAS contract addresses
+
+The [Ethereum Attestation Service](https://docs.attest.sh/docs/welcome) is deployed on these addresses:
+
+| Network    | Attestation Contract                                                                                                                   | Schema Registry Contract                                                                                                               |
+| ---------- | -------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| OP Sepolia | [0x4200000000000000000000000000000000000021](https://sepolia-optimism.etherscan.io/address/0x4200000000000000000000000000000000000021) | [0x4200000000000000000000000000000000000020](https://sepolia-optimism.etherscan.io/address/0x4200000000000000000000000000000000000020) |
+| OP Mainnet | [0x4200000000000000000000000000000000000021](https://optimistic.etherscan.io/address/0x4200000000000000000000000000000000000021)       | [0x4200000000000000000000000000000000000020](https://optimistic.etherscan.io/address/0x4200000000000000000000000000000000000020)       |
+
+## How to read and write attestations
+
+You can read and write attestations in several ways:
+
+*   [EAS scan user interface (OP Mainnet)](https://optimism.easscan.org/)
+*   [EAS scan user interface (OP Sepolia)](https://optimism-sepolia.easscan.org/)
+*   [JavaScript SDK](https://docs.attest.sh/docs/developer-tools/eas-sdk)
+*   [Access directly onchain](https://github.com/ethereum-attestation-service/eas-contracts/blob/master/contracts/EAS.sol) (if you need to attest from a smart contract)
+
+## Indexing
+
+Indexing is available via:
+
+*   [GraphQL endpoint](https://docs.attest.sh/docs/developer-tools/api)
+*   [Ponder graph](https://github.com/ethereum-attestation-service/eas-ponder-graph)
+*   [Open source indexer](https://github.com/ethereum-attestation-service/eas-indexing-service)
+
+## Next steps
+
+For more information on working with attestations, see [Build Decentralized Identity Apps with Attestations](/identity/about-attestations).
