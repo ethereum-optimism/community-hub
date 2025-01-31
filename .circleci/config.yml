@@ -43,6 +43,26 @@ jobs:
           name: Run lint
           command: pnpm lint
 
+  check-lockfile:
+    docker:
+      - image: cimg/node:20.10
+    steps:
+      - checkout
+      - run:
+          name: Install pnpm
+          command: sudo npm install -g pnpm
+      - run:
+          name: Install Dependencies
+          command: pnpm install
+      - run:
+          name: Check lockfile
+          command: |
+            git diff --exit-code
+            if [ $? -ne 0 ]; then
+              echo "Lockfile is out of sync. Please run 'pnpm install' and commit the changes."
+              exit 1
+            fi
+
 workflows:
   version: 2
   check-links-workflow:
@@ -52,3 +72,7 @@ workflows:
   lint-markdown-workflow:
     jobs:
       - lint-markdown
+
+  check-lockfile-workflow:
+    jobs:
+      - check-lockfile
