@@ -1,0 +1,78 @@
+version: 2.1
+
+jobs:
+  check-links:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - checkout
+      - run:
+          name: Install Lychee
+          command: |
+            curl -L https://github.com/lycheeverse/lychee/releases/download/v0.14.3/lychee-v0.14.3-x86_64-unknown-linux-gnu.tar.gz > lychee.tar.gz
+            tar xzf lychee.tar.gz
+            sudo mv ./lychee /usr/local/bin/
+      - run:
+          name: Run Lychee
+          command: |
+            lychee --config lychee.toml --quiet ./pages
+            if [ $? -ne 0 ]; then
+              echo "Lychee found broken links"
+              exit 1
+            fi
+  lint-markdown:
+    docker:
+      - image: cimg/node:20.10
+    steps:
+      - checkout
+      - run:
+          name: Install pnpm
+          command: sudo npm install -g pnpm
+      - restore_cache:
+          keys:
+            - pnpm-deps-{{ checksum "pnpm-lock.yaml" }}
+            - pnpm-deps-
+      - run:
+          name: Install Dependencies
+          command: pnpm install
+      - save_cache:
+          key: pnpm-deps-{{ checksum "pnpm-lock.yaml" }}
+          paths:
+            - ~/.pnpm-store
+      - run:
+          name: Run lint
+          command: pnpm lint
+
+  check-lockfile:
+    docker:
+      - image: cimg/node:20.10
+    steps:
+      - checkout
+      - run:
+          name: Install pnpm
+          command: sudo npm install -g pnpm
+      - run:
+          name: Install Dependencies
+          command: pnpm install
+      - run:
+          name: Check lockfile
+          command: |
+            git diff --exit-code
+            if [ $? -ne 0 ]; then
+              echo "Lockfile is out of sync. Please run 'pnpm install' and commit the changes."
+              exit 1
+            fi
+
+workflows:
+  version: 2
+  check-links-workflow:
+    jobs:
+      - check-links
+
+  lint-markdown-workflow:
+    jobs:
+      - lint-markdown
+
+  check-lockfile-workflow:
+    jobs:
+      - check-lockfile
