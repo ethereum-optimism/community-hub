@@ -63,6 +63,29 @@ jobs:
               exit 1
             fi
 
+  run-tests:
+    docker:
+      - image: cimg/node:20.10
+    steps:
+      - checkout
+      - run:
+          name: Install pnpm
+          command: sudo npm install -g pnpm
+      - restore_cache:
+          keys:
+            - pnpm-deps-{{ checksum "pnpm-lock.yaml" }}
+            - pnpm-deps-
+      - run:
+          name: Install Dependencies
+          command: pnpm install
+      - save_cache:
+          key: pnpm-deps-{{ checksum "pnpm-lock.yaml" }}
+          paths:
+            - ~/.pnpm-store
+      - run:
+          name: Run tests
+          command: pnpm test
+
 workflows:
   version: 2
   check-links-workflow:
@@ -76,3 +99,7 @@ workflows:
   check-lockfile-workflow:
     jobs:
       - check-lockfile
+
+  run-tests-workflow:
+    jobs:
+      - run-tests
