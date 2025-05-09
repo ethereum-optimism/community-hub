@@ -5,13 +5,23 @@
         "newWindow": true
     },
     "discord": {
-        "title": "Discord",
+        "title": "Community Discord",
         "href": "https://discord.gg/optimism",
         "newWindow": true
     },
     "gov-cal": {
         "title": "Governance Calender",
         "href": "https://calendar.google.com/calendar/embed?src=c_fnmtguh6noo6qgbni2gperid4k%40group.calendar.google.com&ctz=Europe%2FBerlin",
+        "newWindow": true
+    },
+    "dev-discord": {
+        "title": "Developer Discord",
+        "href": "https://guild.xyz/superchain-devs",
+        "newWindow": true
+    },
+    "dev-docs": {
+        "title": "Developer Docs",
+        "href": "https://docs.optimism.io/app-developers/get-started",
         "newWindow": true
     }
 }
