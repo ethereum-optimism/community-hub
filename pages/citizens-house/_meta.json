@@ -1,19 +1,23 @@
 {
+    "--- CITIZENS HOUSE": {
+        "title": "CITIZENS HOUSE",
+        "type": "separator"
+    },
     "citizen-house-overview": "Overview",
+    "experimentation-with-citizenship": "History and Evolution",
     "--- RETRO FUNDING": {
         "title": "RETRO FUNDING",
         "type": "separator"
     },
     "how-retro-funding-works": "How Retro Funding Works",
     "rounds": "Past Rounds",
-    "--- CITIZENS": {
-        "title": "CITIZENS",
+    "--- CITIZENSHIP": {
+        "title": "CITIZENSHIP",
         "type": "separator"
     },
     "faq-citizenship": "FAQ",
     "citizenship-selection": "Selection",
-    "citizenship-selection-glossary": "Selection Glossary",
-    "citizenship-eligibility-requirments": "Eligibility Requirments",
-    "experimentation-with-citizenship": "Experimentation with Citizenship",
-    "s8-eligible-chains-and-apps": "Eligible chains and apps in Season 8"
+    "citizen-selection-glossary": "Selection Glossary",
+    "citizenship-eligibility-requirements": "Eligibility Requirments",
+    "s8-eligible-chains-and-apps": "Eligible Chains and Apps in Season 8"
 }
