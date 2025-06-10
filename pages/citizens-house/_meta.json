@@ -10,6 +10,10 @@
         "title": "CITIZENS",
         "type": "separator"
     },
-    "citizenship-selection": "Citizenship Selection",
-    "experimentation-with-citizenship": "Experimentation with Citizenship"
+    "faq-citizenship": "FAQ",
+    "citizenship-selection": "Selection",
+    "citizenship-selection-glossary": "Selection Glossary",
+    "citizenship-eligibility-requirments": "Eligibility Requirments",
+    "experimentation-with-citizenship": "Experimentation with Citizenship",
+    "s8-eligible-chains-and-apps": "Eligible chains and apps in Season 8"
 }
