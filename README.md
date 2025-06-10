@@ -1,6 +1,6 @@
 # Optimism Community Hub
 
-This repo houses the Optimism Community Hub located at [community.optimism.io](https://community.optimism.io/). All documentation-related updates and new content will be tracked and maintained in this repo.
+This repo houses the Optimism Community Hub located at [community.optimism.io](https://community.optimism.io). All documentation-related updates and new content will be tracked and maintained in this repo.
 
 ## Local Development
 
