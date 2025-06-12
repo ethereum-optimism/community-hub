@@ -4,67 +4,136 @@ lang: en-US
 description: The Citizens' House is half of the Optimism Collective's bicameral governance system, designed to work alongside the pure token-voting based Token House. 
 ---
 
-# Experimentation with Citizenship
+# Citizens' House History and Evolution
 
-The Citizens' House is half of the Optimism Collective's bicameral governance system, designed to work alongside the pure token-voting based Token House. 
+## Experimentation with Citizenship
 
-The purpose of the Citizens' House is to:
-- Reduce the concentration of power in the Collective
-- Safeguard against the capture of the Token House
-- Allocate resources according to the long-term benefit to the Collective
+The Citizens' House has undergone significant evolution since its inception, reflecting Optimism's commitment to iterative improvement and experimental governance. This section traces that journey and provides context for the Season 8 changes.
 
-Any changes to the Citizens' House, including changes to Citizen selection, should be evaluated based on their contribution to these objectives.
+### Origins and Early Vision
 
-## Taking an experimental approach to Citizen selection
+When the Citizens' House was first conceived, three core goals guided its development:
 
-An experimental approach to Citizen selection ensures that changes are made based on evidence rather than gut feeling. Guesswork and informed opinions play a part in the formation of hypotheses, but diverging opinions are settled through hypothesis-testing. This process ensures that as Citizen selection evolves over time, it is always evolving in the direction of progress towards the objectives. Changes that have an undesirable effect are rolled back, and mistakes are learned from to inform future improvements.
+1. Reduce concentration of power
+2. Counteract potential capture of the Token House
+3. Allocate resources effectively (particularly Retro Funding)
 
-Disclaimer: *The types of experiments run in the name of Citizen selection are unlikely to be double-blind controlled trials. We seek to use the principles and practices of experimentation to the maximum extent feasible, with the aim of growing the amount of high-confidence knowledge about Citizen selection that the Collective has access to.*
+Initially, Citizens were selected because they were most likely to meet these goals—rather than because they held an intrinsic right to representation. This pragmatic approach allowed for experimentation with different selection methods and governance structures.
 
-## Experimentation on Citizen selection in practice
+### Web of Trust Model
 
-Effective experimentation with Citizen selection has several prerequisites:
+The early Citizens' House used a Web of Trust model for selecting participants:
 
-1. The ability to measure both input and outcome variables
-1. Short feedback cycles
-1. Reversibility
+- Round 1 began with 24 participants selected by the Optimism Foundation
+- Round 2 expanded to 71 participants, with existing Citizens inviting new members
+- Round 3 grew to 146 participants through continued invitation
 
-### Measuring both input and outcome variables
+This approach allowed for controlled growth while maintaining alignment with the Collective's values. However, it also raised questions about representation and inclusivity.
 
-To run effective experiments, the inputs and outcomes of those experiments must be measurable. Inputs (independent variables) are the aspects of Citizen selection that we want to change or influence, and outcomes (dependent variables) are the measurable effects of the experiment, usually tied to the overall objective we want to achieve. A large effort is underway to improve our ability to measure key aspects of Retroactive Public Goods Funding (Retro Funding), Citizens' House performance and other aspects of the Citizenry.
+## Key Phases & Lessons
 
-### Short feedback cycles
+The evolution of the Citizens' House has been marked by several key phases, each yielding important insights that have shaped the Season 8 model.
 
-Effective experimentation often involves testing many different variables in different conditions. In order to make efficient progress, we need to be able to run a lot of experiments and learn from them quickly. Increasing the number of Retro Funding iterations per year and introducing new opportunities for experiments can allow us to shorten feedback cycles.
+### Round 4: Growing On-Chain Data
 
-### Reversibility
+During this phase, the focus shifted to building better data infrastructure for governance:
 
-The primary objective of experimentation is to learn. Experiments are a risk - we are never sure what the outcome will be, otherwise there would be no need for an experiment. Any changes made to Citizen selection in the name of experimentation must therefore be reversible. The concept of guest voters in Retro Funding experiments is one way to ensure reversibility of experiments.
+- OP Atlas and the project registry was established to track the projects building value on the Superchain
+- By tying registry enrolment to Retro Funding sign-up, the registry grew organically
+- This provided signals for identifying potential Citizens and improving the efficiency of Retro Funding
 
-### Citizen selection experiments
+### Round 5: Expertise vs. Broader Perspective
 
-The purpose of experimentation with Citizen selection is to increase the Collective's knowledge about the effectiveness of various different selection mechanisms to ultimately enable effective future decisions. Experiments are currently run as part of the planned Retro Funding iterations that happen multiple times per year, with experiment outcomes being shared publicly at the end of each experiment.
+This phase tested whether OP Stack experts would better allocate Retro Funding than non-experts:
 
-For each Retro Funding iteration, a different selection mechanism may be tested by selecting a limited number of guest voters to participate in the round. Guest voters are temporary participants in Retro Funding votes, and should not be confused with Citizens who participate in protocol upgrade proposal vetoes in addition to Retro Funding votes. The purpose of introducing guest voters is to increase the reversibility of experiments.
+- Experts made more 'opinionated' (less flat) distributions, which stakeholders saw as more accurate
+- A key insight emerged: expertise helps answer "Which projects are most useful?", but value-based questions (e.g., "What types of impact should we prioritize?") require broader stakeholder input
+- This highlighted the distinction between technical assessment and expression of preferences
 
-Increased data collection around Retro Funding votes and their participants is also an essential component of measuring experiment outcomes, and may take several forms:
-* Surveys distributed to voters, builders and other stakeholders
-* An analysis of voting behavior within and across Retro Funding votes
-* Measuring the concentration of power through social graph analysis
+### Round 6: Badgeholder vs. Community Analysis
 
-Another essential type of data required for experimentation with Citizen selection is identity and 'reputation' data. This forms an important input into selection mechanisms themselves and is therefore essential to the Collective's ability to experiment with various approaches.
+This phase compared the existing badgeholder group with a broader community sample:
 
-## Identity, reputation and Citizen selection
+- No significant differences were found between badgeholders (selected via the web-of-trust model) and a random community sample
+- Both groups tended to represent an "enthusiast" persona—those with time and interest in governance who weren't necessarily Superchain stakeholders
+- This revealed an opt-in bias toward "enthusiast" behavior in governance, potentially overshadowing other key stakeholder voices
 
-There are a myriad of variations of the above approaches to Citizen selection that may be tested experimentally. Many such selection mechanisms rely on information about prospective Citizens to make selection decisions. Building a rich identity layer within the Collective allows these kinds of selection mechanisms to function.
+### Season 7: Testing Personas & Organizational Votes
 
-By enabling individual members of the Collective to build and maintain their identity as a Collective participant, potentially relevant information about the individual can be factored into the selection process. For example, some selection mechanisms may use someone's professional contributions to the Collective as a deciding factor in whether they should be Citizens. Another might use the duration and depth of engagement with apps built on the Superchain. These are just hypothetical examples, but they illustrate the importance of individual identity in being able to test all selection mechanisms.
+This crucial phase brought in diverse Guest Voters—community members, chains, and past Retro Funding recipients—yielding several important findings:
 
-Building out [the identity stack](https://community.optimism.io/identity/identity-and-rep) ensures that the Optimism Collective is able to effectively experiment with all possible selection mechanisms to identify those with the best performance. It is therefore a core building block in the development of Citizenship. Without adequate data on potential candidate Citizens and the performance of the Citizenry on its objectives, it is impossible to experiment with selection criteria.
+- Individuals working at chains/protocols appeared to represent personal, rather than organizational preferences
+- There was a cluster of voters that consistently favored higher budgets for work less tied to direct Superchain growth. This cluster correlated with lower OP Stack expertise, high funding received in Round 6, and a preference for public goods over Superchain growth
+- Most participants, even non-experts, tended to align with budgets proposed by an "expert group".
+- Engagement was highest among enthusiasts and community contributors, lower among chains/application developers
 
-## To recap 
+## Personas Research
 
-* A solid and shared foundation of knowledge and data from open-sourced experiments is essential for the Collective's decision-making ability. 
-* Experimentation with selection criteria is the most effective way to increase knowledge around the effectiveness of various approaches to Citizen selection.
-* Measurement of inputs and outcomes of Citizen selection, short feedback loops and reversible changes are essential prerequisites for the Collective to build up a reliable process for experimentation.
-* The Optimism Foundation currently runs experiments on Citizen selection using guest voters in Retro Funding iterations with the help of surveys, voting analysis and other methods to measure experiment outcomes.
+Research into governance participants revealed several distinct personas that have informed the Season 8 model:
+
+### Enthusiast Persona
+
+- Overrepresented in governance due to opt-in bias—these individuals participate heavily because they find governance intrinsically rewarding
+- Tend to be very engaged in forums, Discord, and other governance channels
+- Often willing to invest significant time
+
+### Bootstrapper Persona
+
+- Builders of tooling and infrastructure who stay close to governance to understand funding opportunities and the Collective's needs
+- Motivated by securing sustainable funding for their projects
+
+### Superchain Builder Persona
+
+- Typically the core developers of protocols/chains who have a great interest in the Superchain's overall growth
+- Underrepresented in current governance structures because they are very busy
+- Often lack time for extensive governance engagement
+
+This research highlighted the need to design governance processes that capture input from all these personas, not just those with the most time and intrinsic motivation for governance participation.
+
+## Evolving Governance Understanding
+
+Through these experiments, a more nuanced understanding of governance has emerged:
+
+### Different Decision Types
+
+- **Preferences**: No absolute "right" answer (e.g., setting priorities)
+- **Prediction**: There is a correct answer, but only revealed in the future
+- **Measurement**: Best done objectively, ideally by a computer or hired experts
+
+### Select for Expertise; Govern for Preferences
+
+- Prediction or measurement are tasks that can be delegated to experts who are held accountable by governance
+- Preference-based choices require broad stakeholder input
+- This distinction helps clarify that stakeholders must be able to express their preferences while delegating the execution of those preferences
+
+## From "One House" to "Decision Modules"
+
+A key insight from these experiments is that not all decisions should be made by the same group. Instead, "Who gets to vote on X?" is the crux of effective governance design.
+
+Different decisions (resource allocation, upgrades, economic parameter setting) need to be owned by the right stakeholder mix. Additionally, proposal and approval rights may go to different entities, with proposals often made by smaller expert groups and ratified, approved, or vetoed by the wider stakeholders.
+
+## Future Directions
+
+The inclusion of chains, apps and users in the Citizens' House as of Season 8 represents an important step forward, but not the end of the journey. Future developments may include:
+
+### Refined Eligibility Criteria
+
+As we gather more data on participation and outcomes, eligibility criteria may be further refined to achieve optimal representation.
+
+### Stratified Random Sampling
+
+For Citizens that are end-users, future seasons may implement stratified random sampling to prevent overrepresentation of specific types of users and prevent capture.
+
+### Enhanced Sybil Resistance
+
+Improvements to proof of personhood mechanisms will continue to evolve to support the integrity of the Citizens' House.
+
+### Additional Governance Powers
+
+As the Citizens' House matures, it may take on additional governance responsibilities.
+
+### Changes to Joint House Voting Thresholds
+
+The precise dynamics around quorum and approval / veto thresholds in Joint House votes are complex and will require further tuning in future Seasons to ensure a balanced representation of stakeholder interests.
+
+The Citizens' House will continue to evolve based on what we learn together, always guided by the core principle of reducing platform risk for those that depend on the Superchain and preventing capture by any one interest group.
