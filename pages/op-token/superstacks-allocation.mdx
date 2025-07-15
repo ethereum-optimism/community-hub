@@ -8,9 +8,9 @@ import { Callout } from 'nextra/components'
 
 # SuperStacks Allocation
 
-SuperStacks was a pilot program designed to show how the Superchain can create a more connected onchain experience. This was Optimism’s first GTM campaign in Superchain-wide incentives, a live test of how to reward the adoption of interoperable assets across chains focusing on usage, liquidity, and long-term contribution. EOA addresses that provided liquidity in DEX pools, supplied liquidity on lending markets, or deposited into vaults between 2025-04-16 16:00:00 UTC and 2025-06-30 23:59:00 UTC were considered for the final OP delivery on OP Mainnet. SuperStacks allocated 2,500,000 OP to unique 6,387 addresses based on activity on Base, Unichain, Ink, World, Soneium, and OP Mainnet. The list of eligible pools and vaults is shown below.
+SuperStacks was a pilot program designed to show how the Superchain can create a more connected onchain experience. This was Optimism’s first GTM campaign in Superchain-wide incentives, a live test of how to reward the adoption of interoperable assets across chains focusing on usage, liquidity, and long-term contribution.
 
-Addresses that provided liquidity in DEX pools, supplied liquidity on lending markets, or deposited into vaults between April 16, 2025 16:00 UTC and June 30, 2025 23:59 UTC were considered for the final OP delivery on OP Mainnet. SuperStacks allocated 2,500,000 OP to 6,387 unique addresses based on activity on Base, Unichain, Ink, World, Soneium, and OP Mainnet.
+Addresses that provided liquidity in DEX pools, supplied liquidity on lending markets, or deposited into vaults between 2025-04-16 16:00:00 UTC and 2025-06-30 23:59:00 UTC were considered for the final OP delivery on OP Mainnet. SuperStacks allocated 2,500,000 OP to unique 6,387 addresses based on activity on Base, Unichain, Ink, World, Soneium, and OP Mainnet. The list of eligible pools and vaults is shown below.
 
 <Callout type="info">
 SuperStacks rewards need to be claimed. Go to [app.optimism.io/superstacks](https://app.optimism.io/superstacks) to claim.
@@ -24,9 +24,7 @@ Users that deposited into the WETH vault on Morpho through the Morpho mini app o
 
 Addresses earned 10 XP per $1 in liquidity¹ for every 24 hours, and XP started accruing after the first full 24-hour period. For every $1 that remained in the qualifying pool or vault for 24 consecutive hours, addresses earned 10 XP per pool or vault. XP was calculated separately for each qualifying pool or vault. Furthermore, additional temporary XP multipliers were applied, which increased the XP accrual rate above the baseline. In total, 208,530,214,850 XP was earned.
 
-> **Total XP Earned:** 208,530,214,850 XP
-
-*   Only direct liquidity provision was included. Automated liquidity managers (ALMs) were excluded, except for Mellow, which was directly integrated into the Velodrome frontend.
+¹ Only direct liquidity provision was included. Automated liquidity managers (ALMs) were excluded, except for Mellow, which was directly integrated into the Velodrome frontend.
 
 ## OP Conversion
 
@@ -38,9 +36,7 @@ A conversion of XP to OP tokens was used, calculated as:
 
 Addresses with final rewards below the minimum threshold of 20 OP were not eligible to claim². The OP tokens that would have gone to these addresses were reallocated proportionally to eligible addresses³. Rewards were allocated in a strictly linear fashion using the conversion rate outlined below. Moreover, no caps were enforced to ensure a fair and transparent allocation for all participants.
 
-### XP-to-OP Conversion Rate
-
-| XP   | OP                             |
+| OP-to-XP Conversion Rate  | XP-to-OP Conversion Rate                             |
 | ---- | ------------------------------ |
 | 1 OP | 70,094.8 – 86,988.3 XP         |
 | 1 XP | 0.0000114958 – 0.0000142664 OP |
@@ -49,18 +45,18 @@ Addresses with final rewards below the minimum threshold of 20 OP were not eligi
 The rewards conversion rate was calculated with support from Open Block Labs
 </Callout>
 
-*   See full list of addresses and allocation amounts [here](https://github.com/ethereum-optimism/op-analytics/blob/main/reference_data/address_lists/op_superstacks_addresses_detailed_list.csv).
+² See full list of addresses and allocation amounts [here](https://github.com/ethereum-optimism/op-analytics/blob/main/reference_data/address_lists/op_superstacks_addresses_detailed_list.csv).
 
-*   Smart wallets, with the exception of natively embedded Morpho mini app wallets on World, were not eligible for the OP or WLD claim.
+³ Smart wallets, with the exception of natively embedded Morpho mini app wallets on World, were not eligible for the OP or WLD claim.
 
 ## How to Claim
 
 | Phase                 | Description                    | Eligible Addresses | Claim Site                                                         | Claim Period                |
 | --------------------- | ------------------------------ | ------------------ | ------------------------------------------------------------------ | --------------------------- |
 | SuperStacks OP Claims | Addresses that participated in SuperStacks through the regular frontend and not the Morpho mini app on World.             | 6,384              | [app.optimism.io/superstacks](https://app.optimism.io/superstacks) | Jul 15, 2025 – Jul 15, 2026 |
-| Mini App WLD Claims   | Addresses that participated in SuperStacks through the Morpho mini app on World. | 3                  | World Mini App (link shared by Jul 22)                             | Jul 22, 2025 – Jul 22, 2026 |
+| Mini App WLD Claims⁴  | Addresses that participated in SuperStacks through the Morpho mini app on World. | 3                  | World Mini App (link shared by Jul 22)                             | Jul 22, 2025 – Jul 22, 2026 |
 
-*   WLD allocations were converted to their OP equivalents using market exchange rates as of July 15, 2025.
+⁴ WLD allocations were converted to their OP equivalents using market exchange rates as of July 15, 2025.
 
 ## SuperStacks Pools and Vaults
 
