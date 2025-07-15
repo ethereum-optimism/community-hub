@@ -13,7 +13,6 @@ Biru
 Blockscout
 blockspace
 Bootstrapper
-Charmverse
 consecutivly
 Dmail
 Farcaster
@@ -57,7 +56,6 @@ Personhood
 personhood
 predeploy
 quadraticvote
-redelegate
 Relatedly
 retrofunding
 Rpgf
@@ -75,6 +73,7 @@ Superchain
 superchain
 Superchain's
 Superform
+superstacks
 Sybils
 sybils
 Synthetix
