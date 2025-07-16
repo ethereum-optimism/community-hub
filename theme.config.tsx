@@ -88,14 +88,14 @@ const config: DocsThemeConfig = {
   editLink: {
     text: '✏️ Edit this page on GitHub'
   },
-  banner: {
-    key: 'airdrop-5',
-    text: (
-      <a href="/op-token/airdrops/airdrop-5">
-        🎉 Airdrop 5 is live and supports power users growing the Superchain Ecosystem . Read more →
-      </a>
-    )
-  },
+  // banner: {
+  //   key: 'airdrop-5',
+  //   text: (
+  //     <a href="/op-token/airdrops/airdrop-5">
+  //       🎉 Airdrop 5 is live and supports power users growing the Superchain Ecosystem . Read more →
+  //     </a>
+  //   )
+  // },
   useNextSeoProps() {
     const { asPath } = useRouter()
     if (asPath !== '/') {
