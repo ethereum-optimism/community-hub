@@ -1,12 +1,214 @@
+/** @format */
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400..700&display=swap');
-@import url("colors.css");
-@import url("theme.css");
+
+/* RiformaLL Font Family */
+@font-face {
+  font-family: 'RiformaLL';
+  src: url('/fonts/RiformaLL-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'RiformaLL';
+  src: url('/fonts/RiformaLL-LightItalic.woff2') format('woff2');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'RiformaLL';
+  src: url('/fonts/RiformaLL-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'RiformaLL';
+  src: url('/fonts/RiformaLL-Italic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'RiformaLL';
+  src: url('/fonts/RiformaLL-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'RiformaLL';
+  src: url('/fonts/RiformaLL-MediumItalic.woff2') format('woff2');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'RiformaLL';
+  src: url('/fonts/RiformaLL-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'RiformaLL';
+  src: url('/fonts/RiformaLL-BoldItalic.woff2') format('woff2');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'RiformaLL';
+  src: url('/fonts/RiformaLL-Heavy.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'RiformaLL';
+  src: url('/fonts/RiformaLL-HeavyItalic.woff2') format('woff2');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+@import url('colors.css');
+@import url('theme.css');
+
+/* Global Font Configuration */
+:root {
+  --font-family-sans: 'RiformaLL', 'Inter', ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-family-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, 'SF Mono', Consolas,
+    'Liberation Mono', Menlo, monospace;
+}
+
+body {
+  font-family: var(--font-family-sans);
+  font-weight: 300; /* Use Light weight as default */
+}
+
+/* Ensure RiformaLL is used for all text elements */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+div,
+a,
+li,
+td,
+th {
+  font-family: var(--font-family-sans);
+}
+
+/* Adjust heading weights to be lighter */
+h1 {
+  font-weight: 500 !important; /* Medium for main headers */
+}
+
+h2 {
+  font-weight: 500 !important; /* Medium for section headers */
+}
+
+h3 {
+  font-weight: 500 !important; /* Medium for subsection headers */
+}
+
+h4,
+h5,
+h6 {
+  font-weight: 400 !important; /* Regular for smaller headings */
+}
+
+/* Nextra specific heading overrides */
+.nx-font-bold {
+  font-weight: 500 !important; /* Change from bold to medium */
+}
+
+/* Page title and section titles */
+.nextra-content h1,
+.nextra-content h2,
+.nextra-content h3 {
+  font-weight: 500 !important; /* Medium for content headers */
+}
+
+/* Regular text should use Light weight */
+p,
+li,
+td,
+span,
+div {
+  font-weight: 300; /* Light weight for body text */
+}
+
+/* Links can be slightly heavier for emphasis */
+a {
+  font-weight: 400; /* Regular weight for links */
+}
+
+/* Strong and bold elements should use Medium instead of Bold */
+strong,
+b {
+  font-weight: 500; /* Medium weight for emphasis */
+}
+
+/* Code elements keep their original weight */
+code,
+pre {
+  font-family: var(--font-family-mono);
+}
+
+/* Header/Navbar menu items */
+nav a,
+.nextra-nav-container a,
+.nextra-navbar a,
+header nav a,
+header a,
+[role='navigation'] a {
+  font-weight: 300 !important; /* Light weight for navbar items */
+}
+
+/* Main navigation items specifically */
+nav[aria-label='Navigation'] a,
+.nx-navbar a,
+.nx-flex.nx-items-center a {
+  font-weight: 300 !important; /* Light weight for main nav items */
+}
+
+/* Target span elements within nav links */
+nav a span {
+  font-weight: 400 !important; /* Regular weight for nav span text */
+}
+
+/* Active/selected navbar items can be slightly heavier */
+nav a.active,
+.nextra-nav-container a.active,
+.nextra-navbar a.active,
+nav a[aria-current='page'],
+nav a[data-active='true'] {
+  font-weight: 400 !important; /* Regular weight for active items */
+}
 
 /* Override Nextra so content gets more breathing room */
 .nextra-content h2 ~ p,
 .nextra-content h3 ~ p {
-  margin-top: 1.0rem;
+  margin-bottom: 1.25rem;
 }
 
 /* Custom div that can contain Nextra images */
@@ -47,4 +249,244 @@ span.shasum code {
   border: none;
   background-color: transparent !important;
 }
+/* Custom WIP callout */
+div.custom-callouts {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 65px;
+  padding: 5px;
+  background-color: #fefce8;
+  border: 2px solid #ffdc00;
+  z-index: 9999;
+  border-radius: 4px;
+}
+a.callout-link {
+  color: #006be6;
+  text-decoration: underline;
+}
 
+html.dark div.custom-callouts {
+  color: white;
+  background-color: #432c11;
+}
+html.dark a.callout-link {
+  color: #008ae6;
+}
+.callout-close-btn {
+  position: absolute;
+  top: -9px;
+  right: -9px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: #fefce8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #ffdc00;
+  color: red;
+  font-size: 14px;
+}
+/* Custom 4 column footer */
+/* div.footer-root {
+  flex: 1;
+  font-size: 0.875rem;
+  color: #666;
+
+  :global(.dark) & {
+    color: #666;
+  }
+
+  a.footer-root {
+    color: #666;
+    text-decoration: none;
+
+    :global(.dark) & {
+      color: #666;
+    }
+
+    &:hover {
+      color: rgb(17, 24, 39);
+
+      :global(.dark) & {
+        color: rgb(249, 250, 251);
+      }
+    }
+  }
+}
+
+div.footer-columns {
+  margin-bottom: 2rem;
+  display: grid;
+  gap: 32px;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+
+.footer-columns h3 {
+    margin-bottom: 20px;
+    color: rgb(17, 24, 39);
+    font-weight: 500;
+    line-height: 20px;
+
+    :global(.dark) & {
+      color: rgb(243, 244, 246);
+    }
+  }
+
+  li.footer-columns {
+    line-height: 21px;
+    margin-bottom: 12px;
+  }
+} */
+.footer-root {
+  width: 100%;
+  padding: 1.5rem 1rem 1rem; /* Reduced from 4rem 2rem 2rem */
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-top {
+  display: flex;
+  gap: 4rem;
+  margin-bottom: 3rem;
+}
+
+.footer-content {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem; /* Reduced from 2rem */
+}
+
+.footer-side {
+  width: 100px; /* Slightly reduced from 200px */
+}
+
+.footer-side .logo {
+  margin-bottom: 0.5rem; /* Reduced from 2rem */
+}
+
+.footer-side .logo {
+  margin-bottom: 2rem;
+}
+
+.footer-content section h3,
+.footer-side section h3 {
+  color: var(--nxds-text-primary);
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.footer-content section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-content section ul li {
+  margin-bottom: 0.75rem;
+}
+
+.footer-content section ul li a,
+.icon-link {
+  color: #808080;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.footer-content section ul li a:hover,
+.icon-link:hover {
+  opacity: 0.7;
+}
+
+.social-icons {
+  display: flex;
+  gap: 1rem;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(128, 128, 128, 0.2);
+}
+
+.policy-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.policy-links a {
+  color: #808080;
+  text-decoration: none;
+  transition: opacity 0.2s;
+  font-size: 0.875rem;
+}
+
+.policy-links a:hover {
+  opacity: 0.7;
+}
+
+.copyright {
+  color: #808080;
+  font-size: 0.875rem;
+}
+
+.copyright a {
+  color: #808080 !important;
+  text-decoration: none;
+}
+
+@media (max-width: 1024px) {
+  .footer-top {
+    flex-direction: column;
+  }
+
+  .footer-side {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    order: -1;
+  }
+
+  .footer-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-bottom {
+    flex-direction: column-reverse;
+    gap: 2rem;
+  }
+
+  .policy-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .copyright {
+    text-align: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-side {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+}
+
+code .line .highlighted {
+  background-color: transparent !important;
+  --tw-shadow-color: transparent !important;
+  box-shadow: none !important;
+}
