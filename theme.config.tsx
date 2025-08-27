@@ -119,7 +119,7 @@ const config: DocsThemeConfig = {
           property="og:description"
           content={frontMatter.description || 'Optimism Docs for developers'}
         />
-        <link rel="icon" href="/img/icons/favicon.ico" type="image/x-icon"></link>
+        <link rel="icon" href="/img/icons/op-favicon.png" type="image/png"></link>
       </>
     )
   },
