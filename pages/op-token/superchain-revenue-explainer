@@ -1,0 +1,56 @@
+---
+title: Superchain Revenue Explainer
+lang: en-US
+description: Overview of the Optimism governance token OP.
+---
+# **Superchain Revenue Explainer**
+
+The Superchain is a network of many OP Stack chains. Each chain is independently operated (for example, [Base](https://base.org/) by Coinbase, [World Chain](https://world.org/world-chain) by World, [Unichain](https://unichain.org/) by Uniswap, and [OP Mainnet](https://l2beat.com/scaling/projects/op-mainnet) by the Optimism Foundation). Each member chain pays the Optimism Collective a share of its transaction fees under a standardized model.
+
+These chains earn transaction fees whenever users send transactions onchain, including for payments, trading, identity, and other applications. Each chain also pays costs to publish its activity to Ethereum for security. Superchain revenue is the portion of transaction fees that flows back to Optimism:
+
+- Superchain member chains (such as Base or Unichain): The greater of
+    
+    • 15% of net transaction fee profit (transaction fees earned on L2 - costs paid to Ethereum L1), or
+    
+    • 2.5% of gross transaction fees
+    
+
+👉 [Explore the full list of Superchain member chains in the Superchain Registry](https://github.com/ethereum-optimism/superchain-registry/blob/main/CHAINS.md).
+
+- OP Mainnet: Contributes 100% of net transaction fee profit
+
+Because they share revenue with the Optimism Collective, each chain maintains peak performance with access to innovative new features developed anywhere on the stack, continually strengthening the entire Superchain ecosystem.
+
+---
+
+# How Revenue Is Reported
+
+Chains pay Optimism on different timelines, so two versions of revenue are published:
+
+- **Estimated Superchain Revenue**
+    
+    Revenue owed to Optimism based on transaction fees generated during a period (daily, monthly, etc.).
+    
+- **Actual Superchain Revenue**
+    
+    Revenue actually paid onchain from Superchain member chains to the Optimism Collective.
+    
+
+Simplified formulas:
+
+- Superchain members: max(15% × (transaction fees – Ethereum L1 costs), 2.5% × transaction fees)
+- OP Mainnet: 100% × (transaction fees – Ethereum L1 costs)
+
+👉 [See detailed calculation logic in the data glossary](https://docs.optimism.io/app-developers/tools/data-and-dashboards/data-glossary#revenue).
+
+---
+
+# Tracking Payments Onchain
+
+Superchain member chains pay Optimism in different ways. Some use automated contracts on their L2, while others withdraw to Ethereum L1 and pay from there.
+
+- Example: [Base has an automated contract](https://basescan.org/address/0x09C7bAD99688a55a2e83644BFAed09e62bDcCcBA#code) that sends Optimism its share every few days.
+- To ensure transparency, Optimism tracks all payment addresses and publishes a consolidated log.
+
+👉 [See the list of addresses on GitHub](https://github.com/ethereum-optimism/op-analytics/tree/main/src/op_analytics/configs)👉 [See the Payment Log for all Superchain payments](https://docs.google.com/spreadsheets/d/1f-uIW_PzlGQ_XFAmsf9FYiUf0N9l_nePwDVrw0D5MXY/edit?gid=664113855#gid=664113855)
