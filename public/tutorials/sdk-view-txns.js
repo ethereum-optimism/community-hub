@@ -10,7 +10,7 @@ const ethers = require("ethers")
 const l1RpcUrl = process.env.L1_RPC_URL
 const l2RpcUrl = process.env.L2_RPC_URL
 
-// Docs CI wallet, will have deposits and withdrawals.
+// Wallet address with deposits and withdrawals for documentation purposes.
 const address = '0x5A07785F07D8ba8a9e5323181fBDab51FE9a36c3'
 
 const l1Provider = new ethers.providers.StaticJsonRpcProvider(l1RpcUrl)
