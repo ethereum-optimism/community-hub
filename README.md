@@ -10,6 +10,14 @@ First, run `pnpm i` to install the dependencies.
 
 Then, run `pnpm dev` to start the development server and visit localhost:3000.
 
+## Running Tests
+
+To run tests, use the following command:
+
+```
+pnpm test
+```
+
 ## Contributions
 
 Please see the [CONTRIBUTING.md](https://github.com/ethereum-optimism/docs/blob/main/CONTRIBUTING.md) page for specifics on how to write PRs, use the linter, run spellcheck, add dictionary terms, etc. You should also review the [Optimism Documentation Style Guide](/pages/connect/contribute/style-guide.mdx) for additional guidelines, especially if you are writing entirely brand new pages to the developer docs, as opposed to smaller edits and/or revisions.
