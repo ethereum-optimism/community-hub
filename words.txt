@@ -42,6 +42,7 @@ Metagovernance
 modularly
 Moonwell
 Multicall
+multisigs
 nextra
 Numba
 numba
