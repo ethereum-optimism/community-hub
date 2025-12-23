@@ -7,38 +7,40 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Install Lychee
+          name: Install lychee
           command: |
-            curl -L https://github.com/lycheeverse/lychee/releases/download/v0.14.3/lychee-v0.14.3-x86_64-unknown-linux-gnu.tar.gz > lychee.tar.gz
-            tar xzf lychee.tar.gz
-            sudo mv ./lychee /usr/local/bin/
+            # Latest version download karne ka behtar tarika
+            LYCHEE_VERSION=$(curl -s https://api.github.com/repos/lycheeverse/lychee/releases/latest | grep -oP '"tag_name": "\K[^"]+')
+            curl -LO "https://github.com/lycheeverse/lychee/releases/download/${LYCHEE_VERSION}/lychee-${LYCHEE_VERSION}-x86_64-unknown-linux-gnu.tar.gz"
+            tar xzf lychee-*.tar.gz
+            sudo mv lychee /usr/local/bin/
       - run:
-          name: Run Lychee
+          name: Run lychee
           command: |
-            lychee --config lychee.toml --quiet ./pages
+            lychee --config .lycheerc.toml --quiet ./**/*.md
             if [ $? -ne 0 ]; then
               echo "Lychee found broken links"
               exit 1
             fi
+
   lint-markdown:
     docker:
       - image: cimg/node:20.10
     steps:
       - checkout
       - run:
-          name: Install pnpm
-          command: sudo npm install -g pnpm
+          name: Setup pnpm
+          command: corepack enable && corepack prepare pnpm@latest --activate
       - restore_cache:
           keys:
             - pnpm-deps-{{ checksum "pnpm-lock.yaml" }}
-            - pnpm-deps-
       - run:
           name: Install Dependencies
           command: pnpm install
       - save_cache:
           key: pnpm-deps-{{ checksum "pnpm-lock.yaml" }}
           paths:
-            - ~/.pnpm-store
+            - ~/.local/share/pnpm/store # pnpm ka standard store path
       - run:
           name: Run lint
           command: pnpm lint
@@ -49,30 +51,28 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Install pnpm
-          command: sudo npm install -g pnpm
+          name: Setup pnpm
+          command: corepack enable && corepack prepare pnpm@latest --activate
       - run:
-          name: Install Dependencies
-          command: pnpm install
-      - run:
-          name: Check lockfile
+          name: Check lockfile sync
           command: |
-            git diff --exit-code
+            pnpm install
+            git diff --exit-code pnpm-lock.yaml
             if [ $? -ne 0 ]; then
               echo "Lockfile is out of sync. Please run 'pnpm install' and commit the changes."
               exit 1
             fi
 
+# SAARI GALTITYON KO THEEK KARKE EK SINGLE WORKFLOW
 workflows:
   version: 2
-  check-links-workflow:
-    jobs:
-      - check-links
-
-  lint-markdown-workflow:
-    jobs:
-      - lint-markdown
-
-  check-lockfile-workflow:
+  ci-workflow:
     jobs:
       - check-lockfile
+      - lint-markdown:
+          requires:
+            - check-lockfile # Lint tabhi chalega jab lockfile sahi hogi
+      - check-links:
+          requires:
+            - check-lockfile
+            
