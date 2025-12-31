@@ -59,6 +59,18 @@ Used to associate metadata to a project. Re-issued each time there is a change t
 | metadataType         | How the metadata can be accessed. 1 for ipfs, 2 for http                                                        |
 | metadataUrl          | The storage location where the metadata can be retrieved                                                        |
 
+### [Contract Verification[(https://optimism.easscan.org/schema/view/0x5560b68760b2ec5a727e6a66e1f9754c307384fe7624ae4e0138c530db14a70b)
+| Schema UID           | `0x5560b68760b2ec5a727e6a66e1f9754c307384fe7624ae4e0138c530db14a70b`                                            |
+| -------------------- | ----------------------------------------------------------------------------------------------------------------|
+| Issuer               | 0xF6872D315CC2E1AfF6abae5dd814fd54755fE97C - governed by resolver                                               |
+| Contract             | The address of the verified contract                                                                            |
+| Chain Id             | The chain id the contract is on                                                                                 |
+| Deployer             | The address that deployed the contract                                                                          |
+| Deployment txn       | The transaction that deployed the contract                                                                      |
+| Signature            | The signature made by the deployer to prove ownership                                                           |
+| Verification chain id | The chain id the verification is on                                                                            |
+| Farcaster id         | The user who did the verification                                                                               |
+
 ### [Retro funding application](https://optimism.easscan.org/schema/view/0x2169b74bfcb5d10a6616bbc8931dc1c56f8d1c305319a9eeca77623a991d4b80)
 
 Used to identify a project's application to a specific Retro Funding Round. This attestation is used for Retro Funding Round 6 and beyond.
